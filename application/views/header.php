@@ -22,7 +22,7 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/demo/demo.css">
 
-	<nav class="navbar navbar-expand-lg bg-primary">
+	<!-- <nav class="navbar navbar-expand-lg bg-primary">
 		<div class="container">
 			<div class="navbar-translate">
 				<a class="navbar-brand" href="/presentation.html">Brand</a>
@@ -54,7 +54,7 @@
 				</form>
 			</div>
 		</div>
-	</nav>
+	</nav> -->
 
 </head>
 
