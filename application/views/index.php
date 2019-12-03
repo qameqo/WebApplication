@@ -1,5 +1,5 @@
 <div class="wrapper">
-      <div class="sidebar" data-color="white">
+      <div class="sidebar" data-color="black">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="white | black"
 
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <div class="main-panel">
+      <div class="main-panel" >
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute">
           <div class="container-fluid">
 
