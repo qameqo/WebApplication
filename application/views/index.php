@@ -6,7 +6,7 @@
       -->
 
         <div class="sidebar-wrapper">
-          <!-- <div class="user">
+          <div class="user">
               <div class="photo mt-2 mb-2">
                   <img src="<?php echo base_url('./pic/logo.png'); ?>" />
               </div>
@@ -41,7 +41,7 @@
                       </ul>
                   </div>
               </div>
-          </div> -->
+          </div>
           <ul class="nav">
 
               <li class="active">
