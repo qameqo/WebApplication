@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="wrapper">
       <div class="sidebar" data-color="black">
       <!--
@@ -200,5 +199,3 @@
         </footer>
       </div>
     </div>
-=======
->>>>>>> 5bbc01499f27052354e42b3f69dbe6946a133972
