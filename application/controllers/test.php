@@ -19,8 +19,10 @@ class test extends CI_Controller {
 
     public function DB_Check()
     {
-        $this->db->where('id', 555);
-        $this->db->get('tests'); 
+        $this->db->where('type', 10);
+        print_r ($this->db->get('game'));
+        
+        
     }
 
 }

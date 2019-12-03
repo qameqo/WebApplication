@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '27.254.86.31',
-	'username' => 'cscpcxyz_GDragon',
-	'password' => 'Touch1234',
-	'database' => 'cscpcxyz_GDragon',
+	'hostname' => '45.77.254.49',
+	'username' => 'admin_touch',
+	'password' => 'touch1234',
+	'database' => 'admin_GDragon',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
