@@ -96,11 +96,11 @@ $query_builder = TRUE;
 // );
 
 $db['default'] = array(
-	'dsn'   => '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => '',
+	'dsn'	=> '',
+	'hostname' => '45.77.254.49',
+	'username' => 'admin_touch',
+	'password' => 'touch1234',
+	'database' => 'admin_GDragon',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => TRUE,
