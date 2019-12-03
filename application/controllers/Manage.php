@@ -9,7 +9,7 @@ class Manage extends CI_Controller {
     {
         $this->load->view('Header');
 
-        $this->load->view('Index');
+        $this->load->view('Login');
         
         $this->load->view('Footer');
         
