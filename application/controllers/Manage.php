@@ -7,11 +7,11 @@ class Manage extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('header');
+        $this->load->view('Header');
 
-        $this->load->view('index');
+        $this->load->view('Index');
         
-        $this->load->view('footer');
+        $this->load->view('Footer');
         
         
         
