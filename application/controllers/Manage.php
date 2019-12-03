@@ -19,8 +19,10 @@ class Manage extends CI_Controller {
 
     public function DB_Check()
     {
-        $this->db->where('type', 10);
-        print_r ($this->db->get('game'));
+        $this->db->where('Name', 'game');
+        $sql = $this->db->get('ty');
+        $r = $sql->result();
+        print_r($r);
         
         
     }
