@@ -12,11 +12,7 @@ class Manage extends CI_Controller {
         $this->load->view('Login');
         
         $this->load->view('Footer');
-        
-        
-        
     }
-
     public function DB_Check()
     {
         $this->db->where('Name', 'game');
