@@ -1,99 +1,30 @@
 <div class="container">
-	<div class="row mt-5">
-		<div class="col">
-		</div>
-		<div class="photo">
-			<img src="<?php echo base_url('./pic/logo.png'); ?>" />
-		</div>
-		<div class="col">
+	<div class="photo mt-5 mb-3" style="text-align: center;">
+		<img src="<?php echo base_url('./pic/logo.png'); ?>" />
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
+			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+			<form class="form-signin" id="register" name="register" method="post">
+				<H4>Register</H4>
+				<label for="email">Email address</label>
+				<input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+					placeholder="Enter email">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" id="password" placeholder="Password">
+				<label for="fname">First Name</label>
+				<input type="password" class="form-control" id="fname" placeholder="First Name">
+				<label for="lname">Last Name</label>
+				<input type="password" class="form-control" id="lname" placeholder="Last Name">
+				<label for="address">Address</label>
+    			<textarea class="form-control" id="address" rows="3"></textarea>
+				<label for="lname">Tel.</label>
+				<input type="password" class="form-control" id="lname" placeholder="+66">
+
+				<input type="hidden" class="form-control" id="type" value="CarOwner">
+
+				<a class="btn btn-success" href="<?php echo base_url("");?>">Register</a>
+			</form>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<H4>Register</H4>
-		</div>
-		<div class="col">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputEmail1">Email address</label>
-			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-				placeholder="Enter email">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">Password</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-    <div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">First Name</label>
-			<input type="First Name" class="form-control" id="exampleInputPassword1" placeholder="First Name">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-    <div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">Last Name</label>
-			<input type="Last Name" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-    <div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">Age</label>
-			<input type="Last Name" class="form-control" id="exampleInputPassword1" placeholder="Age">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-    <div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">Address</label>
-			<textarea type="Address" class="form-control" id="exampleInputPassword1" placeholder="Address" style="width:350px; height:100px;"></textarea>
-		</div>
-		<div class="col">
-		</div>
-	</div>
-    <div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<label for="exampleInputPassword1">Tel</label>
-			<input type="Tel" class="form-control" id="exampleInputPassword1" placeholder="Tel">
-		</div>
-		<div class="col">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<a class="btn btn-success" href="<?php echo base_url("Manage");?>">Submit</a>
-		</div>
-		<div class="col">
-		</div>
-	</div>
+</div>

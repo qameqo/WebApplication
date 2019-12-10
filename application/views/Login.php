@@ -31,7 +31,7 @@
 				<label for="exampleInputPassword1">Password</label>
 				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 				<button class="btn btn-success">Login</button>
-				<a class="btn btn-success" href="<?php echo base_url("hello");?>">Register</a>
+				<a class="btn btn-success" href="<?php echo base_url("Register");?>">Register</a>
 			</form>
 		</div>
 	</div>
