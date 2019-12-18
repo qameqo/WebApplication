@@ -58,6 +58,6 @@
 				</div>
 
 			</div>
-			<button type="submit" class="btn btn-success">Login</button>
+      <a class="btn btn-success" href="<?php echo base_url("carowner");?>">Login</a>
       <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
 		</form>
