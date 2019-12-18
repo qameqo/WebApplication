@@ -95,7 +95,7 @@
 		font-weight: bold;
 		color: #566787;
 		display: inline-block;
-		text-decoration: none;
+		/* text-decoration: none; */
 		outline: none !important;
 	}
 
@@ -135,7 +135,7 @@
 		margin: 0 2px;
 		line-height: 30px;
 		border-radius: 2px !important;
-		text-align: center;
+		/* text-align: center; */
 		padding: 0 6px;
 	}
 
@@ -274,12 +274,7 @@
 
 <head>
 	<title>G Dragon Autotech CO.,LTD</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
