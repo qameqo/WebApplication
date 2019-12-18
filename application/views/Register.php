@@ -7,27 +7,41 @@
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 			<form class="form-signin" id="register" name="register" method="post">
 				<H4>Register</H4>
-				<label for="email" style="color: #000; margin-top: 1em ;">Email address</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-					placeholder="Enter email">
+				
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Email Address</label>
+					<input type="email" id="email" class="form-control" placeholder="">
+				</div>
 
-				<label for="password" style="color: #000; margin-top: 1em ;">Password</label>
-				<input type="password" class="form-control" id="password" placeholder="Password">
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Password</label>
+					<input type="password" id="password" class="form-control" placeholder="">
+				</div>
 
-				<label for="fname" style="color: #000; margin-top: 1em ;">First Name</label>
-				<input type="text" class="form-control" id="fname" placeholder="First Name">
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">First Name</label>
+					<input type="text" id="fname" class="form-control" placeholder="">
+				</div>
 
-				<label for="lname" style="color: #000; margin-top: 1em ;">Last Name</label>
-				<input type="text" class="form-control" id="lname" placeholder="Last Name">
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Last Name</label>
+					<input type="text" id="lname" class="form-control" placeholder="">
+				</div>
 
-				<label class="label-control" style="color: #000; margin-top: 1em ;">Date of Birth</label>
-    			<input type="text" class="form-control datetimepicker" value="18/12/2019"/>
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Date of Birth</label>
+					<input type="text" class="form-control datetimepicker" id="birth" class="form-control" placeholder="">
+				</div>
 
-				<label for="address" style="color: #000; margin-top: 1em ;">Address</label>
-    			<textarea class="form-control" id="address" rows="3"></textarea>
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Address</label>
+					<input type="text" id="address" class="form-control" placeholder="">
+				</div>
 
-				<label for="tel" style="color: #000; margin-top: 1em ;">Tel.</label>
-				<input type="text" class="form-control" id="lname" placeholder="+66">
+				<div class="form-group bmd-form-group">
+					<label class="bmd-label-floating">Tel.</label>
+					<input type="text" id="tel" class="form-control" placeholder="">
+				</div>
 
 				<input type="hidden" class="form-control" id="type" value="CarOwner">
 
