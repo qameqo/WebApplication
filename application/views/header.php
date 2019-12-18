@@ -10,16 +10,14 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
 		name='viewport' />
 	<!--     Fonts and icons     -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<!-- CSS Files -->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/.min.css?v=2.0.6">
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/paper-dashboard.css?v=2.0.0">
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/demo/demo.css">
-
+	
 </head>
 
 <body>
