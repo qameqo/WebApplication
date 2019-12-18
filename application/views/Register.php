@@ -30,8 +30,8 @@
 				</div>
 
 				<div class="form-group">
-                    <label class="label-control">Date of birth</label>
-                    <input type="text" class="form-control datetimepicker" value="12/12/2019">
+                    <label class="label-control">Datet of Birth</label>
+                    <input type="text" class="form-control datetimepicker" value="18/12/2019">
                   </div>
 
 				<div class="form-group bmd-form-group">
