@@ -34,7 +34,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6">
 	<!--        rose navbar with search form -->
 
-	<nav class="navbar navbar-expand-lg bg-rose">
+	<nav class="navbar navbar-expand-lg bg-danger">
 		<div class="container">
 			<div class="navbar-translate">
 				<a href="<?php echo base_url("Manager");?>">
