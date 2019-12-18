@@ -28,10 +28,10 @@
 					<input type="text" id="lname" class="form-control" placeholder="">
 				</div>
 
-				<div class="form-group bmd-form-group">
-					<label class="bmd-label-floating">Date of Birth</label>
-					<input type="text" class="form-control datetimepicker" id="birth" class="form-control" placeholder="">
-				</div>
+				<div class="form-group">
+                    <label class="label-control">Datetime Picker</label>
+                    <input type="text" class="form-control datetimepicker" value="10/05/2016">
+                  </div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Address</label>
