@@ -58,6 +58,6 @@
 				</div>
 
 			</div>
-			<button type="submit" class="btn btn-primary">Login</button>
-			<button type="submit" class="btn btn-success">Register</button>
+			<button type="submit" class="btn btn-success">Login</button>
+      <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
 		</form>
