@@ -41,8 +41,9 @@
     </div>
 	<div class="row justify-content-center">
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
-			style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 <form>
+  <H4>Login</H4>
   <div class="form-group">
     <h4>Email address</h4>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email...">
@@ -51,6 +52,6 @@
     <h4>Password</h4>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password...">
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-  <button type="submit" class="btn btn-primary">Register</button>
+  <button type="submit" class="btn btn-success">Login</button>
+  <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
 </form>
