@@ -1,37 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white">
-	<div class="container">
-		<img class="img" src="<?php echo base_url('./pic/logo.png'); ?>" class="img-fluid" alt="Responsive image" style="width: 300px; border-radius: 5px;
-	color: #EACA6A;">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="navbar-toggler-icon"></span>
-			<span class="navbar-toggler-icon"></span>
-			<span class="navbar-toggler-icon"></span>
-		</button>
-	</div>
 
-	<div class="collapse navbar-collapse">
-		<ul class="navbar-nav">
-			<li class="nav-item active">
-				<a href="#pablo" class="nav-link">link</a>
-			</li>
-			<li class="nav-item">
-				<a href="#pablo" class="nav-link">link</a>
-			</li>
-		</ul>
-
-		<form class="form-inline ml-auto">
-			<div class="form-group no-border">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-			<button type="submit" class="btn btn-white btn-just-icon btn-round">
-				<i class="material-icons">search</i>
-			</button>
-		</form>
-	</div>
-	</div>
-</nav>
 <div class="col-md-12 text-center">
 	<h1 class="h1" style="color:#666">ลงทะเบียนปล่อยเช่ารถยนต์</h1>
 
@@ -127,7 +94,8 @@
 						</div>
 					</div>
 					<div class="col-sm">
-						One of three columns
+                        <label class="bmd-label-floating">เลขไมล์</label>
+                        <input type="text" class="form-control">
 					</div>
 					<div class="col-sm">
 						One of three columns
