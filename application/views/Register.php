@@ -16,6 +16,8 @@
 				<input type="password" class="form-control" id="fname" placeholder="First Name">
 				<label for="lname">Last Name</label>
 				<input type="password" class="form-control" id="lname" placeholder="Last Name">
+				<label class="label-control">Date of Birth</label>
+    			<input type="text" class="form-control datetimepicker" value="18/12/2019"/>
 				<label for="address">Address</label>
     			<textarea class="form-control" id="address" rows="3"></textarea>
 				<label for="lname">Tel.</label>
@@ -23,7 +25,7 @@
 
 				<input type="hidden" class="form-control" id="type" value="CarOwner">
 
-				<a class="btn btn-success" href="<?php echo base_url("");?>">Register</a>
+				<a class="btn btn-success" href="<?php echo base_url("Login");?>">Register</a>
 			</form>
 		</div>
 	</div>
