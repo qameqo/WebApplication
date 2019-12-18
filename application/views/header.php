@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/paper-dashboard.css?v=2.0.0">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/demo/demo.css">
+	
 
 </head>
 
