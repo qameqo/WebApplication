@@ -47,7 +47,8 @@
 				<input type="hidden" class="form-control" id="type" value="CarOwner">
 				<div class="fileinput fileinput-new " data-provides="fileinput">
 					<div>
-							<span class="fileinput-new"><H4>image_DriverLicense</H4></span>
+							<label class="bmd-label-floating">image_DriverLicense</label>
+							<!-- <span class="fileinput-new"><H4>image_DriverLicense</H4></span> -->
 							<input type="file" name="..." />
 					</div>
 				</div>
