@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<!-- Material Kit CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6">
-	<!--        rose navbar with search form -->
-
+	
+	<!--  rose navbar with search form -->
 	<nav class="navbar navbar-expand-lg bg-danger">
 		<div class="container">
 			<div class="navbar-translate">
