@@ -44,14 +44,13 @@
 					<input type="text" id="tel" class="form-control" placeholder="">
 				</div>
 
-				<input type="hidden" class="form-control" id="type" value="CarOwner">
+				<!-- <input type="hidden" class="form-control" id="type" value="CarOwner">
 				<div class="fileinput fileinput-new " data-provides="fileinput">
 					<div>
 							<label class="bmd-label-floating">image_DriverLicense</label>
-							<!-- <span class="fileinput-new"><H4>image_DriverLicense</H4></span> -->
 							<input type="file" name="..." />
 					</div>
-				</div>
+				</div> -->
 
 				<a class="btn btn-success" href="<?php echo base_url("Login");?>">Register</a>
 			</form>
