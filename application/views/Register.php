@@ -49,7 +49,7 @@
 					<div>
 							<label class="bmd-label-floating">image_DriverLicense</label>
 							<!-- <span class="fileinput-new"><H4>image_DriverLicense</H4></span> -->
-							<input type="file" name="..." />
+							<input type="file" name="driver" />
 					</div>
 				</div>
 
