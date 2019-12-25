@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6">
 	
 	<!--  rose navbar with search form -->
-	<nav class="navbar navbar-expand-lg bg-danger">
+	<nav class="navbar navbar-expand-lg bg-white">
 		<div class="container">
 			<div class="navbar-translate">
 				<a href="<?php echo base_url("Manager");?>">
@@ -37,29 +37,21 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a href="#pablo" class="nav-link">จัดการพนักงาน</a>
+						<a href="#pablo" class="nav-link"><h5>ลงทะเบียนรถยนต์</h5></a>
 					</li>
 					<li class="nav-item">
-						<a href="#pablo" class="nav-link">จัดการการลงทะเบียน</a>
+						<a href="#pablo" class="nav-link"><h5>สัญญาเช่า</h5></a>
 					</li>
 					<li class="nav-item">
-						<a href="#pablo" class="nav-link">เกณฑ์การประเมิน</a>
+						<a href="#pablo" class="nav-link"><h5>สถานะรถยนต์</h5></a>
 					</li>
 					<li class="nav-item">
-						<a href="#pablo" class="nav-link">สัญญาเช่า</a>
+						<a href="#pablo" class="nav-link"><h5>ยกเลิกปล่อยเช่า</h5></a>
 					</li>
 					<li class="nav-item">
-						<a href="#pablo" class="nav-link">การปล่อยเช่ารถยนต์</a>
+						<a href="#pablo" class="material-icons">face</a>
 					</li>
 				</ul>
-				<form class="form-inline ml-auto">
-					<div class="form-group has-white">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-white btn-raised btn-fab btn-round">
-						<i class="material-icons">search</i>
-					</button>
-				</form>
 			</div>
 		</div>
 	</nav>
