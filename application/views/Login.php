@@ -58,6 +58,6 @@
 				</div>
 
 			</div>
-      <a class="btn btn-success" href="<?php echo base_url("Login/owner");?>">Login</a>
-      <a class="btn btn-info" href="<?php echo base_url("Login/register");?>">Register</a>
+      <a class="btn btn-success" href="<?php echo base_url("Owner");?>">Login</a>
+      <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
 		</form>
