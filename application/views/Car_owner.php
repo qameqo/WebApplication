@@ -107,7 +107,7 @@
 						<input type="text" class="form-control">
 					</div>
 					<div class="col-sm shadow p-3 mb-1">
-					<a class="btn btn-Danger btn-lg" href="<?php echo base_url("Login/owner2");?>">ดำเนินการต่อ</a>
+					<a class="btn btn-Danger btn-lg" href="<?php echo base_url("Owner2");?>">ดำเนินการต่อ</a>
 					</div>
 				</div>
 			</div>

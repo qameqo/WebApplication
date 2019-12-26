@@ -6,42 +6,47 @@
 	<div class="row justify-content-center">
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-			<form class="form-signin" id="register" name="register" method="post">
+			<form class="form-signin" id="register" name="register" method="post"
+				action="<?php echo base_url(); ?>Register/insert">
 				<H4>Register</H4>
-				
+
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Email Address</label>
-					<input type="email" id="email" class="form-control" placeholder="">
+					<input name="email" type="email" id="email" class="form-control" placeholder="">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Password</label>
-					<input type="password" id="password" class="form-control" placeholder="">
+					<input name="password" type="password" id="password" class="form-control" placeholder="">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">First Name</label>
-					<input type="text" id="fname" class="form-control" placeholder="">
+					<input name="fname" type="text" id="fname" class="form-control" placeholder="">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Last Name</label>
-					<input type="text" id="lname" class="form-control" placeholder="">
+					<input name="lname" type="text" id="lname" class="form-control" placeholder="">
 				</div>
-
 				<div class="form-group">
-                    <label class="label-control">Datet of Birth</label>
-                    <input type="text" class="form-control datetimepicker" value="18/12/2019">
-                  </div>
+					<label class="bmd-label-floating">Date of Birth</label>
+					<div class="input-group input-group-alternative">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+						</div>
+						<input class="form-control datepicker" placeholder="Select date" type="text" name="date" value="06/20/2019">
 
+					</div>
+				</div>
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Address</label>
-					<input type="text" id="address" class="form-control" placeholder="">
+					<input name="address" type="text" id="address" class="form-control" placeholder="">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Tel.</label>
-					<input type="text" id="tel" class="form-control" placeholder="">
+					<input name="tel" type="text" id="tel" class="form-control" placeholder="">
 				</div>
 
 				<!-- <input type="hidden" class="form-control" id="type" value="CarOwner">
@@ -52,7 +57,7 @@
 					</div>
 				</div> -->
 
-				<a class="btn btn-success" href="<?php echo base_url("Login");?>">Register</a>
+				<button class="btn btn-success" type="submit">Register</botton>
 			</form>
 		</div>
 	</div>

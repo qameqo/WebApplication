@@ -7,35 +7,11 @@ class Login extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('Header');
+        $this->load->view('header');
 
         $this->load->view('Login');
         
-        $this->load->view('Footer');
-    }
-    public function register()
-    {   
-        $this->load->view('Header');
-        $this->load->view('Register');
-        $this->load->view('Footer');
-    }
-    public function manager()
-    {   
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp');
-        $this->load->view('Footer');
-    }
-    public function owner()
-    {
-        $this->load->view('Header_manage');
-        $this->load->view('Car_owner');      
-        $this->load->view('Footer');
-    }
-    public function owner2()
-    {
-        $this->load->view('Header_manage');
-        $this->load->view('Car_owner2');       
-        $this->load->view('Footer');
+        $this->load->view('footer');
     }
     public function DB_Check()
     {
