@@ -22,15 +22,8 @@ class Register extends CI_Controller {
             'Type' => "เจ้าของรถ"
         );
         $this->db->insert('Member', $object);
-        
+        redirect('Login');
     }
-    public function hhhh()
-    {
-        $this->load->view('header');
-        $this->load->view('hee');
-        $this->load->view('footer');
-    }
-
 }
 
 /* End of file Controllername.php */
