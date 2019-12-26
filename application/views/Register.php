@@ -57,7 +57,7 @@
 					</div>
 				</div> -->
 
-				<button class="btn btn-success" type="submit">Register</botton>
+				<button class="btn btn-success" type="submit"> Register</botton>
 			</form>
 		</div>
 	</div>
