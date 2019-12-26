@@ -3,11 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Manager extends CI_Controller {
 
-    public function test1()
+    public function Manager_1()
     {   
         $this->load->view('Header_manage');
         $this->load->view('Manager_emp');
-        $this->load->view('Footer');
+        $this->load->view('Footer_manage');
     }
 
     public function test2()
