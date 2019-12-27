@@ -5,6 +5,8 @@ class Register extends CI_Controller {
 
     public function index()
     {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('email','');
         $this->load->view('header');
         $this->load->view('Register');
         $this->load->view('footer');
