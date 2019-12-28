@@ -28,13 +28,13 @@
               }
           );
       }
-
-      // Year Picker 
+ </script>      
+ <!--year picker-->
+<script type="text/javascript">
       $('.date-own').datepicker({
          minViewMode: 2,
          format: 'yyyy'
        });
-
   </script>
-
+</body>
 </html>
