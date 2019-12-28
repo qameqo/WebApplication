@@ -45,7 +45,7 @@
 						</div>
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-							<input class="date-own form-control" type="text" id="yearcar">
+							<input class="date-own form-control" type="text">
 						</div>
 					</div>
 					<div class="row">
