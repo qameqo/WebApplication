@@ -31,13 +31,14 @@
 				</div>
 				<div class="form-group">
 					<label class="bmd-label-floating">Date of Birth</label>
-					<div class="input-group input-group-alternative">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-						</div>
-						<input class="form-control datepicker" placeholder="Select date" type="text" name="date" value="06/20/2019">
-
-					</div>
+					<div class="form-group">
+    <div class="input-group input-group-alternative">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+        </div>
+        <input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2019">
+    </div>
+</div>
 				</div>
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Address</label>

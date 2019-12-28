@@ -23,12 +23,8 @@
 
     <!-- Material Kit CSS -->
     <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
-    <!--yearpicker-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <!--Datepicker-->
+    <script src="/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 </head>
 
 <body style="font-family: 'Quark', 'Quark', sans-serif;">

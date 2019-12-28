@@ -5,7 +5,7 @@ class Owner extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('Header_manage');
+        $this->load->view('header');
         $this->load->view('Car_owner');      
         $this->load->view('footer');
     }
@@ -21,6 +21,23 @@ class Owner extends CI_Controller {
         );
         $this->db->insert('car', $object);
         redirect('Login');
+    }
+    public function select($ga)
+    {?>
+                                    <option value="">เลือกรุ่น</option>
+                                    <?php
+                                    $this->db->select('*');
+                                    $this->db->where('idBrand',$ga);
+								  $sql = $this->db->get('Generation');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $she)
+								 {
+									?>
+								<option value="<?php echo $she['Name_Gen'] ?>"><?php echo $she['Name_Gen'] ?></option>
+								<?php }
+								  
+						
     }
 }
 

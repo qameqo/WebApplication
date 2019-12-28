@@ -20,17 +20,17 @@
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Brand"
-								id="exampleFormControlSelect1">
-								<option value="">เลือกยี่ห้อรถยนต์</option>
+								id="Brand1" onChange="Change_Brand()">
+								<option value="">เลือกยี่ห้อ</option>
 								<?php 
-  									$this->db->select('Name_Brand');
+  									$this->db->select('*');
 								  $sql = $this->db->get('Brand');
 								  $r = $sql->result_array();
 								  foreach($sql->result_array()
 								  as $he)
 								 {
 									?>
-								<option value="<?php echo $he['Name_Brand'] ?>"><?php echo $he['Name_Brand'] ?></option>
+								<option value="<?php echo $he['idBrand'] ?>"><?php echo $he['Name_Brand'] ?></option>
 								<?php }
 								  
 							?>
@@ -39,26 +39,13 @@
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">รุ่นรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Gen"
-								id="exampleFormControlSelect1">
-								<option value="">เลือกรุ่นรถยนต์</option>
-								<?php 
-  								  $this->db->select('Name_Gen');
-								  $sql = $this->db->get('Generation');
-								  $r = $sql->result_array();
-								  foreach($sql->result_array()
-								  as $she)
-								 {
-									?>
-								<option value="<?php echo $she['Name_Gen'] ?>"><?php echo $she['Name_Gen'] ?></option>
-								<?php }
-								  
-							?>
-
+								id="gen1">
+								<option value="">เลือกรุ่น</option>
 							</select>
 						</div>
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-							<input class="date-own form-control" type="text">
+							<input class="date-own form-control" type="text" id="yearcar">
 						</div>
 					</div>
 					<div class="row">
@@ -67,14 +54,21 @@
 							<select class="form-control selectpicker" data-style="btn btn-link"
 								id="exampleFormControlSelect1">
 								<option></option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
+								<option>2 ที่นั่ง</option>
+								<option>3 ที่นั่ง</option>
+								<option>4 ที่นั่ง</option>
+								<option>5 ที่นั่ง</option>
+								<option>6 ที่นั่ง</option>
+								<option>7 ที่นั่ง</option>
+								<option>8 ที่นั่ง</option>
+								<option>9 ที่นั่ง</option>
+								<option>10 ที่นั่ง</option>
+								<option>11+ ที่นั่ง</option>
 							</select>
 						</div>
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">สีรถ</label>
+							
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Color"
 								id="exampleFormControlSelect1">
 								<option value="">เลือกสีรถยนต์</option>
