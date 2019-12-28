@@ -9,10 +9,27 @@
   <script src="<?php echo base_url(); ?>assets argon/js/argon.js?v=1.1.0"></script>
   <!--Datepicker -->
   <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
-  <script>
-  $(function() {
-  $("#datepicker").datepicker({dateFormat: 'yyyy-MM-dd'});
-  });
+  <script type="text/javascript">
+
+      function Change_Brand()
+      {
+          var val = $("#Brand1").val()
+          
+          $.get("<?=base_url('Owner/select/')?>"+val, 
+              function (data) {
+                  
+                $("#gen1").html(data)
+
+              }
+          );
+      }
+ </script>      
+ <!--year picker-->
+<script type="text/javascript">
+      $('.date-own').datepicker({
+         minViewMode: 2,
+         format: 'yyyy'
+       });
   </script>
 </body>
 </html>
