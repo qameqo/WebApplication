@@ -5,10 +5,11 @@ class Owner extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('header');
+        $this->load->view('Header_manage');
         $this->load->view('Car_owner');      
         $this->load->view('footer');
     }
+<<<<<<< HEAD
     public function insert()
     {
         $object = array(
@@ -39,6 +40,9 @@ class Owner extends CI_Controller {
 								  
 						
     }
+=======
+
+>>>>>>> parent of ac83654... l,;;
 }
 
 /* End of file Controllername.php */

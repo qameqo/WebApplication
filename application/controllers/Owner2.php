@@ -5,7 +5,7 @@ class Owner2 extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('header');
+        $this->load->view('Header_manage');
         $this->load->view('Car_owner2');       
         $this->load->view('footer');
     }
