@@ -23,8 +23,8 @@
 
     <!-- Material Kit CSS -->
     <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
-    <!--Datepicker-->
-    <script src="/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    
+    
 </head>
 
 <body style="font-family: 'Quark', 'Quark', sans-serif;">

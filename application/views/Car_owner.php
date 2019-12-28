@@ -3,17 +3,19 @@
 
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm">
-						<H2>สเปครถยนต์</H2>
+			<form class="form-signin" id="register" name="register" method="post"
+				action="<?php echo base_url(); ?>Owner/insert">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm">
+							<H2>สเปครถยนต์</H2>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm">
-						กรุณาใส่รายละเอียดของรถยนต์
+					<div class="row">
+						<div class="col-sm">
+							กรุณาใส่รายละเอียดของรถยนต์
+						</div>
 					</div>
-<<<<<<< HEAD
 					<div class="row">
 						<div class="col-sm shadow p-3 mb-1">
 							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
@@ -105,104 +107,141 @@
 
 							</select>
 						</div>
-=======
-				</div>
-				<div class="row">
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
 					</div>
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">รุ่นรถ</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
->>>>>>> parent of ac83654... l,;;
-					</div>
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">จำนวนที่นั่ง</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">สีรถ</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">ชนิดเชื้อเพลิง</label>
-						<select class="form-control selectpicker" data-style="btn btn-link"
-							id="exampleFormControlSelect1">
-							<option></option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm shadow p-3 mb-1">
-						<label for="exampleFormControlSelect1">ระบบเกียร์</label>
-						<div class="label-bot">
-							<div class="radio">
-								<label style="padding-right: 8px;">
-									<input type="radio" name="transmission" value="automatic" checked="checked"
-										data-parsley-multiple="transmission">
-									<span style="vertical-align: top;">Automatic</span>
-								</label>
-								<label>
-									<input type="radio" name="transmission" value="manual"
-										data-parsley-multiple="transmission">
-									<span style="vertical-align: top;">Manual</span>
-								</label>
+					<div class="row">
+						<div class="col-sm shadow p-3 mb-1">
+							<label for="exampleFormControlSelect1">ระบบเกียร์</label>
+							<div class="label-bot">
+								<div class="radio">
+									<label style="padding-right: 8px;">
+										<input type="radio" name="transmission" value="automatic" checked="checked"
+											data-parsley-multiple="transmission">
+										<span style="vertical-align: top;">Automatic</span>
+									</label>
+									<label>
+										<input type="radio" name="transmission" value="manual"
+											data-parsley-multiple="transmission">
+										<span style="vertical-align: top;">Manual</span>
+									</label>
+								</div>
 							</div>
 						</div>
+						<div class="col-sm shadow p-3 mb-1">
+							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="col-sm shadow p-3 mb-1">
+							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
+							<input type="text" class="form-control">
+						</div>
 					</div>
-					<div class="col-sm shadow p-3 mb-1">
-						<label class="bmd-label-floating">เลขไมล์</label>
-						<input type="text" class="form-control">
-					</div>
-					<div class="col-sm shadow p-3 mb-1">
-					<a class="btn btn-Danger btn-lg" href="<?php echo base_url("Owner2");?>">ดำเนินการต่อ</a>
+				</div>
+		</div>
+		<div class="col-md-12 text-center">
+			<div class="row justify-content-center">
+				<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<H3>ข้อมูลรถยนต์</H3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm">
+								กรุณาใส่ข้อมูลของรถยนต์
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm shadow p-3 mb-1">
+								<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-sm shadow p-3 mb-1">
+								<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
+								<select class="form-control selectpicker" data-style="btn btn-link"
+									id="exampleFormControlSelect1">
+									<option></option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<div class="col-md-13 text-center">
+				<div class="row justify-content-center">
+					<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
+						<div class="container">
+						</div>
+						<div class="row">
+							<div class="col-sm">
+								<H3>รูปรถยนต์</H3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm">
+								กรุณาอัปโหลดรูปภาพของรถยนต์ 4 ภาพขึ้นไป
+							</div>
+						</div>
+						<div class="col-sm shadow p-4">
+							<div class="box__input">
+								<span class="btn btn-raised btn-white btn-file">
+									<label for="file"><strong>เพิ่มรูปภาพ</strong><span class="box__dragndrop"></label>
+									<input class="box__file" type="file" name="files[]" id="file"
+										data-multiple-caption="{count} files selected" multiple />
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-13 text-center">
+					<div class="row justify-content-center">
+						<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
+							<div class="container">
+							</div>
+							<div class="row">
+								<div class="col-sm">
+									<H3>เอกสารรถยนต์</H3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm">
+									พ.ร.บ.รถยนต์
+								</div>
+								<div class="col-sm">
+									เล่มทะเบียนรถยนต์
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm shadow p-4">
+									<div class="box__input">
+										<span class="btn btn-raised btn-white btn-file">
+											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
+													class="box__dragndrop"></label>
+											<input class="box__file" type="file" name="prb" id="file" />
+										</span>
+									</div>
+								</div>
+								<div class="col-sm shadow p-4">
+									<div class="box__input">
+										<span class="btn btn-raised btn-white btn-file">
+											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
+													class="box__dragndrop"></label>
+											<input class="box__file" type="file" name="files[]" id="file" />
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm shadow p-4">
+									<button class="btn btn-Danger btn-lg"
+										type="submit">ยืนยันการลงทะเบียนรถยนต์</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					</form>
