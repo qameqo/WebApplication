@@ -1,38 +1,40 @@
-
-     <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
-    <!-- Core -->
-  <script src="<?php echo base_url(); ?>assets argon/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets argon/vendor/popper/popper.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets argon/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets argon/vendor/headroom/headroom.min.js"></script>
-  <!-- Argon JS -->
-  <script src="<?php echo base_url(); ?>assets argon/js/argon.js?v=1.1.0"></script>
-  <!--Datepicker -->
-  <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
-  <script type="text/javascript">
-  $(function(){
-     
-     // เมื่อเปลี่ยนค่าของ select id เท่ากับ list1
-      $("select#Brand").change(function(){  
-          // ส่งค่า ตัวแปร list1 มีค่าเท่ากับค่าที่เลือก ส่งแบบ get ไปที่ไฟล์ data_for_list2.php
-          $.get("Car_owner.php",{
-              Brand:$(this).val()
-          },function(data){ // คืนค่ากลับมา
-                 $("select#Gen").html(data);  // นำค่าที่ได้ไปใส่ใน select id เท่ากับ list2      
-                 $("select#Gen").trigger("change"); // อัพเดท list2 เพื่อให้ list2 ทำงานสำหรับรีเซ็ตค่า
-          });
-     });     
-      
-     // เมื่อเปลี่ยนค่าของ select id เท่ากับ list2
-      $("select#Gen").change(function(){  
-          // ส่งค่า ตัวแปร list2 มีค่าเท่ากับค่าที่เลือก ส่งแบบ get ไปที่ไฟล์ data_for_list3.php
-          $.get("Car_owner.php",{
-              Gen:$(this).val()
-          },
-          });
-     });         
- });
- </script>      
-
+<!--   Core JS Files   -->
+<script src="<?php echo base_url(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="<?php echo base_url(); ?>assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="<?php echo base_url(); ?>assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Google Maps Plugin  -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="<?php echo base_url(); ?>assets/js/material-kit.js?v=2.0.6" type="text/javascript"></script>
 </body>
+<script type="text/javascript">
+
+      function Change_Brand()
+      {
+          var val = $("#Brand1").val()
+          
+          $.get("<?=base_url('Owner/select/')?>"+val, 
+              function (data) {
+                  
+                $("#gen1").html(data)
+
+              }
+          );
+      }
+
+      // Year Picker 
+      $('.date-own').datepicker({
+         minViewMode: 2,
+         format: 'yyyy'
+       });
+
+  </script>
+
 </html>
