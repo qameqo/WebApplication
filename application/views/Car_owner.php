@@ -17,7 +17,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Brand"
 								id="Brand1" onChange="Change_Brand()">
@@ -36,20 +36,20 @@
 							?>
 							</select>
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Gen"
 								id="gen1">
 								<option value="">เลือกรุ่น</option>
 							</select>
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
 							<input class="date-own form-control" type="text" id="yearcar">
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">จำนวนที่นั่ง</label>
 							<select class="form-control selectpicker" data-style="btn btn-link"
 								id="exampleFormControlSelect1">
@@ -66,7 +66,7 @@
 								<option>11+ ที่นั่ง</option>
 							</select>
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">สีรถ</label>
 							
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Color"
@@ -87,7 +87,7 @@
 
 							</select>
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ชนิดเชื้อเพลิง</label>
 							<select class="form-control selectpicker" data-style="btn btn-link"
 								id="exampleFormControlSelect1">
@@ -109,7 +109,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ระบบเกียร์</label>
 							<div class="label-bot">
 								<div class="radio">
@@ -126,11 +126,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
 							<input type="text" class="form-control">
 						</div>
-						<div class="col-sm shadow p-3 mb-1">
+						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
 							<input type="text" class="form-control">
 						</div>
@@ -152,11 +152,11 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-sm shadow p-3 mb-1">
+							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
 								<input type="text" class="form-control">
 							</div>
-							<div class="col-sm shadow p-3 mb-1">
+							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
 								<select class="form-control selectpicker" data-style="btn btn-link"
 									id="exampleFormControlSelect1">
@@ -187,7 +187,7 @@
 								กรุณาอัปโหลดรูปภาพของรถยนต์ 4 ภาพขึ้นไป
 							</div>
 						</div>
-						<div class="col-sm shadow p-4">
+						<div class="col-sm">
 							<div class="box__input">
 								<span class="btn btn-raised btn-white btn-file">
 									<label for="file"><strong>เพิ่มรูปภาพ</strong><span class="box__dragndrop"></label>
@@ -217,7 +217,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm shadow p-4">
+								<div class="col-sm">
 									<div class="box__input">
 										<span class="btn btn-raised btn-white btn-file">
 											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
@@ -226,7 +226,7 @@
 										</span>
 									</div>
 								</div>
-								<div class="col-sm shadow p-4">
+								<div class="col-sm">
 									<div class="box__input">
 										<span class="btn btn-raised btn-white btn-file">
 											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
@@ -236,8 +236,9 @@
 									</div>
 								</div>
 							</div>
+							<br>
 							<div class="row">
-								<div class="col-sm shadow p-4">
+								<div class="col-sm">
 									<button class="btn btn-Danger btn-lg"
 										type="submit">ยืนยันการลงทะเบียนรถยนต์</button>
 								</div>

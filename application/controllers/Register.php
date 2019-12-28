@@ -7,7 +7,7 @@ class Register extends CI_Controller {
     {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email','');
-        $this->load->view('header');
+        $this->load->view('header_logre');
         $this->load->view('Register');
         $this->load->view('footer');
     }
