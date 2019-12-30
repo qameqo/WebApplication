@@ -12,14 +12,25 @@ class Owner extends CI_Controller {
     public function insert()
     {
         $object = array(
-            'b' =>  $this->input->post("Brand"),
-            'g' =>  $this->input->post("Gen"),
-            'c' =>  $this->input->post("Color"),
-            'gear' =>  $this->input->post("transmission"),
-            'p' =>  $this->input->post("prb"),
-           
+            'Brand' =>  $this->input->post("Brand"),
+            'Generation' =>  $this->input->post("Gen"),
+            'Yearcar' =>  $this->input->post("caryear"),
+            'Seat' =>  $this->input->post("seat"),
+            'Color' =>  $this->input->post("color"),
+            'Fuel' =>  $this->input->post("fuel"),
+            'Gear' =>  $this->input->post("gear"),
+            'Mileage' =>  $this->input->post("mile"),
+            'License' =>  $this->input->post("license"),
+            'Yearlicense' =>  $this->input->post("licenseyear"),
+            'Carbody' =>  $this->input->post("bodyno"),
+            'imgcar' =>  $this->input->post("piccar"),
+            'imgprb' =>  $this->input->post("prb"),
+            'imgbookcar' =>  $this->input->post("bookcar"),
+            /* 'b' =>  $this->input->post("Brand"),
+            'b' =>  $this->input->post("Brand"), */
+            
         );
-        $this->db->insert('car', $object);
+        $this->db->insert('Carregis', $object);
         redirect('Login');
     }
     public function select($ga)

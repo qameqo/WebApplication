@@ -1,18 +1,14 @@
-<div class="container">
-	<div class="photo mt-5 mb-3" style="text-align: center;">
-		<img src="<?php echo base_url('./pic/logo55.png'); ?>"
-			style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;" />
-	</div>
-	<div class="row justify-content-center">
+<div class="col-md-13 text-center">
+	<h1 class="h1" style="color:#000000">แก้ไขข้อมูลส่วนตัว</h1>
+</div>
+<div class="row justify-content-center">
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-			<form class="form-signin" id="register" name="register" method="post"
-				action="<?php echo base_url(); ?>Register/insert">
-				<H4>Register</H4>
-
+			<form class="form-signin" id="edit" name="edit" method="post"
+				action="<?php echo base_url(); ?>OwnerManage/update">
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Email Address</label>
-					<input name="email" type="email" id="email" class="form-control" placeholder="">
+					<input name="email" type="email" id="email" class="form-control" value="">
 				</div>
 
 				<div class="form-group bmd-form-group">
@@ -57,7 +53,7 @@
 					</div>
 				</div> -->
 
-				<button class="btn btn-success" type="submit"> Register</botton>
+				<button class="btn btn-success" type="submit">ยืนยัน</botton>
 			</form>
 		</div>
 	</div>

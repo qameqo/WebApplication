@@ -1,9 +1,9 @@
-<div class="col-md-12 text-center">
-	<h1 class="h1" style="color:#666">ลงทะเบียนปล่อยเช่ารถยนต์</h1>
+<div class="col-md-13 text-center">
+	<h1 class="h1" style="color:#000000">ลงทะเบียนรถยนต์</h1>
 
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">
-			<form class="form-signin" id="register" name="register" method="post"
+			<form class="form-signin" id="owner" name="owner" method="post"
 				action="<?php echo base_url(); ?>Owner/insert">
 				<div class="container">
 					<div class="row">
@@ -45,31 +45,31 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-							<input class="date-own form-control" type="text" id="yearcar">
+							<input class="date-own form-control" placeholder="เลือกรุ่นปีรถ" type="text" id="yearcar" name="caryear">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">จำนวนที่นั่ง</label>
 							<select class="form-control selectpicker" data-style="btn btn-link"
-								id="exampleFormControlSelect1">
-								<option></option>
-								<option>2 ที่นั่ง</option>
-								<option>3 ที่นั่ง</option>
-								<option>4 ที่นั่ง</option>
-								<option>5 ที่นั่ง</option>
-								<option>6 ที่นั่ง</option>
-								<option>7 ที่นั่ง</option>
-								<option>8 ที่นั่ง</option>
-								<option>9 ที่นั่ง</option>
-								<option>10 ที่นั่ง</option>
-								<option>11+ ที่นั่ง</option>
+								id="exampleFormControlSelect1" name="seat">
+								<option value="">เลือกจำนวนที่นั่ง</option>
+								<option value="2 ที่นั่ง">2 ที่นั่ง</option>
+								<option value="3 ที่นั่ง">3 ที่นั่ง</option>
+								<option value="4 ที่นั่ง">4 ที่นั่ง</option>
+								<option value="5 ที่นั่ง">5 ที่นั่ง</option>
+								<option value="6 ที่นั่ง">6 ที่นั่ง</option>
+								<option value="7 ที่นั่ง">7 ที่นั่ง</option>
+								<option value="8 ที่นั่ง">8 ที่นั่ง</option>
+								<option value="9 ที่นั่ง">9 ที่นั่ง</option>
+								<option value="10 ที่นั่ง">10 ที่นั่ง</option>
+								<option value="11+ ที่นั่ง">11+ ที่นั่ง</option>
 							</select>
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">สีรถ</label>
 							
-							<select class="form-control selectpicker" data-style="btn btn-link" name="Color"
+							<select class="form-control selectpicker" data-style="btn btn-link" name="color"
 								id="exampleFormControlSelect1">
 								<option value="">เลือกสีรถยนต์</option>
 								<option value="แดง">แดง</option>
@@ -89,7 +89,7 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ชนิดเชื้อเพลิง</label>
-							<select class="form-control selectpicker" data-style="btn btn-link"
+							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel"
 								id="exampleFormControlSelect1">
 								<option value="">เลือกชนิดเชื้อเพลิง</option>
 								<option value="ดีเซล">ดีเซล</option>
@@ -114,12 +114,12 @@
 							<div class="label-bot">
 								<div class="radio">
 									<label style="padding-right: 8px;">
-										<input type="radio" name="transmission" value="automatic" checked="checked"
+										<input type="radio" name="gear" value="automatic" checked="checked"
 											data-parsley-multiple="transmission">
 										<span style="vertical-align: top;">Automatic</span>
 									</label>
 									<label>
-										<input type="radio" name="transmission" value="manual"
+										<input type="radio" name="gear" value="manual"
 											data-parsley-multiple="transmission">
 										<span style="vertical-align: top;">Manual</span>
 									</label>
@@ -128,11 +128,10 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" placeholder="Ex.10000" name="mile">
 						</div>
 						<div class="col-sm mb-1">
-							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-							<input type="text" class="form-control">
+						
 						</div>
 					</div>
 				</div>
@@ -154,20 +153,16 @@
 						<div class="row">
 							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" name="license" placeholder="Ex.5กช1648">
 							</div>
 							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
-								<select class="form-control selectpicker" data-style="btn btn-link"
-									id="exampleFormControlSelect1">
-									<option></option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
+								<input class="date-own form-control" placeholder="เลือกปีที่ออกทะเบียน" type="text" id="yearlicense" name="licenseyear">
 							</div>
-
+							<div class="col-sm mb-1">
+							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
+							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno">
+						</div>
 						</div>
 					</div>
 				</div>
@@ -191,7 +186,7 @@
 							<div class="box__input">
 								<span class="btn btn-raised btn-white btn-file">
 									<label for="file"><strong>เพิ่มรูปภาพ</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="files[]" id="file"
+									<input class="box__file" type="file" name="piccar" id="file"
 										data-multiple-caption="{count} files selected" multiple />
 								</span>
 							</div>
@@ -231,7 +226,7 @@
 										<span class="btn btn-raised btn-white btn-file">
 											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
 													class="box__dragndrop"></label>
-											<input class="box__file" type="file" name="files[]" id="file" />
+											<input class="box__file" type="file" name="bookcar" id="file" />
 										</span>
 									</div>
 								</div>

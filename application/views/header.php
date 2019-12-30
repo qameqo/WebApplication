@@ -11,7 +11,8 @@
   <link type="text/css" href="<?php echo base_url(); ?>/assets argon/css/argon.css?v=1.1.0" rel="stylesheet">
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="#">G Dragon Autotech</a>
+        <a class="navbar-brand" href="#"><img style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; 
+        margin-right: 1em ; width: 220px; height: 50px;" src="./pic/logo55.png" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,9 +51,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
                         <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
+                        <a class="dropdown-item" href="<?php echo base_url("OwnerManage");?>">แก้ไขข้อมูลส่วนตัว</a>
                         <!-- <div class="dropdown-divider"></div> -->
-                        <a class="dropdown-item" href="#">ออกจากระบบ</a>
+                        <a class="dropdown-item" href="<?php echo base_url("Login");?>">ออกจากระบบ</a>
                     </div>
                 </li>
             </ul>

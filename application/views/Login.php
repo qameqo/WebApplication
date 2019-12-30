@@ -37,7 +37,7 @@
 	</div>
 </div> -->
 <div class="photo mt-5 mb-3" style="text-align: center; ">
-	<img src="<?php echo base_url('./pic/logo.png'); ?>"
+	<img src="<?php echo base_url('./pic/logo55.png'); ?>"
 		style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;" />
 </div>
 <div class="row justify-content-center">
