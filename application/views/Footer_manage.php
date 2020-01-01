@@ -18,7 +18,7 @@
 <script>
 
 $(document).ready( function () {
-    $('.table').dataTable();
+    $('#emp_table').dataTable();
 } );
 
 </script>
