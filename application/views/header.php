@@ -3,13 +3,22 @@
     <title>G Dragon Autotech CO.,LTD</title>
     <link rel="icon" type="image/png" href="<?php echo base_url(); ?>./pic/logo.jpg">
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
   <!-- Icons -->
   <link href="<?php echo base_url(); ?>assets argon/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets argon/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="<?php echo base_url(); ?>/assets argon/css/argon.css?v=1.1.0" rel="stylesheet">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <style>
+  body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span{
+          color: #333;
+          font-family: 'Prompt', sans-serif;
+  }
+  </style>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
     <div class="container">
         <a class="navbar-brand" href="#"><img style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; 
         margin-right: 1em ; width: 220px; height: 50px;" src="./pic/logo55.png" ></a>
@@ -36,12 +45,15 @@
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <span class="">สัญญาเช่า</span>
+                        <span class="" style="color: white">สัญญาเช่า</span>
+                         <?php echo $this->session->userdata('Email');
+                        
+                         ?>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <span class="">ลงทะเบียนรถยนต์</span>
+                        <span class="" style="color: white">ลงทะเบียนรถยนต์</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -63,4 +75,4 @@
 </nav>
 </head>
 
-<body style="font-family: 'Quark', 'Quark', sans-serif;">
+<body>

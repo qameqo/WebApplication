@@ -13,6 +13,43 @@ class Login extends CI_Controller {
         
         $this->load->view('footer');
     }
+
+    public function Loginn()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $this->db->where('Email', $email);
+        $this->db->where('password', $password);
+        $query = $this->db->get('Member', 1);
+        if($query->num_rows() ==1)
+        {
+            $data = $query->row_array();
+            $this->session->set_userdata($data);
+            redirect('Owner');
+        }else
+        {
+            $this->db->where('Email', $email);
+            $this->db->where('password', $password);
+            $query = $this->db->get('Employee', 1);
+            if($query->num_rows() ==1)
+            {
+                $data = $query->row_array();
+                $this->session->set_userdata($data);
+                if($this->session->userdata('Status') =="เจ้าของร้าน")
+                {
+                    redirect('Register'); //เจ้าของร้าน
+                }else{
+                    
+                    redirect('OwnerManage'); //พนักงาน
+                }
+            }else
+            {
+                echo "ไม่เจอ";
+            }
+            
+        }
+        
+    }
     public function DB_Check()
     {
         $this->db->where('Name', 'game');
