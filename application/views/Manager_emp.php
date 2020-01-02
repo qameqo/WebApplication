@@ -1,6 +1,6 @@
 <div class="container" style="text-align: center;">
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 	
 	<div style="background-color: white; border-radius: 5px;">
 	<br>
@@ -486,6 +486,7 @@
 				</tfoot>
 			</table>
 		</div>
+		<br>
 	</div>
 
 			<div class="row justify-content-md-center">
