@@ -12,7 +12,8 @@
   <style>
   body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span{
           color: #333;
-          font-family: 'Prompt', sans-serif;
+          font-family: 'Prompt', sans-serif;               
+}
   }
   </style>
 </head>

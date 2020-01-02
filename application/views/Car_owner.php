@@ -20,7 +20,7 @@
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Brand"
-								id="Brand1" onChange="Change_Brand()">
+								id="Brand1" onChange="Change_Brand()" required>
 								<option value="">เลือกยี่ห้อ</option>
 								<?php 
   									$this->db->select('*');
@@ -39,20 +39,20 @@
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นรถ</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="Gen"
-								id="gen1">
+								id="gen1" required>
 								<option value="">เลือกรุ่น</option>
 							</select>
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-							<input class="date-own form-control" placeholder="เลือกรุ่นปีรถ" type="text" id="yearcar" name="caryear">
+							<input class="date-own form-control" placeholder="เลือกรุ่นปีรถ" type="text" id="yearcar" name="caryear" required>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">จำนวนที่นั่ง</label>
 							<select class="form-control selectpicker" data-style="btn btn-link"
-								id="exampleFormControlSelect1" name="seat">
+								id="exampleFormControlSelect1" name="seat" required>
 								<option value="">เลือกจำนวนที่นั่ง</option>
 								<option value="2 ที่นั่ง">2 ที่นั่ง</option>
 								<option value="3 ที่นั่ง">3 ที่นั่ง</option>
@@ -70,7 +70,7 @@
 							<label for="exampleFormControlSelect1">สีรถ</label>
 							
 							<select class="form-control selectpicker" data-style="btn btn-link" name="color"
-								id="exampleFormControlSelect1">
+								id="exampleFormControlSelect1" required>
 								<option value="">เลือกสีรถยนต์</option>
 								<option value="แดง">แดง</option>
 								<option value="น้ำเงิน">น้ำเงิน</option>
@@ -90,7 +90,7 @@
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ชนิดเชื้อเพลิง</label>
 							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel"
-								id="exampleFormControlSelect1">
+								id="exampleFormControlSelect1" required>
 								<option value="">เลือกชนิดเชื้อเพลิง</option>
 								<option value="ดีเซล">ดีเซล</option>
 								<option value="ดีเซลB10">ดีเซลB10</option>
@@ -128,7 +128,7 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
-							<input type="text" class="form-control" placeholder="Ex.10000" name="mile">
+							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" required>
 						</div>
 						<div class="col-sm mb-1">
 						
@@ -153,15 +153,16 @@
 						<div class="row">
 							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
-								<input type="text" class="form-control" name="license" placeholder="Ex.5กช1648">
+								<input type="text" class="form-control" name="license" placeholder="Ex.5กช1648" required>
 							</div>
 							<div class="col-sm mb-1">
 								<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
-								<input class="date-own form-control" placeholder="เลือกปีที่ออกทะเบียน" type="text" id="yearlicense" name="licenseyear">
+								<input class="date-own form-control" placeholder="เลือกปีที่ออกทะเบียน" type="text" id="yearlicense" 
+								name="licenseyear" required>
 							</div>
 							<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno">
+							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno" required>
 						</div>
 						</div>
 					</div>
@@ -187,7 +188,7 @@
 								<span class="btn btn-raised btn-white btn-file">
 									<label for="file"><strong>เพิ่มรูปภาพ</strong><span class="box__dragndrop"></label>
 									<input class="box__file" type="file" name="piccar" id="file"
-										data-multiple-caption="{count} files selected" multiple />
+										data-multiple-caption="{count} files selected" multiple required />
 								</span>
 							</div>
 						</div>
@@ -217,7 +218,7 @@
 										<span class="btn btn-raised btn-white btn-file">
 											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
 													class="box__dragndrop"></label>
-											<input class="box__file" type="file" name="prb" id="file" />
+											<input class="box__file" type="file" name="prb" id="file" required />
 										</span>
 									</div>
 								</div>
@@ -226,7 +227,7 @@
 										<span class="btn btn-raised btn-white btn-file">
 											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
 													class="box__dragndrop"></label>
-											<input class="box__file" type="file" name="bookcar" id="file" />
+											<input class="box__file" type="file" name="bookcar" id="file" required />
 										</span>
 									</div>
 								</div>

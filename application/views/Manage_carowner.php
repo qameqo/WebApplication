@@ -16,11 +16,12 @@
 	<h1 class="h1" style="color:#000000">แก้ไขข้อมูลส่วนตัว</h1>
 </div>
 <div class="row justify-content-center">
-	<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
+	<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
 		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 		<form class="form-signin" id="edit" name="edit" method="post"
 			action="<?php echo base_url(); ?>OwnerManage/update">
-			<div class="form-group bmd-form-group">
+			<div class="row">
+			<div class="col-sm">
 				<?php $this->db->where('Email', $this->session->userdata('Email'));
 							$query = $this->db->get('Member', 1);
 							$email = $this->input->post('email');
@@ -56,26 +57,29 @@
 					value="<?php echo $data['Email'];?>">
 			</div>
 			
-			<div class="form-group bmd-form-group">
+			<div class="col-sm">
 				<label class="bmd-label-floating">Password</label>
 			  <input id="password-field" type="password" class="form-control" name="password" 
 			  value="<?php echo $data['Password'];?>">
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					
 			</div>
-
-			<div class="form-group bmd-form-group">
+			</div>
+			<div class="row">
+			<div class="col-sm">
 				<label class="bmd-label-floating">First Name</label>
 				<input name="fname" type="text" id="fname" class="form-control" placeholder=""
 				value="<?php echo $data['FName'];?>">
 			</div>
 
-			<div class="form-group bmd-form-group">
+			<div class="col-sm">
 				<label class="bmd-label-floating">Last Name</label>
 				<input name="lname" type="text" id="lname" class="form-control" placeholder=""
 				value="<?php echo $data['LName'];?>">
 			</div>
-			<div class="form-group">
+			</div>
+			<div class="row">
+			<div class="col-sm">
 				<label class="bmd-label-floating">Date of Birth</label>
 				<div class="input-group input-group-alternative">
 					<div class="input-group-prepend">
@@ -86,13 +90,14 @@
 
 				</div>
 			</div>
-			<div class="form-group bmd-form-group">
+			<div class="col-sm">
 				<label class="bmd-label-floating">Address</label>
 				<input name="address" type="text" id="address" class="form-control" placeholder=""
 				value="<?php echo $data['Address'];?>">
 			</div>
-
-			<div class="form-group bmd-form-group">
+			</div>
+            <div class="row"> 
+			<div class="col-sm">
 				<label class="bmd-label-floating">Tel.</label>
 				<input name="tel" type="text" id="tel" class="form-control" placeholder=""
 				value="<?php echo $data['Tel'];?>">
@@ -105,9 +110,14 @@
 							<input type="file" name="..." />
 					</div>
 				</div> -->
-
+				<div class="col-sm" style="padding-top: 30px;">
 			<button class="btn btn-success" type="submit">ยืนยัน</botton>
+			</div>
 		</form>
 	</div>
 </div>
 </div>
+
+
+
+

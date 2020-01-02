@@ -17,7 +17,7 @@
 		style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;" />
 </div>
 <div class="row justify-content-center">
-	<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
+	<div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
 		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 		<form class="form-login" id="login" name="login" method="post" action="<?php echo base_url(); ?>Login/Loginn">
 			<H4>Login</H4>
@@ -33,10 +33,10 @@
 					<input id="password-field" type="password" class="form-control" name="password" required>
               		<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 				</div>
-
+				<button class="btn btn-success" type="submit">Login</botton>
 			</div>
-			<button class="btn btn-success" type="submit">Login</botton>
-				<!-- <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a> -->
+			 <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
+			 <span>สมัครเพื่อลงทะเบียนรถยนต์</span>
+			 
 	</div>
-
 	</form>

@@ -10,16 +10,16 @@
   <!-- Argon CSS -->
   <link type="text/css" href="<?php echo base_url(); ?>/assets argon/css/argon.css?v=1.1.0" rel="stylesheet">
   <style>
-  body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span,label,option{
+  body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span{
           color: #333;
           font-family: 'Prompt', sans-serif;
+          
   }
   </style>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white ">
     <div class="container">
-        <a class="navbar-brand" href="#"><img style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; 
-        margin-right: 1em ; width: 220px; height: 50px;" src="./pic/logo55.png" ></a>
+        <a class="navbar-brand" href="<?php echo base_url("Homeowner");?>"><img style="background-color: #5DBCD2; border-radius: 10px ; margin-left: 1em ; 
+        margin-right: 1em ; width: 230px; height: 50px;" src="./pic/logo55.png" ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,29 +42,22 @@
 
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#">
-                        <span class="" style="color: white">สัญญาเช่า</span>
+                    <a class="nav-link nav-link-icon" href="<?php echo base_url("Login");?>">
+                        <span class="" style="color: black">เข้าสู่ระบบ</span>
                         <!--  <?php echo $this->session->userdata('Email');
                         
                          ?> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="<?php echo base_url("Owner");?>">
-                        <span class="" style="color: white">ลงทะเบียนรถยนต์</span>
+                    <a class="nav-link nav-link-icon" href="<?php echo base_url("Register");?>">
+                        <span class="" style="color: black">สมัครสมาชิก</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ni ni-single-02"></i>
-                        <span class="nav-link-inner--text d-lg-none">Profile</span>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="#">
+                        <span class="" style="color: black">ติดต่อเรา</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="<?php echo base_url("OwnerManage");?>">แก้ไขข้อมูลส่วนตัว</a>
-                        <!-- <div class="dropdown-divider"></div> -->
-                        <a class="dropdown-item" href="<?php echo base_url("Homeowner");?>">ออกจากระบบ</a>
-                    </div>
                 </li>
             </ul>
 
