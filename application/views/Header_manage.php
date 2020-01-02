@@ -26,35 +26,49 @@
 
     <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
         <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="/presentation.html">G Dragon Autotech</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="navbar-translate active">
+                <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager/Manager_1">G Dragon Autotech</a>
             </div>
 
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#pablo" class="nav-link" style="font-size: 16px;">จัดการข้อมูลพนักงาน</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#pablo" class="nav-link">link</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
+                            จัดการข้อมูลบุลคล
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                            <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
+                            <a class="dropdown-item" href="#">จัดการข้อมูลพนักงาน</a>
+                            <a class="dropdown-item" href="#">จัดการข้อมูลสมาชิก</a>
+                        </div>
                     </li>
                 </ul>
-
-                <form class="form-inline ml-auto mr-2">
-                    <div class="form-group no-border">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-white btn-just-icon btn-round">
-                        <i class="material-icons">search</i>
-                    </button>
-                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
+                            จัดการข้อมูลเกี่ยวกับรถยนต์
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                            <a class="dropdown-item" href="#">จัดการข้อมูลรถยนต์</a>
+                            <a class="dropdown-item" href="#">จัดการข้อมูลราคารุถยนต์</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
+                            จัดการข้อมูลปัญหา
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                            <a class="dropdown-item" href="#">จัดการข้อมูลซ่อมรถยนต์</a>
+                            <a class="dropdown-item" href="#">จัดการข้อมูลประกันรถยนต์ </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
                 <button type="button" class="btn btn-primary">
                     Notifications <span class="badge badge-default">4</span>
                 </button>

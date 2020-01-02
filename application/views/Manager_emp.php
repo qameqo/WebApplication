@@ -2,8 +2,10 @@
 
 <br><br><br><br><br><br>
 	
+	<div style="background-color: white; border-radius: 5px;">
+	<br>
 		<div class="table-responsive" id="emp_table">
-			<table class="table align-items-center table-sm" style="width:100%">
+			<table class="table align-items-center table-sm" style="width:100%" style="background-color: white;" >
 				<thead class="thead-light">
 					<tr>
 						<th>Name</th>
@@ -484,6 +486,7 @@
 				</tfoot>
 			</table>
 		</div>
+	</div>
 
 			<div class="row justify-content-md-center">
 				<div class="col-md-auto">
