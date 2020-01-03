@@ -36,7 +36,6 @@
 				<button class="btn btn-success" type="submit">Login</botton>
 			</div>
 			 <a class="btn btn-info" href="<?php echo base_url("Register");?>">Register</a>
-			 <span>สมัครเพื่อลงทะเบียนรถยนต์</span>
 			 
 	</div>
 	</form>
