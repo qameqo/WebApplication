@@ -8,7 +8,7 @@
                         <h3 class="panel-title">ตารางข้อมูลพนักงาน</h3>
                     </div>
                     <div class="col-md-2" align ="right">
-                        <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-xs">Add</button>
+                        <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-sm">Add</button>
                     </div>
                 </div>
                 
@@ -31,7 +31,13 @@
 								<td>Donna Snider</td>
 								<td>Customer Support</td>
 								<td>New York</td>
-								<td>2011/01/25</td>
+								<td>
+								
+                        			<input class="btn btn-success btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="View" id="" >
+                        			<input class="btn btn-warning btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="Edit" id="" >
+                        			<input class="btn btn-danger btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="Del" id="" >
+                    
+								</td>
 							</tr>
 						</tbody>
 						<tfoot>
