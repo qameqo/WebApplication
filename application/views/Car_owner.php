@@ -3,7 +3,7 @@
 
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">
-			<form class="form-signin" id="owner" name="owner" method="post"
+			<form class="form-signin" id="owner" name="owner" method="post" 
 				action="<?php echo base_url(); ?>Owner/insert">
 				<div class="container">
 					<div class="row">
@@ -180,15 +180,40 @@
 						</div>
 						<div class="row">
 							<div class="col-sm">
-								กรุณาอัปโหลดรูปภาพของรถยนต์ 4 ภาพขึ้นไป นามสกุลไฟล์ .jpg
+								กรุณาอัปโหลดรูปภาพของรถยนต์
 							</div>
 						</div>
 						<div class="col-sm">
 							<div class="box__input">
 								<span class="btn btn-raised btn-white btn-file">
-									<label for="file"><strong>เพิ่มรูปภาพ</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="piccar" id="file"
-										data-multiple-caption="{count} files selected" multiple required />
+									<label for="file"><strong>รูปที่ 1</strong><span class="box__dragndrop"></label>
+									<input class="box__file" type="file" name="piccar1" id="file" required />
+								</span>
+							</div>
+						</div>
+						<div class="col-sm">
+							<div class="box__input">
+								<span class="btn btn-raised btn-white btn-file">
+									<label for="file"><strong>รูปที่ 1</strong><span class="box__dragndrop"></label>
+									<input class="box__file" type="file" name="piccar2" id="file"  required />
+								</span>
+							</div>
+						</div>
+						<div class="row">
+						</div>
+						<div class="col-sm">
+							<div class="box__input">
+								<span class="btn btn-raised btn-white btn-file">
+									<label for="file"><strong>รูปที่ 3</strong><span class="box__dragndrop"></label>
+									<input class="box__file" type="file" name="piccar3" id="file" required />
+								</span>
+							</div>
+						</div>
+						<div class="col-sm">
+							<div class="box__input">
+								<span class="btn btn-raised btn-white btn-file">
+									<label for="file"><strong>รูปที่ 4</strong><span class="box__dragndrop"></label>
+									<input class="box__file" type="file" name="piccar4" id="file"  required />
 								</span>
 							</div>
 						</div>
@@ -216,7 +241,7 @@
 								<div class="col-sm">
 									<div class="box__input">
 										<span class="btn btn-raised btn-white btn-file">
-											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
+											<label for="file"><strong>รูปพ.ร.บ.</strong><span
 													class="box__dragndrop"></label>
 											<input class="box__file" type="file" name="prb" id="file" required />
 										</span>
@@ -225,7 +250,7 @@
 								<div class="col-sm">
 									<div class="box__input">
 										<span class="btn btn-raised btn-white btn-file">
-											<label for="file"><strong>เพิ่มรูปภาพ</strong><span
+											<label for="file"><strong>รูปเล่มทะเบียน</strong><span
 													class="box__dragndrop"></label>
 											<input class="box__file" type="file" name="bookcar" id="file" required />
 										</span>

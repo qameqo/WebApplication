@@ -23,15 +23,17 @@ class Owner extends CI_Controller {
             'License' =>  $this->input->post("license"),
             'Yearlicense' =>  $this->input->post("licenseyear"),
             'Carbody' =>  $this->input->post("bodyno"),
-            'imgcar' =>  $this->input->post("piccar"),
+            'imgcar' =>  $this->input->post("piccar1"),
+            'imgcar2' =>  $this->input->post("piccar2"),
+            'imgcar3' =>  $this->input->post("piccar3"),
+            'imgcar4' =>  $this->input->post("piccar4"),
             'imgprb' =>  $this->input->post("prb"),
             'imgbookcar' =>  $this->input->post("bookcar"),
             /* 'b' =>  $this->input->post("Brand"),
             'b' =>  $this->input->post("Brand"), */
-            
         );
         $this->db->insert('Carregis', $object);
-        redirect('Login');
+        redirect('Owner');
     }
     public function select($ga)
     {?>
