@@ -27,7 +27,7 @@
     <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
         <div class="container">
             <div class="navbar-translate active">
-                <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager/Manager_1">G Dragon Autotech</a>
+                <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager">G Dragon Autotech</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -39,7 +39,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
-                            <a class="dropdown-item" href="#">จัดการข้อมูลพนักงาน</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_emp">จัดการข้อมูลพนักงาน</a>
                             <a class="dropdown-item" href="#">จัดการข้อมูลสมาชิก</a>
                         </div>
                     </li>
