@@ -1,4 +1,3 @@
-
 <div id="employeeModal" class="modal fade">
     <div class="modal-dialog">
         <form method="post" id="employee_form">
@@ -60,8 +59,6 @@
                 </form>
 
                 <div class="modal-footer">
-                    <input type="hidden" name="employee_id" id="employee_id" />
-                    <input type="hidden" name="operation" id="operation" value="Add" />
                     <input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
                 </div>
 

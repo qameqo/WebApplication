@@ -11,9 +11,15 @@ class Manager_emp extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
-    public function FunctionName()
+    public function add_emp()
     {
-        # code...
+        $data = array(
+            'name' => $this->input->post('name');
+        );
+
+        redirect('Manager_emp');
+
+        print_r($_POST);
     }
 
 }
