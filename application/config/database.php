@@ -73,12 +73,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => '45.77.254.49',
+// 	'username' => 'admin_touch',
+// 	'password' => 'touch1234',
+// 	'database' => 'admin_GDragon',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => false,
+// 	'db_debug' => TRUE,
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array()
+// );
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '45.77.254.49',
-	'username' => 'admin_touch',
-	'password' => 'touch1234',
-	'database' => 'admin_GDragon',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'admin_gdragon',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => false,

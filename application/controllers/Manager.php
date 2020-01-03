@@ -6,7 +6,7 @@ class Manager extends CI_Controller {
     public function index()
     {   
         $this->load->view('Header_manage');
-        $this->load->view('Manager');
+        $this->load->view('Manager_view');
         $this->load->view('Footer_manage');
     } 
 
