@@ -5,6 +5,7 @@ class Manager_emp extends CI_Controller {
 
     public function index()
     {
+        $this->load->;
         $this->load->view('Header_manage');
         $this->load->view('Manager_emp_view');
         $this->load->view('Footer_manage');
@@ -32,18 +33,25 @@ class Manager_emp extends CI_Controller {
 
         $query=$this->db->insert('Employee',$data);
 
-        if($query)
-        {
-            echo 'add ok';
-        }
-        else
-        {
-            echo 'add false';
-        }
+        // if($query)
+        // {
+        //     echo 'add ok';
+        // }
+        // else
+        // {
+        //     echo 'add false';
+        // }
 
-        // redirect('Manager_emp');
+        redirect('Manager_emp');
 
     }
+
+    public function fecth_emp()
+    {
+        $query=$this->db->get('Employee');
+        return $query;
+    }
+
 
 }
 
