@@ -39,7 +39,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager/Manager_emp">จัดการข้อมูลพนักงาน</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_emp">จัดการข้อมูลพนักงาน</a>
                             <a class="dropdown-item" href="#">จัดการข้อมูลสมาชิก</a>
                         </div>
                     </li>
