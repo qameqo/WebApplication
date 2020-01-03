@@ -13,13 +13,36 @@ class Manager_emp extends CI_Controller {
 
     public function add_emp()
     {
+
+        // print_r($_POST);
+        
+        // exit;
+
         $data = array(
-            'name' => $this->input->post('name');
+            'Email' => $this->input->post('Email'),
+            'Password' => $this->input->post('Password'),
+            'Fname' => $this->input->post('Fname'),
+            'Lname' => $this->input->post('Lname'),
+            'Address' => $this->input->post('Address'),
+            'Tel' => $this->input->post('Tel'),
+            'Status' => $this->input->post('Status'),
+            'Row' => $this->input->post('Row')
+
         );
 
-        redirect('Manager_emp');
+        $query=$this->db->insert('Employee',$data);
 
-        print_r($_POST);
+        if($query)
+        {
+            echo 'add ok';
+        }
+        else
+        {
+            echo 'add false';
+        }
+
+        // redirect('Manager_emp');
+
     }
 
 }

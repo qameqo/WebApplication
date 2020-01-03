@@ -23,11 +23,9 @@
         $('.table').dataTable();
     } );
 
-    $('#add_button').click(function(){
-        $('#employee_form')[0].reset();
+    $('#adding_btn').click(function(){
+        $('#insert_form')[0].reset();
         $('.modal-title').text("Add Employee");
-        $('#action').val("Add");
-        $('#operation').val("Add");
     });
 
 </script>
