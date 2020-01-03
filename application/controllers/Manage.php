@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Manager extends CI_Controller {
+class Manage extends CI_Controller {
 
     public function index()
     {   
@@ -10,13 +10,7 @@ class Manager extends CI_Controller {
         $this->load->view('Footer_manage');
     } 
 
-    public function Manager_emp()
-    {
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp');
-        $this->load->view('Footer_manage');
-    }
-
+   
 }
 
 /* End of file Hello.php */
