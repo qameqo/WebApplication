@@ -7,7 +7,7 @@
                     <div class="col-md-10">
                         <h3 class="panel-title">ตารางข้อมูลพนักงาน</h3>
                     </div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-2" align ="right">
                         <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-xs">Add</button>
                     </div>
                 </div>
