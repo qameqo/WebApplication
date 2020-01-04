@@ -64,3 +64,57 @@
         </div>
     </div>
 </div>
+
+
+<!-- ******************************************************************************************************************************** -->
+
+
+<div id="viewModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                <h4 class="modal-title">Detail Employee</h4>
+                <button type="button" align="right" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" id="app_detail">
+
+            <?php foreach ($query as $rs) { ?>
+
+                <tr>  
+                    <td width="30%"><label>Name</label></td>  
+                    <td width="70%"><?php echo $rs->id_Employee; ?></td>  
+                </tr>  
+                <tr>  
+                    <td width="30%"><label>Address</label></td>  
+                    <td width="70%">'.$row["address"].'</td>  
+                </tr>  
+                <tr>  
+                    <td width="30%"><label>Gender</label></td>  
+                    <td width="70%">'.$row["gender"].'</td>  
+                </tr>  
+                <tr>  
+                    <td width="30%"><label>Designation</label></td>  
+                    <td width="70%">'.$row["designation"].'</td>  
+                </tr>  
+                <tr>  
+                    <td width="30%"><label>Age</label></td>  
+                    <td width="70%">'.$row["age"].' Year</td>  
+                </tr>
+
+            <?php } ?>
+                        
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

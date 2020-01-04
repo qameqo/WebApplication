@@ -14,8 +14,14 @@ class Manager_emp extends CI_Controller {
     {
         $data['query']=$this->Manager_emp_model->show_emp();
 
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
         $this->load->view('Header_manage');
-        $this->load->view('Manager_emp_view');
+        $this->load->view('Manager_emp_view', $data);
         $this->load->view('Footer_manage');
         $this->load->view('Modal_view');
     }

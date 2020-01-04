@@ -3,7 +3,7 @@ class Manager_emp_model extends CI_Model {
 
     public function add_emp()
     {
-         // print_r($_POST);
+        // print_r($_POST);
         
         // exit;
 
@@ -36,7 +36,7 @@ class Manager_emp_model extends CI_Model {
     public function show_emp()
     {
         $query = $this->db->get('Employee');
-        return $query->$result();
+        return $query->result();
         
     }
 }

@@ -19,33 +19,63 @@
                         <thead>
                             <tr>
 								<th data-column-id="id">ID</th>
+                                <th data-column-id="name">Email</th>
+                                <th data-column-id="name">Password</th>
+
                                 <th data-column-id="name">First name</th>
                                 <th data-column-id="address">Last name</th>
+                                <th data-column-id="name">Address</th>
+                                <th data-column-id="name">Tel.</th>
+
                                 <th data-column-id="row">Row</th>
+                                <th data-column-id="row">Status</th>
+
                                 <th data-column-id="Action">Action</th>
                             </tr>
                         </thead>
 						<tbody>
+
+                            <?php foreach ($query as $rs) { ?>
+
 							<tr>
-								<td>27</td>
-								<td>Donna Snider</td>
-								<td>Customer Support</td>
-								<td>New York</td>
+								<td><?php echo $rs->id_Employee; ?></td>
+								<td><?php echo $rs->Email; ?></td>
+								<td><?php echo $rs->Password; ?></td>
+
+								<td><?php echo $rs->FName; ?></td>
+								<td><?php echo $rs->LName; ?></td>
+								<td><?php echo $rs->Address; ?></td>
+								<td><?php echo $rs->Tel; ?></td>
+
+								<td><?php echo $rs->Row; ?></td>
+								<td><?php echo $rs->Status; ?></td>
+
 								<td>
 								
-                        			<input class="btn btn-success btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="View" id="" >
-                        			<input class="btn btn-warning btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="Edit" id="" >
-                        			<input class="btn btn-danger btn-sm " name="view" type="button" data-toggle="modal" data-target="#dataModal" value="Del" id="" >
+                        			<!-- <input class="btn btn-success btn-sm " name="view_btn" type="button" data-toggle="modal" data-target="#viewModal" value="View" id="view_btn" > -->
+                        			<input class="btn btn-warning btn-sm " name="edit_btn" type="button" data-toggle="modal" data-target="#editModal" value="Edit" id="edit_btn" >
+                        			<input class="btn btn-danger btn-sm " name="del_btn" type="button" data-toggle="modal" data-target="#delModal" value="Del" id="del_btn" >
                     
 								</td>
 							</tr>
+
+                            <?php } ?>
+
 						</tbody>
 						<tfoot>
 							<tr>
-								<th data-column-id="id">ID</th>
+                            <th data-column-id="id">ID</th>
+                                <th data-column-id="name">Email</th>
+                                <th data-column-id="name">Password</th>
+
                                 <th data-column-id="name">First name</th>
                                 <th data-column-id="address">Last name</th>
+                                <th data-column-id="name">Address</th>
+                                <th data-column-id="name">Tel.</th>
+
                                 <th data-column-id="row">Row</th>
+                                <th data-column-id="row">Status</th>
+
                                 <th data-column-id="Action">Action</th>
 							</tr>
 						</tfoot>

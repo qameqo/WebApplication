@@ -17,6 +17,7 @@
     <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
 </body>
 
+
 <script>
 
     $(document).ready( function () {
@@ -25,7 +26,10 @@
 
     $('#adding_btn').click(function(){
         $('#insert_form')[0].reset();
-        $('.modal-title').text("Add Employee");
     });
+
+    // $('#view_btn').click(function(){
+    //     $('#insert_form')[0].reset();
+    // });
 
 </script>
