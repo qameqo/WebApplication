@@ -23,7 +23,7 @@ class Manager_emp extends CI_Controller {
         $this->load->view('Header_manage');
         $this->load->view('Manager_emp_view', $data);
         $this->load->view('Footer_manage');
-        $this->load->view('Modal_view');
+        $this->load->view('Modal_view', $data);
     }
 
     public function add_emp()

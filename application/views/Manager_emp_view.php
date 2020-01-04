@@ -52,9 +52,10 @@
 
 								<td>
 								
-                        			<!-- <input class="btn btn-success btn-sm " name="view_btn" type="button" data-toggle="modal" data-target="#viewModal" value="View" id="view_btn" > -->
-                        			<input class="btn btn-warning btn-sm " name="edit_btn" type="button" data-toggle="modal" data-target="#editModal" value="Edit" id="edit_btn" >
-                        			<input class="btn btn-danger btn-sm " name="del_btn" type="button" data-toggle="modal" data-target="#delModal" value="Del" id="del_btn" >
+                        			<input class="btn btn-success btn-sm " name="view_btn" type="button" data-toggle="modal" data-target="#viewModal" value="View" id="<?php echo $rs->id_Employee; ?>" >
+                                    <!-- <a href="<?php //echo site_url('insertdata/edit/').$rs->id_Employee; ?>">Edit</a> -->
+                        			<!-- <input class="btn btn-warning btn-sm " name="edit_btn" type="button" data-toggle="modal" data-target="#editModal" value="Edit" id="edit_btn" > -->
+                        			<!-- <input class="btn btn-danger btn-sm " name="del_btn" type="button" data-toggle="modal" data-target="#delModal" value="Del" id="del_btn" > -->
                     
 								</td>
 							</tr>

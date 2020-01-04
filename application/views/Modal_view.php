@@ -82,32 +82,53 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body" id="app_detail">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
 
-            <?php foreach ($query as $rs) { ?>
+                        <?php foreach ($query as $rs) { ?>
 
-                <tr>  
-                    <td width="30%"><label>Name</label></td>  
-                    <td width="70%"><?php echo $rs->id_Employee; ?></td>  
-                </tr>  
-                <tr>  
-                    <td width="30%"><label>Address</label></td>  
-                    <td width="70%">'.$row["address"].'</td>  
-                </tr>  
-                <tr>  
-                    <td width="30%"><label>Gender</label></td>  
-                    <td width="70%">'.$row["gender"].'</td>  
-                </tr>  
-                <tr>  
-                    <td width="30%"><label>Designation</label></td>  
-                    <td width="70%">'.$row["designation"].'</td>  
-                </tr>  
-                <tr>  
-                    <td width="30%"><label>Age</label></td>  
-                    <td width="70%">'.$row["age"].' Year</td>  
-                </tr>
+                        <tr>
+                            <td width="30%"><label>ID</label></td>
+                            <td width="70%"><?php echo $rs->id_Employee; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Email</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Password</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>First name</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Last name</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Address</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Tel.</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Row</label></td>
+                            <td width="70%"></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>Status</label></td>
+                            <td width="70%"></td>
+                        </tr>
 
-            <?php } ?>
-                        
+
+                        <?php } ?>
+                    </table>
+                </div>
+
             </div>
 
             <!-- Modal footer -->
@@ -117,4 +138,3 @@
         </div>
     </div>
 </div>
-
