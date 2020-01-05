@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <label for="Email">Email address</label>
                         <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp"
-                            placeholder="Enter email">
+                            placeholder="Enter email" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
@@ -24,29 +24,29 @@
                     <div class="form-group">
                         <label for="Password">Password</label>
                         <input type="password" class="form-control" name="Password" id="Password"
-                            placeholder="Password">
+                            placeholder="Password" required>
                     </div>
 
                     <div class="form-row">
                         <div class="col">
-                            <input type="text" name="Fname" id="Fname" class="form-control" placeholder="First name">
+                            <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" required>
                         </div>
                         <div class="col">
-                            <input type="text" name="Lname" id="Lname" class="form-control" placeholder="Last name">
+                            <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="Address">Address</label>
-                        <textarea class="form-control" name="Address" id="Address" rows="3"></textarea>
+                        <textarea class="form-control" name="Address" id="Address" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="Tel">Tel.</label>
-                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567">
+                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required>
                     </div>
 
-                    <input type="hidden" name="Status" id="Status" value="1" class="form-control">
+                    <input type="hidden" name="Status" id="Status" value="1" class="form-control" required>
 
                     <div class="form-group">
                         <label for="Row">Row select</label>
@@ -65,76 +65,3 @@
     </div>
 </div>
 
-
-<!-- ******************************************************************************************************************************** -->
-
-
-<div id="viewModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-
-                <h4 class="modal-title">Detail Employee</h4>
-                <button type="button" align="right" class="close" data-dismiss="modal">&times;</button>
-
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body" id="app_detail">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-
-                        <?php foreach ($query as $rs) { ?>
-
-                        <tr>
-                            <td width="30%"><label>ID</label></td>
-                            <td width="70%"><?php echo $rs->id_Employee; ?></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Email</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Password</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>First name</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Last name</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Address</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Tel.</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Row</label></td>
-                            <td width="70%"></td>
-                        </tr>
-                        <tr>
-                            <td width="30%"><label>Status</label></td>
-                            <td width="70%"></td>
-                        </tr>
-
-
-                        <?php } ?>
-                    </table>
-                </div>
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>

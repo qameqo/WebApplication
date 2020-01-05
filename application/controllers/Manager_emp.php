@@ -7,7 +7,6 @@ class Manager_emp extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Manager_emp_model');
-        // Your own constructor code
     }
 
     public function index()
@@ -23,13 +22,64 @@ class Manager_emp extends CI_Controller {
         $this->load->view('Header_manage');
         $this->load->view('Manager_emp_view', $data);
         $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view', $data);
     }
+
+    public function edit($id_Employee)
+    {
+        $data['rs_edit']=$this->Manager_emp_model->read($id_Employee);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_emp_edit_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+    }
+
+    public function show($id_Employee)
+    {
+        $data['rs_edit']=$this->Manager_emp_model->read($id_Employee);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_emp_show_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+    }
+    
 
     public function add_emp()
     {
         $this->Manager_emp_model->add_emp();
     }
+
+    public function edit_emp()
+    {
+        $this->Manager_emp_model->edit_emp();
+
+        // echo '<pre>';
+        // print_r($_POST);
+        // echo '</pre>';
+    }
+
+    public function del_emp($id_Employee)
+    {
+        $this->Manager_emp_model->del_emp($id_Employee);
+    }
+
 }
 
 /* End of file Hello.php */
