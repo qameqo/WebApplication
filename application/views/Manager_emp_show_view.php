@@ -50,7 +50,7 @@
                         </table>
                     </div>
 
-                    <button type="submit" class="btn btn-success">Edit</button>
+                    <a href="<?php echo site_url('Manager_emp'); ?>" class="btn btn-default mt-4">Back</a>
                 </form>
             </div>
         </div>

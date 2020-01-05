@@ -38,7 +38,7 @@
                             จัดการข้อมูลบุลคล
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                            <a class="dropdown-item" href="#">แก้ไขข้อมูลส่วนตัว</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager">แก้ไขข้อมูลส่วนตัว</a>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_emp">จัดการข้อมูลพนักงาน</a>
                             <a class="dropdown-item" href="#">จัดการข้อมูลสมาชิก</a>
                         </div>
@@ -52,7 +52,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="#">จัดการข้อมูลรถยนต์</a>
-                            <a class="dropdown-item" href="#">จัดการข้อมูลราคารุถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_price">จัดการข้อมูลราคารถยนต์</a>
                         </div>
                     </li>
                 </ul>

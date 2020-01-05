@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ตารางข้อมูลพนักงาน</h3>
+                        <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
                     </div>
                     <div class="col-md-2" align ="right">
                         <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-sm">Add</button>
@@ -20,10 +20,10 @@
                             <tr>
 								<th data-column-id="id">ID</th>
 
-                                <th data-column-id="name">First name</th>
-                                <th data-column-id="address">Last name</th>
-                                <th data-column-id="row">Row</th>
-                                <th data-column-id="row">Status</th>
+                                <th data-column-id="Model">Model</th>
+                                <th data-column-id="Type">Type</th>
+                                <th data-column-id="Brand">Brand</th>
+                                <th data-column-id="Price">Price</th>
 
                                 <th data-column-id="Action">Action</th>
                             </tr>
@@ -33,18 +33,17 @@
                             <?php foreach ($query as $rs) { ?>
 
 							<tr>
-								<td><?php echo $rs->id_Employee; ?></td>
+								<td><?php echo $rs->id_car_price ?></td>
 
-								<td><?php echo $rs->FName; ?></td>
-								<td><?php echo $rs->LName; ?></td>
-								<td><?php echo $rs->Row; ?></td>
-								<td><?php echo $rs->Status; ?></td>
+								<td><?php echo $rs->Model; ?></td>
+								<td><?php echo $rs->Type; ?></td>
+								<td><?php echo $rs->Brand; ?></td>
+                                <td><?php echo $rs->Price; ?></td>
 
 								<td>
 								
-                                    <a href="<?php echo site_url('Manager_emp/show/').$rs->id_Employee; ?>" class="btn btn-default btn-sm">View</a>
-                                    <a href="<?php echo site_url('Manager_emp/edit/').$rs->id_Employee; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?php echo site_url('Manager_emp/del_emp/').$rs->id_Employee; ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_car_price ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="<?php //echo site_url('Manager_emp/del_emp/').$rs->id_car_price ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
                     
 								</td>
 							</tr>
@@ -56,10 +55,10 @@
 							<tr>
                                 <th data-column-id="id">ID</th>
 
-                                <th data-column-id="name">First name</th>
-                                <th data-column-id="address">Last name</th>
-                                <th data-column-id="row">Row</th>
-                                <th data-column-id="row">Status</th>
+                                <th data-column-id="Model">Model</th>
+                                <th data-column-id="Type">Type</th>
+                                <th data-column-id="Brand">Brand</th>
+                                <th data-column-id="Price">Price</th>
 
                                 <th data-column-id="Action">Action</th>
 							</tr>
