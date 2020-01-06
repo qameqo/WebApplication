@@ -22,6 +22,11 @@ class Manager extends CI_Controller {
             'Tel' =>  $this->input->post("Tel"),
         );
         $this->db->update('Employee', $object);    
+
+                echo "<script>";
+                echo "alert('บันทึกข้อมูลเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Manager ';";
+                echo "</script>";
         
         $this->load->view('Header_manage');
         $this->load->view('Manager_view');

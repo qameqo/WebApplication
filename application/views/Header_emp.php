@@ -70,6 +70,8 @@
                 <button type="button" class="btn btn-primary">
                     Notifications <span class="badge badge-default">4</span>
                 </button>
+
+                <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
             </div>
         </div>
     </nav>
