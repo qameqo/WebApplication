@@ -26,7 +26,6 @@ class OwnerManage extends CI_Controller {
             'Tel' =>  $this->input->post("tel"),
         );
         $this->db->update('Member', $object);
-        
     }
 
 }
