@@ -6,9 +6,9 @@
 
                 <form action="<?php echo site_url('Manager/update'); ?>" method="POST" class="form-horizontal">
 
-                <?php $this->db->where('Email', $this->session->userdata('Email'));
+                <?php $this->db->where('id_Employee', $this->session->userdata('id_Employee'));
 							$query = $this->db->get('Employee', 1);
-							$email = $this->input->post('email');
+							$id_Employee = $this->input->post('id_Employee');
                             
                             if($query->num_rows() ==1)
                             {
@@ -17,7 +17,7 @@
                                 
                             }else
                             {
-                                $this->db->where('Email', $this->session->userdata('Email'));
+                                $this->db->where('id_Employee', $this->session->userdata('id_Employee'));
                                 $query = $this->db->get('Employee', 1);
                                 if($query->num_rows() ==1)
                                 {
@@ -38,15 +38,6 @@
 					 ?>
 
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="">
-
-                    <div class="form-group">
-                        <label for="Email">Email address</label>
-                        <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp"
-                            placeholder="Enter email" value="<?php echo $data['Email'];?>">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                            anyone
-                            else.</small>
-                    </div>
 
                     <div class="form-group">
                         <label for="Password">Password</label>

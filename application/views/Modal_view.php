@@ -14,11 +14,8 @@
                     <input type="hidden" name="id_emp" id="id_emp" class="form-control">
 
                     <div class="form-group">
-                        <label for="Email">Email address</label>
-                        <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp"
-                            placeholder="Enter email" required>
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
+                        <label for="Username">Username</label>
+                        <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" required>
                     </div>
 
                     <div class="form-group">
