@@ -6,9 +6,9 @@
 
                 <form action="<?php echo site_url('Manager/update'); ?>" method="POST" class="form-horizontal">
 
-                <?php $this->db->where('Username', $this->session->userdata('Username'));
+                <?php $this->db->where('id_Employee', $this->session->userdata('id_Employee'));
 							$query = $this->db->get('Employee', 1);
-							$Username = $this->input->post('Username');
+							$id_Employee = $this->input->post('id_Employee');
                             
                             if($query->num_rows() ==1)
                             {
@@ -17,7 +17,7 @@
                                 
                             }else
                             {
-                                $this->db->where('Username', $this->session->userdata('Username'));
+                                $this->db->where('id_Employee', $this->session->userdata('id_Employee'));
                                 $query = $this->db->get('Employee', 1);
                                 if($query->num_rows() ==1)
                                 {
@@ -38,13 +38,6 @@
 					 ?>
 
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="">
-
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="Username">Username</label>
-                            <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" value="<?php echo $data['Username'];?>">
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <label for="Password">Password</label>
