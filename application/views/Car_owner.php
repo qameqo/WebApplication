@@ -1,6 +1,5 @@
 <div class="col-md-13 text-center">
 	<h1 class="h1" style="color:#000000">ลงทะเบียนรถยนต์</h1>
-
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">
 			<form class="form-signin" id="owner" name="owner" method="post" enctype="multipart/form-data"
@@ -165,105 +164,16 @@
 							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno" required>
 						</div>
 						</div>
+						<br>
+						<div class="row">
+								<div class="col-sm">
+									<button class="btn btn-Danger btn-lg"
+										type="submit">ขั้นตอนต่อไป</button>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-13 text-center">
-				<div class="row justify-content-center">
-					<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
-						<div class="container">
-						</div>
-						<div class="row">
-							<div class="col-sm">
-								<H3>รูปรถยนต์</H3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm">
-								กรุณาอัปโหลดรูปภาพของรถยนต์
-							</div>
-						</div>
-						<div class="col-sm">
-							<div class="box__input">
-								<span class="btn btn-raised btn-white btn-file">
-									<label for="file"><strong>รูปที่ 1</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="piccar1" id="file" required />
-								</span>
-							</div>
-						</div>
-						<div class="col-sm">
-							<div class="box__input">
-								<span class="btn btn-raised btn-white btn-file">
-									<label for="file"><strong>รูปที่ 1</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="piccar2" id="file"  required />
-								</span>
-							</div>
-						</div>
-						<div class="row">
-						</div>
-						<div class="col-sm">
-							<div class="box__input">
-								<span class="btn btn-raised btn-white btn-file">
-									<label for="file"><strong>รูปที่ 3</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="piccar3" id="file" required />
-								</span>
-							</div>
-						</div>
-						<div class="col-sm">
-							<div class="box__input">
-								<span class="btn btn-raised btn-white btn-file">
-									<label for="file"><strong>รูปที่ 4</strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="piccar4" id="file"  required />
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-13 text-center">
-					<div class="row justify-content-center">
-						<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
-							<div class="container">
-							</div>
-							<div class="row">
-								<div class="col-sm">
-									<H3>เอกสารรถยนต์</H3>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm">
-									พ.ร.บ.รถยนต์
-								</div>
-								<div class="col-sm">
-									เล่มทะเบียนรถยนต์
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm">
-									<div class="box__input">
-										<span class="btn btn-raised btn-white btn-file">
-											<label for="file"><strong>รูปพ.ร.บ.</strong><span
-													class="box__dragndrop"></label>
-											<input class="box__file" type="file" name="prb" id="file" required />
-										</span>
-									</div>
-								</div>
-								<div class="col-sm">
-									<div class="box__input">
-										<span class="btn btn-raised btn-white btn-file">
-											<label for="file"><strong>รูปเล่มทะเบียน</strong><span
-													class="box__dragndrop"></label>
-											<input class="box__file" type="file" name="bookcar" id="file" required />
-										</span>
-									</div>
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<div class="col-sm">
-									<button class="btn btn-Danger btn-lg"
-										type="submit">ยืนยันการลงทะเบียนรถยนต์</button>
-								</div>
-							</div>
 						</div>
 					</div>
 					</form>

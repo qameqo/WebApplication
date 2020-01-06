@@ -66,7 +66,8 @@
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Tel.</label>
-						<input name="tel" type="text" id="tel" class="form-control" placeholder="" required>
+						<input name="tel" type="tel" id="tel" class="form-control" placeholder="" required 
+						pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
 					</div>
 					<div class="col-sm" style="padding-top: 30px;">
 						<button class="btn btn-success" type="submit"> Register</botton>

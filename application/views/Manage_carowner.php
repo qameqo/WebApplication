@@ -99,7 +99,7 @@
             <div class="row"> 
 			<div class="col-sm">
 				<label class="bmd-label-floating">Tel.</label>
-				<input name="tel" type="text" id="tel" class="form-control" placeholder=""
+				<input name="tel" type="tel" id="tel" class="form-control" placeholder="" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
 				value="<?php echo $data['Tel'];?>">
 			</div>
 
