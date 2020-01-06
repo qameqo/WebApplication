@@ -24,8 +24,8 @@
 			<div class="form-group">
 
 				<div class="form-group bmd-form-group">
-					<label class="bmd-label-floating">Email Address</label>
-					<input type="email" id="email" class="form-control" placeholder="" required name="email">
+					<label class="bmd-label-floating">Username</label>
+					<input type="text" id="username" class="form-control" placeholder="" required name="username">
 				</div>
 
 				<div class="form-group bmd-form-group">

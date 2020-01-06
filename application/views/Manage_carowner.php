@@ -22,9 +22,9 @@
 			action="<?php echo base_url(); ?>OwnerManage/update">
 			<div class="row">
 			<div class="col-sm">
-				<?php $this->db->where('Email', $this->session->userdata('Email'));
+				<?php $this->db->where('Username', $this->session->userdata('Username'));
 							$query = $this->db->get('Member', 1);
-							$email = $this->input->post('email');
+							$Username = $this->input->post('username');
                             
         if($query->num_rows() ==1)
         {
@@ -33,7 +33,7 @@
             
         }else
         {
-            $this->db->where('Email', $this->session->userdata('Email'));
+            $this->db->where('Username', $this->session->userdata('Username'));
             $query = $this->db->get('Employee', 1);
             if($query->num_rows() ==1)
             {
@@ -43,7 +43,7 @@
                 {
                    
                 }else{
-                    
+					
                 }
             }else
             {
@@ -52,9 +52,9 @@
             
         }
 					 ?>
-				<label class="bmd-label-floating">Email Address</label>
+				<label class="bmd-label-floating">Username</label>
 				<input name="email" type="email" id="email" class="form-control"
-					value="<?php echo $data['Email'];?>">
+					value="<?php echo $data['Username'];?>">
 			</div>
 			
 			<div class="col-sm">

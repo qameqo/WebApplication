@@ -16,9 +16,9 @@ class Login extends CI_Controller {
 
     public function Loginn()
     {
-        $email = $this->input->post('email');
+        $Username = $this->input->post('username');
         $password = $this->input->post('password');
-        $this->db->where('Email', $email);
+        $this->db->where('Username', $Username);
         $this->db->where('password', $password);
         $query = $this->db->get('Member', 1);
         if($query->num_rows() ==1)
@@ -28,7 +28,7 @@ class Login extends CI_Controller {
             redirect('Firstpage'); //เจ้าของรถ
         }else
         {
-            $this->db->where('Email', $email);
+            $this->db->where('Username', $Username);
             $this->db->where('password', $password);
             $query = $this->db->get('Employee', 1);
             if($query->num_rows() ==1)

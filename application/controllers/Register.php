@@ -5,21 +5,20 @@ class Register extends CI_Controller {
 
     public function index()
     {
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('email','');
+       
         $this->load->view('header_logre');
         $this->load->view('Register');
         $this->load->view('footer');
     }
     public function insert()
     {   
-        $email = $this->input->post('email');
-        $this->db->where('Email', $email);
+        $Username = $this->input->post('username');
+        $this->db->where('Username', $Username);
         $query = $this->db->get('Member', 1);
         if($query->num_rows() ==1)
         {
             echo "<script>";
-            echo "alert('อีเมลนี้มีคนใช้แล้ว');";
+            echo "alert('Username นี้มีผู้ใช้แล้ว');";
             echo "window.location.href = '". base_url(). "Register ';";
             echo "</script>";
             
@@ -31,7 +30,7 @@ class Register extends CI_Controller {
        /*  $da = $this->input->post("date");
         $date = date("Y-m-d",$da); */
             $object = array(
-            'Email' =>  $this->input->post("email"),
+            'Username' =>  $this->input->post("username"),
             'Password' =>  $this->input->post("password"),
             'FName' =>  $this->input->post("fname"),
             'LName' =>  $this->input->post("lname"),

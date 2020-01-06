@@ -25,8 +25,8 @@
 				<H4>Register</H4>
 				<div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">Email Address</label>
-						<input name="email" type="email" id="email" class="form-control" placeholder="" required>
+						<label class="bmd-label-floating">Username</label>
+						<input name="username" type="text" id="username" class="form-control" placeholder="" required>
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Password</label>
