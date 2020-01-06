@@ -8,6 +8,9 @@
   <script src="<?php echo base_url(); ?>assets argon/js/argon.js?v=1.1.0"></script>
   <!--Datepicker -->
   <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
+
+  <script src="<?php echo base_url('/EZview/EZView.js'); ?>"></script>
+  <script src="<?php echo base_url('/EZview/draggable.js'); ?>"></script>
   </body>
 <script type="text/javascript">
 
@@ -40,7 +43,13 @@
         input.attr("type", "password");
 }
 });
-
+ 
   </script>
+  <script>
+  $(function(){
+
+  $('img').EZView();
+});
+</script>
   
 </html>

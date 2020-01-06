@@ -4,13 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Owner2 extends CI_Controller {
 
     
-    public function index()
+    public function show($id)
     {
+        $data['id'] = $id;
         $this->load->view('header');
-        $this->load->view('Car_owner2');      
+        $this->load->view('Car_owner2',$data);      
         $this->load->view('footer');
         
     }
+   
     public function up()
     {
         
@@ -31,9 +33,11 @@ class Owner2 extends CI_Controller {
             $filename = $data['file_name'];
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
-                                'Name_image'=>$filename
+                                'Name_image'=>$filename,
+                                'idCarregis'=>$this->input->post('idCarregis')
                             );
             $this->db->insert('Images', $arr);
+            redirect('Owner2/show/'.$this->input->post('idCarregis'));
         }
         
 

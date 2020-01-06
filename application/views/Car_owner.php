@@ -164,16 +164,22 @@
 							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno" required>
 						</div>
 						</div>
-						<br>
-						<div class="row">
-								<div class="col-sm">
-									<button class="btn btn-Danger btn-lg"
-										type="submit">ขั้นตอนต่อไป</button>
-								</div>
-							</div>
+
 					</div>
+					
 				</div>
 			</div>
+			
+							<div class="row mb-5">
+                        <div class="col-sm">
+							<div class="box__input">
+                            <button class="btn btn-Danger btn-lg"
+										type="submit">ยืนยันการลงทะเบียนรถยนต์</button>
+							</div>
+						</div>
+							</div>
+                            </form>
+                
 						</div>
 					</div>
 					</form>
