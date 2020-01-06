@@ -32,7 +32,7 @@
 								
 							 ?><tr>
 								<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>" style="width: 50px; height: 50px;" /></td>
-
+								
 								<td><a href="<?php //echo site_url('Manager_emp/del_emp/').$rs->id_Employee; ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a></td>
 
 								</tr>
