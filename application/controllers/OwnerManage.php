@@ -13,11 +13,11 @@ class OwnerManage extends CI_Controller {
     public function update()
     {
        
-        $this->db->where('Username', $this->session->userdata('Username'));
+        $this->db->where('id_Member', $this->session->userdata('id_Member'));
         $date= $this->input->post("date");
         $datee= date("Y-m-d", strtotime($date));
         $object = array(
-            'Username' =>  $this->input->post("username"),
+            /* 'Username' =>  $this->input->post("username"), */
             'Password' =>  $this->input->post("password"),
             'FName' =>  $this->input->post("fname"),
             'LName' =>  $this->input->post("lname"),

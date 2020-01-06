@@ -22,9 +22,9 @@
 			action="<?php echo base_url(); ?>OwnerManage/update">
 			<div class="row">
 			<div class="col-sm">
-				<?php $this->db->where('Username', $this->session->userdata('Username'));
+				<?php $this->db->where('id_Member', $this->session->userdata('id_Member'));
 							$query = $this->db->get('Member', 1);
-							$Username = $this->input->post('username');
+							$Username = $this->input->post('id_Member');
                             
         if($query->num_rows() ==1)
         {
@@ -33,7 +33,7 @@
             
         }else
         {
-            $this->db->where('Username', $this->session->userdata('Username'));
+            $this->db->where('id_Member', $this->session->userdata('id_Member'));
             $query = $this->db->get('Employee', 1);
             if($query->num_rows() ==1)
             {
@@ -52,35 +52,29 @@
             
         }
 					 ?>
-				<label class="bmd-label-floating">Username</label>
-				<input name="username" type="text" id="username" class="form-control"
-					value="<?php echo $data['Username'];?>">
+				<label class="bmd-label-floating">First Name</label>
+				<input name="fname" type="text" id="fname" class="form-control" placeholder=""
+				value="<?php echo $data['FName'];?>">
 			</div>
 			
 			<div class="col-sm">
-				<label class="bmd-label-floating">Password</label>
-			  <input id="password-field" type="password" class="form-control" name="password" 
-			  value="<?php echo $data['Password'];?>">
-              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+			<label class="bmd-label-floating">Last Name</label>
+				<input name="lname" type="text" id="lname" class="form-control" placeholder=""
+				value="<?php echo $data['LName'];?>">
 					
 			</div>
 			</div>
 			<div class="row">
 			<div class="col-sm">
-				<label class="bmd-label-floating">First Name</label>
-				<input name="fname" type="text" id="fname" class="form-control" placeholder=""
-				value="<?php echo $data['FName'];?>">
+			<label class="bmd-label-floating">Password</label>
+			  <input id="password-field" type="password" class="form-control" name="password" 
+			  value="<?php echo $data['Password'];?>">
+              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+					
 			</div>
 
 			<div class="col-sm">
-				<label class="bmd-label-floating">Last Name</label>
-				<input name="lname" type="text" id="lname" class="form-control" placeholder=""
-				value="<?php echo $data['LName'];?>">
-			</div>
-			</div>
-			<div class="row">
-			<div class="col-sm">
-				<label class="bmd-label-floating">Date of Birth</label>
+			<label class="bmd-label-floating">Date of Birth</label>
 				<div class="input-group input-group-alternative">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -90,19 +84,23 @@
 
 				</div>
 			</div>
+			</div>
+			<div class="row">
 			<div class="col-sm">
-				<label class="bmd-label-floating">Address</label>
+			<label class="bmd-label-floating">Address</label>
 				<input name="address" type="text" id="address" class="form-control" placeholder=""
 				value="<?php echo $data['Address'];?>">
 			</div>
-			</div>
-            <div class="row"> 
 			<div class="col-sm">
 				<label class="bmd-label-floating">Tel.</label>
 				<input name="tel" type="tel" id="tel" class="form-control" placeholder="" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
 				value="<?php echo $data['Tel'];?>">
 			</div>
-
+			</div>
+            <div class="row"> 
+			<div class="col-sm" style="padding-top: 30px;">
+			<button class="btn btn-success" type="submit">ยืนยัน</botton>
+			</div>
 			<!-- <input type="hidden" class="form-control" id="type" value="CarOwner">
 				<div class="fileinput fileinput-new " data-provides="fileinput">
 					<div>
@@ -110,9 +108,6 @@
 							<input type="file" name="..." />
 					</div>
 				</div> -->
-				<div class="col-sm" style="padding-top: 30px;">
-			<button class="btn btn-success" type="submit">ยืนยัน</botton>
-			</div>
 		</form>
 	</div>
 </div>
