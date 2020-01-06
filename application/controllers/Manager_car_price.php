@@ -43,24 +43,6 @@ class Manager_car_price extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
-    public function show($id_Car_price)
-    {
-        $data['rs_edit']=$this->Manager_car_price_model->read($id_Car_price);
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-
-        // exit;
-
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp_show_view', $data);
-        $this->load->view('Footer_manage');
-        $this->load->view('Script_manager_emp');
-        $this->load->view('Modal_view');
-    }
-    
-
     public function add_car_price()
     {
         $this->Manager_car_price_model->add_car_price();

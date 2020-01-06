@@ -27,11 +27,11 @@
 
                     <div class="form-row">
                         <div class="col">
-                        <label for="FName">First name</label>
+                            <label for="FName">First name</label>
                             <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" value="<?php echo $rs_edit->FName; ?>">
                         </div>
                         <div class="col">
-                        <label for="LName">Last name</label>
+                            <label for="LName">Last name</label>
                             <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->LName; ?>">
                         </div>
                     </div>
