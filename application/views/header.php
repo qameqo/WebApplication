@@ -18,7 +18,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url("Firstpage");?>">G Dragon Autotech</a>
+        <a class="navbar-brand" href="<?php echo base_url("Firstpage");?>" >G Dragon Autotech</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
