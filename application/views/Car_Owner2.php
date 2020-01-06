@@ -8,7 +8,7 @@
 						<div class="container mb-5">
 						<?php 
 						$this->db->where('idCarregis', $id);
-						$query = $this->db->get('Images', 10);
+						$query = $this->db->get('Images', 7);
 						$qi = $query->result_array();
 						
 					
@@ -49,19 +49,19 @@
 						</div>
 						<div class="row">
 							<div class="col-sm">
-								<H3>รูปรถยนต์รูปพ.ร.บ.และรูปเล่มทะเบียนรถยนต์</H3>
+								<H5>รูปรถยนต์ 5 รูป รูปพ.ร.บ. 1 รูป และรูปเล่มทะเบียนรถยนต์ 1 รูป</H5>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm">
-								กรุณาอัปโหลดรูปภาพของรถยนต์
+								กรุณาอัปโหลดรูปภาพตามจำนวนที่ระบุ
 							</div>
 						</div>
 						<div class="col-sm">
 							<div class="box__input">
 								<span class="btn btn-raised btn-white btn-file">
 									<label for="file"><strong></strong><span class="box__dragndrop"></label>
-									<input class="box__file" type="file" name="file" id="piccar1" required />
+									<input class="box__file" type="file" name="file" id="piccar1" required/>
 								</span>
 							</div>
 						</div>
@@ -69,11 +69,20 @@
                         </span>
                         <br>
 						<input type="hidden" value="<?php echo $id; ?>" name="idCarregis" id="idCarregis"/>
+						
                         <div class="col-sm">
 							<div class="box__input">
                             <button class="btn btn-Danger btn-lg" 
 										type="submit">อัปโหลด</button>
 							</div>
+						</div>
+						<br>
+						<div class="col-sm">
+							<div class="box__input">
+                            <a class="btn btn-Danger "href="<?php echo base_url('Firstpage'); ?>" onclick="return confirm('ยืนยันการอัปโหลดรูป ?');">
+							<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
+							</div>
+						</div>
 						</div>
 							</div>
                             </form>

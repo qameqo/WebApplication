@@ -39,7 +39,6 @@ class Owner2 extends CI_Controller {
             $this->db->insert('Images', $arr);
             redirect('Owner2/show/'.$this->input->post('idCarregis'));
         }
-        
 
     }
         

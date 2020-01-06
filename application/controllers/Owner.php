@@ -43,6 +43,7 @@ class Owner extends CI_Controller {
             'License' =>  $this->input->post("license"),
             'Yearlicense' =>  $this->input->post("licenseyear"),
             'Carbody' =>  $this->input->post("bodyno"),
+            'Status' => "ไม่พร้อม",
                                 /* "piccar1"=>$filename,
                                 "piccar2"=>$filename,
                                 "piccar3"=>$filename,

@@ -173,8 +173,7 @@
 							<div class="row mb-5">
                         <div class="col-sm">
 							<div class="box__input">
-                            <button class="btn btn-Danger btn-lg"
-										type="submit">ยืนยันการลงทะเบียนรถยนต์</button>
+                            <button class="btn btn-Danger btn-lg" type="submit">ขั้นตอนต่อไป</button>
 							</div>
 						</div>
 							</div>
