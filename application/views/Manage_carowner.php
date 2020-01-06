@@ -53,7 +53,7 @@
         }
 					 ?>
 				<label class="bmd-label-floating">Username</label>
-				<input name="email" type="email" id="email" class="form-control"
+				<input name="username" type="text" id="username" class="form-control"
 					value="<?php echo $data['Username'];?>">
 			</div>
 			
