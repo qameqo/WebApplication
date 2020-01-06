@@ -10,15 +10,10 @@ class Manager_car_price_model extends CI_Model
         // exit;
 
         $data = array(
-            'Email' => $this->input->post('Email'),
-            'Password' => $this->input->post('Password'),
-            'FName' => $this->input->post('FName'),
-            'LName' => $this->input->post('LName'),
-            'Address' => $this->input->post('Address'),
-            'Tel' => $this->input->post('Tel'),
-            'Status' => $this->input->post('Status'),
-            'Row' => $this->input->post('Row')
-
+            'Brand' => $this->input->post('Brand'),
+            'Model' => $this->input->post('Model'),
+            'Type' => $this->input->post('Type'),
+            'Price' => $this->input->post('Price'),
         );
 
         $query=$this->db->insert('Car_price',$data);
@@ -35,14 +30,10 @@ class Manager_car_price_model extends CI_Model
         $this->db->where('id_Car_price', $this->input->post('id_Car_price'));
 
         $data = array(
-            'Email' => $this->input->post('Email'),
-            'Password' => $this->input->post('Password'),
-            'FName' => $this->input->post('FName'),
-            'LName' => $this->input->post('LName'),
-            'Address' => $this->input->post('Address'),
-            'Tel' => $this->input->post('Tel'),
-            'Status' => $this->input->post('Status'),
-            'Row' => $this->input->post('Row')
+            'Brand' => $this->input->post('Brand'),
+            'Model' => $this->input->post('Model'),
+            'Type' => $this->input->post('Type'),
+            'Price' => $this->input->post('Price'),
         );
 
         

@@ -8,10 +8,9 @@
         $('#insert_form')[0].reset();
     });
 
-    $('#view_btn').click(function(){
-
+    $('#adding_btn_car_price').click(function(){
+        $('#insert_form')[0].reset();
     });
-
 
 
 </script>
