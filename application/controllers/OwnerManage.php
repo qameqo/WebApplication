@@ -25,6 +25,10 @@ class OwnerManage extends CI_Controller {
             'DateofBirth' => $datee,
             'Tel' =>  $this->input->post("tel"),
         );
+                echo "<script>";
+                echo "alert('บันทึกข้อมูลเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Firstpage ';";
+                echo "</script>";
         $this->db->update('Member', $object);
     }
 

@@ -40,7 +40,7 @@ class Register extends CI_Controller {
             'Tel' =>  $this->input->post("tel"),
             'Type' => "เจ้าของรถ"
         );
-        echo "<script>";
+            echo "<script>";
             echo "alert('สมัครสมาชิกเรียบร้อย');";
             echo "window.location.href = '". base_url(). "Login ';";
             echo "</script>";
