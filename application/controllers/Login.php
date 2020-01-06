@@ -40,12 +40,12 @@ class Login extends CI_Controller {
                     redirect('Manager'); //เจ้าของร้าน
                 }else{
                     
-                    redirect('Manager_emp'); //พนักงาน
+                    redirect('Emp'); //พนักงาน
                 }
             }else
             {
                 echo "<script>";
-                echo "alert('ไม่พบข้อมูล');";
+                echo "alert('ไม่พบรหัสผู้ใช้งาน');";
                 echo "window.location.href = '". base_url(). "Login ';";
                 echo "</script>";
             }
