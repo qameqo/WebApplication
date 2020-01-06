@@ -14,14 +14,18 @@ class Manager extends CI_Controller {
     { 
         $this->db->where('Email', $this->session->userdata('Email'));
         $object = array(
-            'Email' =>  $this->input->post("email"),
-            'Password' =>  $this->input->post("password"),
-            'FName' =>  $this->input->post("fname"),
-            'LName' =>  $this->input->post("lname"),
-            'Address' =>  $this->input->post("address"),
-            'Tel' =>  $this->input->post("tel"),
+            'Email' =>  $this->input->post("Email"),
+            'Password' =>  $this->input->post("Password"),
+            'FName' =>  $this->input->post("FName"),
+            'LName' =>  $this->input->post("LName"),
+            'Address' =>  $this->input->post("Address"),
+            'Tel' =>  $this->input->post("Tel"),
         );
-        $this->db->update('Member', $object);     
+        $this->db->update('Employee', $object);    
+        
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_view');
+        $this->load->view('Footer_manage');
     }
    
 }
