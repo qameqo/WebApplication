@@ -6,7 +6,7 @@
 
                 <form action="<?php echo site_url('Manager_car_price/edit_emp'); ?>" method="POST" class="form-horizontal">
 
-                    <input type="hidden" name="id_Car_price" id="id_Car_price" class="form-control" value="<?php// echo $rs_edit->id_Car_price; ?>">
+                    <input type="hidden" name="id_Car_price" id="id_Car_price" class="form-control" value="<?php /* echo $rs_edit->id_Car_price; */ ?>">
 
                     <div class="form-row">
                         <div class="col">

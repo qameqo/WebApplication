@@ -13,11 +13,24 @@ class Register extends CI_Controller {
     }
     public function insert()
     {   
-        $date= $this->input->post("date");
-        $datee= date("Y-m-d", strtotime($date));
+        $email = $this->input->post('email');
+        $this->db->where('Email', $email);
+        $query = $this->db->get('Member', 1);
+        if($query->num_rows() ==1)
+        {
+            echo "<script>";
+            echo "alert('อีเมลนี้มีคนใช้แล้ว');";
+            echo "window.location.href = '". base_url(). "Register ';";
+            echo "</script>";
+            
+            
+        }else
+        {
+            $date= $this->input->post("date");
+            $datee= date("Y-m-d", strtotime($date));
        /*  $da = $this->input->post("date");
         $date = date("Y-m-d",$da); */
-        $object = array(
+            $object = array(
             'Email' =>  $this->input->post("email"),
             'Password' =>  $this->input->post("password"),
             'FName' =>  $this->input->post("fname"),
@@ -27,8 +40,13 @@ class Register extends CI_Controller {
             'Tel' =>  $this->input->post("tel"),
             'Type' => "เจ้าของรถ"
         );
+        echo "<script>";
+            echo "alert('สมัครสมาชิกเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Login ';";
+            echo "</script>";
         $this->db->insert('Member', $object);
-        redirect('Login');
+       
+        }
     }
 }
 

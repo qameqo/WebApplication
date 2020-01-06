@@ -37,14 +37,17 @@ class Login extends CI_Controller {
                 $this->session->set_userdata($data);
                 if($this->session->userdata('Row') =="เจ้าของร้าน")
                 {
-                    redirect('Manage'); //เจ้าของร้าน
+                    redirect('Manager'); //เจ้าของร้าน
                 }else{
-                    //echo "พนักงาน";
-                    redirect(''); //พนักงาน
+                    
+                    redirect('Manager_emp'); //พนักงาน
                 }
             }else
             {
-                echo "ไม่เจอ";
+                echo "<script>";
+                echo "alert('ไม่พบข้อมูล');";
+                echo "window.location.href = '". base_url(). "Login ';";
+                echo "</script>";
             }
             
         }
