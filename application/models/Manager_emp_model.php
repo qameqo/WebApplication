@@ -23,7 +23,12 @@ class Manager_emp_model extends CI_Model
 
         $query=$this->db->insert('Employee',$data);
 
-        redirect('Manager_emp');
+        echo "<script>";
+        echo "alert('บันทึกข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_emp ';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
     }
 
     public function edit_emp()
@@ -57,7 +62,12 @@ class Manager_emp_model extends CI_Model
         //     echo 'false';
         // }
 
-        redirect('Manager_emp');
+        echo "<script>";
+        echo "alert('แก้ไขข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_emp ';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
     }
 
     public function show_emp()
@@ -86,7 +96,12 @@ class Manager_emp_model extends CI_Model
     {
         $this->db->delete('Employee',array('id_Employee'=>$id_Employee));
 
-        redirect('Manager_emp');
+        echo "<script>";
+        echo "alert('ลบข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_emp ';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
         
         
     }
