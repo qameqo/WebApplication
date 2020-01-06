@@ -51,7 +51,7 @@
                             จัดการข้อมูลเกี่ยวกับรถยนต์
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                            <a class="dropdown-item" href="#">จัดการข้อมูลรถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis">จัดการข้อมูลลงทะเบียนรถยนต์</a>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_price">จัดการข้อมูลราคารถยนต์</a>
                         </div>
                     </li>
@@ -69,9 +69,11 @@
                     </li>
                 </ul>
             </div>
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary mr-1">
                     Notifications <span class="badge badge-default">4</span>
                 </button>
+                <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
+
             </div>
         </div>
     </nav>
