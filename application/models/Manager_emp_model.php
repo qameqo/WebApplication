@@ -9,25 +9,42 @@ class Manager_emp_model extends CI_Model
         
         // exit;
 
-        $data = array(
-            'Email' => $this->input->post('Email'),
-            'Password' => $this->input->post('Password'),
-            'FName' => $this->input->post('FName'),
-            'LName' => $this->input->post('LName'),
-            'Address' => $this->input->post('Address'),
-            'Tel' => $this->input->post('Tel'),
-            'Status' => $this->input->post('Status'),
-            'Row' => $this->input->post('Row')
+        $Username = $this->input->post('Username');
+        $this->db->where('Username', $Username);
+        $query = $this->db->get('Employee', 1);
+        if($query->num_rows() ==1)
+        {
+            echo "<script>";
+            echo "alert('Username นี้มีผู้ใช้แล้ว');";
+            echo "window.location.href = '". base_url(). "Manager_emp ';";
+            echo "</script>";
+            
+            
+        }else
+        {
+            $data = array(
+                'Username' => $this->input->post('Username'),
+                'Password' => $this->input->post('Password'),
+                'FName' => $this->input->post('FName'),
+                'LName' => $this->input->post('LName'),
+                'Address' => $this->input->post('Address'),
+                'Tel' => $this->input->post('Tel'),
+                'Status' => $this->input->post('Status'),
+                'Row' => $this->input->post('Row')
+    
+            );
+    
+            $query=$this->db->insert('Employee',$data);
+    
+            echo "<script>";
+            echo "alert('บันทึกข้อมูลเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Manager_emp ';";
+            echo "</script>";
+    
+       
+        }
 
-        );
-
-        $query=$this->db->insert('Employee',$data);
-
-        echo "<script>";
-        echo "alert('บันทึกข้อมูลเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Manager_emp ';";
-        echo "</script>";
-
+        
         // redirect('Manager_emp');
     }
 
@@ -40,7 +57,7 @@ class Manager_emp_model extends CI_Model
         $this->db->where('id_Employee', $this->input->post('id_Employee'));
 
         $data = array(
-            'Email' => $this->input->post('Email'),
+            'Username' => $this->input->post('Username'),
             'Password' => $this->input->post('Password'),
             'FName' => $this->input->post('FName'),
             'LName' => $this->input->post('LName'),

@@ -15,8 +15,8 @@
                                 <td width="70%"><?php echo $rs_edit->id_Employee; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Email</label></td>
-                                <td width="70%"><?php echo $rs_edit->Email; ?></td>
+                                <td width="30%"><label>Username</label></td>
+                                <td width="70%"><?php echo $rs_edit->Username; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>Password</label></td>

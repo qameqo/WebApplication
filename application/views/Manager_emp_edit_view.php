@@ -11,12 +11,8 @@
 
                     <div class="form-row">
                         <div class="col">
-                            <label for="Email">Email address</label>
-                            <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp"
-                                placeholder="Enter email" value="<?php echo $rs_edit->Email; ?>">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                anyone
-                                else.</small>
+                            <label for="Username">Username</label>
+                            <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" value="<?php echo $rs_edit->Username; ?>">
                         </div>
                         <div class="col">
                             <label for="Password">Password</label>
@@ -25,7 +21,7 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
+                    <div class="form-row mt-2">
                         <div class="col">
                             <label for="FName">First name</label>
                             <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" value="<?php echo $rs_edit->FName; ?>">

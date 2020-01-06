@@ -6,9 +6,9 @@
 
                 <form action="<?php echo site_url('Manager/update'); ?>" method="POST" class="form-horizontal">
 
-                <?php $this->db->where('Email', $this->session->userdata('Email'));
+                <?php $this->db->where('Username', $this->session->userdata('Username'));
 							$query = $this->db->get('Employee', 1);
-							$email = $this->input->post('email');
+							$Username = $this->input->post('Username');
                             
                             if($query->num_rows() ==1)
                             {
@@ -17,7 +17,7 @@
                                 
                             }else
                             {
-                                $this->db->where('Email', $this->session->userdata('Email'));
+                                $this->db->where('Username', $this->session->userdata('Username'));
                                 $query = $this->db->get('Employee', 1);
                                 if($query->num_rows() ==1)
                                 {
@@ -39,13 +39,11 @@
 
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="">
 
-                    <div class="form-group">
-                        <label for="Email">Email address</label>
-                        <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp"
-                            placeholder="Enter email" value="<?php echo $data['Email'];?>">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                            anyone
-                            else.</small>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" value="<?php echo $data['Username'];?>">
+                        </div>
                     </div>
 
                     <div class="form-group">

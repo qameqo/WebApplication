@@ -12,9 +12,9 @@ class Manager extends CI_Controller {
 
     public function update()
     { 
-        $this->db->where('Email', $this->session->userdata('Email'));
+        $this->db->where('Username', $this->session->userdata('Username'));
         $object = array(
-            'Email' =>  $this->input->post("Email"),
+            'Username' =>  $this->input->post("Username"),
             'Password' =>  $this->input->post("Password"),
             'FName' =>  $this->input->post("FName"),
             'LName' =>  $this->input->post("LName"),
