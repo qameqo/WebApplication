@@ -6,7 +6,6 @@
 
                 <form action="" method="POST" class="form-horizontal">
 
-
                     <div class="table-responsive">
                         <table class="table table-bordered">
 
@@ -67,7 +66,26 @@
                                 <td width="70%"><?php echo $rs->id_Member; ?></td>
                             </tr>
 
+                            <?php 
 
+                            $query = $this->db->query("SELECT Images.Name_image FROM Carregis, Images WHERE Carregis.idCarregis = Images.idCarregis AND Carregis.idCarregis = $rs->idCarregis;");
+
+                            foreach ($query->result_array() as $data ) { ?>
+
+                            <tr>
+                                <td width="30%"><label>Name Image</label></td>
+                                <td width="70%">
+                                
+                                <img src="<?php echo base_url('pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
+                                
+                                </td>
+                            </tr>
+
+                            <?php 
+                            
+                            }
+
+                            ?>
                         </table>
                     </div>
 

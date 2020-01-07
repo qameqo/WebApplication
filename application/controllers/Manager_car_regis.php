@@ -43,25 +43,6 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
-    public function add_car_price()
-    {
-        $this->Manager_car_regis_model->add_car_price();
-    }
-
-    public function edit_car_price()
-    {
-        $this->Manager_car_regis_model->edit_car_price();
-
-        // echo '<pre>';
-        // print_r($_POST);
-        // echo '</pre>';
-    }
-
-    public function del_car_price($id_Car_price)
-    {
-        $this->Manager_car_regis_model->del_car_price($id_Car_price);
-    }
-
 }
 
 /* End of file Hello.php */

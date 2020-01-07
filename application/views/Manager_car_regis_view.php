@@ -37,13 +37,9 @@
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->id_Member; ?></td>
 
-                               
-
 								<td>
 								
                                     <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-default btn-sm">View</a>
-                                    <!-- <a href="<?php //echo site_url('Manager_emp/show/').$rs->id_Employee; ?>" class="btn btn-default btn-sm">View</a> -->
-
                     
 								</td>
 							</tr>
