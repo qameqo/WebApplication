@@ -4,7 +4,7 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">Show Detail Car Register</h4>
 
-                <form action="" method="POST" class="form-horizontal">
+                <form action="<?php echo site_url('Manager_car_regis/add_status'); ?>" method="POST" class="form-horizontal">
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -76,7 +76,7 @@
                                 <td width="30%"><label>Name Image</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php echo base_url('pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>
@@ -89,7 +89,12 @@
                         </table>
                     </div>
 
-                    <input type="submit" name="adding_btn" id="adding_btn" class="btn btn-success btn-sm mt-5" value="ยืนยันการลงทะเบียน" style="font-size:20px;"/>
+                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
+
+                    <input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>
+
+                    <!-- <input type="submit" name="adding_btn" id="adding_btn" class="btn btn-success btn-sm mt-5" value="ยืนยันการลงทะเบียน" style="font-size:20px;"/> -->
+                    <button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm('คุณต้องการยืนยันหรือไม่ ?');">ยืนยันการลงทะเบียน</button>
 
                 </form>
             </div>

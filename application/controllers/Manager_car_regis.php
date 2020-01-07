@@ -43,6 +43,11 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
+    public function add_status()
+    {
+        $this->Manager_car_regis_model->add_status();
+    }
+
 }
 
 /* End of file Hello.php */

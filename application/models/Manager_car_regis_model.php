@@ -3,24 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Manager_car_regis_model extends CI_Model 
 {
-    public function add_car_price()
-    {
-        // print_r($_POST);
-        
-        // exit;
-
-        $data = array(
-            'Brand' => $this->input->post('Brand'),
-            'Model' => $this->input->post('Model'),
-            'Type' => $this->input->post('Type'),
-            'Price' => $this->input->post('Price'),
-        );
-
-        $query=$this->db->insert('Car_price',$data);
-
-        redirect('Manager_car_price');
-    }
-
     public function show_car_regis()
     {
         $query = $this->db->get('Carregis');
@@ -48,8 +30,29 @@ class Manager_car_regis_model extends CI_Model
         $this->db->delete('Car_price',array('id_Car_price'=>$id_Car_price));
 
         redirect('Manager_car_price');
+
+    }
+
+    public function add_status()
+    {
+        // print_r($_POST);
         
+        // exit;
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'Status' => $this->input->post('Status')
+        );
+
+        $query=$this->db->update('Carregis',$data);
+
+        echo "<script>";
+        echo "alert('แก้ไขสถานะเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_car_regis ';";
+        echo "</script>";
         
+        // redirect('Manager_emp');
     }
 }
 ?>

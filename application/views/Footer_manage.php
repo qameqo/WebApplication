@@ -1,4 +1,8 @@
     <!--   Core JS Files   -->
+
+    <script src="<?php echo base_url('/EZview/EZView.js'); ?>"></script>
+    <script src="<?php echo base_url('/EZview/draggable.js'); ?>"></script>
+
     <!-- <script src="<?php //echo base_url(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script> -->
     <script src="<?php echo base_url(); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
@@ -16,6 +20,12 @@
     <!--Datepicker -->
     <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
 </body>
+
+<script>
+    $(function(){
+        $('img').EZView();
+    });
+</script>
 
 
 
