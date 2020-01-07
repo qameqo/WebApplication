@@ -21,7 +21,6 @@
                                 <th data-column-id="Generation">Generation</th>
                                 <th data-column-id="License">License</th>
                                 <th data-column-id="Member">Member</th>
-                                <th data-column-id="Image car">Image car</th>
 
                                 <th data-column-id="Action">Action</th>
                             </tr>
@@ -38,13 +37,13 @@
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->id_Member; ?></td>
 
-                                <td>
-                                    <img src="<?php base_url() ?>./pic/<?php echo $rs->imgcar; ?>" width="100px">
-                                </td>
+                               
 
 								<td>
 								
-                                    <a href="<?php //echo site_url('Manager_car_price/edit/').$rs->id_car_price ?>" class="btn btn-default btn-sm">View</a>
+                                    <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-default btn-sm">View</a>
+                                    <!-- <a href="<?php //echo site_url('Manager_emp/show/').$rs->id_Employee; ?>" class="btn btn-default btn-sm">View</a> -->
+
                     
 								</td>
 							</tr>
@@ -60,7 +59,6 @@
                                 <th data-column-id="Generation">Generation</th>
                                 <th data-column-id="License">License</th>
                                 <th data-column-id="Member">Member</th>
-                                <th data-column-id="Image car">Image car</th>
 
                                 <th data-column-id="Action">Action</th>
 							</tr>
