@@ -64,7 +64,7 @@ class Owner extends CI_Controller {
         $this->db->insert('Carregis', $object);
 
         $this->db->order_by('idCarregis', 'desc');
-       $query =  $this->db->get('Carregis', 1);
+        $query =  $this->db->get('Carregis', 1);
         $qq = $query->row_array();
         echo $qq['idCarregis'];
        redirect('Owner2/show/'. $qq['idCarregis']); 

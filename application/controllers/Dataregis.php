@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dataregis extends CI_Controller {
 
+
     public function index()
     {
         
@@ -11,7 +12,13 @@ class Dataregis extends CI_Controller {
         $this->load->view('footer');
         
     }
-  
+    public function show()
+    {
+        $this->db->where('idCarregis');
+		$query = $this->db->get('Carregis',1);
+        $data = $query->row_array();
+        $data['IDC'] = $data['idCarregis'];
+    }
 
 }
 

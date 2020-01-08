@@ -7,19 +7,19 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm">
-							<H2>สเปครถยนต์</H2>
+							<H2>ข้อมูลรถยนต์</H2>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm">
-							กรุณาใส่รายละเอียดของรถยนต์
+							กรุณาใส่รายละเอียดของรถยนต์ให้ครบ
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
-							<select class="form-control selectpicker" data-style="btn btn-link" name="Brand"
-								id="Brand1" onChange="Change_Brand()" required>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="Brand" id="Brand1"
+								onChange="Change_Brand()" required>
 								<option value="">เลือกยี่ห้อ</option>
 								<?php 
   									$this->db->select('*');
@@ -37,14 +37,15 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นรถ</label>
-							<select class="form-control selectpicker" data-style="btn btn-link" name="Gen"
-								id="gen1" required>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="Gen" id="gen1"
+								required>
 								<option value="">เลือกรุ่น</option>
 							</select>
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">รุ่นปีรถ</label>
-							<input class="date-own form-control" placeholder="เลือกรุ่นปีรถ" type="text" id="yearcar" name="caryear" required>
+							<input class="date-own form-control" placeholder="เลือกรุ่นปีรถ" type="text" id="yearcar"
+								name="caryear" required>
 						</div>
 					</div>
 					<div class="row">
@@ -67,7 +68,7 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">สีรถ</label>
-							
+
 							<select class="form-control selectpicker" data-style="btn btn-link" name="color"
 								id="exampleFormControlSelect1" required>
 								<option value="">เลือกสีรถยนต์</option>
@@ -130,55 +131,29 @@
 							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" required>
 						</div>
 						<div class="col-sm mb-1">
-						
+							<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
+							<input type="text" class="form-control" name="license" placeholder="Ex.5กช1648" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm mb-1">
+						<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
+						<input class="date-own form-control" placeholder="เลือกปีที่ออกทะเบียน" type="text"
+							id="yearlicense" name="licenseyear" required>
+					</div>
+					<div class="col-sm mb-1">
+						<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
+						<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno"
+							required>
+					</div>
+					<div class="col-sm">
+						<div class="box__input">
+							<br>
+							<button class="btn btn-Danger btn-lg" type="submit">ขั้นตอนต่อไป</button>
 						</div>
 					</div>
 				</div>
 		</div>
-		<div class="col-md-12 text-center">
-			<div class="row justify-content-center">
-				<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm">
-								<H3>ข้อมูลรถยนต์</H3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm">
-								กรุณาใส่ข้อมูลของรถยนต์
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm mb-1">
-								<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
-								<input type="text" class="form-control" name="license" placeholder="Ex.5กช1648" required>
-							</div>
-							<div class="col-sm mb-1">
-								<label for="exampleFormControlSelect1">ปีที่ออกทะเบียน</label>
-								<input class="date-own form-control" placeholder="เลือกปีที่ออกทะเบียน" type="text" id="yearlicense" 
-								name="licenseyear" required>
-							</div>
-							<div class="col-sm mb-1">
-							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno" required>
-						</div>
-						</div>
-
-					</div>
-					
-				</div>
-			</div>
-			
-							<div class="row mb-5">
-                        <div class="col-sm">
-							<div class="box__input">
-                            <button class="btn btn-Danger btn-lg" type="submit">ขั้นตอนต่อไป</button>
-							</div>
-						</div>
-							</div>
-                            </form>
-                
-						</div>
-					</div>
-					</form>
+	</div>
+	</form>

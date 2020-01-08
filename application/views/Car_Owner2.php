@@ -11,11 +11,11 @@
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">
-								<table id="employee_data" class="table table-striped table-bordered">
+								<table id="employee_data" class="table table-striped table-bordered text-center">
 									<thead>
 										<tr>
-											<th data-column-id="Name_image">Name_image</th>
-											<th data-column-id="Action">Action</th>
+											<th data-column-id="Name_image">รูปภาพ</th>
+											<th data-column-id="Action">ลบ</th>
 										</tr>
 									</thead>
 									<tbody>

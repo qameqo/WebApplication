@@ -42,11 +42,6 @@
                                 <td width="30%"><label>Row</label></td>
                                 <td width="70%"><?php echo $rs_edit->Row; ?></td>
                             </tr>
-                            <tr>
-                                <td width="30%"><label>Status</label></td>
-                                <td width="70%"><?php echo $rs_edit->Status; ?></td>
-                            </tr>
-
                         </table>
                     </div>
 
