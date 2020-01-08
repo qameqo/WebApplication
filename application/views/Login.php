@@ -22,14 +22,16 @@
 		<form class="form-login" id="login" name="login" method="post" action="<?php echo base_url(); ?>Login/Loginn">
 			<H4>Login</H4>
 			<div class="form-group">
-
+			
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Username</label>
+					<i class="ni ni-single-02" style="color: black;"></i>
 					<input type="text" id="username" class="form-control" placeholder="" required name="username">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Password</label>
+					<i class="ni ni-lock-circle-open" style="color: black;"></i>
 					<input id="password-field" type="password" class="form-control" name="password" required>
               		<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 				</div>
