@@ -24,6 +24,7 @@ class Login extends CI_Controller {
         if($query->num_rows() ==1)
         {
             $data = $query->row_array();
+            $data['ID'] = $data['id_Member'];
             $this->session->set_userdata($data);
             redirect('Firstpage'); //เจ้าของรถ
         }else

@@ -1,4 +1,4 @@
-<div class="col-md-13 text-center">
+<div class="col-md-13 text-center"><br>
 	<h1 class="h1" style="color:#000000">ลงทะเบียนรถยนต์</h1>
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">

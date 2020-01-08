@@ -12,7 +12,7 @@
   margin: auto;
 }</style>
 
-<div class="col-md-13 text-center">
+<div class="col-md-13 text-center"><br>
 	<h1 class="h1" style="color:#000000">แก้ไขข้อมูลส่วนตัว</h1>
 </div>
 <div class="row justify-content-center">
