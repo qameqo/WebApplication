@@ -49,8 +49,6 @@
                         <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required>
                     </div>
 
-                    <input type="hidden" name="Status" id="Status" value="1" class="form-control" required>
-
                     <div class="form-group">
                         <label for="Row">Row select</label>
                         <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">

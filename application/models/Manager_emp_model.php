@@ -29,7 +29,6 @@ class Manager_emp_model extends CI_Model
                 'LName' => $this->input->post('LName'),
                 'Address' => $this->input->post('Address'),
                 'Tel' => $this->input->post('Tel'),
-                'Status' => $this->input->post('Status'),
                 'Row' => $this->input->post('Row')
     
             );
@@ -63,7 +62,6 @@ class Manager_emp_model extends CI_Model
             'LName' => $this->input->post('LName'),
             'Address' => $this->input->post('Address'),
             'Tel' => $this->input->post('Tel'),
-            'Status' => $this->input->post('Status'),
             'Row' => $this->input->post('Row')
         );
 

@@ -11,40 +11,36 @@
                         <table class="table table-bordered">
 
                             <tr>
-                                <td width="30%"><label>ID</label></td>
+                                <td width="30%"><label>รหัสพนักงาน</label></td>
                                 <td width="70%"><?php echo $rs_edit->id_Employee; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Username</label></td>
+                                <td width="30%"><label>ชื่อผู้ใช้</label></td>
                                 <td width="70%"><?php echo $rs_edit->Username; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Password</label></td>
+                                <td width="30%"><label>รหัสผ่าน</label></td>
                                 <td width="70%"><?php echo $rs_edit->Password; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>First name</label></td>
+                                <td width="30%"><label>ชื่อ</label></td>
                                 <td width="70%"><?php echo $rs_edit->FName; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Last name</label></td>
+                                <td width="30%"><label>นามสกุล</label></td>
                                 <td width="70%"><?php echo $rs_edit->LName; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Address</label></td>
+                                <td width="30%"><label>ที่อยู่</label></td>
                                 <td width="70%"><?php echo $rs_edit->Address; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Tel.</label></td>
+                                <td width="30%"><label>เบอร์โทรศัพท์</label></td>
                                 <td width="70%"><?php echo $rs_edit->Tel; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Row</label></td>
+                                <td width="30%"><label>ตำแหน่ง</label></td>
                                 <td width="70%"><?php echo $rs_edit->Row; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>Status</label></td>
-                                <td width="70%"><?php echo $rs_edit->Status; ?></td>
                             </tr>
 
                         </table>

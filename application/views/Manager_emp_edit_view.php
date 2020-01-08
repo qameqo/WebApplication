@@ -11,10 +11,6 @@
 
                     <div class="form-row">
                         <div class="col">
-                            <label for="Username">Username</label>
-                            <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" value="<?php echo $rs_edit->Username; ?>">
-                        </div>
-                        <div class="col">
                             <label for="Password">Password</label>
                             <input type="text" class="form-control" name="Password" id="Password"
                                 placeholder="Password" value="<?php echo $rs_edit->Password; ?>">
@@ -37,11 +33,6 @@
                         <input type="text" class="form-control" name="Address" id="Address" value="<?php echo $rs_edit->Address; ?>">
                     </div>
 
-                    <div class="form-group">
-                        <label for="Tel">Tel.</label>
-                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" value="<?php echo $rs_edit->Tel; ?>">
-                    </div>
-
                     <div class="form-row">
                         <div class="col">
                             <label for="Row">Row select</label>
@@ -53,12 +44,8 @@
                             </select>
                         </div>
                         <div class="col">
-                            <label for="Row">Status select</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link" name="Status" id="Status">
-                                <option><?php echo $rs_edit->Status; ?></option>
-                                <option>1</option>
-                                <option>0</option>
-                            </select>
+                            <label for="Tel">Tel.</label>
+                            <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" value="<?php echo $rs_edit->Tel; ?>">
                         </div>
                     </div>
 
