@@ -18,14 +18,13 @@
                     <table id="employee_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-								<th data-column-id="id">ID</th>
+								<th data-column-id="id">รหัสพนักงาน</th>
 
-                                <th data-column-id="name">First name</th>
-                                <th data-column-id="address">Last name</th>
-                                <th data-column-id="row">Row</th>
-                                
+                                <th data-column-id="name">ชื่อ</th>
+                                <th data-column-id="address">นามสกุล</th>
+                                <th data-column-id="row">ตำแหน่ง</th>
 
-                                <th data-column-id="Action">Action</th>
+                                <th data-column-id="Action"></th>
                             </tr>
                         </thead>
 						<tbody>
@@ -38,7 +37,6 @@
 								<td><?php echo $rs->FName; ?></td>
 								<td><?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->Row; ?></td>
-								
 
 								<td>
 								
@@ -54,14 +52,13 @@
 						</tbody>
 						<tfoot>
 							<tr>
-                                <th data-column-id="id">ID</th>
+                                <th data-column-id="id">รหัสพนักงาน</th>
 
-                                <th data-column-id="name">First name</th>
-                                <th data-column-id="address">Last name</th>
-                                <th data-column-id="row">Row</th>
-                               
+                                <th data-column-id="name">ชื่อ</th>
+                                <th data-column-id="address">นามสกุล</th>
+                                <th data-column-id="row">ตำแหน่ง</th>
 
-                                <th data-column-id="Action">Action</th>
+                                <th data-column-id="Action"></th>
 							</tr>
 						</tfoot>
                     </table>

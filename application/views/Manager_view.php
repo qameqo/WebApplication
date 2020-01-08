@@ -23,7 +23,7 @@
                                 {
                                     $data = $query->row_array();
                                     $this->session->set_userdata($data);
-                                    if($this->session->userdata('Status') =="เจ้าของร้าน")
+                                    if($this->session->userdata('Row') =="เจ้าของร้าน")
                                     {
                                     
                                     }else{
@@ -40,7 +40,7 @@
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="">
 
                     <div class="form-group">
-                        <label for="Password">Password</label>
+                        <label for="Password">รหัสผ่าน</label>
                         <input type="text" class="form-control" name="Password" id="Password"
                             placeholder="Password" value="<?php echo $data['Password'];?>"> 
                     </div>
@@ -48,25 +48,25 @@
                     <div class="form-row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="FName">First name</label>
+                                <label for="FName">ชื่อ</label>
                                 <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" value="<?php echo $data['FName'];?>">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="LName">Last name</label>
+                                <label for="LName">นามสกุล</label>
                                 <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" value="<?php echo $data['LName'];?>">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="Address">Address</label>
+                        <label for="Address">ที่อ่</label>
                         <input type="text" class="form-control" name="Address" id="Address" value="<?php echo $data['Address'];?>">
                     </div>
 
                     <div class="form-group">
-                        <label for="Tel">Tel.</label>
+                        <label for="Tel">เบอร์โทรศัพท์</label>
                         <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" value="<?php echo $data['Tel'];?>">
                     </div>
 
