@@ -14,11 +14,13 @@
           color: #333;
           font-family: 'Prompt', sans-serif;
   }
+<?php $id = $this->session->userdata('ID');  
+  ?>
   </style>
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow p-3 ">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url("Firstpage");?>" >G Dragon Autotech</a>
+        <a class="navbar-brand" href="<?php echo base_url("Firstpage");?>" style="color: black" >G Dragon Autotech</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,20 +44,24 @@
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <span class="" style="color: white">สัญญาเช่า</span>
+                        <span class="" style="color: black">สัญญาเช่า</span>
                         <!--  <?php echo $this->session->userdata('Email');
                         
                          ?> -->
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="<?php echo base_url("Owner");?>">
-                        <span class="" style="color: white">ลงทะเบียนรถยนต์</span>
-                    </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="" style="color: black">ลงทะเบียนรถยนต์</span></a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                        <a class="dropdown-item" href="<?php echo base_url("Owner");?>">ลงทะเบียนรถยนต์</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="<?php echo base_url('Dataregis');?>">ข้อมูลการลงทะเบียน</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ni ni-single-02"></i>
+                        <i class="ni ni-single-02" style="color: black;"></i>
                         <span class="nav-link-inner--text d-lg-none">Profile</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">

@@ -23,7 +23,7 @@
                                 <th data-column-id="name">First name</th>
                                 <th data-column-id="address">Last name</th>
                                 <th data-column-id="row">Row</th>
-                                <th data-column-id="row">Status</th>
+                                
 
                                 <th data-column-id="Action">Action</th>
                             </tr>
@@ -38,7 +38,7 @@
 								<td><?php echo $rs->FName; ?></td>
 								<td><?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->Row; ?></td>
-								<td><?php echo $rs->Status; ?></td>
+								
 
 								<td>
 								
@@ -59,7 +59,7 @@
                                 <th data-column-id="name">First name</th>
                                 <th data-column-id="address">Last name</th>
                                 <th data-column-id="row">Row</th>
-                                <th data-column-id="row">Status</th>
+                               
 
                                 <th data-column-id="Action">Action</th>
 							</tr>
