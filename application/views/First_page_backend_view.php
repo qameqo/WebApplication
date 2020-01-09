@@ -1,72 +1,31 @@
 <div class="container">
   <br><br><br><br>
 
-  <div class="col-">
+  <H4 class="font-weight-bolder">หน้าหลัก</H4>
 
     <div class="row">
 
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
+      <div class="col-sm-6">
+        <div class="card text-center">
           <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
+            <h4 class="card-title">จัดการข้อมูลบุคคล</h4>
+            <a href="#0" class="btn btn-primary" style="font-size : 18px">แก้ไขข้อมูลส่วนตัว</a>
+            <a href="#0" class="btn btn-primary" style="font-size : 18px">จัดการข้อมูลพนักงาน</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
+      <div class="col-sm-6">
+        <div class="card text-center">
           <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 ml-auto mr-auto">
-        <div class="card text-center" style="width: 20rem;">
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#0" class="btn btn-primary">Go somewhere</a>
+            <h4 class="card-title">จัดการข้อมูลเกี่ยวกับรถยนต์</h4>
+            <a href="#0" class="btn btn-primary" style="font-size : 18px">จัดการข้อมูลลงทะเบียนรถยนต์</a>
+            <a href="#0" class="btn btn-primary" style="font-size : 18px">จัดการข้อมูลราคารถยนต์</a>
           </div>
         </div>
       </div>
 
     </div> <!--row-->
 
-  </div>
 
 </div>

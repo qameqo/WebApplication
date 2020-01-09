@@ -40,7 +40,6 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager">แก้ไขข้อมูลส่วนตัว</a>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_emp">จัดการข้อมูลพนักงาน</a>
-                            <a class="dropdown-item" href="#">จัดการข้อมูลสมาชิก</a>
                         </div>
                     </li>
                 </ul>
@@ -56,7 +55,7 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
@@ -67,7 +66,7 @@
                             <a class="dropdown-item" href="#">จัดการข้อมูลประกันรถยนต์ </a>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
             </div>
                 <button type="button" class="btn btn-primary mr-1">
                     Notifications <span class="badge badge-default">4</span>
