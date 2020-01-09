@@ -54,7 +54,7 @@
                     <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="" style="color: black">ลงทะเบียนรถยนต์</span></a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="<?php echo base_url("Owner");?>">ลงทะเบียนรถยนต์</a>
+                        <a class="dropdown-item" href="<?php echo base_url("ConCarregis");?>">ลงทะเบียนรถยนต์</a>
                         <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="<?php echo base_url('Dataregis');?>">ข้อมูลการลงทะเบียน</a>
                     </div>

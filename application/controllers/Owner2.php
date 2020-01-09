@@ -8,7 +8,7 @@ class Owner2 extends CI_Controller {
     {
         $data['id'] = $id;
         $this->load->view('header');
-        $this->load->view('Car_owner2',$data);      
+        $this->load->view('Car_owner2',$data);     
         $this->load->view('footer');
         
     }
@@ -40,6 +40,12 @@ class Owner2 extends CI_Controller {
             redirect('Owner2/show/'.$this->input->post('idCarregis'));
         }
 
+    }
+    public function del($id_image)
+    {
+        
+        $this->db->delete('Images',array('id_image'=>$id_image));
+        $this->show($id);
     }
         
 }

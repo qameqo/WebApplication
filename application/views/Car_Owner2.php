@@ -1,6 +1,25 @@
+ <style>.fileUpload {
+    position: relative;
+    overflow: hidden;
+    
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}</style>
+
 		<form class="form-upload" id="owner2" name="owner2" method="post" enctype="multipart/form-data"
 			action="<?php echo base_url(); ?>Owner2/up">
 			<div class="col-md-13 text-center"><br>
+
+				<
 				<h1 class="h1" style="color:#000000">อัปโหลดรูป</h1>
 				<div class="row justify-content-center">
 					<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
@@ -25,7 +44,7 @@
 											<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>"
 													style="width: 50px; height: 50px;" /></td>
 
-											<td><a href="<?php //echo site_url('Manager_emp/del_emp/').$rs->id_Employee; ?>"
+											<td><a href="<?php echo site_url('Owner2/del/'.$data['Name_image'])?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
 													class="btn btn-danger btn-sm">Delete</a></td>
 										</tr>
@@ -46,28 +65,28 @@
 									กรุณาอัปโหลดรูปภาพตามจำนวนที่ระบุ
 								</div>
 							</div>
-							<div class="col-sm">
-								<div class="box__input">
-									<span class="btn btn-raised btn-white btn-file">
+							<br>
+							<div class="row">
+							<div class="col-sm text-Right">
+								<div class="fileUpload btn btn-danger btn-lg">
+								<span style="color: white;">+ เพิ่มรูป</span>
 										<label for="file"><strong></strong><span class="box__dragndrop"></label>
-										<input class="box__file" type="file" name="file" id="piccar1" required />
-									</span>
+										<input class="upload" type="file" name="file" id="piccar1" required />
 								</div>
 							</div>
-							<span>
-							</span>
-							<br>
+							<div class="col-sm text-left">
+								<div class="box__input">
+									<button class="btn btn-primary btn-lg" type="submit">อัปโหลด</button>
+								</div>
+							</div>
+							</div>
 							<input type="hidden" value="<?php echo $id; ?>" name="idCarregis" id="idCarregis" />
 
-							<div class="col-sm">
-								<div class="box__input">
-									<button class="btn btn-Danger btn-lg" type="submit">อัปโหลด</button>
-								</div>
-							</div>
+							
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-Danger " href="<?php echo base_url('Dataregis'); ?>"
+									<a class="btn btn-success " href="<?php echo base_url('Dataregis'); ?>"
 										onclick="return confirm('ยืนยันการลงทะเบียน ?');">
 										<span style=" color: white;">ยืนยันการลงทะเบียน</span></a>
 								</div>

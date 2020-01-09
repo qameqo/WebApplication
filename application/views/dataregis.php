@@ -17,13 +17,14 @@
 								<th data-column-id="Name_image" style="width: 150px;">ยี่ห้อ</th>
                                 <th data-column-id="Name_image"style="width: 200px;">รุ่น</th>
                                 <th data-column-id="Name_image"style="width: 200px;">ทะเบียน</th>
-                                <th data-column-id="Name_image"style="width: 300px;">ปีที่ออกรถ</th>
-                                <th data-column-id="Name_image"style="width: 200px;">ที่นั่ง</th>
-                                <th data-column-id="Name_image"style="width: 200px;">สี</th>
+                                <th data-column-id="Name_image"style="width: 350px;">ปีที่ออกรถ</th>
+                                <th data-column-id="Name_image"style="width: 300px;">ที่นั่ง</th>
+                                <th data-column-id="Name_image"style="width: 100px;">สี</th>
                                 <th data-column-id="Name_image"style="width: 320px;">ชนิดเชื้อเพลิง</th>
                                 <th data-column-id="Name_image"style="width: 200px;">เกียร์</th>
                                 <th data-column-id="Name_image"style="width: 350px;">ปีที่ออกทะเบียน</th>
                                 <th data-column-id="Name_image"style="width: 200px;">เลขตัวถัง</th>
+                                <th data-column-id="Name_image"style="width: 200px;">สถานะ</th>
                             </tr>
                         </thead>
 						<tbody>
@@ -41,6 +42,7 @@
 								<td><?php echo $data['Gear'];?></td>
                                 <td><?php echo $data['Yearlicense'];?></td>
                                 <td><?php echo $data['Carbody'];?></td>
+                                <td><span class="badge badge-warning"><?php echo $data['Status'];?></span></td>
 								<!-- <td>
                                 
                                     <a href="<?php echo site_url('Dataregis2') ?>" class="btn btn-success btn-sm">View</a>
