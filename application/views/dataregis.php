@@ -23,8 +23,8 @@
                                 <th data-column-id="Name_image"style="width: 320px;">ชนิดเชื้อเพลิง</th>
                                 <th data-column-id="Name_image"style="width: 200px;">เกียร์</th>
                                 <th data-column-id="Name_image"style="width: 350px;">ปีที่ออกทะเบียน</th>
-                                <th data-column-id="Name_image"style="width: 200px;">เลขตัวถัง</th>
-                                <th data-column-id="Name_image"style="width: 200px;">สถานะ</th>
+                                <th data-column-id="Name_image"style="width: 250px;">เลขตัวถัง</th>
+                                <th data-column-id="Name_image"style="width: 150px;">สถานะ</th>
                             </tr>
                         </thead>
 						<tbody>

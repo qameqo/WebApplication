@@ -19,8 +19,9 @@
 			action="<?php echo base_url(); ?>Owner2/up">
 			<div class="col-md-13 text-center"><br>
 
-				<
+				
 				<h1 class="h1" style="color:#000000">อัปโหลดรูป</h1>
+				
 				<div class="row justify-content-center">
 					<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
 						<div class="container mb-5">
@@ -44,9 +45,9 @@
 											<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>"
 													style="width: 50px; height: 50px;" /></td>
 
-											<td><a href="<?php echo site_url('Owner2/del/'.$data['Name_image'])?>"
+											<td><a href="<?php echo site_url('Owner2/del/'.$data['id_image']);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
-													class="btn btn-danger btn-sm">Delete</a></td>
+													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>
 										<?php 
 							} ?>
@@ -94,3 +95,4 @@
 						</div>
 					</div>
 		</form>
+		
