@@ -27,7 +27,7 @@
     <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
         <div class="container">
             <div class="navbar-translate active">
-                <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager">G Dragon Autotech</a>
+                <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager_first">G Dragon Autotech</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
