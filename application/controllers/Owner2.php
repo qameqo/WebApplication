@@ -37,21 +37,19 @@ class Owner2 extends CI_Controller {
                                 'idCarregis'=>$this->input->post('idCarregis')
                             );
             $this->db->insert('Images', $arr);
+           
             redirect('Owner2/show/'.$this->input->post('idCarregis'));
         }
 
     }
-    public function del($Name_image)
-    {
-        
-        // $this->db->delete('Images',array('id_image'=>$id_image));
-        // $this->show($id);
-
-        $this->db->delete('Images',array('Name_image'=>$Name_image));
-
-        // redirect('Owner2/show');
+    public function del($di)
+    {   
+        $this->db->delete('Images', array('id_image'=>$di));
+        $this->show($id);
+       /*  redirect('Owner2/show'.$id); */
     }
-        
+    /* DELETE FROM `Carregis` WHERE `Carregis`.`idCarregis` = 73; 
+    DELETE FROM `Images` WHERE `Images`.`id_image` = 97;*/
 }
 
 /* End of file Controllername.php */

@@ -26,13 +26,13 @@
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Username</label>
 					<i class="ni ni-single-02" style="color: black;"></i>
-					<input type="text" id="username" class="form-control" placeholder="" required name="username">
+					<input type="text" id="username" class="form-control" placeholder="Username" required name="username">
 				</div>
 
 				<div class="form-group bmd-form-group">
 					<label class="bmd-label-floating">Password</label>
 					<i class="ni ni-lock-circle-open" style="color: black;"></i>
-					<input id="password-field" type="password" class="form-control" name="password" required>
+					<input id="password-field" type="password" class="form-control" name="password"  placeholder="Password" required>
               		<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 				</div>
 				<button class="btn btn-success" type="submit">Login</botton>
