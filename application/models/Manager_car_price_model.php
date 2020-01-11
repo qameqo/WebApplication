@@ -12,8 +12,7 @@ class Manager_car_price_model extends CI_Model
         $data = array(
             'Brand' => $this->input->post('Brand'),
             'Model' => $this->input->post('Model'),
-            'Type' => $this->input->post('Type'),
-            'Price' => $this->input->post('Price'),
+            'Price' => $this->input->post('Price')
         );
 
         $query=$this->db->insert('Car_price',$data);
@@ -32,8 +31,7 @@ class Manager_car_price_model extends CI_Model
         $data = array(
             'Brand' => $this->input->post('Brand'),
             'Model' => $this->input->post('Model'),
-            'Type' => $this->input->post('Type'),
-            'Price' => $this->input->post('Price'),
+            'Price' => $this->input->post('Price')
         );
 
         

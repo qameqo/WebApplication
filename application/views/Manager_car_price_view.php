@@ -22,7 +22,6 @@
 
                                 <th data-column-id="Brand">Brand</th>
                                 <th data-column-id="Model">Model</th>
-                                <th data-column-id="Type">Type</th>
                                 <th data-column-id="Price">Price</th>
 
                                 <th data-column-id="Action">Action</th>
@@ -37,7 +36,6 @@
 
 								<td><?php echo $rs->Brand; ?></td>
 								<td><?php echo $rs->Model; ?></td>
-								<td><?php echo $rs->Type; ?></td>
                                 <td><?php echo $rs->Price; ?></td>
 
 								<td>
@@ -57,7 +55,6 @@
 
                                 <th data-column-id="Brand">Brand</th>
                                 <th data-column-id="Model">Model</th>
-                                <th data-column-id="Type">Type</th>
                                 <th data-column-id="Price">Price</th>
 
                                 <th data-column-id="Action">Action</th>

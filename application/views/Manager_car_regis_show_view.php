@@ -93,7 +93,6 @@
 
                     <input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>
 
-                    <!-- <input type="submit" name="adding_btn" id="adding_btn" class="btn btn-success btn-sm mt-5" value="ยืนยันการลงทะเบียน" style="font-size:20px;"/> -->
                     <button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm('คุณต้องการยืนยันหรือไม่ ?');">ยืนยันการลงทะเบียน</button>
 
                 </form>
