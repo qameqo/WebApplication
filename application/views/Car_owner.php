@@ -144,13 +144,13 @@
 					</div>
 					<div class="col-sm mb-1">
 						<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-						<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="bodyno"
+						<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="carbody"
 							required>
 					</div>
 					<div class="col-sm">
 						<div class="box__input">
 							<br>
-							<button class="btn btn-Danger btn-lg" type="submit">ขั้นตอนต่อไป</button>
+							<button class="btn btn-Danger btn-lg" type="submit">บันทึกและดำเนินการต่อ</button>
 						</div>
 					</div>
 				</div>
