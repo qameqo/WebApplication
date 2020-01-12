@@ -99,12 +99,7 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="Type">Type</label>
-                                <input type="text" name="Type" id="Type" class="form-control" placeholder="Type" required>
-                            </div>
-                        </div>
+                        
                         <div class="col">
                             <div class="form-group">
                                 <label for="Price">Price</label>
