@@ -21,6 +21,7 @@
                                 <th data-column-id="Generation">Generation</th>
                                 <th data-column-id="License">License</th>
                                 <th data-column-id="Member">Member</th>
+                                <th data-column-id="Status">Status</th>
 
                                 <th data-column-id="Action">Action</th>
                             </tr>
@@ -36,6 +37,7 @@
 								<td><?php echo $rs->Generation; ?></td>
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->id_Member; ?></td>
+                                <td><?php echo $rs->Status; ?></td>
 
 								<td>
 								
@@ -55,6 +57,7 @@
                                 <th data-column-id="Generation">Generation</th>
                                 <th data-column-id="License">License</th>
                                 <th data-column-id="Member">Member</th>
+                                <th data-column-id="Status">Status</th>
 
                                 <th data-column-id="Action">Action</th>
 							</tr>

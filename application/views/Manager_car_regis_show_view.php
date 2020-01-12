@@ -91,9 +91,17 @@
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
-                    <input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>
 
-                    <button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm('คุณต้องการยืนยันหรือไม่ ?');">ยืนยันการลงทะเบียน</button>
+                    <input type="hidden" name="id_Employee" id="id_Employee" value="2" class="form-control" required>
+
+                    <?php if ($rs->Status == 'พร้อม') {
+                        echo '<input type="hidden" name="Status" id="Status" value="ไม่พร้อม" class="form-control" required>';
+                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
+                    }else {
+                        echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
+                        echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการลงทะเบียน</button>';
+                    }?>
+
 
                 </form>
             </div>

@@ -42,6 +42,7 @@ class Manager_car_regis_model extends CI_Model
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
        
         $data = array( 
+            'id_Employee' => $this->input->post('id_Employee'),
             'Status' => $this->input->post('Status')
         );
 
