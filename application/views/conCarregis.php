@@ -53,7 +53,7 @@
                     <br>
                     <div class="row">
 					<div class="col-sm">
-                        <a class="btn btn-danger" href="<?php echo base_url("Owner");?>">ลงทะเบียนรถยนต์</a>
+                        <a class="btn btn-danger" href="<?php echo base_url("Owner");?>">ดำเนินการต่อ</a>
 						</div>
 					</div>
 
