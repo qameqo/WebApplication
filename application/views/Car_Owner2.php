@@ -58,7 +58,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									<H5>รูปรถยนต์ 5 รูป รูปพ.ร.บ. 1 รูป และรูปเล่มทะเบียนรถยนต์ 1 รูป</H5>
+									<H5 style="color: red;">* รูปรถยนต์ 5 รูป ภายนอกด้านหน้า หลัง ซ้าย ขวา และภายในตัวรถ  <br>รูปพ.ร.บ. 1 รูป รูปเล่มทะเบียนรถยนต์ 1 รูป รูปใบขับขี่ 1 รูป</H5>
 								</div>
 							</div>
 							<div class="row">
@@ -87,9 +87,9 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-success " href="<?php echo base_url('Dataregis'); ?>"
-										onclick="return confirm('ยืนยันการลงทะเบียน ?');">
-										<span style=" color: white;">ยืนยันการลงทะเบียน</span></a>
+									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri'); ?>"
+										onclick="return confirm('ยืนยันการอัปโหลด ?');">
+										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 								</div>
 							</div>
 						</div>

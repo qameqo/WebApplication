@@ -41,7 +41,7 @@ class Owner extends CI_Controller {
                     'License' =>  $this->input->post("license"),
                     'Yearlicense' =>  $this->input->post("licenseyear"),
                     'Carbody' =>  $this->input->post("carbody"),
-                    'Status' => "ไม่พร้อม",      
+                    'Status' => "รออนุมัติ",
                     'id_Member' => $this->session->userdata('id_Member')
                    
                 );
