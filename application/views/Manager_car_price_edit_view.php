@@ -4,18 +4,18 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded"> 
             <h4 class="title">Edit Car Price</h4>
 
-                <form action="<?php echo site_url('Manager_car_price/edit_emp'); ?>" method="POST" class="form-horizontal">
+                <form action="<?php echo site_url('Manager_car_price/edit_car_price'); ?>" method="POST" class="form-horizontal">
 
-                    <input type="hidden" name="id_Car_price" id="id_Car_price" class="form-control" value="<?php /* echo $rs_edit->id_Car_price; */ ?>">
+                    <input type="hidden" name="id_Gen" id="id_Gen" class="form-control" value="<?php echo $rs_edit->id_Gen; ?>">
 
                     <div class="form-row">
                         <div class="col">
                         <label for="Model">Model</label>
-                            <input type="text" name="Model" id="Model" class="form-control" placeholder="Model" value="<?php echo $rs_edit->Model; ?>">
+                            <input type="text" name="Model" id="Model" class="form-control" placeholder="Model" value="<?php echo $rs_edit->Name_Brand; ?>">
                         </div>
                         <div class="col">
                         <label for="Brand">Brand</label>
-                            <input type="text" name="Brand" id="Brand" class="form-control" placeholder="Brand" value="<?php echo $rs_edit->Brand; ?>">
+                            <input type="text" name="Brand" id="Brand" class="form-control" placeholder="Brand" value="<?php echo $rs_edit->Name_Gen; ?>">
                         </div>
                     </div>
 

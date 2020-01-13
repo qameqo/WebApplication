@@ -26,9 +26,9 @@ class Manager_car_price extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
-    public function edit($id_Car_price)
+    public function edit($id_Gen)
     {
-        $data['rs_edit']=$this->Manager_car_price_model->read($id_Car_price);
+        $data['rs_edit']=$this->Manager_car_price_model->read($id_Gen);
 
         // echo '<pre>';
         // print_r($data);
@@ -57,9 +57,9 @@ class Manager_car_price extends CI_Controller {
         // echo '</pre>';
     }
 
-    public function del_car_price($id_Car_price)
+    public function del_car_price($id_Gen)
     {
-        $this->Manager_car_price_model->del_car_price($id_Car_price);
+        $this->Manager_car_price_model->del_car_price($id_Gen);
     }
 
 }

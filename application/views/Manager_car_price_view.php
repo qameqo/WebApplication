@@ -7,9 +7,9 @@
                     <div class="col-md-10">
                         <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
                     </div>
-                    <div class="col-md-2" align ="right">
+                    <!-- <div class="col-md-2" align ="right">
                         <button type="button" id="add_button" data-toggle="modal" data-target="#car_price_Modal" class="btn btn-info btn-sm">Add</button>
-                    </div>
+                    </div> -->
                 </div>
                 
             </div>
@@ -18,13 +18,12 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-								<th data-column-id="id">ID</th>
 
-                                <th data-column-id="Brand">Brand</th>
-                                <th data-column-id="Model">Model</th>
-                                <th data-column-id="Price">Price</th>
+                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Model">รุ่น</th>
+                                <th data-column-id="Price">ราคา</th>
 
-                                <th data-column-id="Action">Action</th>
+                                <th data-column-id="Action"></th>
                             </tr>
                         </thead>
 						<tbody>
@@ -32,16 +31,14 @@
                             <?php foreach ($query as $rs) { ?>
 
 							<tr>
-								<td><?php echo $rs->id_car_price ?></td>
-
-								<td><?php echo $rs->Brand; ?></td>
-								<td><?php echo $rs->Model; ?></td>
+								<td><?php echo $rs->Name_Brand ?></td>
+								<td><?php echo $rs->Name_Gen; ?></td>
                                 <td><?php echo $rs->Price; ?></td>
 
 								<td>
 								
-                                    <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_car_price ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?php echo site_url('Manager_car_price/del_car_price/').$rs->id_car_price ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_Gen ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="<?php echo site_url('Manager_car_price/del_car_price/').$rs->id_Gen ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
                     
 								</td>
 							</tr>
@@ -51,13 +48,12 @@
 						</tbody>
 						<tfoot>
 							<tr>
-                                <th data-column-id="id">ID</th>
 
-                                <th data-column-id="Brand">Brand</th>
-                                <th data-column-id="Model">Model</th>
-                                <th data-column-id="Price">Price</th>
+                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Model">รุ่น</th>
+                                <th data-column-id="Price">ราคา</th>
 
-                                <th data-column-id="Action">Action</th>
+                                <th data-column-id="Action"></th>
 							</tr>
 						</tfoot>
                     </table>

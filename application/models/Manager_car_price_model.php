@@ -26,11 +26,11 @@ class Manager_car_price_model extends CI_Model
         
         // exit;
 
-        $this->db->where('id_Car_price', $this->input->post('id_Car_price'));
+        $this->db->where('edit_car_price', $this->input->post('edit_car_price'));
 
         $data = array(
-            'Brand' => $this->input->post('Brand'),
-            'Model' => $this->input->post('Model'),
+            'Name_Brand' => $this->input->post('Name_Brand'),
+            'Name_Gen' => $this->input->post('Name_Gen'),
             'Price' => $this->input->post('Price')
         );
 
@@ -51,18 +51,22 @@ class Manager_car_price_model extends CI_Model
 
     public function show_car_price()
     {
-        
+        $this->db->select('*');
+        $this->db->from('Brand');
+        $this->db->join('Generation', 'Generation.idBrand = Brand.idBrand');
 
-        // $query = $this->db->get('Car_price');
+        $query = $this->db->get();
+        
         return $query->result();
         
     }
 
-    public function read($id_Car_price)
+    public function read($id_Gen)
     {
         $this->db->select('*');
-        $this->db->from('Car_price');
-        $this->db->where('id_Car_price', $id_Car_price);
+        $this->db->from('Brand');
+        $this->db->join('Generation', 'Generation.idBrand = Brand.idBrand');
+        $this->db->where('id_Gen', $id_Gen);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) 
