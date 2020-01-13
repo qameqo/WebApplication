@@ -10,6 +10,9 @@
                     <!-- <div class="col-md-2" align ="right">
                         <button type="button" id="add_button" data-toggle="modal" data-target="#car_price_Modal" class="btn btn-info btn-sm">Add</button>
                     </div> -->
+                    <div class="col-md-2" align ="right">
+                        <a href="<?php echo site_url('Manager_car_price/add');?>" class="btn btn-info btn-sm">ADD</a>
+                    </div>
                 </div>
                 
             </div>

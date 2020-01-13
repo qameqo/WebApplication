@@ -9,22 +9,20 @@
                     <input type="hidden" name="id_Gen" id="id_Gen" class="form-control" value="<?php echo $rs_edit->id_Gen; ?>">
 
                     <div class="form-row">
+                        
                         <div class="col">
-                        <label for="Model">Model</label>
-                            <input type="text" name="Model" id="Model" class="form-control" placeholder="Model" value="<?php echo $rs_edit->Name_Brand; ?>">
+                        <label for="Brand">รุ่น</label>
+                            <input type="text" name="Name_Gen" id="Name_Gen" class="form-control" placeholder="Brand" value="<?php echo $rs_edit->Name_Gen; ?>">
                         </div>
-                        <div class="col">
-                        <label for="Brand">Brand</label>
-                            <input type="text" name="Brand" id="Brand" class="form-control" placeholder="Brand" value="<?php echo $rs_edit->Name_Gen; ?>">
-                        </div>
-                    </div>
 
-                    <div class="form-row mt-3">
                         <div class="col">
-                        <label for="Price">Price</label>
+                        <label for="Price">ราคา</label>
                             <input type="text" name="Price" id="Price" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->Price; ?>">
                         </div>
+
                     </div>
+
+                   
 
                     <button type="submit" class="btn btn-success">Edit</button>
                 </form>

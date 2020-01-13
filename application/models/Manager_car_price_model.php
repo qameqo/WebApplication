@@ -26,16 +26,16 @@ class Manager_car_price_model extends CI_Model
         
         // exit;
 
-        $this->db->where('edit_car_price', $this->input->post('edit_car_price'));
+        $this->db->where('id_Gen', $this->input->post('id_Gen'));
 
         $data = array(
-            'Name_Brand' => $this->input->post('Name_Brand'),
+            // 'Name_Brand' => $this->input->post('Name_Brand'),
             'Name_Gen' => $this->input->post('Name_Gen'),
             'Price' => $this->input->post('Price')
         );
 
         
-        $query=$this->db->update('Car_price',$data);
+        $query=$this->db->update('Generation',$data);
 
         // if($query)
         // {
@@ -46,7 +46,13 @@ class Manager_car_price_model extends CI_Model
         //     echo 'false';
         // }
 
-        redirect('Manager_car_price');
+
+        echo "<script>";
+        echo "alert('แก้ไขข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_car_price ';";
+        echo "</script>";
+
+        // redirect('Manager_car_price');
     }
 
     public function show_car_price()
@@ -77,12 +83,14 @@ class Manager_car_price_model extends CI_Model
         return FALSE;
     }
 
-    public function del_car_price($id_Car_price)
+    public function del_car_price($id_Gen)
     {
-        $this->db->delete('Car_price',array('id_Car_price'=>$id_Car_price));
+        $this->db->delete('Generation',array('id_Gen'=>$id_Gen));
 
-        redirect('Manager_car_price');
-        
+        echo "<script>";
+        echo "alert('แก้ไขข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_car_price ';";
+        echo "</script>";        
         
     }
 }
