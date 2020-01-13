@@ -51,7 +51,9 @@ class Manager_car_price_model extends CI_Model
 
     public function show_car_price()
     {
-        $query = $this->db->get('Car_price');
+        
+
+        // $query = $this->db->get('Car_price');
         return $query->result();
         
     }
