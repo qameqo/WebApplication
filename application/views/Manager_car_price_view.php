@@ -25,7 +25,6 @@
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Model">รุ่น</th>
                                 <th data-column-id="Price">ราคา</th>
-
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
@@ -37,12 +36,11 @@
 								<td><?php echo $rs->Name_Brand ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
                                 <td><?php echo $rs->Price; ?></td>
-
 								<td>
 								
                                     <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_Gen ?>" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="<?php echo site_url('Manager_car_price/del_car_price/').$rs->id_Gen ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
-                    
+
 								</td>
 							</tr>
 

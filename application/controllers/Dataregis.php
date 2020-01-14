@@ -14,10 +14,15 @@ class Dataregis extends CI_Controller {
     }
     public function show()
     {
-        $this->db->where('idCarregis');
-		$query = $this->db->get('Carregis',1);
-        $data = $query->row_array();
-        $data['IDC'] = $data['idCarregis'];
+        // $this->db->select('*');
+        // $this->db->from('Brand');
+        // $this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');
+        // $query = $this->db->get();
+        // $data = $query->row_array();
+        // $this->db->where('idCarregis');
+		// $query = $this->db->get('Carregis',1);
+        // $data = $query->row_array();
+        // $data['IDC'] = $data['idCarregis'];
     }
 
 }

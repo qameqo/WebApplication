@@ -45,9 +45,9 @@
 											<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>"
 													style="width: 50px; height: 50px;" /></td>
 
-											<td><a href="<?php echo site_url('Owner2/del/'.$data['id_image']);?>"
+											<td><button href="<?php echo site_url('Owner2/del/'.$data['id_image']);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
-													class="btn btn-danger btn-sm">ลบ</a></td>
+													class="btn btn-danger btn-sm">ลบ</button></td>
 										</tr>
 										<?php 
 							} ?>

@@ -4,8 +4,11 @@
                 <div class="row justify-content-center">
 					<div class="col-sm-10 shadow p-4 mb-4 bg-white rounded">
                     <?php 
+                        $this->db->select('*');
+                        $this->db->from('Brand');
+                        $this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');
 						$this->db->where('id_Member', $this->session->userdata('ID'));
-						$query = $this->db->get('Carregis');
+						$query = $this->db->get();
                         $qq = $query->result_array();
                         
 						?>
@@ -32,7 +35,7 @@
 								
                                 ?>
 							<tr>
-								<td><?php echo $data['Brand'];?></td>
+								<td><?php echo $data['Name_Brand'];?></td>
 								<td><?php echo $data['Generation'];?></td>
                                 <td><?php echo $data['License'];?></td>
 								<td><?php echo $data['Yearcar'];?></td>
