@@ -33,19 +33,28 @@ class Test_api extends \Restserver\Libraries\REST_Controller {
  
     public function index_get()
     {
-        $query = $this->db->get('Employee');
-        $data = $query->result();
-        $this->response($data);
-       
+        // $query = $this->db->get('Employee');
+        // $data = $query->result();
+        // $this->response($data);
+
+        $Username = $this->get('Username');
+        $Password = $this->get('Password');
+
+        $this->response("Username : ".$Username." | Password : ".$Password); 
     }
  
     public function index_post()
     {
-        $query = $this->db->get('upload');
-        $data = $query->result();
-        $this->response($data);
-       
+        // $query = $this->db->get('upload');
+        // $data = $query->result();
+        // $this->response($data);
+
+        $Username = $this->post('Username');
+        $Password = $this->post('Password');
+
+        $this->response("Username : ".$Username." | Password : ".$Password);  
     }
+    
     public function update_put()
     {
         $ID = $this->put('ID');
