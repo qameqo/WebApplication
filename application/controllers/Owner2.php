@@ -42,11 +42,11 @@ class Owner2 extends CI_Controller {
         }
 
     }
-    public function del($di)
+    public function del($di,$id)
     {   
         $this->db->delete('Images', array('id_image'=>$di));
         // $this->show($id);
-       /*  redirect('Owner2/show'.$id); */
+        redirect('Owner2/show/'.$id);
     }
     /* DELETE FROM `Carregis` WHERE `Carregis`.`idCarregis` = 73; 
     DELETE FROM `Images` WHERE `Images`.`id_image` = 97;*/
