@@ -95,11 +95,12 @@
                     <input type="hidden" name="id_Employee" id="id_Employee" value="2" class="form-control" required>
 
                     <?php if ($rs->Status == 'พร้อม') {
-                        echo '<input type="hidden" name="Status" id="Status" value="ไม่พร้อม" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
-                    }else {
-                        echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการลงทะเบียน</button>';
+                        echo '<input type="hidden" name="Status" id="Status" value="ยกเลิก" class="form-control" required>';
+                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
+                    }else if($rs->Status == 'รออนุมัติ'){
+                        echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
+                        echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
+                        // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ผ่าน</button>';
                     }?>
 
 

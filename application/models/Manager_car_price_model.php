@@ -22,17 +22,54 @@ class Manager_car_price_model extends CI_Model
         }else
         {
             $data = array(
-                'Name_Brand' => $this->input->post('Name_Brand')
+                'Name_Brand' => $this->input->post('Name_Brand'),
+                'id_Employee' => $this->session->userdata('id_Employee')
+            );
+        
+            $this->db->insert('Brand', $data);
+            $this->db->order_by('idBrand', 'desc');
+            $query = $this->db->get('Brand', 1);
+            $qq = $query->row_array();
+            echo $qq['idBrand'];
+            redirect('Manager_car_price/add_2/'. $qq['idBrand']); 
+    
+        }
+
+        // $this->Manager_car_price->Manager_car_price();
+        // redirect('Manager_car_price');
+    }
+
+    public function add_car_price_2()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $Name_Gen = $this->input->post('Name_Gen');
+        $this->db->where('Name_Gen', $Name_Gen);
+        $query = $this->db->get('Generation', 1);
+        if($query->num_rows() ==1)
+        {
+            echo "<script>";
+            echo "alert('ข้อมูลซ้ำ');";
+            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
+            echo "</script>";
+            
+        }else
+        {
+            $data = array(
+                'Name_Gen' => $this->input->post('Name_Gen'),
+                'Price' => $this->input->post('Price'),
+                'idBrand' => $this->input->post('idBrand'),
+                'id_Employee' => $this->session->userdata('id_Employee')
             );
     
-            $query=$this->db->insert('ฺBrand',$data);
-    
-            $this->db->insert('Carregis', $object);
-            $this->db->order_by('idCarregis', 'desc');
-            $query = $this->db->get('Carregis', 1);
-            $qq = $query->row_array();
-            echo $qq['idCarregis'];
-            redirect('Owner2/show/'. $qq['idCarregis']); 
+            $query=$this->db->insert('Generation',$data);
+                
+            echo "<script>";
+            echo "alert('บันทึกข้อมูลสำเร็จ');";
+            echo "window.location.href = '". base_url(). "Manager_car_price ';";
+            echo "</script>";
     
         }
 

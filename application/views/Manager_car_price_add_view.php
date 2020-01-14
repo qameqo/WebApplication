@@ -11,13 +11,13 @@
                     <div class="form-row">
                         
                         <div class="col">
-                        <label for="Brand">รุ่น</label>
+                        <label for="Brand">ยี่ห้อ</label>
                             <input type="text" name="Name_Brand" id="Name_Brand" class="form-control" placeholder="Brand" value="">
                         </div>
 
                     </div>
 
-                    <button type="submit" class="btn btn-success mt-5">ADD</button>
+                    <button type="submit" class="btn btn-success mt-5" style="font-size:20px">เพิ่มข้อมูลและดำเนินการต่อ</button>
                 </form>
             </div>
         </div>

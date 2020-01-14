@@ -33,10 +33,11 @@ class Manager_car_price extends CI_Controller {
         $this->load->view('Footer_manage');
     }
 
-    public function add_2()
+    public function add_2($id)
     {
+        $data['id'] = $id;
         $this->load->view('Header_manage');
-        $this->load->view('Manager_car_price_add_2_view');
+        $this->load->view('Manager_car_price_add_2_view', $data);
         $this->load->view('Footer_manage');
     }
 
@@ -60,6 +61,11 @@ class Manager_car_price extends CI_Controller {
     public function add_car_price()
     {
         $this->Manager_car_price_model->add_car_price();
+    }
+
+    public function add_car_price_2()
+    {
+        $this->Manager_car_price_model->add_car_price_2();
     }
 
     public function edit_car_price()
