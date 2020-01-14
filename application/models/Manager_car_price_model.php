@@ -9,15 +9,35 @@ class Manager_car_price_model extends CI_Model
         
         // exit;
 
-        $data = array(
-            'Brand' => $this->input->post('Brand'),
-            'Model' => $this->input->post('Model'),
-            'Price' => $this->input->post('Price')
-        );
+        $Name_Brand = $this->input->post('Name_Brand');
+        $this->db->where('Name_Brand', $Name_Brand);
+        $query = $this->db->get('Brand', 1);
+        if($query->num_rows() ==1)
+        {
+            echo "<script>";
+            echo "alert('ข้อมูลซ้ำ');";
+            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
+            echo "</script>";
+            
+        }else
+        {
+            $data = array(
+                'Name_Brand' => $this->input->post('Name_Brand')
+            );
+    
+            $query=$this->db->insert('ฺBrand',$data);
+    
+            $this->db->insert('Carregis', $object);
+            $this->db->order_by('idCarregis', 'desc');
+            $query = $this->db->get('Carregis', 1);
+            $qq = $query->row_array();
+            echo $qq['idCarregis'];
+            redirect('Owner2/show/'. $qq['idCarregis']); 
+    
+        }
 
-        $query=$this->db->insert('Car_price',$data);
-
-        redirect('Manager_car_price');
+        // $this->Manager_car_price->Manager_car_price();
+        // redirect('Manager_car_price');
     }
 
     public function edit_car_price()

@@ -24,8 +24,7 @@ class Owner extends CI_Controller {
             echo "alert('ทะเบียนรถหรือเลขตัวถังรถนี้มีผู้ใช้แล้ว');";
             echo "window.location.href = '". base_url(). "Owner ';";
             echo "</script>";
-            
-            
+             
         }else
         {      
             

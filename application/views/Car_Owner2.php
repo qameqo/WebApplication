@@ -51,7 +51,7 @@
 										</tr>
 										<?php 
 							} ?>
-										<?php //} ?>
+										
 									</tbody>
 								</table>
 
