@@ -92,7 +92,7 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri'); ?>"
+									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$di); ?>"
 										onclick="return confirm('ยืนยันการอัปโหลด ?');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 								</div>
