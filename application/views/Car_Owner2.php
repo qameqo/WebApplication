@@ -27,7 +27,7 @@
 						<div class="container mb-5">
 						<?php 
 						$this->db->where('idCarregis', $id);
-						$query = $this->db->get('Images', 7);
+						$query = $this->db->get('Images', 8);
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">
@@ -39,15 +39,20 @@
 										</tr>
 									</thead>
 									<tbody>
+									<?php if(!empty($qi))
+									{
+										
+									}else
+									 ?>
 										<?php foreach($qi as $data){
-								
+											
 							 				?><tr>
 											<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>"
 													style="width: 50px; height: 50px;" /></td>
 
-											<td><button href="<?php echo site_url('Owner2/del/'.$data['id_image']);?>"
+											<td><a href="<?php echo site_url('Owner2/del/'.$data['id_image'].'/'.$id);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
-													class="btn btn-danger btn-sm">ลบ</button></td>
+													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>
 										<?php 
 							} ?>
@@ -87,7 +92,7 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri'); ?>"
+									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$di); ?>"
 										onclick="return confirm('ยืนยันการอัปโหลด ?');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 								</div>
