@@ -73,7 +73,7 @@
                             foreach ($query->result_array() as $data ) { ?>
 
                             <tr>
-                                <td width="30%"><label>Image</label></td>
+                                <td width="30%"><label>รูปภาพ</label></td>
                                 <td width="70%">
                                 
                                 <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
