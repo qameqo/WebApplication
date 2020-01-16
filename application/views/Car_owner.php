@@ -304,7 +304,7 @@
 					<div class="col-sm">
 						<div class="box__input">
 							<br>
-							<button class="btn btn-Danger btn-lg" type="submit">บันทึกและดำเนินการต่อ</button>
+							<button class="btn btn-Danger btn-lg" style="background-color: #F60200;" type="submit">บันทึกและดำเนินการต่อ</button>
 						</div>
 					</div>
 				</div>

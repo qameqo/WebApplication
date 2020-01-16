@@ -53,7 +53,7 @@
                     <br>
                     <div class="row">
 					<div class="col-sm">
-                        <a class="btn btn-danger" href="<?php echo base_url("Owner");?>">ดำเนินการต่อ</a>
+                        <a class="btn btn-danger" style="background-color: #F60200;" href="<?php echo base_url("Owner");?>">ดำเนินการต่อ</a>
 						</div>
 					</div>
 

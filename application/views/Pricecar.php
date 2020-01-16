@@ -69,7 +69,7 @@
 					</div>
                     <div class="row">
 					<div class="col-sm text-center">
-                        <button class="btn btn-danger" href="#" type="submit">ยืนยันราคาปล่อยเช่า</button>
+                        <button class="btn btn-danger" style="background-color: #F60200;" href="#" type="submit">ยืนยันราคาปล่อยเช่า</button>
 						</div>
 					</div>
 
