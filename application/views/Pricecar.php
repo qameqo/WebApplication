@@ -33,10 +33,10 @@
 						<?php 
 							foreach($qq as $data){
 								$ei = $data['Price'];
-								 $eii = 0.2;
-								 $e = 10;
-								 $ee = 1000;
-								 $total = $ei * $eii * $e / $ee;
+								$eii = 0.2;
+								$e = 10;
+								$ee = 1000;
+								$total = $ei * $eii * $e / $ee;
 						?>
 						<input type="text" class="form-control" name="pricecar" value= "<?php echo $total ?>" style="width: 200px; height:25px;">
 							<?php } ?> 
