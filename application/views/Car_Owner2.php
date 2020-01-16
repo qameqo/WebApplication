@@ -75,7 +75,7 @@
 							<br>
 							<div class="row">
 							<div class="col-sm text-Right">
-								<div class="fileUpload btn btn-danger btn-lg">
+								<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
 								<span style="color: white;">+ เพิ่มรูป</span>
 										<label for="file"><strong></strong><span class="box__dragndrop"></label>
 										<input class="upload" type="file" name="file" id="piccar1" required />
@@ -83,7 +83,7 @@
 							</div>
 							<div class="col-sm text-left">
 								<div class="box__input">
-									<button class="btn btn-primary btn-lg" type="submit">อัปโหลด</button>
+									<button class="btn btn-success btn-lg" style="background-color: #00CD00" type="submit"><span style="color: white;">อัปโหลด</span></button>
 								</div>
 							</div>
 							</div>
@@ -93,7 +93,7 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>"
+									<a class="btn" style="background-color: #F60200;" href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>"
 										onclick="return confirm('ยืนยันการอัปโหลด ?');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 								</div>
