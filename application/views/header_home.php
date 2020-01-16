@@ -16,9 +16,9 @@
           
   }
   </style>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow p-3 ">
+  <nav class="navbar navbar-expand-lg navbar-warning bg-danger shadow p-3 ">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url("Homeowner");?>"><span class="" style="color: black">G Dragon Autotech</span></a>
+        <a class="navbar-brand" href="<?php echo base_url("Homeowner");?>"><span class="" style="color: white">G Dragon Autotech</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,7 +42,7 @@
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="<?php echo base_url("Login");?>">
-                        <span class="" style="color: black">เข้าสู่ระบบ</span>
+                        <span class="" style="color: white">เข้าสู่ระบบ</span>
                         <!--  <?php echo $this->session->userdata('Email');
                         
                          ?> -->
@@ -50,12 +50,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="<?php echo base_url("Register");?>">
-                        <span class="" style="color: black">สมัครสมาชิก</span>
+                        <span class="" style="color: white">สมัครสมาชิก</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="#">
-                        <span class="" style="color: black">ติดต่อเรา</span>
+                        <span class="" style="color: white">ติดต่อเรา</span>
                     </a>
                 </li>
             </ul>
