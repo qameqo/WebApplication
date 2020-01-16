@@ -51,7 +51,7 @@ class Owner extends CI_Controller {
                 $qq = $query->row_array();
                 echo $qq['idCarregis'];
                 echo $qq['id_Gen'];
-                redirect('Owner2/show/'. $qq['id_Gen']);
+                redirect('Owner2/show/'. $qq['id_Gen'].'/'. $qq['idCarregis']);
                 
             }
 
