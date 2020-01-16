@@ -46,7 +46,37 @@ class te_api extends \Restserver\Libraries\REST_Controller {
         $this->response($query->result());
 
     }
+    public function Login()
+    {
+        $Username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $this->db->where('Username', $Username);
+        $this->db->where('password', $password);
+        $data = $query->row_array();
+        $this->session->set_userdata($data);
+        $query = $this->db->get('Member', 1);
+        if($this->session->userdata('Row') =="ลูกค้า")
+        {
+            $data = $query->row_array();
+            $data['ID'] = $data['id_Member'];
+            $this->session->set_userdata($data);
+            redirect('Firstpage'); //เจ้าของรถ
+        }else
+        {
+                echo "<script>";
+                echo "alert('ไม่พบรหัสผู้ใช้งาน');";
+                echo "window.location.href = '". base_url(). "Login ';";
+                echo "</script>";
+
+        }
+    }
 }
+            
+    
+        
+    
+
 
 /* End of file Controllername.php */
  ?>
+
