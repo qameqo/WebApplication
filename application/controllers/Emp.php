@@ -13,9 +13,28 @@ class Emp extends CI_Controller {
     public function emp_edit()
     {   
         $this->load->view('Header_emp');
-        $this->load->view('Manager_view');
+        $this->load->view('Emp_view');
         $this->load->view('Footer_emp');
     } 
+
+    public function update()
+    { 
+        $this->db->where('Username', $this->session->userdata('Username'));
+        $object = array(
+            'Username' =>  $this->input->post("Username"),
+            'Password' =>  $this->input->post("Password"),
+            'FName' =>  $this->input->post("FName"),
+            'LName' =>  $this->input->post("LName"),
+            'Address' =>  $this->input->post("Address"),
+            'Tel' =>  $this->input->post("Tel"),
+        );
+        $this->db->update('Employee', $object);    
+
+                echo "<script>";
+                echo "alert('บันทึกข้อมูลเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Emp ';";
+                echo "</script>";
+    }
 
    
 }

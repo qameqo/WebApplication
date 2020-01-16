@@ -9,6 +9,8 @@
 
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="<?php echo $rs_edit->id_Employee; ?>">
 
+                    <input type="hidden" name="Username" id="Username" class="form-control" value="<?php echo $rs_edit->Username; ?>">
+
                     <div class="form-row">
                         <div class="col">
                             <label for="Password">Password</label>

@@ -18,7 +18,7 @@
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลเกี่ยวกับรถยนต์</h4>
-            <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการข้อมูลการรับรถยนต์</a><br>
+            <a href="<?php echo site_url('Emp_car');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการข้อมูลการรับรถยนต์</a><br>
             <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการการเช่ารถยนต์</a>
           </div>
         </div>
