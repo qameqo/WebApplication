@@ -4,65 +4,65 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">Show Detail Car Register</h4>
 
-                <form action="<?php echo site_url('Emp_car/add_status'); ?>" method="POST" class="form-horizontal">
+                <form action="<?php echo site_url('Emp_car/add_status_2'); ?>" method="POST" class="form-horizontal">
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
 
                             <tr>
-                                <td width="30%"><label>ID</label></td>
+                                <td width="30%"><label>รหัส</label></td>
                                 <td width="70%"><?php echo $rs->idCarregis; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Brand</label></td>
-                                <td width="70%"><?php echo $rs->Brand; ?></td>
+                                <td width="30%"><label>ยี่ห้อ</label></td>
+                                <td width="70%"><?php echo $rs->Name_Brand; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Generation</label></td>
-                                <td width="70%"><?php echo $rs->Generation; ?></td>
+                                <td width="30%"><label>รุ่น</label></td>
+                                <td width="70%"><?php echo $rs->Name_Gen; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Yearcar</label></td>
+                                <td width="30%"><label>ปีรถยนต์</label></td>
                                 <td width="70%"><?php echo $rs->Yearcar; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Seat</label></td>
+                                <td width="30%"><label>ที่นั่ง</label></td>
                                 <td width="70%"><?php echo $rs->Seat; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Fuel</label></td>
+                                <td width="30%"><label>เชื้อเพลิง</label></td>
                                 <td width="70%"><?php echo $rs->Fuel; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Gear</label></td>
+                                <td width="30%"><label>ระบบเกียร์</label></td>
                                 <td width="70%"><?php echo $rs->Gear; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Mileage</label></td>
+                                <td width="30%"><label>เลขไมล์</label></td>
                                 <td width="70%"><?php echo $rs->Mileage; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>License</label></td>
+                                <td width="30%"><label>ทะเบียน</label></td>
                                 <td width="70%"><?php echo $rs->License; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Yearlicense</label></td>
+                                <td width="30%"><label>ปีที่ออกทะเบียน</label></td>
                                 <td width="70%"><?php echo $rs->Yearlicense; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Carbody</label></td>
+                                <td width="30%"><label>เลขตัวถัง</label></td>
                                 <td width="70%"><?php echo $rs->Carbody; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>Status</label></td>
+                                <td width="30%"><label>สถานะ</label></td>
                                 <td width="70%"><?php echo $rs->Status; ?></td>
-                            </tr>
+                            </tr> 
                             <tr>
-                                <td width="30%"><label>id_Employee</label></td>
+                                <td width="30%"><label>รหัสพนักงาน</label></td>
                                 <td width="70%"><?php echo $rs->id_Employee; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>id_Member</label></td>
+                                <td width="30%"><label>รหัสสมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->id_Member; ?></td>
                             </tr>
 
@@ -91,12 +91,9 @@
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
-
-                    <input type="hidden" name="id_Employee" id="id_Employee" value="2" class="form-control" required>
-
                     <?php if ($rs->Status == 'กำลังดำเนินการ') {
                         echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-warning mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการลงทะเบียน</button>';
+                        echo '<button type="submit" class="btn btn-warning mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการรถยนต์</button>';
                     }else if($rs->Status == ''){
                         echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
                         // echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';

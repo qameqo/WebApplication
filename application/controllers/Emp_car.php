@@ -35,7 +35,7 @@ class Emp_car extends CI_Controller {
         $this->load->view('Modal_view');
     }
 
-    public function add_status()
+    public function add_status_2()
     {
         $this->Manager_car_regis_model->add_status_2();
     }

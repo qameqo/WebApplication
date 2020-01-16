@@ -58,6 +58,10 @@
                                 <td width="70%"><?php echo $rs->Status; ?></td>
                             </tr> 
                             <tr>
+                                <td width="30%"><label>รหัสพนักงาน</label></td>
+                                <td width="70%"><?php echo $rs->id_Employee; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>รหัสสมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->id_Member; ?></td>
                             </tr>
@@ -86,9 +90,6 @@
                     </div>
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
-
-
-                    <input type="hidden" name="id_Employee" id="id_Employee" value="2" class="form-control" required>
 
                     <?php if ($rs->Status == 'พร้อม') {
                         echo '<input type="hidden" name="Status" id="Status" value="ยกเลิก" class="form-control" required>';
