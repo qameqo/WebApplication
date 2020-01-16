@@ -30,7 +30,6 @@ class Owner extends CI_Controller {
             
                 $object = array(
                     'Brand' =>  $this->input->post("Brand"),
-                    'Generation' =>  $this->input->post("Gen"),
                     'Yearcar' =>  $this->input->post("caryear"),
                     'Seat' =>  $this->input->post("seat"),
                     'Color' =>  $this->input->post("color"),
@@ -41,7 +40,8 @@ class Owner extends CI_Controller {
                     'Yearlicense' =>  $this->input->post("licenseyear"),
                     'Carbody' =>  $this->input->post("carbody"),
                     'Status' => "รออนุมัติ",
-                    'id_Member' => $this->session->userdata('id_Member')
+                    'id_Member' => $this->session->userdata('id_Member'),
+                    'id_Gen' => $this->input->post("Gen")
                    
                 );
         
@@ -50,7 +50,8 @@ class Owner extends CI_Controller {
                 $query =  $this->db->get('Carregis', 1);
                 $qq = $query->row_array();
                 echo $qq['idCarregis'];
-                redirect('Owner2/show/'. $qq['idCarregis'].'/'. $qq['id_Gen']);
+                echo $qq['id_Gen'];
+                redirect('Owner2/show/'. $qq['id_Gen']);
                 
             }
 
@@ -71,7 +72,7 @@ class Owner extends CI_Controller {
         as $she)
         {
         ?>
-        <option value="<?php echo $she['Name_Gen'] ?>"><?php echo $she['Name_Gen'] ?></option>
+        <option value="<?php echo $she['id_Gen'] ?>"><?php echo $she['Name_Gen'] ?></option>
     <?php }
 								  
 						

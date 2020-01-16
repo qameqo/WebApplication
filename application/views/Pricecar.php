@@ -9,14 +9,17 @@
 				action="<?php echo base_url();?>Pricecar/price">
 
 				<?php 
-				$this->db->select('*');
-				$this->db->from('Generation');
-				$this->db->join('Brand', 'Brand.idBrand = Generation.idBrand');
-				$this->db->where('id_Gen');
-				$query = $this->db->get();
-				$qi = $query->result_array();
+				
+				$query = $this->db->query('SELECT * FROM Generation , Brand WHERE Brand.idBrand = Generation.idBrand and Generation.id_Gen = '. $id);
+				// $this->db->select('*');
+				// $this->db->from('Brand' , 'Generation');
+				// $this->db->where('Genaretion.idBrand');
+				// $this->db->where('Brand.idBrand');
+				// $this->db->where('id_Gen', $id);
+				// $query = $this->db->get();
+				$qq = $query->result_array();
+				
 				?>
-
                 <div class="row">
 					<div class="col-sm text-center" >
 						<label class="bmd-label-floating"><h4>ราคาปล่อยเช่ารถยนต์</h4></label>
@@ -28,9 +31,14 @@
 						</div>
                         <div class="col-sm">
 						<?php 
-							foreach($qi as $data){
+							foreach($qq as $data){
+								$ei = $data['Price'];
+								 $eii = 0.2;
+								 $e = 10;
+								 $ee = 1000;
+								 $total = $ei * $eii * $e / $ee;
 						?>
-						<input type="text" class="form-control" name="pricecar" value= "<?php echo $data['Price']; ?>" style="width: 200px; height:25px;">
+						<input type="text" class="form-control" name="pricecar" value= "<?php echo $total ?>" style="width: 200px; height:25px;">
 							<?php } ?> 
 						</div>
                         <div class="col-sm">
@@ -39,12 +47,14 @@
 					</div>
 					<?php 
 				
-				$this->db->select('*');
-				$this->db->from('Brand');
-				$this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');
-				$this->db->where('idCarregis', $id);
-				$this->db->where('id_Member', $this->session->userdata('ID'));
-				$query = $this->db->get();
+				$query = $this->db->query('SELECT * FROM Generation , Brand WHERE Brand.idBrand = Generation.idBrand and Generation.id_Gen = '. $id);
+				// $this->db->select('*');
+				// $this->db->from('Brand' , 'Generation');
+				// $this->db->where('Genaretion.idBrand');
+				// $this->db->where('Brand.idBrand');
+				
+				// $this->db->where('id_Gen', $id);
+				// $query = $this->db->get();
 				$qq = $query->result_array();
 				
 				?>
@@ -53,7 +63,7 @@
 					<?php foreach($qq as $data){
 								
                                 ?>
-						<h5>ราคาแนะนำสำหรับ <?php echo $data['Name_Brand']; ?> <?php echo $data['Generation']; ?></h5>
+						<h5>ราคาแนะนำสำหรับ <?php echo $data['Name_Brand']; ?> <?php echo $data['Name_Gen']; ?></h5>
 					<?php  } ?>
 						</div>
 					</div>

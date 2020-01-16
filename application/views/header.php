@@ -24,7 +24,7 @@
   ?>
   </style>
   
-  <nav class="navbar navbar-expand-lg bg-danger shadow p-3 ">
+  <nav class="navbar navbar-expand-lg shadow p-3 " style="background-color: #F60200;">
     <div class="container">
         <a class="navbar-brand" href="<?php echo base_url("Firstpage");?>" style="color: white" >G Dragon Autotech</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
