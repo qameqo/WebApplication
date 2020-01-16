@@ -4,16 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Owner2 extends CI_Controller {
 
     
-    public function show($id)
+    public function show($id,$idc)
     {
         $data['id'] = $id;
+        $data['idc'] = $idc;
         $this->load->view('header');
         $this->load->view('Car_owner2',$data);     
         $this->load->view('footer');
         
     }
    
-    public function up()
+    public function up($id,$idc)
     {
         
         $config['upload_path'] = './pic/';
@@ -34,19 +35,19 @@ class Owner2 extends CI_Controller {
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
                                 'Name_image'=>$filename,
-                                'idCarregis'=>$this->input->post('idCarregis')
+                                'idCarregis'=>$idc
                             );
             $this->db->insert('Images', $arr);
            
-            redirect('Owner2/show/'.$this->input->post('idCarregis'));
+            redirect('Owner2/show/'.$id.'/'.$idc);
         }
 
     }
-    public function del($di,$id)
+    public function del($di,$id,$idc)
     {   
         $this->db->delete('Images', array('id_image'=>$di));
         // $this->show($id);
-        redirect('Owner2/show/'.$id);
+        redirect('Owner2/show/'.$id.'/'.$idc);
     }
     /* DELETE FROM `Carregis` WHERE `Carregis`.`idCarregis` = 73; 
     DELETE FROM `Images` WHERE `Images`.`id_image` = 97;*/

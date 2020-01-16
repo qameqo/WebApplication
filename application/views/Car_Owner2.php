@@ -16,7 +16,7 @@
 }</style>
 
 		<form class="form-upload" id="owner2" name="owner2" method="post" enctype="multipart/form-data"
-			action="<?php echo base_url(); ?>Owner2/up">
+			action="<?php echo base_url('Owner2/up/'.$id.'/'.$idc); ?>">
 			<div class="col-md-13 text-center"><br>
 
 				
@@ -26,7 +26,8 @@
 					<div class="col-sm-8 shadow p-4 mb-4 bg-white rounded">
 						<div class="container mb-5">
 						<?php 
-						$this->db->where('idCarregis', $id);
+						
+						$this->db->where( 'idCarregis',$idc);
 						$query = $this->db->get('Images', 8);
 						$qi = $query->result_array();
 						?>
@@ -50,7 +51,7 @@
 											<td><img src="<?php echo base_url('./pic/'.$data['Name_image']);?>"
 													style="width: 50px; height: 50px;" /></td>
 
-											<td><a href="<?php echo site_url('Owner2/del/'.$data['id_image'].'/'.$id);?>"
+											<td><a href="<?php echo site_url('Owner2/del/'.$data['id_image'].'/'.$id.'/'.$idc);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
 													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>
@@ -86,13 +87,13 @@
 								</div>
 							</div>
 							</div>
-							<input type="hidden" value="<?php echo $id; ?>" name="idCarregis" id="idCarregis" />
+							<!-- <input type="hidden" value="<?php echo $id; ?>" name="idCarregis" id="idCarregis" /> -->
 
 							
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri/'.$id); ?>"
+									<a class="btn btn-success " href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>"
 										onclick="return confirm('ยืนยันการอัปโหลด ?');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 								</div>
