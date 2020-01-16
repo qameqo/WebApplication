@@ -39,6 +39,8 @@
 
                     <input type="hidden" name="id_Employee" id="id_Employee" class="form-control" value="">
 
+                    <input type="hidden" name="Username" id="Username" class="form-control" value="<?php echo $data['Username'];?>">
+
                     <div class="form-group">
                         <label for="Password">รหัสผ่าน</label>
                         <input type="text" class="form-control" name="Password" id="Password"
