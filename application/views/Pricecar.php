@@ -9,16 +9,14 @@
 				action="<?php echo base_url();?>Pricecar/price">
 
 				<?php 
-				
 				$this->db->select('*');
-				$this->db->from('Brand');
-				$this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');
-				$this->db->where('idCarregis', $id);
-				$this->db->where('id_Member', $this->session->userdata('ID'));
+				$this->db->from('Generation');
+				$this->db->join('Brand', 'Brand.idBrand = Generation.idBrand');
+				$this->db->where('id_Gen');
 				$query = $this->db->get();
-				$qq = $query->result_array();
-				
+				$qi = $query->result_array();
 				?>
+
                 <div class="row">
 					<div class="col-sm text-center" >
 						<label class="bmd-label-floating"><h4>ราคาปล่อยเช่ารถยนต์</h4></label>
@@ -29,12 +27,27 @@
 						<label class="bmd-label-floating"><h5>ราคาปล่อยเช่ารถต่อวัน :</h5></label>
 						</div>
                         <div class="col-sm">
-						<input type="text" class="form-control" name="pricecar" value= "สัส" style="width: 200px; height:25px;">
+						<?php 
+							foreach($qi as $data){
+						?>
+						<input type="text" class="form-control" name="pricecar" value= "<?php echo $data['Price']; ?>" style="width: 200px; height:25px;">
+							<?php } ?> 
 						</div>
                         <div class="col-sm">
 						<h5>บาท/วัน</h5>
 						</div>
 					</div>
+					<?php 
+				
+				$this->db->select('*');
+				$this->db->from('Brand');
+				$this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');
+				$this->db->where('idCarregis', $id);
+				$this->db->where('id_Member', $this->session->userdata('ID'));
+				$query = $this->db->get();
+				$qq = $query->result_array();
+				
+				?>
                     <div class="row">
 					<div class="col-sm">
 					<?php foreach($qq as $data){
