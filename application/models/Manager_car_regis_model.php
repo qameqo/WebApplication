@@ -5,7 +5,15 @@ class Manager_car_regis_model extends CI_Model
 {
     public function show_car_regis()
     {
-        $query = $this->db->get('Carregis');
+        // $query = $this->db->get('Carregis');
+        
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+
+        $query = $this->db->get();
+
         return $query->result();
         
     }
@@ -14,6 +22,8 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Carregis');
+        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->where('idCarregis', $idCarregis);
         $query = $this->db->get();
 
