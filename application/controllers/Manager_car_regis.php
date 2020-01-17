@@ -48,6 +48,27 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status();
     }
 
+    // public function not_passed($idCarregis)
+    // {
+    //     // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
+
+    //     echo '<pre>';
+    //     print_r($data);
+    //     echo '</pre>';
+
+    //     exit;
+    //     $this->load->view('Header_manage');
+    //     $this->load->view('Manager_car_regis_not_passed_view');
+    //     $this->load->view('Footer_manage');
+    //     $this->load->view('Script_manager_emp');
+    //     $this->load->view('Modal_view');
+    // }
+
+    public function add_not_passed()
+    {
+        $this->Manager_car_regis_model->add_not_passed();
+    }
+
 }
 
 /* End of file Hello.php */

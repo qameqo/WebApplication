@@ -12,8 +12,15 @@ class Dataregis extends CI_Controller {
         $this->load->view('footer');
         
     }
-    public function show()
+    public function show($id)
     {
+
+        $data['id'] = $id;
+
+        $this->load->view('header');
+        $this->load->view('dataregis_2',$data);
+        $this->load->view('footer');
+
         // $this->db->select('*');
         // $this->db->from('Brand');
         // $this->db->join('Carregis', 'Carregis.Brand = Brand.idBrand');

@@ -89,7 +89,8 @@
                                 } ?>
 
                                 <td>
-                                    <a href="<?php echo site_url('Dataregis2') ?>" class="btn btn-info btn-sm">View</a>
+                                <?php $id = $data['idCarregis']; ?>
+                                    <a href="<?php echo site_url('Dataregis/show/').$id; ?>" class="btn btn-info btn-sm">View</a>
                                 </td>
 
                             </tr>

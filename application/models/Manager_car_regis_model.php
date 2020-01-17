@@ -60,11 +60,17 @@ class Manager_car_regis_model extends CI_Model
 
         echo "<script>";
         echo "alert('แก้ไขสถานะเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Manager_car_regis ';";
+        echo "window.location.href = '". base_url(). "Manager_car_regis';";
         echo "</script>";
         
         // redirect('Manager_emp');
     }
+
+    // public function add_not_passed()
+    // {
+    //     $query = $this->db->insert($table, $data);
+    //     return $this->db->insert_id();// return last insert id
+    // }
 
     public function add_status_2()
     {
