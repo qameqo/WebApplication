@@ -16,12 +16,9 @@ require APPPATH . '/libraries/REST_Controller.php';
  * @license         MIT
  * @link            https://github.com/chriskacerguis/codeigniter-restserver
  */
-class te_api extends \Restserver\Libraries\REST_Controller {
+class Te_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index()
-    {
-        
-    }
+  
 
     public function index_get()
     {
@@ -31,7 +28,7 @@ class te_api extends \Restserver\Libraries\REST_Controller {
         $this->db->where('Username', $Username);
         $this->db->where('Password', $password);
         $query = $this->db->get('Member');
-        $this->response($query->result());
+        $this->response("Hi sad");
       
         
         
@@ -43,19 +40,19 @@ class te_api extends \Restserver\Libraries\REST_Controller {
         $this->db->where('Username', $Username);
         $this->db->where('Password', $password);
         $query = $this->db->get('Member');
-        $this->response($query->result());
+        $this->response("Hi");
 
     }
     public function Login()
     {
+     
+      
         $Username = $this->input->post('username');
         $password = $this->input->post('password');
         $this->db->where('Username', $Username);
         $this->db->where('password', $password);
-        $data = $query->row_array();
-        $this->session->set_userdata($data);
         $query = $this->db->get('Member', 1);
-        if($this->session->userdata('Row') =="ลูกค้า")
+        if($query->num_rows() ==1)
         {
             $data = $query->row_array();
             $data['ID'] = $data['id_Member'];
