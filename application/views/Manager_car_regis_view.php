@@ -37,7 +37,44 @@
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->id_Member; ?></td>
-                                <td><?php echo $rs->Status; ?></td>
+
+                                <?php if($rs->Status == 'รออนุมัติ')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'ผ่าน') 
+                                {
+                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'ไม่ผ่าน') 
+                                {
+                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == 'กำลังดำเนินการ')
+                                {
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'พร้อม') 
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == 'ยกเลิก')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                } ?>
+                                
 
 								<td>
 								

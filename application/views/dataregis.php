@@ -47,7 +47,45 @@
 								<td><?php echo $data['Gear'];?></td>
                                 <td><?php echo $data['Yearlicense'];?></td>
                                 <td><?php echo $data['Carbody'];?></td>
-                                <td><span class="badge badge-warning"><?php echo $data['Status'];?></span></td>
+                                <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
+
+                                <?php if($data['Status'] == 'รออนุมัติ')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if ($data['Status'] == 'ผ่าน') 
+                                {
+                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if ($data['Status'] == 'ไม่ผ่าน') 
+                                {
+                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if($data['Status'] == 'กำลังดำเนินการ')
+                                {
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if ($data['Status'] == 'พร้อม') 
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if($data['Status'] == 'ยกเลิก')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                } ?>
+
 								<!-- <td>
                                 
                                     <a href="<?php echo site_url('Dataregis2') ?>" class="btn btn-success btn-sm">View</a>
