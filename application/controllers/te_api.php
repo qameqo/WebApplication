@@ -29,19 +29,31 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
         $this->db->where('Password', $password);
         $query = $this->db->get('Member');
         $this->response("Hi sad");
+    
       
         
         
     }
     public function index_post()
     {
-        $Username = $this->post('Username');
-        $password = $this->post('Password');
+        $Username = $this->input->post('username');
+        $password = $this->input->post('password');
         $this->db->where('Username', $Username);
-        $this->db->where('Password', $password);
-        $query = $this->db->get('Member');
-        $this->response("Hi");
+        $this->db->where('password', $password);
+        $query = $this->db->get('Member', 1);
+        if($query->num_rows() ==1)
+        {
+            $this->response(array(
+                'status' => 'ผ่าน'
+            ));
+          
+        }else
+        {
+            $this->response(array(
+                'status' => 'ไม่ผ่าน'
+            ));
 
+        }
     }
     public function Login()
     {
