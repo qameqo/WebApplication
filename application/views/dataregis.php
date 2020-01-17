@@ -30,6 +30,7 @@
                                 <th data-column-id="Name_image"style="width: 350px;">ปีที่ออกทะเบียน</th>
                                 <th data-column-id="Name_image"style="width: 250px;">เลขตัวถัง</th>
                                 <th data-column-id="Name_image"style="width: 150px;">สถานะ</th>
+                                <th data-column-id="Name_image"style="width: 150px;"></th>
                             </tr>
                         </thead>
 						<tbody>
@@ -86,10 +87,9 @@
                                     echo '</span></td>';
                                 } ?>
 
-								<!-- <td>
-                                
-                                    <a href="<?php echo site_url('Dataregis2') ?>" class="btn btn-success btn-sm">View</a>
-                                </td> -->
+								<td>
+                                    <a href="<?php echo site_url('Dataregis2') ?>" class="btn btn-info btn-sm">View</a>
+                                </td>
 
 								</tr>
                                 <?php 
