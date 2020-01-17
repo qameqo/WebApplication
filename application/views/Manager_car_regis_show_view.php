@@ -55,7 +55,42 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <td width="70%"><?php echo $rs->Status; ?></td>
+                                <?php if($rs->Status == 'รออนุมัติ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'ผ่าน') 
+                                {
+                                    echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'ไม่ผ่าน') 
+                                {
+                                    echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == 'กำลังดำเนินการ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->Status == 'พร้อม') 
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == 'ยกเลิก')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                } ?>
                             </tr> 
                             <tr>
                                 <td width="30%"><label>รหัสพนักงาน</label></td>
@@ -75,7 +110,7 @@
                             <tr>
                                 <td width="30%"><label>รูปภาพ</label></td>
                                 <td width="70%">
-                                
+                              
                                 <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
