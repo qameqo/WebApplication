@@ -30,7 +30,7 @@
 						<label class="bmd-label-floating"><h5>ราคาปล่อยเช่ารถต่อวัน :</h5></label>
 						</div>
                         <div class="col-sm">
-						<?php 
+						<?php  
 							foreach($qq as $data){
 								$ei = $data['Price'];
 								$eii = 0.2;
@@ -38,7 +38,7 @@
 								$ee = 1000;
 								$total = $ei * $eii * $e / $ee;
 						?>
-						<input type="text" class="form-control" name="pricecar" value= "<?php echo $total ?>" style="width: 200px; height:25px;">
+						<input type="text" class="form-control" name="Price" id="Price" value= "<?php echo $total ?>" style="width: 200px; height:25px;">
 							<?php } ?> 
 						</div>
                         <div class="col-sm">
@@ -73,6 +73,7 @@
 						</div>
 					</div>
 
+					<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $idc; ?>">
 
 					<!-- <input type="hidden" class="form-control" id="type" value="CarOwner">
 				<div class="fileinput fileinput-new " data-provides="fileinput">

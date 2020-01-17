@@ -14,7 +14,24 @@ class Pricecar extends CI_Controller {
     }
     public function price()
     {
-        echo"ครับ";
+        // echo"ครับ";
+
+        // print_r($_POST);
+        
+        // exit;
+        
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'Price' => $this->input->post('Price')
+        );
+
+        $query=$this->db->update('Carregis',$data);
+
+        echo "<script>";
+        echo "alert('ยืนยันราคาเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Dataregis ';";
+        echo "</script>";
     }
 
 }
