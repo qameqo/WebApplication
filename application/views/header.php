@@ -71,7 +71,7 @@
                         <span class="nav-link-inner--text d-lg-none">Profile</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="<?php echo base_url("Profile"); ?>">Profile</a>
                         <a class="dropdown-item" href="<?php echo base_url("OwnerManage");?>">แก้ไขข้อมูลส่วนตัว</a>
                         <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="<?php echo base_url("Homeowner");?>">ออกจากระบบ</a>

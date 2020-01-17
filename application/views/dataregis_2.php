@@ -124,16 +124,16 @@
                         </table>
                     </div>
 
-                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php// echo $rs->idCarregis; ?>">
-
-                    <?php //if ($rs->Status == 'ผ่าน') {
+                    <!-- <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value=""/> -->
+                    <!-- // echo $rs->idCarregis;  -->
+                    <!--  //if ($rs->Status == 'ผ่าน') {
                         echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
                         echo '<button type="submit" class="btn btn-warning mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการรถยนต์</button>';
                     //}else if($rs->Status == ''){
                         echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
                         // echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
                         // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ผ่าน</button>';
-                    //}?>
+                    //} -->
 
 
                 </form>

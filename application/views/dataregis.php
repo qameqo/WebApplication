@@ -9,7 +9,8 @@
                         $this->db->from('Carregis');
                         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
                         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-						$this->db->where('id_Member', $this->session->userdata('ID'));
+                        $this->db->where('id_Member', $this->session->userdata('ID'));
+                        $this->db->order_by('idCarregis', 'desc');
 						$query = $this->db->get();
                         $qq = $query->result_array();
                         
@@ -59,13 +60,13 @@
                                 }
                                 else if ($data['Status'] == 'ผ่าน') 
                                 {
-                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
                                 else if ($data['Status'] == 'ไม่ผ่าน') 
                                 {
-                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
@@ -77,13 +78,13 @@
                                 }
                                 else if ($data['Status'] == 'พร้อม') 
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
                                 else if($data['Status'] == 'ยกเลิก')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 } ?>
