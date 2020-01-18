@@ -11,23 +11,32 @@ class Owner extends CI_Controller {
     }
     public function insert()
     {   
-        /* $this->db->where('carbody', $carbody);
-        $carbody = $this->input->post('carbody'); */
+        
         $license = $this->input->post('license');
         $this->db->where('license', $license);
         $query = $this->db->get('Carregis',1);
-       /*  $license ==1 || $carbody ==1 */
         if($query->num_rows() ==1)
-        {
-            
+        {   
             echo "<script>";
-            echo "alert('ทะเบียนรถหรือเลขตัวถังรถนี้มีผู้ใช้แล้ว');";
+            echo "alert('ทะเบียนรถนี้มีผู้ใช้แล้ว');";
             echo "window.location.href = '". base_url(). "Owner ';";
             echo "</script>";
-             
+            // echo "ทะเบียนซ้ำ";
         }else
         {      
-            
+            $carbody = $this->input->post('carbody');
+            $this->db->where('carbody', $carbody);
+            $query = $this->db->get('Carregis',1);
+            if($query->num_rows()== 1)
+            {
+            echo "<script>";
+            echo "alert('เลขตัวถังรถนี้มีผู้ใช้แล้ว');";
+            echo "window.location.href = '". base_url(). "Owner ';";
+            echo "</script>";
+            // echo "เครื่องซ้ำ";
+
+            }else
+            {
                 $object = array(
                     'Brand' =>  $this->input->post("Brand"),
                     'Yearcar' =>  $this->input->post("caryear"),
@@ -52,6 +61,7 @@ class Owner extends CI_Controller {
                 echo $qq['idCarregis'];
                 echo $qq['id_Gen'];
                 redirect('Owner2/show/'. $qq['id_Gen'].'/'. $qq['idCarregis']);
+            }
                 
             }
 

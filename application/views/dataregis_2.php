@@ -4,123 +4,130 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">รายละเอียดรถยนต์</h4>
 
-                <form action="<?php echo site_url('Emp_car/add_status_2'); ?>" method="POST" class="form-horizontal">
+                <form action="" method="POST" class="form-horizontal">
+
+                    <?php $this->db->select('*');
+                    $this->db->from('Carregis');
+                    $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+                    $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+                    $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+                    $this->db->where('idCarregis',$idc);
+                    $query = $this->db->get();
+                    $qq = $query->result_array();
+                    
+                     ?>
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
 
-                            <tr>
-                                <td width="30%"><label>รหัส</label></td>
-                                <td width="70%"><?php //echo $data['idCarregis']; ?></td>
-                            </tr>
+                           <?php foreach($qq as $data){
+                           ?>
                             <tr>
                                 <td width="30%"><label>ยี่ห้อ</label></td>
-                                <td width="70%"><?php //echo $rs->Name_Brand; ?></td>
+                                <td width="70%"><?php echo $data['Name_Brand'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>รุ่น</label></td>
-                                <td width="70%"><?php //echo $rs->Name_Gen; ?></td>
+                                <td width="70%"><?php echo $data['Name_Gen'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ปีรถยนต์</label></td>
-                                <td width="70%"><?php //echo $rs->Yearcar; ?></td>
+                                <td width="70%"><?php echo $data['Yearcar'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
-                                <td width="70%"><?php //echo $rs->Seat; ?></td>
+                                <td width="70%"><?php echo $data['Seat'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เชื้อเพลิง</label></td>
-                                <td width="70%"><?php //echo $rs->Fuel; ?></td>
+                                <td width="70%"><?php echo $data['Fuel'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>
-                                <td width="70%"><?php //echo $rs->Gear; ?></td>
+                                <td width="70%"><?php echo $data['Gear'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เลขไมล์</label></td>
-                                <td width="70%"><?php //echo $rs->Mileage; ?></td>
+                                <td width="70%"><?php echo $data['Mileage'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ทะเบียน</label></td>
-                                <td width="70%"><?php //echo $rs->License; ?></td>
+                                <td width="70%"><?php echo $data['License'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ปีที่ออกทะเบียน</label></td>
-                                <td width="70%"><?php //echo $rs->Yearlicense; ?></td>
+                                <td width="70%"><?php echo $data['Yearlicense'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เลขตัวถัง</label></td>
-                                <td width="70%"><?php //echo $rs->Carbody; ?></td>
+                                <td width="70%"><?php echo $data['Carbody'];?></td>
                             </tr>
                             <!-- <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    //echo $rs->Status; 
+                                    echo $data['Status'];  
                                     echo '</span></td>';
                                 }
                                 else if ($rs->Status == 'ผ่าน') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
-                                    // echo $rs->Status; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
                                 }
                                 else if ($rs->Status == 'ไม่ผ่าน') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
-                                    // echo $rs->Status; 
+                                    echo $data['Status'];  
                                     echo '</span></td>';
                                 }
                                 else if($rs->Status == 'กำลังดำเนินการ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
-                                    // echo $rs->Status; 
+                                    echo $data['Status'];  
                                     echo '</span></td>';
                                 }
                                 else if ($rs->Status == 'พร้อม') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
-                                    // echo $rs->Status; 
+                                    echo $data['Status'];  
                                     echo '</span></td>';
                                 }
                                 else if($rs->Status == 'ยกเลิก')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
-                                    // echo $rs->Status; 
+                                    echo $data['Status'];  
                                     echo '</span></td>';
                                 } ?>
                             </tr>  -->
                             <tr>
-                                <td width="30%"><label>รหัสพนักงาน</label></td>
-                                <td width="70%"><?php //echo $rs->id_Employee; ?></td>
+                                <td width="30%"><label>ผู้ลงทะเบียน</label></td>
+                                <td width="70%"><?php echo $data['FName']; ?></td>
                             </tr>
-                            <tr>
-                                <td width="30%"><label>รหัสสมาชิก</label></td>
-                                <td width="70%"><?php //echo $rs->id_Member; ?></td>
-                            </tr>
-
-                            <?php 
-
-                            // $query = $this->db->query("SELECT Images.Name_image FROM Carregis, Images WHERE Carregis.idCarregis = Images.idCarregis AND Carregis.idCarregis = $rs->idCarregis;");
-
-                            // foreach ($query->result_array() as $data ) { ?>
+                            <?php } ?>
+                         
+                         <?php 
+                         $this->db->select('*');
+                         $this->db->from('Images');
+                         $this->db->where('idCarregis',$idc);
+                         $query = $this->db->get();
+                         $qq = $query->result_array();
+                         
+                         ?>
+                            <?php foreach($qq as $data){ 
+                            ?>
 
                             <tr>
                                 <td width="30%"><label>รูปภาพ</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php //echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./pic/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>
-
-                            <?php 
-                            
-                            // }
-
-                            ?>
+                            <?php } ?>
+                           
                         </table>
                     </div>
 
