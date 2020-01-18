@@ -137,9 +137,9 @@
                         echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
                     }else if($rs->Status == 'รออนุมัติ'){
                         echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
-                        echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
-                        // echo '<a class="btn btn-danger mt-5 mr-5" value="ไม่ผ่าน" style="font-size:20px;" href="'.base_url('Manager_car_regis/not_passed/'.$rs->idCarregis).'">';
-                        
+                        // echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-danger mt-5 mr-5" type="button" data-toggle="modal" data-target="#StatusModal" style="font-size:20px;">ไม่ผ่าน</button>';
+                                           
                     }?>
 
 

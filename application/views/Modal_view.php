@@ -88,7 +88,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" name="adding_btn" id="adding_btn" class="btn btn-primary btn-sm" style="font-size:20px;" value="ยืนยัน" />
+                    <input type="submit" class="btn btn-success btn-sm mt-5 mr-5" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>
                 </div>
             </form>
         </div>
