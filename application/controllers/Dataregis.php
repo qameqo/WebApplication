@@ -12,14 +12,7 @@ class Dataregis extends CI_Controller {
         $this->load->view('footer');
         
     }
-    public function show($id)
-    {
-
-        $data['id'] = $id;
-
-        $this->load->view('header');
-        $this->load->view('dataregis_2',$data);
-        $this->load->view('footer');
+    
 
         // $this->db->select('*');
         // $this->db->from('Brand');
@@ -30,7 +23,7 @@ class Dataregis extends CI_Controller {
 		// $query = $this->db->get('Carregis',1);
         // $data = $query->row_array();
         // $data['IDC'] = $data['idCarregis'];
-    }
+    
 
 }
 

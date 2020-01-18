@@ -35,6 +35,7 @@
 					</div>
 
 				</div>
+				<br>
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">First Name</label>
@@ -46,29 +47,22 @@
 					</div>
 
 				</div>
+				<br>
 				<div class="row">
-					<div class="col-sm">
-						<label class="bmd-label-floating">Date of Birth</label>
-						<div class="input-group input-group-alternative">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-							</div>
-							<input class="form-control datepicker" placeholder="Select date" type="text" name="date"
-								value="" required>
-						</div>
-					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Address</label>
 						<input name="address" type="text" id="address" class="form-control" placeholder="" required>
 					</div>
-				</div>
+				
 
-				<div class="row">
+				
 					<div class="col-sm">
 						<label class="bmd-label-floating">Tel.</label>
-						<input name="tel" type="tel" id="tel" class="form-control" placeholder="" required 
+						<input name="tel" type="tel" id="tel" class="form-control" placeholder="Ex.0899999999" required 
 						pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
 					</div>
+					</div>
+					<div class="row">
 					<div class="col-sm" style="padding-top: 30px;">
 						<button class="btn btn-success" type="submit"> Register</botton>
 					</div>

@@ -48,13 +48,15 @@
             </div>
 
             <ul class="navbar-nav ml-lg-auto">
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="#">
-                        <span class="" style="color: white">สัญญาเช่า</span>
-                        <!--  <?php echo $this->session->userdata('Email');
-                        
-                         ?> -->
-                    </a>
+                <li class="nav-item dropdown">
+                <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="" style="color: white">เช่ารถยนต์</span></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                        <a class="dropdown-item" href="<?php echo base_url("Rental"); ?>">เช่ารถ</a>
+                        <a class="dropdown-item" href="#">ข้อมูลการเช่า</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                       
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,7 +73,7 @@
                         <span class="nav-link-inner--text d-lg-none">Profile</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="<?php echo base_url("Profile"); ?>">Profile</a>
                         <a class="dropdown-item" href="<?php echo base_url("OwnerManage");?>">แก้ไขข้อมูลส่วนตัว</a>
                         <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="<?php echo base_url("Homeowner");?>">ออกจากระบบ</a>

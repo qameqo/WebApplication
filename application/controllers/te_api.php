@@ -52,7 +52,6 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
             $this->response(array(
                 'status' => 'ไม่ผ่าน'
             ));
-
         }
     }
     public function Login()

@@ -8,49 +8,42 @@
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 			<form class="form-signin" id="carregister" name="carregister" method="post"
 				action="">
-				<H4>เงื่อนไขการลงทะเบียนรถยนต์</H4>
+				<H4>ขั้นตอนการลงทะเบียนรถยนต์</H4>
+				<br>
 				<div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">1)....</label>
+						<H5>1.กรอกข้อมูลรถยนต์</H5>
+						</div>
+					</div>
+					<br>
+                    <div class="row">
+					<div class="col-sm">
+						<H5>2.อัปโหลดรูปภาพ</H5>
+						<H5>&nbsp;- รูปรถยนต์ 5 รูป ภายนอกรถด้านหน้า หลัง ซ้าย ขวา และภายในตัวรถ</H5>
+						<H5>&nbsp;- รูปพ.ร.บ. 1 รูป</H5>
+						<H5>&nbsp;- รูปเล่มทะเบียนรถยนต์ 1 รูป</H5>
+						<H5>&nbsp;- รูปใบขับขี่ 1 รูป</H5>
 						</div>
 					</div>
                     <br>
                     <div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">2)....</label>
+						<H5>3.ยืนยันราคาที่จะปล่อยเช่า</H5>
 						</div>
 					</div>
                     <br>
                     <div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">3)....</label>
-						</div>
-					</div>
-                    <br>
-                    <div class="row">
-					<div class="col-sm">
-						<label class="bmd-label-floating">4)....</label>
+						<H5>4.รอการอนุมัติผ่าน</H5>
 						</div>
 					</div>
                     <br>
 					<div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">5)....</label>
+						<H5>5.ระบุวันส่งมอบรถ</H5>
 						</div>
 					</div>
-                    <br>
-                    <div class="row">
-					<div class="col-sm">
-						<label class="bmd-label-floating">6)....</label>
-						</div>
-					</div>
-                    <br>
-					<div class="row">
-					<div class="col-sm">
-						<label class="bmd-label-floating">Username</label>
-						</div>
-					</div>
-                    <br>
+					<br>
                     <div class="row">
 					<div class="col-sm">
                         <a class="btn btn-danger" style="background-color: #F60200;" href="<?php echo base_url("Owner");?>">ดำเนินการต่อ</a>

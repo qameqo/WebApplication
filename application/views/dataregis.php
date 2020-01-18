@@ -9,7 +9,8 @@
                         $this->db->from('Carregis');
                         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
                         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-						$this->db->where('id_Member', $this->session->userdata('ID'));
+                        $this->db->where('id_Member', $this->session->userdata('ID'));
+                        $this->db->order_by('idCarregis', 'desc');
 						$query = $this->db->get();
                         $qq = $query->result_array();
                         
@@ -23,12 +24,7 @@
                                 <th data-column-id="Name_image" style="width: 150px;">ยี่ห้อ</th>
                                 <th data-column-id="Name_image" style="width: 200px;">รุ่น</th>
                                 <th data-column-id="Name_image" style="width: 200px;">ทะเบียน</th>
-                                <th data-column-id="Name_image" style="width: 350px;">ปีที่ออกรถ</th>
-                                <th data-column-id="Name_image" style="width: 300px;">ที่นั่ง</th>
                                 <th data-column-id="Name_image" style="width: 100px;">สี</th>
-                                <th data-column-id="Name_image" style="width: 320px;">ชนิดเชื้อเพลิง</th>
-                                <th data-column-id="Name_image" style="width: 200px;">เกียร์</th>
-                                <th data-column-id="Name_image" style="width: 350px;">ปีที่ออกทะเบียน</th>
                                 <th data-column-id="Name_image" style="width: 250px;">เลขตัวถัง</th>
                                 <th data-column-id="Name_image" style="width: 150px;">สถานะ</th>
                                 <th data-column-id="Name_image" style="width: 150px;"></th>
@@ -42,12 +38,7 @@
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-                                <td><?php echo $data['Yearcar'];?></td>
-                                <td><?php echo $data['Seat'];?></td>
                                 <td><?php echo $data['Color'];?></td>
-                                <td><?php echo $data['Fuel'];?></td>
-                                <td><?php echo $data['Gear'];?></td>
-                                <td><?php echo $data['Yearlicense'];?></td>
                                 <td><?php echo $data['Carbody'];?></td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
@@ -59,13 +50,13 @@
                                 }
                                 else if ($data['Status'] == 'ผ่าน') 
                                 {
-                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
                                 else if ($data['Status'] == 'ไม่ผ่าน') 
                                 {
-                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
@@ -77,20 +68,20 @@
                                 }
                                 else if ($data['Status'] == 'พร้อม') 
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
                                 else if($data['Status'] == 'ยกเลิก')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 } ?>
 
                                 <td>
-                                <?php $id = $data['idCarregis']; ?>
-                                    <a href="<?php echo site_url('Dataregis/show/').$id; ?>" class="btn btn-info btn-sm">View</a>
+                                <?php $idc = $data['idCarregis']; ?>
+                                    <a href="<?php echo site_url('Dataregis2/show/'.$idc); ?>" class="btn btn-info btn-sm">View</a>
                                 </td>
 
                             </tr>

@@ -25,8 +25,8 @@ class Register extends CI_Controller {
             
         }else
         {
-            $date= $this->input->post("date");
-            $datee= date("Y-m-d", strtotime($date));
+            /* $date= $this->input->post("date");
+            $datee= date("Y-m-d", strtotime($date)); */
        /*  $da = $this->input->post("date");
         $date = date("Y-m-d",$da); */
             $object = array(
@@ -35,7 +35,6 @@ class Register extends CI_Controller {
             'FName' =>  $this->input->post("fname"),
             'LName' =>  $this->input->post("lname"),
             'Address' =>  $this->input->post("address"),
-            'DateofBirth' => $datee,
             'Tel' =>  $this->input->post("tel"),
             'Type' => "เจ้าของรถ"
         );
