@@ -23,7 +23,7 @@ class Pricecar extends CI_Controller {
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
        
         $data = array( 
-            'Price' => $this->input->post('Price')
+            'RentalPrice' => $this->input->post('Price')
         );
 
         $query=$this->db->update('Carregis',$data);

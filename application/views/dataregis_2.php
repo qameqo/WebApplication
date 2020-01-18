@@ -35,6 +35,10 @@
                                 <td width="70%"><?php echo $data['Yearcar'];?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>สี</label></td>
+                                <td width="70%"><?php echo $data['Color'];?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
                                 <td width="70%"><?php echo $data['Seat'];?></td>
                             </tr>
@@ -62,45 +66,49 @@
                                 <td width="30%"><label>เลขตัวถัง</label></td>
                                 <td width="70%"><?php echo $data['Carbody'];?></td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
+                                <td width="30%"><label>ราคาปล่อยเช่า</label></td>
+                                <td width="70%"><?php echo $data['RentalPrice'];?><span>&nbsp;บาท/วัน</span></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <?php if($rs->Status == 'รออนุมัติ')
+                                <?php if($data['Status']== 'รออนุมัติ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $data['Status'];  
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'ผ่าน') 
+                                else if ($data['Status']== 'ผ่าน') 
                                 {
-                                    echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'ไม่ผ่าน') 
+                                else if ($data['Status']== 'ไม่ผ่าน') 
                                 {
-                                    echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
+                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Status'];  
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == 'กำลังดำเนินการ')
+                                else if($data['Status']== 'กำลังดำเนินการ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $data['Status'];  
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'พร้อม') 
+                                else if ($data['Status']== 'พร้อม') 
                                 {
-                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
                                     echo $data['Status'];  
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == 'ยกเลิก')
+                                else if($data['Status']== 'ยกเลิก')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Status'];  
                                     echo '</span></td>';
                                 } ?>
-                            </tr>  -->
+                            </tr>
                             <tr>
                                 <td width="30%"><label>ผู้ลงทะเบียน</label></td>
                                 <td width="70%"><?php echo $data['FName']; ?></td>
