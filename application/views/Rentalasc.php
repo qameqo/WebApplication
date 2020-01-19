@@ -10,7 +10,9 @@
 				$this->db->from('Carregis');
 				$this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
 				$this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-				$this->db->where('Status', "พร้อม");
+                $this->db->where('Status', "พร้อม");
+                $this->db->order_by('RentalPrice', 'asc');
+                
 				$query = $this->db->get();
 				$qq = $query->result_array();
 			?>
