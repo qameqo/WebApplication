@@ -132,16 +132,16 @@
 							<select class="form-control selectpicker" data-style="btn btn-link"
 								id="exampleFormControlSelect1" name="seat" required>
 								<option value="">เลือกจำนวนที่นั่ง</option>
-								<option value="2 ที่นั่ง">2 ที่นั่ง</option>
-								<option value="3 ที่นั่ง">3 ที่นั่ง</option>
-								<option value="4 ที่นั่ง">4 ที่นั่ง</option>
-								<option value="5 ที่นั่ง">5 ที่นั่ง</option>
-								<option value="6 ที่นั่ง">6 ที่นั่ง</option>
-								<option value="7 ที่นั่ง">7 ที่นั่ง</option>
-								<option value="8 ที่นั่ง">8 ที่นั่ง</option>
-								<option value="9 ที่นั่ง">9 ที่นั่ง</option>
-								<option value="10 ที่นั่ง">10 ที่นั่ง</option>
-								<option value="11+ ที่นั่ง">11+ ที่นั่ง</option>
+								<option value="2">2 ที่นั่ง</option>
+								<option value="3">3 ที่นั่ง</option>
+								<option value="4">4 ที่นั่ง</option>
+								<option value="5">5 ที่นั่ง</option>
+								<option value="6">6 ที่นั่ง</option>
+								<option value="7">7 ที่นั่ง</option>
+								<option value="8">8 ที่นั่ง</option>
+								<option value="9">9 ที่นั่ง</option>
+								<option value="10">10 ที่นั่ง</option>
+								<option value="11+">11+ ที่นั่ง</option>
 							</select>
 						</div>
 						<div class="col-sm mb-1">
