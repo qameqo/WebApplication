@@ -1,12 +1,11 @@
-
 <div class="col-md-13 text-center"><br>
 	<h1 class="h1" style="color:#000000">เช่ารถยนต์</h1>
 </div>
-<div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
 	<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
-		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-<form class="form-signin" id="edit" name="edit" method="post"action="">
-			<?php 
+		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;"> -->
+<form class="form-signin" id="edit" name="edit" method="post" action="">
+	<?php 
 				$this->db->select('*');
 				$this->db->from('Carregis');
 				$this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
@@ -15,32 +14,79 @@
 				$query = $this->db->get();
 				$qq = $query->result_array();
 			?>
-            
+	<div class="row justify-content-center">
+		<div class="col-sm-2 shadow p-3 mb-5 bg-white rounded"
+			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+			<div class="row justify-content-center">
+				<span>ค้นหารถจากยี่ห้อหรือรุ่น</span>
+			</div>
+			<div class="row justify-content-center">
+				<input type="text" class="form-control" id="exampleFormControlInput1" style="width:200px;"
+					placeholder="ค้นหายี่ห้อหรือรุ่นรถ">
+			</div>
+		</div>
+		<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
+			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 			<?php 
 				foreach($qq as $data){
 					
 			?>
-			<div class="row justify-content-end">
-			<div class="col-sm-8 shadow p-3 mb-2 bg-white rounded"
-		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+
 			<div class="row">
-			<div class="col-sm-8">
-			<?php echo $data['Name_Brand'];?> <?php echo $data['Name_Gen'];?> <?php echo $data['Yearcar'];?>
+				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
+					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+					<div class="row">
+						<div class="col-sm-8">
+							<?php echo $data['Name_Brand'];?> <?php echo $data['Name_Gen'];?>
+							<?php echo $data['Yearcar'];?>
+						</div>
+						<div class="col-sm-6">
+							<img src="<?php echo base_url('./pic/car-gear.png');?>"
+								style="width:10px; height:10px;">&nbsp;<?php echo $data['Gear'];?>
+							<img src="<?php echo base_url('./pic/seat-belt.png');?>"
+								style="width:10px; height:10px;">&nbsp;<?php echo $data['Seat']; ?>
+							<br><span style="color: #F60200;"><?php echo $data['RentalPrice'];?></span>&nbsp;บาท/วัน
+							<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
+								data-target="#modal-default">เอกสารเช่ารถ</a>
+							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
+								aria-labelledby="modal-default" aria-hidden="true">
+								<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+									<div class="modal-content">
+
+										<div class="modal-header">
+											<h6 class="modal-title" id="modal-title-default">เอกสารสำหรับการเช่ารถยนต์
+											</h6>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">×</span>
+											</button>
+										</div>
+
+										<div class="modal-body">
+											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
+											<img src="./pic/logo55.png" style="width:450px; height:100;"
+												alt="เช่ารถกับ G Dragon">
+										</div>
+
+										<div class="modal-footer">
+											<button type="button" class="btn btn-link  ml-auto"
+												data-dismiss="modal">ปิด</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 text-right">
+							<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
+								href="#">จองรถ</a>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-6">
-			<img src="<?php echo base_url('./pic/car-gear.png');?>" style="width:10px; height:10px;">&nbsp;<?php echo $data['Gear'];?>
-			<img src="<?php echo base_url('./pic/seat-belt.png');?>" style="width:10px; height:10px;">&nbsp;<?php echo $data['Seat']; ?>
-			<br><span style = "color: #F60200;"><?php echo $data['RentalPrice'];?></span>&nbsp;บาท/วัน
-			<a class="badge badge-secondary" href="#">เอกสารเช่ารถ</a>
-			</div>
-			<div  class="col-sm-6 text-right">
-			<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;" href="#">จองรถ</a>
-			</div>
-			</div>
-			</div>
-			</div>
-           
-				<?php } ?>
-</div>
-</div>
+
+			<?php } ?>
+		</div>
+	</div>
 </form>
