@@ -25,25 +25,28 @@
 				<H4>Register</H4>
 				<div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">Username</label>
-						<input name="username" type="text" id="username" class="form-control" placeholder="" required>
+						<label class="bmd-label-floating">Username (EN)</label>
+						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[a-z]).{5,}" title="กรุณากรอกตัวอักษรอย่างน้อย 5 ตัวอักษรขึ้นไป" required>
+						
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Password</label>
-						<input id="password-field" type="password" class="form-control" name="password" required>
+						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์เล็กหนึ่งตัวอย่างน้อย 8 ตัวอักษรขึ้นไป" required>
 						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+						
 					</div>
 
 				</div>
 				<br>
 				<div class="row">
 					<div class="col-sm">
-						<label class="bmd-label-floating">First Name</label>
-						<input name="fname" type="text" id="fname" class="form-control" placeholder="" required>
+						<label class="bmd-label-floating">First Name (EN)</label>
+						<input name="fname" type="text" id="fname" class="form-control" placeholder="" pattern="^[a-zA-Z]+$" title="กรุณากรอกชื่อ ภาษาอังกฤษ" required>
+						
 					</div>
 					<div class="col-sm">
-						<label class="bmd-label-floating">Last Name</label>
-						<input name="lname" type="text" id="lname" class="form-control" placeholder="" required>
+						<label class="bmd-label-floating">Last Name (EN)</label>
+						<input name="lname" type="text" id="lname" class="form-control" placeholder="" pattern="^[a-zA-Z]+$" title="กรุณากรอกนามสกุล ภาษาอังกฤษ" required>
 					</div>
 
 				</div>
@@ -58,8 +61,8 @@
 				
 					<div class="col-sm">
 						<label class="bmd-label-floating">Tel.</label>
-						<input name="tel" type="tel" id="tel" class="form-control" placeholder="Ex.0899999999" required 
-						pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+						<input name="tel" type="tel" id="tel" class="form-control" placeholder="" required 
+						pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
 					</div>
 					</div>
 					<div class="row">
