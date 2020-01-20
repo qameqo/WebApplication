@@ -114,7 +114,25 @@
                                 <td width="70%"><?php echo $data['FName']; ?></td>
                             </tr>
                             <?php } ?>
+                            <?php 
+                         $this->db->select('*');
+                         $this->db->from('Images2');
+                         $this->db->where('idCarregis',$idc);
+                         $query = $this->db->get();
+                         $qq = $query->result_array();
                          
+                         ?>
+                            <?php foreach($qq as $data){ 
+                            ?>       
+                            <tr>
+                                <td width="30%"><label>รูปเอกสารรถยนต์</label></td>
+                                <td width="70%">
+                                
+                                <img src="<?php echo base_url('./img2/'.$data['Name']);?>" style="height: 50px; weight:50px;">
+                                
+                                </td>
+                            </tr>
+                            <?php } ?>
                          <?php 
                          $this->db->select('*');
                          $this->db->from('Images');
@@ -127,10 +145,10 @@
                             ?>
 
                             <tr>
-                                <td width="30%"><label>รูปภาพ</label></td>
+                                <td width="30%"><label>รูปภาพรถยนต์</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php echo base_url('./pic/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>
