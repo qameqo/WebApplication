@@ -5,13 +5,11 @@
 	<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
 		style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;"> -->
 <form class="form-signin" id="edit" name="edit" method="post" action="">
-	<?php 
-				$this->db->select('*');
-				$this->db->from('Carregis');
-				$this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
-				$this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-				$this->db->where('Status', "พร้อม");
-				$query = $this->db->get();
+	<?php 		
+			
+				
+			
+				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.Status="พร้อม"');
 				$qq = $query->result_array();
 			?>
 	<div class="row justify-content-center">
@@ -24,20 +22,18 @@
 			</div>
 			<br>
 			<div class="row justify-content-center">
-            <a class="badge badge-danger" href="<?php echo base_url('Rentdesc'); ?>" style="font-size: 17px;">เรียงราคาจากมากไปน้อย</a>
+            <a class="badge badge-danger" href="<?php echo base_url('Rentdesc'); ?>" style="font-size: 17px;">เรียงราคาจากสูงไปต่ำ</a>
 			</div>
             <br>
             <div class="row justify-content-center">
-            <a class="badge badge-danger" href="<?php echo base_url('Rentasc'); ?>" style="font-size: 17px;">เรียงราคาจากน้อยไปมาก</a>
+            <a class="badge badge-danger" href="<?php echo base_url('Rentasc'); ?>" style="font-size: 17px;">เรียงราคาจากต่ำไปสูง</a>
 			</div>
 		</div>
 		<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 			<?php 
 				foreach($qq as $data){
-					
 			?>
-
 			<div class="row">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
@@ -83,15 +79,16 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-sm-6 text-right">
+							
+							<img src="<?php echo base_url('./pic/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
 							<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
 								href="#">จองรถ</a>
 						</div>
 					</div>
 				</div>
-			</div>
-
+			</div>	
 			<?php } ?>
 		</div>
 	</div>
