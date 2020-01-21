@@ -66,32 +66,4 @@
     </div>
 </div>
 
-<div id="StatusModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h4 class="modal-title">ไม่ผ่าน</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <form action="<?php echo site_url('Manager_car_regis/add_not_passed'); ?>" method="POST" id="insert_form">
-
-                <div class="modal-body">
-
-                    <input type="hidden" name="id_emp" id="id_emp" class="form-control">
-
-                    <div class="form-group">
-                        <label for="Username">หมายเหตุ</label>
-                        <textarea class="form-control" name="Address" id="Address" rows="3" required></textarea>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-success btn-sm mt-5 mr-5" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 

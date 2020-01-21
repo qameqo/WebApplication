@@ -19,11 +19,11 @@ class Manager_emp extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp_view', $data);
-        $this->load->view('Footer_manage');
-        $this->load->view('Script_manager_emp');
-        $this->load->view('Modal_view', $data);
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_emp_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Manager/Script_manager_emp');
+        $this->load->view('Manager/Modal_view', $data);
     }
 
     public function edit($id_Employee)
@@ -36,11 +36,11 @@ class Manager_emp extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp_edit_view', $data);
-        $this->load->view('Footer_manage');
-        $this->load->view('Script_manager_emp');
-        $this->load->view('Modal_view');
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_emp_edit_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Manager/Script_manager_emp');
+        $this->load->view('Manager/Modal_view');
     }
 
     public function show($id_Employee)
@@ -53,11 +53,11 @@ class Manager_emp extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_emp_show_view', $data);
-        $this->load->view('Footer_manage');
-        $this->load->view('Script_manager_emp');
-        $this->load->view('Modal_view');
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_emp_show_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Manager/Script_manager_emp');
+        $this->load->view('Manager/Modal_view');
     }
     
 
