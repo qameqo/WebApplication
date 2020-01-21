@@ -82,8 +82,9 @@
 
 						<div class="col-sm-6 text-right">
 							<img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
+							<?php $idc = $data['idCarregis']; ?>
 							<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
-								href="#">จองรถ</a>
+								href="<?php echo site_url('Rentnext/one/'.$idc); ?>">จองรถ</a>
 						</div>
 					</div>
 				</div>
