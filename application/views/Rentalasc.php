@@ -81,7 +81,7 @@
 						</div>
 
 						<div class="col-sm-6 text-right">
-							<img src="<?php echo base_url('./pic/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
+							<img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
 							<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
 								href="#">จองรถ</a>
 						</div>

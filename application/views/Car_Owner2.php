@@ -64,7 +64,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									<H5 style="color: red;">* รูปรถยนต์ 5 รูป ภายนอกด้านหน้า หลัง ซ้าย ขวา และภายในตัวรถ</H5>
+									<H5 style="color: red;">* รูปรถยนต์ 5 รูป ภายนอกด้านหน้า หลัง ซ้าย ขวา และภายในตัวรถ รูปแรกจะเป็นรูปโปรไฟล์รถ</H5>
 								</div>
 							</div>
 							<div class="row">
@@ -78,7 +78,7 @@
 								<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
 								<span style="color: white;">+ เพิ่มรูป</span>
 										<label for="file"><strong></strong><span class="box__dragndrop"></label>
-										<input class="upload" type="file" name="file" id="piccar1" required />
+										<input class="upload" type="file" name="file" id="piccar1" required/>
 								</div>
 							</div>
 							<div class="col-sm text-left">
@@ -127,7 +127,7 @@
 											
 							 				?><tr>
 											<td><img src="<?php echo base_url('./img2/'.$data['Name']);?>"
-													style="width: 50px; height: 50px;" /></td>
+													style="width: 50px; height: 50px;" required/></td>
 
 											<td><a href="<?php echo site_url('Owner2/del2/'.$data['id'].'/'.$id.'/'.$idc);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
@@ -156,7 +156,7 @@
 								<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
 								<span style="color: white;">+ เพิ่มรูป</span>
 										<label for="file"><strong></strong><span class="box__dragndrop"></label>
-										<input class="upload" type="file" name="file" id="piccar1" required />
+										<input class="upload" type="file" name="file" id="piccar1" required/>
 								</div>
 							</div>
 							<div class="col-sm text-left">
