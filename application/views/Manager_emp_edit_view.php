@@ -25,8 +25,8 @@
                             <input type="text" name="F_Name" id="F_Name" class="form-control" placeholder="First name" value="<?php echo $rs_edit->F_Name; ?>">
                         </div>
                         <div class="col">
-                            <label for="LName">Last name</label>
-                            <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->LName; ?>">
+                            <label for="L_Name">Last name</label>
+                            <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->L_Name; ?>">
                         </div>
                     </div>
 

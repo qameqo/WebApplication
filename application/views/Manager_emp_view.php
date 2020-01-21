@@ -35,7 +35,7 @@
 								<td><?php echo $rs->id_Employee; ?></td>
 
 								<td><?php echo $rs->F_Name; ?></td>
-								<td><?php echo $rs->LName; ?></td>
+								<td><?php echo $rs->L_Name; ?></td>
 								<td><?php echo $rs->Row; ?></td>
 
 								<td>

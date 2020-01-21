@@ -26,6 +26,10 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+        // $this->db->join('Not_passed', 'Carregis.idCarregis = Not_passed.idCarregis');
+
+        // $this->db->from('Not_passed');
+
         $this->db->where('idCarregis', $idCarregis);
         $query = $this->db->get();
 

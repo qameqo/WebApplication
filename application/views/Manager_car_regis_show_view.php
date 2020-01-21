@@ -97,13 +97,34 @@
                                 } ?>
                             </tr> 
                             <tr>
-                                <td width="30%"><label>รหัสพนักงาน</label></td>
-                                <td width="70%"><?php echo $rs->F_Name; ?></td>
+                                <td width="30%"><label>พนักงาน</label></td>
+                                <td width="70%"><?php echo $rs->F_Name; ?>&nbsp;<?php echo $rs->L_Name; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รหัสสมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->FName; ?></td>
+                                <td width="30%"><label>สมาชิก</label></td>
+                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
+
+                            <?php 
+                            
+                            
+                            
+                            if($rs->Status == 'ไม่ผ่าน')
+                            {
+                                $query = $this->db->query('SELECT * FROM Not_passed, Carregis WHERE Not_passed.idCarregis = Carregis.idCarregis AND Not_passed.idCarregis = '.$rs->idCarregis);
+
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
 
                             <?php 
 

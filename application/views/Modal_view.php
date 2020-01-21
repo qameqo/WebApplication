@@ -34,7 +34,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="Last name">Last name</label>
-                                <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" required>
+                                <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" required>
                             </div>
                         </div>
                     </div>
