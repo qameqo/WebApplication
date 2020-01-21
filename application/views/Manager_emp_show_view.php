@@ -24,7 +24,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ชื่อ</label></td>
-                                <td width="70%"><?php echo $rs_edit->FName; ?></td>
+                                <td width="70%"><?php echo $rs_edit->F_Name; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>นามสกุล</label></td>
