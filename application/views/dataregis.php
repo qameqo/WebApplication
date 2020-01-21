@@ -49,10 +49,11 @@
                                     echo '</span></td>';
                                 }
                                 else if ($data['Status'] == 'ผ่าน') 
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $data['Status']; 
-                                    echo '</span></td>';
+                                {   
+                                    echo'<td><p>ผ่าน</p><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    href="ConCarregis">';
+                                    echo "กำหนดวันส่งรถ";
+                                    echo '</a></td>';
                                 }
                                 else if ($data['Status'] == 'ไม่ผ่าน') 
                                 {
