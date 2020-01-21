@@ -50,14 +50,14 @@
                     <div class="form-row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="FName">ชื่อ</label>
-                                <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" value="<?php echo $data['FName'];?>">
+                                <label for="F_Name">ชื่อ</label>
+                                <input type="text" name="F_Name" id="F_Name" class="form-control" placeholder="First name" value="<?php echo $data['F_Name'];?>">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="LName">นามสกุล</label>
-                                <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" value="<?php echo $data['LName'];?>">
+                                <label for="L_Name">นามสกุล</label>
+                                <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" value="<?php echo $data['L_Name'];?>">
                             </div>
                         </div>
                     </div>
