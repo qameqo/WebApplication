@@ -57,7 +57,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="L_Name">นามสกุล</label>
-                                <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" value="<?php echo $data['LName'];?>">
+                                <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" value="<?php echo $data['L_Name'];?>">
                             </div>
                         </div>
                     </div>

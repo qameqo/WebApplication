@@ -29,7 +29,11 @@
                         </thead>
 						<tbody>
 
-                            <?php foreach ($query as $rs) { ?>
+                            <?php foreach ($query as $rs) { 
+                            if ($rs->Status == 'กำลังดำเนินการ') {
+                                
+                              
+                            ?>
 
 							<tr>
 
@@ -84,7 +88,7 @@
 								</td>
 							</tr>
 
-                            <?php } ?>
+                            <?php }} ?>
 
 						</tbody>
 						<tfoot>

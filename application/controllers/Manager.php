@@ -16,8 +16,8 @@ class Manager extends CI_Controller {
         $object = array(
             'Username' =>  $this->input->post("Username"),
             'Password' =>  $this->input->post("Password"),
-            'FName' =>  $this->input->post("FName"),
-            'LName' =>  $this->input->post("LName"),
+            'F_Name' =>  $this->input->post("F_Name"),
+            'L_Name' =>  $this->input->post("L_Name"),
             'Address' =>  $this->input->post("Address"),
             'Tel' =>  $this->input->post("Tel"),
         );
@@ -25,7 +25,7 @@ class Manager extends CI_Controller {
 
                 echo "<script>";
                 echo "alert('บันทึกข้อมูลเรียบร้อย');";
-                echo "window.location.href = '". base_url(). "Manager ';";
+                echo "window.location.href = '". base_url(). "Manager_first ';";
                 echo "</script>";
         
         $this->load->view('Header_manage');
