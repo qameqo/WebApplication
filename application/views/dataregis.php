@@ -49,13 +49,11 @@
                                     echo '</span></td>';
                                 }
                                 else if ($data['Status'] == 'ผ่าน') 
-                                {   
-                                    echo'<td><p>ผ่าน</p><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
-                                    href="ConCarregis">';
-                                    echo "กำหนดวันส่งรถ";
-                                    echo '</a></td>';
-                                    //อย่าลืมส่งidcarregisไปด้วย tag a
-                                }
+                                {   $idc = $data['idCarregis']; ?>
+                                    <td><p>ผ่าน</p><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
+                                    <?php
+                               } 
                                 else if ($data['Status'] == 'ไม่ผ่าน') 
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
