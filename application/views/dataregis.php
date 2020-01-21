@@ -54,6 +54,7 @@
                                     href="ConCarregis">';
                                     echo "กำหนดวันส่งรถ";
                                     echo '</a></td>';
+                                    //อย่าลืมส่งidcarregisไปด้วย tag a
                                 }
                                 else if ($data['Status'] == 'ไม่ผ่าน') 
                                 {
