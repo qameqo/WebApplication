@@ -11,6 +11,14 @@
 
   <script src="<?php echo base_url('/EZview/EZView.js'); ?>"></script>
   <script src="<?php echo base_url('/EZview/draggable.js'); ?>"></script>
+
+ 
+ 
+  <script src="<?php echo base_url('/Datetimepicker/jquery.simple-dtpicker.js');?>"></script>
+  <link type="text/css" href="<?php echo base_url(); ?>/Datetimepicker/jquery.simple-dtpicker.css" rel="stylesheet"/>
+  
+
+  
   </body>
 <script type="text/javascript">
 
@@ -28,11 +36,7 @@
       }
 
       // Year Picker 
-      $('.date-own').datepicker({
-         minViewMode: 2,
-         format: 'yyyy'
-       });
-
+    
        $(".toggle-password").click(function() {
 
         $(this).toggleClass("fa-eye fa-eye-slash");
@@ -43,7 +47,9 @@
         input.attr("type", "password");
 }
 });
- 
+    $(function(){
+      $('*[name=date]').appendDtpicker();
+      });
   </script>
   <script>
   $(function(){

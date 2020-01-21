@@ -14,6 +14,9 @@
   
   <!-- Argon CSS -->
   <link type="text/css" href="<?php echo base_url(); ?>/assets argon/css/argon.css?v=1.1.0" rel="stylesheet">
+  
+  <script src="/path/to/jquery.min.js"></script>
+  
 
   <style>
   body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span,label,option{
