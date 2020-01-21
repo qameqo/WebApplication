@@ -15,6 +15,7 @@ class Owner extends CI_Controller {
         $license = $this->input->post('license');
         $this->db->where('license', $license);
         $query = $this->db->get('Carregis',1);
+
         if($query->num_rows() ==1)
         {   
             echo "<script>";
@@ -22,11 +23,13 @@ class Owner extends CI_Controller {
             echo "window.location.href = '". base_url(). "Owner ';";
             echo "</script>";
             // echo "ทะเบียนซ้ำ";
-        }else
+        }
+        else
         {      
             $carbody = $this->input->post('carbody');
             $this->db->where('carbody', $carbody);
             $query = $this->db->get('Carregis',1);
+
             if($query->num_rows()== 1)
             {
             echo "<script>";
@@ -35,7 +38,8 @@ class Owner extends CI_Controller {
             echo "</script>";
             // echo "เครื่องซ้ำ";
 
-            }else
+            }
+            else
             {
                 $object = array(
                     'Brand' =>  $this->input->post("Brand"),
@@ -61,15 +65,12 @@ class Owner extends CI_Controller {
                 echo $qq['idCarregis'];
                 echo $qq['id_Gen'];
                 redirect('Owner2/show/'. $qq['id_Gen'].'/'. $qq['idCarregis']);
-            }
-                
-            }
-
-           
-        }
+            }        
+        }   
+    }
 
     
-       
+    
     public function select($ga)
     {?>
         <option value="">เลือกรุ่น</option>

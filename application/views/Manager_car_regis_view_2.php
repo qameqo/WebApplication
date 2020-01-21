@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ตารางการลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">ตารางผลลัพธ์การลงทะเบียนรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -31,7 +31,10 @@
 
                             <?php if ($rs->Status == 'รออนุมัติ') { ?>
 
-							<tr>
+							
+                            <?php }else { ?>
+                                
+                                <tr>
 
                                 <td><?php echo $rs->idCarregis; ?></td>
 

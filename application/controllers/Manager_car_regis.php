@@ -48,27 +48,47 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status();
     }
 
-    // public function not_passed($idCarregis)
-    // {
-    //     // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
+    public function not_passed($id)
+    {
+        // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
 
-    //     echo '<pre>';
-    //     print_r($data);
-    //     echo '</pre>';
+        $data['id'] = $id;
 
-    //     exit;
-    //     $this->load->view('Header_manage');
-    //     $this->load->view('Manager_car_regis_not_passed_view');
-    //     $this->load->view('Footer_manage');
-    //     $this->load->view('Script_manager_emp');
-    //     $this->load->view('Modal_view');
-    // }
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_not_passed_view',$data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+    }
 
     public function add_not_passed()
     {
         $this->Manager_car_regis_model->add_not_passed();
     }
 
+    // --------------------------------------------------------------------------------------------------------------------------
+
+    public function index_2()
+    {
+        $data['query']=$this->Manager_car_regis_model->show_car_regis();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_view_2', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+    }
 }
 
 /* End of file Hello.php */

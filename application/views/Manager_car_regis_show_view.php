@@ -54,6 +54,10 @@
                                 <td width="70%"><?php echo $rs->Carbody; ?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>ราคาปล่อยเช่า</label></td>
+                                <td width="70%"><?php echo $rs->RentalPrice; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
@@ -93,13 +97,34 @@
                                 } ?>
                             </tr> 
                             <tr>
-                                <td width="30%"><label>รหัสพนักงาน</label></td>
-                                <td width="70%"><?php echo $rs->id_Employee; ?></td>
+                                <td width="30%"><label>พนักงาน</label></td>
+                                <td width="70%"><?php echo $rs->F_Name; ?>&nbsp;<?php echo $rs->L_Name; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รหัสสมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->id_Member; ?></td>
+                                <td width="30%"><label>สมาชิก</label></td>
+                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
+
+                            <?php 
+                            
+                            
+                            
+                            if($rs->Status == 'ไม่ผ่าน')
+                            {
+                                $query = $this->db->query('SELECT * FROM Not_passed, Carregis WHERE Not_passed.idCarregis = Carregis.idCarregis AND Not_passed.idCarregis = '.$rs->idCarregis);
+
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
 
                             <?php 
 
@@ -136,9 +161,9 @@
                         echo '<input type="hidden" name="Status" id="Status" value="ยกเลิก" class="form-control" required>';
                         echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
                     }else if($rs->Status == 'รออนุมัติ'){
-                        echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
-                        // echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="button" data-toggle="modal" data-target="#StatusModal" style="font-size:20px;">ไม่ผ่าน</button>';
+                        echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="ผ่าน" style="font-size:20px;" required>';
+                        echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่ผ่าน" style="font-size:20px;" required>';
+                        // echo '<button class="btn btn-danger mt-5 mr-5" type="button" data-toggle="modal" data-target="#StatusModal" style="font-size:20px;">ไม่ผ่าน</button>';
                                            
                     }?>
 

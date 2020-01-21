@@ -28,13 +28,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="First name">First name</label>
-                                <input type="text" name="FName" id="FName" class="form-control" placeholder="First name" required>
+                                <input type="text" name="F_Name" id="F_Name" class="form-control" placeholder="First name" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="Last name">Last name</label>
-                                <input type="text" name="LName" id="LName" class="form-control" placeholder="Last name" required>
+                                <input type="text" name="L_Name" id="L_Name" class="form-control" placeholder="Last name" required>
                             </div>
                         </div>
                     </div>
