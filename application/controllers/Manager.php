@@ -5,9 +5,9 @@ class Manager extends CI_Controller {
 
     public function index()
     {   
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_view');
-        $this->load->view('Footer_manage');
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_view');
+        $this->load->view('Manager/Footer_manage');
     } 
 
     public function update()
@@ -28,9 +28,9 @@ class Manager extends CI_Controller {
                 echo "window.location.href = '". base_url(). "Manager_first ';";
                 echo "</script>";
         
-        $this->load->view('Header_manage');
-        $this->load->view('Manager_view');
-        $this->load->view('Footer_manage');
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_view');
+        $this->load->view('Manager/Footer_manage');
     }
    
 }
