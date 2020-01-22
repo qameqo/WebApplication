@@ -43,26 +43,6 @@ class Manager_car_regis_model extends CI_Model
         $this->db->from('Carregis');
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
-        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-
-        $this->db->where('idCarregis', $idCarregis);
-        $query = $this->db->get();
-
-        if ($query->num_rows() > 0) 
-        {
-            $data = $query->row();
-            return $data;
-        }
-       return FALSE;
-    }
-
-    public function read_emp($idCarregis)
-    {
-        $this->db->select('*');
-        $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
-        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         // $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
 

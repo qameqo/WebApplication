@@ -97,10 +97,6 @@
                                 } ?>
                             </tr> 
                             <tr>
-                                <td width="30%"><label>พนักงาน</label></td>
-                                <td width="70%"><?php echo $rs->F_Name; ?>&nbsp;<?php echo $rs->L_Name; ?></td>
-                            </tr>
-                            <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
