@@ -1,6 +1,6 @@
 <form action="<?php echo base_url('Dataregis/show'); ?>">
     <div class="col-md-12 text-center"><br>
-        <h4 class="" style="color:#000000">ข้อมูลการลงทะเบียนรถยนต์</h4>
+        <h4 class="" style="color:#000000">ข้อมูลการเช่า</h4>
         <div class="row justify-content-center">
             <div class="col-sm-10 shadow p-4 mb-4 bg-white rounded">
                 <?php 
@@ -9,7 +9,7 @@
                         $this->db->from('Carregis');
                         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
                         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-                        $this->db->join('Agreement', 'Carregis.idCarregis = Agreement.idCarregis');
+                        $this->db->join('Agreement', 'Agreement.idCarregis = Carregis.idCarregis');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
 						$query = $this->db->get();
                         $qq = $query->result_array();
