@@ -47,7 +47,7 @@
                 <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                <input type="text" name="start" id="date" value="" style="width:135;">
+                <input type="text" name="start" id="date" value="" style="width:140;">
                 </div>
             </div>
             <div class="row">
@@ -55,7 +55,7 @@
                 <p style="text-align:Left;">วันส่งคืน</p>
                 </div>
                 <div class="col-sm text-right">
-                <input type="text" name="end" id="date" value="" style="width:135;">
+                <input type="text" name="end" id="date" value="" style="width:140;">
                 </div>
             </div>
             <div class="row">

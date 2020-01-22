@@ -44,18 +44,18 @@ class Rentnext extends CI_Controller {
         }
         
         $this->db->insert('Rental', $object);
-        $query =  $this->db->get('Rental',1);
-        $qq = $query->row_array();
-
+        $insert_id = $this->db->insert_id();
+       
         $in = array(
             'StartDate'=> $dat,
             'EndDate'=> $dat,
             'PriceCar'=> $ga,
             'PriceIns'=> $totalprice,
-            'idRent'=> $qq['idRental']
+            'idRent'=> $insert_id
         );
         $this->db->insert('RentalDetail', $in);
-        
+
+        redirect('Payment/sh/'.$insert_id);
         // $this->db->order_by('idCarregis', 'desc');
         // $query =  $this->db->get('Carregis', 1);
         // $qq = $query->row_array();
