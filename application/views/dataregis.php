@@ -50,7 +50,7 @@
                                 }
                                 else if ($data['Status'] == 'ผ่าน') 
                                 {   $idc = $data['idCarregis']; ?>
-                                    <td><p>ผ่าน</p><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 

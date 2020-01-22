@@ -25,10 +25,10 @@ class Register extends CI_Controller {
             
         }else
         {
-            /* $date= $this->input->post("date");
-            $datee= date("Y-m-d", strtotime($date)); */
-       /*  $da = $this->input->post("date");
-        $date = date("Y-m-d",$da); */
+        //     $date= $this->input->post("date");
+        //     $datee= date("Y-m-d", strtotime($date));
+        // $da = $this->input->post("date");
+        // $date = date("Y-m-d",$da);
             $object = array(
             'Username' =>  $this->input->post("username"),
             'Password' =>  $this->input->post("password"),

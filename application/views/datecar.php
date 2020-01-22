@@ -1,6 +1,6 @@
 <div class="col-md-13 text-center"><br>
 	<h4 class="h4" style="color:#000000">กำหนดวันส่งรถ</h4>
-    <form action="<?php echo base_url('Datecar/insert/'.$idc);?>">
+    <form method ="post" action="<?php echo base_url('Datecar/upd/'.$idc);?>">
     <div class="row justify-content-center">
 		<div class="col-sm-5 shadow p-3 mb-5 bg-white rounded">
             <?php 
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-sm">
                 <input type="text" name="date" value="" style="width:150;">
-                <button type="submit">...</button>
+                <button type="submit" class="btn btn-danger" style="background-color: #F60200;">ยืนยัน</button>
                 </div>
             </div>
             <?php } ?>

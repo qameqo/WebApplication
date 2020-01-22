@@ -11,10 +11,23 @@ class Datecar extends CI_Controller {
         $this->load->view('footer');
         
     }
-    public function insert($idc)
+    public function upd($idc)
     {
-        echo"...";
-    }
+            $Date = $this->input->post("date");
+            $dat = date("Y-m-d", strtotime($Date));
+        $this->db->where('idCarregis', $idc);
+        $ob = array(
+
+            
+            'Status' => "กำลังดำเนินการ",
+            'Dayfirst' => $Date
+        );
+        echo "<script>";
+        echo "alert('บันทึกข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Dataregis ';";
+        echo "</script>";
+        $this->db->update('Carregis', $ob);
+     }
 
 }
 
