@@ -20,7 +20,7 @@
             <?php echo $data['License'];?></P>
                 </div>
                 <div class="col-sm">
-                <input type="text" name="date" value="" style="width:150;">
+                <input type="text" name="date" value="" id="date" style="width:150;">
                 <button type="submit" class="btn btn-danger" style="background-color: #F60200;">ยืนยัน</button>
                 </div>
             </div>
