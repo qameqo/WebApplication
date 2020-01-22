@@ -19,11 +19,11 @@ class Manager_car_regis extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_regis_view', $data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function show($idCarregis)
@@ -36,11 +36,11 @@ class Manager_car_regis extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_regis_show_view', $data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_show_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function add_status()
@@ -59,11 +59,11 @@ class Manager_car_regis extends CI_Controller {
         // echo '</pre>';
 
         // exit;
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_regis_not_passed_view',$data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_not_passed_view',$data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function add_not_passed()
@@ -83,11 +83,11 @@ class Manager_car_regis extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_regis_view_2', $data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_regis_view_2', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 }
 

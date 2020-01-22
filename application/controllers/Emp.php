@@ -5,16 +5,16 @@ class Emp extends CI_Controller {
 
     public function index()
     {   
-        $this->load->view('Employee/Header_emp');
-        $this->load->view('Employee/First_page_backend_2_view');
-        $this->load->view('Employee/Footer_emp');
+        $this->load->view('Header_emp');
+        $this->load->view('First_page_backend_2_view');
+        $this->load->view('Footer_emp');
     } 
 
     public function emp_edit()
     {   
-        $this->load->view('Employee/Header_emp');
-        $this->load->view('Employee/Emp_view');
-        $this->load->view('Employee/Footer_emp');
+        $this->load->view('Header_emp');
+        $this->load->view('Emp_view');
+        $this->load->view('Footer_emp');
     } 
 
     public function update()
