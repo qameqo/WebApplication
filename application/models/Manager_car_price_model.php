@@ -8,32 +8,18 @@ class Manager_car_price_model extends CI_Model
         // print_r($_POST);
         
         // exit;
-
-        $Name_Brand = $this->input->post('Name_Brand');
-        $this->db->where('Name_Brand', $Name_Brand);
-        $query = $this->db->get('Brand', 1);
-        if($query->num_rows() ==1)
-        {
-            echo "<script>";
-            echo "alert('ข้อมูลซ้ำ');";
-            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
-            echo "</script>";
-            
-        }else
-        {
-            $data = array(
-                'Name_Brand' => $this->input->post('Name_Brand'),
-                'id_Employee' => $this->session->userdata('id_Employee')
-            );
         
-            $this->db->insert('Brand', $data);
-            $this->db->order_by('idBrand', 'desc');
-            $query = $this->db->get('Brand', 1);
-            $qq = $query->row_array();
-            echo $qq['idBrand'];
-            redirect('Manager_car_price/add_2/'. $qq['idBrand']); 
+        $data = array(
+            'Name_Brand' => $this->input->post('Name_Brand'),
+            'id_Employee' => $this->session->userdata('id_Employee')
+        );
     
-        }
+        $this->db->insert('Brand', $data);
+        $this->db->order_by('idBrand', 'desc');
+        $query = $this->db->get('Brand', 1);
+        $qq = $query->row_array();
+        echo $qq['idBrand'];
+        redirect('Manager_car_price/add_2/'. $qq['idBrand']); 
 
         // $this->Manager_car_price->Manager_car_price();
         // redirect('Manager_car_price');
@@ -145,7 +131,7 @@ class Manager_car_price_model extends CI_Model
         $this->db->delete('Generation',array('id_Gen'=>$id_Gen));
 
         echo "<script>";
-        echo "alert('แก้ไขข้อมูลเรียบร้อย');";
+        echo "alert('ลบข้อมูลเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Manager_car_price ';";
         echo "</script>";        
         

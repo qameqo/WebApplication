@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
 
-      <div class="col-sm-10">
+      <div class="col-sm-7">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลบุคคล</h4>
@@ -14,17 +14,18 @@
         </div>
       </div>
 
-      <div class="col-sm-5">
+      <div class="col-sm-7">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลเกี่ยวกับรถยนต์</h4>
             <a href="<?php echo site_url('Emp_car');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการข้อมูลการรับรถยนต์</a><br>
+            <a href="<?php echo site_url('Emp_car/index_2');?>" class="btn btn-primary btn-lg" style="font-size : 18px">ตรวจสอบข้อมูลการรับรถยนต์</a><br>
             <a href="<?php //echo site_url('#');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการการเช่ารถยนต์</a>
           </div>
         </div>
       </div>
 
-      <div class="col-sm-5">
+      <div class="col-sm-7">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลปัญหา</h4>

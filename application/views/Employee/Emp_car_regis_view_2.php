@@ -1,3 +1,5 @@
+
+
 <div class="container" style="text-align: center;"><br><br><br><br><br>
 	<div style="background-color: white; border-radius: 5px;">
 	<br>
@@ -5,7 +7,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ผลลัพธ์การลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">ผลลัพธ์ข้อมูลการส่งรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -27,14 +29,15 @@
                         </thead>
 						<tbody>
 
-                            <?php foreach ($query as $rs) { ?>
+                            <?php foreach ($query as $rs) { 
+                            if ($rs->Status == 'กำลังดำเนินการ') { 
+                            }
+                            else if($rs->Status == 'รออนุมัติ'){
+                            }
+                            else{
+                            ?>
 
-                            <?php if ($rs->Status == 'รออนุมัติ') { ?>
-
-							
-                            <?php }else { ?>
-                                
-                                <tr>
+							<tr>
 
                                 <td><?php echo $rs->idCarregis; ?></td>
 
@@ -42,7 +45,7 @@
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->FName; ?></td>
-
+                                
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
@@ -78,17 +81,23 @@
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Status; 
                                     echo '</span></td>';
-                                } ?>
-                        
+                                } 
+                                else if($rs->Status == 'ไม่มีการนัดหมาย')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }?>
+
 								<td>
-                                    <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm">View</a>
+								
+                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm">View</a>
+                    
 								</td>
-							
-                            </tr>
+							</tr>
 
-                            <?php } }?>
+                            <?php }} ?>
 
-                            
 						</tbody>
 						<tfoot>
 							<tr>

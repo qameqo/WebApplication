@@ -54,6 +54,10 @@
                                 <td width="70%"><?php echo $rs->Carbody; ?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>ราคาปล่อยเช่า</label></td>
+                                <td width="70%"><?php echo $rs->RentalPrice; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
@@ -92,25 +96,43 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr> 
+                            
                             <tr>
-                                <td width="30%"><label>รหัสพนักงาน</label></td>
-                                <td width="70%"><?php echo $rs->id_Employee; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>รหัสสมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->id_Member; ?></td>
+                                <td width="30%"><label>สมาชิก</label></td>
+                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
 
                             <?php 
+                            
+                            
+                            
+                            if($rs->Status == 'ไม่ผ่าน')
+                            {
+                                $query = $this->db->query('SELECT * FROM Not_passed, Carregis WHERE Not_passed.idCarregis = Carregis.idCarregis AND Not_passed.idCarregis = '.$rs->idCarregis);
 
-                            $query = $this->db->query("SELECT Images.Name_image FROM Carregis, Images WHERE Carregis.idCarregis = Images.idCarregis AND Carregis.idCarregis = $rs->idCarregis;");
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
+
+                            <?php 
+
+                            $query = $this->db->query("SELECT Images.Name_image FROM Carregis, Images WHERE Carregis.idCarregis = Images.idCarregis AND Carregis.idCarregis = $rs->idCarregis");
 
                             foreach ($query->result_array() as $data ) { ?>
 
                             <tr>
                                 <td width="30%"><label>รูปภาพ</label></td>
                                 <td width="70%">
-                                
+                              
                                 <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
@@ -126,13 +148,17 @@
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
+                    <?php 
+						
+                    // $this->db->where( 'idCarregis',$idc);
+                    
+                    ?>
+
                     <?php if ($rs->Status == 'กำลังดำเนินการ') {
-                        echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-warning mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการรถยนต์</button>';
-                    }else if($rs->Status == ''){
-                        echo '<input type="submit" name="Status" id="Status" value="ผ่าน" class="btn btn-success mt-5 mr-5" style="font-size:20px;" required>';
-                        // echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
-                        // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ผ่าน</button>';
+                        // echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
+                        // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการรับรถยนต์</button>';
+                        echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="พร้อม" style="font-size:20px;" required>';
+                        echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
                     }?>
 
 
