@@ -12,5 +12,7 @@
         $('#insert_form')[0].reset();
     });
 
+    var moment = require('moment');
+    moment().format();
 
 </script>
