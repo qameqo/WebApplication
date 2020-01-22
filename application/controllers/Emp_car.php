@@ -11,7 +11,7 @@ class Emp_car extends CI_Controller {
 
     public function index()
     {   
-        $data['query']=$this->Manager_car_regis_model->show_car_regis_emp();
+        $data['query']=$this->Manager_car_regis_model->show_car_regis();
 
         $this->load->view('Header_emp');
         $this->load->view('Emp_car_regis_view', $data);

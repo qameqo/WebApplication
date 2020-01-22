@@ -31,8 +31,7 @@
 
                             <?php foreach ($query as $rs) { 
                             if ($rs->Status == 'กำลังดำเนินการ') {
-                                
-                              
+                                if ($rs->Dayfirst != date('Y-m-d')) {
                             ?>
 
 							<tr>
@@ -88,7 +87,7 @@
 								</td>
 							</tr>
 
-                            <?php }} ?>
+                            <?php }}} ?>
 
 						</tbody>
 						<tfoot>

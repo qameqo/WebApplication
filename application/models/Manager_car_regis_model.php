@@ -28,8 +28,7 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->where('Carregis.Dayfirst', date("Y-m-d"));
-        
+        // $this->db->where('Carregis.Dayfirst', date("Y-m-d"));
 
         $query = $this->db->get();
 
