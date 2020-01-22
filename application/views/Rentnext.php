@@ -13,7 +13,7 @@
 	<h4 style="color:#000000"><?php echo $data['Name_Brand'];?>&nbsp;<?php echo $data['Name_Gen'];?>&nbsp;<?php echo $data['Yearcar'];?></h4>
     <?php } ?>
 </div>
-<form class="form-signin" id="edit" name="edit" method="post" action="">
+<form class="form-signin" id="edit" name="edit" method="post" action="<?php echo base_url('Rentnext/insup/'.$idc);?>">
 	<div class="row justify-content-center">
       
 		<div class="col-sm-5 shadow p-3 mb-5 bg-white rounded"
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-sm">
                 <?php foreach($q1 as $data){ ?>
-            <p style="text-align:right;"><?php echo number_format($data['RentalPrice'],2);?>&nbsp;บาท</p>
+            <p style="text-align:right;"><?php echo number_format($data['RentalPrice']);?>&nbsp;บาท</p>
             <?Php } ?>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                         $game = 100;
                         $total = $ga * $gam / $game;
                         ?>
-                    <p style="text-align:right;"><?php  echo number_format($total,2);?>&nbsp;บาท</p>
+                    <p style="text-align:right;"><?php  echo number_format($total);?>&nbsp;บาท</p>
                     <?php } ?>
                     </div>
             </div>
@@ -96,12 +96,12 @@
                         $total = $ga * $gam / $game;
                         $total2 = $ga + $total;
                         ?>
-                    <p style="text-align:right; color:red; font-size:35px;"><?php  echo number_format($total2,2);?>&nbsp;บาท</p>
+                    <p style="text-align:right; color:red; font-size:35px;"><?php  echo number_format($total2);?>&nbsp;บาท</p>
                     <?php } ?>
                     </div>
             </div>
             <div class="row justify-content-center">
-            <button type="button" class="btn btn-danger" style="background-color: #F60200; color: white; width:370px;">จอง</button>
+            <button type="submit" class="btn btn-danger" style="background-color: #F60200; color: white; width:370px;">จอง</button>
             </div>
 	</div>
     </div>
