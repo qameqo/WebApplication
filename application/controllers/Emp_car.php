@@ -31,7 +31,7 @@ class Emp_car extends CI_Controller {
     {
         //$this->db->get('Table', limit, offset);
         
-        $data['rs']=$this->Manager_car_regis_model->read_emp($idCarregis);
+        $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
 
         // echo '<pre>';
         // print_r($data);
