@@ -13,18 +13,18 @@ class Emp_car extends CI_Controller {
     {   
         $data['query']=$this->Manager_car_regis_model->show_car_regis_emp();
 
-        $this->load->view('Employee/Header_emp');
-        $this->load->view('Employee/Emp_car_regis_view', $data);
-        $this->load->view('Employee/Footer_emp');
+        $this->load->view('Header_emp');
+        $this->load->view('Emp_car_regis_view', $data);
+        $this->load->view('Footer_emp');
     } 
 
     public function index_2()
     {   
         $data['query']=$this->Manager_car_regis_model->show_car_regis();
 
-        $this->load->view('Employee/Header_emp');
-        $this->load->view('Employee/Emp_car_regis_view_2', $data);
-        $this->load->view('Employee/Footer_emp');
+        $this->load->view('Header_emp');
+        $this->load->view('Emp_car_regis_view_2', $data);
+        $this->load->view('Footer_emp');
     } 
 
     public function show($idCarregis)
@@ -39,11 +39,11 @@ class Emp_car extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Employee/Header_emp');
-        $this->load->view('Employee/Emp_car_regis_show_view', $data);
-        $this->load->view('Employee/Footer_emp');
-        $this->load->view('Employee/Manager/Script_manager_emp');
-        $this->load->view('Employee/Manager/Modal_view');
+        $this->load->view('Header_emp');
+        $this->load->view('Emp_car_regis_show_view', $data);
+        $this->load->view('Footer_emp');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
     
     public function add_status_2()

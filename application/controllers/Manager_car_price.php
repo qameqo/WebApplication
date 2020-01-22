@@ -19,26 +19,26 @@ class Manager_car_price extends CI_Controller {
 
         // exit; 
 
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_view', $data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_price_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function add()
     {
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_add_view');
-        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_price_add_view');
+        $this->load->view('Footer_manage');
     }
 
     public function add_2($id)
     {
         $data['id'] = $id;
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_add_2_view', $data);
-        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_price_add_2_view', $data);
+        $this->load->view('Footer_manage');
     }
 
     public function edit($id_Gen)
@@ -51,11 +51,11 @@ class Manager_car_price extends CI_Controller {
 
         // exit;
 
-        $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_edit_view', $data);
-        $this->load->view('Manager/Footer_manage');
-        $this->load->view('Manager/Script_manager_emp');
-        $this->load->view('Manager/Modal_view');
+        $this->load->view('Header_manage');
+        $this->load->view('Manager_car_price_edit_view', $data);
+        $this->load->view('Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function add_car_price()
