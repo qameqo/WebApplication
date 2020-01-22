@@ -48,7 +48,7 @@
 }
 });
     $(function(){
-      $('*[name=date]').appendDtpicker();
+      $('*[id=date]').appendDtpicker();
       });
   </script>
   <script>
