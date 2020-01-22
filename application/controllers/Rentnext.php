@@ -12,7 +12,10 @@ class Rentnext extends CI_Controller {
 
     }
     public function insup($idc)
-    {   
+    {   $Date = $this->input->post("start");
+        $dat = date("Y-m-d H:i:sa", strtotime($Date));
+        $Date2 = $this->input->post("end");
+        $dat2 = date("Y-m-d H:i:sa", strtotime($Date2));
         $this->db->select('*');
         $this->db->from('Carregis');
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
@@ -30,7 +33,6 @@ class Rentnext extends CI_Controller {
             $total2 = $ga + $totalprice;
             $owner = $total2 * 60 /100;
             $company = $total2 * 30 /100;
-            
             $object = array(
 
                 'Datebooking' => $da,
@@ -42,6 +44,18 @@ class Rentnext extends CI_Controller {
         }
         
         $this->db->insert('Rental', $object);
+        $query =  $this->db->get('Rental',1);
+        $qq = $query->row_array();
+
+        $in = array(
+            'StartDate'=> $dat,
+            'EndDate'=> $dat,
+            'PriceCar'=> $ga,
+            'PriceIns'=> $totalprice,
+            'idRent'=> $qq['idRental']
+        );
+        $this->db->insert('RentalDetail', $in);
+        
         // $this->db->order_by('idCarregis', 'desc');
         // $query =  $this->db->get('Carregis', 1);
         // $qq = $query->row_array();

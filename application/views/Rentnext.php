@@ -13,7 +13,7 @@
 	<h4 style="color:#000000"><?php echo $data['Name_Brand'];?>&nbsp;<?php echo $data['Name_Gen'];?>&nbsp;<?php echo $data['Yearcar'];?></h4>
     <?php } ?>
 </div>
-<form class="form-signin" id="edit" name="edit" method="post" action="<?php echo base_url('Rentnext/insup/'.$idc);?>">
+<form class="form-signin" id="edit" name="edit" method="POST" action="<?php echo base_url('Rentnext/insup/'.$idc);?>">
 	<div class="row justify-content-center">
       
 		<div class="col-sm-5 shadow p-3 mb-5 bg-white rounded"
@@ -47,7 +47,7 @@
                 <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                <input type="text" name="date" value="" style="width:135;">
+                <input type="text" name="start" id="date" value="" style="width:135;">
                 </div>
             </div>
             <div class="row">
@@ -55,7 +55,7 @@
                 <p style="text-align:Left;">วันส่งคืน</p>
                 </div>
                 <div class="col-sm text-right">
-                <input type="text" name="date" value="" style="width:135;">
+                <input type="text" name="end" id="date" value="" style="width:135;">
                 </div>
             </div>
             <div class="row">
