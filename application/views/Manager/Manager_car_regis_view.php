@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ตารางการลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">การลงทะเบียนรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -38,7 +38,7 @@
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
-                                <td><?php echo $rs->id_Member; ?></td>
+                                <td><?php echo $rs->FName; ?></td>
 
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
@@ -71,6 +71,12 @@
                                     echo '</span></td>';
                                 }
                                 else if($rs->Status == 'ยกเลิก')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == 'ไม่มีการนัดหมาย')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Status; 

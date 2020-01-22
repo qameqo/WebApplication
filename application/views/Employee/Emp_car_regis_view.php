@@ -7,7 +7,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ตารางข้อมูลลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลการส่งรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -42,7 +42,7 @@
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
-                                <td><?php echo $rs->id_Member; ?></td>
+                                <td><?php echo $rs->FName; ?></td>
                                 
                                 <?php if($rs->Status == 'รออนุมัติ')
                                 {
@@ -83,7 +83,7 @@
 
 								<td>
 								
-                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm">View</a>
+                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm">View</a>
                     
 								</td>
 							</tr>

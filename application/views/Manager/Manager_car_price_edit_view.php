@@ -17,7 +17,7 @@
 
                         <div class="col">
                         <label for="Price">ราคา</label>
-                            <input type="text" name="Price" id="Price" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->Price; ?>">
+                            <input type="text" name="Price" id="Price" pattern="^(0|[1-9][0-9]*)$" class="form-control" placeholder="Last name" value="<?php echo $rs_edit->Price; ?>">
                         </div>
 
                     </div>

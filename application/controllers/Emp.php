@@ -5,16 +5,16 @@ class Emp extends CI_Controller {
 
     public function index()
     {   
-        $this->load->view('Header_emp');
-        $this->load->view('First_page_backend_2_view');
-        $this->load->view('Footer_emp');
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/First_page_backend_2_view');
+        $this->load->view('Employee/Footer_emp');
     } 
 
     public function emp_edit()
     {   
-        $this->load->view('Header_emp');
-        $this->load->view('Emp_view');
-        $this->load->view('Footer_emp');
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_view');
+        $this->load->view('Employee/Footer_emp');
     } 
 
     public function update()
@@ -23,8 +23,8 @@ class Emp extends CI_Controller {
         $object = array(
             'Username' =>  $this->input->post("Username"),
             'Password' =>  $this->input->post("Password"),
-            'FName' =>  $this->input->post("FName"),
-            'LName' =>  $this->input->post("LName"),
+            'F_Name' =>  $this->input->post("F_Name"),
+            'L_Name' =>  $this->input->post("L_Name"),
             'Address' =>  $this->input->post("Address"),
             'Tel' =>  $this->input->post("Tel"),
         );
