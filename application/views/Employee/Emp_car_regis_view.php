@@ -17,7 +17,7 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-<th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>
@@ -31,7 +31,7 @@
 
                             <?php foreach ($query as $rs) { 
                             if ($rs->Status == 'กำลังดำเนินการ') {
-                                if ($rs->Dayfirst != date('Y-m-d')) {
+                                if ($rs->Dayfirst == date('Y-m-d')) {
                             ?>
 
 							<tr>
@@ -92,7 +92,7 @@
 						</tbody>
 						<tfoot>
 							<tr>
-<th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>

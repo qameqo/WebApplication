@@ -148,16 +148,37 @@
                             foreach ($query->result_array() as $data ) { ?>
 
                             <tr>
-                                <td width="30%"><label>รูปภาพ</label></td>
+                                <td width="30%"><label>รูปภาพรถยนต์</label></td>
                                 <td width="70%">
                               
-                                <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>
 
                             <?php 
                             
+                            }
+
+                            ?>
+
+                            <?php 
+
+                            $query = $this->db->query("SELECT Images2.Name FROM Carregis, Images2 WHERE Carregis.idCarregis = Images2.idCarregis AND Carregis.idCarregis = $rs->idCarregis;");
+
+                            foreach ($query->result_array() as $data ) { ?>
+
+                            <tr>
+                                <td width="30%"><label>รูปภาพเอกสารรถยนต์</label></td>
+                                <td width="70%">
+                            
+                                <img src="<?php echo base_url('./img2/'.$data['Name']); ?>" style="height: 50px; weight:50px;">
+                                
+                                </td>
+                            </tr>
+
+                            <?php 
+
                             }
 
                             ?>

@@ -17,7 +17,7 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-<th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>
@@ -101,7 +101,7 @@
 						</tbody>
 						<tfoot>
 							<tr>
-<th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>

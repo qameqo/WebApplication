@@ -19,23 +19,6 @@ class Manager_car_regis_model extends CI_Model
         
     }
 
-    public function show_car_regis_emp()
-    {
-        // $query = $this->db->get('Carregis');
-        
-        $this->db->select('*');
-        $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
-        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        // $this->db->where('Carregis.Dayfirst', date("Y-m-d"));
-
-        $query = $this->db->get();
-
-        return $query->result();
-        
-    }
-
     public function read($idCarregis)
     {
         $this->db->select('*');
@@ -43,6 +26,27 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         // $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
+        $this->db->join('Table', 'table.column = table.column', 'left');
+        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+
+        $this->db->where('idCarregis', $idCarregis);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) 
+        {
+            $data = $query->row();
+            return $data;
+        }
+       return FALSE;
+    }
+
+    public function read_2($idCarregis)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+        $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
 
         $this->db->where('idCarregis', $idCarregis);
@@ -108,11 +112,22 @@ class Manager_car_regis_model extends CI_Model
         
         // exit;
 
+        $startdate=strtotime("l");
+        $enddate=strtotime("+89 days", $startdate);
+
+        echo date("Y M d", $enddate);
+
+        // $this->db->select('*');
+        // $this->db->from('Carregis');
+        // $this->db->join('Status', 'Carregis.Status = Status.id_status');
+        // $this->db->join('Table', 'table.column = table.column', 'left');
+
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'Status' => $this->input->post('Status')
+            'Status' => $this->input->post('Status'),
+            date("Y M d", $enddate) => $this->input->post('')
         );
 
         $query=$this->db->update('Carregis',$data);
