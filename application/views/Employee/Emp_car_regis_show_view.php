@@ -4,7 +4,6 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">Show Detail Car Register</h4>
 
-                <form action="<?php echo site_url('Emp_car/add_status_2'); ?>" method="POST" class="form-horizontal">
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -199,13 +198,12 @@
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="7" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="8" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
                         echo '</form>';
                     }?>
 
 
-                </form>
             </div>
         </div>
     </div>

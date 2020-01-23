@@ -95,6 +95,13 @@ class Manager_car_regis_model extends CI_Model
             redirect('Manager_car_regis/not_passed/'.$qq['idCarregis']);
             
         }
+        else if($_SESSION['id_Employee'] != 2 )
+        {
+            echo "<script>";
+            echo "alert('แก้ไขสถานะเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Emp_car';";
+            echo "</script>";
+        }
         else
         {
             echo "<script>";
