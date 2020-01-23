@@ -35,7 +35,7 @@ class Owner2 extends CI_Controller {
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
                                 'Name_image'=>$filename,
-                                'idCarregis'=>$idc
+                                'idCarregis'=>$idc 
                             );
             $this->db->insert('Images', $arr);
            

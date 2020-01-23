@@ -59,54 +59,69 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <?php if($rs->Status == 'รออนุมัติ')
+                                <?php if($rs->Status == '1')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'ผ่าน') 
+                                else if ($rs->Status == '2') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'ไม่ผ่าน') 
+                                else if ($rs->Status == '3') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == 'กำลังดำเนินการ')
+                                else if($rs->Status == '4')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->Status == 'พร้อม') 
+                                else if ($rs->Status == '5') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == 'ยกเลิก')
+                                else if($rs->Status == '6')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Status; 
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == '8')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->Status == '9')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 } ?>
+                            </tr> 
+                            <tr>
+                                <td width="30%"><label>วันส่งรถ</label></td>
+                                <td width="70%"><?php echo $rs->Dayfirst; ?></td>
                             </tr> 
                             
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
+                            
 
                             <?php 
                             
-                            
-                            
-                            if($rs->Status == 'ไม่ผ่าน')
+                            if($rs->Status == '3')
                             {
                                 $query = $this->db->query('SELECT * FROM Not_passed, Carregis WHERE Not_passed.idCarregis = Carregis.idCarregis AND Not_passed.idCarregis = '.$rs->idCarregis);
 
@@ -154,11 +169,39 @@
                     
                     ?>
 
-                    <?php if ($rs->Status == 'กำลังดำเนินการ') {
-                        // echo '<input type="hidden" name="Status" id="Status" value="พร้อม" class="form-control" required>';
-                        // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ยืนยันการรับรถยนต์</button>';
-                        echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="พร้อม" style="font-size:20px;" required>';
-                        echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
+                    
+
+                    <?php if ($rs->Status == '4') {
+                        // echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="พร้อม" style="font-size:20px;" required>';
+                        // echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
+
+                        $startdate=strtotime("l");
+                        $enddate=strtotime("+89 days", $startdate);
+
+                        date("Y-m-d", $enddate);
+                        
+                        echo '<form action="'; 
+                        echo site_url('Manager_car_regis/add_status_2'); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="5" style="font-size:20px;" required>';
+                        echo '<input type="hidden" name="EndDate" id="EndDate" value="';
+                        echo date("Y-m-d", $enddate);
+                        echo'">';
+                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
+                        echo '</form>';
+
+                        echo '<form action="'; 
+                        echo site_url('Manager_car_regis/add_status'); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="7" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
+                        echo '</form>';
                     }?>
 
 

@@ -13,7 +13,7 @@ class Owner extends CI_Controller {
     public function insert($ids)
     {   
         
-        $license = $this->input->post('license');
+        $license = $this->input->post('license'); 
         $this->db->where('license', $license);
         $query = $this->db->get('Carregis',1);
 

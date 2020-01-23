@@ -12,6 +12,8 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
+        
 
         $query = $this->db->get();
 
@@ -25,9 +27,9 @@ class Manager_car_regis_model extends CI_Model
         $this->db->from('Carregis');
         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        // $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
-        $this->db->join('Table', 'table.column = table.column', 'left');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
+        
 
         $this->db->where('idCarregis', $idCarregis);
         $query = $this->db->get();
@@ -87,7 +89,7 @@ class Manager_car_regis_model extends CI_Model
         $query_2 =  $this->db->get('Carregis', 1);
         $qq = $query_2->row_array();
 
-        if($qq['Status'] == 'ไม่ผ่าน')
+        if($qq['Status'] == '3')
         {
             
             redirect('Manager_car_regis/not_passed/'.$qq['idCarregis']);
@@ -100,9 +102,6 @@ class Manager_car_regis_model extends CI_Model
             echo "window.location.href = '". base_url(). "Manager_car_regis';";
             echo "</script>";
         }
-
-        
-        
         // redirect('Manager_emp');
     }
 
@@ -112,22 +111,12 @@ class Manager_car_regis_model extends CI_Model
         
         // exit;
 
-        $startdate=strtotime("l");
-        $enddate=strtotime("+89 days", $startdate);
-
-        echo date("Y M d", $enddate);
-
-        // $this->db->select('*');
-        // $this->db->from('Carregis');
-        // $this->db->join('Status', 'Carregis.Status = Status.id_status');
-        // $this->db->join('Table', 'table.column = table.column', 'left');
-
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
             'Status' => $this->input->post('Status'),
-            date("Y M d", $enddate) => $this->input->post('')
+            'EndDate' => $this->input->post('EndDate')
         );
 
         $query=$this->db->update('Carregis',$data);
