@@ -96,6 +96,25 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr> 
+
+                            <?php if ($rs->Status == 'พร้อม') {
+                                echo '<tr>
+                                <td width="30%"><label>วันส่งรถ</label></td>
+                                <td width="70%">';
+                                echo $rs->Dayfirst;
+                                echo '</td>
+                                </tr>';
+                            }
+                            else if($rs->Status == 'กำลังดำเนินการ')
+                            {
+                                echo '<tr>
+                                <td width="30%"><label>วันส่งรถ</label></td>
+                                <td width="70%">';
+                                echo $rs->Dayfirst;
+                                echo '</td>
+                                </tr>';
+                            } ?> 
+
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
