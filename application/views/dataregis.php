@@ -51,7 +51,7 @@
                                 }
                                 else if ($data['Name_Status'] == 'ผ่าน') 
                                 {   $idc = $data['idCarregis']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm mt-1" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 
@@ -81,13 +81,13 @@
                                 }
                                 else if($data['Name_Status']== 'ไม่มีการส่งรถ')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
                                 else if($data['Name_Status']== 'ไม่ว่าง')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 } ?>
