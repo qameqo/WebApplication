@@ -78,11 +78,23 @@
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
+                                }
+                                else if($data['Name_Status']== 'ไม่มีการส่งรถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }
+                                else if($data['Name_Status']== 'ไม่ว่าง')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
                                 } ?>
 
                                 <td>
                                 <?php $idc = $data['idCarregis']; ?>
-                                    <a href="<?php echo site_url('Dataregis2/show/'.$idc); ?>" class="btn btn-info btn-sm">View</a>
+                                    <a href="<?php echo site_url('Dataregis2/show/'.$idc); ?>" class="btn btn-info btn-sm">รายละเอียด</a>
                                 </td>
 
                             </tr>
