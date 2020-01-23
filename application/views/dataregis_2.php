@@ -121,7 +121,7 @@
                          $this->db->where('idCarregis',$idc);
                          $query = $this->db->get();
                          $qq = $query->result_array();
-                         
+                        
                          ?>
                             <?php foreach($qq as $data){ 
                             ?>       
