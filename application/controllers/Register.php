@@ -36,7 +36,6 @@ class Register extends CI_Controller {
             'LName' =>  $this->input->post("lname"),
             'Address' =>  $this->input->post("address"),
             'Tel' =>  $this->input->post("tel"),
-            'Type' => "เจ้าของรถ"
         );
             echo "<script>";
             echo "alert('สมัครสมาชิกเรียบร้อย');";
