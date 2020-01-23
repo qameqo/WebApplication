@@ -192,8 +192,8 @@
                     
 
                     <?php if ($rs->Status == '4') {
-                        // echo '<input type="submit" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="พร้อม" style="font-size:20px;" required>';
-                        // echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
+                        
+                        echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
 
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
