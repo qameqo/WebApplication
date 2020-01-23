@@ -15,11 +15,11 @@ class Datecar extends CI_Controller {
     {
             $Date = $this->input->post("date");
             $dat = date("Y-m-d", strtotime($Date));
-        $this->db->where('idCarregis', $idc);
-        $ob = array(
+            $this->db->where('idCarregis', $idc);
+            $ob = array(
 
             
-            'Status' => "กำลังดำเนินการ",
+            'Status' => "4",
             'Dayfirst' => $Date
         );
         echo "<script>";

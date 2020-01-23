@@ -108,6 +108,18 @@
                                     echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
+                                } 
+                                else if($data['Name_Status']== 'ไม่มีการส่งรถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                } 
+                                else if($data['Name_Status']== 'ไม่ว่าง')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
                                 } ?>
                             </tr>
                             <tr>
