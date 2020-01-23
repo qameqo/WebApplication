@@ -51,6 +51,7 @@ class Rentnext extends CI_Controller {
             'EndDate'=> $dat,
             'PriceCar'=> $ga,
             'PriceIns'=> $totalprice,
+            'idCarregis'=> $idc,
             'idRent'=> $insert_id
         );
         $this->db->insert('RentalDetail', $in);
