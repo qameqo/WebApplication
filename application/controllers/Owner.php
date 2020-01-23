@@ -3,13 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Owner extends CI_Controller {
 
-    public function index()
+    public function show($ids)
     {
+        $data['ids'] = $ids;
         $this->load->view('header');
-        $this->load->view('Car_owner');      
+        $this->load->view('Car_owner',$data);      
         $this->load->view('footer');
     }
-    public function insert()
+    public function insert($ids)
     {   
         
         $license = $this->input->post('license');
@@ -20,7 +21,7 @@ class Owner extends CI_Controller {
         {   
             echo "<script>";
             echo "alert('ทะเบียนรถนี้มีผู้ใช้แล้ว');";
-            echo "window.location.href = '". base_url(). "Owner ';";
+            echo "window.location.href = '". base_url(). "Owner/show/'.$ids";
             echo "</script>";
             // echo "ทะเบียนซ้ำ";
         }
@@ -34,13 +35,14 @@ class Owner extends CI_Controller {
             {
             echo "<script>";
             echo "alert('เลขตัวถังรถนี้มีผู้ใช้แล้ว');";
-            echo "window.location.href = '". base_url(). "Owner ';";
+            echo "window.location.href = '". base_url(). "Owner/show/'.$ids";
             echo "</script>";
             // echo "เครื่องซ้ำ";
 
             }
             else
-            {
+            {   
+             
                 $object = array(
                     'Brand' =>  $this->input->post("Brand"),
                     'Yearcar' =>  $this->input->post("caryear"),
@@ -52,12 +54,12 @@ class Owner extends CI_Controller {
                     'License' =>  $this->input->post("license"),
                     'Yearlicense' =>  $this->input->post("licenseyear"),
                     'Carbody' =>  $this->input->post("carbody"),
-                    'Status' => "รออนุมัติ",
+                    'Status' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
                     'id_Gen' => $this->input->post("Gen")
                    
                 );
-        
+            
                 $this->db->insert('Carregis', $object);
                 $this->db->order_by('idCarregis', 'desc');
                 $query =  $this->db->get('Carregis', 1);

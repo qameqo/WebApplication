@@ -9,6 +9,7 @@
                         $this->db->from('Carregis');
                         $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
                         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+                        $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
                         $this->db->order_by('idCarregis', 'desc');
 						$query = $this->db->get();
@@ -42,40 +43,40 @@
                                 <td><?php echo $data['Carbody'];?></td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
-                                <?php if($data['Status'] == 'รออนุมัติ')
+                                <?php if($data['Name_Status'] == 'รออนุมัติ')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['Status'] == 'ผ่าน') 
+                                else if ($data['Name_Status'] == 'ผ่าน') 
                                 {   $idc = $data['idCarregis']; ?>
                                     <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 
-                                else if ($data['Status'] == 'ไม่ผ่าน') 
+                                else if ($data['Name_Status'] == 'ไม่ผ่าน') 
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['Status'] == 'กำลังดำเนินการ')
+                                else if($data['Name_Status'] == 'กำลังดำเนินการ')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['Status'] == 'พร้อม') 
+                                else if ($data['Name_Status'] == 'พร้อม') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['Status'] == 'ยกเลิก')
+                                else if($data['Name_Status'] == 'ยกเลิก')
                                 {
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 } ?>
 

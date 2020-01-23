@@ -11,6 +11,7 @@
                     $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
                     $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
                     $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+                    $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
                     $this->db->where('idCarregis',$idc);
                     $query = $this->db->get();
                     $qq = $query->result_array();
@@ -72,46 +73,46 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <?php if($data['Status']== 'รออนุมัติ')
+                                <?php if($data['Name_Status']== 'รออนุมัติ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['Status'];  
+                                    echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
-                                else if ($data['Status']== 'ผ่าน') 
+                                else if ($data['Name_Status']== 'ผ่าน') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $data['Status']; 
+                                    echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['Status']== 'ไม่ผ่าน') 
+                                else if ($data['Name_Status']== 'ไม่ผ่าน') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $data['Status'];  
+                                    echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
-                                else if($data['Status']== 'กำลังดำเนินการ')
+                                else if($data['Name_Status']== 'กำลังดำเนินการ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $data['Status'];  
+                                    echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
-                                else if ($data['Status']== 'พร้อม') 
+                                else if ($data['Name_Status']== 'พร้อม') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
-                                    echo $data['Status'];  
+                                    echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
-                                else if($data['Status']== 'ยกเลิก')
+                                else if($data['Name_Status']== 'ยกเลิก')
                                 {
                                     echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
-                                    echo $data['Status'];  
+                                    echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 } ?>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ผู้ลงทะเบียน</label></td>
-                                <td width="70%"><?php echo $data['FName']; ?></td>
+                                <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
                             </tr>
                             <?php } ?>
                             <?php 

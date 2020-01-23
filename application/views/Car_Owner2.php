@@ -28,7 +28,7 @@
 						<?php 
 						
 						$this->db->where( 'idCarregis',$idc);
-						$query = $this->db->get('Images', 8);
+						$query = $this->db->get('Images', 5);
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">

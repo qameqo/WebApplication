@@ -3,7 +3,7 @@
 	<div class="row justify-content-center">
 		<div class="col-sm-8 shadow p-5 mb-5 bg-white rounded">
 			<form class="form-signin" id="owner" name="owner" method="post" enctype="multipart/form-data"
-				action="<?php echo base_url(); ?>Owner/insert">
+				action="<?php echo base_url('Owner/insert/'.$ids); ?>">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm">

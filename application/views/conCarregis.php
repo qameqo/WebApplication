@@ -46,7 +46,15 @@
 					<br>
                     <div class="row">
 					<div class="col-sm">
-                        <a class="btn btn-danger" style="background-color: #F60200;" href="<?php echo base_url("Owner");?>">ดำเนินการต่อ</a>
+					<?php $this->db->where('id_Status', 1);
+                              $query = $this->db->get('Status_car');
+                              $qq = $query->result_array();
+							  ?>
+                              <?php foreach($qq as $data){ ?>
+                           <?php $ids = $data['id_Status']; ?>
+                         
+                        <a class="btn btn-danger" style="background-color: #F60200;" href="<?php echo base_url("Owner/show/".$ids);?>">ดำเนินการต่อ</a>
+							  <?php } ?>
 						</div>
 					</div>
 
