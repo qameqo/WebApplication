@@ -107,10 +107,31 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr> 
-                            <tr>
-                                <td width="30%"><label>วันส่งรถ</label></td>
-                                <td width="70%"><?php echo $rs->Dayfirst; ?></td>
-                            </tr> 
+                            
+                            <?php
+                            
+                            if($rs->Status == '4' || '8')
+                            {
+                                echo'<tr>
+                                <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
+                                echo $rs->Dayfirst; 
+                                echo '</span></td></tr>';
+                            }
+                            
+
+                            ?>
+
+                            <?php
+                            
+                            if($rs->Status == '5' || '8')
+                            {
+                                echo'<tr>
+                                <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
+                                echo $rs->EndDate; 
+                                echo '</span></td></tr>';
+                            }
+                        
+                            ?>   
                             
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
@@ -177,8 +198,6 @@
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
 
-                        date("Y-m-d", $enddate);
-                        
                         echo '<form action="'; 
                         echo site_url('Manager_car_regis/add_status_2'); 
                         echo '" method="POST" class="form-horizontal">';

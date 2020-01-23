@@ -108,24 +108,30 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr> 
-
-                            <?php if ($rs->Status == '5') {
-                                echo '<tr>
-                                <td width="30%"><label>วันส่งรถ</label></td>
-                                <td width="70%">';
-                                echo $rs->Dayfirst;
-                                echo '</td>
-                                </tr>';
-                            }
-                            else if($rs->Status == '4')
+                            
+                            <?php
+                            
+                            if($rs->Status == '4')
                             {
-                                echo '<tr>
-                                <td width="30%"><label>วันส่งรถ</label></td>
-                                <td width="70%">';
-                                echo $rs->Dayfirst;
-                                echo '</td>
-                                </tr>';
-                            } ?> 
+                                echo'<tr>
+                                <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
+                                echo $rs->Dayfirst; 
+                                echo '</span></td></tr>';
+                            }
+
+                            ?>
+
+                            <?php
+                            
+                            if($rs->Status == '5')
+                            {
+                                echo'<tr>
+                                <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
+                                echo $rs->EndDate; 
+                                echo '</span></td></tr>';
+                            }
+
+                            ?>   
 
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
