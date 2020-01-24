@@ -1,3 +1,18 @@
+<style>.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}</style>
 <?php 
       $this->db->select('*');
      $this->db->from('Carregis');
@@ -217,7 +232,78 @@
             </div>
                 <?php } ?>
 	</div>
-    <div class="col-sm-3 mb-5 bg-white rounded"
+            <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+            <h4 style="color:#000000" class="text-center">อัปโหลดรูปใบขับขี่</h4>
+			<div class="container mb-5">
+                        <?php
+						
+						 $this->db->where( 'idrent');
+						 $query = $this->db->get('Images3', 1);
+						 $qi = $query->result_array();
+						?>
+							<div class="table-responsive">
+								<table id="employee_data" class="table table-striped table-bordered text-center">
+									<thead>
+										<tr>
+											<th data-column-id="Name_image">รูปภาพ</th>
+											<th data-column-id="Action">ลบ</th>
+										</tr>
+									</thead>
+									<tbody>
+                                     <?php if(!empty($qi))
+									{
+										
+									}else 
+									 ?>
+										<?php foreach($qi as $data){
+											
+							 	    ?>
+									<tr>
+											<td><img src="<?php echo base_url('./img3/'.$data['Name_img']);?>"
+													style="width: 50px; height: 50px;" required/></td>
+
+											<td><a href="<?php echo site_url('Payment/del/'.$data['idimg3'].'/'.$idr);?>"
+													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
+													class="btn btn-danger btn-sm">ลบ</a></td>
+										</tr>
+                                        <?php 
+							} ?>
+									</tbody>
+								</table>
+
+							</div>
+							<div class="row">
+								<div class="col-sm text-center">
+									<h6 style="color: red;">* รูปใบขับขี่ 1 รูป</h6>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm text-center">
+									กรุณาอัปโหลดรูปภาพตามจำนวนที่ระบุ
+								</div>
+							</div>
+							<br>
+							<div class="row">
+							<div class="col-sm text-Right">
+								<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
+								<span style="color: white;">+ เพิ่มรูป</span>
+										<label for="file"><strong></strong><span class="box__dragndrop"></label>
+										<input class="upload" type="file" name="file" id="piccar1"/>
+								</div>
+							</div>
+							<div class="col-sm text-left">
+								<div class="box__input">
+									<button class="btn btn-primary btn-lg" type="submit"><span style="color: white;">อัปโหลด</span></button>
+								</div>
+							</div>
+							</div>
+							<!-- <input type="hidden" value="<?php echo $id; ?>" name="idCarregis" id="idCarregis" /> -->
+
+							
+							<br>
+							<div class="col-sm text-center">		
+			</div>
+		</div>
     </div>
 </form>
