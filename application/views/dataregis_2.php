@@ -83,14 +83,14 @@
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
-                                else if ($data['Name_Status']== 'ผ่าน') 
+                                else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
                                     $idc = $data['idCarregis']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;">อนุมัติ</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                 }
-                                else if ($data['Name_Status']== 'ไม่ผ่าน') 
+                                else if ($data['Name_Status']== 'ไม่อนุมัติ') 
                                 { 
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Name_Status'];
@@ -130,7 +130,7 @@
 
                             <?php 
                      
-                            if($data['Name_Status']== 'ไม่ผ่าน')
+                            if($data['Name_Status']=='ไม่อนุมัติ')
                             {
                                 $this->db->select('*');
                                 $this->db->from('Not_passed');
@@ -138,8 +138,7 @@
                                 $query = $this->db->get();
                                 $qa = $query->result_array();
                                 
-
-                                foreach ($qq as $data) {
+                                foreach ($qa as $data) {
 
                                     echo '<tr>
                                     <td width="30%"><label>หมายเหตุ</label></td>
@@ -147,16 +146,20 @@
                                     echo $data['Name_not'];
                                     echo '</td></tr>';
                                 }
-                            }
-                            if($data['Name_Status']== 'พร้อม')
+                            } 
+                            else if($data['Name_Status']== 'กำลังดำเนินการ')
                             {
-                                $this->db->select('*');
-                                $this->db->from('Carregis');
-                                $this->db->where('idCarregis', $idc);
-                                $query = $this->db->get();
-                                $qa = $query->result_array();
-                                
+                                foreach ($qq as $data) {
 
+                                    echo '<tr>
+                                    <td width="30%"><label>วันส่งรถ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Dayfirst'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            else if($data['Name_Status']== 'พร้อม')
+                            {
                                 foreach ($qq as $data) {
 
                                     echo '<tr>

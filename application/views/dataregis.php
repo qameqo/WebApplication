@@ -49,13 +49,13 @@
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['Name_Status'] == 'ผ่าน') 
+                                else if ($data['Name_Status'] == 'อนุมัติ') 
                                 {   $idc = $data['idCarregis']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;">อนุมัติ</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 
-                                else if ($data['Name_Status'] == 'ไม่ผ่าน') 
+                                else if ($data['Name_Status'] == 'ไม่อนุมัติ') 
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
