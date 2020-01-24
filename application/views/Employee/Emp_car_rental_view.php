@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">การลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์</h3>
                     </div>
                 </div>
                 
@@ -15,102 +15,93 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-<th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ยื่ห้อ</th>
-                                <th data-column-id="Generation">รุ่น</th>
-                                <th data-column-id="License">ทะเบียน</th>
-                                <th data-column-id="Member">สมาชิก</th>
-                                <th data-column-id="Status">สถานะ</th>
+                                <th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ชื่อสมาชิก</th>
+                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Generation">ราคารวม</th>
+                                <th data-column-id="License">สถานะ</th>
 
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
 						<tbody>
 
-                            <?php foreach ($query as $rs) { ?>
-
-                            <?php if ($rs->Status == '1') { 
-                                }
-                                else
-                                {
-                            ?>
+                        <?php foreach ($query as $rs) { ?>
 
 							<tr>
 
-                                <td><?php echo $rs->idCarregis; ?></td>
+                                <td><?php echo $rs->idRental; ?></td>
 
-								<td><?php echo $rs->Name_Brand; ?></td>
-								<td><?php echo $rs->Name_Gen; ?></td>
-								<td><?php echo $rs->License; ?></td>
-                                <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LNname; ?></td>
+								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
+								<td><?php echo $rs->Datebooking; ?></td>
+								<td><?php echo $rs->PriceCar; ?></td>
 
-                                <?php if($rs->Status == '1')
+                                <?php if($rs->rentstatus == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '2') 
+                                else if($rs->rentstatus == '2') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '3') 
+                                else if($rs->rentstatus == '3') 
                                 {
                                     echo'<td><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '4')
+                                else if($rs->rentstatus == '4')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '5') 
+                                else if($rs->rentstatus == '5') 
                                 {
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '6')
+                                else if($rs->rentstatus == '6')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '8')
+                                else if($rs->rentstatus == '8')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '9')
+                                else if($rs->rentstatus == '9')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }  ?>
-                        
-								<td>
-                                    <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm">View</a>
+
+                                <td>
+								
+                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm">View</a>
+                    
 								</td>
-							
-                            </tr>
+							</tr>
 
-                            <?php } }?>
+                        <?php } ?>
 
-                            
 						</tbody>
 						<tfoot>
 							<tr>
-<th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ยื่ห้อ</th>
-                                <th data-column-id="Generation">รุ่น</th>
-                                <th data-column-id="License">ทะเบียน</th>
-                                <th data-column-id="Member">สมาชิก</th>
-                                <th data-column-id="Status">สถานะ</th>
+                                <th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ชื่อสมาชิก</th>
+                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Generation">ราคารวม</th>
+                                <th data-column-id="License">สถานะ</th>
 
                                 <th data-column-id="Action"></th>
 							</tr>
