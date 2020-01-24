@@ -18,7 +18,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ชื่อสมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?>></td>
+                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>

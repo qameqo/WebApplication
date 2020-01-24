@@ -22,6 +22,8 @@
             <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการข้อมูลการลงทะเบียนรถยนต์</a><br>
             <a href="<?php echo site_url('Manager_car_regis/index_2');?>" class="btn btn-primary btn-lg" style="font-size : 18px">ตรวจสอบข้อมูลรถยนต์</a>
             <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-primary btn-lg" style="font-size : 18px">จัดการข้อมูลราคารถยนต์</a>
+
+            <!-- <a href="<?php //echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-lg mt-5" style="font-size : 18px">จัดการการเช่ารถยนต์</a><br> -->
           </div>
         </div>
       </div>

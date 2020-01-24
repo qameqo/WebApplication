@@ -99,6 +99,22 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
     }
+    public function index_3()
+    {
+        $data['query']=$this->Manager_car_regis_model->show_car_regis();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Employee/Emp_car_rental_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+    }
 }
 
 /* End of file Hello.php */
