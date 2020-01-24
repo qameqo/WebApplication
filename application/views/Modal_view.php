@@ -21,7 +21,8 @@
                     <div class="form-group">
                         <label for="Password">Password</label>
                         <input type="password" class="form-control" name="Password" id="Password"
-                            placeholder="Password" required>
+                            placeholder="Password" required pattern="(?=.*\d).{4,}" title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์เล็กหนึ่งตัวอย่างน้อย 8 ตัวอักษรขึ้นไป">
+                            
                     </div>
 
                     <div class="form-row">
@@ -46,7 +47,8 @@
 
                     <div class="form-group">
                         <label for="Tel">Tel.</label>
-                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required>
+                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required
+                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
                     </div>
 
                     <div class="form-group">

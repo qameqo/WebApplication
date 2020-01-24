@@ -234,7 +234,7 @@
                         echo $rs->idCarregis; 
                         echo '">';
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="2" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ผ่าน</button>';
+                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
 
                         echo '<form action="'; 
@@ -244,7 +244,7 @@
                         echo $rs->idCarregis; 
                         echo '">';
                         echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="3" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่ผ่าน</button>';
+                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
                         echo '</form>';
                                            
                     }?>

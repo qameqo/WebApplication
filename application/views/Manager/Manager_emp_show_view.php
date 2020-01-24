@@ -38,10 +38,24 @@
                                 <td width="30%"><label>เบอร์โทรศัพท์</label></td>
                                 <td width="70%"><?php echo $rs_edit->Tel; ?></td>
                             </tr>
-                            <tr>
-                                <td width="30%"><label>ตำแหน่ง</label></td>
-                                <td width="70%"><?php echo $rs_edit->Row; ?></td>
-                            </tr>
+                            
+
+                            <?php
+                            
+                            if($rs_edit->Row == '1')
+                                {
+                                    echo'<tr><td width="30%"><label>ตำแหน่ง</label></td><td width="70%">พนักงาน</td></tr>';
+                                }
+                                elseif ($rs_edit->Row == '2') 
+                                {
+                                    echo'<tr><td width="30%"><label>ตำแหน่ง</label></td><td width="70%">พนัช่างซ่อมบำรุงกงาน</td></tr>';
+                                }
+                                elseif ($rs_edit->Row == '3') 
+                                {
+                                    echo'<tr><td width="30%"><label>ตำแหน่ง</label></td><td width="70%">เจ้าหน้าที่ประกัน</td></tr>';
+                                }  
+                            ?>
+
                         </table>
                     </div>
 
