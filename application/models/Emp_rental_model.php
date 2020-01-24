@@ -28,8 +28,6 @@ class Emp_rental_model extends CI_Model
         $this->db->join('Carregis', 'RentalDetail.idCarregis = Carregis.idCarregis');
         $this->db->join('Member', 'Rental.idMember = Member.id_Member');
         $this->db->join('Status_car', 'Rental.rentstatus = Status_car.id_Status');
-        
-
         $this->db->where('idRental', $idRental);
         $query = $this->db->get();
 

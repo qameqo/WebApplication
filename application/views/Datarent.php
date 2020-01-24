@@ -6,23 +6,22 @@
                 <?php
                     // $query = $this->db->query('SELECT RentalDetail.*,Rental.* FROM RentalDetail,Rental WHERE Rental.idRental = RentalDetail.idRent and Rental.idMember="61"');
                     $this->db->select('*');
-                    $this->db->from('RentalDetail');
                     $this->db->from('Rental');
-                    $this->db->where('Rental.idRental = RentalDetail.idRent');
+                    $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
+                    $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
+                    $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
+                    $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
+                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
                     $this->db->where('idMember', $this->session->userdata('ID'));
                     $query = $this->db->get();
-                    $qone = $query->result_array();     
+                    $qone = $query->result_array();  
+                    
+                    // echo '<pre>';
+                    // print_r($qone);
+                    // echo '</pre>';
+
+                    // exit;
                 ?>
-                <?php 
-                        
-                        $this->db->select('*');
-                        $this->db->from('RentalDetail');
-                        $this->db->join('Rental', 'Rental.idRental = RentalDetail.idRent');
-                        $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
-                        $this->db->where('idMember', $this->session->userdata('ID'));
-						$query = $this->db->get();
-                        $qq = $query->result_array();
-						?>
                 <div class="col-md-12 mb-5 text-center">
                     <br>
                     <table id="employee_data" class="table table-striped table-bordered text-center"
@@ -41,33 +40,20 @@
                         <tbody>
                            <?php 
                       
-                           $query = $this->db->query('SELECT Carregis.*, Brand.Name_Brand, Generation.Name_Gen FROM `Carregis` INNER JOIN Brand on Brand.idBrand = Carregis.Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE (SELECT RentalDetail.idRentalDetail FROM RentalDetail WHERE RentalDetail.idCarregis = Carregis.idCarregis)');
-                           $qm = $query->result_array();
+                        //    $query = $this->db->query('SELECT Carregis.*, Brand.Name_Brand, Generation.Name_Gen FROM `Carregis` INNER JOIN Brand on Brand.idBrand = Carregis.Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE (SELECT RentalDetail.idRentalDetail FROM RentalDetail WHERE RentalDetail.idCarregis = Carregis.idCarregis)');
+                        //    $qm = $query->result_array();
                             ?>
                             <tr>
-                            <?php foreach ($qone as $data){ ?>
-                            <?php foreach($qm as $data){ ?>
+                           
+                            <?php foreach($qone as $data){ ?>
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-                            <?php } ?>
-                                <?php foreach($qq as $data){
-                                ?>
                                 <td><?php echo $data['StartDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
-                                <?php 
-							} ?>
-                            <?php 
-                            $this->db->select('*');
-                            $this->db->from('Rental');
-                            $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
-                            $this->db->where('idMember',$this->session->userdata('ID'));
+                             
+                        
                             
-                            $query = $this->db->get();
-                            $qa = $query->result_array();
-                            ?>
-                                <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
-                            <?php foreach($qa as $data){?>
                                 <?php if($data['rentstatus'] == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
@@ -117,19 +103,19 @@
                                     echo '</span></td>';
                                 }
                                 ?>
-                                 <?php 
-							} ?>
+                            
                                 <td>
-                                <?php foreach($qq as $data){
-                                ?>
-                                <?php $idc = $data['idCarregis']; ?>
-                                    <a href="<?php echo site_url('Dataregis2/show/'.$idc); ?>" class="btn btn-info btn-sm">View</a>
+                    
+                                <?php $idr = $data['idRental']; ?>
+                                    <a href="<?php echo site_url('Dataregis2/show/'.$idr); ?>" class="btn btn-info btn-sm">View</a>
                                 </td>
-                                <?php } ?>
+                               
                             </tr>
-                                <?php } ?>
+                            <?php } ?>
                         </tbody>
+                        
                     </table>
+                    
                 </div>
             </div>
         </div>
