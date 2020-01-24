@@ -73,12 +73,20 @@
                                 <td width="70%"><?php echo $data['totalprice'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคาประกัน</label></td>
+                                <td width="30%"><label>ราคารถ</label></td>
                                 <td width="70%"><?php echo $data['PriceCar'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคารถ</label></td>
+                                <td width="30%"><label>ราคาประกัน</label></td>
                                 <td width="70%"><?php echo $data['PriceIns'];?><span>&nbsp;บาท</span></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>วันเริ่มเช่า</label></td>
+                                <td width="70%"><?php echo $data['StartDate'];?><span></span></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>วันสิ้นสุด</label></td>
+                                <td width="70%"><?php echo $data['endDate'];?><span></span></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
@@ -129,7 +137,14 @@
                                     echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
-                                } ?>
+                                } 
+                                else if($data['Name_Status']== 'รอการชำระเงินมัดจำ')
+                                { ?>
+                                    <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
+                                   href="<?php echo base_url('Deposit');?>">ชำระเงินมัดจำ</a></td>
+                                   <?php
+                                }
+                                ?>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ผู้เช่า</label></td>

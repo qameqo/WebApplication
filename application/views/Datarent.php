@@ -101,6 +101,12 @@
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
+                                } 
+                                else if($data['rentstatus']== '9')
+                                { ?>
+                                     <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
+                                    href="<?php echo base_url('Deposit');?>">ชำระเงินมัดจำ</a></td>
+                                    <?php
                                 }
                                 ?>
                             
