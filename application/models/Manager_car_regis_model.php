@@ -29,9 +29,8 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
         $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
-        
-
-        $this->db->where('idCarregis', $idCarregis);
+                     
+        $this->db->where('idCarregis', $idCarregis );
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) 
@@ -39,7 +38,7 @@ class Manager_car_regis_model extends CI_Model
             $data = $query->row();
             return $data;
         }
-       return FALSE;
+        return FALSE;
     }
 
     public function read_2($idCarregis)
