@@ -6,10 +6,11 @@
                 <?php 
                         
                         $this->db->select('*');
-                        $this->db->from('Carregis');
-                        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
-                        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-                        $this->db->join('Agreement', 'Agreement.idCarregis = Carregis.idCarregis');
+                        $this->db->from('RentalDetail','Carregis');
+                        $this->db->join('Rental', 'Rental.idRental = RentalDetail.idRent');
+                        $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
+                        $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
+                        $this->db->where('Carregis.idCarregis = RentalDetail.idCarregis');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
 						$query = $this->db->get();
                         $qq = $query->result_array();
@@ -36,61 +37,60 @@
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-
-                                <?php 
-							} ?>
-                            <?php 
-                                $this->db->select('*');
-                                $this->db->from('RentalDetail');
-                                $this->db->join('Rental', 'RentalDetail.idRent = Rental.idRental');
-                                $this->db->join('Agreement', 'RentalDetail.idagree = Agreement.id_Agreement');
-                                $this->db->where('idMember', $this->session->userdata('ID'));
-                                $query = $this->db->get();
-                                $qam = $query->result_array();
-                                
-                            ?>
-                            <?php foreach($qam as $data){ ?>
-                                <td><?php echo $data['StartDate'];?></td>
+                                <td><?php echo $data['Dayfirst'];?></td>
                                 <td><?php echo $data['EndDate'];?></td>
                             
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
-                                <?php if($data['rentstatus'] == 'รออนุมัติ')
+                                <?php if($data['Status'] == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['rentstatus']; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['rentstatus'] == 'ผ่าน') 
-                                {   $idc = $data['idCarregis']; ?>
+                                else if ($data['Status'] == '2') 
+                                {   $idc = $data['Status']; ?>
                                     <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 
-                                else if ($data['rentstatus'] == 'ไม่ผ่าน') 
+                                else if ($data['Status'] == '3') 
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $data['rentstatus']; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == 'กำลังดำเนินการ')
+                                else if($data['Status'] == '4')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $data['rentstatus']; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['rentstatus'] == 'พร้อม') 
+                                else if ($data['Status'] == '5') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
-                                    echo $data['rentstatus']; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == 'ยกเลิก')
+                                else if($data['Status'] == '6')
                                 {
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
-                                    echo $data['rentstatus']; 
+                                    echo $data['Status']; 
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($data['Status'] == '7')
+                                {
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                else if($data['Status'] == '8')
+                                {
+                                    echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
+                                    echo $data['Status']; 
+                                    echo '</span></td>';
+                                }
+                                ?>
 
                                 <td>
                                 <?php $idc = $data['idCarregis']; ?>
