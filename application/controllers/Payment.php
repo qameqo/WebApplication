@@ -39,7 +39,7 @@ class Payment extends CI_Controller {
             redirect('Payment/sh/'.$idr);
         }
         $qa=array(
-            'rentstatus'=>"รออนุมัติ"
+            'rentstatus'=>"1"
             
         );
         $this->db->where('idRental', $idr);

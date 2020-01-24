@@ -48,7 +48,7 @@ class Rentnext extends CI_Controller {
        
         $in = array(
             'StartDate'=> $dat,
-            'EndDate'=> $dat,
+            'endDate'=> $dat,
             'PriceCar'=> $ga,
             'PriceIns'=> $totalprice,
             'idCarregis'=> $idc,
