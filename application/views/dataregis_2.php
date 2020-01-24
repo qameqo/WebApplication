@@ -72,6 +72,10 @@
                                 <td width="70%"><?php echo $data['RentalPrice'];?><span>&nbsp;บาท/วัน</span></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>ผู้ลงทะเบียน</label></td>
+                                <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($data['Name_Status']== 'รออนุมัติ')
                                 {
@@ -86,10 +90,19 @@
                                     echo '</span></td>';
                                 }
                                 else if ($data['Name_Status']== 'ไม่ผ่าน') 
-                                {
+                                {   
+                                    $this->db->select('*');
+                                    $this->db->from('Not_passed');
+                                    $this->db->where('idCarregis', $idc);
+                                    $query = $this->db->get();
+                                    $qa = $query->result_array();
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $data['Name_Status'];  
+                                    echo $data['Name_Status'];
+                                    echo '&nbsp';
+                                    foreach($qa as $data){
+                                    echo $data['Name_not'];
                                     echo '</span></td>';
+                                    }
                                 }
                                 else if($data['Name_Status']== 'กำลังดำเนินการ')
                                 {
@@ -122,10 +135,6 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr>
-                            <tr>
-                                <td width="30%"><label>ผู้ลงทะเบียน</label></td>
-                                <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
-                            </tr>
                             <?php } ?>
                             <?php 
                          $this->db->select('*');
@@ -133,7 +142,6 @@
                          $this->db->where('idCarregis',$idc);
                          $query = $this->db->get();
                          $qq = $query->result_array();
-                        
                          ?>
                             <?php foreach($qq as $data){ 
                             ?>       
