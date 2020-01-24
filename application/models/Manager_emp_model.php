@@ -87,7 +87,11 @@ class Manager_emp_model extends CI_Model
 
     public function show_emp()
     {
-        $query = $this->db->get('Employee');
+        $this->db->select('*');
+        $this->db->from('Employee');
+        $this->db->join('Employee_position', 'Employee.Row = Employee_position.id_position');
+        
+        $query = $this->db->get();
         return $query->result();
         
     }
