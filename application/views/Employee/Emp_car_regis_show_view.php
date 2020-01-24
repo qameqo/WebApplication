@@ -110,8 +110,13 @@
                             
                             <?php
                             
-                            if($rs->Status == '4' || '8')
+                            if($rs->Status == '4')
                             {
+                                echo'<tr>
+                                <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
+                                echo $rs->Dayfirst; 
+                                echo '</span></td></tr>';
+                            }elseif ($rs->Status == '8') {
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
@@ -123,15 +128,20 @@
 
                             <?php
                             
-                            if($rs->Status == '5' || '8')
+                            if($rs->Status == '5')
                             {
+                                echo'<tr>
+                                <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
+                                echo $rs->EndDate; 
+                                echo '</span></td></tr>';
+                            }elseif ($rs->Status == '8') {
                                 echo'<tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
                                 echo $rs->EndDate; 
                                 echo '</span></td></tr>';
                             }
                         
-                            ?>   
+                            ?>      
                             
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
