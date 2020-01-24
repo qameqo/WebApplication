@@ -12,7 +12,8 @@
         $('#insert_form')[0].reset();
     });
 
-    var moment = require('moment');
-    moment().format();
+    $(function(){
+        $('img').EZView();
+    });
 
 </script>

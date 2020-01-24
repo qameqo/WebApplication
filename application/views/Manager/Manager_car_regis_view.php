@@ -38,7 +38,7 @@
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
-                                <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LNname; ?></td>
+                                <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 
                                 <?php if($rs->Status == '1')
                                 {
