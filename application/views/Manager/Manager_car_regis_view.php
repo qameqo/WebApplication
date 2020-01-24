@@ -19,7 +19,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>
-                                <th data-column-id="Member">เจ้าของรถ</th>
+                                <th data-column-id="Member">สมาชิก</th>
                                 <th data-column-id="Status">สถานะ</th>
 
                                 <th data-column-id="Action"></th>
@@ -38,7 +38,7 @@
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->License; ?></td>
-                                <td><?php echo $rs->FName; ?></td>
+                                <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LNname; ?></td>
 
                                 <?php if($rs->Status == '1')
                                 {
@@ -105,7 +105,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="License">ทะเบียน</th>
-                                <th data-column-id="Member">เจ้าของรถ</th>
+                                <th data-column-id="Member">สมาชิก</th>
                                 <th data-column-id="Status">สถานะ</th>
 
                                 <th data-column-id="Action"></th>
