@@ -38,12 +38,7 @@ class Payment extends CI_Controller {
            
             redirect('Payment/sh/'.$idr);
         }
-        $qa=array(
-            'rentstatus'=>"1"
-            
-        );
-        $this->db->where('idRental', $idr);
-        $this->db->update('Rental', $qa);
+        
         redirect('Datarent');
     }
     public function del($di,$idr)

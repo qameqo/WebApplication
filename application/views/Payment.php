@@ -69,12 +69,12 @@
             </div>
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-            <h4 style="color:#000000">อัปโหลดรูปเอกสารรถยนต์</h4>
+            <h4 style="color:#000000">อัปโหลดรูปใบขับขี่</h4>
 			<div class="container mb-5">
                         <?php
 						
 						$this->db->where( 'idrent',$idr);
-						$query = $this->db->get('Images3', 2);
+						$query = $this->db->get('Images3', 1);
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">
@@ -110,7 +110,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									<h6 style="color: red;">* รูปใบขับขี่ 1 รูปและรูปใบเสร็จโอนเงินค่าเช่าเต็มจำนวน 1 รูป</h6>
+									<h6 style="color: red;">* รูปใบขับขี่ 1 รูป</h6>
 								</div>
 							</div>
 							<div class="row">

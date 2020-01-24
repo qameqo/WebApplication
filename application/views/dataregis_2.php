@@ -85,24 +85,17 @@
                                 }
                                 else if ($data['Name_Status']== 'ผ่าน') 
                                 {
-                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $data['Name_Status']; 
-                                    echo '</span></td>';
+                                    $idc = $data['idCarregis']; ?>
+                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
+                                    <?php
                                 }
                                 else if ($data['Name_Status']== 'ไม่ผ่าน') 
-                                {   
-                                    $this->db->select('*');
-                                    $this->db->from('Not_passed');
-                                    $this->db->where('idCarregis', $idc);
-                                    $query = $this->db->get();
-                                    $qa = $query->result_array();
+                                { 
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Name_Status'];
-                                    echo '&nbsp';
-                                    foreach($qa as $data){
-                                    echo $data['Name_not'];
                                     echo '</span></td>';
-                                    }
+                                   
                                 }
                                 else if($data['Name_Status']== 'กำลังดำเนินการ')
                                 {
@@ -134,6 +127,51 @@
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 } ?>
+
+                            <?php 
+                     
+                            if($data['Name_Status']== 'ไม่ผ่าน')
+                            {
+                                $this->db->select('*');
+                                $this->db->from('Not_passed');
+                                $this->db->where('idCarregis', $idc);
+                                $query = $this->db->get();
+                                $qa = $query->result_array();
+                                
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            if($data['Name_Status']== 'พร้อม')
+                            {
+                                $this->db->select('*');
+                                $this->db->from('Carregis');
+                                $this->db->where('idCarregis', $idc);
+                                $query = $this->db->get();
+                                $qa = $query->result_array();
+                                
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>วันเริ่มต้น</label></td>
+                                    <td width="70%">';
+                                    echo $data['Dayfirst'];
+                                    echo '</td></tr>';
+                                    echo '<tr>
+                                    <td width="30%"><label>วันสิ้นสุด</label></td>
+                                    <td width="70%">';
+                                    echo $data['EndDate'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
                             </tr>
                             <?php } ?>
                             <?php 

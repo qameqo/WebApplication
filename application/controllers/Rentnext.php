@@ -39,6 +39,7 @@ class Rentnext extends CI_Controller {
                 'totalprice' => $total2,
                 'Carownerincome' => $owner,
                 'Companyincome' => $company,
+                'rentstatus'=>"9",
                 'idMember' => $this->session->userdata('id_Member'),
             );
         }
