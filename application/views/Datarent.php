@@ -107,7 +107,7 @@
                                 <td>
                     
                                 <?php $idr = $data['idRental']; ?>
-                                    <a href="<?php echo site_url('Dataregis2/show/'.$idr); ?>" class="btn btn-info btn-sm">View</a>
+                                    <a href="<?php echo site_url('Datarent2/show/'.$idr); ?>" class="btn btn-info btn-sm">View</a>
                                 </td>
                                
                             </tr>

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Datarent2 extends CI_Controller {
 
-    public function index($idr)
+    public function show($idr)
     {
         $data['idr'] = $idr;
         $this->load->view('header');

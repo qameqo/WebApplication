@@ -6,16 +6,17 @@
 
                 <form action="" method="POST" class="form-horizontal">
 
-                <?php
+                   <?php
                     // $query = $this->db->query('SELECT RentalDetail.*,Rental.* FROM RentalDetail,Rental WHERE Rental.idRental = RentalDetail.idRent and Rental.idMember="61"');
                     $this->db->select('*');
                     $this->db->from('Rental');
+                    $this->db->join('Member', 'Member.id_Member = Rental.idMember');
                     $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
                     $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
                     $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                     $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
-                    $this->db->where('idMember', $this->session->userdata('ID'));
+                    $this->db->where('idRental',$idr);
                     $query = $this->db->get();
                     $qone = $query->result_array();  
                     
@@ -38,6 +39,10 @@
                             <tr>
                                 <td width="30%"><label>รุ่น</label></td>
                                 <td width="70%"><?php echo $data['Name_Gen'];?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ทะเบียน</label></td>
+                                <td width="70%"><?php echo $data['License'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ปีรถยนต์</label></td>
@@ -64,20 +69,16 @@
                                 <td width="70%"><?php echo $data['Mileage'];?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ทะเบียน</label></td>
-                                <td width="70%"><?php echo $data['License'];?></td>
+                                <td width="30%"><label>ราคารวม</label></td>
+                                <td width="70%"><?php echo $data['totalprice'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ปีที่ออกทะเบียน</label></td>
-                                <td width="70%"><?php echo $data['Yearlicense'];?></td>
+                                <td width="30%"><label>ราคาประกัน</label></td>
+                                <td width="70%"><?php echo $data['PriceCar'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>เลขตัวถัง</label></td>
-                                <td width="70%"><?php echo $data['Carbody'];?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ราคาปล่อยเช่า</label></td>
-                                <td width="70%"><?php echo $data['RentalPrice'];?><span>&nbsp;บาท/วัน</span></td>
+                                <td width="30%"><label>ราคารถ</label></td>
+                                <td width="70%"><?php echo $data['PriceIns'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
@@ -131,14 +132,14 @@
                                 } ?>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ผู้ลงทะเบียน</label></td>
+                                <td width="30%"><label>ผู้เช่า</label></td>
                                 <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
                             </tr>
                             <?php } ?>
                             <?php 
                          $this->db->select('*');
-                         $this->db->from('Images2');
-                         $this->db->where('idCarregis',$idc);
+                         $this->db->from('Images3');
+                         $this->db->where('idrent',$idr);
                          $query = $this->db->get();
                          $qq = $query->result_array();
                         
@@ -146,30 +147,10 @@
                             <?php foreach($qq as $data){ 
                             ?>       
                             <tr>
-                                <td width="30%"><label>รูปเอกสารรถยนต์</label></td>
+                                <td width="30%"><label>รูปสำหรับการเช่า</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php echo base_url('./img2/'.$data['Name']);?>" style="height: 50px; weight:50px;">
-                                
-                                </td>
-                            </tr>
-                            <?php } ?>
-                         <?php 
-                         $this->db->select('*');
-                         $this->db->from('Images');
-                         $this->db->where('idCarregis',$idc);
-                         $query = $this->db->get();
-                         $qq = $query->result_array();
-                         
-                         ?>
-                            <?php foreach($qq as $data){ 
-                            ?>
-
-                            <tr>
-                                <td width="30%"><label>รูปภาพรถยนต์</label></td>
-                                <td width="70%">
-                                
-                                <img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img3/'.$data['Name_img']);?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>
