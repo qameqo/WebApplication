@@ -146,15 +146,7 @@
                         
                             ?>    
 
-                            <tr>
-                                <td width="30%"><label>สมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-                            </tr>
-
-
                             <?php 
-                            
-                            
                             
                             if($rs->Status == '3')
                             {
@@ -172,6 +164,11 @@
                                 }
                             }
                             ?>
+
+                            <tr>
+                                <td width="30%"><label>สมาชิก</label></td>
+                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
+                            </tr>
 
                             <?php 
 

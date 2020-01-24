@@ -36,7 +36,23 @@
 
 								<td><?php echo $rs->F_Name; ?></td>
 								<td><?php echo $rs->L_Name; ?></td>
-								<td><?php echo $rs->Row; ?></td>
+
+                                <?php 
+
+                                if($rs->Row == '1')
+                                {
+                                    echo'<td>พนักงาน</td>';
+                                }
+                                elseif ($rs->Row == '2') 
+                                {
+                                    echo'<td>ช่างซ่อมบำรุง</td>';
+                                }
+                                elseif ($rs->Row == '3') 
+                                {
+                                    echo'<td>เจ้าหน้าที่ประกัน</td>';
+                                }                                
+
+                                ?>
 
 								<td>
 								
