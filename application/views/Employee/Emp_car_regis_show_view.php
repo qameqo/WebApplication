@@ -168,7 +168,7 @@
                                 <td width="30%"><label>รูปภาพ</label></td>
                                 <td width="70%">
                               
-                                <img src="<?php echo base_url('./pic/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img/'.$data['Name_image']); ?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>

@@ -32,6 +32,7 @@
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
                                 <td width="70%"><?php echo $rs->totalprice; ?></td>
                             </tr>
+
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($rs->rentstatus == '1')
@@ -83,6 +84,27 @@
                                     echo '</span></td>';
                                 } ?>
                             </tr> 
+
+                            <?php 
+
+                            $query = $this->db->query("SELECT Images3.Name_img FROM Rental, Images3 WHERE Rental.idRental = Images3.idrent AND Rental.idRental = $rs->idRental");
+
+                            foreach ($query->result_array() as $data ) { ?>
+
+                            <tr>
+                                <td width="30%"><label>รูปภาพหลักฐาน</label></td>
+                                <td width="70%">
+                              
+                                <img src="<?php echo base_url('./img3/'.$data['Name_img']); ?>" style="height: 50px; weight:50px;">
+                                
+                                </td>
+                            </tr>
+
+                            <?php 
+                            
+                            }
+
+                            ?>
                             
                         </table>
                     </div>

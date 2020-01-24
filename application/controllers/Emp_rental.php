@@ -37,6 +37,7 @@ class Emp_rental extends CI_Controller {
         $this->load->view('Employee/Header_emp');
         $this->load->view('Employee/Emp_car_rental_show_view', $data);
         $this->load->view('Employee/Footer_emp');
+        $this->load->view('Script_manager_emp');
         
     }
 
