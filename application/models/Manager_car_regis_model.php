@@ -79,7 +79,8 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'Status' => $this->input->post('Status')
+            'Status' => $this->input->post('Status'),
+            'Dayfirst' => $this->input->post('Dayfirst')
         );
 
         $query=$this->db->update('Carregis',$data);
@@ -122,7 +123,8 @@ class Manager_car_regis_model extends CI_Model
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
             'Status' => $this->input->post('Status'),
-            'EndDate' => $this->input->post('EndDate')
+            'EndDate' => $this->input->post('EndDate'),
+            'RentalPrice' => $this->input->post('RentalPrice')
         );
 
         $query=$this->db->update('Carregis',$data);

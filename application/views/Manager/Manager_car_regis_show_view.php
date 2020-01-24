@@ -119,9 +119,14 @@
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
                                 echo '</span></td></tr>';
-                            }elseif ($rs->Status == '8') {
+                            }elseif($rs->Status == '8') {
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
+                                echo $rs->Dayfirst; 
+                                echo '</span></td></tr>';
+                            }elseif($rs->Status == '2'){
+                                echo'<tr>
+                                <td width="30%"><label>วันที่อนุมัติ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
                                 echo '</span></td></tr>';
                             }
@@ -226,10 +231,15 @@
                         echo '<input type="hidden" name="Status" id="Status" value="6" class="form-control" required>';
                         echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
                     }else if($rs->Status == '1'){
+                        
+                        $startdate=strtotime("l");
 
                         echo '<form action="'; 
                         echo site_url('Manager_car_regis/add_status'); 
                         echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="Dayfirst" id="Dayfirst" class="form-control" value="';
+                        echo date("Y-m-d", $startdate);
+                        echo '">';
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';

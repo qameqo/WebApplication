@@ -4,6 +4,7 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">Show Detail Car Register</h4>
 
+                <form action="<?php echo site_url('Manager_car_regis/add_status_2');?>" method="POST" class="form-horizontal">
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -193,6 +194,13 @@
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label class="label mt-5">แก้ไขราคาใหม่</label>
+                            <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                        </div>
+                    </div>
+                    
                     <?php 
 						
                     // $this->db->where( 'idCarregis',$idc);
@@ -207,18 +215,11 @@
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
 
-                        echo '<form action="'; 
-                        echo site_url('Manager_car_regis/add_status_2'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="Status" id="Status" value="5" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-success mt-5" name="Status" id="Status" value="5" style="font-size:20px;" required>';
                         echo '<input type="hidden" name="EndDate" id="EndDate" value="';
                         echo date("Y-m-d", $enddate);
                         echo'">';
-                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
-                        echo '</form>';
+                        echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
 
                         // echo '<form action="'; 
                         // echo site_url('Manager_car_regis/add_status'); 
@@ -231,7 +232,7 @@
                         // echo '</form>';
                     }?>
 
-
+                </form>
             </div>
         </div>
     </div>
