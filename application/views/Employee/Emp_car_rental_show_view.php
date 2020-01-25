@@ -115,10 +115,8 @@
                         </table>
                     </div>
 
-                    <?php if ($rs->idStatus == '5') {
-                        echo '<input type="hidden" name="idStatus" id="idStatus" value="6" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
-                    }else if($rs->idStatus == '1'){
+                    <?php 
+                        if($rs->idStatus == '1'){
                         
                         $startdate=strtotime("l");
 
