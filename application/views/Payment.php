@@ -17,7 +17,7 @@
 			action="<?php echo base_url('Payment/inimg/'.$idr);?>">
 		<div class="col-md-13 text-center"><br>
 		<div class="row justify-content-center">
-            <div class="col-sm-4 shadow p-3 mb-5 bg-white rounded">
+            <!-- <div class="col-sm-4 shadow p-3 mb-5 bg-white rounded">
             <h4 style="color:#000000">ข้อมูลราคาเช่า</h4>
 				<?php 
 				 $this->db->select('*');
@@ -66,7 +66,7 @@
 						<span>บาท</span>
 					 </div>
 				 </div>
-            </div>
+            </div> -->
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
             <h4 style="color:#000000">อัปโหลดรูปใบขับขี่</h4>
@@ -140,7 +140,7 @@
 							<div class="col-sm">
 								<div class="box__input">
 									<button class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url(''); ?>"
-										onclick="return confirm('ยืนยันการอัปโหลด ?');">
+										onclick="return confirm('ยืนยันข้อมูลการจอง');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></button>
 				</div>
 			</div>

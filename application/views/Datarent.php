@@ -12,6 +12,7 @@
                     $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                     $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
+                    $this->db->order_by('idRental', 'desc');
                     $this->db->where('idMember', $this->session->userdata('ID'));
                     $query = $this->db->get();
                     $qone = $query->result_array();  
@@ -103,9 +104,9 @@
                                     echo '</span></td>';
                                 } 
                                 else if($data['rentstatus']== '9')
-                                { ?>
+                                { ?><?php $idr = $data['idRental']; ?>
                                      <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
-                                    href="<?php echo base_url('Deposit');?>">ชำระเงินมัดจำ</a></td>
+                                    href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>
                                     <?php
                                 }
                                 ?>

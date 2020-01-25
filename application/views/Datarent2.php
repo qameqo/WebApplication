@@ -141,7 +141,7 @@
                                 else if($data['Name_Status']== 'รอการชำระเงินมัดจำ')
                                 { ?>
                                     <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
-                                   href="<?php echo base_url('Deposit');?>">ชำระเงินมัดจำ</a></td>
+                                   href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>
                                    <?php
                                 }
                                 ?>

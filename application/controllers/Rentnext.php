@@ -31,12 +31,15 @@ class Rentnext extends CI_Controller {
             $percen = 100;
             $totalprice = $ga * $ins / $percen;
             $total2 = $ga + $totalprice;
-            $owner = $total2 * 60 /100;
-            $company = $total2 * 30 /100;
+            $vat =  $total2 * 7 /100;
+            $kottotal = $total2 + $vat;
+            $deposit = $kottotal * 30 /100; 
+            $owner = $kottotal * 70 /100;
+            $company = $kottotal * 30 /100;
             $object = array(
 
                 'Datebooking' => $da,
-                'totalprice' => $total2,
+                'totalprice' => $kottotal,
                 'Carownerincome' => $owner,
                 'Companyincome' => $company,
                 'rentstatus'=>"9",
@@ -52,12 +55,18 @@ class Rentnext extends CI_Controller {
             'endDate'=> $dat,
             'PriceCar'=> $ga,
             'PriceIns'=> $totalprice,
+            'PriceDe' => $deposit,
+            'PriceVat'=> $vat,
             'idCarregis'=> $idc,
             'idRent'=> $insert_id
         );
         $this->db->insert('RentalDetail', $in);
 
-        redirect('Payment/sh/'.$insert_id);
+        echo "<script>";
+        echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
+        echo "</script>";
+        // redirect('Payment/sh/'.$insert_id);
         // $this->db->order_by('idCarregis', 'desc');
         // $query =  $this->db->get('Carregis', 1);
         // $qq = $query->row_array();
