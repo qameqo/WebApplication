@@ -50,13 +50,13 @@
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '2') 
+                                else if ($rs->idStatus == '2') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '3') 
+                                else if ($rs->idStatus == '3') 
                                 {
                                     echo'<td><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
@@ -68,13 +68,19 @@
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '5') 
+                                else if ($rs->idStatus == '5') 
                                 {
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
                                 else if($rs->idStatus == '6')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idStatus == '7')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
@@ -88,10 +94,10 @@
                                 }
                                 else if($rs->idStatus == '9')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                }  ?>
+                                } ?>
                         
 								<td>
                                     <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm">View</a>
