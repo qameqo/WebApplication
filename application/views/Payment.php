@@ -69,12 +69,12 @@
             </div> -->
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-            <h4 style="color:#000000">อัปโหลดรูปใบขับขี่</h4>
+            <h4 style="color:#000000">อัปโหลดหลักฐานยืนยันตน</h4>
 			<div class="container mb-5">
                         <?php
 						
 						$this->db->where( 'idrent',$idr);
-						$query = $this->db->get('Images3', 1);
+						$query = $this->db->get('Images3', 2);
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">
@@ -106,16 +106,40 @@
 							} ?>
 									</tbody>
 								</table>
+							</div>
+							<div class="row">
+								<div class="col-sm">
+								<a class="badge badge-secondary" style="height:40px;" type="button" href="#" data-toggle="modal"
+								data-target="#modal-default"> <p style="color:blue;">เอกสารที่ต้องใช้</p></a>
+							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
+								aria-labelledby="modal-default" aria-hidden="true">
+								<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+									<div class="modal-content">
 
-							</div>
-							<div class="row">
-								<div class="col-sm">
-									<h6 style="color: red;">* รูปใบขับขี่ 1 รูป</h6>
+										<div class="modal-header">
+											<h6 class="modal-title" id="modal-title-default">เอกสารสำหรับการเช่ารถยนต์
+											</h6>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">×</span>
+											</button>
+										</div>
+
+										<div class="modal-body">
+											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
+											<p style="color:red;">กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-link  ml-auto"
+												data-dismiss="modal">ปิด</button>
+										</div>
+
+									</div>
 								</div>
-							</div>
+								</div>
 							<div class="row">
 								<div class="col-sm">
-									กรุณาอัปโหลดรูปภาพตามจำนวนที่ระบุ
+									
 								</div>
 							</div>
 							<br>
@@ -124,7 +148,7 @@
 								<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
 								<span style="color: white;">+ เพิ่มรูป</span>
 										<label for="file"><strong></strong><span class="box__dragndrop"></label>
-										<input class="upload" type="file" name="file" id="piccar1"/>
+										<input class="upload" type="file" name="file" id="piccar1" required/>
 								</div>
 							</div>
 							<div class="col-sm text-left">

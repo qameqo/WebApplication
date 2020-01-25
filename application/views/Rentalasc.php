@@ -49,7 +49,7 @@
 								style="width:10px; height:10px;">&nbsp;<?php echo $data['Seat']; ?>
 							<br><span style="color: #F60200;"><?php echo $data['RentalPrice'];?></span>&nbsp;บาท/วัน
 							<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
-								data-target="#modal-default">เอกสารเช่ารถ</a>
+								data-target="#modal-default"><u>เอกสารเช่ารถ</u></a>
 							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
 								aria-labelledby="modal-default" aria-hidden="true">
 								<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
@@ -66,6 +66,7 @@
 										<div class="modal-body">
 											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
 											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
+											<p>3.ใบเสร็จการโอนเงินค่ามัดจำ</p>
 											<img src="./pic/logo55.png" style="width:450px; height:100;"
 												alt="เช่ารถกับ G Dragon">
 										</div>
