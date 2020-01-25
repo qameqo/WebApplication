@@ -26,12 +26,12 @@
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Username (EN)</label>
-						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[a-z]).{5,}" title="กรุณากรอกตัวอักษรอย่างน้อย 5 ตัวอักษรขึ้นไป" required>
+						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[a-z]).{5,}" title="กรุณากรอกตัวอักษรภาษาอังกฤษอย่างน้อย 5 ตัวอักษรขึ้นไป" required>
 						
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Password</label>
-						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์เล็กหนึ่งตัวอย่างน้อย 8 ตัวอักษรขึ้นไป" required>
+						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="ต้องมีตัวเลขและตัวอักษรพิมพ์เล็กอย่างน้อย 8 ตัวอักษรขึ้นไป" required>
 						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 						
 					</div>

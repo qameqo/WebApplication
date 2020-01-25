@@ -9,9 +9,9 @@
                     $this->db->from('Rental');
                     $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
                     $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
-                    $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
+                    $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
-                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
+                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                     $this->db->order_by('idRental', 'desc');
                     $this->db->where('idMember', $this->session->userdata('ID'));
                     $query = $this->db->get();
@@ -55,55 +55,55 @@
                              
                         
                             
-                                <?php if($data['rentstatus'] == '1')
+                                <?php if($data['idstatus'] == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['rentstatus'] == '2') 
+                                else if ($data['idstatus'] == '2') 
                                 {   $idc = $data['Name_Status']; ?>
                                     <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                } 
-                                else if ($data['rentstatus'] == '3') 
+                                else if ($data['idstatus'] == '3') 
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == '4')
+                                else if($data['idstatus'] == '4')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['rentstatus'] == '5') 
+                                else if ($data['idstatus'] == '5') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == '6')
+                                else if($data['idstatus'] == '6')
                                 {
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == '7')
+                                else if($data['idstatus'] == '7')
                                 {
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if($data['rentstatus'] == '8')
+                                else if($data['idstatus'] == '8')
                                 {
                                     echo'<td><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 } 
-                                else if($data['rentstatus']== '9')
+                                else if($data['idstatus']== '9')
                                 { ?><?php $idr = $data['idRental']; ?>
                                      <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>

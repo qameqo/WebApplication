@@ -29,7 +29,7 @@ class Pricecar extends CI_Controller {
         $query=$this->db->update('Carregis',$data);
 
         echo "<script>";
-        echo "alert('ยืนยันราคาเรียบร้อย');";
+        echo "alert('ยืนยันราคาเรียบร้อย ตรวจสอบผลการลงทะเบียนได้ภายใน 24 ชม.');";
         echo "window.location.href = '". base_url(). "Dataregis ';";
         echo "</script>";
     }

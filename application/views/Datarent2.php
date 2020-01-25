@@ -13,9 +13,9 @@
                     $this->db->join('Member', 'Member.id_Member = Rental.idMember');
                     $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
                     $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
-                    $this->db->join('Brand', 'Brand.idBrand = Carregis.Brand');
+                    $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
-                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.rentstatus');
+                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                     $this->db->where('idRental',$idr);
                     $query = $this->db->get();
                     $qone = $query->result_array();  
@@ -165,7 +165,7 @@
                                 <td width="30%"><label>รูปสำหรับการเช่า</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php echo base_url('./img3/'.$data['Name_img']);?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img3/'.$data['Name_image3']);?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>

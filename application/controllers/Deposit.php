@@ -36,7 +36,7 @@ class Deposit extends CI_Controller {
                             
             $this->db->insert('Images3', $arr);
             $sa = array(
-                    'rentstatus'=>"1"
+                    'idstatus'=>"1"
     
                 );
             

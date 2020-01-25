@@ -7,7 +7,7 @@
 <form class="form-signin" id="edit" name="edit" method="post" action="">
 	<?php 
 			
-				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.Status="5" ORDER BY RentalPrice DESC');
+				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.id_Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.idStatus="5" ORDER BY RentalPrice DESC');
 				$qq = $query->result_array();
 			?>
 	<div class="row justify-content-center">

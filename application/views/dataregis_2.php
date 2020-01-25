@@ -8,10 +8,10 @@
 
                     <?php $this->db->select('*');
                     $this->db->from('Carregis');
-                    $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+                    $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
                     $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
                     $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-                    $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
+                    $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
                     $this->db->where('idCarregis',$idc);
                     $query = $this->db->get();
                     $qq = $query->result_array();
@@ -190,7 +190,7 @@
                                 <td width="30%"><label>รูปเอกสารรถยนต์</label></td>
                                 <td width="70%">
                                 
-                                <img src="<?php echo base_url('./img2/'.$data['Name']);?>" style="height: 50px; weight:50px;">
+                                <img src="<?php echo base_url('./img2/'.$data['Name_image2']);?>" style="height: 50px; weight:50px;">
                                 
                                 </td>
                             </tr>

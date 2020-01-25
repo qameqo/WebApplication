@@ -126,10 +126,10 @@
 										<?php foreach($qi as $data){
 											
 							 				?><tr>
-											<td><img src="<?php echo base_url('./img2/'.$data['Name']);?>"
+											<td><img src="<?php echo base_url('./img2/'.$data['Name_image2']);?>"
 													style="width: 50px; height: 50px;" required/></td>
 
-											<td><a href="<?php echo site_url('Owner2/del2/'.$data['id'].'/'.$id.'/'.$idc);?>"
+											<td><a href="<?php echo site_url('Owner2/del2/'.$data['id_image2'].'/'.$id.'/'.$idc);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
 													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>

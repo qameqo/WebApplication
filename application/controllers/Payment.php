@@ -30,7 +30,7 @@ class Payment extends CI_Controller {
             $filename = $data['file_name'];
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
-                                'Name_img'=>$filename,
+                                'Name_image3'=>$filename,
                                 'idrent'=>$idr
                             );
            
@@ -43,7 +43,7 @@ class Payment extends CI_Controller {
     }
     public function del($di,$idr)
     {   
-        $this->db->delete('Images3', array('idimg3'=>$di));
+        $this->db->delete('Images3', array('id_image3'=>$di));
         // $this->show($id);
         redirect('Payment/sh/'.$idr);
     }

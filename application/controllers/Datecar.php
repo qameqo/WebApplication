@@ -19,7 +19,7 @@ class Datecar extends CI_Controller {
             $ob = array(
 
             
-            'Status' => "4",
+            'idStatus' => "4",
             'Dayfirst' => $Date
         );
         echo "<script>";

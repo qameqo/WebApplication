@@ -18,7 +18,7 @@ class Rentnext extends CI_Controller {
         $dat2 = date("Y-m-d H:i:sa", strtotime($Date2));
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
         $this->db->where('idCarregis',$idc);
@@ -42,7 +42,7 @@ class Rentnext extends CI_Controller {
                 'totalprice' => $kottotal,
                 'Carownerincome' => $owner,
                 'Companyincome' => $company,
-                'rentstatus'=>"9",
+                'idstatus'=>"9",
                 'idMember' => $this->session->userdata('id_Member'),
             );
         }

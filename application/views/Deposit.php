@@ -108,10 +108,10 @@
 											
 							 	    ?>
 									<tr>
-											<td><img src="<?php echo base_url('./img3/'.$data['Name_img']);?>"
+											<td><img src="<?php echo base_url('./img3/'.$data['Name_image3']);?>"
 													style="width: 50px; height: 50px;" required/></td>
 
-											<td><a href="<?php echo site_url('Deposit/del/'.$data['idimg3'].'/'.$idr);?>"
+											<td><a href="<?php echo site_url('Deposit/del/'.$data['id_image3'].'/'.$idr);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
 													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>
@@ -123,7 +123,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									<h6 style="color: red;">* รูปใบเสร็จโอนเงินมัดจำ 1 รูป</h6>
+									<h6 style="color:red;">* รูปใบเสร็จโอนเงินมัดจำ 1 รูป</h6>
 								</div>
 							</div>
 							<div class="row">

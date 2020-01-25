@@ -69,7 +69,7 @@ class Owner2 extends CI_Controller {
             $filename = $data['file_name'];
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
-                                'Name'=>$filename,
+                                'Name_image2'=>$filename,
                                 'idCarregis'=>$idc
                             );
             $this->db->insert('Images2', $arr);
@@ -80,7 +80,7 @@ class Owner2 extends CI_Controller {
     }
     public function del2($di,$id,$idc)
     {   
-        $this->db->delete('Images2', array('id'=>$di));
+        $this->db->delete('Images2', array('id_image2'=>$di));
         // $this->show($id);
         redirect('Owner2/show/'.$id.'/'.$idc);
     }

@@ -95,10 +95,10 @@
 											
 							 	    ?>
 									<tr>
-											<td><img src="<?php echo base_url('./img3/'.$data['Name_img']);?>"
+											<td><img src="<?php echo base_url('./img3/'.$data['Name_image3']);?>"
 													style="width: 50px; height: 50px;" required/></td>
 
-											<td><a href="<?php echo site_url('Payment/del/'.$data['idimg3'].'/'.$idr);?>"
+											<td><a href="<?php echo site_url('Payment/del/'.$data['id_image3'].'/'.$idr);?>"
 													onclick="return confirm('คุณต้องการลบหรือไม่ ?');"
 													class="btn btn-danger btn-sm">ลบ</a></td>
 										</tr>
@@ -139,7 +139,7 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<button class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url(''); ?>"
+									<button class="btn" type="submit" style="background-color: #F60200;" 
 										onclick="return confirm('ยืนยันข้อมูลการจอง');">
 										<span style=" color: white;">ยืนยันการอัปโหลด</span></button>
 				</div>

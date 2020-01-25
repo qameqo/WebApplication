@@ -54,13 +54,13 @@
 					 ?>
 				<label class="bmd-label-floating">First Name</label>
 				<input name="fname" type="text" id="fname" class="form-control" placeholder=""
-				value="<?php echo $data['FName'];?>">
+				value="<?php echo $data['FName'];?>" pattern="^[a-zA-Z]+$" title="กรุณากรอกชื่อ ภาษาอังกฤษ" required>
 			</div>
 			
 			<div class="col-sm">
 			<label class="bmd-label-floating">Last Name</label>
 				<input name="lname" type="text" id="lname" class="form-control" placeholder=""
-				value="<?php echo $data['LName'];?>">
+				value="<?php echo $data['LName'];?>" pattern="^[a-zA-Z]+$" title="กรุณากรอกนามสกุล ภาษาอังกฤษ" required>
 					
 			</div>
 			</div>
@@ -69,7 +69,7 @@
 			<div class="col-sm">
 			<label class="bmd-label-floating">Password</label>
 			  <input id="password-field" type="password" class="form-control" name="password" 
-			  value="<?php echo $data['Password'];?>">
+			  value="<?php echo $data['Password'];?>" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์เล็กหนึ่งตัวอย่างน้อย 8 ตัวอักษรขึ้นไป" required>
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					
 			</div>
@@ -77,7 +77,7 @@
 			<div class="col-sm">
 			<label class="bmd-label-floating">Address</label>
 				<input name="address" type="text" id="address" class="form-control" placeholder=""
-				value="<?php echo $data['Address'];?>">
+				value="<?php echo $data['Address'];?>" required>
 			</div>
 			</div>
 			<br>
@@ -85,7 +85,7 @@
 			<div class="col-sm">
 				<label class="bmd-label-floating">Tel.</label>
 				<input name="tel" type="tel" id="tel" class="form-control" placeholder="" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-				value="<?php echo $data['Tel'];?>">
+				value="<?php echo $data['Tel'];?>" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000" required>
 			</div>
 			<div class="col-sm" style="padding-top: 30px;">
 			<button class="btn btn-success" type="submit">ยืนยัน</botton>
