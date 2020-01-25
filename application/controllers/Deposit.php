@@ -52,7 +52,7 @@ class Deposit extends CI_Controller {
     }
     public function del($di,$idr)
     {   
-        $this->db->delete('Images3', array('id_iamge3'=>$di));
+        $this->db->delete('Images3', array('id_image3'=>$di));
         // $this->show($id);
         redirect('Deposit/de/'.$idr);
     }
