@@ -31,6 +31,8 @@
 
                             <?php foreach ($query as $rs) { ?>
 
+                            <?php if ($rs->Row == '4') { }else{?>
+
 							<tr>
 								<td><?php echo $rs->id_Employee; ?></td>
 
@@ -63,7 +65,7 @@
 								</td>
 							</tr>
 
-                            <?php } ?>
+                            <?php }} ?>
 
 						</tbody>
 						<tfoot>

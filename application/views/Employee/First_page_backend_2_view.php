@@ -9,7 +9,7 @@
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลบุคคล</h4>
-            <a href="<?php echo site_url('emp/emp_edit');?>" class="btn btn-primary btn-sm" style="font-size : 18px">แก้ไขข้อมูลส่วนตัว</a><br>
+            <a href="<?php echo site_url('emp/emp_edit');?>" class="btn btn-rose btn-sm" style="font-size : 18px">แก้ไขข้อมูลส่วนตัว</a><br>
           </div>
         </div>
       </div>

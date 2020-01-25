@@ -24,7 +24,7 @@
     <!-- Material Kit CSS -->
     <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
 
-    <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
+    <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-danger" color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate active">
                 <a class="navbar-brand active" href="<?php echo site_url(); ?>Emp">G Dragon Autotech</a>
