@@ -26,7 +26,10 @@ class Owner2 extends CI_Controller {
         $this->load->library('upload', $config);
         
         if ( ! $this->upload->do_upload('file')){
-            echo $this->upload->display_errors();
+            echo "<script>";
+            echo "alert('กรุณาเลือกไฟล์ก่อนกดอัปโหลด');";
+            echo "window.location.href = '". base_url(). "Owner2/show/$id/$idc';";
+            echo "</script>";
         }
         else{
             $data = $this->upload->data();

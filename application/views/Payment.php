@@ -139,9 +139,9 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<button class="btn" type="submit" style="background-color: #F60200;" 
+									<a class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url('Datarent'); ?>"
 										onclick="return confirm('ยืนยันข้อมูลการจอง');">
-										<span style=" color: white;">ยืนยันการอัปโหลด</span></button>
+										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 				</div>
 			</div>
 		</div>

@@ -21,8 +21,11 @@ class Payment extends CI_Controller {
         
         $this->load->library('upload', $config);
         
-        if ( ! $this->upload->do_upload('file')){
-            echo $this->upload->display_errors();
+        if ( ! $this->upload->do_upload('file')){ 
+            echo "<script>";
+            echo "alert('กรุณาเลือกไฟล์ก่อนกดอัปโหลด');";
+            echo "window.location.href = '". base_url(). "Payment/sh/$idr';";
+            echo "</script>";
         }
         else{
             $data = $this->upload->data();
@@ -39,7 +42,7 @@ class Payment extends CI_Controller {
             redirect('Payment/sh/'.$idr);
         }
         
-        redirect('Datarent');
+    
     }
     public function del($di,$idr)
     {   

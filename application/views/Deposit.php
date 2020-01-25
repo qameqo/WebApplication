@@ -85,7 +85,6 @@
             <h4 style="color:#000000">อัปโหลดรูปใบเสร็จโอนเงินมัดจำต่อจากรูปใบขับขี่</h4>
 			<div class="container mb-5">
                         <?php
-						
 						$this->db->where( 'idrent',$idr);
 						$query = $this->db->get('Images3', 2);
 						$qi = $query->result_array();
@@ -152,9 +151,9 @@
 							<br>
 							<div class="col-sm">
 								<div class="box__input">
-									<button class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url('Datarent'); ?>"
+									<a class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url('Datarent'); ?>"
 										onclick="return confirm('ยืนยันข้อมูลการชำระเงิน');">
-										<span style=" color: white;">ยืนยันการอัปโหลด</span></button>
+										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
 				</div>
 			</div>
 		</div>

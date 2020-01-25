@@ -22,7 +22,10 @@ class Deposit extends CI_Controller {
         $this->load->library('upload', $config);
         
         if ( ! $this->upload->do_upload('file')){
-            echo $this->upload->display_errors();
+            echo "<script>";
+            echo "alert('กรุณาเลือกไฟล์ก่อนกดอัปโหลด');";
+            echo "window.location.href = '". base_url(). "Deposit/de/$idr';";
+            echo "</script>";
         }
         else{
             $data = $this->upload->data();
@@ -30,7 +33,7 @@ class Deposit extends CI_Controller {
             $filename = $data['file_name'];
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
-                                'Name_img'=>$filename,
+                                'Name_image3'=>$filename,
                                 'idrent'=>$idr
                             );
                             
@@ -45,11 +48,11 @@ class Deposit extends CI_Controller {
             redirect('Deposit/de/'.$idr);
         }
         
-        redirect('Datarent');
+        
     }
     public function del($di,$idr)
     {   
-        $this->db->delete('Images3', array('idimg3'=>$di));
+        $this->db->delete('Images3', array('id_iamge3'=>$di));
         // $this->show($id);
         redirect('Deposit/de/'.$idr);
     }
