@@ -241,9 +241,35 @@
             </div>
                 <?php } ?>
 	</div>
-            <div class="col-sm-3 mb-5 bg-white rounded"
+            <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-           
+                <div class="row">
+                    <div class="col-sm text-center">
+                        เพกเกจความคุ้มครอง
+                    </div>
+                    </div>
+                    <br>
+                <div class="row">
+                <div class="col-sm text-left">
+				<div class="label-bot">
+								<div class="radio">
+									<label style="padding-right: 8px;">
+										<input type="radio" name="stand" value="" checked="checked"
+											data-parsley-multiple="transmission">
+										<span style="vertical-align: top;">ประกันภัยพื้นฐาน ( Standard )</span>
+									</label>
+                                    ..............................................................................
+                                    ..............................................................................
+                                    <br>
+									<label>
+										<input type="radio" name="pre" value=""
+											data-parsley-multiple="transmission">
+										<span style="vertical-align: top;">ประกันภัยพิเศษ ( Premium )</span>
+									</label>
+                                    .............................................................................
+                                    .............................................................................
+								</div>
+							</div>
 		</div>
     </div>
 </form>
