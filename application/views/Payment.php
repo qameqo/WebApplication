@@ -110,21 +110,21 @@
 							<div class="row">
 								<div class="col-sm">
 								<a class="badge badge-secondary" style="height:40px;" type="button" href="#" data-toggle="modal"
-								data-target="#modal-default"> <p style="color:blue;">เอกสารที่ต้องใช้</p></a>
+								data-target="#modal-default"> <p style="color:blue;"><u>เอกสารยืนยันตน</u></p></a>
 							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
 								aria-labelledby="modal-default" aria-hidden="true">
 								<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
 									<div class="modal-content">
 
 										<div class="modal-header">
-											<h6 class="modal-title" id="modal-title-default">เอกสารสำหรับการเช่ารถยนต์
+											<h6 class="modal-title" id="modal-title-default">เอกสารยืนยันตนสำหรับการเช่ารถยนต์
 											</h6>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">×</span>
 											</button>
 										</div>
 
-										<div class="modal-body">
+										<div class="modal-body text-left">
 											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
 											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
 											<p style="color:red;">กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
@@ -137,11 +137,6 @@
 									</div>
 								</div>
 								</div>
-							<div class="row">
-								<div class="col-sm">
-									
-								</div>
-							</div>
 							<br>
 							<div class="row">
 							<div class="col-sm text-Right">
