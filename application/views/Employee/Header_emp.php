@@ -57,7 +57,7 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
@@ -68,7 +68,7 @@
                             <a class="dropdown-item" href="#">จัดการข้อมูลประกันรถยนต์ </a>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
             </div>
                 
 
@@ -79,4 +79,4 @@
 
 </head>
 
-<body style="font-family: 'Quark', 'Quark', sans-serif;">
+<body style="font-family: 'Quark', 'Quark', sans-serif;" class="index-page sidebar-collapse">
