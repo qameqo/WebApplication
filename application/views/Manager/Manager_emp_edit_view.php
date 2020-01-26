@@ -39,10 +39,10 @@
                         <div class="col">
                             <label for="Row">Row select</label>
                             <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row" >
-                                <option><?php echo $rs_edit->Row; ?></option>
-                                <option>พนักงาน</option>
-                                <option>ช่างซ่อมบำรุง</option>
-                                <option>เจ้าหน้าที่ประกัน</option>
+                                <option><?php echo $rs_edit->Name_position; ?></option>
+                                <option value="1">พนักงาน</option>
+                                <option value="2">ช่างซ่อมบำรุง</option>
+                                <option value="3">เจ้าหน้าที่ประกัน</option>
                             </select>
                         </div>
                         <div class="col">

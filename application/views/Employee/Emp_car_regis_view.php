@@ -1,5 +1,4 @@
 
-
 <div class="container" style="text-align: center;"><br><br><br><br><br>
 	<div style="background-color: white; border-radius: 5px;">
 	<br>
@@ -10,6 +9,7 @@
                         <h3 class="panel-title">ข้อมูลการส่งรถยนต์</h3>
                     </div>
                 </div>
+<?php //echo date('Y-m-d'); ?>
                 
             </div>
             <div class="panel-body">
@@ -30,8 +30,8 @@
 						<tbody>
 
                             <?php foreach ($query as $rs) { 
-                            if ($rs->idStatus == '4') {
-                                if ($rs->Dayfirst == date('Y-m-d')) {
+                                if ($rs->idStatus == '4') {
+                                    if ($rs->Dayfirst == date('Y-m-d')) {
                             ?>
 
 							<tr>
