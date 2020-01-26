@@ -29,12 +29,8 @@
                         <?php foreach ($query as $rs) { ?>
 
                             <?php
-                            if ($rs->idstatus == '2') 
-                            { 
-                            }
-                            else if($rs->idstatus == '3'){
-                            }
-                            else {
+                            if ($rs->idstatus == '1') 
+                            {
                                                                                        
                             ?>
 
