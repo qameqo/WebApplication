@@ -25,10 +25,25 @@
     <!-- Material Kit CSS -->
     <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
 
+    <style>
+        .navbar-expand {
+            -sm|-md|-lg|-xl
+        }
+    </style>
+
     <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
         <div class="container">
             <div class="navbar-translate active">
                 <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager_first">G Dragon Autotech</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
             </div>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
