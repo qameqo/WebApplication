@@ -1,15 +1,23 @@
-<form action="" method="post">
-<?php $total = 2+2; ?>
-<input type="radio" name="radio" value="<?php echo $total ?>">Radio 1
-<input type="radio" name="radio" value="Radio 2">Radio 2
-<input type="radio" name="radio" value="Radio 3">Radio 3
-<input type="submit" name="submit" value="Get Selected Values" />
-</form>
-<?php
-if (isset($_POST['submit'])) {
-if(isset($_POST['radio']))
+<script language="javascript">
+function fncSubmit()
 {
-echo "You have selected :".$_POST['radio'];  //  Displaying Selected Value
+	if(document.form1.rdo1.checked == false && document.form1.rdo2.checked == false )
+	{
+		alert('Please Click Radio Option ');
+		return false;
+	}
+    <input name="game" value="222"/>
+	document.form1.submit();
 }
-}
-?>
+</script>
+<form action="page.cgi" method="post" name="form1" onSubmit="JavaScript:return fncSubmit();">
+Radio 1 
+  <input name="rdoCheckbox" type="radio" id="rdo1" value="Y">
+  <br>
+Radio 2 
+<input name="rdoCheckbox" type="radio" id="rdo2" value="Y">
+<br>
+<input name="btnSubmit" type="submit" value="Submit" >
+
+<input name="game" type="hidden" value="222"/>
+</form>
