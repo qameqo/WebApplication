@@ -32,7 +32,7 @@
         <?php echo $data['Name_Brand'];?>&nbsp;<?php echo $data['Name_Gen'];?>&nbsp;<?php echo $data['Yearcar'];?></h4>
     <?php } ?>
 </div>
-<form class="form-signin" id="edit" name="edit" method="POST" action="">
+<form class="form-signin" id="edit" name="edit" method="POST" action="<?php echo base_url('Rentnext/insup/'.$idc); ?>">
     <div class="row justify-content-center">
 
         <div class="col-sm-5 shadow p-3 mb-5 bg-white rounded"
