@@ -14,9 +14,9 @@
 		<div class="col-sm-2 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 			<div class="row justify-content-center">
-				<span>ค้นหารถจากยี่ห้อหรือรุ่น</span>
+				<!-- <span>ค้นหารถจากยี่ห้อหรือรุ่น</span>
 				<input type="text" class="form-control" id="exampleFormControlInput1" style="width:200px;"
-					placeholder="ค้นหายี่ห้อหรือรุ่นรถ">
+					placeholder="ค้นหายี่ห้อหรือรุ่นรถ"> -->
 			</div>
 			<br>
 			<div class="row justify-content-center">
