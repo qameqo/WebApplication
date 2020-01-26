@@ -24,12 +24,27 @@
     <!-- Material Kit CSS -->
     <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
 
+    <style>
+        .navbar-expand {
+            -sm|-md|-lg|-xl
+        }
+    </style>
+
     <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-danger" color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate active">
                 <a class="navbar-brand active" href="<?php echo site_url(); ?>Emp">G Dragon Autotech</a>
-            </div>
 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+         
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -37,7 +52,7 @@
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
                             จัดการข้อมูลบุลคล
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo site_url(); ?>emp/emp_edit">แก้ไขข้อมูลส่วนตัว</a>
                         </div>
                     </li>
@@ -48,12 +63,16 @@
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
                             จัดการข้อมูลเกี่ยวกับรถยนต์
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_car">จัดการข้อมูลการรับรถยนต์</a>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลการรับรถยนต์</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item"
+                                href="<?php echo site_url(); ?>Emp_car">จัดการข้อมูลการรับรถยนต์</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลการรับรถยนต์</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการเช่ารถยนต์</a>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_rental/index_2">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการเช่ารถยนต์</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url(); ?>Emp_rental/index_2">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
                         </div>
                     </li>
                 </ul>
@@ -70,10 +89,10 @@
                     </li>
                 </ul> -->
             </div>
-                
 
-                <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
-            </div>
+
+            <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
+        </div>
         </div>
     </nav>
 
