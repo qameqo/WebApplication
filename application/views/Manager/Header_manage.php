@@ -31,7 +31,7 @@
         }
     </style>
 
-    <nav class="navbar  fixed-top navbar-expand-lg bg-danger">
+    <nav class="navbar fixed-top navbar-expand-lg bg-danger ">
         <div class="container">
             <div class="navbar-translate active">
                 <a class="navbar-brand active" href="<?php echo site_url(); ?>Manager_first">G Dragon Autotech</a>
