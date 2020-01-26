@@ -100,6 +100,8 @@ class Manager_emp_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Employee');
+        $this->db->join('Employee_position', 'Employee.Row = Employee_position.id_position');
+        
         $this->db->where('id_Employee', $id_Employee);
         $query = $this->db->get();
 
