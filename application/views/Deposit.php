@@ -175,13 +175,13 @@
 
 							
 							<br>
+							</form>
 							<div class="col-sm">
 								<div class="box__input">
-									<a class="btn" type="submit" style="background-color: #F60200;" href="<?php echo base_url('Datarent'); ?>"
-										onclick="return confirm('ยืนยันข้อมูลการชำระเงิน');">
-										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
+								<form action="<?php echo base_url('Deposit/ups/'.$idr); ?>" method="POST">
+									<button class="btn btn-danger" type="submit">ยืนยันการอัปโหลด</button>
+									</form>
 				</div>
 			</div>
 		</div>
 	</div>
-</form>

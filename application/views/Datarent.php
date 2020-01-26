@@ -63,8 +63,7 @@
                                 }
                                 else if ($data['idstatus'] == '2') 
                                 {   $idc = $data['Name_Status']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;">ผ่าน</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
-                                    href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
+                                    <td><span class="badge badge-success" style="font-size:13px;"><?php echo $data['Name_Status']; ?></span></td>
                                     <?php
                                } 
                                 else if ($data['idstatus'] == '3') 
@@ -105,7 +104,7 @@
                                 } 
                                 else if($data['idstatus']== '9')
                                 { ?><?php $idr = $data['idRental']; ?>
-                                     <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
+                                     <td><span class="badge badge-primary" style="font-size:13px;"><?php echo $data['Name_Status']; ?></span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>
                                     <?php
                                 }
@@ -114,7 +113,7 @@
                                 <td>
                     
                                 <?php $idr = $data['idRental']; ?>
-                                    <a href="<?php echo site_url('Datarent2/show/'.$idr); ?>" class="btn btn-info btn-sm">View</a>
+                                    <a href="<?php echo site_url('Datarent2/show/'.$idr); ?>" class="btn btn-info btn-sm">รายละเอียด</a>
                                 </td>
                                
                             </tr>

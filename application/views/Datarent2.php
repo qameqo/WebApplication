@@ -4,7 +4,7 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">รายละเอียดการเช่า</h4>
 
-                <form action="" method="POST" class="form-horizontal">
+                <form action="<?php echo base_url('Datarent2/can/'.$idr); ?>" method="POST" class="form-horizontal">
 
                    <?php
                     // $query = $this->db->query('SELECT RentalDetail.*,Rental.* FROM RentalDetail,Rental WHERE Rental.idRental = RentalDetail.idRent and Rental.idMember="61"');
@@ -93,16 +93,18 @@
                                 <?php if($data['Name_Status']== 'รออนุมัติ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['Name_Status'];  
-                                    echo '</span></td>';
+                                    echo $data['Name_Status']; 
+                                    echo '</span>&nbsp;&nbsp;&nbsp;';
+                                    echo '<button type="submit" class="btn btn-danger">ยกเลิกการจอง</button>';
+                                    echo '</td>';
                                 }
-                                else if ($data['Name_Status']== 'ผ่าน') 
+                                else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Name_Status']; 
                                     echo '</span></td>';
                                 }
-                                else if ($data['Name_Status']== 'ไม่ผ่าน') 
+                                else if ($data['Name_Status']== 'ไม่อนุมัติ') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
@@ -140,8 +142,10 @@
                                 } 
                                 else if($data['Name_Status']== 'รอการชำระเงินมัดจำ')
                                 { ?>
-                                    <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span><a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
-                                   href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>
+                                    <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span>&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
+                                   href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a>&nbsp;&nbsp;
+                                   <button type="submit" class="btn btn-danger">ยกเลิกการจอง</button>
+                                   </td>
                                    <?php
                                 }
                                 ?>

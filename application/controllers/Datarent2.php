@@ -11,6 +11,22 @@ class Datarent2 extends CI_Controller {
         $this->load->view('footer');
         
     }
+    public function can($idr)
+    {
+        $aa = array(
+            'idstatus' => '6'
+        );
+        
+        echo "<script>";
+        echo "alert('ยกเลิกการเช่าเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Datarent ';";
+        echo "</script>";
+
+        $this->db->where('idRental', $idr);
+        $this->db->update('Rental', $aa);
+        
+           
+    }
 
 }
 

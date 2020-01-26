@@ -38,13 +38,7 @@ class Deposit extends CI_Controller {
                             );
                             
             $this->db->insert('Images3', $arr);
-            $sa = array(
-                    'idstatus'=>"1"
-    
-                );
-            
-            $this->db->where('idRental', $idr);
-            $this->db->update('Rental', $sa);
+           
             redirect('Deposit/de/'.$idr);
         }
         
@@ -56,9 +50,18 @@ class Deposit extends CI_Controller {
         // $this->show($id);
         redirect('Deposit/de/'.$idr);
     }
-    public function edit($idr)
+    public function ups($idr)
     {
-       
+       $qq = array(
+           'idstatus' => '1'
+       );
+
+       echo "<script>";
+       echo "alert('ทำรายการเรียบร้อย ตรวจสอบสถานะการเช่าได้ภายใน 24 ชม.หลังจากนี้');";
+       echo "window.location.href = '". base_url(). "Datarent ';";
+       echo "</script>";
+        $this->db->where('idRental', $idr);
+        $this->db->update('Rental', $qq);
         
         
     }
