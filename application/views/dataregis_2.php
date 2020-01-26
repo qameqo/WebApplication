@@ -4,7 +4,7 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">รายละเอียดรถยนต์</h4>
 
-                <form action="" method="POST" class="form-horizontal">
+                <form action="<?php echo base_url('Dataregis2/can/'.$idc); ?>" method="POST" class="form-horizontal">
 
                     <?php $this->db->select('*');
                     $this->db->from('Carregis');
@@ -81,12 +81,14 @@
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
-                                    echo '</span></td>';
+                                    echo '</span>&nbsp;&nbsp;&nbsp;&nbsp;';
+                                    echo '<button type="submit" class="btn btn-danger">ยกเลิกการลงทะเบียน</button>';
+                                    echo '</td>';
                                 }
                                 else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
                                     $idc = $data['idCarregis']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;">อนุมัติ</span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;"><?php $data['Name_Status'];?></span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                 }
