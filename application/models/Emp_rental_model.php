@@ -40,5 +40,56 @@ class Emp_rental_model extends CI_Model
         }
        return FALSE;
     }
+
+    public function add_status()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+       
+        $data = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idstatus' => $this->input->post('idstatus'),
+        );
+
+        $query=$this->db->update('Rental',$data);
+
+        $this->db->order_by('idRental', 'desc');
+        $query_2 =  $this->db->get('Rental', 1);
+        $qq = $query_2->row_array();
+
+        if($qq['idstatus'] == '3')
+        {
+            
+            redirect('Emp_rental/not_passed_rent/'.$qq['idRental']);
+            
+        }
+        else 
+        {
+            
+            echo "<script>";
+            echo "alert('แก้ไขสถานะเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Emp_rental';";
+            echo "</script>";
+        }
+        // redirect('Manager_emp');
+    }
+
+    public function add_not_passed_rent()
+    {
+        $data = array( 
+            'Name_not_rent' => $this->input->post('Name_not_rent'),
+            'idRental' => $this->input->post('idRental')
+        );
+
+        $query=$this->db->insert('Not_passed_rent',$data);
+
+        echo "<script>";
+        echo "alert('บันทึกหมายเหตุเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_rental';";
+        echo "</script>";
+    }
 }
 ?>

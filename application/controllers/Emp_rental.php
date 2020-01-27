@@ -56,6 +56,33 @@ class Emp_rental extends CI_Controller {
         
     }
 
+    public function not_passed_rent($id)
+    {
+        // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
+
+        $data['id'] = $id;
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_car_rental_not_passed_view',$data);
+        $this->load->view('Employee/Footer_emp');
+        $this->load->view('Script_manager_emp');
+    }
+
+    public function add_status()
+    {
+        $this->Emp_rental_model->add_status();
+    }
+
+    public function add_not_passed_rent()
+    {
+        $this->Emp_rental_model->add_not_passed_rent();
+    }
+
 }
 
 /* End of file Hello.php */
