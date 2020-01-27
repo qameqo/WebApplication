@@ -53,6 +53,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis/index_2">ตรวจสอบข้อมูลรถยนต์</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_price">จัดการข้อมูลราคารถยนต์</a>
                         </div>
                     </li>
