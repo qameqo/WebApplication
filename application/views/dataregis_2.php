@@ -88,7 +88,8 @@
                                 else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
                                     $idc = $data['idCarregis']; ?>
-                                    <td><span class="badge badge-success" style="font-size:13px;"><?php $data['Name_Status'];?></span><a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
+                                    <td><span class="badge badge-success" style="font-size:13px;"><?php echo $data['Name_Status'];?></span>
+                                    &nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-success btn-sm" style="font-size:13px; color:white;"
                                     href="<?php echo base_url('Datecar/gam/'.$idc);?>">กำหนดวันส่งรถ</a></td>
                                     <?php
                                 }

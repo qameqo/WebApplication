@@ -29,11 +29,19 @@ class Register extends CI_Controller {
         //     $datee= date("Y-m-d", strtotime($date));
         // $da = $this->input->post("date");
         // $date = date("Y-m-d",$da);
+            $Username = $this->input->post('username');
+            $lek = strtolower($Username);
+            $Password = $this->input->post("password");
+            $lek2 = strtolower($Password);
+            $FName = $this->input->post("fname");
+            $yai = ucfirst($FName);
+            $LName = $this->input->post("lname");
+            $yai2 = ucfirst($LName);
             $object = array(
-            'Username' =>  $this->input->post("username"),
-            'Password' =>  $this->input->post("password"),
-            'FName' =>  $this->input->post("fname"),
-            'LName' =>  $this->input->post("lname"),
+            'Username' =>  $lek,
+            'Password' =>  $lek2,
+            'FName' =>  $yai,
+            'LName' =>  $yai2,
             'Address' =>  $this->input->post("address"),
             'Tel' =>  $this->input->post("tel"),
         );

@@ -16,10 +16,15 @@ class Login extends CI_Controller {
 
     public function Loginn()
     {
+        
+        
+        
         $Username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $this->db->where('Username', $Username);
-        $this->db->where('password', $password);
+        $lek = strtolower($Username);
+        $Password = $this->input->post('password');
+        $lek2 = strtolower($Password);
+        $this->db->where('Username', $lek);
+        $this->db->where('password', $lek2);
         $query = $this->db->get('Member', 1);
         if($query->num_rows() ==1)
         {

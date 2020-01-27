@@ -93,10 +93,8 @@
                                 <?php if($data['Name_Status']== 'รออนุมัติ')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['Name_Status']; 
-                                    echo '</span>&nbsp;&nbsp;&nbsp;';
-                                    echo '<button type="submit" class="btn btn-danger">ยกเลิกการจอง</button>';
-                                    echo '</td>';
+                                    echo $data['Name_Status'];
+                                    echo '</span></td>';
                                 }
                                 else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
