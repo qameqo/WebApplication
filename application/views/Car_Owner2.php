@@ -74,11 +74,14 @@
  					<div class="row">
  						<div class="col-sm">
  							<!-- Button trigger modal -->
- 							<a type="button" style="height:40px;" href="#" data-toggle="modal"
+
+					
+
+ 							<a type="button" style="height:40px;" href="#" data-toggle="modal" class="badge badge-secondary"
  								data-target="#exampleModal">
  								<p style="color:red;"><u>ตัวอย่างรูปภาพรถยนต์</u></p>
 								 </a>
-
+							
  							<!-- Modal -->
  							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
  								aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,6 +115,7 @@
  						</div>
  					</div>
  				</div>
+				 <br>
  				<div class="row">
  					<div class="col-sm text-Right">
  						<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
