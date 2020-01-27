@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded"> 
-            <h4 class="title">Edit Employee</h4>
+            <h4 class="title">แก้ไขข้อมูลพนักงาน</h4>
 
                 <form action="<?php echo site_url('Manager_emp/edit_emp'); ?>" method="POST" class="form-horizontal">
 
@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success mt-4">Edit</button>
+                    <button type="submit" class="btn btn-success mt-4" style="font-size: 20px">บันทึก</button>
                 </form>
             </div>
         </div>

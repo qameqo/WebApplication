@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
-                <h4 class="title">Show Detail Employee</h4>
+                <h4 class="title">รายละเอียดพนักงาน</h4>
 
                 <form action="" method="POST" class="form-horizontal">
 
@@ -59,7 +59,7 @@
                         </table>
                     </div>
 
-                    <a href="<?php echo site_url('Manager_emp'); ?>" class="btn btn-default mt-4">Back</a>
+                    <a href="<?php echo site_url('Manager_emp'); ?>" class="btn btn-default mt-4" style="font-size: 20px">กลับ</a>
                 </form>
             </div>
         </div>

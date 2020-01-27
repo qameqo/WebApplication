@@ -34,8 +34,8 @@ class Login extends CI_Controller {
             redirect('Firstpage'); //เจ้าของรถ
         }else
         {
-            $this->db->where('Username', $Username);
-            $this->db->where('password', $password);
+            $this->db->where('Username', $lek);
+            $this->db->where('password', $lek2);
             $query = $this->db->get('Employee', 1);
             if($query->num_rows() ==1)
             {
@@ -44,9 +44,15 @@ class Login extends CI_Controller {
                 if($this->session->userdata('Row') =="4")
                 {
                     redirect('Manager_first'); //เจ้าของร้าน
-                }else{
+                }elseif($this->session->userdata('Row') =="1"){
                     
                     redirect('Emp'); //พนักงาน
+                }elseif($this->session->userdata('Row') =="2"){
+
+                    redirect('Tech');
+                }elseif($this->session->userdata('Row') =="3"){
+
+                    redirect('Io');
                 }
             }else
             {

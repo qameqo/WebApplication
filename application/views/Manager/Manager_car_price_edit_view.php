@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded"> 
-            <h4 class="title">Edit Car Price</h4>
+            <h4 class="title">แก้ไขข้อมูลราคารถยนต์</h4>
 
                 <form action="<?php echo site_url('Manager_car_price/edit_car_price'); ?>" method="POST" class="form-horizontal">
 
@@ -24,7 +24,7 @@
 
                    
 
-                    <button type="submit" class="btn btn-success">Edit</button>
+                    <button type="submit" class="btn btn-success" style="font-size: 20px">บันทึก</button>
                 </form>
             </div>
         </div>
