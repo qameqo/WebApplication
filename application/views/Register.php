@@ -26,51 +26,45 @@
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Username (EN)</label>
-						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[a-z]).{5,}" title="กรุณากรอกตัวอักษรภาษาอังกฤษอย่างน้อย 5 ตัวอักษรขึ้นไป" required>
-						
+						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[A-Za-z]).{5,}" title="กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป" required>
+						<p style="color:red; font-size:10px;">* กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป</p>
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Password</label>
-						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="ต้องมีตัวเลขและตัวอักษรพิมพ์เล็กอย่างน้อย 8 ตัวอักษรขึ้นไป" required>
+						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" title="ต้องมีตัวเลขและตัวอักษรภาษาอังกฤษ 8 ตัวขึ้นไป" required>
 						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-						
+						<p style="color:red; font-size:10px;">* กรุณากรอกตัวเลขและตัวอักษรภาษาอังกฤษ 8 ตัวขึ้นไป</p>
 					</div>
-
 				</div>
-				<br>
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">First Name (EN)</label>
 						<input name="fname" type="text" id="fname" class="form-control" placeholder="" pattern="^[a-zA-Z]+$" title="กรุณากรอกชื่อ ภาษาอังกฤษ" required>
-						
+						<p style="color:red; font-size:10px;">* กรุณากรอกชื่อ ภาษาอังกฤษ</p>
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Last Name (EN)</label>
 						<input name="lname" type="text" id="lname" class="form-control" placeholder="" pattern="^[a-zA-Z]+$" title="กรุณากรอกนามสกุล ภาษาอังกฤษ" required>
+						<p style="color:red; font-size:10px;">* กรุณากรอกนามสกุล ภาษาอังกฤษ</p>
 					</div>
-
 				</div>
-				<br>
+				
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Address</label>
 						<input name="address" type="text" id="address" class="form-control" placeholder="" required>
 					</div>
-				
-
-				
 					<div class="col-sm">
 						<label class="bmd-label-floating">Tel.</label>
 						<input name="tel" type="tel" id="tel" class="form-control" placeholder="" required 
 						pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
+						<p style="color:red; font-size:10px;">* กรุณากรอกเบอร์โทรศัพท์ 10 หลัก</p>
 					</div>
 					</div>
 					<div class="row">
-					<div class="col-sm" style="padding-top: 30px;">
+					<div class="col-sm">
 						<button class="btn btn-success" type="submit"> Register</botton>
 					</div>
-
-
 			</form>
 		</div>
 	</div>
