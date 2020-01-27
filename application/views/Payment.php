@@ -130,7 +130,7 @@
 											height="65" width="85"/></p>
 											
 											
-											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ<img src="<?php echo base_url('./pic/License.jpg'); ?>" alt="ภาพตัวอย่าง"
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ<img src="<?php echo base_url('./pic_tee/ใบขับขี่.jpg'); ?>" alt="ภาพตัวอย่าง"
 											height="65" width="85"/>หรือ <img src="<?php echo base_url('./pic/li.jpg'); ?>" alt="ภาพตัวอย่าง"
 											height="70" width="85"/></p>
 											<p style="color:red;">กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>

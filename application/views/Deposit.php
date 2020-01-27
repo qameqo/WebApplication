@@ -154,7 +154,7 @@
 											height="60" width="75"/></p>
 											
 											
-											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ&nbsp;<img src="<?php echo base_url('./pic/License.jpg'); ?>" alt="ภาพตัวอย่าง"
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ&nbsp;<img src="<?php echo base_url('./pic_tee/ใบขับขี่.jpg'); ?>" alt="ภาพตัวอย่าง"
 											height="60" width="75"/>&nbsp;หรือ&nbsp;<img src="<?php echo base_url('./pic/li.jpg'); ?>" alt="ภาพตัวอย่าง"
 											height="60" width="75"/></p>
 
