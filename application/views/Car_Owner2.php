@@ -69,7 +69,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									กรุณาอัปโหลดรูปภาพตามจำนวนที่ระบุ
+								
 								</div>
 							</div>
 							<br>
