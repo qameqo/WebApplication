@@ -9,18 +9,36 @@
                     <input type="hidden" name="id_Gen" id="id_Gen" class="form-control" value="">
 
                     <div class="form-row">
+
+                    <div class="col">
+							<label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="idBrand" id="idBrand"
+								onChange="Change_Brand()" required>
+								<option value="">เลือกยี่ห้อ</option>
+								<?php 
+  									$this->db->select('*');
+								  $sql = $this->db->get('Brand');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $he)
+								 {
+									?>
+								<option value="<?php echo $he['idBrand'] ?>"><?php echo $he['Name_Brand'] ?></option>
+								<?php }
+								  
+							?>
+							</select>
+						</div>
                         
                         <div class="col">
                         <label for="Brand">รุ่น</label>
-                            <input type="text" name="Name_Gen" id="Name_Gen" class="form-control" placeholder="Model" value="">
+                            <input type="text" name="Name_Gen" id="Name_Gen" class="form-control" placeholder="รุ่น" value="">
                         </div>
                         <div class="col">
                         <label for="Brand">ราคา</label>
-                            <input type="text" name="Price" pattern="^(0|[1-9][0-9]*)$" id="Price" class="form-control" placeholder="Price" value="">
+                            <input type="text" name="Price" pattern="^(0|[1-9][0-9]*)$" id="Price" class="form-control" placeholder="ราคา" value="">
                         </div>
                         
-                        <input type="hidden" value="<?php echo $id; ?>" name="idBrand" id="idBrand" />
-
                     </div>
 
                     <button type="submit" class="btn btn-success mt-5" style="font-size:20px">บันทึกข้อมูล</button>

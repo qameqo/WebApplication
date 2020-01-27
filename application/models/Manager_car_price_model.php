@@ -8,18 +8,33 @@ class Manager_car_price_model extends CI_Model
         // print_r($_POST);
         
         // exit;
-        
-        $data = array(
-            'Name_Brand' => $this->input->post('Name_Brand'),
-            'id_Employee' => $this->session->userdata('id_Employee')
-        );
-    
-        $this->db->insert('Brand', $data);
-        $this->db->order_by('idBrand', 'desc');
+
+        $Name_Brand = $this->input->post('Name_Brand');
+        $this->db->where('Name_Brand', $Name_Brand);
         $query = $this->db->get('Brand', 1);
-        $qq = $query->row_array();
-        echo $qq['idBrand'];
-        redirect('Manager_car_price/add_2/'. $qq['idBrand']); 
+        if($query->num_rows() ==1)
+        {
+            echo "<script>";
+            echo "alert('ข้อมูลซ้ำ');";
+            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
+            echo "</script>";
+            
+        }else
+        {
+            $Name_Brand = $this->input->post('Name_Brand');
+            $upper = strtoupper($Name_Brand);
+        
+            $data = array(
+                'Name_Brand' => $upper,
+            );
+        
+            $this->db->insert('Brand', $data);
+            $this->db->order_by('idBrand', 'desc');
+            $query = $this->db->get('Brand', 1);
+            $qq = $query->row_array();
+            echo $qq['idBrand'];
+            redirect('Manager_car_price'); 
+        }
 
         // $this->Manager_car_price->Manager_car_price();
         // redirect('Manager_car_price');
@@ -38,16 +53,18 @@ class Manager_car_price_model extends CI_Model
         {
             echo "<script>";
             echo "alert('ข้อมูลซ้ำ');";
-            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
+            echo "window.location.href = '". base_url(). "Manager_car_price/add_2 ';";
             echo "</script>";
             
         }else
         {
+            $Name_Gen = $this->input->post('Name_Gen');
+            $upper = strtoupper($Name_Gen);
+
             $data = array(
-                'Name_Gen' => $this->input->post('Name_Gen'),
+                'Name_Gen' => $upper,
                 'Price' => $this->input->post('Price'),
                 'idBrand' => $this->input->post('idBrand'),
-                'id_Employee' => $this->session->userdata('id_Employee')
             );
     
             $query=$this->db->insert('Generation',$data);

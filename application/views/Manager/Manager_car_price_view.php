@@ -4,11 +4,14 @@
 		<div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-9">
                         <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
                     </div>
-                    <div class="col-md-2" align ="right">
-                        <a href="<?php echo site_url('Manager_car_price/add');?>" class="btn btn-info btn-sm">ADD</a>
+                    <div class="col-1">
+                        <a href="<?php echo site_url('Manager_car_price/add');?>" class="btn btn-info btn-sm mr-5" style="font-size: 16px">เพิ่มยี่ห้อ</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="<?php echo site_url('Manager_car_price/add_2');?>" class="btn btn-info btn-sm  mr-5" style="font-size: 16px">เพิ่มรุ่นและราคา</a>
                     </div>
                 </div>
                 
@@ -35,8 +38,8 @@
                                 <td><?php echo $rs->Price; ?></td>
 								<td>
 								
-                                    <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_Gen ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?php echo site_url('Manager_car_price/del_car_price/').$rs->id_Gen ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_Gen ?>" class="btn btn-warning btn-sm" style="font-size: 16px">แก้ไข</a>
+                                    <a href="<?php echo site_url('Manager_car_price/del_car_price/').$rs->id_Gen ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
 
 								</td>
 							</tr>

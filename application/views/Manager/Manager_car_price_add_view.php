@@ -12,7 +12,7 @@
                         
                         <div class="col">
                         <label for="Brand">ยี่ห้อ</label>
-                            <input type="text" name="Name_Brand" id="Name_Brand" class="form-control" placeholder="Brand" value="">
+                            <input type="text" name="Name_Brand" id="Name_Brand" title="กรุณากรอกตัวอักษรพิมพ์ใหญ่ (A-Z)" class="form-control" required placeholder="Brand" value="">
                         </div>
 
                     </div>
