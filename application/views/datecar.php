@@ -18,7 +18,7 @@
                 <div class="col-sm">
             <p><?php echo $data['Name_Brand'];?>&nbsp;&nbsp;&nbsp;<?php echo $data['Name_Gen'];?>&nbsp;&nbsp;&nbsp;
             <?php echo $data['License'];?></P>
-            <span style="color:red;">* กรุณากำหนดวันส่งรถไม่เกิน 3 วัน</span>
+            <!-- <span style="color:red;">* กรุณากำหนดวันส่งรถไม่เกิน 3 วัน</span> -->
                 </div>
                 <div class="col-sm">
                 <input type="text" name="date" value="" id="date" style="width:150;">
