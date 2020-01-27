@@ -11,6 +11,10 @@
     $('#adding_btn_car_price').click(function(){
         $('#insert_form')[0].reset();
     });
+    
+    $('#close_modal').click(function(){
+        $('#insert_form')[0].reset();
+    });
 
     $(function(){
         $('img').EZView();

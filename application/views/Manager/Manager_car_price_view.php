@@ -8,10 +8,10 @@
                         <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
                     </div>
                     <div class="col-1">
-                        <a href="<?php echo site_url('Manager_car_price/add');?>" class="btn btn-info btn-sm mr-5" style="font-size: 16px">เพิ่มยี่ห้อ</a>
+                        <a id="add_button" data-toggle="modal" data-target="#brandModal" href="<?php echo site_url('Manager_car_price/add');?>" class="btn btn-info btn-sm mr-5" style="font-size: 16px">เพิ่มยี่ห้อ</a>
                     </div>
                     <div class="col-2">
-                        <a href="<?php echo site_url('Manager_car_price/add_2');?>" class="btn btn-info btn-sm  mr-5" style="font-size: 16px">เพิ่มรุ่นและราคา</a>
+                        <a id="add_button" data-toggle="modal" data-target="#genModal" href="<?php echo site_url('Manager_car_price/add_2');?>" class="btn btn-info btn-sm  mr-5" style="font-size: 16px">เพิ่มรุ่นและราคา</a>
                     </div>
                 </div>
                 

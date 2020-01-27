@@ -16,7 +16,7 @@ class Manager_car_price_model extends CI_Model
         {
             echo "<script>";
             echo "alert('ข้อมูลซ้ำ');";
-            echo "window.location.href = '". base_url(). "Manager_car_price/add ';";
+            echo "window.location.href = '". base_url(). "Manager_car_price ';";
             echo "</script>";
             
         }else
@@ -53,7 +53,7 @@ class Manager_car_price_model extends CI_Model
         {
             echo "<script>";
             echo "alert('ข้อมูลซ้ำ');";
-            echo "window.location.href = '". base_url(). "Manager_car_price/add_2 ';";
+            echo "window.location.href = '". base_url(). "Manager_car_price ';";
             echo "</script>";
             
         }else
