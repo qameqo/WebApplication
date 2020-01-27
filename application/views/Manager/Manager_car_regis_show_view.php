@@ -111,27 +111,28 @@
                             
                             <?php
                             
-                            if($rs->Status == '4')
+                            if($rs->Status == '4' || '8')
                             {
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
                                 echo '</span></td></tr>';
                             }
+                            
 
                             ?>
 
                             <?php
                             
-                            if($rs->Status == '5')
+                            if($rs->Status == '5' || '8')
                             {
                                 echo'<tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
                                 echo $rs->EndDate; 
                                 echo '</span></td></tr>';
                             }
-
-                            ?>   
+                        
+                            ?>    
 
                             <tr>
                                 <td width="30%"><label>สมาชิก</label></td>
@@ -228,7 +229,7 @@
                         echo '</form>';
 
                         echo '<form action="'; 
-                        echo site_url('Manager_car_regis/add_status_no/'.$rs->idCarregis); 
+                        echo site_url('Manager_car_regis/add_status/'.$rs->idCarregis); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 

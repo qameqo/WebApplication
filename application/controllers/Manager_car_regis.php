@@ -53,10 +53,10 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status_2();
     }
 
-    public function add_status_no()
-    {
-        $this->Manager_car_regis_model->add_status_no();
-    }
+    // public function add_status_no()
+    // {
+    //     $this->Manager_car_regis_model->add_status_no();
+    // }
 
     public function not_passed($id)
     {

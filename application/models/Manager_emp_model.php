@@ -26,7 +26,7 @@ class Manager_emp_model extends CI_Model
                 'Username' => $this->input->post('Username'),
                 'Password' => $this->input->post('Password'),
                 'F_Name' => $this->input->post('F_Name'),
-                'LName' => $this->input->post('LName'),
+                'L_Name' => $this->input->post('L_Name'),
                 'Address' => $this->input->post('Address'),
                 'Tel' => $this->input->post('Tel'),
                 'Row' => $this->input->post('Row')
@@ -59,7 +59,7 @@ class Manager_emp_model extends CI_Model
             'Username' => $this->input->post('Username'),
             'Password' => $this->input->post('Password'),
             'F_Name' => $this->input->post('F_Name'),
-            'LName' => $this->input->post('LName'),
+            'L_Name' => $this->input->post('L_Name'),
             'Address' => $this->input->post('Address'),
             'Tel' => $this->input->post('Tel'),
             'Row' => $this->input->post('Row')

@@ -193,7 +193,6 @@
 
                     <?php if ($rs->Status == '4') {
                         
-                        echo '<input type="submit" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="ไม่มีการนัดหมาย" style="font-size:20px;" required>';
 
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
@@ -211,15 +210,15 @@
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
                         echo '</form>';
 
-                        echo '<form action="'; 
-                        echo site_url('Manager_car_regis/add_status'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="8" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
-                        echo '</form>';
+                        // echo '<form action="'; 
+                        // echo site_url('Manager_car_regis/add_status'); 
+                        // echo '" method="POST" class="form-horizontal">';
+                        // echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        // echo $rs->idCarregis; 
+                        // echo '">';
+                        // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="8" style="font-size:20px;" required>';
+                        // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
+                        // echo '</form>';
                     }?>
 
 

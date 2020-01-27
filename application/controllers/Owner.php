@@ -21,7 +21,7 @@ class Owner extends CI_Controller {
         {   
             echo "<script>";
             echo "alert('ทะเบียนรถนี้มีผู้ใช้แล้ว');";
-            echo "window.location.href = '". base_url(). "Owner/show/'.$ids";
+            echo "window.location.href = '". base_url(). "Owner/show/$ids'";
             echo "</script>";
             // echo "ทะเบียนซ้ำ";
         }
@@ -35,7 +35,7 @@ class Owner extends CI_Controller {
             {
             echo "<script>";
             echo "alert('เลขตัวถังรถนี้มีผู้ใช้แล้ว');";
-            echo "window.location.href = '". base_url(). "Owner/show/'.$ids";
+            echo "window.location.href = '". base_url(). "Owner/show/'";
             echo "</script>";
             // echo "เครื่องซ้ำ";
 
