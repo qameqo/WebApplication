@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <title>How to Change date range dynamically in jQuery UI Datepicker</title>
+        
+    </head>
+    <body>
+        <link href='jquery-ui.min.css' rel='stylesheet' type='text/css'>
+        <script src='jquery-3.0.0.js' type='text/javascript'></script>
+        <script src='jquery-ui.min.js' type='text/javascript'></script>
+        
+        <script type='text/javascript'>
+        $(document).ready(function(){
+ 
+            // Initialize Date picker 
+            $("#setMin,#setMax").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+
+            $('#datepicker').datepicker({
+                dateFormat: "yy-mm-dd",
+                maxDate:'+1m +10d',
+                minDate: -10
+            });
+
+            // Changing date range
+            $('#setMin,#setMax').change(function(){
+            
+                // Get value
+                var minDate = $("#setMin").val();
+                var maxDate = $("#setMax").val();
+
+                // Set minDate and maxDate
+                if(minDate != ''){
+                    $('#datepicker').datepicker('option', 'minDate', new Date(minDate));
+                }
+                
+                if(maxDate != ''){
+                    $('#datepicker').datepicker('option', 'maxDate', new Date(maxDate));
+                }
+            });
+
+           /*
+            $('#setMin,#setMax').change(function(){
+            
+                // Get value
+                var minDate = $("#setMin").val();
+                var maxDate = $("#setMax").val();
+
+                // Destroy 
+                $('#datepicker').datepicker('destroy');
+
+                // Initialize
+                $('#datepicker').datepicker({
+                dateFormat: "yy-mm-dd",
+                });
+
+                // Set minDate and maxDate
+                if(minDate != ''){
+                $('#datepicker').datepicker('option', 'minDate', new Date(minDate));
+                }
+                
+                if(maxDate != ''){
+                $('#datepicker').datepicker('option', 'maxDate', new Date(maxDate));
+                }
+            });*/
+        
+        });
+        </script>
+        <div class='container'>
+            Minimum : <input type='text'  id='setMin' readonly ><br/>
+            Maximum : <input type='text'  id='setMax' readonly ><br/>
+            <br/>
+            Select Date : <input type='text' id="datepicker" readonly />          
+        </div>
+    </body>
+</html>

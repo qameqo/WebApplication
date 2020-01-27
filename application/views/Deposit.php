@@ -78,6 +78,11 @@
 					 <div class="col-sm-2 text-center"> 
 						<span>บาท</span>
 					 </div>
+					 <br>
+					 <br>
+					 <div class="col-sm text-center">
+						<img src="<?php echo base_url('./pic/Kbank.jpg'); ?>" alt=""/>
+					 </div>
 				 </div>
             </div>
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
@@ -144,9 +149,17 @@
 										</div>
 
 										<div class="modal-body text-left">
-											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
-											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
-											<p style="color:red;">กรุณาอัปโหลดหลักฐานเช่ารถให้ครบถ้วน</p>
+											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง&nbsp;<img src="<?php echo base_url('./pic_tee/บปชช.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="60" width="75"/>&nbsp;หรือ&nbsp;<img src="<?php echo base_url('./pic/passport.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="60" width="75"/></p>
+											
+											
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ&nbsp;<img src="<?php echo base_url('./pic/License.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="60" width="75"/>&nbsp;หรือ&nbsp;<img src="<?php echo base_url('./pic/li.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="60" width="75"/></p>
+
+											<p>3.ใบเสร็จการโอนเงินมัดจำ&nbsp;<img src="<?php echo base_url('./pic_tee/ใบเสร็จ.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="80" width="75"/></p>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-link  ml-auto"

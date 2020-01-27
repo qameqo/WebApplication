@@ -125,8 +125,14 @@
 										</div>
 
 										<div class="modal-body text-left">
-											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
-											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
+											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง<img src="<?php echo base_url('./pic_tee/บปชช.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="70" width="85"/>หรือ <img src="<?php echo base_url('./pic/passport.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="65" width="85"/></p>
+											
+											
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ<img src="<?php echo base_url('./pic/License.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="65" width="85"/>หรือ <img src="<?php echo base_url('./pic/li.jpg'); ?>" alt="ภาพตัวอย่าง"
+											height="70" width="85"/></p>
 											<p style="color:red;">กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
 										</div>
 										<div class="modal-footer">

@@ -35,7 +35,7 @@ class Login extends CI_Controller {
         }else
         {
             $this->db->where('Username', $Username);
-            $this->db->where('password', $password);
+            $this->db->where('password', $Password);
             $query = $this->db->get('Employee', 1);
             if($query->num_rows() ==1)
             {
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
             }else
             {
                 echo "<script>";
-                echo "alert('ไม่พบรหัสผู้ใช้งาน');";
+                echo "alert('ไม่พบรหัสผู้ใช้งาน โปรดตรวจสอบ username หรือ password');";
                 echo "window.location.href = '". base_url(). "Login ';";
                 echo "</script>";
             }
