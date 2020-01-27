@@ -158,9 +158,12 @@
 										</div>
 
 										<div class="modal-body text-left">
-											<p>1.ใบขับขี่ผู้ลงทะเบียน</p> <img src="" alt="">
+											<p>1.ใบขับขี่ผู้ลงทะเบียน</p>
+											<img src="<?php echo base_url('./pic_tee/ใบขับขี่.jpg');?>" alt="ภาพตัวอย่าง" height="42" width="55"/>
 											<p>2.พ.ร.บ.</p>
-											<p>2.เล่มทะเบียนรถยนต์</p>
+											<img src="<?php echo base_url('./pic_tee/พรบ.jpg');?>" alt="ภาพตัวอย่าง" height="42" width="55"/>
+											<p>3.เล่มทะเบียนรถยนต์</p>
+											<img src="<?php echo base_url('./pic_tee/เล่มทะเบียนรถ.jpg');?>" alt="ภาพตัวอย่าง" height="42" width="55"/>
 											<p style="color:red;">กรุณาอัปโหลดรูปภาพตามจำนวนหลักฐาน</p>
 										</div>
 										<div class="modal-footer">
