@@ -12,7 +12,7 @@ class Emp_rental_model extends CI_Model
         $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
         $this->db->join('Carregis', 'RentalDetail.idCarregis = Carregis.idCarregis');
         $this->db->join('Member', 'Rental.idMember = Member.id_Member');
-        $this->db->join('Status_car', 'Rental.rentstatus = Status_car.id_Status');
+        $this->db->join('Status_car', 'Rental.idstatus = Status_car.id_Status');
 
         $query = $this->db->get();
 
@@ -27,7 +27,7 @@ class Emp_rental_model extends CI_Model
         $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
         $this->db->join('Carregis', 'RentalDetail.idCarregis = Carregis.idCarregis');
         $this->db->join('Member', 'Rental.idMember = Member.id_Member');
-        $this->db->join('Status_car', 'Rental.rentstatus = Status_car.id_Status');
+        $this->db->join('Status_car', 'Rental.idstatus = Status_car.id_Status');
         $this->db->join('Images3', 'Rental.idRental = Images3.idrent');
 
         $this->db->where('idRental', $idRental);

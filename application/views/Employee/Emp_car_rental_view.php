@@ -36,49 +36,49 @@
 								<td><?php echo $rs->Datebooking; ?></td>
 								<td><?php echo $rs->PriceCar; ?></td>
 
-                                <?php if($rs->rentstatus == '1')
+                                <?php if($rs->idstatus == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '2') 
+                                else if($rs->idstatus == '2') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '3') 
+                                else if($rs->idstatus == '3') 
                                 {
                                     echo'<td><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '4')
+                                else if($rs->idstatus == '4')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '5') 
+                                else if($rs->idstatus == '5') 
                                 {
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '6')
+                                else if($rs->idstatus == '6')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '8')
+                                else if($rs->idstatus == '8')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->rentstatus == '9')
+                                else if($rs->idstatus == '9')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 

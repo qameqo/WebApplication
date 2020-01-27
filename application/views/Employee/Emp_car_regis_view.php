@@ -30,7 +30,7 @@
 						<tbody>
 
                             <?php foreach ($query as $rs) { 
-                            if ($rs->Status == '4') {
+                            if ($rs->idStatus == '4') {
                                 if ($rs->Dayfirst == date('Y-m-d')) {
                             ?>
 
@@ -43,49 +43,49 @@
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->FName; ?></td>
                                 
-                                <?php if($rs->Status == '1')
+                                <?php if($rs->idStatus == '1')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '2') 
+                                else if($rs->idStatus == '2') 
                                 {
                                     echo'<td><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '3') 
+                                else if($rs->idStatus == '3') 
                                 {
                                     echo'<td><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '4')
+                                else if($rs->idStatus == '4')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '5') 
+                                else if($rs->idStatus == '5') 
                                 {
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '6')
+                                else if($rs->idStatus == '6')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '8')
+                                else if($rs->idStatus == '8')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->Status == '9')
+                                else if($rs->idStatus == '9')
                                 {
                                     echo'<td><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 

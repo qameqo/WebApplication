@@ -9,10 +9,10 @@ class Manager_car_regis_model extends CI_Model
         
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
+        $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
         
 
         $query = $this->db->get();
@@ -25,10 +25,10 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.Status = Status_car.id_Status');
+        $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
                      
         $this->db->where('idCarregis', $idCarregis );
         $query = $this->db->get();
@@ -45,7 +45,7 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
@@ -79,7 +79,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'Status' => $this->input->post('Status'),
+            'idStatus' => $this->input->post('idStatus'),
             'Dayfirst' => $this->input->post('Dayfirst')
         );
 
@@ -89,7 +89,7 @@ class Manager_car_regis_model extends CI_Model
         $query_2 =  $this->db->get('Carregis', 1);
         $qq = $query_2->row_array();
 
-        if($qq['Status'] == '3')
+        if($qq['idStatus'] == '3')
         {
             
             redirect('Manager_car_regis/not_passed/'.$qq['idCarregis']);
@@ -122,7 +122,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'Status' => $this->input->post('Status'),
+            'idStatus' => $this->input->post('idStatus'),
             'EndDate' => $this->input->post('EndDate'),
             'RentalPrice' => $this->input->post('RentalPrice')
         );
