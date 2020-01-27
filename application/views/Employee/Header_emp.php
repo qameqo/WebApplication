@@ -51,7 +51,9 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_car">จัดการข้อมูลการรับรถยนต์</a>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลการรับรถยนต์</a>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_rental">จัดการการเช่ารถยนต์</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการเช่ารถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Emp_rental/index_2">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
                         </div>
                     </li>
                 </ul>
