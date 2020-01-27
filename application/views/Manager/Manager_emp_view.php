@@ -8,7 +8,7 @@
                         <h3 class="panel-title">ตารางข้อมูลพนักงาน</h3>
                     </div>
                     <div class="col-md-2" align ="right">
-                        <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-sm">Add</button>
+                        <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-sm" style="font-size: 16px">เพิ่มข้อมูลบุคคล</button>
                     </div>
                 </div>
                 
@@ -58,8 +58,8 @@
 
 								<td>
 								
-                                    <a href="<?php echo site_url('Manager_emp/show/').$rs->id_Employee; ?>" class="btn btn-default btn-sm">View</a>
-                                    <a href="<?php echo site_url('Manager_emp/edit/').$rs->id_Employee; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="<?php echo site_url('Manager_emp/show/').$rs->id_Employee; ?>" class="btn btn-default btn-sm" style="font-size: 16px">รายละเอียด</a>
+                                    <a href="<?php echo site_url('Manager_emp/edit/').$rs->id_Employee; ?>" class="btn btn-warning btn-sm" style="font-size: 16px">แก้ไข</a>
                                     <!-- <a href="<?php echo site_url('Manager_emp/del_emp/').$rs->id_Employee; ?>" onclick="return confirm('คุณต้องการลบหรือไม่ ?');" class="btn btn-danger btn-sm">Delete</a> -->
                     
 								</td>

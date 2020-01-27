@@ -15,7 +15,7 @@ class Manager_car_price extends CI_Controller {
 
         // echo '<pre>';
         // print_r($data);
-        // echo '</pre>';
+        // echo '</pre>'; 
 
         // exit; 
 
@@ -29,15 +29,17 @@ class Manager_car_price extends CI_Controller {
     public function add()
     {
         $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_add_view');
         $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function add_2()
     {
         $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_add_2_view');
         $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
     }
 
     public function edit($id_Gen)
