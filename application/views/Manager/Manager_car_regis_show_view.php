@@ -95,6 +95,12 @@
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
+                                else if($rs->idStatus == '7')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
                                 else if($rs->idStatus == '8')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
@@ -103,7 +109,7 @@
                                 }
                                 else if($rs->idStatus == '9')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 } ?>
