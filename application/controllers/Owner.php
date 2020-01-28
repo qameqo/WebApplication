@@ -23,6 +23,7 @@ class Owner extends CI_Controller {
             echo "alert('ทะเบียนรถนี้มีผู้ใช้แล้ว');";
             echo "window.location.href = '". base_url(). "Owner/show/$ids'";
             echo "</script>";
+            // redirect('Owner/show/'.$ids);
             // echo "ทะเบียนซ้ำ";
         }
         else
@@ -38,7 +39,7 @@ class Owner extends CI_Controller {
             echo "window.location.href = '". base_url(). "Owner/show/$ids'";
             echo "</script>";
             // echo "เครื่องซ้ำ";
-
+            
             }
             else
             {   
@@ -52,6 +53,7 @@ class Owner extends CI_Controller {
                     'Gear' =>  $this->input->post("gear"),
                     'Mileage' =>  $this->input->post("mile"),
                     'License' =>  $this->input->post("license"),
+                    'Province' => $this->input->post("province"),
                     'Yearlicense' =>  $this->input->post("licenseyear"),
                     'Carbody' =>  $this->input->post("carbody"),
                     'idStatus' => $ids,
@@ -90,6 +92,67 @@ class Owner extends CI_Controller {
 								  
 						
     }
+
+    public function selectseat($gan)
+    {?>
+        <option value="">เลือกจำนวนที่นั่ง</option>
+        <?php
+        $this->db->select('*');
+        $this->db->from('Generation');
+        $this->db->join('Seat', 'Seat.id_Seat = Generation.id_Seat');
+        $this->db->where('id_Gen',$gan);
+        $sq = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['id_Seat'] ?>"><?php echo $he['Number_Seat'] ?></option>
+    <?php }
+								  
+						
+    }
+    public function selectfuel($g)
+    {?>
+        <option value="">เลือกชนิดเชื้อเพลิง</option>
+        <?php
+        $this->db->select('*');
+        $this->db->from('Generation');
+        $this->db->join('Fuel', 'Fuel.idFuel = Generation.idFuel');
+        $this->db->where('id_Gen',$g);
+        $sq = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['idFuel'] ?>"><?php echo $he['Name_Fuel'] ?></option>
+        
+    <?php }
+								  
+						
+    }
+    public function selectfuel2($gv)
+    {?>
+        <option value="">เลือกชนิดเชื้อเพลิง</option>
+        <?php
+        $this->db->select('*');
+        $this->db->from('Generation');
+        $this->db->join('Fuel', 'Fuel.idFuel = Generation.idFuel2');
+        $this->db->where('id_Gen',$gv);
+        $sq = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['idFuel'] ?>"><?php echo $he['Name_Fuel'] ?></option>
+        
+    <?php }
+								  
+						
+    }
+    
 
 }
 

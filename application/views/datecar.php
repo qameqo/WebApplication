@@ -21,7 +21,7 @@
             <!-- <span style="color:red;">* กรุณากำหนดวันส่งรถไม่เกิน 3 วัน</span> -->
                 </div>
                 <div class="col-sm">
-                <input type="text" name="date" value="" id="date" style="width:150;">
+                <input id="datetimepicker" type="text" value="" style="width:150px;" name="date">
                 <button type="submit" class="btn btn-danger" style="background-color: #F60200;">ยืนยัน</button>
                 </div>
             </div>

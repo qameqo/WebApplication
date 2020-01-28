@@ -13,9 +13,9 @@ class Rentnext extends CI_Controller {
     }
     public function insup($idc)
     {   $Date = $this->input->post("start");
-        $dat = date("Y-m-d H:i:sa", strtotime($Date));
+        $dat = date("Y-m-d", strtotime($Date));
         $Date2 = $this->input->post("end");
-        $dat2 = date("Y-m-d H:i:sa", strtotime($Date2));
+        $dat2 = date("Y-m-d", strtotime($Date2));
         $this->db->select('*');
         $this->db->from('Carregis');
         $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');

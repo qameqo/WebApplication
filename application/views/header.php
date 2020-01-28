@@ -15,9 +15,7 @@
   <!-- Argon CSS -->
   <link type="text/css" href="<?php echo base_url(); ?>/assets argon/css/argon.css?v=1.1.0" rel="stylesheet">
   
-  <script src="/path/to/jquery.min.js"></script>
   
-
   <style>
   body,h1,h2,h3,h4,h5,.tooltip,h6,a,p,button,span,label,option{
           color: #333;
@@ -87,6 +85,8 @@
         </div>
     </div>
 </nav>
+
+<script type='text/javascript' src="<?php echo base_url(); ?>game/js/jquery.min.js"></script>
 </head>
 
 <body>
