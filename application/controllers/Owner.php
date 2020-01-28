@@ -132,26 +132,7 @@ class Owner extends CI_Controller {
 								  
 						
     }
-    public function selectfuel2($gv)
-    {?>
-        <option value="">เลือกชนิดเชื้อเพลิง</option>
-        <?php
-        $this->db->select('*');
-        $this->db->from('Generation');
-        $this->db->join('Fuel', 'Fuel.idFuel = Generation.idFuel2');
-        $this->db->where('id_Gen',$gv);
-        $sq = $this->db->get();
-        $ro = $sq->result_array();
-        foreach($sq->result_array()
-        as $he)
-        {
-        ?>
-        <option value="<?php echo $he['idFuel'] ?>"><?php echo $he['Name_Fuel'] ?></option>
-        
-    <?php }
-								  
-						
-    }
+   
     
 
 }

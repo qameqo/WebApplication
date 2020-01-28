@@ -89,15 +89,6 @@ jQuery(function(){
               }
           );
 
-          var val = $("#gen1").val()
-          
-          $.get("<?=base_url('Owner/selectfuel2/')?>"+val, 
-              function (data) {
-                  
-                $("#fuel1").html(data)
-
-              }
-          );
       }
 
       // Year Picker 
