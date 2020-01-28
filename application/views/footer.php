@@ -40,6 +40,7 @@ jQuery(function(){
  });
  jQuery('#datetimepickerend').datetimepicker({
   format:'Y/m/d',
+  maxDate:'+1970/01/05',
   onShow:function( ct ){
    this.setOptions({
     minDate:jQuery('#datetimepickerstart').val()?jQuery('#datetimepickerstart').val():false

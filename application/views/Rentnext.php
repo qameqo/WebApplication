@@ -66,12 +66,13 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                <input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;" name="start">
+                <input id="datetimepickerstart" type="text" value="<?php echo date('Y/m/d'); ?>" style="width:120px; text-align:center;" name="start">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
                     <p style="text-align:Left;">วันส่งคืน</p>
+                    <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
                 </div>
                 <div class="col-sm text-right">
                 <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;" name="end">
@@ -143,6 +144,9 @@
             $this->db->from('Carregis');
             $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
             $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+            $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
+            $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
+            $this->db->join('Fuel2', 'Carregis.idFuel2 = Fuel2.idFuel2');
             $this->db->where('idCarregis',$idc);
             $query = $this->db->get();
             $qq = $query->result_array();
@@ -229,7 +233,7 @@
                             <p>จำนวนที่นั่ง</p>
                         </div>
                         <div class="col-sm">
-                            <?php echo $data['Seat'];?>
+                            <?php echo $data['Number_Seat'];?>
                         </div>
                     </div>
                 </div>
@@ -237,11 +241,29 @@
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>ชนิดเชื้อเพลิง</p>
+                            <p>เชื้อเพลิงที่ 1</p>
                         </div>
                         <div class="col-sm">
-                            <?php echo $data['Fuel'];?>
+                            <?php echo $data['Name_Fuel'];?>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="row">
+                    <div class="col-sm">
+                            <p>เชื้อเพลิงที่ 2</p>
+                        </div>
+                        <div class="col-sm">
+                            <?php echo $data['Name_Fuel2'];?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="row">
+
                     </div>
                 </div>
             </div>

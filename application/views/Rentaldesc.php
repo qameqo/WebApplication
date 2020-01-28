@@ -7,7 +7,7 @@
 <form class="form-signin" id="edit" name="edit" method="post" action="">
 	<?php 
 			
-				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.id_Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.idStatus="5" ORDER BY RentalPrice DESC');
+			$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen, Seat.Number_Seat from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.id_Brand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN Seat on Seat.id_Seat = Carregis.id_Seat WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.idStatus="5"');
 				$qq = $query->result_array();
 			?>
 	<div class="row justify-content-center">
@@ -46,7 +46,7 @@
 							<img src="<?php echo base_url('./pic/car-gear.png');?>"
 								style="width:10px; height:10px;">&nbsp;<?php echo $data['Gear'];?>
 							<img src="<?php echo base_url('./pic/seat-belt.png');?>"
-								style="width:10px; height:10px;">&nbsp;<?php echo $data['Seat']; ?>
+								style="width:10px; height:10px;">&nbsp;<?php echo $data['Number_Seat']; ?>
 							<br><span style="color: #F60200;"><?php echo $data['RentalPrice'];?></span>&nbsp;บาท/วัน
 							<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
 								data-target="#modal-default"><u>เอกสารเช่ารถ</u></a>
