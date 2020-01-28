@@ -47,9 +47,8 @@ class Owner extends CI_Controller {
                 $object = array(
                     'id_Brand' =>  $this->input->post("Brand"),
                     'Yearcar' =>  $this->input->post("caryear"),
-                    'Seat' =>  $this->input->post("seat"),
+                    'id_Seat' =>  $this->input->post("seat"),
                     'Color' =>  $this->input->post("color"),
-                    'Fuel' =>  $this->input->post("fuel"),
                     'Gear' =>  $this->input->post("gear"),
                     'Mileage' =>  $this->input->post("mile"),
                     'License' =>  $this->input->post("license"),
@@ -58,7 +57,9 @@ class Owner extends CI_Controller {
                     'Carbody' =>  $this->input->post("carbody"),
                     'idStatus' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
-                    'id_Gen' => $this->input->post("Gen")
+                    'id_Gen' => $this->input->post("Gen"),
+                    'idFuel' => $this->input->post("fuel2"),
+                    'idFuel2' => $this->input->post("fuel4")
                    
                 );
             
@@ -114,12 +115,33 @@ class Owner extends CI_Controller {
     }
     public function selectfuel($g)
     {?>
-        <option value="">เลือกชนิดเชื้อเพลิง</option>
+        <option value="">เลือกประเภทเชื้อเพลิงที่ 1</option>
         <?php
         $this->db->select('*');
         $this->db->from('Generation');
-        $this->db->join('Fuel', 'Fuel.idFuel = Generation.idFuel');
+        $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Generation.id_Type_Fuel');
         $this->db->where('id_Gen',$g);
+        $sq = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['id_TypeFuel'] ?>"><?php echo $he['Name_Type_Fuel'] ?></option>
+        
+    <?php }
+								  
+						
+    }
+    public function selectfuel2($gmm)
+    {?>
+        <option value="">เลือกเชื้อเพลิงชนิดแรก</option>
+        <?php
+        
+        $this->db->select('*');
+        $this->db->from('Fuel');
+        $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Fuel.id_Type_Fuel');
+        $this->db->where('id_TypeFuel',$gmm);
         $sq = $this->db->get();
         $ro = $sq->result_array();
         foreach($sq->result_array()
@@ -132,7 +154,27 @@ class Owner extends CI_Controller {
 								  
 						
     }
-   
+    public function selectfuel3($gq)
+    {?>
+        <option value="">เลือกเชื้อเพลิงชนิดที่ 2</option>
+        <?php
+        
+        $this->db->select('*');
+        $this->db->from('Fuel2');
+        $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Fuel2.id_Type_Fuel');
+        $this->db->where('id_TypeFuel',$gq);
+        $sq = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['idFuel2'] ?>"><?php echo $he['Name_Fuel2'] ?></option>
+        
+    <?php }
+								  
+						
+    }
     
 
 }

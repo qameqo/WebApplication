@@ -11,6 +11,9 @@
                     $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
                     $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
                     $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+                    $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
+                    $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
+                    $this->db->join('Fuel2', 'Carregis.idFuel2 = Fuel2.idFuel2');
                     $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
                     $this->db->where('idCarregis',$idc);
                     $query = $this->db->get();
@@ -41,11 +44,15 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
-                                <td width="70%"><?php echo $data['Seat'];?></td>
+                                <td width="70%"><?php echo $data['Number_Seat'];?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>เชื้อเพลิง</label></td>
-                                <td width="70%"><?php echo $data['Fuel'];?></td>
+                                <td width="30%"><label>เชื้อเพลิงที่ 1</label></td>
+                                <td width="70%"><?php echo $data['Name_Fuel'];?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>เชื้อเพลิงที่ 2</label></td>
+                                <td width="70%"><?php echo $data['Name_Fuel2'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>

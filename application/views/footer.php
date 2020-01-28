@@ -89,6 +89,40 @@ jQuery(function(){
               }
           );
 
+          var val = $("#gen1").val()
+
+          $.get("<?=base_url('Owner/selectfuel/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel3").html(data)
+
+              }
+          );
+
+      }
+      function Change_Fuel()
+      {
+          var val = $("#fuel1").val()
+          
+          $.get("<?=base_url('Owner/selectfuel2/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel2").html(data)
+
+              }
+          );
+      }
+      function Change_Fuelly()
+      {
+          var val = $("#fuel3").val()
+          
+          $.get("<?=base_url('Owner/selectfuel3/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel4").html(data)
+
+              }
+          );
       }
 
       // Year Picker 

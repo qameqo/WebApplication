@@ -156,12 +156,9 @@
 							</select>
 						</div>
 						<div class="col-sm mb-1">
-							<label for="exampleFormControlSelect1">ชนิดเชื้อเพลิง</label>
-							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel"
-								id="fuel1" required>
-								<option value="">เลือกชนิดเชื้อเพลิง</option>
-								
-							</select>
+						<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
+						<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="carbody"
+							required>
 						</div>
 					</div>
 					<div class="row">
@@ -360,11 +357,43 @@
 						</select>
 					</div>
 					<div class="col-sm">
-						<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-						<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="carbody"
-							required>
+					<label for="exampleFormControlSelect1">ประเภทเชื้อเพลิงที่ 1</label>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel1"
+							onChange="Change_Fuel()" id="fuel1" required>
+								<option value="">เลือกประเภทเชื้อเพลิงที่ 1</option>
+								
+							</select>
 					</div>
 				</div>
+				<div class="row">
+						<div class="col-sm mb-1">
+						<label for="exampleFormControlSelect1">เชื้อเพลิงที่ 1</label>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel2"
+							 id="fuel2" required>
+								<option value="">เลือกเชื้อเพลิงชนิดแรก</option>
+								
+							</select>
+						</div>
+						<div class="col-sm mb-1">
+						<label for="exampleFormControlSelect1">ประเภทเชื้อเพลิงที่ 2</label>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel3"
+							onChange="Change_Fuelly()" id="fuel3" required>
+								<option value="">เลือกประเภทเชื้อเพลิงที่ 2</option>
+								
+							</select>
+							<p style="color:red;" required>* หากไม่มีให้ระบุชนิดเดิมซ้ำ</p>
+						</div>
+						<div class="col-sm mb-1">
+						<label for="exampleFormControlSelect1">เชื้อเพลิงที่ 2</label>
+							<select class="form-control selectpicker" data-style="btn btn-link" name="fuel4"
+								id="fuel4" required>
+								<option value="">เลือกเชื้อเพลิงชนิดที่ 2</option>
+								
+							</select>
+							<p style="color:red;">* หากไม่มีให้ระบุชนิดเดิมซ้ำ</p>
+						</div>
+					</div>
+				
 				<div class="row">
 					<div class="col-sm mb-1">
 						
@@ -372,13 +401,13 @@
 							id="yearlicense" name="licenseyear" required> -->
 					</div>
 					<div class="col-sm mb-1">
-					<br>
+					
 					<button class="btn btn-Danger btn-lg" style="background-color: #F60200;"
 								type="submit">บันทึกและดำเนินการต่อ</button>
 					</div>
 					<div class="col-sm">
 						<div class="box__input">
-							<br>
+						
 							
 						</div>
 					</div>
