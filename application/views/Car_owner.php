@@ -381,7 +381,7 @@
 								<option value="">เลือกประเภทเชื้อเพลิงที่ 2</option>
 								
 							</select>
-							<p style="color:red;" required>* หากไม่มีให้ระบุชนิดเดิมซ้ำ</p>
+							<p style="color:red;" required>* หากไม่มีให้ระบุประเภทเดิมซ้ำ</p>
 						</div>
 						<div class="col-sm mb-1">
 						<label for="exampleFormControlSelect1">เชื้อเพลิงที่ 2</label>
