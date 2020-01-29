@@ -13,7 +13,6 @@
                     $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
                     $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
                     $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
-                    $this->db->join('Fuel2', 'Carregis.idFuel2 = Fuel2.idFuel2');
                     $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
                     $this->db->where('idCarregis',$idc);
                     $query = $this->db->get();
@@ -47,12 +46,8 @@
                                 <td width="70%"><?php echo $data['Number_Seat'];?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>เชื้อเพลิงที่ 1</label></td>
+                                <td width="30%"><label>เชื้อเพลิง</label></td>
                                 <td width="70%"><?php echo $data['Name_Fuel'];?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>เชื้อเพลิงที่ 2</label></td>
-                                <td width="70%"><?php echo $data['Name_Fuel2'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>
@@ -86,11 +81,14 @@
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($data['Name_Status']== 'รออนุมัติ')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $data['Name_Status'];  
-                                    echo '</span>&nbsp;&nbsp;&nbsp;&nbsp;';
-                                    echo '<button type="submit" class="btn btn-danger">ยกเลิกการลงทะเบียน</button>';
-                                    echo '</td>';
+                                    echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">'; ?>
+                                    <?php echo $data['Name_Status']; ?>
+                                    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="<?php echo base_url('Dataregis2/can/'.$idc);?>"
+                                    onclick="return confirm('คุณต้องการที่จะยกเลิกใช่หรือไม่ ?')"
+                                    class="btn btn-danger btn-sm">ยกเลิกการลงทะเบียน</a>
+                                    </td>
+                                    <?php
                                 }
                                 else if ($data['Name_Status']== 'อนุมัติ') 
                                 {
@@ -228,7 +226,6 @@
                            
                         </table>
                     </div>
-
                     <!-- <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value=""/> -->
                     <!-- // echo $rs->idCarregis;  -->
                     <!--  //if ($rs->Status == 'ผ่าน') {
@@ -239,8 +236,7 @@
                         // echo '<input type="submit" name="Status" id="Status" value="ไม่ผ่าน" class="btn btn-danger mt-5" style="font-size:20px;" required>';
                         // echo '<button type="submit" class="btn btn-success mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยืนยันหรือไม่ ?");">ผ่าน</button>';
                     //} -->
-
-
+                    
                 </form>
             </div>
         </div>

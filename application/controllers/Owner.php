@@ -58,8 +58,7 @@ class Owner extends CI_Controller {
                     'idStatus' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
                     'id_Gen' => $this->input->post("Gen"),
-                    'idFuel' => $this->input->post("fuel2"),
-                    'idFuel2' => $this->input->post("fuel4")
+                    'idFuel' => $this->input->post("fuel2")
                    
                 );
             
@@ -115,7 +114,7 @@ class Owner extends CI_Controller {
     }
     public function selectfuel($g)
     {?>
-        <option value="">เลือกประเภทเชื้อเพลิงที่ 1</option>
+        <option value="">เลือกประเภทเชื้อเพลิง</option>
         <?php
         $this->db->select('*');
         $this->db->from('Generation');
@@ -135,7 +134,7 @@ class Owner extends CI_Controller {
     }
     public function selectfuel2($gmm)
     {?>
-        <option value="">เลือกเชื้อเพลิงชนิดแรก</option>
+        <option value="">เลือกเชื้อเพลิง</option>
         <?php
         
         $this->db->select('*');

@@ -185,6 +185,7 @@
  					</div>
  					<div class="row">
  						<div class="col-sm">
+						 	<H5 style="color: red;">* กรุณาอัปโหลดเอกสารให้ครบ</H5>
  							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
  								data-toggle="modal" data-target="#modal-default">
  								<p style="color:red;"><u>เอกสารหลักฐานยืนยันรถยนต์</u></p>

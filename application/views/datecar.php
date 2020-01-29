@@ -31,7 +31,6 @@
                     <div class="col-sm">
                         <span style="color:red;">* กำหนดส่งรถภายใน 3 วัน</span>
                     </div>
-
                 </div>
                 <br>
                 <div class="row">

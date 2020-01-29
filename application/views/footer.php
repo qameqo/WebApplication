@@ -113,18 +113,6 @@ jQuery(function(){
               }
           );
       }
-      function Change_Fuelly()
-      {
-          var val = $("#fuel3").val()
-          
-          $.get("<?=base_url('Owner/selectfuel3/')?>"+val, 
-              function (data) {
-                  
-                $("#fuel4").html(data)
-
-              }
-          );
-      }
 
       // Year Picker 
     
