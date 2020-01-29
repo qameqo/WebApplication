@@ -65,6 +65,7 @@ class Manager_car_price_model extends CI_Model
                 'Name_Gen' => $upper,
                 'Price' => $this->input->post('Price'),
                 'idBrand' => $this->input->post('idBrand'),
+                'id_Seat' => $this->input->post('id_Seat')
             );
     
             $query=$this->db->insert('Generation',$data);

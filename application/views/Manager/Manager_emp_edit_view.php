@@ -43,6 +43,19 @@
                                 <option value="1">พนักงาน</option>
                                 <option value="2">ช่างซ่อมบำรุง</option>
                                 <option value="3">เจ้าหน้าที่ประกัน</option>
+                                <option value=""><?php echo $rs_edit->Name_position; ?></option>
+                                <?php 
+  									$this->db->select('*');
+								  $sql = $this->db->get('Empployee_position');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $he)
+								 {
+									?>
+                                <option value="<?php echo $he['idBrand'] ?>"><?php echo $he['Name_Brand'] ?></option>
+                                <?php }
+								  
+							    ?>
                             </select>
                         </div>
                         <div class="col">

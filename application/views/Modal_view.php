@@ -154,7 +154,7 @@
                                 <option value="<?php echo $he['idBrand'] ?>"><?php echo $he['Name_Brand'] ?></option>
                                 <?php }
 								  
-							?>
+							    ?>
                             </select>
                         </div>
 
@@ -163,6 +163,28 @@
                             <input type="text" name="Name_Gen" id="Name_Gen" class="form-control" placeholder="รุ่น"
                                 value="">
                         </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="exampleFormControlSelect1">ที่นั่ง</label>
+                            <select class="form-control selectpicker" data-style="btn btn-link" name="id_Seat"
+                                id="id_Seat" onChange="Change_Seat()" required>
+                                <option value="">เลือกที่นั่ง</option>
+                                <?php 
+  									$this->db->select('*');
+								  $sql = $this->db->get('Seat');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $he)
+								 {
+									?>
+                                <option value="<?php echo $he['id_Seat'] ?>"><?php echo $he['id_Seat'] ?></option>
+                                <?php }
+								  
+							    ?>
+                                
+                            </select>
+                        </div>
+
                         <div class="col-12 mt-3">
                             <label for="Brand">ราคา</label>
                             <input type="text" name="Price" pattern="^(0|[1-9][0-9]*)$" id="Price" class="form-control"
