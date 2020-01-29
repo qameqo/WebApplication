@@ -34,7 +34,7 @@
     <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-danger" color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate active">
-                <a class="navbar-brand active" href="<?php echo site_url(); ?>Emp">G Dragon Autotech</a>
+                <a class="navbar-brand active" href="<?php echo site_url(); ?>Tech">G Dragon Autotech</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
