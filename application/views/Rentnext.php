@@ -272,6 +272,19 @@
             <div class="row">
                 <div class="col-sm text-left">
                     <div class="label-bot">
+                    <div class="radio">
+
+									<label style="padding-right: 8px;">
+										<input type="radio" name="ins" value="25" checked="checked" id="stand"
+											data-parsley-multiple="transmission">
+										<span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
+									</label>
+									<label>
+										<input type="radio" name="ins" value="30"
+											data-parsley-multiple="transmission" id="pre">
+										<span style="vertical-align: top;">ประกันภัยพิเศษ</span>
+									</label>
+                    </div>
                     </div>
                 </div>
             </div>

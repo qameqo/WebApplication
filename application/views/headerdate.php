@@ -3,9 +3,10 @@
 <script type='text/javascript' src="<?php echo base_url(); ?>game/js/jquery.min.js"></script>
 
   <script>
-        
-         var dateFirst = new Date("11/25/2017");
-         var dateSecond = new Date("11/28/2017");
+         var x = document.getElementById("datetimepickerstart");
+         var y = document.getElementById("datetimepickerend");
+         var dateFirst = new Date(x);
+         var dateSecond = new Date(y);
 
          // time difference
          var timeDiff = Math.abs(dateSecond.getTime() - dateFirst.getTime());
@@ -14,7 +15,7 @@
          var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
          // difference
-         alert(diffDays);
+         alert (diffDays);
       </script>
 </head>
 <body>
