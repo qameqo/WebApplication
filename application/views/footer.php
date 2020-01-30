@@ -147,30 +147,29 @@ $('input:radio[name="ins"]').change(
 <script type='text/javascript'>
 $("input:radio[name='ins']").change(function(){
     
-    if(this.value =='30'){
-      console.log('30');
+    if(this.value =='0.25'){
+      console.log('0.25');
         //$('#select-table > .roomNumber').attr('enabled',false);
     }else
     {
-      console.log('25');
+      console.log('0.3');
     }
 });
 </script>
 
 <script>
-  $("input[name='ins']").change(function(){
-         var x = document.getElementById("datetimepickerstart");
-         var y = document.getElementById("datetimepickerend");
-         var dateFirst = new Date(x);
-         var dateSecond = new Date(y);
-
+  $("input[name='end']").change(function(){
+         var x = document.getElementById("datetimepickerstart").value; 
+         var y = document.getElementById("datetimepickerend").value;
+         var dateFirst = moment(x, 'YYYY/MM/DD');
+         var dateSecond = moment(y, 'YYYY/MM/DD');
+        console.log (moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays());
+        console.log(x,y);
          // time difference
-         var timeDiff = Math.abs(dateSecond.getTime() - dateFirst.getTime());
-
+        
          // days difference
-         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
          // difference
-         alert (diffDays);
-  }
+         
+  })
 </script>
