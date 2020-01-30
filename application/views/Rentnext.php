@@ -146,7 +146,6 @@
             $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
             $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
             $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
-            $this->db->join('Fuel2', 'Carregis.idFuel2 = Fuel2.idFuel2');
             $this->db->where('idCarregis',$idc);
             $query = $this->db->get();
             $qq = $query->result_array();
@@ -251,14 +250,7 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <div class="row">
-                    <div class="col-sm">
-                            <p>เชื้อเพลิงที่ 2</p>
-                        </div>
-                        <div class="col-sm">
-                            <?php echo $data['Name_Fuel2'];?>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div class="col-sm">
