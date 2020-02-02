@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
-                <h4 class="title">Show Detail Car Register</h4>
+                <h4 class="title">รายละเอียดรถยนต์ลงทะเบียนปล่อยเช่า</h4>
 
                 <form action="<?php echo site_url('Manager_car_regis/add_status_2');?>" method="POST" class="form-horizontal">
 
@@ -27,11 +27,11 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
-                                <td width="70%"><?php echo $rs->Seat; ?></td>
+                                <td width="70%"><?php echo $rs->id_Seat; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เชื้อเพลิง</label></td>
-                                <td width="70%"><?php echo $rs->Fuel; ?></td>
+                                <td width="70%"><?php echo $rs->Name_Fuel; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>
@@ -180,23 +180,17 @@
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
+                    <?php if ($rs->idStatus == '4') { ?>
+
                     <div class="row justify-content-center">
                         <div class="col-3">
                             <label class="label mt-5">แก้ไขราคาใหม่</label>
                             <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
                         </div>
-                    </div>
-                    
-                    <?php 
-						
-                    // $this->db->where( 'idCarregis',$idc);
-                    
-                    ?>
+                    </div>                 
 
                     
-
-                    <?php if ($rs->idStatus == '4') {
-                        
+                    <?php
 
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);

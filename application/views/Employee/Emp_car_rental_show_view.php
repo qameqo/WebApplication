@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
-                <h4 class="title">Show Detail Car Rental</h4>
+                <h4 class="title">รายละเอียดการเช่ารถยนต์</h4>
 
 
                     <div class="table-responsive">

@@ -2,7 +2,7 @@
     <div style="background-color: white; border-radius: 5px;">
         <div class="row  justify-content-center">
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
-                <h4 class="title">Show Detail Car Register</h4>
+                <h4 class="title">รายละเอียดรถยนต์ลงทะเบียนปล่อยเช่า</h4>
 
                 
 
@@ -27,11 +27,11 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
-                                <td width="70%"><?php echo $rs->Seat; ?></td>
+                                <td width="70%"><?php echo $rs->id_Seat; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เชื้อเพลิง</label></td>
-                                <td width="70%"><?php echo $rs->Fuel; ?></td>
+                                <td width="70%"><?php echo $rs->Name_Fuel; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>

@@ -41,6 +41,7 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
+        
     }
 
     public function add_status()
@@ -98,6 +99,7 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
+
     }
     public function index_3()
     {
@@ -114,6 +116,7 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
+
     }
 }
 
