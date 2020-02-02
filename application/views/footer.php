@@ -113,6 +113,7 @@ jQuery(function(){
               }
           );
       }
+     
 
       // Year Picker 
     
@@ -132,4 +133,43 @@ jQuery(function(){
 
   $('img').EZView();
 });
+</script>
+
+<!-- <script type='text/javascript'>
+$('input:radio[name="ins"]').change(
+    function(){
+        if ($(this).is(':checked') && $(this).val() == 'Yes') {
+            // append goes here
+            alert("Allot Thai Gayo Bhai");
+        }
+    });
+</script> -->
+<script type='text/javascript'>
+$("input:radio[name='ins']").change(function(){
+    
+    if(this.value =='0.25'){
+      console.log('0.25');
+        //$('#select-table > .roomNumber').attr('enabled',false);
+    }else
+    {
+      console.log('0.3');
+    }
+});
+</script>
+
+<script>
+  $("input[name='end']").change(function(){
+         var x = document.getElementById("datetimepickerstart").value; 
+         var y = document.getElementById("datetimepickerend").value;
+         var dateFirst = moment(x, 'YYYY/MM/DD');
+         var dateSecond = moment(y, 'YYYY/MM/DD');
+        console.log (moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays());
+        console.log(x,y);
+         // time difference
+        
+         // days difference
+
+         // difference
+         
+  })
 </script>
