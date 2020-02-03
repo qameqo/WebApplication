@@ -215,6 +215,8 @@
  											<p>3.เล่มทะเบียนรถยนต์</p>
  											<img src="<?php echo base_url('./pic_tee/เล่มทะเบียนรถ.jpg');?>"
  												alt="ภาพตัวอย่าง" height="70" width="85" />
+												 <br>
+												 <br>
  											<p style="color:red; text-align:center">* กรุณาอัปโหลดรูปภาพตามจำนวนหลักฐาน</p>
  										</div>
  										<div class="modal-footer">
