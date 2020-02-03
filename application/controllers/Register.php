@@ -53,6 +53,19 @@ class Register extends CI_Controller {
        
         }
     }
+
+    public function checkusname()
+    {
+        $this->load->model("check");
+        if ($this->check->is_username_available($_POST["username"])) {
+            // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>';
+            echo "true";
+        } else {
+            // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>';
+            echo "false";
+        }
+        
+    }
 }
 
 /* End of file Controllername.php */

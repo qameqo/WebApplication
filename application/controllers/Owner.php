@@ -22,6 +22,7 @@ class Owner extends CI_Controller {
             echo "<script>";
             echo "alert('ทะเบียนรถนี้มีผู้ใช้แล้ว');";
             echo "window.location.href = '". base_url(). "Owner/show/$ids'";
+            echo "history.back()";
             echo "</script>";
             // redirect('Owner/show/'.$ids);
             // echo "ทะเบียนซ้ำ";
@@ -72,7 +73,32 @@ class Owner extends CI_Controller {
             }        
         }   
     }
+    public function checklicense()
+    {
+        $this->load->model("check");
+        if ($this->check->is_license_available($_POST["license"])) {
+            // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>';
+            echo "true";
+        } else {
+            // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>';
+            echo "false";
+        }
+        
+    }
 
+    public function checkcarbody()
+    {
+        $this->load->model("check");
+        if ($this->check->is_carbody_available($_POST["carbody"])) {
+            // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> หมายเลขตัวถังรถนี้ได้ถูกใช้ไปแล้ว</label>';
+            echo "true";
+        } else {
+            // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> หมายเลขตัวถังรถนี้สามารถใช้ได้</label>';
+            echo "false";
+        }
+        
+    }
+    
     
     
     public function select($ga)

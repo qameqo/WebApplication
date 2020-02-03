@@ -1,8 +1,3 @@
-<input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;" name="start">
-
-<input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;" name="end">
-
-
 <form id="dis" action="Firstpage">
 <h1>Disclaimer</h1>
 <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
