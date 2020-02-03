@@ -27,6 +27,8 @@
 					<div class="col-sm">
 						<label class="bmd-label-floating">Username (EN)</label>
 						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[A-Za-z]).{5,}" title="กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป" required>
+						<label class="text-danger" hidden id="fai"><span class="glyphicon glyphicon-remove"></span> Username นี้ได้ถูกใช้ไปแล้ว</label>
+						<label class="text-success" hidden id="suc"><span class="glyphicon glyphicon-ok"></span> Username นี้สามารถใช้ได้</label>
 						<p style="color:red; font-size:10px;">* กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป</p>
 					</div>
 					<div class="col-sm">
@@ -63,10 +65,42 @@
 					</div>
 					<div class="row">
 					<div class="col-sm">
-						<button class="btn btn-success" type="submit"> Register</botton>
+						<button class="btn btn-success" type="submit" id="go" disabled> Register</botton>
 					</div>
-			</form>
+			
 		</div>
 	</div>
 </div>
-
+</form>
+<script>
+	$(document).ready(function(){  
+      $('#username').change(function(){  
+           var username = $('#username').val();  
+           if(username != '')  
+           {  
+                $.ajax({  
+                     url:"<?php echo base_url(); ?>Register/checkusname",  
+                     method:"POST",  
+                     data:{username:username},
+                     success:function(data){  
+                        //   $('#license_result').html(data);
+					 console.log(data);
+					 if(data.trim() === "true"){
+						
+						$('#fai').removeAttr('hidden')
+						$('#suc').attr('hidden',true)
+						$('#go').attr('disabled',true)
+					 }else
+					 {
+						
+						$('#suc').removeAttr('hidden')
+						$('#fai').attr('hidden',true)
+						$('#go').removeAttr('disabled')
+						
+					 }
+                     }  
+                });  
+           }  
+      });  
+ });
+ </script>

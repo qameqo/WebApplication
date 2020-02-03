@@ -33,7 +33,19 @@ class check extends CI_Model {
               return false;  
          }  
     }
-    
+    function is_username_available($username)  
+    {  
+         $this->db->where('Username', $username);  
+         $query = $this->db->get("Member");  
+         if($query->num_rows() > 0)  
+         {  
+              return true;  
+         }  
+         else  
+         {  
+              return false;  
+         }  
+    }
 
 }
 

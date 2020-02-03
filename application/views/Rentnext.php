@@ -75,7 +75,7 @@
                     <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
                 </div>
                 <div class="col-sm text-right">
-                <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;" name="end">
+                <input id="datetimepickerend" type="text" value="<?php echo date('Y/m/d'); ?>" style="width:120px; text-align:center;" name="end">
                 </div>
             </div>
             <div class="row">
@@ -240,7 +240,7 @@
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>เชื้อเพลิงที่ 1</p>
+                            <p>เชื้อเพลิง</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Name_Fuel'];?>
