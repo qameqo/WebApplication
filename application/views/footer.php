@@ -163,14 +163,31 @@ $("input:radio[name='ins']").change(function(){
          var y = document.getElementById("datetimepickerend").value;
          var dateFirst = moment(x, 'YYYY/MM/DD');
          var dateSecond = moment(y, 'YYYY/MM/DD');
-        console.log (moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays());
+         var ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
+        console.log(ngo);
         console.log(x,y);
-         // time difference
-        
-         // days difference
-
-         // difference
-         
+        console.log(<?php echo $idc ?>);
+        var id = <?php echo $idc ?>;
+  $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
+              function (data) {
+                  
+                $("#total").text(data * ngo + " บาท")
+                console.log(data);
+              }
+          );
   })
 </script>
+ 
+ <script>
+ function Change_date()
+      {
+          var val = $("#datetimepickerend").val()
+          
+          $.get("<?=base_url('Rentnext/selectdate/')?>"+val, 
+              function (data) {
+                  
+                $("#price").html(data)
 
+              }
+          );
+      }</script>

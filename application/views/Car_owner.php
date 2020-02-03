@@ -451,7 +451,6 @@
 						$('#success2').removeAttr('hidden')
 						$('#fail2').attr('hidden',true)
 						$('#game').removeAttr('disabled')
-						
 					 }
                      }  
                 });  

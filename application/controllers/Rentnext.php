@@ -39,7 +39,7 @@ class Rentnext extends CI_Controller {
             $object = array(
 
                 'Datebooking' => $da,
-                'totalprice' => $kottotal,
+                'totalprice' => $this->input->post('total'),
                 'Carownerincome' => $owner,
                 'Companyincome' => $company,
                 'idstatus'=>"9",
@@ -73,6 +73,23 @@ class Rentnext extends CI_Controller {
         // echo $qq['idCarregis'];
         // echo $qq['id_Gen'];
         // redirect('Owner2/show/'. $qq['id_Gen'].'/'. $qq['idCarregis']);
+    }
+    public function selectdate($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice'];
+        $fg = 0.25;
+        $total = $gh * $fg;
+        $total2 = $total + $gh;
+        echo $total2;
+        
+
+        
+
     }
 
 }

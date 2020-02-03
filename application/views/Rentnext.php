@@ -75,7 +75,7 @@
                     <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
                 </div>
                 <div class="col-sm text-right">
-                <input id="datetimepickerend" type="text" value="<?php echo date('Y/m/d'); ?>" style="width:120px; text-align:center;" name="end">
+                <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;" name="end">
                 </div>
             </div>
             <div class="row">
@@ -84,13 +84,13 @@
                 </div>
                 <div class="col-sm">
                     <?php foreach($q1 as $data){ ?>
-                    <p style="text-align:right;"><?php echo number_format($data['RentalPrice']);?>&nbsp;บาท</p>
+                    <p style="text-align:right;" id="price"><?php echo number_format($data['RentalPrice']);?>&nbsp;บาท</p>
                     <?Php } ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <p style="text-align:Left;">ประกันภัย</p>
+                    <p style="text-align:Left;">ประกันภัย/วัน<p>
                 </div>
                 <div class="col-sm">
                     <?php foreach($q1 as $data){
@@ -99,7 +99,7 @@
                         $game = 100;
                         $total = $ga * $gam / $game;
                         ?>
-                    <p style="text-align:right;" name="ins"><?php  echo number_format($total);?>&nbsp;บาท</p>
+                    <p style="text-align:right;" name="ins" id="ins"><?php  echo number_format($total);?>&nbsp;บาท</p>
                     <?php } ?>
                 </div>
             </div>
@@ -110,24 +110,11 @@
                     <p style="text-align:left; color:red; font-size:15px;">รวม vat 7 % แล้ว</p>
                 </div>
                 <div class="col-sm">
-                    <?php foreach($q1 as $data){
-                        $ga = $data['RentalPrice'];
-                        $gam = 25;
-                        $game = 100;
-                        //ราคาประกัน
-                        $total = $ga * $gam / $game;
-                        //ราคารวม
-                        $total2 = $ga + $total;
-                        //ราคา Vat
-                        $vat = $total2 * 7/100;
-                        //ราคารวม + vat แล้ว
-                        $total3 = $total2 + $vat;
+                   
+                    <label style="text-align:right; color:red; font-size:30px;" id="total">
+                        &nbsp;บาท</label>
 
-                        ?>
-                    <p style="text-align:right; color:red; font-size:35px;">
-                        <?php  echo number_format($total3);?>&nbsp;บาท</p>
-
-                    <?php } ?>
+                    
                 </div>
             </div>
             <div class="row justify-content-center">

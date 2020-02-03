@@ -46,6 +46,17 @@ class check extends CI_Model {
               return false;  
          }  
     }
+    function calculate($idc)
+    {
+         $this->db->select('*');
+         $this->db->from('Carregis');
+         $this->db->where('idCarregis',$idc);
+         $query = $this->db->get();
+          return $query;
+     
+
+         
+    }
 
 }
 
