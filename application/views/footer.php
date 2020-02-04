@@ -31,6 +31,7 @@
 jQuery(function(){
  jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
+  minDate:'-1970/01/01',
   onShow:function( ct ){
    this.setOptions({
     maxDate:jQuery('#datetimepickerend').val()?jQuery('#datetimepickerend').val():false
@@ -40,6 +41,7 @@ jQuery(function(){
  });
  jQuery('#datetimepickerend').datetimepicker({
   format:'Y/m/d',
+  minDate:('#datetimepickerstart'),
   maxDate:'+1970/01/05',
   onShow:function( ct ){
    this.setOptions({
