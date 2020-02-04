@@ -154,6 +154,18 @@
                                    </td>
                                    <?php
                                 }
+                                else if($data['Name_Status']== 'จองรถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }
+                                else if($data['Name_Status']== 'กำลังใช้รถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }  
                                 ?>
                             </tr>
                             <tr>

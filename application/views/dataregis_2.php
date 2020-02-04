@@ -134,7 +134,27 @@
                                     echo'<td width="70%"><span class="badge badge-secondary" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($data['Name_Status']== 'รอการชำระเงินมัดจำ')
+                                { ?>
+                                    <td><span class="badge badge-primary" style="font-size:13px;">รอการชำระเงินมัดจำ</span>&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-primary btn-sm" style="font-size:13px; color:white;"
+                                   href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a>&nbsp;&nbsp;
+                                   <button type="submit" class="btn btn-danger">ยกเลิกการจอง</button>
+                                   </td>
+                                   <?php
+                                }
+                                else if($data['Name_Status']== 'จองรถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }
+                                else if($data['Name_Status']== 'กำลังใช้รถ')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }   ?>
 
                             <?php 
                      

@@ -108,6 +108,18 @@
                                     href="<?php echo base_url('Deposit/de/'.$idr);?>">ชำระเงินมัดจำ</a></td>
                                     <?php
                                 }
+                                else if($data['idstatus']== '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }
+                                else if($data['idstatus']== '11')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }  
                                 ?>
                             
                                 <td>
