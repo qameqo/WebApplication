@@ -39,6 +39,21 @@ class Emp_rental extends CI_Controller {
         $this->load->view('Employee/Footer_emp');
     } 
 
+    public function index_3()
+    {   
+        $data['query']=$this->Emp_rental_model->show_rental();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit; 
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_car_rental_view_3', $data);
+        $this->load->view('Employee/Footer_emp');
+    } 
+
     public function show_rental($idRental)
     {
         $data['rs']=$this->Emp_rental_model->read_rental($idRental);
@@ -76,6 +91,11 @@ class Emp_rental extends CI_Controller {
     public function add_status()
     {
         $this->Emp_rental_model->add_status();
+    }
+
+    public function add_status_2()
+    {
+        $this->Emp_rental_model->add_status_2();
     }
 
     public function add_not_passed_rent()

@@ -36,7 +36,7 @@
 
 							<tr>
 
-                                <td><?php echo $rs->idCarregis; ?></td>
+                                <td width="5%"><?php echo $rs->idCarregis; ?></td>
 
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
@@ -96,11 +96,23 @@
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($rs->idStatus == '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idStatus == '11')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }  ?>
 
 								<td>
 								
-                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm">View</a>
+                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
                     
 								</td>
 							</tr>

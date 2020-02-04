@@ -36,7 +36,7 @@
 
 							<tr>
 
-                                <td><?php echo $rs->idRental; ?></td>
+                                <td width="5%"><?php echo $rs->idRental; ?></td>
 
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->Datebooking; ?></td>
@@ -95,11 +95,113 @@
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '11')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
                                 } ?>
 
                                 <td>
 								
-                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm">View</a>
+                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+                    
+								</td>
+							</tr>
+
+                        <?php } ?>
+
+                        <?php
+                            if ($rs->idstatus == '9') 
+                            {
+                                                                                       
+                            ?>
+
+							<tr>
+
+                                <td width="5%"><?php echo $rs->idRental; ?></td>
+
+								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
+								<td><?php echo $rs->Datebooking; ?></td>
+								<td><?php echo $rs->PriceCar; ?></td>
+
+                                <?php if($rs->idstatus == '1')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->idstatus == '2') 
+                                {
+                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->idstatus == '3') 
+                                {
+                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '4')
+                                {
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if ($rs->idstatus == '5') 
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '6')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '7')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '8')
+                                {
+                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '9')
+                                {
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '11')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                } ?>
+
+                                <td>
+								
+                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
                     
 								</td>
 							</tr>

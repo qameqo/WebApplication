@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์</h3>
+                        <h3 class="panel-title">จัดการข้อมูลการรับรถยนต์เช่า</h3>
                     </div>
                 </div>
                 
@@ -29,19 +29,15 @@
                         <?php foreach ($query as $rs) { ?>
 
                         <?php 
-                            if ($rs->idstatus == '1') 
+                            if ($rs->idstatus == '10') 
                             { 
-                            }
-                            elseif ($rs->idstatus == '9') 
-                            {
-                            }
-                            else
-                            {
+                                if ($rs->StartDate == date('Y-m-d')) {
+                            
                         ?>
 
 							<tr>
 
-                                <td><?php echo $rs->idRental; ?></td>
+                                <td width="5%"><?php echo $rs->idRental; ?></td>
 
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->Datebooking; ?></td>
@@ -100,16 +96,28 @@
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($rs->idstatus == '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '11')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }?>
 
                                 <td>
 								
-                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm">View</a>
+                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายะละเอียด</a>
                     
 								</td>
 							</tr>
 
-                        <?php }} ?>
+                        <?php }}} ?>
 
 						</tbody>
 						<tfoot>

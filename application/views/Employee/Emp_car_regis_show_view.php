@@ -112,7 +112,19 @@
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($rs->idStatus == '10')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idStatus == '11')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }  ?>
                             </tr> 
                             
                             <?php
@@ -183,6 +195,10 @@
                     <?php if ($rs->idStatus == '4') { ?>
 
                     <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label class="label mt-5">ราคาทางร้าน</label>
+                            <input type="text" disabled name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
+                        </div>
                         <div class="col-3">
                             <label class="label mt-5">แก้ไขราคาใหม่</label>
                             <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">

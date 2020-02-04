@@ -34,7 +34,7 @@
                             <?php if ($rs->Row == '4') { }else{?>
 
 							<tr>
-								<td><?php echo $rs->id_Employee; ?></td>
+								<td width="5%"><?php echo $rs->id_Employee; ?></td>
 
 								<td><?php echo $rs->F_Name; ?></td>
 								<td><?php echo $rs->L_Name; ?></td>

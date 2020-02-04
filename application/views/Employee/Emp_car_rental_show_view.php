@@ -13,6 +13,14 @@
                                 <td width="70%"><?php echo $rs->idRental; ?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>ยี่ห้อ</label></td>
+                                <td width="70%"><?php echo $rs->Name_Brand; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รุ่น</label></td>
+                                <td width="70%"><?php echo $rs->Name_Gen; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>วันที่จอง</label></td>
                                 <td width="70%"><?php echo $rs->Datebooking; ?></td>
                             </tr>
@@ -88,7 +96,19 @@
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                } ?>
+                                }
+                                else if($rs->idstatus == '10')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idstatus == '11')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }  ?>
                             </tr> 
 
                             <?php 
@@ -143,18 +163,39 @@
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="2" style="font-size:20px;" required>';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="10" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
 
+                        // echo '<form action="'; 
+                        // echo site_url('Emp_rental/add_status/'.$rs->idRental); 
+                        // echo '" method="POST" class="form-horizontal">';
+                        // echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                        // echo $rs->idRental; 
+                        // echo '">';
+                        // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
+                        // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
+                        // echo '</form>';
+                                           
+                    }?>
+
+                    <?php 
+                        if($rs->idstatus == '10'){
+                        
                         echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status/'.$rs->idRental); 
+                        echo site_url('Emp_rental/add_status_2'); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="11" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
                                            
                     }?>

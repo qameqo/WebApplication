@@ -28,7 +28,6 @@
         .navbar-expand {
             -sm|-md|-lg|-xl
         }
-
     </style>
 
     <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-danger" color-on-scroll="100">
@@ -45,7 +44,7 @@
                 </button>
 
             </div>
-         
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -73,7 +72,9 @@
                             <a class="dropdown-item"
                                 href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการเช่ารถยนต์</a>
                             <a class="dropdown-item"
-                                href="<?php echo site_url(); ?>Emp_rental/index_2">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                                href="<?php echo site_url('Emp_rental/index_2');?>">จัดการข้อมูลการรับรถยนต์เช่า</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url('Emp_rental/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
                         </div>
                     </li>
                 </ul>
@@ -83,7 +84,7 @@
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
                             จัดการข้อมูลปัญหา
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">จัดการข้อมูลซ่อมรถยนต์</a>
                             <a class="dropdown-item" href="#">จัดการข้อมูลประกันรถยนต์ </a>
                         </div>

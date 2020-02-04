@@ -39,7 +39,7 @@
 
 							<tr>
 
-                                <td><?php echo $rs->idCarregis; ?></td>
+                                <td width="5%"><?php echo $rs->idCarregis; ?></td>
 
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
@@ -97,6 +97,18 @@
                                 else if($rs->idStatus == '9')
                                 {
                                     echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idStatus == '10')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->idStatus == '11')
+                                {
+                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 } ?>

@@ -26,6 +26,8 @@ class Emp_rental_model extends CI_Model
         $this->db->from('Rental');
         $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
         $this->db->join('Carregis', 'RentalDetail.idCarregis = Carregis.idCarregis');
+        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Rental.idMember = Member.id_Member');
         $this->db->join('Status_car', 'Rental.idstatus = Status_car.id_Status');
         // $this->db->join('Images3', 'Rental.idRental = Images3.idrent');
@@ -51,10 +53,19 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus'),
+            'idstatus' => $this->input->post('idstatus')
         );
 
-        $query=$this->db->update('Rental',$data);
+        $query_2=$this->db->update('Rental',$data);
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $data_2 = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idStatus' => $this->input->post('idstatus')
+        );
+
+        $query=$this->db->update('Carregis',$data_2);
 
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
@@ -74,6 +85,42 @@ class Emp_rental_model extends CI_Model
             echo "window.location.href = '". base_url(). "Emp_rental';";
             echo "</script>";
         }
+        // redirect('Manager_emp');
+    }
+
+    public function add_status_2()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+       
+        $data = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idstatus' => $this->input->post('idstatus')
+        );
+
+        $query_2=$this->db->update('Rental',$data);
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $data_2 = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idStatus' => $this->input->post('idstatus')
+        );
+
+        $query=$this->db->update('Carregis',$data_2);
+
+        $this->db->order_by('idRental', 'desc');
+        $query_2 =  $this->db->get('Rental', 1);
+        $qq = $query_2->row_array();
+
+        echo "<script>";
+        echo "alert('แก้ไขสถานะเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+        echo "</script>";
+        
         // redirect('Manager_emp');
     }
 
