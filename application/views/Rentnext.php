@@ -66,18 +66,28 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                    <input id="datetimepickerstart" type="text" value="<?php echo date('Y/m/d'); ?>"
+                    <input id="datetimepickerstart" type="text" value=""
                         style="width:120px; text-align:center;" name="start">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
                     <p style="text-align:Left;">วันส่งคืน</p>
-                    <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
+                  
                 </div>
                 <div class="col-sm text-right">
                     <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
                         name="end">
+                      
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    
+                    <p style="color:red; font-size:12px; ">* ไม่ให้จองรถล่วงหน้าเกิน 3 วัน</p>
+                </div>
+                <div class="col-sm text-right">
+                    <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
                 </div>
             </div>
             <div class="row">

@@ -32,21 +32,20 @@ jQuery(function(){
  jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
+  maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
-    maxDate:jQuery('#datetimepickerend').val()?jQuery('#datetimepickerend').val():false
    })
   },
   timepicker:false
  });
  jQuery('#datetimepickerend').datetimepicker({
   format:'Y/m/d',
-  minDate:('#datetimepickerstart'),
-  maxDate:'+1970/01/05',
   onShow:function( ct ){
    this.setOptions({
-    minDate:jQuery('#datetimepickerstart').val()?jQuery('#datetimepickerstart').val():false
-   })
+    minDate:jQuery('#datetimepickerstart').val()?jQuery('#datetimepickerstart').val():false,
+    maxDate:'+1970/01/05',
+   }) //.val(), 10)
   },
   timepicker:false
  });
