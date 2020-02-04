@@ -158,16 +158,18 @@ $("input:radio[name='ins']").change(function(){
 </script>
 
 <script>
+  var ngo = 0;
+  var id = 0;
   $("input[name='end']").change(function(){
          var x = document.getElementById("datetimepickerstart").value; 
          var y = document.getElementById("datetimepickerend").value;
          var dateFirst = moment(x, 'YYYY/MM/DD');
          var dateSecond = moment(y, 'YYYY/MM/DD');
-         var ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
+         ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
         console.log(ngo);
         console.log(x,y);
         console.log(<?php echo $idc ?>);
-        var id = <?php echo $idc ?>;
+        id = <?php echo $idc ?>;
 
           
 
@@ -181,53 +183,55 @@ $("input:radio[name='ins']").change(function(){
           );  
             $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
               function (data) {
-                var total = data * ngo; 
-                var game =  total.toFixed(0);
-                $("#totalvat").val(game)
+                var total1 = data * ngo; 
+                var game1 =  total1.toFixed(0);
+                $("#totalvat").val(game1)
                  } // vat
           );  
-    $("input:radio[name='ins']").change(function(){
-    
-    if(this.value =='1'){
-      $.get("<?=base_url('Rentnext/selectdate2/')?>"+id, 
-                function (data) {
-                  var total = data * ngo; 
-                  var game =  total.toFixed(0);
-                $("#ins").text(game + " บาท")
-                $("#totalins").val(game) // ประกันพื้นฐาน
-              }
-          ); 
-      $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
-              function (data) {
-                var total = data * ngo; 
-                var game =  total.toFixed(0);
-                $("#total").text(game + " บาท")
-                $("#total2").val(game)
-                 } // รวม
-          );  
-    }else
-    {
-      $.get("<?=base_url('Rentnext/selectdate5/')?>"+id, 
-                function (data) {
-                  var total = data * ngo; 
-                  var game =  total.toFixed(0);
-                $("#ins").text(game + " บาท")
-                $("#totalins").val(game) // ประกันพรีเมี่ยม
-                
-              }
-          ); 
-      $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
-              function (data) {
-                var total = data * ngo; 
-                var game =  total.toFixed(0);
-                $("#total").text(game + " บาท")
-                $("#total2").val(game)
-                 } // รวม
-          );  
-    }
-});
+          
+  });
 
-  })
+  $("input:radio[name='ins']").change(function(){
+        
+        if(this.value =='1'){
+          $.get("<?=base_url('Rentnext/selectdate2/')?>"+id, 
+                    function (data) {
+                      var total2 = data * ngo; 
+                      var game2 =  total2.toFixed(0);
+                    $("#ins").text(game2 + " บาท")
+                    $("#totalins").val(game2) // ประกันพื้นฐาน
+                  }
+              ); 
+          $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
+                  function (data) {
+                    var total3 = data * ngo; 
+                    var game3 =  total3.toFixed(0);
+                    $("#total").text(game3 + " บาท")
+                    $("#total2").val(game3)
+                    } // รวม
+              );  
+        }
+        else
+        {
+          $.get("<?=base_url('Rentnext/selectdate5/')?>"+id, 
+                    function (data) {
+                      var total4 = data * ngo; 
+                      var game4 =  total4.toFixed(0);
+                    $("#ins").text(game4 + " บาท")
+                    $("#totalins").val(game4) // ประกันพรีเมี่ยม
+                    
+                  }
+              ); 
+          $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
+                  function (data) {
+                    var total5 = data * ngo; 
+                    var game5 =  total5.toFixed(0);
+                    $("#total").text(game5 + " บาท")
+                    $("#total2").val(game5)
+                    } // รวม
+              );  
+        }
+    });
 </script>
  
  

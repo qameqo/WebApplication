@@ -269,7 +269,7 @@
                         <div class="radio">
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled>
+                                    disabled required>
                                 <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
@@ -295,7 +295,8 @@
                                         </div>
 
                                         <div class="modal-body text-left">
-                                            
+                                            <p>หากเกิดอุบัติเหตุที่ผู้เช่าเป็นฝ่ายผิด ผู้เช่าต้องชำระค่าเสียหายส่วนแรกจำนวน 3,000-50,000 บาท 
+                                            ขึ้นอยูกับความเสียหายและระยะเวลาการซ่อม หากรถยนต์ประสบอุบัติเหตุเสียหายหนัก หรือเสียหายทั้งคัน</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"
@@ -314,7 +315,7 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
-                                    disabled>
+                                disabled required >
                                 <span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
@@ -340,7 +341,7 @@
                                         </div>
 
                                         <div class="modal-body text-left">
-                                        
+                                            <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"

@@ -168,6 +168,7 @@ class Rentnext extends CI_Controller {
         $f5 = 0.3;
         $inspre = $gh * $f5; // ราคาประกัน
         echo $inspre; // ประกันพรีเมี่ยม
+
         
     }
     public function selectdate2($idc)
