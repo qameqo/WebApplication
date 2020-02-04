@@ -66,7 +66,8 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                <input id="datetimepickerstart" type="text" value="<?php echo date('Y/m/d'); ?>" style="width:120px; text-align:center;" name="start">
+                    <input id="datetimepickerstart" type="text" value="<?php echo date('Y/m/d'); ?>"
+                        style="width:120px; text-align:center;" name="start">
                 </div>
             </div>
             <div class="row">
@@ -75,7 +76,8 @@
                     <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
                 </div>
                 <div class="col-sm text-right">
-                <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;" name="end">
+                    <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
+                        name="end">
                 </div>
             </div>
             <div class="row">
@@ -84,7 +86,7 @@
                 </div>
                 <div class="col-sm">
                     <?php foreach($qq as $data) { ?>
-                    <p style="text-align:right;"  ><?php echo $data['RentalPrice']?>&nbsp;บาท</p>
+                    <p style="text-align:right;"><?php echo $data['RentalPrice']?>&nbsp;บาท</p>
                     <?php } ?>
                 </div>
             </div>
@@ -93,8 +95,8 @@
                     <p style="text-align:Left;">ราคารถ</p>
                 </div>
                 <div class="col-sm">
-                    
-                    <p style="text-align:right;"  id="totalcar">&nbsp;บาท</p>
+
+                    <p style="text-align:right;" id="totalcar">&nbsp;บาท</p>
                     <input type="hidden" id="totalcar2" name="totalcar2">
                 </div>
             </div>
@@ -103,23 +105,23 @@
                     <p style="text-align:Left;">ราคาประกัน<p>
                 </div>
                 <div class="col-sm">
-                   
+
                     <p style="text-align:right;" name="ins" id="ins">&nbsp;บาท</p>
                     <input type="hidden" id="totalins" name="totalins">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
-                    
+
                     <p style="text-align:Left; color:red;">รวมทั้งหมด</p>
                     <p style="text-align:left; color:red; font-size:15px;">รวมvat 7% แล้ว</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">
-                   
+
                     <p style="text-align:right; color:red; font-size:20px;" id="total">
                         &nbsp;บาท</p>
-                        <input type="hidden" id="total2" name="total">
+                    <input type="hidden" id="total2" name="total">
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -242,7 +244,7 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    
+
                 </div>
 
                 <div class="col-sm">
@@ -264,48 +266,106 @@
             <div class="row">
                 <div class="col-sm text-left">
                     <div class="label-bot">
-                    <div class="radio">
-									<label style="padding-right: 8px;">
-										<input type="radio" name="ins" value="1" id="stand"
-											data-parsley-multiple="transmission" disabled>
-                                            <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
-                                            <?php foreach($qq as $data) { 
+                        <div class="radio">
+                            <label style="padding-right: 8px;">
+                                <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
+                                    disabled>
+                                <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
+                                <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.25;
                                                 ?>
-                                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
-                                                <?php } ?>
-									</label>
-                                    <br>
-									<label>
-										<input type="radio" name="ins" value="2"
-											data-parsley-multiple="transmission" id="pre" disabled>
-										<span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
-                                        <?php foreach($qq as $data) { 
+                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                <?php } ?>
+                            </label>
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                                data-toggle="modal" data-target="#modal-de"> <u>ข้อมูลประกันภัยพื้นฐาน</u></a>
+                            <div class="modal fade" id="modal-de" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-default" aria-hidden="true">
+                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-default">
+                                                รายละเอียดประกันภัยพื้นฐาน (Standard)
+                                            </h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body text-left">
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link  ml-auto"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm text-left">
+                    <div class="label-bot">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
+                                    disabled>
+                                <span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
+                                <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.3;
                                                 ?>
-                                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
-                                                <?php } ?>
-									</label>
-                    </div>
+                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                <?php } ?>
+                            </label>
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                                data-toggle="modal" data-target="#modal-default"><u>ข้อมูลประกันภัยพรีเมี่ยม</u></a>
+                            <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-default" aria-hidden="true">
+                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-default">
+                                            รายละเอียดประกันภัยพรีเมี่ยม (Premium)
+                                            </h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body text-left">
+                                        
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link  ml-auto"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 </form>
 
 <script>
-	$(document).ready(function(){  
-        $('#datetimepickerend').change(function(){  
-        var val = $("#datetimepickerend").val()  
-        if(val != ''){		
-			$('#stand').removeAttr('disabled')
-            $('#pre').removeAttr('disabled')
-		}else
-		{	
-			$('#stand').attr('disabled',true)
-            $('#pre').attr('disabled',true)		
-		}
-      });  
- });
- </script>
+    $(document).ready(function () {
+        $('#datetimepickerend').change(function () {
+            var val = $("#datetimepickerend").val()
+            if (val != '') {
+                $('#stand').removeAttr('disabled')
+                $('#pre').removeAttr('disabled')
+            } else {
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+            }
+        });
+    });
+</script>
