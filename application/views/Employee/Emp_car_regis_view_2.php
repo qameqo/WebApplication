@@ -115,7 +115,7 @@
 
 								<td>
 								
-                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm">View</a>
+                                <a href="<?php echo site_url('Emp_car/show/').$rs->idCarregis?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
                     
 								</td>
 							</tr>
