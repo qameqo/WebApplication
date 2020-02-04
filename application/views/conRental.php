@@ -12,42 +12,52 @@
 							  ?>
                               <?php foreach($qq as $data){ ?>
                            <?php $ids = $data['id_Status']; ?>
-			<form class="form-signin" id="carregister" name="carregister" method="post"
-				action="<?php echo base_url("Owner/show/".$ids);?>">
+			<form class="form-signin" id="carrental" name="carrental" method="post"
+				action="<?php echo base_url("Rental");?>">
 				<?php } ?>
-				<H4>ขั้นตอนการลงทะเบียนรถยนต์</H4>
+				<H4>ขั้นตอนการเช่ารถยนต์</H4>
 				<br>
 				<div class="row">
 					<div class="col-sm">
-						<H6>1.กรอกข้อมูลรถยนต์</H6>
+						<H6>1.เลือกรถยนต์</H6>
 						</div>
 					</div>
 					
                     <div class="row">
 					<div class="col-sm">
-						<H6>2.อัปโหลดรูปภาพ</H6>
-						<H6>&nbsp;-รูปรถยนต์ภายนอกรถ 4 ด้านและภายในตัวรถ</H6>
-						<H6>&nbsp;-รูปพ.ร.บ. 1 รูป</H6>
-						<H6>&nbsp;-รูปเล่มทะเบียนรถยนต์ 1 รูป</H6>
-						<H6>&nbsp;-รูปใบขับขี่ 1 รูป</H6>
+						<H6>2.เลือกวันที่ที่ต้องการเช่า</H6>
 						</div>
 					</div>
-                 
+                    
                     <div class="row">
 					<div class="col-sm">
-						<H6>3.ยืนยันราคาที่จะปล่อยเช่า</H6>
+						<H6>3.เลือกประกันภัย</H6>
 						</div>
 					</div>
-               
+                    
                     <div class="row">
 					<div class="col-sm">
-						<H6>4.รอการอนุมัติ</H6>
+						<H6>4.อัปโหลดรูปภาพหลักฐาน</H6>
+						<H6>&nbsp;- บัตรประชาชน หรือ หนังสือเดินทาง</H6>
+						<H6>&nbsp;- ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</H6>
 						</div>
 					</div>
-               
+                    
+                    <div class="row">
+					<div class="col-sm">
+						<H6>5.ยืนยันการจอง</H6>
+						</div>
+					</div>
+                    
+                    <div class="row">
+					<div class="col-sm">
+						<H6>6.อัปโหลดรูปภาพใบเสร็จการโอนเงินมัดจำ</H6>
+						</div>
+					</div>
+                    
 					<div class="row">
 					<div class="col-sm">
-						<H6>5.ระบุวันส่งมอบรถ</H6>
+						<H6>7.รอการอนุมัติการเช่า</H6>
 						</div>
 					</div>
 
@@ -55,16 +65,16 @@
 					<div class="col-sm">
 				
 				
-					<input type="checkbox" name="i_accept" id="read" onclick="ok();" onkeypress="ok();"/>
-					 <span style="color:red;">ยอมรับเงื่อนไขการลงทะเบียน</span>&nbsp;
+					<input type="checkbox" name="i_accept" id="readd" onclick="ok();" onkeypress="ok();"/>
+					 <span style="color:red;">ยอมรับเงื่อนไขการเช่า</span>&nbsp;
 						<a type="button" data-toggle="modal" style="color:red;"
-							data-target="#modal-default"><i class="ni ni-single-copy-04" style="color:black;">&nbsp;<u>อ่านเงื่อนไข</u></i></a>
+							data-target="#modal-default"><i class="ni ni-single-copy-04" style="color:black;">&nbsp;<u>อ่านเงื่อนไข</U></i></a>
 						<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
 							aria-labelledby="modal-default" aria-hidden="true">
 							<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h6 class="modal-title" id="modal-title-default">เงื่อนไขการลงทะเบียน</h6>
+										<h6 class="modal-title" id="modal-title-default">เงื่อนไขการเช่ารถยนต์</h6>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">×</span>
 										</button>
@@ -105,7 +115,7 @@
                               <?php foreach($qq as $data){ ?>
                            <?php $ids = $data['id_Status']; ?>
                          
-                        <input type="submit" class="btn btn-danger" id="acc" style="background-color: #F60200;" 
+                        <input type="submit" class="btn btn-danger" id="accc" style="background-color: #F60200;" 
 						disabled="disabled" value="ดำเนินการต่อ"/>
 							  <?php } ?>
 						</div>
@@ -127,11 +137,11 @@
 
 <script language="javascript" type="text/javascript">
 function ok() {
-with (carregister) {
-if (read.checked)
-acc.disabled = false;
+with (carrental) {
+if (readd.checked)
+accc.disabled = false;
 else
-acc.disabled = true;
+accc.disabled = true;
 }
 }
 </script>

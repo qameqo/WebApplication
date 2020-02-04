@@ -188,7 +188,7 @@
 						 	<H5 style="color: red;">* กรุณาอัปโหลดเอกสารให้ครบ</H5>
  							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
  								data-toggle="modal" data-target="#modal-default">
- 								<p style="color:red;"><u>เอกสารหลักฐานยืนยันรถยนต์</u></p>
+ 								<p style="color:red;"><u>ตัวอย่างเอกสารหลักฐานยืนยันรถยนต์</u></p>
  							</a>
  							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
  								aria-labelledby="modal-default" aria-hidden="true">

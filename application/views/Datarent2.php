@@ -16,6 +16,10 @@
                     $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                     $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
+                    $this->db->join('Seat', 'Seat.id_Seat = Carregis.id_Seat');
+                    $this->db->join('Fuel', 'Fuel.idFuel = Carregis.idFuel');
+                    $this->db->join('Type_Insurance', 'Type_Insurance.id_Insurance = Rental.id_Insurance');
+                    
                     $this->db->where('idRental',$idr);
                     $query = $this->db->get();
                     $qone = $query->result_array();  
@@ -54,11 +58,11 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ที่นั่ง</label></td>
-                                <td width="70%"><?php echo $data['Seat'];?></td>
+                                <td width="70%"><?php echo $data['Number_Seat'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>เชื้อเพลิง</label></td>
-                                <td width="70%"><?php echo $data['Fuel'];?></td>
+                                <td width="70%"><?php echo $data['Name_Fuel'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ระบบเกียร์</label></td>
@@ -87,6 +91,10 @@
                             <tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td>
                                 <td width="70%"><?php echo $data['endDate'];?><span></span></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ประกันภัย</label></td>
+                                <td width="70%"><?php echo $data['Name_Insurance'];?><span></span></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>

@@ -52,7 +52,7 @@
                 <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="" style="color: white">เช่ารถยนต์</span></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                        <a class="dropdown-item" href="<?php echo base_url("Rental"); ?>">เช่ารถ</a>
+                        <a class="dropdown-item" href="<?php echo base_url("ConRental"); ?>">เช่ารถ</a>
                         <a class="dropdown-item" href="<?php echo base_url("Datarent"); ?>">ข้อมูลการเช่า</a>
                         <!-- <div class="dropdown-divider"></div> -->
                        
