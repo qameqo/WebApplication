@@ -80,41 +80,46 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <p style="text-align:Left;">ค่าเช่ารถ/วัน</p>
+                    <p style="text-align:Left;">ราคารถ/วัน</p>
                 </div>
                 <div class="col-sm">
-                    <?php foreach($q1 as $data){ ?>
-                    <p style="text-align:right;" id="price"><?php echo number_format($data['RentalPrice']);?>&nbsp;บาท</p>
-                    <?Php } ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <p style="text-align:Left;">ประกันภัย/วัน<p>
-                </div>
-                <div class="col-sm">
-                    <?php foreach($q1 as $data){
-                        $ga = $data['RentalPrice'];
-                        $gam = 25;
-                        $game = 100;
-                        $total = $ga * $gam / $game;
-                        ?>
-                    <p style="text-align:right;" name="ins" id="ins"><?php  echo number_format($total);?>&nbsp;บาท</p>
+                    <?php foreach($qq as $data) { ?>
+                    <p style="text-align:right;"  ><?php echo $data['RentalPrice']?>&nbsp;บาท</p>
                     <?php } ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <br>
-                    <p style="text-align:Left; color:red;">รวมทั้งหมด</p>
-                    <p style="text-align:left; color:red; font-size:15px;">รวม vat 7 % แล้ว</p>
+                    <p style="text-align:Left;">ราคารถ</p>
+                </div>
+                <div class="col-sm">
+                    
+                    <p style="text-align:right;"  id="totalcar">&nbsp;บาท</p>
+                    <input type="hidden" id="totalcar2" name="totalcar2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <p style="text-align:Left;">ราคาประกัน<p>
                 </div>
                 <div class="col-sm">
                    
-                    <label style="text-align:right; color:red; font-size:30px;" id="total">
-                        &nbsp;บาท</label>
-
+                    <p style="text-align:right;" name="ins" id="ins">&nbsp;บาท</p>
+                    <input type="hidden" id="totalins" name="totalins">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
                     
+                    <p style="text-align:Left; color:red;">รวมทั้งหมด</p>
+                    <p style="text-align:left; color:red; font-size:15px;">รวมvat 7% แล้ว</p>
+                    <input type="hidden" id="totalvat" name="totalvat">
+                </div>
+                <div class="col-sm">
+                   
+                    <p style="text-align:right; color:red; font-size:20px;" id="total">
+                        &nbsp;บาท</p>
+                        <input type="hidden" id="total2" name="total">
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -261,17 +266,46 @@
                     <div class="label-bot">
                     <div class="radio">
 									<label style="padding-right: 8px;">
-										<input type="radio" name="ins" value="0.25" checked="checked" id="stand"
-											data-parsley-multiple="transmission">
-										<span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
+										<input type="radio" name="ins" value="1" id="stand"
+											data-parsley-multiple="transmission" disabled>
+                                            <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
+                                            <?php foreach($qq as $data) { 
+                                                $hj = $data['RentalPrice'];
+                                                $ins = $hj * 0.25;
+                                                ?>
+                                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                                <?php } ?>
 									</label>
+                                    <br>
 									<label>
-										<input type="radio" name="ins" value="0.3"
-											data-parsley-multiple="transmission" id="pre">
+										<input type="radio" name="ins" value="2"
+											data-parsley-multiple="transmission" id="pre" disabled>
 										<span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
+                                        <?php foreach($qq as $data) { 
+                                                $hj = $data['RentalPrice'];
+                                                $ins = $hj * 0.3;
+                                                ?>
+                                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                                <?php } ?>
 									</label>
                     </div>
                     </div>
                 </div>
             </div>
 </form>
+
+<script>
+	$(document).ready(function(){  
+        $('#datetimepickerend').change(function(){  
+        var val = $("#datetimepickerend").val()  
+        if(val != ''){		
+			$('#stand').removeAttr('disabled')
+            $('#pre').removeAttr('disabled')
+		}else
+		{	
+			$('#stand').attr('disabled',true)
+            $('#pre').attr('disabled',true)		
+		}
+      });  
+ });
+ </script>

@@ -12,7 +12,9 @@ class Rentnext extends CI_Controller {
 
     }
     public function insup($idc)
-    {   $Date = $this->input->post("start");
+    {   
+        
+        $Date = $this->input->post("start");
         $dat = date("Y-m-d", strtotime($Date));
         $Date2 = $this->input->post("end");
         $dat2 = date("Y-m-d", strtotime($Date2));
@@ -29,37 +31,46 @@ class Rentnext extends CI_Controller {
             $ga = $data['RentalPrice'];
             $ins = 25;
             $percen = 100;
-            $totalprice = $ga * $ins / $percen;
-            $total2 = $ga + $totalprice;
-            $vat =  $total2 * 7 /100;
-            $kottotal = $total2 + $vat;
-            $deposit = $kottotal * 30 /100; 
-            $owner = $kottotal * 70 /100;
-            $company = $kottotal * 30 /100;
+            $totalpricee = $this->input->post("total"); //ราคารวม
+            $ow = 0.7;
+            $com = 0.3;
+            $owner = $ow * $totalpricee; //รายได้ลูกค้า
+            $company = $com * $totalpricee; //รายได้บริษัท
             $object = array(
 
                 'Datebooking' => $da,
-                'totalprice' => $this->input->post('total'),
+                'totalprice' => $totalpricee,
                 'Carownerincome' => $owner,
                 'Companyincome' => $company,
                 'idstatus'=>"9",
                 'idMember' => $this->session->userdata('id_Member'),
+                'id_Insurance' => $this->input->post("ins")
             );
         }
         
         $this->db->insert('Rental', $object);
         $insert_id = $this->db->insert_id();
-       
+        foreach($qq as $data){
+            $da = date("Y-m-d");
+            $ga = $data['RentalPrice'];
+            $ins = 25;
+            $percen = 100;
+            $totalpricee = $this->input->post("total"); //ราคารวม
+            $ow = 0.7;
+            $com = 0.3;
+            $owner = $ow * $totalpricee; //รายได้ลูกค้า
+            $company = $com * $totalpricee; //รายได้บริษัท
         $in = array(
             'StartDate'=> $dat,
             'endDate'=> $dat,
-            'PriceCar'=> $ga,
-            'PriceIns'=> $totalprice,
-            'PriceDe' => $deposit,
-            'PriceVat'=> $vat,
+            'PriceCar'=> $this->input->post("totalcar2"),
+            'PriceIns'=> $this->input->post("totalins"),
+            'PriceDe' => $company,
+            'PriceVat'=> $this->input->post("totalvat"),
             'idCarregis'=> $idc,
             'idRent'=> $insert_id
         );
+    }
         $this->db->insert('RentalDetail', $in);
 
         echo "<script>";
@@ -81,16 +92,98 @@ class Rentnext extends CI_Controller {
         $this->db->where('idCarregis',$idc);
         $query = $this->db->get();
         $qq = $query->result_array();
-        $gh = $qq[0]['RentalPrice'];
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
         $fg = 0.25;
         $total = $gh * $fg;
-        $total2 = $total + $gh;
-        echo $total2;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalprice = $total2 + $total3; //ราคารวมประกันพื้นฐาน
+        echo $totalprice;
         
-
-        
-
     }
+    
+    public function selectdate3($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice'];
+        $car = $gh * 1; // ราคารถ
+        $fg = 0.25;
+        $total = $gh * $fg;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalprice = $total2 + $total3; //ราคารวม
+        
+        echo $car; // ราคารถ
+        
+    }
+    public function selectdate6($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $fg = 0.3;
+        $total = $gh * $fg;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalpric = $total2 + $total3; //ราคารวมประกันพรีเมี่ยม
+        echo $totalpric;
+        
+    }
+    public function selectdate4($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $fg = 0.25;
+        $total = $gh * $fg;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalprice = $total2 + $total3; //ราคารวม
+        
+        echo $total3; // vat
+        
+    }
+    public function selectdate5($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $f5 = 0.3;
+        $inspre = $gh * $f5; // ราคาประกัน
+        echo $inspre; // ประกันพรีเมี่ยม
+        
+    }
+    public function selectdate2($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $fg = 0.25;
+        $insstand = $gh * $fg; // ราคาประกัน
+        echo $insstand; //ประกันพื้นฐาน
+        
+    }
+
 
 }
 

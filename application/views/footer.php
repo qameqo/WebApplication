@@ -168,26 +168,66 @@ $("input:radio[name='ins']").change(function(){
         console.log(x,y);
         console.log(<?php echo $idc ?>);
         var id = <?php echo $idc ?>;
-  $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
+
+          
+
+            $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
               function (data) {
-                  
-                $("#total").text(data * ngo + " บาท")
-                console.log(data);
+                var total = data * ngo; 
+                var game =  total.toFixed(0);
+                $("#totalcar").text(game + " บาท")
+                $("#totalcar2").val(game)
+                 } // รถ
+          );  
+            $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
+              function (data) {
+                var total = data * ngo; 
+                var game =  total.toFixed(0);
+                $("#totalvat").val(game)
+                 } // vat
+          );  
+    $("input:radio[name='ins']").change(function(){
+    
+    if(this.value =='1'){
+      $.get("<?=base_url('Rentnext/selectdate2/')?>"+id, 
+                function (data) {
+                  var total = data * ngo; 
+                  var game =  total.toFixed(0);
+                $("#ins").text(game + " บาท")
+                $("#totalins").val(game) // ประกันพื้นฐาน
               }
-          );
+          ); 
+      $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
+              function (data) {
+                var total = data * ngo; 
+                var game =  total.toFixed(0);
+                $("#total").text(game + " บาท")
+                $("#total2").val(game)
+                 } // รวม
+          );  
+    }else
+    {
+      $.get("<?=base_url('Rentnext/selectdate5/')?>"+id, 
+                function (data) {
+                  var total = data * ngo; 
+                  var game =  total.toFixed(0);
+                $("#ins").text(game + " บาท")
+                $("#totalins").val(game) // ประกันพรีเมี่ยม
+                
+              }
+          ); 
+      $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
+              function (data) {
+                var total = data * ngo; 
+                var game =  total.toFixed(0);
+                $("#total").text(game + " บาท")
+                $("#total2").val(game)
+                 } // รวม
+          );  
+    }
+});
+
   })
 </script>
  
- <script>
- function Change_date()
-      {
-          var val = $("#datetimepickerend").val()
-          
-          $.get("<?=base_url('Rentnext/selectdate/')?>"+val, 
-              function (data) {
-                  
-                $("#price").html(data)
-
-              }
-          );
-      }</script>
+ 
