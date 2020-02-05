@@ -167,11 +167,29 @@
                                     echo '</span></td>';
                                 }  
                                 ?>
+                                
                             </tr>
                             <tr>
                                 <td width="30%"><label>ผู้เช่า</label></td>
                                 <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
                             </tr>
+                            <?php  if($data['Name_Status']=='ไม่อนุมัติ')
+                            {
+                                $this->db->select('*');
+                                $this->db->from('Not_passed_rent');
+                                $this->db->where('idRental', $idr);
+                                $query = $this->db->get();
+                                $qa = $query->result_array();
+                                
+                                foreach ($qa as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not_rent'];
+                                    echo '</td></tr>';
+                                }
+                            } ?>
                             <?php } ?>
                             <?php 
                          $this->db->select('*');
