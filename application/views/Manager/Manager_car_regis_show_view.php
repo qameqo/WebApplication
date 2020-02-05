@@ -192,6 +192,10 @@
                                 <td width="30%"><label>สมาชิก</label></td>
                                 <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
                             </tr>
+                            <tr>
+                                <td width="30%"><label>บัญชีธนาคาร</label></td>
+                                <td width="70%"><?php echo $rs->Bankaccount; ?></td>
+                            </tr>
 
                             <?php 
 
