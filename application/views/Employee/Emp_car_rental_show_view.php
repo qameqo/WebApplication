@@ -170,15 +170,17 @@
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
 
-                        // echo '<form action="'; 
-                        // echo site_url('Emp_rental/add_status/'.$rs->idRental); 
-                        // echo '" method="POST" class="form-horizontal">';
-                        // echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        // echo $rs->idRental; 
-                        // echo '">';
-                        // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
-                        // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
-                        // echo '</form>';
+                        echo '<form action="'; 
+                        echo site_url('Emp_rental/add_status/'.$rs->idRental); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                        echo $rs->idRental; 
+                        echo '">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
+                        echo '</form>';
                                            
                     }?>
 
