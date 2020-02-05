@@ -110,13 +110,13 @@
                                 }
                                 else if($data['idstatus']== '10')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }
                                 else if($data['idstatus']== '11')
                                 {
-                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }  

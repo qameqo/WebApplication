@@ -67,6 +67,7 @@
                              
                         <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="<?php echo base_url('Dataregis');?>">ข้อมูลการลงทะเบียน</a>
+                        <a class="dropdown-item" href="<?php echo base_url('DataIncome');?>">ข้อมูลรายได้จากการเช่า</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
