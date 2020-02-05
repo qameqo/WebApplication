@@ -84,6 +84,26 @@
 					</div>
 				</div>
 				<div class="row">
+					<div class="col-sm text-right">
+						<label class="bmd-label-floating">
+							<h5>บัญชีธนาคาร :</h5>
+						</label>
+					</div>
+					<div class="col-sm">
+						<input type="textarea" class="form-control" name="income" id="income" value=""
+							style="width: 200px; height:25px;" required placeholder="ธ.กสิกรไทย 7442930761">
+					</div>
+					<div class="col-sm">
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm text-center">
+						<h5 style="color:red;">* โปรดตรวจสอบบัญชีธนาคารให้ถูกต้องก่อนยืนยัน</h5>
+					</div>
+				</div>
+
+				<div class="row">
 					<div class="col-sm text-center">
 						<button class="btn btn-danger" style="background-color: #F60200;" href="#"
 							type="submit">ยืนยันราคาปล่อยเช่า</button>

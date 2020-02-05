@@ -74,6 +74,10 @@
                                 <td width="70%"><?php echo $data['RentalPrice'];?><span>&nbsp;บาท/วัน</span></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>บัญชีธนาคาร</label></td>
+                                <td width="70%"><?php echo $data['Bankaccount'];?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>ผู้ลงทะเบียน</label></td>
                                 <td width="70%"><?php echo $data['FName']; ?>&nbsp;<?php echo $data['LName']; ?></td>
                             </tr>

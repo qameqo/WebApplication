@@ -15,7 +15,7 @@
                         $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                         $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
-                        $this->db->where('Rental.idstatus', 11);
+                        $this->db->where('Rental.idstatus', 10);
                         $this->db->order_by('idRental', 'desc');
                         $query =  $this->db->get();
                         $qq = $query->result_array();

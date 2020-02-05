@@ -73,7 +73,7 @@
                                 <td width="70%"><?php echo $data['Mileage'];?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคารวม</label></td>
+                                <td width="30%"><label>ราคารวมรวมvat 7%</label></td>
                                 <td width="70%"><?php echo $data['totalprice'];?><span>&nbsp;บาท</span></td>
                             </tr>
                             <tr>
