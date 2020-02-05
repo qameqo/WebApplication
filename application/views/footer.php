@@ -19,6 +19,7 @@
 
 
 <script type="text/javascript">
+var date = new Date();
     $(document).ready(function() {
         $('#datetimepicker').datetimepicker();
     });
@@ -29,7 +30,7 @@
      maxDate:'+1970/01/03' //tomorrow is maximum date
 });
 jQuery(function(){
- jQuery('#datetimepickerstart').datetimepicker({
+ var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
   maxDate:'+1970/01/03',
@@ -39,16 +40,7 @@ jQuery(function(){
   },
   timepicker:false
  });
- jQuery('#datetimepickerend').datetimepicker({
-  format:'Y/m/d',
-  onShow:function( ct ){
-   this.setOptions({
-    minDate:jQuery('#datetimepickerstart').val()?jQuery('#datetimepickerstart').val():false,
-    maxDate:'+1970/01/05',
-   }) //.val(), 10)
-  },
-  timepicker:false
- });
+
 });
 </script>
 
@@ -161,10 +153,28 @@ $("input:radio[name='ins']").change(function(){
 <script>
   var ngo = 0;
   var id = 0;
+  var x = 0;
+  var dateFirst = 0;
+  $("input[name='start']").change(function(){
+    x = document.getElementById("datetimepickerstart").value; 
+    dateFirst = moment(x, 'YYYY/MM/DD');
+    
+    console.log( dateFirst.format('YYYY/MM/DD').toString())
+          jQuery('#datetimepickerend').datetimepicker({
+            format:'Y/m/d',
+            onShow:function( ct ){
+            this.setOptions({
+              minDate: dateFirst.format('YYYY/MM/DD').toString(),
+              maxDate: (dateFirst).add(4,'days').format('YYYY/MM/DD').toString(),
+            }) //.val(), 10)
+            },
+            timepicker:false
+          });
+  })
   $("input[name='end']").change(function(){
-         var x = document.getElementById("datetimepickerstart").value; 
+          x = document.getElementById("datetimepickerstart").value; 
          var y = document.getElementById("datetimepickerend").value;
-         var dateFirst = moment(x, 'YYYY/MM/DD');
+          dateFirst = moment(x, 'YYYY/MM/DD');
          var dateSecond = moment(y, 'YYYY/MM/DD');
          ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
         console.log(ngo);
@@ -189,6 +199,7 @@ $("input:radio[name='ins']").change(function(){
                 $("#totalvat").val(game1)
                  } // vat
           );  
+         
           
   });
 
