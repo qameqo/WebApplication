@@ -124,7 +124,8 @@
                 <div class="col-sm">
 
                     <p style="text-align:Left; color:red;">รวมทั้งหมด</p>
-                    <p style="text-align:left; color:red; font-size:15px;">รวมvat 7% แล้ว</p>
+                    <p style="text-align:left; color:red; font-size:15px;">รวมมัดจำรถ 5,000 บาท</p>
+                    <p style="text-align:left; color:red; font-size:15px;">รวมvat 7%</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">

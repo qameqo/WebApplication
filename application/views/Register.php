@@ -26,14 +26,18 @@
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Username (EN)</label>
-						<input name="username" type="text" id="username" class="form-control" placeholder="" pattern="(?=.*[A-Za-z]).{5,}" title="กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป" required>
+						<input name="username" type="text" id="username" class="form-control" placeholder="" 
+						pattern="(?=.*\d)(?=.*[A-Za-z]).{5,}" 
+						title="กรุณากรอกเป็นตัวเลขและตัวอักษรภาษาอังกฤษ 5 ตัวขึ้นไป" required>
 						<label class="text-danger" hidden id="fai"><span class="glyphicon glyphicon-remove"></span> Username นี้ได้ถูกใช้ไปแล้ว</label>
 						<label class="text-success" hidden id="suc"><span class="glyphicon glyphicon-ok"></span> Username นี้สามารถใช้ได้</label>
-						<p style="color:red; font-size:10px;">* กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวอักษรขึ้นไป</p>
+						<p style="color:red; font-size:10px;">* กรุณากรอกตัวเลขและตัวอักษรภาษาอังกฤษ 5 ตัวขึ้นไป</p>
 					</div>
 					<div class="col-sm">
 						<label class="bmd-label-floating">Password</label>
-						<input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" title="ต้องมีตัวเลขและตัวอักษรภาษาอังกฤษ 8 ตัวขึ้นไป" required>
+						<input id="password-field" type="password" class="form-control" name="password" 
+						pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" 
+						title="กรุณากรอกเป็นตัวเลขและตัวอักษรภาษาอังกฤษ 8 ตัวขึ้นไป" required>
 						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 						<p style="color:red; font-size:10px;">* กรุณากรอกตัวเลขและตัวอักษรภาษาอังกฤษ 8 ตัวขึ้นไป</p>
 					</div>
@@ -50,7 +54,6 @@
 						<p style="color:red; font-size:10px;">* กรุณากรอกนามสกุล ภาษาอังกฤษ</p>
 					</div>
 				</div>
-				
 				<div class="row">
 					<div class="col-sm">
 						<label class="bmd-label-floating">Address</label>

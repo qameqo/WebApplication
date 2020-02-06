@@ -32,10 +32,12 @@ class Rentnext extends CI_Controller {
             $ins = 25;
             $percen = 100;
             $totalpricee = $this->input->post("total"); //ราคารวม
+            $pricecar = $this->input->post("totalcar2");
             $ow = 0.7;
             $com = 0.3;
-            $owner = $ow * $totalpricee; //รายได้ลูกค้า
-            $company = $com * $totalpricee; //รายได้บริษัท
+            $owner = $ow * $pricecar; //รายได้ลูกค้า
+            $company = $com * $pricecar; //รายได้บริษัท
+            $De = $com * $totalpricee;
             $object = array(
 
                 'Datebooking' => $da,
@@ -56,16 +58,18 @@ class Rentnext extends CI_Controller {
             $ins = 25;
             $percen = 100;
             $totalpricee = $this->input->post("total"); //ราคารวม
+            $pricecar = $this->input->post("totalcar2");
             $ow = 0.7;
             $com = 0.3;
-            $owner = $ow * $totalpricee; //รายได้ลูกค้า
-            $company = $com * $totalpricee; //รายได้บริษัท
+            $owner = $ow * $pricecar; //รายได้ลูกค้า
+            $company = $com * $pricecar; //รายได้บริษัท
+            $De = $com * $totalpricee;
         $in = array(
             'StartDate'=> $dat,
             'endDate'=> $dat2,
-            'PriceCar'=> $this->input->post("totalcar2"),
+            'PriceCar'=> $pricecar,
             'PriceIns'=> $this->input->post("totalins"),
-            'PriceDe' => $company,
+            'PriceDe' => $De,
             'PriceVat'=> $this->input->post("totalvat"),
             'idCarregis'=> $idc,
             'idRent'=> $insert_id
@@ -99,7 +103,8 @@ class Rentnext extends CI_Controller {
         $vat = 0.07;
         $total3 = $total2 * $vat; //ราคา vat
         $totalprice = $total2 + $total3; //ราคารวมประกันพื้นฐาน
-        echo $totalprice;
+        $totalplus = $totalprice;
+        echo $totalplus;
         
     }
     
@@ -136,7 +141,8 @@ class Rentnext extends CI_Controller {
         $vat = 0.07;
         $total3 = $total2 * $vat; //ราคา vat
         $totalpric = $total2 + $total3; //ราคารวมประกันพรีเมี่ยม
-        echo $totalpric;
+        $totalpluss = $totalpric;
+        echo $totalpluss;
         
     }
     public function selectdate4($idc)
