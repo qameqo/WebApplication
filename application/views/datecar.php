@@ -20,7 +20,10 @@
                             <?php echo $data['License'];?></P>
                         <!-- <span style="color:red;">* กรุณากำหนดวันส่งรถไม่เกิน 3 วัน</span> -->
                     </div>
+                    
                     <div class="col-sm">
+                    <input id="datetimepicker" type="text" value="<?php echo date('Y-m-d'); ?>"
+                            style="width:150px; text-align:center;" name="date">
                         <input id="datetimepicker" type="text" value="<?php echo date('Y-m-d'); ?>"
                             style="width:150px; text-align:center;" name="date">
                         <button type="submit" class="btn btn-danger" style="background-color: #F60200;">ยืนยัน</button>
