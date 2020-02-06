@@ -69,9 +69,9 @@
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_price">จัดการข้อมูลราคารถยนต์</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
-                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis/index_2">ตรวจสอบข้อมูลรถยนต์</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"href="<?php echo site_url('Emp_rental/index_admin');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis/index_2">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
+                            <a class="dropdown-item"href="<?php echo site_url('Manager_car_regis/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
                         </div>
                     </li>
                 </ul>
@@ -89,7 +89,8 @@
                 </ul> -->
             </div>
                 
-                <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
+                <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm" style="font-size: 16px">ออกจากระบบ</a>
+
 
             </div>
         </div>

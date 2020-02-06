@@ -30,11 +30,8 @@
 						<tbody>
 
                             <?php foreach ($query as $rs) { 
-                            if ($rs->idStatus == '4') { 
-                            }
-                            else if($rs->idStatus == '1'){
-                            }
-                            else{
+                            if ($rs->idStatus == '5') { 
+                            
                             ?>
 
 							<tr>

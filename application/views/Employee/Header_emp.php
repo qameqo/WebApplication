@@ -93,7 +93,7 @@
             </div>
 
 
-            <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm">logout</a>
+            <a href="<?php echo base_url("Homeowner");?>" class="btn btn-default btn-sm" style="font-size: 16px">ออกจากระบบ</a>
         </div>
         </div>
     </nav>

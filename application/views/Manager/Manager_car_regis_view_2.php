@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">การลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลการลงทะเบียนรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -30,9 +30,12 @@
                             <?php foreach ($query as $rs) { ?>
 
                             <?php if ($rs->idStatus == '1') { 
-                                }
-                                else
-                                {
+                            }elseif($rs->idStatus == '8'){
+                            }elseif($rs->idStatus == '9'){
+                            }elseif($rs->idStatus == '10'){
+                            }elseif($rs->idStatus == '11'){
+                            }else{
+                                
                             ?>
 
 							<tr>
@@ -98,13 +101,13 @@
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '10')
+                                else if($rs->idStatus == '10')
                                 {
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '11')
+                                else if($rs->idStatus == '11')
                                 {
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
@@ -118,7 +121,6 @@
                             </tr>
 
                             <?php } }?>
-
                             
 						</tbody>
 						<tfoot>

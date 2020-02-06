@@ -7,6 +7,8 @@ class Manager_car_regis extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Manager_car_regis_model');
+        $this->load->model('Emp_rental_model');
+
     }
 
     public function index()
@@ -103,7 +105,7 @@ class Manager_car_regis extends CI_Controller {
     }
     public function index_3()
     {
-        $data['query']=$this->Manager_car_regis_model->show_car_regis();
+        $data['query']=$this->Emp_rental_model->show_rental();
 
         // echo '<pre>';
         // print_r($data);
@@ -112,12 +114,31 @@ class Manager_car_regis extends CI_Controller {
         // exit;
 
         $this->load->view('Manager/Header_manage');
-        $this->load->view('Employee/Emp_car_rental_view', $data);
+        $this->load->view('Manager/Manager_car_rental_view', $data);
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
 
     }
+
+    public function show_rental($idRental)
+    {
+        $data['rs']=$this->Emp_rental_model->read_rental($idRental);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_car_rental_show_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        
+    }
+
+
 }
 
 /* End of file Hello.php */

@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">การลงทะเบียนรถยนต์</h3>
+                        <h3 class="panel-title">จัดการข้อมูลการลงทะเบียนรถยนต์</h3>
                     </div>
                 </div>
                 

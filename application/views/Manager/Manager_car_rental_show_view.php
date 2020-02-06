@@ -8,7 +8,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered">
 
-                        <tr>
+                            <tr>
                                 <td width="30%"><label>รหัส</label></td>
                                 <td width="70%"><?php echo $rs->idRental; ?></td>
                             </tr>
@@ -68,6 +68,28 @@
                                 <td width="30%"><label>รายได้ทางร้าน</label></td>
                                 <td width="70%"><?php echo $rs->Companyincome; ?></td>
                             </tr>
+
+                            <?php 
+                            
+                            if($rs->idstatus != '9')
+                            {
+                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee = Employee.id_Employee AND Rental.idRental = '.$rs->idRental);
+
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>พนักงาน</label></td>
+                                    <td width="70%">';
+                                    echo $data['F_Name'];
+                                    echo '&nbsp;';
+                                    echo $data['L_Name'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
+                            
 
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
@@ -182,53 +204,6 @@
                         </table>
                     </div>
 
-                    <?php 
-                        if($rs->idstatus == '1'){
-                        
-                        echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        echo $rs->idRental; 
-                        echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="10" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
-                        echo '</form>';
-
-                        echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status/'.$rs->idRental); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        echo $rs->idRental; 
-                        echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
-                        echo '</form>';
-                                           
-                    }?>
-
-                    <?php 
-                        if($rs->idstatus == '10'){
-                        
-                        echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_2'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        echo $rs->idRental; 
-                        echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="11" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
-                        echo '</form>';
-                                           
-                    }?>
             </div>
         </div>
     </div>
