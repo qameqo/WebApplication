@@ -216,7 +216,7 @@ $("input:radio[name='ins']").change(function(){
               ); 
           $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
                   function (data) {
-                    var total3 = data * ngo; 
+                    var total3 = data * ngo + 5000; 
                     var game3 =  total3.toFixed(0);
                     $("#total").text(game3 + " บาท")
                     $("#total2").val(game3)
@@ -236,7 +236,7 @@ $("input:radio[name='ins']").change(function(){
               ); 
           $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
                   function (data) {
-                    var total5 = data * ngo; 
+                    var total5 = data * ngo + 5000; 
                     var game5 =  total5.toFixed(0);
                     $("#total").text(game5 + " บาท")
                     $("#total2").val(game5)

@@ -103,7 +103,7 @@ class Rentnext extends CI_Controller {
         $vat = 0.07;
         $total3 = $total2 * $vat; //ราคา vat
         $totalprice = $total2 + $total3; //ราคารวมประกันพื้นฐาน
-        $totalplus = $totalprice + 5000;
+        $totalplus = $totalprice;
         echo $totalplus;
         
     }
@@ -141,7 +141,8 @@ class Rentnext extends CI_Controller {
         $vat = 0.07;
         $total3 = $total2 * $vat; //ราคา vat
         $totalpric = $total2 + $total3; //ราคารวมประกันพรีเมี่ยม
-        echo $totalpric;
+        $totalpluss = $totalpric;
+        echo $totalpluss;
         
     }
     public function selectdate4($idc)
