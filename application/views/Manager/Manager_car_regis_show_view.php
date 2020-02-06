@@ -254,13 +254,13 @@
                         echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
                     }else if($rs->idStatus == '1'){
                         
-                        $startdate=strtotime("l");
+                        // $startdate=strtotime("l");
 
                         echo '<form action="'; 
                         echo site_url('Manager_car_regis/add_status'); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="Dayfirst" id="Dayfirst" class="form-control" value="';
-                        echo date("Y-m-d", $startdate);
+                        echo date("Y-m-d");
                         echo '">';
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
