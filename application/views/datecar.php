@@ -22,9 +22,9 @@
                     </div>
                     
                     <div class="col-sm">
-                    <input id="datetimepicker" type="text" value="<?php echo date('Y-m-d'); ?>"
-                            style="width:150px; text-align:center;" name="date">
-                        <input id="datetimepicker" type="text" value="<?php echo date('Y-m-d'); ?>"
+                    <input id="datetimepickerfirst" type="hidden" value="<?php echo $data['Dayfirst']; ?>"
+                            style="width:150px; text-align:center;" name="date1">
+                        <input id="datetimepicker" type="text" value=""
                             style="width:150px; text-align:center;" name="date">
                         <button type="submit" class="btn btn-danger" style="background-color: #F60200;">ยืนยัน</button>
                     </div>
@@ -32,7 +32,7 @@
                 <?php } ?>
                 <div class="row">
                     <div class="col-sm">
-                        <span style="color:red;">* กำหนดส่งรถภายใน 3 วัน</span>
+                        <span style="color:red;">* กำหนดส่งรถภายใน 3 วันหลังจากการได้รับอนุมัติ</span>
                     </div>
                 </div>
                 <br>

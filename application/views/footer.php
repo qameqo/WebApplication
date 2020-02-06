@@ -19,16 +19,17 @@
 
 
 <script type="text/javascript">
-var date = new Date();
-    $(document).ready(function() {
-        $('#datetimepicker').datetimepicker();
-    });
-    $('#datetimepicker').datetimepicker({
-     format:'Y-m-d',
-     timepicker:false,
-     minDate:'-1970/01/01', //yesterday is minimum date
-     maxDate:'+1970/01/03' //tomorrow is maximum date
-});
+// var date = new Date();
+//     $(document).ready(function() {
+//         $('#datetimepicker').datetimepicker();
+//     });
+//     $('#datetimepicker').datetimepicker({
+//      format:'Y-m-d',
+//      timepicker:false,
+//      minDate:'-1970/01/01', //yesterday is minimum date
+//      maxDate:'+1970/01/03' //tomorrow is maximum date
+// });
+
 jQuery(function(){
  var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
@@ -151,10 +152,35 @@ $("input:radio[name='ins']").change(function(){
 </script>
 
 <script>
+  var s = 0;
+  var dateSong = 0;
+  
+$("input[name='date1']").ready(function(){
+    s = document.getElementById("datetimepickerfirst").value; 
+    dateSong = moment(s, 'YYYY-MM-DD');
+    var start = dateSong.format('YYYY/MM/DD').toString();
+    var end = (dateSong).add(2,'days').format('YYYY/MM/DD').toString();
+          jQuery('#datetimepicker').datetimepicker({
+            format:'Y/m/d',
+            onShow:function( ct ){
+            this.setOptions({
+              minDate: start,
+              maxDate: end,
+            }) //.val(), 10)
+            },
+            timepicker:false
+          });
+  })
+
+</script>
+
+<script>
   var ngo = 0;
   var id = 0;
   var x = 0;
   var dateFirst = 0;
+  
+
   $("input[name='start']").change(function(){
     x = document.getElementById("datetimepickerstart").value; 
     dateFirst = moment(x, 'YYYY/MM/DD');
