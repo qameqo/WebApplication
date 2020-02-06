@@ -4,7 +4,7 @@
             <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
                 <h4 class="title">รายละเอียดรถยนต์ลงทะเบียนปล่อยเช่า</h4>
 
-                <form action="<?php echo site_url('Manager_car_regis/add_status_2');?>" method="POST" class="form-horizontal">
+                
 
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -253,24 +253,30 @@
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
 
+                        echo '<form action="';
+                        echo site_url('Manager_car_regis/add_status_2');
+                        echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" class="btn btn-success mt-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
                         echo '<input type="hidden" name="EndDate" id="EndDate" value="';
                         echo date("Y-m-d", $enddate);
-                        echo'">';
+                        echo '">';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
+                        echo '</form>';
 
-                        // echo '<form action="'; 
-                        // echo site_url('Manager_car_regis/add_status'); 
-                        // echo '" method="POST" class="form-horizontal">';
-                        // echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        // echo $rs->idCarregis; 
-                        // echo '">';
-                        // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="Status" id="Status" value="8" style="font-size:20px;" required>';
-                        // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
-                        // echo '</form>';
+                        echo '<form action="'; 
+                        echo site_url('Manager_car_regis/add_status'); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" name="Dayfirst" id="Dayfirst" value="';
+                        echo date("Y-m-d", $enddate);
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="6" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
+                        echo '</form>';
                     }?>
 
-                </form>
             </div>
         </div>
     </div>
