@@ -79,20 +79,8 @@ class Emp_rental_model extends CI_Model
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
 
-        if($qq['idstatus'] == '3')
-        {
-            
-            redirect('Emp_rental/not_passed_rent/'.$qq['idRental']);
-            
-        }
-        else 
-        {
-            
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_rental';";
-            echo "</script>";
-        }
+        redirect('Emp_rental/not_passed_rent/'.$qq['idRental']);
+        
         // redirect('Manager_emp');
     }
 
@@ -116,6 +104,42 @@ class Emp_rental_model extends CI_Model
         $data_2 = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
             'idStatus' => $this->input->post('idstatus')
+        );
+
+        $query=$this->db->update('Carregis',$data_2);
+
+        $this->db->order_by('idRental', 'desc');
+        $query_2 =  $this->db->get('Rental', 1);
+        $qq = $query_2->row_array();
+
+        echo "<script>";
+        echo "alert('แก้ไขสถานะเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+        echo "</script>";
+        
+        // redirect('Manager_emp');
+    }
+
+    public function add_status_3()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+       
+        $data = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idstatus' => $this->input->post('idstatus')
+        );
+
+        $query_2=$this->db->update('Rental',$data);
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $data_2 = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idStatus' => $this->input->post('idStatus')
         );
 
         $query=$this->db->update('Carregis',$data_2);

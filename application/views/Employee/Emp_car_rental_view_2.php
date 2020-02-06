@@ -16,6 +16,8 @@
                         <thead>
                             <tr>
                                 <th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ยื่ห้อ</th>
+                                <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
                                 <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
@@ -38,7 +40,8 @@
 							<tr>
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
-
+                                <td><?php echo $rs->Name_Brand; ?></td>
+								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->Datebooking; ?></td>
 								<td><?php echo $rs->PriceCar; ?></td>
@@ -123,6 +126,8 @@
 						<tfoot>
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
+                                <th data-column-id="Brand">ยื่ห้อ</th>
+                                <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
                                 <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
