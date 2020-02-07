@@ -50,6 +50,14 @@ class Payment extends CI_Controller {
         // $this->show($id);
         redirect('Payment/sh/'.$idr);
     }
+    public function datarent()
+    {
+
+            echo "<script>";
+            echo "alert('กรุณาชำระเงินภายในวันที่ทำการจอง');";
+            echo "window.location.href = '". base_url(). "Datarent' ;";
+            echo "</script>";
+    }
     
 }
 

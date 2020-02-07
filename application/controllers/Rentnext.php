@@ -65,7 +65,7 @@ class Rentnext extends CI_Controller {
             $company = $com * $pricecar; //รายได้บริษัท
             $De = $com * $totalpricee;
         $in = array(
-            'StartDate'=> $dat,
+            'startDate'=> $dat,
             'endDate'=> $dat2,
             'PriceCar'=> $pricecar,
             'PriceIns'=> $this->input->post("totalins"),

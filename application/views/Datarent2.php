@@ -72,21 +72,26 @@
                                 <td width="30%"><label>เลขไมล์</label></td>
                                 <td width="70%"><?php echo $data['Mileage'];?></td>
                             </tr>
-                            <tr>
-                                <td width="30%"><label>ราคารวมรวมvat 7%</label></td>
-                                <td width="70%"><?php echo $data['totalprice'];?><span>&nbsp;บาท</span></td>
-                            </tr>
+                            
                             <tr>
                                 <td width="30%"><label>ราคารถ</label></td>
-                                <td width="70%"><?php echo $data['PriceCar'];?><span>&nbsp;บาท</span></td>
+                                <td width="70%"><?php echo $data['PriceCar'];?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาประกัน</label></td>
-                                <td width="70%"><?php echo $data['PriceIns'];?><span>&nbsp;บาท</span></td>
+                                <td width="70%"><?php echo $data['PriceIns'];?>&nbsp;บาท</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคามัดจำรถ</label></td>
+                                <td width="70%">5000&nbsp;บาท</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคารวมรวมvat 7% และค่ามัดจำรถ</label></td>
+                                <td width="70%"><?php echo $data['totalprice'];?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันเริ่มเช่า</label></td>
-                                <td width="70%"><?php echo $data['StartDate'];?><span></span></td>
+                                <td width="70%"><?php echo $data['startDate'];?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td>

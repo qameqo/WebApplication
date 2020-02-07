@@ -181,7 +181,7 @@
 							  $countimg = $query->result_array();	
 						
 						 ?>
-					<form action="<?php echo base_url('Datarent'); ?>">
+					<form action="<?php echo base_url('Payment/datarent'); ?>">
 						<div class="col-sm">
 							<div class="box__input">
 							<?php if($countimg[0]["img3"] == 2) { ?>

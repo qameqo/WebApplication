@@ -50,7 +50,7 @@
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-                                <td><?php echo $data['StartDate'];?></td>
+                                <td><?php echo $data['startDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
                              
                         
