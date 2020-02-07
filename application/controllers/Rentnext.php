@@ -171,7 +171,7 @@ class Rentnext extends CI_Controller {
         $query = $this->db->get();
         $qq = $query->result_array();
         $gh = $qq[0]['RentalPrice']; // ราคารถ
-        $f5 = 0.3;
+        $f5 = 0.35;
         $inspre = $gh * $f5; // ราคาประกัน
         echo $inspre; // ประกันพรีเมี่ยม
 

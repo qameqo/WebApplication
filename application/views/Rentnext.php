@@ -330,7 +330,7 @@
                                 <span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
-                                                $ins = $hj * 0.3;
+                                                $ins = $hj * 0.35;
                                                 ?>
                                 <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
                                 <?php } ?>
