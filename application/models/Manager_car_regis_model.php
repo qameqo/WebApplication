@@ -178,5 +178,39 @@ class Manager_car_regis_model extends CI_Model
         echo "window.location.href = '". base_url(). "Manager_car_regis';";
         echo "</script>";
     }
+
+    public function del_car($idCarregis)
+    {
+
+        $this->db->delete('Images',array('idCarregis'=>$idCarregis));
+        $this->db->delete('Images2',array('idCarregis'=>$idCarregis));
+        $this->db->delete('Not_passed',array('idCarregis'=>$idCarregis));
+        $this->db->delete('Carregis',array('idCarregis'=>$idCarregis));
+
+        echo "<script>";
+        echo "alert('ลบข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_car_regis/index_2 ';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
+             
+    }
+
+    public function del_rental($idRental)
+    {
+
+        $this->db->delete('Images3',array('idrent'=>$idRental));
+        $this->db->delete('Not_passed_rent',array('idRental'=>$idRental));
+        $this->db->delete('RentalDetail',array('idRent'=>$idRental));
+        $this->db->delete('Rental',array('idRental'=>$idRental));
+
+        echo "<script>";
+        echo "alert('ลบข้อมูลเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Manager_car_regis/index_3 ';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
+             
+    }
 }
 ?>

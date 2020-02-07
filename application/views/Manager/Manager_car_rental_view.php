@@ -17,9 +17,9 @@
                             <tr>
                                 <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
+                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 
@@ -113,6 +113,21 @@
                                 <td>
 								
                                 <a href="<?php echo site_url('Manager_car_regis/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+
+                                <?php if($rs->idstatus == ''){ ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->idstatus == '6') { ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->idstatus == '7') { ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php } ?>
+
                     
 								</td>
 							</tr>
@@ -124,9 +139,9 @@
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
+                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 

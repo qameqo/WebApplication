@@ -116,6 +116,23 @@
                         
 								<td>
                                     <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm" style="font-size: 16px">รายละเอียด</a>
+
+                                
+
+                                <?php if($rs->idStatus == '3'){ ?>
+
+                                    <a href="<?php echo site_url('Manager_car_regis/del_car/').$rs->idCarregis ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->idStatus == '6') { ?>
+
+                                    <a href="<?php echo site_url('Manager_car_regis/del_car/').$rs->idCarregis ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->idStatus == '7') { ?>
+
+                                    <a href="<?php echo site_url('Manager_car_regis/del_car/').$rs->idCarregis ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php } ?>
+
 								</td>
 							
                             </tr>

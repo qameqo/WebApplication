@@ -138,6 +138,16 @@ class Manager_car_regis extends CI_Controller {
         
     }
 
+    public function del_car($idCarregis)
+    {
+        $this->Manager_car_regis_model->del_car($idCarregis);
+    }
+
+    public function del_rental($idRental)
+    {
+        $this->Manager_car_regis_model->del_rental($idRental);
+    }
+
 
 }
 

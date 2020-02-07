@@ -30,7 +30,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>
-                                <td width="70%"><?php echo $rs->StartDate; ?></td>
+                                <td width="70%"><?php echo $rs->startDate; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่คืน</label></td>
@@ -240,6 +240,31 @@
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         echo '</form>';
                                            
+                    }?>
+
+                    <?php 
+                    if($rs->idstatus == '9'){
+
+                        $d=strtotime("-3 day");
+
+                        if ($rs->Datebooking <= date("Y-m-d",$d)) {
+
+                            echo '<form action="'; 
+                            echo site_url('Emp_rental/add_status_3/'); 
+                            echo '" method="POST" class="form-horizontal">';
+                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                            echo $rs->idRental; 
+                            echo '">';
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
+                            echo '">';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
+                            echo '</form>';
+                        
+                        }
+
                     }?>
             </div>
         </div>
