@@ -112,6 +112,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm">
+						<p style="color:red;">* กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
 							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
 								data-toggle="modal" data-target="#modal-default">
 								<p style="color:blue;"><u>เอกสารยืนยันตน</u></p>
@@ -183,8 +184,9 @@
 					<form action="<?php echo base_url('Datarent'); ?>">
 						<div class="col-sm">
 							<div class="box__input">
-							<?php if($countimg[0]["img3"] > 1) { ?>
-							<button class="btn" style="background-color: gray; color:white;">ยืนยันข้อมูล</button>
+							<?php if($countimg[0]["img3"] == 2) { ?>
+							<button class="btn" style="background-color: #F60200; color:white;"
+							onclick="return confirm('ยืนยันข้อมูล ?');">ยืนยันข้อมูล</button>
 							<?php  } ?>
 							</div>
 					</form>

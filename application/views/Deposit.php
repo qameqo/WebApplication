@@ -128,7 +128,7 @@
 							<div class="row">
 								<div class="col-sm">
 									<h6 style="color:red;">* รูปใบเสร็จโอนเงินมัดจำ 1 รูป</h6>
-									<p style="color:red;">* หากยังไม่ได้อัปรูปหลักฐานยืนยันตัวตนสามารถอัปได้ในขั้นตอนนี้</p>
+									<!-- <p style="color:red;">* หากยังไม่ได้อัปรูปหลักฐานยืนยันตัวตนสามารถอัปได้ในขั้นตอนนี้</p> -->
 								</div>
 							</div>
 							<div class="row">
@@ -189,12 +189,20 @@
 							
 							<br>
 							</form>
-							<div class="col-sm">
-								<div class="box__input">
-								<form action="<?php echo base_url('Deposit/ups/'.$idr); ?>" method="POST">
-									<button class="btn btn-danger" type="submit">ยืนยันการอัปโหลด</button>
-									</form>
-				</div>
-			</div>
+							
 		</div>
 	</div>
+						<?php 
+								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idrent ='$idr'");
+							  $countimg = $query->result_array();	
+						
+						 ?>
+					<form action="<?php echo base_url('Deposit/ups/'.$idr); ?>">
+						<div class="col-sm">
+							<div class="box__input">
+							<?php if($countimg[0]["img3"] == 3) { ?>
+							<button class="btn" style="background-color: #F60200; color:white;"
+							onclick="return confirm('ยืนยันข้อมูล ?');">ยืนยันข้อมูล</button>
+							<?php  } ?>
+							</div>
+					</form>
