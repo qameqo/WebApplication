@@ -53,10 +53,19 @@
                                 <td width="30%"><label>เลขตัวถัง</label></td>
                                 <td width="70%"><?php echo $rs->Carbody; ?></td>
                             </tr>
+
+                            <?php 
+                                if($rs->RentalPrice == null)
+                                {
+
+                                }else{ 
+                            ?>
                             <tr>
                                 <td width="30%"><label>ราคาปล่อยเช่า</label></td>
                                 <td width="70%"><?php echo $rs->RentalPrice; ?></td>
                             </tr>
+                            <?php } ?>
+
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
                                 <?php if($rs->idStatus == '1')
@@ -128,9 +137,12 @@
                             </tr> 
                             
                             <?php
-                            
-                            if($rs->idStatus == '4')
-                            {
+                            if ($rs->idStatus == '2') {
+                                echo'<tr>
+                                <td width="30%"><label>วันที่อนุมัติ</label></td><td width="70%">';
+                                echo $rs->Dayfirst; 
+                                echo '</span></td></tr>';
+                            }elseif($rs->idStatus == '4'){
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
@@ -275,7 +287,27 @@
                         echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="6" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
                         echo '</form>';
+
+                    }elseif ($rs->idStatus == '2') {
+
+                        $startdate=strtotime("l");
+
+                        echo '<form action="'; 
+                        echo site_url('Manager_car_regis/add_status'); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" name="Dayfirst" id="Dayfirst" value="';
+                        echo date("Y-m-d", $startdate);
+                        echo '">';
+                        echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="7" style="font-size:20px;" required>';
+                        echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
+                        echo '</form>';
+
                     }?>
+
+
 
             </div>
         </div>
