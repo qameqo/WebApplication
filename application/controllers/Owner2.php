@@ -87,7 +87,19 @@ class Owner2 extends CI_Controller {
         // $this->show($id);
         redirect('Owner2/show/'.$id.'/'.$idc);
     }
-
+    public function checkimg1()
+    {
+        $this->load->model("check");
+        if ($this->check->is_img_available($_POST["img1"])) {
+            // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>';
+            echo "true";
+        } else {
+            // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>';
+            echo "false";
+        }
+        
+    }
+    
     /* DELETE FROM `Carregis` WHERE `Carregis`.`idCarregis` = 73; 
     DELETE FROM `Images` WHERE `Images`.`id_image` = 97;*/
 }

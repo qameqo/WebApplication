@@ -192,7 +192,7 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
-							<input type="text" class="form-control" name="license" id="license" placeholder="Ex.5กช1648" required>
+							<input type="text" class="form-control" name="license" id="license" placeholder="Ex.5กช1648" disabled required>
 							<label class="text-danger" hidden id="fail"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>
 							<label class="text-success"hidden id="success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>
 						</div>
@@ -388,7 +388,8 @@
 					</div>
 					<div class="col-sm mb-1">
 						<br>
-						<button class="btn btn-Danger btn-lg" style="background-color: #F60200;"  name="game" id="game"
+						<button class="btn btn-secendary btn-lg" style="background-color: gray; color:white;" 
+						onclick="return confirm('ยืนยันข้อมูล ?');" name="game" id="game"
 							type="submit" disabled>บันทึกและดำเนินการต่อ</button>
 					</div>
 				</div>
@@ -396,12 +397,39 @@
 		</div>
 	</div>
 	</form>
+	<!-- <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script> -->
 
+	<!-- <script>
+function game() {
+	var r = confirm("ต้องการยืนยันข้อมูลรถ ?");
+    if (r == true) {
+      
+        window.location.href = "<?php echo base_url("Owner/insert/'.$ids") ?>";
+    } else {
+        window.location.href = "";
+    }
+}
+</script> -->
+	<!-- <script>
+
+$(document).ready(function(){
+    var r = confirm("ต้องการยืนยันข้อมูลรถ ?");
+    if (r == true) {
+      
+        window.location.href = "<?php echo base_url("Owner/insert/'.$ids") ?>";
+    } else {
+        window.location.href = "";
+    }
+});
+</script> -->
+	
 	<script>
+	var license = 0;
+	var carbody = 0;
 	$(document).ready(function(){  
       $('#license').change(function(){  
-           var license = $('#license').val();  
-           if(license != '')  
+           license = $('#license').val();  
+           if(license  != '')  
            {  
                 $.ajax({  
                      url:"<?php echo base_url(); ?>Owner/checklicense",  
@@ -415,24 +443,68 @@
 						$('#fail').removeAttr('hidden')
 						$('#success').attr('hidden',true)
 						$('#game').attr('disabled',true)
+						document.getElementById("game").style.background = "gray";
+
 					 }else
 					 {
 						console.log("ไม่มี");
 						$('#success').removeAttr('hidden')
 						$('#fail').attr('hidden',true)
 						$('#game').removeAttr('disabled')
-						
+						document.getElementById("game").style.background = "#F60200";
+					 }
+                     }  
+                });  
+           }  
+	  });  
+	  $('#carbody').change(function(){  
+		   carbody = $('#carbody').val();  
+		   var licen = document.getElementById("license").value;
+		  
+           if(carbody != '')  
+           {  
+                $.ajax({  
+                     url:"<?php echo base_url(); ?>Owner/checkcarbody",  
+                     method:"POST",  
+                     data:{carbody:carbody},  
+                     success:function(data){  
+						//   $('#carbody_result').html(data);
+						console.log("แก้ไขแล้ว");
+					 if(data.trim() === "true"){
+						console.log("มีแล้ว");
+						$('#fail2').removeAttr('hidden')
+						$('#success2').attr('hidden',true)
+						$('#game').attr('disabled',true)
+						document.getElementById("license").disabled = true;
+						document.getElementById("game").style.background = "gray";
+					 }else
+					 {
+						console.log("ไม่มี");
+						$('#success2').removeAttr('hidden')
+						$('#fail2').attr('hidden',true)
+						$('#license').removeAttr('disabled')
+						document.getElementById("carbody").readOnly = true;
 					 }
                      }  
                 });  
            }  
       });  
  });
+
  </script>
- <script>
+
+
+
+
+
+
+
+
+
+ <!-- <script>
 	$(document).ready(function(){  
       $('#carbody').change(function(){  
-           var carbody = $('#carbody').val();  
+           carbody = $('#carbody').val();  
            if(carbody != '')  
            {  
                 $.ajax({  
@@ -451,12 +523,12 @@
 						console.log("ไม่มี");
 						$('#success2').removeAttr('hidden')
 						$('#fail2').attr('hidden',true)
-						$('#game').removeAttr('disabled')
+						
 					 }
                      }  
                 });  
            }  
       });  
  });
- </script>
+ </script> -->
  
