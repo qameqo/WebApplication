@@ -197,7 +197,7 @@
                                     echo '<tr>
                                     <td width="30%"><label>วันเริ่มต้น</label></td>
                                     <td width="70%">';
-                                    echo $data['Dayfirst'];
+                                    echo $data['StartDate'];
                                     echo '</td></tr>';
                                     echo '<tr>
                                     <td width="30%"><label>วันสิ้นสุด</label></td>
