@@ -76,7 +76,11 @@ class Rentnext extends CI_Controller {
         );
     }
         $this->db->insert('RentalDetail', $in);
-
+        
+        $car = array('idStatus' => '10');
+        $this->db->where('idCarregis', $idc);
+        $this->db->update('Carregis', $car);
+        
         echo "<script>";
         echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
