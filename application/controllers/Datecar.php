@@ -20,13 +20,16 @@ class Datecar extends CI_Controller {
 
             
             'idStatus' => "4",
-            'Dayfirst' => $Date
+             'StartDate'=> $dat
         );
         echo "<script>";
         echo "alert('บันทึกข้อมูลเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Dataregis ';";
         echo "</script>";
         $this->db->update('Carregis', $ob);
+        $ob2 = array (
+
+        );
      }
 
 }

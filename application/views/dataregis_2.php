@@ -186,7 +186,7 @@
                                     echo '<tr>
                                     <td width="30%"><label>วันส่งรถ</label></td>
                                     <td width="70%">';
-                                    echo $data['Dayfirst'];
+                                    echo $data['StartDate'];
                                     echo '</td></tr>';
                                 }
                             }
