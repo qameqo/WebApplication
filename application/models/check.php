@@ -46,6 +46,8 @@ class check extends CI_Model {
               return false;  
          }  
     }
+    
+    
     function calculate($idc)
     {
          $this->db->select('*');

@@ -251,14 +251,30 @@
 
 
  							<br>
- 							<div class="col-sm">
+ 							<!-- <div class="col-sm">
  								<div class="box__input">
- 									<a class="btn" style="background-color: #F60200;"
+ 									<a class="btn" style="background-color: gray;"
  										href="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>"
- 										onclick="return confirm('ยืนยันการอัปโหลด ?');">
- 										<span style=" color: white;">ยืนยันการอัปโหลด</span></a>
+ 										onclick="return confirm('ยืนยันการอัปโหลด ?')">
+ 										<span style=" color: white;">ดำเนินการต่อ</span></a>
  								</div>
- 							</div>
+ 							</div> -->
  						</div>
  					</div>
- </form>
+ </form>					
+						<?php $query = $this->db->query("SELECT COUNT(*) as img FROM Images WHERE Images.idCarregis ='$idc'");
+							  $query2 = $this->db->query("SELECT COUNT(*) as img2 FROM Images2 WHERE Images2.idCarregis ='$idc'");
+							  $countimg1 = $query->result_array();	
+							  $countimg2 = $query2->result_array();	
+						
+						 ?>
+						<form action="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>">
+ 						<div class="col-sm">
+ 								<div class="box__input">
+									<?php if($countimg1[0]["img"] > 0 && $countimg2[0]["img2"] > 0) { ?>
+ 									<button class="btn" style="background-color: gray; color:white;">ดำเนินการต่อ</button>
+									 <?php } ?>
+ 								</div>
+ 							</div>
+							 </form>
+	
