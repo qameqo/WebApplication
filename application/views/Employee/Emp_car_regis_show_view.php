@@ -244,9 +244,11 @@
                         </table>
                     </div>
 
-                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
-
                     <?php if ($rs->idStatus == '4') { ?>
+
+                    <form action="<?php echo site_url('Manager_car_regis/add_status_2'); ?>" method="POST" class="form-horizontal">
+
+                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
 
                     <div class="row justify-content-center">
                         <div class="col-3">
@@ -265,9 +267,6 @@
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
 
-                        echo '<form action="';
-                        echo site_url('Manager_car_regis/add_status_2');
-                        echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" class="btn btn-success mt-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
                         echo '<input type="hidden" name="EndDate" id="EndDate" value="';
                         echo date("Y-m-d", $enddate);
