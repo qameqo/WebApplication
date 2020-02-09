@@ -483,7 +483,7 @@ $(document).ready(function(){
 						$('#success2').removeAttr('hidden')
 						$('#fail2').attr('hidden',true)
 						$('#license').removeAttr('disabled')
-						document.getElementById("carbody").readOnly = true;
+						// document.getElementById("carbody").readOnly = true;
 					 }
                      }  
                 });  
