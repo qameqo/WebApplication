@@ -60,11 +60,11 @@
 						<a type="button" data-toggle="modal" style="color:red;"
 							data-target="#modal-default"><i class="ni ni-single-copy-04" style="color:black;">&nbsp;<u>อ่านเงื่อนไข</u></i></a>
 						<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
-							aria-labelledby="modal-default" aria-hidden="true">
+							aria-labelledby="modal-default" aria-hidden="true" >
 							<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h6 class="modal-title" id="modal-title-default">เงื่อนไขการลงทะเบียน</h6>
+										<h6 class="modal-title" id="modal-title-default">เงื่อนไขการลงทะเบียนรถยนต์</h6>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">×</span>
 										</button>
@@ -72,15 +72,22 @@
 
 									<div class="modal-body">
 
-										<p>1.</p>
-										<p>2.</p>
-										<p>3.</p>
-										<p>4.</p>
-										<p>5.</p>
-										<p>6.</p>
-										<p>7.</p>
-										<p>8.</p>
-										<p>9.</p>
+										<h6>1.ต้องมีอายุ 21 ปีขึ้นไปหากอายุไม่ถึงจะไม่อนุมัติการลงทะเบียน</h6>
+										<br>
+										<h6>2.หากข้อมูลเอกรถยนต์ไม่ครบถ้วนจะไม่อนุมัติการลงทะเบียน </h6>
+										<br>
+										<h6>3.หากข้อมูลรถยนต์และเอกสารรถยนต์ไม่สอดคล้องกันจะไม่อนุมัติการลงทะเบียน</h6>
+										<br>
+										<h6>4.ให้กำหนดส่งรถภายใน 3 วัน</h6>
+										<br>
+										<h6>5.หากไม่กำหนดวันส่งรถหลังจากอนุมัติเกิน 3 วันการลงทะเบียนจะถูกยกเลิก</h6>
+										<br>
+										<h6>6.หากกำหนดวันส่งรถและไม่มาส่งรถการลงทะเบียนจะถูกยกเลิก</h6>
+										<br>
+										<h6>7.เมื่อรถถูกเช่าจะได้รายได้จากราคารถในรายการเช่านั้น 70% โดยจะโอนไปยังบัญชีที่ระบุไว้ในการลงทะเบียนรถคนนั้น</h6>
+										<br>
+										<h6>8.ประกันทางร้านจะไม่คุ้มครองการยักยอกโดยผู้เช่า</h6>
+										
 									</div>
 
 									<div class="modal-footer">
