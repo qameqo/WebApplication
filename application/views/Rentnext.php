@@ -285,8 +285,9 @@
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.25;
+                                                $inss = number_format($ins,0);
                                                 ?>
-                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p>
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
@@ -331,8 +332,9 @@
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.35;
+                                                $insd = number_format($ins,0);
                                                 ?>
-                                <p style="text-align:right;"><?php echo $ins ?>&nbsp;บาท/วัน</p>
+                                <p style="text-align:right;"><?php echo $insd ?>&nbsp;บาท/วัน</p>
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
