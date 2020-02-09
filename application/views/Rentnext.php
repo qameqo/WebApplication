@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-sm">
                     <?php foreach($qq as $data) { ?>
-                    <p style="text-align:right;"><?php echo $data['RentalPrice']?>&nbsp;บาท</p>
+                    <p style="text-align:right;"><?php echo number_format($data['RentalPrice'],0)?>&nbsp;บาท</p>
                     <?php } ?>
                 </div>
             </div>

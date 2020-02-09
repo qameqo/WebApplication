@@ -46,7 +46,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span><?php echo $data['PriceIns']; ?></span>
+				 <span><?php echo number_format($data['PriceIns'],0) ?></span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
@@ -59,7 +59,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span>5000</span>
+				 <span>5,000</span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
@@ -72,7 +72,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span><?php echo $data['totalprice']; ?></span>
+				 <span><?php echo number_format($data['totalprice'],0) ?></span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
@@ -85,7 +85,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span style="color:red;"><?php echo $data['PriceDe']; ?></span>
+				 <span style="color:red;"><?php echo number_format($data['PriceDe'],0)?></span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
