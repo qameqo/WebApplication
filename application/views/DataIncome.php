@@ -47,7 +47,7 @@
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
                                 <td><?php echo $data['Carownerincome'];?>&nbsp;บาท</td>
-                                <td><?php echo $data['StartDate'];?></td>
+                                <td><?php echo $data['startDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
