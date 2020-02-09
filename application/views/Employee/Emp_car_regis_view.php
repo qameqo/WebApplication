@@ -31,7 +31,7 @@
 
                             <?php foreach ($query as $rs) { 
                                 if ($rs->idStatus == '4') {
-                                    if ($rs->Dayfirst == date('Y-m-d')) {
+                                    // if ($rs->Dayfirst == date('Y-m-d')) {
                             ?>
 
 							<tr>
@@ -117,7 +117,7 @@
 								</td>
 							</tr>
 
-                            <?php }} 
+                            <?php } 
 
                             if ($rs->idStatus == '2') {
                             ?>

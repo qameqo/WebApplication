@@ -274,35 +274,47 @@
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
                         echo '</form>';
 
-                        echo '<form action="'; 
-                        echo site_url('Manager_car_regis/add_status'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" name="Dayfirst" id="Dayfirst" value="';
-                        echo date("Y-m-d", $enddate);
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="6" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
-                        echo '</form>';
+                        $d=strtotime("-3 day");
+
+                        if ($rs->Dayfirst <= date("Y-m-d",$d)) {
+
+                            echo '<form action="'; 
+                            echo site_url('Manager_car_regis/add_status_3'); 
+                            echo '" method="POST" class="form-horizontal">';
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
+                            echo '">';
+                            echo '<input type="hidden" name="StartDate" id="StartDate" value="';
+                            echo date("Y-m-d", $enddate);
+                            echo '">';
+                            echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="6" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
+                            echo '</form>';
+
+                        }
 
                     }elseif ($rs->idStatus == '2') {
+
+                        $d=strtotime("+2 Days");
+
+                        if ($rs->Dayfirst == date('Y-m-d',$d)) {
 
                         $startdate=strtotime("l");
 
                         echo '<form action="'; 
-                        echo site_url('Manager_car_regis/add_status'); 
+                        echo site_url('Manager_car_regis/add_status_3'); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
-                        echo '<input type="hidden" name="Dayfirst" id="Dayfirst" value="';
+                        echo '<input type="hidden" name="StartDate" id="StartDate" value="';
                         echo date("Y-m-d", $startdate);
                         echo '">';
                         echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="7" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
                         echo '</form>';
+
+                        }
 
                     }?>
 

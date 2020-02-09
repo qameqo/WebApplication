@@ -139,6 +139,31 @@ class Manager_car_regis_model extends CI_Model
         // redirect('Manager_emp');
     }
 
+    public function add_status_3()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idStatus' => $this->input->post('idStatus'),
+            'StartDate' => $this->input->post('StartDate'),
+            'RentalPrice' => $this->input->post('RentalPrice')
+        );
+
+        $query=$this->db->update('Carregis',$data);
+
+        echo "<script>";
+        echo "alert('แก้ไขสถานะเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_car';";
+        echo "</script>";
+        
+        // redirect('Manager_emp');
+    }
+
     public function add_not_passed()
     {
         $data = array( 
