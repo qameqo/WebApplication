@@ -55,6 +55,19 @@
 				 </div>
 				 <div class="row">
 				 	<div class="col-sm-5 text-right">
+					 <span>ราคามัดจำรถ</span>
+					 </div>
+					 <div class="col-sm-3 text-right">
+					 <?php foreach($qo as $data){?>
+				 <span>5000</span>
+				 <?php } ?>
+					 </div>
+					 <div class="col-sm-2 text-center"> 
+						<span>บาท</span>
+					 </div>
+				 </div>
+				 <div class="row">
+				 	<div class="col-sm-5 text-right">
 					 <span>ราคารวมทั้งหมดรวม vat</span>
 					 </div>
 					 <div class="col-sm-3 text-right">
