@@ -145,7 +145,7 @@
                             }elseif($rs->idStatus == '4'){
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
-                                echo $rs->Dayfirst; 
+                                echo $rs->StartDate; 
                                 echo '</span></td></tr>';
                             }elseif ($rs->idStatus == '8') {
                                 echo'<tr>
