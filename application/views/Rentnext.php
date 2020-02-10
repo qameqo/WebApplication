@@ -280,7 +280,7 @@
                         <div class="radio">
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled required>
+                                    disabled required checked="checked">
                                 <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
