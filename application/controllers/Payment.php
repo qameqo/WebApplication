@@ -54,7 +54,7 @@ class Payment extends CI_Controller {
     {
 
             echo "<script>";
-            echo "alert('กรุณาชำระเงินภายในวันที่ทำการจอง');";
+            echo "alert('กรุณาชำระเงินมัดจำภายในวันที่ทำการจอง');";
             echo "window.location.href = '". base_url(). "Datarent' ;";
             echo "</script>";
     }

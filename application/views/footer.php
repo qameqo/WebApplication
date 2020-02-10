@@ -246,6 +246,7 @@ $("input[name='date1']").ready(function(){
                     var game3 =  total3.toFixed(0);
                     $("#total").text(game3 + " บาท")
                     $("#total2").val(game3)
+                    $("#book").removeAttr('disabled',true)
                     } // รวม
               );  
         }
@@ -266,6 +267,7 @@ $("input[name='date1']").ready(function(){
                     var game5 =  total5.toFixed(0);
                     $("#total").text(game5 + " บาท")
                     $("#total2").val(game5)
+                    $("#book").removeAttr('disabled',true)
                     } // รวม
               );  
         }

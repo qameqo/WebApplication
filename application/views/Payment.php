@@ -115,7 +115,7 @@
 						<p style="color:red;">* กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
 							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
 								data-toggle="modal" data-target="#modal-default">
-								<p style="color:blue;"><u>เอกสารยืนยันตน</u></p>
+								<p style="color:red;"><u>เอกสารยืนยันตน</u></p>
 							</a>
 							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
 								aria-labelledby="modal-default" aria-hidden="true">
@@ -155,6 +155,7 @@
 								</div>
 							</div>
 							<br>
+							<br>
 							<div class="row">
 								<div class="col-sm text-Right">
 									<div class="fileUpload btn btn-lg" style="background-color: #FFC125">
@@ -175,13 +176,14 @@
 
 						</div>
 					</div>
-				</div>
+			
 </form>				<?php 
 								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idrent ='$idr'");
 							  $countimg = $query->result_array();	
 						
 						 ?>
 					<form action="<?php echo base_url('Payment/datarent'); ?>">
+					<br>
 						<div class="col-sm">
 							<div class="box__input">
 							<?php if($countimg[0]["img3"] == 2) { ?>

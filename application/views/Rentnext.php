@@ -136,8 +136,8 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="submit" class="btn btn-danger"
-                    style="background-color: #F60200; color: white; width:370px;">จอง</button>
+                <button type="submit" class="btn btn-danger" id="book"
+                    style="background-color: #F60200; color: white; width:370px;" disabled>จอง</button>
             </div>
         </div>
     </div>
@@ -280,7 +280,7 @@
                         <div class="radio">
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled required checked="checked">
+                                    disabled required>
                                 <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
@@ -370,12 +370,45 @@
 </form>
 
 <script>
+    var start = 0;
+    var end = 0;
     $(document).ready(function () {
+        $('#datetimepickerstart').change(function () {
+             start = $("#datetimepickerstart").val()
+            if (start != '') {
+                $('#datetimepickerend').val(null)
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+                $('#pre').prop('checked',false)
+                $('#stand').prop('checked',false)
+                $('#book').attr('disabled', true)
+                $("#totalcar").text(" บาท")
+                $("#totalcar2").val(null)
+                $("#totalvat").val(null)
+                $("#ins").text(" บาท")
+                $("#totalins").val(null)
+                $("#total").text(" บาท")
+                $("#total2").val(null)
+
+
+                
+            } else {
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+            }
+        });
         $('#datetimepickerend').change(function () {
-            var val = $("#datetimepickerend").val()
-            if (val != '') {
+             end = $("#datetimepickerend").val()
+            if (end != '') {
                 $('#stand').removeAttr('disabled')
                 $('#pre').removeAttr('disabled')
+                $('#pre').prop('checked',false)
+                $('#stand').prop('checked',false)
+                $("#totalvat").val(null)
+                $("#ins").text(" บาท")
+                $("#totalins").val(null)
+                $("#total").text(" บาท")
+                $("#total2").val(null)
             } else {
                 $('#stand').attr('disabled', true)
                 $('#pre').attr('disabled', true)
