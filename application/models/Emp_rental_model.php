@@ -148,10 +148,21 @@ class Emp_rental_model extends CI_Model
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
 
-        echo "<script>";
-        echo "alert('แก้ไขสถานะเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
-        echo "</script>";
+        if($qq['idstatus'] == '6'){
+
+            echo "<script>";
+            echo "alert('แก้ไขสถานะเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Emp_rental';";
+            echo "</script>";  
+
+        }else{
+
+            echo "<script>";
+            echo "alert('แก้ไขสถานะเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+            echo "</script>";
+
+        }
         
         // redirect('Manager_emp');
     }
