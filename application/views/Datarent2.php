@@ -70,24 +70,24 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>เลขไมล์</label></td>
-                                <td width="70%"><?php echo $data['Mileage'];?></td>
+                                <td width="70%"><?php echo number_format($data['Mileage'],0)?></td>
                             </tr>
                             
                             <tr>
                                 <td width="30%"><label>ราคารถ</label></td>
-                                <td width="70%"><?php echo $data['PriceCar'];?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['PriceCar'],0)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาประกัน</label></td>
-                                <td width="70%"><?php echo $data['PriceIns'];?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['PriceIns'],0)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคามัดจำรถ</label></td>
-                                <td width="70%">5000&nbsp;บาท</td>
+                                <td width="70%">5,000&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคารวมรวมvat 7% และค่ามัดจำรถ</label></td>
-                                <td width="70%"><?php echo $data['totalprice'];?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['totalprice'],)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันเริ่มเช่า</label></td>

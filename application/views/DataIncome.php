@@ -15,7 +15,7 @@
                         $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                         $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
-                        $this->db->where('Rental.idstatus', 10);
+                        $this->db->where('Rental.idstatus', 11);
                         $this->db->order_by('idRental', 'desc');
                         $query =  $this->db->get();
                         $qq = $query->result_array();
@@ -46,7 +46,7 @@
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-                                <td><?php echo $data['Carownerincome'];?>&nbsp;บาท</td>
+                                <td><?php echo number_format($data['Carownerincome'],0)?>&nbsp;บาท</td>
                                 <td><?php echo $data['startDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->

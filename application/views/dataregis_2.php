@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาปล่อยเช่า</label></td>
-                                <td width="70%"><?php echo $data['RentalPrice'];?><span>&nbsp;บาท/วัน</span></td>
+                                <td width="70%"><?php echo number_format($data['RentalPrice'],0)?>&nbsp;บาท/วัน</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>บัญชีธนาคาร</label></td>

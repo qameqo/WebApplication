@@ -47,7 +47,7 @@
 								style="width:10px; height:10px;">&nbsp;<?php echo $data['Gear'];?>
 							<img src="<?php echo base_url('./pic/seat-belt.png');?>"
 								style="width:10px; height:10px;">&nbsp;<?php echo $data['Number_Seat']; ?>
-							<br><span style="color: #F60200;"><?php echo $data['RentalPrice'];?></span>&nbsp;บาท/วัน
+							<br><span style="color: #F60200;"><?php echo number_format($data['RentalPrice'],0)?></span>&nbsp;บาท/วัน
 							<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
 								data-target="#modal-default"><u>เอกสารเช่ารถ</u></a>
 							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
