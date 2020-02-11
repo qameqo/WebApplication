@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="Address">ที่อ่</label>
+                        <label for="Address">ที่อยู่</label>
                         <input type="text" class="form-control" name="Address" id="Address" value="<?php echo $data['Address'];?>">
                     </div>
 
@@ -72,7 +72,7 @@
                         <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" value="<?php echo $data['Tel'];?>">
                     </div>
 
-                    <button type="submit" class="btn btn-success">Edit</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button>
                 </form>
             </div>
         </div>

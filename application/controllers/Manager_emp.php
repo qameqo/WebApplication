@@ -39,8 +39,6 @@ class Manager_emp extends CI_Controller {
         $this->load->view('Manager/Header_manage');
         $this->load->view('Manager/Manager_emp_edit_view', $data);
         $this->load->view('Manager/Footer_manage');
-        $this->load->view('Script_manager_emp');
-        $this->load->view('Modal_view');
     }
 
     public function show($id_Employee)
