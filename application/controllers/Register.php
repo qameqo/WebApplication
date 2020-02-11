@@ -13,7 +13,7 @@ class Register extends CI_Controller {
     public function insert()
     {   
         $Username = $this->input->post('username');
-        if($Username == 'admin')
+        if($Username == 'admin' || $Username == 'emp')
         {
             echo "<script>";
             echo "alert('username นี้ไม่อนุญาตให้ใช้');";
