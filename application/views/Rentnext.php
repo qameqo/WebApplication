@@ -274,6 +274,23 @@
                 </div>
             </div>
             <br>
+
+                                                    <?php $this->db->select('*');
+                                                    $this->db->from('Type_Insurance');
+                                                    $this->db->where('id_Insurance', 1);
+                                                    $query =  $this->db->get();
+                                                    $qb = $query->result_array();
+                                                    
+                                                    ?>   
+                                                    <?php $this->db->select('*');
+                                                    $this->db->from('Type_Insurance');
+                                                    $this->db->where('id_Insurance', 2);
+                                                    $query =  $this->db->get();
+                                                    $qa = $query->result_array();
+                                                    
+                                                    ?>
+
+
             <div class="row">
                 <div class="col-sm text-left">
                     <div class="label-bot">
@@ -281,7 +298,9 @@
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
                                     disabled required>
-                                <span style="vertical-align: top;">ประกันภัยพื้นฐาน</span>
+                                    <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
+                                            <?php echo $data['Name_Insurance'] ?>
+                                                <?php } ?></span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.25;
@@ -307,8 +326,10 @@
                                         </div>
 
                                         <div class="modal-body text-left">
-                                            <p>หากเกิดอุบัติเหตุที่ผู้เช่าเป็นฝ่ายผิด ผู้เช่าต้องชำระค่าเสียหายส่วนแรกจำนวน 3,000-50,000 บาท 
-                                            ขึ้นอยูกับความเสียหายและระยะเวลาการซ่อม หากรถยนต์ประสบอุบัติเหตุเสียหายหนัก หรือเสียหายทั้งคัน</p>
+                                        <?php foreach($qa as $data){ ?>
+                                                <?php echo $data['Detail'] ?>
+                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
+                                            <?php } ?>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"
@@ -320,7 +341,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
+                                                 
             <div class="row">
                 <div class="col-sm text-left">
                     <div class="label-bot">
@@ -328,7 +350,9 @@
                             <label>
                                 <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
                                 disabled required >
-                                <span style="vertical-align: top;">ประกันภัยพรีเมี่ยม</span>
+                                <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
+                                            <?php echo $data['Name_Insurance'] ?> 
+                                                <?php } ?></span>
                                 <?php foreach($qq as $data) { 
                                                 $hj = $data['RentalPrice'];
                                                 $ins = $hj * 0.35;
@@ -343,10 +367,12 @@
                                 aria-labelledby="modal-default" aria-hidden="true">
                                 <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                     <div class="modal-content">
-
+                                          
                                         <div class="modal-header">
                                             <h6 class="modal-title" id="modal-title-default">
+                                             
                                             รายละเอียดประกันภัยพรีเมี่ยม (Premium)
+                                            
                                             </h6>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">×</span>
@@ -354,7 +380,10 @@
                                         </div>
 
                                         <div class="modal-body text-left">
-                                            <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p>
+                                            <?php foreach($qb as $data){ ?>
+                                                <?php echo $data['Detail'] ?>
+                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
+                                            <?php } ?>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"
