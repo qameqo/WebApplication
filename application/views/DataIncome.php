@@ -35,6 +35,7 @@
                                 <th data-column-id="Name_image" style="width: 100px;">รายได้</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันเริ่มเช่า</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันส่งคืน</th>
+                                <th data-column-id="Name_image" style="width: 250px;">วันส่งคืนจริง</th>
                             
                             </tr>
                         </thead>
@@ -49,6 +50,7 @@
                                 <td><?php echo $data['License'];?></td>
                                 <td><?php echo number_format($data['Carownerincome'],0)?>&nbsp;บาท</td>
                                 <td><?php echo $data['startDate'];?></td>
+                                <td><?php echo $data['endDate'];?></td>
                                 <td><?php echo $data['ReturnDate'];?></td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
