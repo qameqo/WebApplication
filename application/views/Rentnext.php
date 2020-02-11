@@ -279,14 +279,14 @@
                                                     $this->db->from('Type_Insurance');
                                                     $this->db->where('id_Insurance', 1);
                                                     $query =  $this->db->get();
-                                                    $qb = $query->result_array();
+                                                    $qa = $query->result_array();
                                                     
                                                     ?>   
                                                     <?php $this->db->select('*');
                                                     $this->db->from('Type_Insurance');
                                                     $this->db->where('id_Insurance', 2);
                                                     $query =  $this->db->get();
-                                                    $qa = $query->result_array();
+                                                    $qb = $query->result_array();
                                                     
                                                     ?>
 
@@ -298,7 +298,7 @@
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
                                     disabled required>
-                                    <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
+                                    <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?>
                                                 <?php } ?></span>
                                 <?php foreach($qq as $data) { 
@@ -330,6 +330,7 @@
                                                 <?php echo $data['Detail'] ?>
                                             <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
                                             <?php } ?>
+                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"
@@ -350,7 +351,7 @@
                             <label>
                                 <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
                                 disabled required >
-                                <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
+                                <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?> 
                                                 <?php } ?></span>
                                 <?php foreach($qq as $data) { 
@@ -383,7 +384,8 @@
                                             <?php foreach($qb as $data){ ?>
                                                 <?php echo $data['Detail'] ?>
                                             <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
-                                            <?php } ?>
+                                            <?php } ?>&nbsp;&nbsp;
+                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-link  ml-auto"
