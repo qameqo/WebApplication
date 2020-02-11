@@ -15,7 +15,8 @@
                         $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                         $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
-                        $this->db->where('Rental.idstatus', 11);
+                        // $this->db->where('Rental.idstatus', 11);
+                        $this->db->where('Rental.idstatus', 12);
                         $this->db->order_by('idRental', 'desc');
                         $query =  $this->db->get();
                         $qq = $query->result_array();
@@ -118,7 +119,13 @@
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
-                                }  
+                                }
+                                else if($data['Name_Status']== 'คืนเรียบร้อย')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }    
                                  ?> -->
 
                               
