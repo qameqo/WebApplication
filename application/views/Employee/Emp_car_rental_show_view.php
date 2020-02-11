@@ -245,7 +245,7 @@
                     <?php 
                     if($rs->idstatus == '9'){
 
-                        $d=strtotime("-3 day");
+                        $d=strtotime("-1 day");
 
                         if ($rs->Datebooking <= date("Y-m-d",$d)) {
 

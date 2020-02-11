@@ -100,7 +100,7 @@ class Manager_car_regis_model extends CI_Model
         else if($_SESSION['id_Employee'] != 2 )
         {
             echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
+            echo "alert('ยืนยันการรับรถยนต์เรียบร้อย');";
             echo "window.location.href = '". base_url(). "Emp_car';";
             echo "</script>";
         }
