@@ -9,8 +9,7 @@
                        //INNER JOIN Status_car on Status_car.id_Status = Rental.idstatus WHERE Carregis.id_Member = '61' and Rental.idstatus = "11"  ORDER BY Rental.idRental DESC');
                         $this->db->select('*');
                         $this->db->from('Rental');
-                        $this->db->join('RentalDetail', 'RentalDetail.idRent = Rental.idRental');
-                        $this->db->join('Carregis', 'Carregis.idCarregis = RentalDetail.idCarregis');
+                        $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
                         $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                         $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                         $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');

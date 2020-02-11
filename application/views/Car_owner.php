@@ -157,8 +157,9 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
-							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="carbody" id="carbody" 
+							<input type="text" class="form-control" placeholder="กรอกให้ครบ 17 หลัก" name="carbody" id="carbody" 
 							pattern=".{17}" title="กรุณากรอกให้ครบ 17 หลัก" required>
+							<p style="color:red; font-size:10px;">* กรุณากรอกหมายเลขตัวถังรถให้ถูกต้องก่อนกรอกทะเบียนรถ</p>
 							<label class="text-danger" hidden id="fail2"><span class="glyphicon glyphicon-remove"></span> หมายเลขตัวถังรถนี้ได้ถูกใช้ไปแล้ว</label>
 							<label class="text-success" hidden id="success2"><span class="glyphicon glyphicon-ok"></span> หมายเลขตัวถังรถนี้สามารถใช้ได้</label>		
 						</div>

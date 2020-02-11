@@ -16,6 +16,22 @@
         filter: alpha(opacity=0);
     }
 </style>
+
+                                                    <?php $this->db->select('*');
+                                                    $this->db->from('Type_Insurance');
+                                                    $this->db->where('id_Insurance', 1);
+                                                    $query =  $this->db->get();
+                                                    $qa = $query->result_array();
+                                                    
+                                                    ?>   
+                                                    <?php $this->db->select('*');
+                                                    $this->db->from('Type_Insurance');
+                                                    $this->db->where('id_Insurance', 2);
+                                                    $query =  $this->db->get();
+                                                    $qb = $query->result_array();
+                                                    
+                                                    ?>
+
 <?php 
       $this->db->select('*');
      $this->db->from('Carregis');
@@ -84,10 +100,116 @@
             <div class="row">
                 <div class="col-sm">
                     
-                    <p style="color:red; font-size:12px; ">* ไม่ให้จองรถล่วงหน้าเกิน 3 วัน</p>
+                    <p style="color:red; font-size:12px; "></p>
                 </div>
                 <div class="col-sm text-right">
                     <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm text-left">
+                    <div class="label-bot">
+                        <div class="radio">
+                            <label style="padding-right: 8px;">
+                                <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
+                                    disabled required>
+                                    <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
+                                            <?php echo $data['Name_Insurance'] ?>
+                                                <?php } ?></span>
+                                <?php foreach($qq as $data) { 
+                                                $hj = $data['RentalPrice'];
+                                                $ins = $hj * 0.25;
+                                                $inss = number_format($ins,0);
+                                                ?>
+                                <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p>
+                                <?php } ?>
+                            </label>
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                                data-toggle="modal" data-target="#modal-de"> <u>ข้อมูลประกันภัยพื้นฐาน</u></a>
+                            <div class="modal fade" id="modal-de" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-default" aria-hidden="true">
+                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-default">
+                                                รายละเอียดประกันภัยพื้นฐาน (Standard)
+                                            </h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body text-left">
+                                        <?php foreach($qa as $data){ ?>
+                                                <?php echo $data['Detail'] ?>
+                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
+                                            <?php } ?>
+                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link  ml-auto"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-sm text-left">
+                    <div class="label-bot">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
+                                disabled required >
+                                <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
+                                            <?php echo $data['Name_Insurance'] ?> 
+                                                <?php } ?></span>
+                                <?php foreach($qq as $data) { 
+                                                $hj = $data['RentalPrice'];
+                                                $ins = $hj * 0.35;
+                                                $insd = number_format($ins,0);
+                                                ?>
+                                <p style="text-align:right;"><?php echo $insd ?>&nbsp;บาท/วัน</p>
+                                <?php } ?>
+                            </label>
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                                data-toggle="modal" data-target="#modal-default"><u>ข้อมูลประกันภัยพรีเมี่ยม</u></a>
+                            <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-default" aria-hidden="true">
+                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                    <div class="modal-content">
+                                          
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-default">
+                                             
+                                            รายละเอียดประกันภัยพรีเมี่ยม (Premium)
+                                            
+                                            </h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body text-left">
+                                            <?php foreach($qb as $data){ ?>
+                                                <?php echo $data['Detail'] ?>
+                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
+                                            <?php } ?>&nbsp;&nbsp;
+                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link  ml-auto"
+                                                data-dismiss="modal">ปิด</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -122,14 +244,14 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-
-                    <p style="text-align:Left; color:red;">รวมทั้งหมด</p>
-                    <p style="text-align:left; color:red; font-size:15px;">รวมมัดจำรถ 5,000 บาท</p>
-                    <p style="text-align:left; color:red; font-size:15px;">รวมvat 7%</p>
+                    <p style="text-align:left;">ราคามัดจำรถ</p>
+                    <input type="hidden" id="hapan" name="hapan" value="5000">
+                    <p style="text-align:Left; color:red;">รวมทั้งหมดรวมvat 7%</p>   
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">
-
+                    <p style="text-align:right;">5,000 บาท</p>
+                    
                     <p style="text-align:right; color:red; font-size:20px;" id="total">
                         &nbsp;บาท</p>
                     <input type="hidden" id="total2" name="total">
@@ -266,138 +388,14 @@
             </div>
             <?php } ?>
         </div>
-        <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
+        <div class="col-sm-3 mb-5 bg-white rounded"
             style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-            <div class="row">
-                <div class="col-sm text-center">
-                    เพกเกจความคุ้มครอง
-                </div>
+           
             </div>
-            <br>
-
-                                                    <?php $this->db->select('*');
-                                                    $this->db->from('Type_Insurance');
-                                                    $this->db->where('id_Insurance', 1);
-                                                    $query =  $this->db->get();
-                                                    $qa = $query->result_array();
-                                                    
-                                                    ?>   
-                                                    <?php $this->db->select('*');
-                                                    $this->db->from('Type_Insurance');
-                                                    $this->db->where('id_Insurance', 2);
-                                                    $query =  $this->db->get();
-                                                    $qb = $query->result_array();
-                                                    
-                                                    ?>
+           
 
 
-            <div class="row">
-                <div class="col-sm text-left">
-                    <div class="label-bot">
-                        <div class="radio">
-                            <label style="padding-right: 8px;">
-                                <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled required>
-                                    <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
-                                            <?php echo $data['Name_Insurance'] ?>
-                                                <?php } ?></span>
-                                <?php foreach($qq as $data) { 
-                                                $hj = $data['RentalPrice'];
-                                                $ins = $hj * 0.25;
-                                                $inss = number_format($ins,0);
-                                                ?>
-                                <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p>
-                                <?php } ?>
-                            </label>
-                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
-                                data-toggle="modal" data-target="#modal-de"> <u>ข้อมูลประกันภัยพื้นฐาน</u></a>
-                            <div class="modal fade" id="modal-de" tabindex="-1" role="dialog"
-                                aria-labelledby="modal-default" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-                                            <h6 class="modal-title" id="modal-title-default">
-                                                รายละเอียดประกันภัยพื้นฐาน (Standard)
-                                            </h6>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body text-left">
-                                        <?php foreach($qa as $data){ ?>
-                                                <?php echo $data['Detail'] ?>
-                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
-                                            <?php } ?>
-                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link  ml-auto"
-                                                data-dismiss="modal">ปิด</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-                                                 
-            <div class="row">
-                <div class="col-sm text-left">
-                    <div class="label-bot">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
-                                disabled required >
-                                <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
-                                            <?php echo $data['Name_Insurance'] ?> 
-                                                <?php } ?></span>
-                                <?php foreach($qq as $data) { 
-                                                $hj = $data['RentalPrice'];
-                                                $ins = $hj * 0.35;
-                                                $insd = number_format($ins,0);
-                                                ?>
-                                <p style="text-align:right;"><?php echo $insd ?>&nbsp;บาท/วัน</p>
-                                <?php } ?>
-                            </label>
-                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
-                                data-toggle="modal" data-target="#modal-default"><u>ข้อมูลประกันภัยพรีเมี่ยม</u></a>
-                            <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
-                                aria-labelledby="modal-default" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                    <div class="modal-content">
-                                          
-                                        <div class="modal-header">
-                                            <h6 class="modal-title" id="modal-title-default">
-                                             
-                                            รายละเอียดประกันภัยพรีเมี่ยม (Premium)
-                                            
-                                            </h6>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body text-left">
-                                            <?php foreach($qb as $data){ ?>
-                                                <?php echo $data['Detail'] ?>
-                                            <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
-                                            <?php } ?>&nbsp;&nbsp;
-                                            <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link  ml-auto"
-                                                data-dismiss="modal">ปิด</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       
 </form>
 
 <script>

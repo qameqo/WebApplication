@@ -7,8 +7,7 @@
                     // $query = $this->db->query('SELECT RentalDetail.*,Rental.* FROM RentalDetail,Rental WHERE Rental.idRental = RentalDetail.idRent and Rental.idMember="61"');
                     $this->db->select('*');
                     $this->db->from('Rental');
-                    $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
-                    $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
+                    $this->db->join('Carregis','Carregis.idCarregis = Rental.idCarregis');
                     $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                     $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
