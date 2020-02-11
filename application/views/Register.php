@@ -31,6 +31,7 @@
 						title="กรุณากรอกเป็นตัวเลขและตัวอักษรภาษาอังกฤษ 5 ตัวขึ้นไป" required>
 						<label class="text-danger" hidden id="fai"><span class="glyphicon glyphicon-remove"></span> Username นี้ได้ถูกใช้ไปแล้ว</label>
 						<label class="text-success" hidden id="suc"><span class="glyphicon glyphicon-ok"></span> Username นี้สามารถใช้ได้</label>
+						<label class="text-danger" hidden id="ad"><span class="glyphicon glyphicon-remove"></span> Username ไม่อนุญาตให้ใช้</label>
 						<p style="color:red; font-size:10px;">* กรุณากรอกตัวอักษรภาษาอังกฤษ 5 ตัวขึ้นไป</p>
 					</div>
 					<div class="col-sm">
@@ -79,31 +80,43 @@
 	$(document).ready(function(){  
       $('#username').change(function(){  
            var username = $('#username').val();  
-           if(username != '')  
-           {  
-                $.ajax({  
-                     url:"<?php echo base_url(); ?>Register/checkusname",  
-                     method:"POST",  
-                     data:{username:username},
-                     success:function(data){  
-                        //   $('#license_result').html(data);
-					 console.log(data);
-					 if(data.trim() === "true"){
-						
-						$('#fai').removeAttr('hidden')
-						$('#suc').attr('hidden',true)
-						$('#go').attr('disabled',true)
-					 }else
-					 {
-						
-						$('#suc').removeAttr('hidden')
-						$('#fai').attr('hidden',true)
-						$('#go').removeAttr('disabled')
-						
-					 }
-                     }  
-                });  
-           }  
+
+		   if(username == 'admin' || username == 'emp')
+		   {
+			$('#ad').removeAttr('hidden')
+			$('#fai').attr('hidden',true)
+			$('#suc').attr('hidden',true)
+			$('#go').attr('disabled',true)
+		   }else
+		   {
+					if(username != '')  
+					{  
+					$.ajax({  
+						url:"<?php echo base_url(); ?>Register/checkusname",  
+						method:"POST",  
+						data:{username:username},
+						success:function(data){  
+							//   $('#license_result').html(data);
+						console.log(data);
+						if(data.trim() === "true"){
+							
+							$('#fai').removeAttr('hidden')
+							$('#suc').attr('hidden',true)
+							$('#ad').attr('hidden',true)
+							$('#go').attr('disabled',true)
+						}else
+						{
+							
+							$('#suc').removeAttr('hidden')
+							$('#fai').attr('hidden',true)
+							$('#ad').attr('hidden',true)
+							$('#go').removeAttr('disabled')
+							
+						}
+						}  
+					});  
+					}  
+		   }
       });  
  });
  </script>

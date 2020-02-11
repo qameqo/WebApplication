@@ -13,6 +13,13 @@ class Register extends CI_Controller {
     public function insert()
     {   
         $Username = $this->input->post('username');
+        if($Username == 'admin')
+        {
+            echo "<script>";
+            echo "alert('username นี้ไม่อนุญาตให้ใช้');";
+            echo "window.location.href = '". base_url(). "Register ';";
+            echo "</script>";
+        }else{
         $this->db->where('Username', $Username);
         $query = $this->db->get('Member', 1);
         if($query->num_rows() ==1)
@@ -52,6 +59,9 @@ class Register extends CI_Controller {
         $this->db->insert('Member', $object);
        
         }
+        }
+        
+        
     }
 
     public function checkusname()
