@@ -188,6 +188,33 @@
                         </table>
                     </div>
 
+                    
+                    <?php 
+
+                    if($rs->idstatus == '9'){
+
+                        $d=strtotime("-1 day");
+
+                        if ($rs->Datebooking <= date("Y-m-d",$d)) {
+
+                            echo '<form action="'; 
+                            echo site_url('Emp_rental/add_status_3/'); 
+                            echo '" method="POST" class="form-horizontal">';
+                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                            echo $rs->idRental; 
+                            echo '">';
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
+                            echo '">'; 
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
+                            echo '</form>';
+                        
+                        }
+
+                    }?>
+
                     <?php 
                         if($rs->idstatus == '1'){
                         
@@ -221,7 +248,7 @@
                         if($rs->idstatus == '10'){
                         
                         echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_2'); 
+                        echo site_url('Emp_rental/add_status_22'); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
@@ -234,7 +261,7 @@
                         echo '</form>';
 
                         echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_3/'); 
+                        echo site_url('Emp_rental/add_status_33/'); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
@@ -247,31 +274,6 @@
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         echo '</form>';
                                            
-                    }?>
-
-                    <?php 
-                    if($rs->idstatus == '9'){
-
-                        $d=strtotime("-1 day");
-
-                        if ($rs->Datebooking <= date("Y-m-d",$d)) {
-
-                            echo '<form action="'; 
-                            echo site_url('Emp_rental/add_status_3/'); 
-                            echo '" method="POST" class="form-horizontal">';
-                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                            echo $rs->idRental; 
-                            echo '">';
-                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            echo $rs->idCarregis; 
-                            echo '">'; 
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
-                            echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
-                            echo '</form>';
-                        
-                        }
-
                     }?>
 
                     <?php 
@@ -350,27 +352,6 @@
                             echo '</form>';
                         
                         }
-
-                        // if (date("Y-m-d") >=  $rs->endDate) {
-
-                        //     echo '<form action="'; 
-                        //     echo site_url('Emp_rental/add_status_4/'); 
-                        //     echo '" method="POST" class="form-horizontal">';
-                        //     echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        //     echo $rs->idRental; 
-                        //     echo '">';
-                        //     echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        //     echo $rs->idCarregis; 
-                        //     echo '">';
-                        //     echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
-                        //     echo date("Y-m-d");
-                        //     echo '">';
-                        //     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="12" style="font-size:20px;" required>';
-                        //     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
-                        //     echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
-                        //     echo '</form>';
-                        
-                        // }
 
                     }?>
 
