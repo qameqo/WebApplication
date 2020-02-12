@@ -274,6 +274,10 @@
 									<?php if($countimg1[0]["img"] > 3 && $countimg2[0]["img2"] == 3) { ?>
  									<button class="btn" style="background-color: #F60200; color:white;" 
 									 onclick="return confirm('ยืนยันข้อมูล ?');">ดำเนินการต่อ</button>
+									 <?php } 
+									 else { ?> 
+									<button class="btn" style="background-color: gray; color:white;" 
+									 onclick="return confirm('ยืนยันข้อมูล ?');" disabled>ดำเนินการต่อ</button>
 									 <?php } ?>
  								</div>
  							</div>

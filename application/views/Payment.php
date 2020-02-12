@@ -189,6 +189,10 @@
 							<?php if($countimg[0]["img3"] == 2) { ?>
 							<button class="btn" style="background-color: #F60200; color:white;"
 							onclick="return confirm('ยืนยันข้อมูล ?');">ยืนยันข้อมูล</button>
-							<?php  } ?>
+							<?php  }  
+							else { ?> 
+							<button class="btn" style="background-color: gray; color:white;" 
+							onclick="return confirm('ยืนยันข้อมูล ?');" disabled>ยืนยันข้อมูล</button>
+							<?php } ?>
 							</div>
 					</form>
