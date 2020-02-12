@@ -11,7 +11,7 @@
                         $this->db->from('Rental');
                         $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
                         $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
-                        $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
+                        $this->db->join('Brand', 'Brand.idBrand = Carregis.idBrand');
                         $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
                         // $this->db->where('Rental.idstatus', 11);

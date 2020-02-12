@@ -116,7 +116,7 @@
             <h4 style="color:#000000">อัปโหลดรูปใบเสร็จโอนเงินมัดจำ</h4>
 			<div class="container mb-5">
                         <?php
-						$this->db->where( 'idrent',$idr);
+						$this->db->where( 'idRental',$idr);
 						$query = $this->db->get('Images3', 3);
 						$qi = $query->result_array();
 						?>
@@ -219,7 +219,7 @@
 		</div>
 	</div>
 						<?php 
-								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idrent ='$idr'");
+								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idRental ='$idr'");
 							  $countimg = $query->result_array();	
 						
 						 ?>

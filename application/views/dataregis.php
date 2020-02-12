@@ -7,9 +7,9 @@
                         
                         $this->db->select('*');
                         $this->db->from('Carregis');
-                        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+                        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
                         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-                        $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
+                        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
                         $this->db->where('id_Member', $this->session->userdata('ID'));
                         $this->db->order_by('idCarregis', 'desc');
 						$query = $this->db->get();

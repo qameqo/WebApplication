@@ -34,7 +34,7 @@ class Payment extends CI_Controller {
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
                                 'Name_image3'=>$filename,
-                                'idrent'=>$idr
+                                'idRental'=>$idr
                             );
            
             $this->db->insert('Images3', $arr);

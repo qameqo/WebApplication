@@ -75,7 +75,7 @@
 				<div class="container mb-5">
 					<?php
 						
-						$this->db->where( 'idrent',$idr);
+						$this->db->where( 'idRental',$idr);
 						$query = $this->db->get('Images3', 2);
 						$qi = $query->result_array();
 						?>
@@ -177,7 +177,7 @@
 					</div>
 			
 </form>				<?php 
-								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idrent ='$idr'");
+								$query = $this->db->query("SELECT COUNT(*) as img3 FROM Images3 WHERE Images3.idRental ='$idr'");
 							  $countimg = $query->result_array();	
 						
 						 ?>

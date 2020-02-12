@@ -41,16 +41,16 @@ class Login extends CI_Controller {
             {
                 $data = $query->row_array();
                 $this->session->set_userdata($data);
-                if($this->session->userdata('Row') =="4")
+                if($this->session->userdata('id_position') =="4")
                 {
                     redirect('Manager_first'); //เจ้าของร้าน
-                }elseif($this->session->userdata('Row') =="1"){
+                }elseif($this->session->userdata('id_position') =="1"){
                     
                     redirect('Emp'); //พนักงาน
-                }elseif($this->session->userdata('Row') =="2"){
+                }elseif($this->session->userdata('id_position') =="2"){
 
                     redirect('Tech');
-                }elseif($this->session->userdata('Row') =="3"){
+                }elseif($this->session->userdata('id_position') =="3"){
 
                     redirect('Io');
                 }
