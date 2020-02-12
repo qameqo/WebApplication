@@ -33,7 +33,7 @@
                         <?php 
                             if ($rs->idstatus == '10') 
                             { 
-                                if ($rs->StartDate == date('Y-m-d')) {
+                                if ($rs->startDate == date('Y-m-d')) {
                             
                         ?>
 
