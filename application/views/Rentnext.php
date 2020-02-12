@@ -246,7 +246,7 @@
                 <div class="col-sm">
                     <p style="text-align:left;">ราคามัดจำรถ</p>
                     <input type="hidden" id="hapan" name="hapan" value="5000">
-                    <p style="text-align:Left; color:red;">รวมทั้งหมดรวมvat 7%</p>   
+                    <p style="text-align:Left; color:red;">รวมทั้งหมดรวมvat 7%</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">

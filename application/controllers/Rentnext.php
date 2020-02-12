@@ -59,15 +59,11 @@ class Rentnext extends CI_Controller {
                 'idCarregis'=> $idc,
             );
         }
-        
-        // echo "<script>";
-        // echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
-        // echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
-        // echo "</script>";
-
+       
+       
         $this->db->insert('Rental', $object);
-        $insert_id = $this->db->insert_id();
-
+        $insert_id = $this->db->insert_id();    
+        
         echo "<script>";
         echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
@@ -91,9 +87,8 @@ class Rentnext extends CI_Controller {
     //         'PriceIns'=> $this->input->post("totalins"),
     //         'PriceDe' => $De,
     //         'PriceVat'=> $this->input->post("totalvat"),
-    //         'PriceFive' => $this->input->post("hapan"),
     //         'idCarregis'=> $idc,
-            
+    //         'idRent'=> $insert_id
     //     );
     // }
     //     $this->db->insert('RentalDetail', $in);
@@ -102,10 +97,7 @@ class Rentnext extends CI_Controller {
     //     $this->db->where('idCarregis', $idc);
     //     $this->db->update('Carregis', $car);
         
-        // echo "<script>";
-        // echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
-        // echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
-        // echo "</script>";
+      
         // redirect('Payment/sh/'.$insert_id);
         // $this->db->order_by('idCarregis', 'desc');
         // $query =  $this->db->get('Carregis', 1);
@@ -160,7 +152,7 @@ class Rentnext extends CI_Controller {
         $query = $this->db->get();
         $qq = $query->result_array();
         $gh = $qq[0]['RentalPrice']; // ราคารถ
-        $fg = 0.3;
+        $fg = 0.35;
         $total = $gh * $fg;
         $total2 = $total + $gh; // ราคาประกัน
         $vat = 0.07;
@@ -170,24 +162,7 @@ class Rentnext extends CI_Controller {
         echo $totalpluss;
         
     }
-    public function selectdate4($idc)
-    {
-        $this->db->select('*');
-        $this->db->from('Carregis');
-        $this->db->where('idCarregis',$idc);
-        $query = $this->db->get();
-        $qq = $query->result_array();
-        $gh = $qq[0]['RentalPrice']; // ราคารถ
-        $fg = 0.25;
-        $total = $gh * $fg;
-        $total2 = $total + $gh; // ราคาประกัน
-        $vat = 0.07;
-        $total3 = $total2 * $vat; //ราคา vat
-        $totalprice = $total2 + $total3; //ราคารวม
-        
-        echo $total3; // vat
-        
-    }
+    
     public function selectdate5($idc)
     {
         $this->db->select('*');
@@ -217,6 +192,44 @@ class Rentnext extends CI_Controller {
     }
 
 
+
+
+    //vattttt
+    public function selectdate4($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $fg = 0.25;
+        $total = $gh * $fg;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalprice = $total2 + $total3; //ราคารวม
+        
+        echo $total3; // vat
+        
+    }public function selectdate8($idc)
+    {
+        $this->db->select('*');
+        $this->db->from('Carregis');
+        $this->db->where('idCarregis',$idc);
+        $query = $this->db->get();
+        $qq = $query->result_array();
+        $gh = $qq[0]['RentalPrice']; // ราคารถ
+        $fg = 0.35;
+        $total = $gh * $fg;
+        $total2 = $total + $gh; // ราคาประกัน
+        $vat = 0.07;
+        $total3 = $total2 * $vat; //ราคา vat
+        $totalprice = $total2 + $total3; //ราคารวม
+        
+        echo $total3; // vat
+        
+    }
 }
 
 /* End of file Controllername.php */

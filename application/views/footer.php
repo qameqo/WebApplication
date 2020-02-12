@@ -34,7 +34,7 @@ jQuery(function(){
  var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
-  // maxDate:'+1970/01/03',
+  maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
    })
@@ -244,12 +244,17 @@ $("input[name='date1']").ready(function(){
               ); 
           $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
                   function (data) {
+                    var vat = data *ngo;
+                    var vat2 = vat * 7 / 107;
+                    var vat3 = vat2.toFixed(0);
                     var total3 = data * ngo + 5000; 
                     var game3 =  total3.toFixed(0);
                     var tot3 = game3.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#total").text(tot3 + " บาท")
                     $("#total2").val(game3)
+                    $("#totalvat").val(vat3)
                     $("#book").removeAttr('disabled',true)
+                    console.log(vat2);
                     } // รวม
               );  
         }
@@ -267,11 +272,15 @@ $("input[name='date1']").ready(function(){
               ); 
           $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
                   function (data) {
+                    var vat = data *ngo;
+                    var vat2 = vat * 7 / 107;
+                    var vat3 = vat2.toFixed(0);
                     var total5 = data * ngo + 5000; 
                     var game5 =  total5.toFixed(0);
                     var tot5 = game5.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#total").text(tot5 + " บาท")
                     $("#total2").val(game5)
+                    $("#totalvat").val(vat3)
                     $("#book").removeAttr('disabled',true)
                     } // รวม
               );  
