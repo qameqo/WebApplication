@@ -184,21 +184,11 @@
                                 
                             </select>
                         </div>
-                        
+
                         <div class="col-12 mt-3">
                             <label for="Brand">ราคา</label>
-                            <input type="text" name="Price" id="Price" class="form-control" placeholder="ราคา"
-                                value="">
-                        </div>
-                        
-                        <div class="col-12 mt-3">
-                            <label for="exampleFormControlSelect1">ที่นั่ง</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link" name="id_Type_Fuel"
-                                id="id_Type_Fuel" required>
-                                <option value="">เลือกประเภทเชื้อเพลิง</option>
-                                <option value="1">Benzine & Gas</option>
-                                <option value="2">Diesel & Gas</option>                            
-                            </select>
+                            <input type="text" name="Price" pattern="^(0|[1-9][0-9]*)$" id="Price" class="form-control"
+                                placeholder="ราคา" value="">
                         </div>
 
                     </div>
