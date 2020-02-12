@@ -46,45 +46,64 @@ class Rentnext extends CI_Controller {
                 'Companyincome' => $company,
                 'idstatus'=>"9",
                 'idMember' => $this->session->userdata('id_Member'),
-                'id_Insurance' => $this->input->post("ins")
+                'id_Insurance' => $this->input->post("ins"),
+                'startDate'=> $dat,
+                'endDate'=> $dat2,
+                'PriceCar'=> $pricecar,
+                'PriceIns'=> $this->input->post("totalins"),
+                'PriceDe' => $De,
+                'PriceVat'=> $this->input->post("totalvat"),
+                'PriceFive' => $this->input->post("hapan"),
+                'idCarregis'=> $idc,
             );
         }
         
+        // echo "<script>";
+        // echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
+        // echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
+        // echo "</script>";
+
         $this->db->insert('Rental', $object);
         $insert_id = $this->db->insert_id();
-        foreach($qq as $data){
-            $da = date("Y-m-d");
-            $ga = $data['RentalPrice'];
-            $ins = 25;
-            $percen = 100;
-            $totalpricee = $this->input->post("total"); //ราคารวม
-            $pricecar = $this->input->post("totalcar2");
-            $ow = 0.7;
-            $com = 0.3;
-            $owner = $ow * $pricecar; //รายได้ลูกค้า
-            $company = $com * $pricecar; //รายได้บริษัท
-            $De = $com * $totalpricee;
-        $in = array(
-            'startDate'=> $dat,
-            'endDate'=> $dat2,
-            'PriceCar'=> $pricecar,
-            'PriceIns'=> $this->input->post("totalins"),
-            'PriceDe' => $De,
-            'PriceVat'=> $this->input->post("totalvat"),
-            'idCarregis'=> $idc,
-            'idRent'=> $insert_id
-        );
-    }
-        $this->db->insert('RentalDetail', $in);
-        
-        $car = array('idStatus' => '10');
-        $this->db->where('idCarregis', $idc);
-        $this->db->update('Carregis', $car);
-        
+
         echo "<script>";
         echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
         echo "</script>";
+    //     foreach($qq as $data){
+    //         $da = date("Y-m-d");
+    //         $ga = $data['RentalPrice'];
+    //         $ins = 25;
+    //         $percen = 100;
+    //         $totalpricee = $this->input->post("total"); //ราคารวม
+    //         $pricecar = $this->input->post("totalcar2");
+    //         $ow = 0.7;
+    //         $com = 0.3;
+    //         $owner = $ow * $pricecar; //รายได้ลูกค้า
+    //         $company = $com * $pricecar; //รายได้บริษัท
+    //         $De = $com * $totalpricee;
+    //     $in = array(
+    //         'startDate'=> $dat,
+    //         'endDate'=> $dat2,
+    //         'PriceCar'=> $pricecar,
+    //         'PriceIns'=> $this->input->post("totalins"),
+    //         'PriceDe' => $De,
+    //         'PriceVat'=> $this->input->post("totalvat"),
+    //         'PriceFive' => $this->input->post("hapan"),
+    //         'idCarregis'=> $idc,
+            
+    //     );
+    // }
+    //     $this->db->insert('RentalDetail', $in);
+        
+    //     $car = array('idStatus' => '10');
+    //     $this->db->where('idCarregis', $idc);
+    //     $this->db->update('Carregis', $car);
+        
+        // echo "<script>";
+        // echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
+        // echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
+        // echo "</script>";
         // redirect('Payment/sh/'.$insert_id);
         // $this->db->order_by('idCarregis', 'desc');
         // $query =  $this->db->get('Carregis', 1);
