@@ -21,8 +21,7 @@
             <h4 style="color:#000000">ข้อมูลราคาเช่า</h4>
 				<?php 
 				 $this->db->select('*');
-				 $this->db->from('RentalDetail');
-				 $this->db->join('Rental', 'RentalDetail.idRent = Rental.idRental');
+				 $this->db->from('Rental');
 				 $this->db->where('idRental', $idr);
 				 $query = $this->db->get();
 				 $qo = $query->result_array();
@@ -59,7 +58,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span>5,000</span>
+				 <span><?php echo number_format($data['PriceFive'],0) ?></span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
@@ -81,7 +80,7 @@
 				 </div>
                  <div class="row">
 				 	<div class="col-sm-5 text-right">
-					 <span>ค่ามัดจำที่ต้องชำระก่อน</span>
+					 <span style="color:red;">ค่ามัดจำที่ต้องชำระก่อน</span>
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
@@ -89,14 +88,28 @@
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 
+						<span style="color:red;">บาท</span>
+					 </div>
+				 </div>
+				 <div class="row">
+				 	<div class="col-sm-5 text-right">
+					 <span>ยอดที่ต้องชำระเมื่อมารับรถ</span>
+					 </div>
+					 <div class="col-sm-3 text-right">
+					 <?php foreach($qo as $data){?>
+				 <spa><?php echo number_format($data['PriceOver'],0)?></span>
+				 <?php } ?>
+					 </div>
+					 <div class="col-sm-2 text-center"> 
 						<span>บาท</span>
 					 </div>
+				 </div>
 					 <br>
 					 <br>
 					 <div class="col-sm text-center">
 						<img src="<?php echo base_url('./pic/Kbank.jpg'); ?>" alt=""/>
 					 </div>
-				 </div>
+				
             </div>
 		<div class="col-sm-4 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">

@@ -24,8 +24,7 @@
             <h4 style="color:#000000">ข้อมูลราคาเช่า</h4>
 				<?php 
 				 $this->db->select('*');
-				 $this->db->from('RentalDetail');
-				 $this->db->join('Rental', 'RentalDetail.idRent = Rental.idRental');
+				 $this->db->from('Rental');
 				 $this->db->where('idRental', $idr);
 				 $query = $this->db->get();
 				 $qo = $query->result_array();

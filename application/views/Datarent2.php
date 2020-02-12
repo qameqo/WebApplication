@@ -11,8 +11,7 @@
                     $this->db->select('*');
                     $this->db->from('Rental');
                     $this->db->join('Member', 'Member.id_Member = Rental.idMember');
-                    $this->db->join('RentalDetail', 'Rental.idRental = RentalDetail.idRent');
-                    $this->db->join('Carregis','Carregis.idCarregis = RentalDetail.idCarregis');
+                    $this->db->join('Carregis','Carregis.idCarregis = Rental.idCarregis');
                     $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                     $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
@@ -70,7 +69,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>เลขไมล์</label></td>
-                                <td width="70%"><?php echo number_format($data['Mileage'],0)?></td>
+                                <td width="70%"><?php echo number_format($data['Mileage'],0)?>&nbsp;กิโลเมตร</td>
                             </tr>
                             
                             <tr>
@@ -83,10 +82,14 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคามัดจำรถ</label></td>
-                                <td width="70%">5,000&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['PriceFive'],)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคารวมรวมvat 7% และค่ามัดจำรถ</label></td>
+                                <td width="30%"><label>ราคาvat 7%</label></td>
+                                <td width="70%"><?php echo number_format($data['PriceVat'],)?>&nbsp;บาท</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคารวมทั้งหมด</label></td>
                                 <td width="70%"><?php echo number_format($data['totalprice'],)?>&nbsp;บาท</td>
                             </tr>
                             <tr>

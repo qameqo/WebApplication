@@ -221,7 +221,7 @@ $("input[name='date1']").ready(function(){
           );  
             $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
               function (data) {
-                var total1 = data * ngo; 
+                var total1 = data; 
                 var game1 =  total1.toFixed(0);
                 $("#totalvat").val(game1)
                  } // vat

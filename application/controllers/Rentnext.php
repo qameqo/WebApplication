@@ -38,6 +38,7 @@ class Rentnext extends CI_Controller {
             $owner = $ow * $pricecar; //รายได้ลูกค้า
             $company = $com * $pricecar; //รายได้บริษัท
             $De = $com * $totalpricee;
+            $Ov = $ow * $totalpricee;
             $object = array(
 
                 'Datebooking' => $da,
@@ -52,6 +53,7 @@ class Rentnext extends CI_Controller {
                 'PriceCar'=> $pricecar,
                 'PriceIns'=> $this->input->post("totalins"),
                 'PriceDe' => $De,
+                'PriceOver' =>$Ov,
                 'PriceVat'=> $this->input->post("totalvat"),
                 'PriceFive' => $this->input->post("hapan"),
                 'idCarregis'=> $idc,
