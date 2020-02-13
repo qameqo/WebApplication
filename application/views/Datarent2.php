@@ -10,15 +10,14 @@
                     // $query = $this->db->query('SELECT RentalDetail.*,Rental.* FROM RentalDetail,Rental WHERE Rental.idRental = RentalDetail.idRent and Rental.idMember="61"');
                     $this->db->select('*');
                     $this->db->from('Rental');
-                    $this->db->join('Member', 'Member.id_Member = Rental.idMember');
+                    $this->db->join('Member', 'Member.id_Member = Rental.id_Member');
                     $this->db->join('Carregis','Carregis.idCarregis = Rental.idCarregis');
-                    $this->db->join('Brand', 'Brand.idBrand = Carregis.id_Brand');
+                    $this->db->join('Brand', 'Brand.idBrand = Carregis.idBrand');
                     $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
-                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
+                    $this->db->join('Status_car', 'Status_car.id_Status = Rental.id_status');
                     $this->db->join('Seat', 'Seat.id_Seat = Carregis.id_Seat');
                     $this->db->join('Fuel', 'Fuel.idFuel = Carregis.idFuel');
                     $this->db->join('Type_Insurance', 'Type_Insurance.id_Insurance = Rental.id_Insurance');
-                    
                     $this->db->where('idRental',$idr);
                     $query = $this->db->get();
                     $qone = $query->result_array();  
@@ -82,15 +81,23 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคามัดจำรถ</label></td>
-                                <td width="70%"><?php echo number_format($data['PriceFive'],)?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['PriceFive'],0)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาvat 7%</label></td>
-                                <td width="70%"><?php echo number_format($data['PriceVat'],)?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['PriceVat'],0)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคารวมทั้งหมด</label></td>
-                                <td width="70%"><?php echo number_format($data['totalprice'],)?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo number_format($data['totalprice'],0)?>&nbsp;บาท</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ค่ามัดจำที่ต้องชำระก่อน</label></td>
+                                <td width="70%"><?php echo number_format($data['PriceDe'],0)?>&nbsp;บาท</td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ยอดที่ต้องชำระเมื่อมารับรถ</label></td>
+                                <td width="70%"><?php echo number_format($data['PriceOver'],0)?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันเริ่มเช่า</label></td>
@@ -208,7 +215,7 @@
                             <?php 
                          $this->db->select('*');
                          $this->db->from('Images3');
-                         $this->db->where('idrent',$idr);
+                         $this->db->where('idRental',$idr);
                          $query = $this->db->get();
                          $qq = $query->result_array();
                         

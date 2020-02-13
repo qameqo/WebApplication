@@ -34,7 +34,7 @@ class Deposit extends CI_Controller {
             //$imgtype_name = $data['imgtype_name'];
             $arr=array(
                                 'Name_image3'=>$filename,
-                                'idrent'=>$idr
+                                'idRental'=>$idr
                             );
                             
             $this->db->insert('Images3', $arr);
@@ -53,7 +53,7 @@ class Deposit extends CI_Controller {
     public function ups($idr)
     {
        $qq = array(
-           'idstatus' => '1'
+           'id_status' => '1'
        );
 
        echo "<script>";

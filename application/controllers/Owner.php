@@ -46,7 +46,7 @@ class Owner extends CI_Controller {
             {   
              
                 $object = array(
-                    'id_Brand' =>  $this->input->post("Brand"),
+                    'idBrand' =>  $this->input->post("Brand"),
                     'Yearcar' =>  $this->input->post("caryear"),
                     'id_Seat' =>  $this->input->post("seat"),
                     'Color' =>  $this->input->post("color"),
@@ -56,7 +56,7 @@ class Owner extends CI_Controller {
                     'Province' => $this->input->post("province"),
                     'Yearlicense' =>  $this->input->post("licenseyear"),
                     'Carbody' =>  $this->input->post("carbody"),
-                    'idStatus' => $ids,
+                    'id_Status' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
                     'id_Gen' => $this->input->post("Gen"),
                     'idFuel' => $this->input->post("fuel2")
