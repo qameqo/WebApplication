@@ -14,7 +14,7 @@ class Datarent2 extends CI_Controller {
     public function can($idr)
     {
         $aa = array(
-            'idstatus' => '6'
+            'id_status' => '6'
         );
         
         echo "<script>";

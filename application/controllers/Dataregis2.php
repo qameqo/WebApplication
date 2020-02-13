@@ -14,7 +14,7 @@ class Dataregis2 extends CI_Controller {
     public function can($idc)
     {
         $aa = array(
-            'idStatus' => '6'
+            'id_Status' => '6'
         );
         
         echo "<script>";
