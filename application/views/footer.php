@@ -213,87 +213,86 @@ $("input[name='date1']").ready(function(){
   })
 
   $("input[name='enddateee']").change(function(){
-    var en = document.getElementById("enddateee").value;
-    var st = document.getElementById("startdateee").value;
+  
 
 
 
-          $.post("<?=base_url('Rental/selectcar/')?>",{
-            st:st,
-            en:en
+          $.get("<?=base_url('Rental/selectcar/')?>",{
+            
+           
           }, 
               function (data) {
                 var tot = data;
-                var bo = 0;
-                
+                var bo = 0; 
+                var en = document.getElementById("enddateee").value;
+                var st = document.getElementById("startdateee").value;
                 var dateen = moment(en, 'YYYY/MM/DD');
                 var dateendd = dateen.format('YYYY-MM-DD').toString();
-                
                 var startda = moment(st, 'YYYY/MM/DD');
                 var startdat = startda.format('YYYY-MM-DD').toString();
-  //               $("#booking").html("")
-  //               for(bo in data){
-  //                 var book2 = data[bo];
-  //                 var book = `<div class="row">
-	// 			<div class="col-sm shadow p-3 mb-2 bg-white rounded"
-	// 				style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-	// 				<div class="row">
-	// 					<div class="col-sm-8">
-	// 					${book2.Name_Brand} ${book2.Name_Gen} ${book2.Yearcar}
-	// 					</div>
-	// 					<div class="col-sm-6">
-	// 						<img src="./pic/car-gear.png"
-	// 							style="width:10px; height:10px;">&nbsp;${book2.Gear}
-	// 						<img src="./pic/seat-belt.png"
-	// 							style="width:10px; height:10px;">&nbsp;${book2.Number_Seat}
-	// 						<br><span style="color: #F60200;">${book2.RentalPrice}</span>&nbsp;บาท/วัน
-	// 						<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
-	// 							data-target="#modal-default"><u>เอกสารเช่ารถ</u></a>
-	// 						<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
-	// 							aria-labelledby="modal-default" aria-hidden="true">
-	// 							<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-	// 								<div class="modal-content">
+                $("#booking").html("")
+                for(bo in data){
+                  var book2 = data[bo];
+                  var book = `<div class="row">
+				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
+					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+					<div class="row">
+						<div class="col-sm-8">
+						${book2.Name_Brand} ${book2.Name_Gen} ${book2.Yearcar}
+						</div>
+						<div class="col-sm-6">
+							<img src="./pic/car-gear.png"
+								style="width:10px; height:10px;">&nbsp;${book2.Gear}
+							<img src="./pic/seat-belt.png"
+								style="width:10px; height:10px;">&nbsp;${book2.Number_Seat}
+							<br><span style="color: #F60200;">${book2.RentalPrice}</span>&nbsp;บาท/วัน
+							<a class="badge badge-secondary" type="button" href="#" data-toggle="modal"
+								data-target="#modal-default"><u>เอกสารเช่ารถ</u></a>
+							<div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
+								aria-labelledby="modal-default" aria-hidden="true">
+								<div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+									<div class="modal-content">
 
-	// 									<div class="modal-header">
-	// 										<h6 class="modal-title" id="modal-title-default">เอกสารสำหรับการเช่ารถยนต์
-	// 										</h6>
-	// 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	// 											<span aria-hidden="true">×</span>
-	// 										</button>
-	// 									</div>
+										<div class="modal-header">
+											<h6 class="modal-title" id="modal-title-default">เอกสารสำหรับการเช่ารถยนต์
+											</h6>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">×</span>
+											</button>
+										</div>
 
-	// 									<div class="modal-body">
-	// 										<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
-	// 										<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
-	// 										<p>3.ใบเสร็จการโอนเงินค่ามัดจำ</p>
-	// 										<img src="./pic/logo55.png" style="width:450px; height:100;"
-	// 											alt="เช่ารถกับ G Dragon">
-	// 									</div>
+										<div class="modal-body">
+											<p>1.บัตรประชาชน หรือ หนังสือเดินทาง</p>
+											<p>2.ใบขับขี่ หรือ ใบขับขี่ระหว่างประเทศ</p>
+											<p>3.ใบเสร็จการโอนเงินค่ามัดจำ</p>
+											<img src="./pic/logo55.png" style="width:450px; height:100;"
+												alt="เช่ารถกับ G Dragon">
+										</div>
 
-	// 									<div class="modal-footer">
-	// 										<button type="button" class="btn btn-link  ml-auto"
-	// 											data-dismiss="modal">ปิด</button>
-	// 									</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-link  ml-auto"
+												data-dismiss="modal">ปิด</button>
+										</div>
 
-	// 								</div>
-	// 							</div>
-	// 						</div>
-	// 					</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						
-	// 					<div class="col-sm-6 text-right">
+						<div class="col-sm-6 text-right">
 							
-	// 						<img src="./img/${book2.Name_image}" style="height: 80px; width:80px;">
+							<img src="./img/${book2.Name_image}" style="height: 80px; width:80px;">
 						
-  //             <a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
-	// 							href="<?php echo site_url('Rentnext/one/');?>${book2.idCarregis}/${startdat}/${dateendd}">จองรถ</a>
-	// 					</div>
-	// 				</div>
-	// 			</div>
-	// 		</div>	
-	// 	</div>
-	// </div>`;
-  //             $("#booking").append(book)
-  //               }
+              <a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
+								href="<?php echo site_url('Rentnext/one/');?>${book2.idCarregis}/${startdat}/${dateendd}">จองรถ</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>`;
+              $("#booking").append(book)
+                }
                
                 console.log(tot);
 
