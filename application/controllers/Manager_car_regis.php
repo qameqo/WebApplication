@@ -61,6 +61,11 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status_3();
     }
 
+    public function add_status_6()
+    {
+        $this->Manager_car_regis_model->add_status_6();
+    }
+
     public function not_passed($id)
     {
         // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
@@ -115,6 +120,23 @@ class Manager_car_regis extends CI_Controller {
 
         $this->load->view('Manager/Header_manage');
         $this->load->view('Manager/Manager_car_rental_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+
+    }
+    public function index_4()
+    {
+        $data['query']=$this->Emp_rental_model->show_rental();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_car_rental_view_2', $data);
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');

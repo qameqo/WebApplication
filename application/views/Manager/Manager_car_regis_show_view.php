@@ -256,8 +256,17 @@
                     ?>
 
                     <?php if ($rs->id_Status == '5') {
+
+                        echo '<form action="'; 
+                        echo site_url('Manager_car_regis/add_status_6'); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        echo $rs->idCarregis; 
+                        echo '">';
                         echo '<input type="hidden" name="id_Status" id="id_Status" value="6" class="form-control" required>';
-                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;" onclick="return confirm("คุณต้องการยกเลิกหรือไม่ ?");">ยกเลิกการลงทะเบียน</button>';
+                        echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;">ยกเลิกการลงทะเบียน</button>';
+                        echo '</form>';
+
                     }else if($rs->id_Status == '1'){
                         
                         // $startdate=strtotime("l");

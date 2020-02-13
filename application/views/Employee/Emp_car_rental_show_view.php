@@ -49,15 +49,23 @@
                                 <td width="70%"><?php echo $rs->PriceIns; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคาต่อวัน</label></td>
+                                <td width="30%"><label>ราคามัดจำการจอง (30%)</label></td>
                                 <td width="70%"><?php echo $rs->PriceDe; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคาส่วนต่าง (70%)</label></td>
+                                <td width="70%"><?php echo $rs->PriceOver; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
                                 <td width="70%"><?php echo $rs->PriceVat; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคาทั้งหมด (รวมมัดจำ 5000 บาท)</label></td>
+                                <td width="30%"><label>ราคามัดจำรถยนต์ 5000 </label></td>
+                                <td width="70%"><?php echo $rs->PriceFive; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคาทั้งหมด</label></td>
                                 <td width="70%"><?php echo $rs->totalprice; ?></td>
                             </tr>
                             <tr>
@@ -286,6 +294,20 @@
                             echo '<form action="'; 
                             echo site_url('Emp_rental/add_status_4/'); 
                             echo '" method="POST" class="form-horizontal">';
+
+                            ?>
+                            
+                            <div class="row justify-content-center"> 
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคามัดจำรถยนต์</label>
+                                    <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="<?php echo $rs->PriceFive;?>">
+                                    <label class="label mt-1" style="color: red;">*ถ้าคืนเงินมัดจำให้กรอกราคาเป็น 0*</label>
+                                </div>
+                            </div>  
+
+                            <?php
+
+                            
                             echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                             echo $rs->idRental; 
                             echo '">';
@@ -303,36 +325,36 @@
                                 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
                                 </div>
 
                             <?php }else{ ?>
@@ -344,9 +366,9 @@
                             </div>  
 
                             <?php
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
 
-                            echo '<button class="btn btn-info mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
+                            echo '<button class="btn btn-info mt-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
                             echo '</form>';
                         
                         }

@@ -69,9 +69,21 @@
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_price">จัดการข้อมูลราคารถยนต์</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
-                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
+                            ตรวจสอบข้อมูลเกี่ยวกับรถยนต์
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis/index_2">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
-                            <a class="dropdown-item"href="<?php echo site_url('Manager_car_regis/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_4');?>">ตรวจสอบข้อมูลรายได้ทั้งหมด</a>
+
                         </div>
                     </li>
                 </ul>

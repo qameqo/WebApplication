@@ -49,12 +49,24 @@
                                 <td width="70%"><?php echo $rs->PriceIns; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคาต่อวัน</label></td>
+                                <td width="30%"><label>ราคามัดจำ (30%)</label></td>
                                 <td width="70%"><?php echo $rs->PriceDe; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
+                                <td width="70%"><?php echo $rs->PriceOver; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
                                 <td width="70%"><?php echo $rs->PriceVat; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
+                                <td width="70%"><?php echo $rs->PriceFive; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคาค่าปรับ</label></td>
+                                <td width="70%"><?php echo $rs->Fines_price; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
@@ -188,7 +200,7 @@
 
                             <?php 
 
-                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idrent AND Rental.idRental = $rs->idRental");
+                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
 
                             foreach ($query->result_array() as $data ) { ?>
 

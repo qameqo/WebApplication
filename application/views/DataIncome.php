@@ -6,16 +6,16 @@
                 <?php 
                         
                        //$this->db->query('SELECT * FROM Rental INNER JOIN RentalDetail on RentalDetail.idRent = Rental.idRental INNER JOIN Carregis on Carregis.idCarregis = RentalDetail.idCarregis 
-                       //INNER JOIN Status_car on Status_car.id_Status = Rental.idstatus WHERE Carregis.id_Member = '61' and Rental.idstatus = "11"  ORDER BY Rental.idRental DESC');
+                       //INNER JOIN Status_car on Status_car.id_Status = Rental.id_status WHERE Carregis.id_Member = '61' and Rental.id_status = "11"  ORDER BY Rental.idRental DESC');
                         $this->db->select('*');
                         $this->db->from('Rental');
                         $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
                         $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
                         $this->db->join('Brand', 'Brand.idBrand = Carregis.idBrand');
-                        $this->db->join('Status_car', 'Status_car.id_Status = Rental.idstatus');
-                        $this->db->where('id_Member', $this->session->userdata('ID'));
-                        // $this->db->where('Rental.idstatus', 11);
-                        $this->db->where('Rental.idstatus', 12);
+                        $this->db->join('Status_car', 'Status_car.id_Status = Rental.id_status');
+                        $this->db->where('Carregis.id_Member', $this->session->userdata('ID'));
+                        // $this->db->where('Rental.id_status', 11);
+                        $this->db->where('Rental.id_status', 12);
                         $this->db->order_by('idRental', 'desc');
                         $query =  $this->db->get();
                         $qq = $query->result_array();

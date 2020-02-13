@@ -44,7 +44,7 @@
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 								<td><?php echo $rs->startDate; ?></td>
-								<td><?php echo $rs->PriceCar; ?></td>
+								<td><?php echo $rs->totalprice; ?></td>
 
                                 <?php if($rs->id_status == '1')
                                 {
