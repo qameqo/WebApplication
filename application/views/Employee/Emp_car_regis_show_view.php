@@ -274,7 +274,7 @@
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
                         echo '</form>';
 
-                        $d=strtotime("-3 day");
+                        $d=strtotime("-2 day");
 
                         if ($rs->Dayfirst <= date("Y-m-d",$d)) {
 
