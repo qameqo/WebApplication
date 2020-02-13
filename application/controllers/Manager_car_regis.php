@@ -61,6 +61,11 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status_3();
     }
 
+    public function add_status_6()
+    {
+        $this->Manager_car_regis_model->add_status_6();
+    }
+
     public function not_passed($id)
     {
         // $data['rs']=$this->Manager_car_regis_model->read($idCarregis);
