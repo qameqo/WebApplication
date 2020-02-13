@@ -33,7 +33,7 @@
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
-				 <span><?php echo $data['PriceCar']; ?></span>
+				 <span><?php echo number_format($data['PriceCar'],0) ?></span>
 				 <?php } ?>
 					 </div>
 					 <div class="col-sm-2 text-center"> 

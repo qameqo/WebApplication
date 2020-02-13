@@ -409,6 +409,7 @@
                 $("#totalins").val(null)
                 $("#total").text(" บาท")
                 $("#total2").val(null)
+                $('#book').attr('disabled', true)
             } else {
                 $('#stand').attr('disabled', true)
                 $('#pre').attr('disabled', true)

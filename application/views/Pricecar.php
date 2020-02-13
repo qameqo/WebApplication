@@ -48,7 +48,7 @@
 								$ee = 1000;
 								$total = $ei * $eii * $e / $ee;
 						?>
-						<input type="text" class="form-control" name="Price2" id="Price" value="<?php echo $total ?>"
+						<input type="text" class="form-control" name="Price2" id="Price" value="<?php echo number_format($total,0) ?>"
 							style="width: 200px; height:25px;" disabled>
 						<?php } ?>
 					</div>
