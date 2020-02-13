@@ -207,7 +207,7 @@
                             echo $rs->idCarregis; 
                             echo '">'; 
                             echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
+
                             echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                             echo '</form>';
                         
@@ -238,7 +238,6 @@
                         echo $rs->idRental; 
                         echo '">';
                         echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="3" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
                         echo '</form>';
                                            
@@ -270,7 +269,6 @@
                         echo $rs->idCarregis; 
                         echo '">';
                         echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         echo '</form>';
                                            
@@ -347,7 +345,7 @@
 
                             <?php
                             echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
+
                             echo '<button class="btn btn-info mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
                             echo '</form>';
                         

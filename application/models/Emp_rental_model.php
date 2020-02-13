@@ -64,15 +64,6 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
-
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
@@ -96,15 +87,6 @@ class Emp_rental_model extends CI_Model
         );
 
         $query_2=$this->db->update('Rental',$data);
-
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
 
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
@@ -133,15 +115,6 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
-
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
@@ -168,15 +141,6 @@ class Emp_rental_model extends CI_Model
         );
 
         $query_2=$this->db->update('Rental',$data);
-
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_Status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
 
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
@@ -215,15 +179,6 @@ class Emp_rental_model extends CI_Model
         );
 
         $query_2=$this->db->update('Rental',$data);
-
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_Status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
 
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
@@ -266,15 +221,6 @@ class Emp_rental_model extends CI_Model
         $query_2=$this->db->update('Rental',$data);
 
         //-----------------------------------
-
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-
-        $data_2 = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_Status' => $this->input->post('id_Status')
-        );
-
-        $query=$this->db->update('Carregis',$data_2);
 
         $this->db->order_by('idRental', 'desc');
         $query_2 =  $this->db->get('Rental', 1);
