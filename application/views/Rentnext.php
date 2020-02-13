@@ -82,8 +82,7 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                    <input id="datetimepickerstart" type="text" value=""
-                        style="width:120px; text-align:center;" name="start">
+                    <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly>
                 </div>
             </div>
             <div class="row">
@@ -92,20 +91,19 @@
                   
                 </div>
                 <div class="col-sm text-right">
-                    <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
-                        name="end">
-                      
+                    <input id="no" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                        name="no" readonly>
+                        <!-- id="datetimepickerend" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center;"
+                        name="end -->
                 </div>
             </div>
-            <div class="row">
+                <div class="row">
                 <div class="col-sm">
-                    
-                    <p style="color:red; font-size:12px; "></p>
+
                 </div>
-                <div class="col-sm text-right">
-                    <p style="color:red; font-size:12px; ">* ไม่อนุญาตให้เช่ารถเกิน 5 วัน</p>
+                <div class="col-sm">
                 </div>
-            </div>
+                </div>
             <div class="row">
                 <div class="col-sm text-left">
                     <div class="label-bot">
@@ -125,7 +123,7 @@
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
-                                data-toggle="modal" data-target="#modal-de"> <u>ข้อมูลประกันภัยพื้นฐาน</u></a>
+                                data-toggle="modal" data-target="#modal-de"> <u>ประกันภัยพื้นฐาน</u></a>
                             <div class="modal fade" id="modal-de" tabindex="-1" role="dialog"
                                 aria-labelledby="modal-default" aria-hidden="true">
                                 <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
@@ -177,7 +175,7 @@
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
-                                data-toggle="modal" data-target="#modal-default"><u>ข้อมูลประกันภัยพรีเมี่ยม</u></a>
+                                data-toggle="modal" data-target="#modal-default"><u>ประกันภัยพรีเมี่ยม</u></a>
                             <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
                                 aria-labelledby="modal-default" aria-hidden="true">
                                 <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
