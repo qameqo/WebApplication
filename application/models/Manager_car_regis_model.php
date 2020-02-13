@@ -9,10 +9,10 @@ class Manager_car_regis_model extends CI_Model
         
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
+        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
         
 
         $query = $this->db->get();
@@ -25,10 +25,10 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.idStatus = Status_car.id_Status');
+        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
         $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
         $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
                      
@@ -47,7 +47,7 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Employee', 'Carregis.id_Employee = Employee.id_Employee');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
@@ -81,7 +81,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus'),
+            'id_Status' => $this->input->post('id_Status'),
             'Dayfirst' => $this->input->post('Dayfirst')
         );
 
@@ -91,7 +91,7 @@ class Manager_car_regis_model extends CI_Model
         $query_2 =  $this->db->get('Carregis', 1);
         $qq = $query_2->row_array();
 
-        if($qq['idStatus'] == '3')
+        if($qq['id_Status'] == '3')
         {
             
             redirect('Manager_car_regis/not_passed/'.$qq['idCarregis']);
@@ -124,7 +124,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus'),
+            'id_Status' => $this->input->post('id_Status'),
             'EndDate' => $this->input->post('EndDate'),
             'RentalPrice' => $this->input->post('RentalPrice')
         );
@@ -149,7 +149,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus'),
+            'id_Status' => $this->input->post('id_Status'),
             'StartDate' => $this->input->post('StartDate'),
             'RentalPrice' => $this->input->post('RentalPrice')
         );
@@ -196,13 +196,13 @@ class Manager_car_regis_model extends CI_Model
              
     }
 
-    public function del_rental($idRental)
+    public function del_rental($id_Rental)
     {
 
-        $this->db->delete('Images3',array('idrent'=>$idRental));
-        $this->db->delete('Not_passed_rent',array('idRental'=>$idRental));
-        $this->db->delete('RentalDetail',array('idRent'=>$idRental));
-        $this->db->delete('Rental',array('idRental'=>$idRental));
+        $this->db->delete('Images3',array('id_Rental'=>$id_Rental));
+        $this->db->delete('Not_passed_rent',array('id_Rental'=>$id_Rental));
+        $this->db->delete('RentalDetail',array('idRent'=>$id_Rental));
+        $this->db->delete('Rental',array('id_Rental'=>$id_Rental));
 
         echo "<script>";
         echo "alert('ลบข้อมูลเรียบร้อย');";

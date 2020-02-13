@@ -29,7 +29,7 @@ class Manager_emp_model extends CI_Model
                 'L_Name' => $this->input->post('L_Name'),
                 'Address' => $this->input->post('Address'),
                 'Tel' => $this->input->post('Tel'),
-                'Row' => $this->input->post('Row')
+                'id_position' => $this->input->post('Row')
     
             );
     
@@ -62,7 +62,7 @@ class Manager_emp_model extends CI_Model
             'L_Name' => $this->input->post('L_Name'),
             'Address' => $this->input->post('Address'),
             'Tel' => $this->input->post('Tel'),
-            'Row' => $this->input->post('Row')
+            'id_position' => $this->input->post('Row')
         );
 
         
@@ -89,7 +89,7 @@ class Manager_emp_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Employee');
-        $this->db->join('Employee_position', 'Employee.Row = Employee_position.id_position');
+        $this->db->join('Employee_position', 'Employee.id_position = Employee_position.id_position');
         
         $query = $this->db->get();
         return $query->result();
@@ -100,7 +100,7 @@ class Manager_emp_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Employee');
-        $this->db->join('Employee_position', 'Employee.Row = Employee_position.id_position');
+        $this->db->join('Employee_position', 'Employee.id_position = Employee_position.id_position');
         
         $this->db->where('id_Employee', $id_Employee);
         $query = $this->db->get();

@@ -113,9 +113,19 @@ class Emp_rental extends CI_Controller {
         $this->Emp_rental_model->add_status_2();
     }
 
+    public function add_status_22()
+    {
+        $this->Emp_rental_model->add_status_22();
+    }
+
     public function add_status_3()
     {
         $this->Emp_rental_model->add_status_3();
+    }
+
+    public function add_status_33()
+    {
+        $this->Emp_rental_model->add_status_33();
     }
 
     public function add_status_4()

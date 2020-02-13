@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="Add" />
+                    <input style="font-size:16px" type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="บันทึกข้อมูล" />
                 </div>
             </form>
         </div>

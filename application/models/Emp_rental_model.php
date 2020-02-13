@@ -10,10 +10,10 @@ class Emp_rental_model extends CI_Model
         $this->db->select('*');
         $this->db->from('Rental');
         $this->db->join('Carregis', 'Rental.idCarregis = Carregis.idCarregis');
-        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Member', 'Rental.idMember = Member.id_Member');
-        $this->db->join('Status_car', 'Rental.idstatus = Status_car.id_Status');
+        $this->db->join('Member', 'Rental.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Rental.id_status = Status_car.id_Status');
         $this->db->join('Type_Insurance', 'Rental.id_Insurance = Type_Insurance.id_Insurance');
 
         $query = $this->db->get();
@@ -27,10 +27,10 @@ class Emp_rental_model extends CI_Model
         $this->db->select('*');
         $this->db->from('Rental');
         $this->db->join('Carregis', 'Rental.idCarregis = Carregis.idCarregis');
-        $this->db->join('Brand', 'Carregis.id_Brand = Brand.idBrand');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Member', 'Rental.idMember = Member.id_Member');
-        $this->db->join('Status_car', 'Rental.idstatus = Status_car.id_Status');
+        $this->db->join('Member', 'Rental.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Rental.id_status = Status_car.id_Status');
         $this->db->join('Type_Insurance', 'Rental.id_Insurance = Type_Insurance.id_Insurance');
         // $this->db->join('Images3', 'Rental.idRental = Images3.idrent');
 
@@ -59,7 +59,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus')
+            'id_status' => $this->input->post('id_status')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -68,7 +68,7 @@ class Emp_rental_model extends CI_Model
 
         $data_2 = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idstatus')
+            'id_Status' => $this->input->post('id_status')
         );
 
         $query=$this->db->update('Carregis',$data_2);
@@ -92,7 +92,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus')
+            'id_status' => $this->input->post('id_status')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -101,7 +101,7 @@ class Emp_rental_model extends CI_Model
 
         $data_2 = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idstatus')
+            'id_Status' => $this->input->post('id_status')
         );
 
         $query=$this->db->update('Carregis',$data_2);
@@ -128,7 +128,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus')
+            'id_status' => $this->input->post('id_status')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -136,8 +136,8 @@ class Emp_rental_model extends CI_Model
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
 
         $data_2 = array( 
-            'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idstatus')
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'id_Status' => $this->input->post('id_status')
         );
 
         $query=$this->db->update('Carregis',$data_2);
@@ -164,7 +164,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus')
+            'id_status' => $this->input->post('id_status')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -173,7 +173,7 @@ class Emp_rental_model extends CI_Model
 
         $data_2 = array( 
             'id_Employee' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus')
+            'id_Status' => $this->input->post('id_Status')
         );
 
         $query=$this->db->update('Carregis',$data_2);
@@ -182,7 +182,7 @@ class Emp_rental_model extends CI_Model
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
 
-        if($qq['idstatus'] == '6'){
+        if($qq['id_status'] == '6'){
 
             echo "<script>";
             echo "alert('แก้ไขสถานะเรียบร้อย');";
@@ -211,7 +211,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus')
+            'id_status' => $this->input->post('id_status')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -219,8 +219,8 @@ class Emp_rental_model extends CI_Model
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
 
         $data_2 = array( 
-            'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus')
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'id_Status' => $this->input->post('id_Status')
         );
 
         $query=$this->db->update('Carregis',$data_2);
@@ -229,7 +229,7 @@ class Emp_rental_model extends CI_Model
         $query_2 =  $this->db->get('Rental', 1);
         $qq = $query_2->row_array();
 
-        if($qq['idstatus'] == '6'){
+        if($qq['id_status'] == '6'){
 
             echo "<script>";
             echo "alert('แก้ไขสถานะเรียบร้อย');";
@@ -258,7 +258,7 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee_3' => $this->session->userdata('id_Employee'),
-            'idstatus' => $this->input->post('idstatus'),
+            'id_status' => $this->input->post('id_status'),
             'ReturnDate' => $this->input->post('ReturnDate'),
             'Fines_price' => $this->input->post('Fines_price')
         );
@@ -270,8 +270,8 @@ class Emp_rental_model extends CI_Model
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
 
         $data_2 = array( 
-            'id_Employee_3' => $this->session->userdata('id_Employee'),
-            'idStatus' => $this->input->post('idStatus')
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'id_Status' => $this->input->post('id_Status')
         );
 
         $query=$this->db->update('Carregis',$data_2);

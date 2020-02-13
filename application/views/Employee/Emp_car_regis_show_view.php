@@ -68,73 +68,73 @@
 
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <?php if($rs->idStatus == '1')
+                                <?php if($rs->id_Status == '1')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idStatus == '2') 
+                                else if ($rs->id_Status == '2') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idStatus == '3') 
+                                else if ($rs->id_Status == '3') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '4')
+                                else if($rs->id_Status == '4')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idStatus == '5') 
+                                else if ($rs->id_Status == '5') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '6')
+                                else if($rs->id_Status == '6')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '7')
+                                else if($rs->id_Status == '7')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '8')
+                                else if($rs->id_Status == '8')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '9')
+                                else if($rs->id_Status == '9')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '10')
+                                else if($rs->id_Status == '10')
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idStatus == '11')
+                                else if($rs->id_Status == '11')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 } 
-                                else if($rs->idstatus == '12')
+                                else if($rs->id_status == '12')
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
@@ -143,17 +143,17 @@
                             </tr> 
                             
                             <?php
-                            if ($rs->idStatus == '2') {
+                            if ($rs->id_Status == '2') {
                                 echo'<tr>
                                 <td width="30%"><label>วันที่อนุมัติ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
                                 echo '</span></td></tr>';
-                            }elseif($rs->idStatus == '4'){
+                            }elseif($rs->id_Status == '4'){
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->StartDate; 
                                 echo '</span></td></tr>';
-                            }elseif ($rs->idStatus == '8') {
+                            }elseif ($rs->id_Status == '8') {
                                 echo'<tr>
                                 <td width="30%"><label>วันส่งรถ</label></td><td width="70%">';
                                 echo $rs->Dayfirst; 
@@ -165,13 +165,13 @@
 
                             <?php
                             
-                            if($rs->idStatus == '5')
+                            if($rs->id_Status == '5')
                             {
                                 echo'<tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
                                 echo $rs->EndDate; 
                                 echo '</span></td></tr>';
-                            }elseif ($rs->idStatus == '8') {
+                            }elseif ($rs->id_Status == '8') {
                                 echo'<tr>
                                 <td width="30%"><label>วันสิ้นสุด</label></td><td width="70%">';
                                 echo $rs->EndDate; 
@@ -188,7 +188,7 @@
 
                             <?php 
                             
-                            if($rs->idStatus == '3')
+                            if($rs->id_Status == '3')
                             {
                                 $query = $this->db->query('SELECT * FROM Not_passed, Carregis WHERE Not_passed.idCarregis = Carregis.idCarregis AND Not_passed.idCarregis = '.$rs->idCarregis);
 
@@ -250,7 +250,7 @@
                         </table>
                     </div>
 
-                    <?php if ($rs->idStatus == '4') { ?>
+                    <?php if ($rs->id_Status == '4') { ?>
 
                     <form action="<?php echo site_url('Manager_car_regis/add_status_2'); ?>" method="POST" class="form-horizontal">
 
@@ -273,7 +273,7 @@
                         $startdate=strtotime("l");
                         $enddate=strtotime("+89 days", $startdate);
 
-                        echo '<input type="hidden" class="btn btn-success mt-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<input type="hidden" name="EndDate" id="EndDate" value="';
                         echo date("Y-m-d", $enddate);
                         echo '">';
@@ -293,13 +293,13 @@
                             echo '<input type="hidden" name="StartDate" id="StartDate" value="';
                             echo date("Y-m-d", $enddate);
                             echo '">';
-                            echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="6" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5" name="id_Status" id="id_Status" value="6" style="font-size:20px;" required>';
                             echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
                             echo '</form>';
 
                         }
 
-                    }elseif ($rs->idStatus == '2') {
+                    }elseif ($rs->id_Status == '2') {
 
                         $d=strtotime("-2 Days");
 
@@ -316,7 +316,7 @@
                         echo '<input type="hidden" name="StartDate" id="StartDate" value="';
                         echo date("Y-m-d", $startdate);
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5" name="idStatus" id="idStatus" value="7" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5" name="id_Status" id="id_Status" value="7" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ไม่มีการส่งรถ</button>';
                         echo '</form>';
 

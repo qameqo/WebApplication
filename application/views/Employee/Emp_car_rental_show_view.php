@@ -71,73 +71,73 @@
 
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
-                                <?php if($rs->idstatus == '1')
+                                <?php if($rs->id_status == '1')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idstatus == '2') 
+                                else if ($rs->id_status == '2') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idstatus == '3') 
+                                else if ($rs->id_status == '3') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '4')
+                                else if($rs->id_status == '4')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if ($rs->idstatus == '5') 
+                                else if ($rs->id_status == '5') 
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '6')
+                                else if($rs->id_status == '6')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '7')
+                                else if($rs->id_status == '7')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '8')
+                                else if($rs->id_status == '8')
                                 {
                                     echo'<td width="70%"><span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '9')
+                                else if($rs->id_status == '9')
                                 {
                                     echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '10')
+                                else if($rs->id_status == '10')
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '11')
+                                else if($rs->id_status == '11')
                                 {
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
                                 }
-                                else if($rs->idstatus == '12')
+                                else if($rs->id_status == '12')
                                 {
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
@@ -147,7 +147,7 @@
 
                             <?php 
                             
-                            if($rs->idstatus == '3')
+                            if($rs->id_status == '3')
                             {
                                 $query = $this->db->query('SELECT * FROM Not_passed_rent, Rental WHERE Not_passed_rent.idRental = Rental.idRental AND Not_passed_rent.idRental = '.$rs->idRental);
 
@@ -166,7 +166,7 @@
 
                             <?php 
 
-                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idrent AND Rental.idRental = $rs->idRental");
+                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
 
                             foreach ($query->result_array() as $data ) { ?>
 
@@ -191,7 +191,7 @@
                     
                     <?php 
 
-                    if($rs->idstatus == '9'){
+                    if($rs->id_status == '9'){
 
                         $d=strtotime("-1 day");
 
@@ -206,8 +206,8 @@
                             echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                             echo $rs->idCarregis; 
                             echo '">'; 
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                             echo '</form>';
                         
@@ -216,7 +216,7 @@
                     }?>
 
                     <?php 
-                        if($rs->idstatus == '1'){
+                        if($rs->id_status == '1'){
                         
                         echo '<form action="'; 
                         echo site_url('Emp_rental/add_status_2'); 
@@ -227,7 +227,7 @@
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="10" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="10" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
 
@@ -237,15 +237,15 @@
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="3" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="3" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
                         echo '</form>';
                                            
                     }?>
 
                     <?php 
-                        if($rs->idstatus == '10'){
+                        if($rs->id_status == '10'){
                         
                         echo '<form action="'; 
                         echo site_url('Emp_rental/add_status_22'); 
@@ -256,7 +256,7 @@
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="idstatus" id="idstatus" value="11" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
 
@@ -269,15 +269,15 @@
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         echo '</form>';
                                            
                     }?>
 
                     <?php 
-                    if($rs->idstatus == '11'){
+                    if($rs->id_status == '11'){
 
                         $d=strtotime("-1 day");
                         $dd=strtotime("-2 day");
@@ -346,8 +346,8 @@
                             </div>  
 
                             <?php
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="12" style="font-size:20px;" required>';
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             echo '<button class="btn btn-info mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
                             echo '</form>';
                         

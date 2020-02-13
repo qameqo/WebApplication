@@ -31,7 +31,7 @@
 
                             <?php foreach ($query as $rs) { ?>
 
-                            <?php if ($rs->Row == '4') { }else{?>
+                            <?php if ($rs->id_position == '4') { }else{?>
 
 							<tr>
 								<td width="5%"><?php echo $rs->id_Employee; ?></td>
@@ -41,15 +41,15 @@
 
                                 <?php 
 
-                                if($rs->Row == '1')
+                                if($rs->id_position == '1')
                                 {
                                     echo'<td>พนักงาน</td>';
                                 }
-                                elseif ($rs->Row == '2') 
+                                elseif ($rs->id_position == '2') 
                                 {
                                     echo'<td>ช่างซ่อมบำรุง</td>';
                                 }
-                                elseif ($rs->Row == '3') 
+                                elseif ($rs->id_position == '3') 
                                 {
                                     echo'<td>เจ้าหน้าที่ประกัน</td>';
                                 }                                
