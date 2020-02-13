@@ -295,9 +295,9 @@
 
                     }elseif ($rs->idStatus == '2') {
 
-                        $d=strtotime("+2 Days");
+                        $d=strtotime("-2 Days");
 
-                        if ($rs->Dayfirst == date('Y-m-d',$d)) {
+                        if ($rs->Dayfirst <= date("Y-m-d",$d)) {
 
                         $startdate=strtotime("l");
 
