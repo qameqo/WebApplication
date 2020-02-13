@@ -41,6 +41,7 @@
                             { }elseif ($rs->id_status == '7') 
                             { }elseif ($rs->id_status == '8') 
                             { }elseif ($rs->id_status == '9') 
+                            { }elseif ($rs->id_status == '10')
                             { }else{
                             
                         ?>
