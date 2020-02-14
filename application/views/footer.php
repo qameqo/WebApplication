@@ -213,13 +213,10 @@ $("input[name='date1']").ready(function(){
   })
 
   $("input[name='enddateee']").change(function(){
-  
-
-
-
+          
+           
           $.get("<?=base_url('Rental/selectcar/')?>",{
             
-           
           }, 
               function (data) {
                 var tot = data;
@@ -230,6 +227,7 @@ $("input[name='date1']").ready(function(){
                 var dateendd = dateen.format('YYYY-MM-DD').toString();
                 var startda = moment(st, 'YYYY/MM/DD');
                 var startdat = startda.format('YYYY-MM-DD').toString();
+                
                 $("#booking").html("")
                 for(bo in data){
                   var book2 = data[bo];
