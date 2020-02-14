@@ -214,7 +214,8 @@ $("input[name='date1']").ready(function(){
               function (data) {
                 var total = data * ngo; 
                 var game =  total.toFixed(0);
-                $("#totalcar").text(game + " บาท")
+                var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                $("#totalcar").text(tot + " บาท")
                 $("#totalcar2").val(game)
                  } // รถ
           );  
@@ -236,7 +237,8 @@ $("input[name='date1']").ready(function(){
                     function (data) {
                       var total2 = data * ngo; 
                       var game2 =  total2.toFixed(0);
-                    $("#ins").text(game2 + " บาท")
+                      var tot2 = game2.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#ins").text(tot2 + " บาท")
                     $("#totalins").val(game2) // ประกันพื้นฐาน
                   }
               ); 
@@ -244,7 +246,8 @@ $("input[name='date1']").ready(function(){
                   function (data) {
                     var total3 = data * ngo + 5000; 
                     var game3 =  total3.toFixed(0);
-                    $("#total").text(game3 + " บาท")
+                    var tot3 = game3.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#total").text(tot3 + " บาท")
                     $("#total2").val(game3)
                     $("#book").removeAttr('disabled',true)
                     } // รวม
@@ -256,7 +259,8 @@ $("input[name='date1']").ready(function(){
                     function (data) {
                       var total4 = data * ngo; 
                       var game4 =  total4.toFixed(0);
-                    $("#ins").text(game4 + " บาท")
+                      var tot4 = game4.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#ins").text(tot4 + " บาท")
                     $("#totalins").val(game4) // ประกันพรีเมี่ยม
                     
                   }
@@ -265,7 +269,8 @@ $("input[name='date1']").ready(function(){
                   function (data) {
                     var total5 = data * ngo + 5000; 
                     var game5 =  total5.toFixed(0);
-                    $("#total").text(game5 + " บาท")
+                    var tot5 = game5.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#total").text(tot5 + " บาท")
                     $("#total2").val(game5)
                     $("#book").removeAttr('disabled',true)
                     } // รวม
