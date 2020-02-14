@@ -254,30 +254,42 @@
 
                     <form action="<?php echo site_url('Manager_car_regis/add_status_2'); ?>" method="POST" class="form-horizontal">
 
-                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">
-
-                    <div class="row justify-content-center">
-                        <div class="col-3">
-                            <label class="label mt-5">ราคาทางร้าน</label>
-                            <input type="text" disabled name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
-                        </div>
-                        <div class="col-3">
-                            <label class="label mt-5">แก้ไขราคาใหม่</label>
-                            <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                        </div>
-                    </div>                 
-
+                    <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">              
                     
                     <?php
 
-                        $startdate=strtotime("l");
-                        $enddate=strtotime("+89 days", $startdate);
+                        if(date("Y-m-d") >  $rs->StartDate){
 
-                        echo '<input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
-                        echo '<input type="hidden" name="EndDate" id="EndDate" value="';
-                        echo date("Y-m-d", $enddate);
-                        echo '">';
-                        echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
+                            echo '<input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="6" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-danger mt-5" type="submit" style="font-size:20px;">ยกเลิกการลงทะเบียน</button>';
+                        }
+                        else
+                        { ?>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <label class="label mt-5">ราคาทางร้าน</label>
+                                <input type="text" disabled name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
+                            </div>
+                            <div class="col-3">
+                                <label class="label mt-5">แก้ไขราคาใหม่</label>
+                                <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                            </div>
+                        </div>   
+                        
+                        <?php
+                            $startdate=strtotime("l");
+                            $enddate=strtotime("+89 days", $startdate);
+
+                            echo '<input type="hidden" name="EndDate" id="EndDate" value="';
+                            echo date("Y-m-d", $enddate);
+                            echo '">';
+
+                            echo '<input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ส่งรถเรียบร้อย</button>';
+
+                        }
+
                         echo '</form>';
 
                         $d=strtotime("-2 day");

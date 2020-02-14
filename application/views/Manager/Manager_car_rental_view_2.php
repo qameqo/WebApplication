@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์ทั้งหมด</h3>
+                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์</h3>
                     </div>
                 </div>
                 
@@ -16,10 +16,10 @@
                         <thead>
                             <tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ยื่ห้อ</th>
-                                <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันที่จอง</th>
+                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Brand">รุ่น</th>
+                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 
@@ -28,14 +28,20 @@
                         </thead>
 						<tbody>
 
-                        <?php foreach ($query as $rs) { ?>
+                        <?php foreach ($query as $rs) {       
+                            
+                            if($rs->id_status == '12'){
+                            
+                        ?>
+                            
 
 							<tr>
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
-                                <td><?php echo $rs->Name_Brand; ?></td>
-								<td><?php echo $rs->Name_Gen; ?></td>
+
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
+								<td><?php echo $rs->Name_Brand; ?></td>
+								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->Datebooking; ?></td>
 								<td><?php echo $rs->totalprice; ?></td>
 
@@ -114,22 +120,36 @@
 
                                 <td>
 								
-                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+                                <a href="<?php echo site_url('Manager_car_regis/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+
+                                <?php if($rs->id_status == ''){ ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->id_status == '6') { ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php }elseif ($rs->id_status == '7') { ?>
+
+                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
+
+                                <?php } ?>
+
                     
 								</td>
 							</tr>
-
-                        <?php } ?>
-
+                       
+                        <?php }} ?>
 
 						</tbody>
 						<tfoot>
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ยื่ห้อ</th>
-                                <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันที่จอง</th>
+                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Brand">รุ่น</th>
+                                <th data-column-id="Brand">วันทำการ</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 

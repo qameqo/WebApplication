@@ -15,14 +15,23 @@
         </div>
       </div>
 
-      <div class="col-sm-7">
+      <div class="col-sm-4">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลเกี่ยวกับรถยนต์</h4>
-            <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-primary btn-sm " style="font-size : 20px">จัดการข้อมูลราคารถยนต์</a>
-            <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-primary btn-sm" style="font-size : 20px">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
+            <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-success btn-sm " style="font-size : 20px">จัดการข้อมูลราคารถยนต์</a>
+            <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-success btn-sm" style="font-size : 20px">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h4 class="card-title">ตรวจสอบข้อมูลเกี่ยวกับรถยนต์</h4>
             <a href="<?php echo site_url('Manager_car_regis/index_2');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
             <a href="<?php echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+            <a href="<?php echo site_url('Manager_car_regis/index_4');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลรายได้ทั้งหมด</a>
 
             <!-- <a href="<?php //echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-sm mt-5" style="font-size : 20px">จัดการการเช่ารถยนต์</a><br> -->
           </div>

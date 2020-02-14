@@ -125,6 +125,23 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Modal_view');
 
     }
+    public function index_4()
+    {
+        $data['query']=$this->Emp_rental_model->show_rental();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_car_rental_view_2', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+
+    }
 
     public function show_rental($idRental)
     {
