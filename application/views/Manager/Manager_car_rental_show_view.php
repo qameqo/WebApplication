@@ -188,7 +188,7 @@
 
                             <?php 
 
-                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idrent AND Rental.idRental = $rs->idRental");
+                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
 
                             foreach ($query->result_array() as $data ) { ?>
 
