@@ -57,7 +57,7 @@
                                 <td width="70%"><?php echo $rs->PriceVat; ?></td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>ราคาทั้งหมด</label></td>
+                                <td width="30%"><label>ราคาทั้งหมด (รวมมัดจำ 5000 บาท)</label></td>
                                 <td width="70%"><?php echo $rs->totalprice; ?></td>
                             </tr>
                             <tr>
@@ -136,7 +136,13 @@
                                     echo'<td width="70%"><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                }  ?>
+                                }
+                                else if($rs->idstatus == '12')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }   ?>
                             </tr> 
 
                             <?php 
@@ -258,7 +264,7 @@
                             echo '">';
                             echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                             echo $rs->idCarregis; 
-                            echo '">';
+                            echo '">'; 
                             echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="6" style="font-size:20px;" required>';
                             echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
                             echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
@@ -267,6 +273,107 @@
                         }
 
                     }?>
+
+                    <?php 
+                    if($rs->idstatus == '11'){
+
+                        $d=strtotime("-1 day");
+                        $dd=strtotime("-2 day");
+                        $ddd=strtotime("-3 day");
+
+                        if (date("Y-m-d") >=  $rs->endDate) {
+
+                            echo '<form action="'; 
+                            echo site_url('Emp_rental/add_status_4/'); 
+                            echo '" method="POST" class="form-horizontal">';
+                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                            echo $rs->idRental; 
+                            echo '">';
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
+                            echo '">';
+                            echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
+                            echo date("Y-m-d");
+                            echo '">';
+                            ?>
+                            
+                            <div class="row justify-content-center"> 
+
+                            <?php if($rs->endDate ==  date('Y-m-d',$d)){ ?>
+                                
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                </div>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาค่าปรับ</label>
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                </div>
+
+                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                </div>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาค่าปรับ</label>
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                </div>
+
+                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceDe; ?>">
+                                </div>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาค่าปรับ</label>
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceDe * 2; ?>">
+                                </div>
+
+                            <?php }else{ ?>
+
+                                <input type="hidden" name="Fines_price" id="Fines_price" class="form-control mt-1" value="0">
+
+                            <?php }?>
+                            
+                            </div>  
+
+                            <?php
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="12" style="font-size:20px;" required>';
+                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                            echo '<button class="btn btn-info mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
+                            echo '</form>';
+                        
+                        }
+
+                        // if (date("Y-m-d") >=  $rs->endDate) {
+
+                        //     echo '<form action="'; 
+                        //     echo site_url('Emp_rental/add_status_4/'); 
+                        //     echo '" method="POST" class="form-horizontal">';
+                        //     echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                        //     echo $rs->idRental; 
+                        //     echo '">';
+                        //     echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        //     echo $rs->idCarregis; 
+                        //     echo '">';
+                        //     echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
+                        //     echo date("Y-m-d");
+                        //     echo '">';
+                        //     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idstatus" id="idstatus" value="12" style="font-size:20px;" required>';
+                        //     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="idStatus" id="idStatus" value="5" style="font-size:20px;" required>';
+                        //     echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
+                        //     echo '</form>';
+                        
+                        // }
+
+                    }?>
+
             </div>
         </div>
     </div>

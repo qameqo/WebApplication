@@ -70,11 +70,13 @@
                                 href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลการรับรถยนต์</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
-                                href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการเช่ารถยนต์</a>
+                                href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการโอนเงินเช่ารถยนต์</a>
                             <a class="dropdown-item"
                                 href="<?php echo site_url('Emp_rental/index_2');?>">จัดการข้อมูลการรับรถยนต์เช่า</a>
                             <a class="dropdown-item"
-                                href="<?php echo site_url('Emp_rental/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+                                href="<?php echo site_url('Emp_rental/index_3');?>">จัดการข้อมูลการคืนรถยนต์เช่า</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url('Emp_rental/index_4');?>">ตรวจสอบข้อมูลการเช่าทั้งหมด</a>
                         </div>
                     </li>
                 </ul>

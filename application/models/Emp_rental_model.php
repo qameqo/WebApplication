@@ -156,6 +156,55 @@ class Emp_rental_model extends CI_Model
         // redirect('Manager_emp');
     }
 
+    public function add_status_4()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+       
+        $data = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idstatus' => $this->input->post('idstatus')
+        );
+
+        $query_2=$this->db->update('Rental',$data);
+
+        //-----------------------------------
+
+        $this->db->where('idRent', $this->input->post('idRental'));
+       
+        $data = array( 
+            'ReturnDate' => $this->input->post('ReturnDate'),
+            'Fines_price' => $this->input->post('Fines_price')
+        );
+
+        $query_2=$this->db->update('RentalDetail',$data);
+
+        //------------------------------------
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $data_2 = array( 
+            'id_Employee' => $this->session->userdata('id_Employee'),
+            'idStatus' => $this->input->post('idStatus')
+        );
+
+        $query=$this->db->update('Carregis',$data_2);
+
+        $this->db->order_by('idRental', 'desc');
+        $query_2 =  $this->db->get('Rental', 1);
+        $qq = $query_2->row_array();
+
+        echo "<script>";
+        echo "alert('ยืนยันการคืนเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+        echo "</script>";
+        
+        // redirect('Manager_emp');
+    }
+
     public function add_not_passed_rent()
     {
         $data = array( 

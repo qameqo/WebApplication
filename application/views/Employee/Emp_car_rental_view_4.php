@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">จัดการข้อมูลการคืนรถยนต์เช่า</h3>
+                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์ทั้งหมด</h3>
                     </div>
                 </div>
                 
@@ -19,7 +19,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันคืนรถยนต์</th>
+                                <th data-column-id="Brand">วันที่จอง</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 
@@ -30,28 +30,13 @@
 
                         <?php foreach ($query as $rs) { ?>
 
-                        <?php 
-                            if ($rs->idstatus == '1') 
-                            { }elseif ($rs->idstatus == '1') 
-                            { }elseif ($rs->idstatus == '2') 
-                            { }elseif ($rs->idstatus == '3') 
-                            { }elseif ($rs->idstatus == '4') 
-                            { }elseif ($rs->idstatus == '5') 
-                            { }elseif ($rs->idstatus == '6') 
-                            { }elseif ($rs->idstatus == '7') 
-                            { }elseif ($rs->idstatus == '8') 
-                            { }elseif ($rs->idstatus == '9') 
-                            { }else{
-                            
-                        ?>
-
 							<tr>
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
                                 <td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-								<td><?php echo $rs->endDate; ?></td>
+								<td><?php echo $rs->Datebooking; ?></td>
 								<td><?php echo $rs->PriceCar; ?></td>
 
                                 <?php if($rs->idstatus == '1')
@@ -125,16 +110,17 @@
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                } ?>
+                                }  ?>
 
                                 <td>
 								
-                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายะละเอียด</a>
+                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
                     
 								</td>
 							</tr>
 
-                        <?php }} ?>
+                        <?php } ?>
+
 
 						</tbody>
 						<tfoot>
@@ -143,7 +129,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันคืนรถยนต์</th>
+                                <th data-column-id="Brand">วันที่จอง</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 

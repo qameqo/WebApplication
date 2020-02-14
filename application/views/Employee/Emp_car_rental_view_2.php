@@ -19,7 +19,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Brand">วันรับรถยนต์</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 
@@ -43,7 +43,7 @@
                                 <td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-								<td><?php echo $rs->Datebooking; ?></td>
+								<td><?php echo $rs->startDate; ?></td>
 								<td><?php echo $rs->PriceCar; ?></td>
 
                                 <?php if($rs->idstatus == '1')
@@ -111,7 +111,13 @@
                                     echo'<td><span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
-                                }?>
+                                }
+                                else if($rs->idstatus == '12')
+                                {
+                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                } ?>
 
                                 <td>
 								
@@ -129,7 +135,7 @@
                                 <th data-column-id="Brand">ยื่ห้อ</th>
                                 <th data-column-id="Generation">รุ่น</th>
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Brand">วันรับรถยนต์</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 

@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
 
-      <div class="col-sm-10">
+      <div class="col-sm-3">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลบุคคล</h4>
@@ -15,12 +15,12 @@
         </div>
       </div>
 
-      <div class="col-sm-10">
+      <div class="col-sm-7">
         <div class="card text-center">
           <div class="card-body">
             <h4 class="card-title">จัดการข้อมูลเกี่ยวกับรถยนต์</h4>
-            <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-primary btn-sm mb-3" style="font-size : 20px">จัดการข้อมูลราคารถยนต์</a><br><br>
-            <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-primary btn-sm" style="font-size : 20px">จัดการข้อมูลการลงทะเบียนรถยนต์</a><br><br>
+            <a href="<?php echo site_url('Manager_car_price');?>" class="btn btn-primary btn-sm " style="font-size : 20px">จัดการข้อมูลราคารถยนต์</a>
+            <a href="<?php echo site_url('Manager_car_regis');?>" class="btn btn-primary btn-sm" style="font-size : 20px">จัดการข้อมูลการลงทะเบียนรถยนต์</a>
             <a href="<?php echo site_url('Manager_car_regis/index_2');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
             <a href="<?php echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
 
