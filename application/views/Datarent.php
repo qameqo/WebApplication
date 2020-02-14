@@ -25,11 +25,11 @@
                 <div class="col-md-12 mb-5 text-center">
                     <br>
                     <table id="employee_data" class="table table-striped table-bordered text-center"
-                        style="width: 1200px;">
+                        style="width: 1080px;">
                         <thead>
                             <tr>
                                 <th data-column-id="Name_image" style="width: 150px;">ยี่ห้อ</th>
-                                <th data-column-id="Name_image" style="width: 200px;">รุ่น</th>
+                                <th data-column-id="Name_image" style="width: 150px;">รุ่น</th>
                                 <th data-column-id="Name_image" style="width: 150px;">ทะเบียน</th>
                                 <th data-column-id="Name_image" style="width: 200px;">วันเริ่มเช่า</th>
                                 <th data-column-id="Name_image" style="width: 200px;">วันส่งคืน</th>
