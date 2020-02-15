@@ -67,7 +67,7 @@
 				 </div>
 				 <div class="row">
 				 	<div class="col-sm-5 text-right">
-					 <span>ราคารวมทั้งหมดรวม vat</span>
+					 <span>ราคาทั้งหมดรวม vat</span>
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
@@ -117,7 +117,7 @@
 			<div class="container mb-5">
                         <?php
 						$this->db->where( 'idRental',$idr);
-						$query = $this->db->get('Images3', 3);
+						$query = $this->db->get('Images3');
 						$qi = $query->result_array();
 						?>
 							<div class="table-responsive">
@@ -153,7 +153,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm">
-									<h6 style="color:red;">* รูปใบเสร็จโอนเงินมัดจำ 1 รูป</h6>
+									<h6 style="color:red;">* อัปโหลดรูปใบเสร็จโอนเงินมัดจำ 1 รูป</h6>
 									<!-- <p style="color:red;">* หากยังไม่ได้อัปรูปหลักฐานยืนยันตัวตนสามารถอัปได้ในขั้นตอนนี้</p> -->
 								</div>
 							</div>

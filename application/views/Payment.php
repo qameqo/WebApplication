@@ -76,7 +76,7 @@
 					<?php
 						
 						$this->db->where( 'idRental',$idr);
-						$query = $this->db->get('Images3', 2);
+						$query = $this->db->get('Images3');
 						$qi = $query->result_array();
 						?>
 					<div class="table-responsive">
@@ -111,7 +111,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm">
-						<p style="color:red;">* กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตนให้ครบถ้วน</p>
+						<p style="color:red;">* กรุณาอัปโหลดรูปภาพหลักฐานยืนยันตน 2 รูป</p>
 							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
 								data-toggle="modal" data-target="#modal-default">
 								<p style="color:red;"><u>เอกสารยืนยันตน</u></p>
