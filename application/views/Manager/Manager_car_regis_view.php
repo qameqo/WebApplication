@@ -29,7 +29,7 @@
 
                             <?php foreach ($query as $rs) { ?>
 
-                            <?php if ($rs->id_Status == '1') { ?>
+                            <?php if ($rs->id_Status == '1') { //โชเฉพาะรออนุมัติ ?> 
 
 							<tr>
 
@@ -40,78 +40,51 @@
 								<td><?php echo $rs->License; ?></td>
                                 <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
 
-                                <?php if($rs->id_Status == '1')
+                                <td>
+                                <?php 
+                        
+                                if($rs->id_Status == '1')
                                 {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo'<span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_Status == '2') 
                                 {
-                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo'<span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_Status == '3') 
                                 {
-                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo'<span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_Status == '4')
                                 {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_Status == '5') 
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_Status == '6')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_Status == '7')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_Status == '8')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
-                                else if($rs->id_Status == '9')
-                                {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_Status == '10')
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_Status == '11')
-                                {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_Status == '12')
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                } ?>
+                                ?>
+                                </span></td>
                         
 								<td>
                                     <a href="<?php echo site_url('Manager_car_regis/show/').$rs->idCarregis ?>" class="btn btn-info btn-sm" style="font-size: 16px">รายละเอียด</a>

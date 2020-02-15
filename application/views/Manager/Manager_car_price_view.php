@@ -24,7 +24,8 @@
 
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Model">รุ่น</th>
-                                <th data-column-id="Price">ราคา</th>
+                                <th data-column-id="Price">ราคารถยนต์</th>
+                                <th data-column-id="Price">ราคาเสนอ</th>
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
@@ -36,6 +37,7 @@
 								<td><?php echo $rs->Name_Brand ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
                                 <td><?php echo $rs->Price; ?></td>
+                                <td><?php echo ($rs->Price * 0.2)/100; ?></td>
 								<td>
 								
                                     <a href="<?php echo site_url('Manager_car_price/edit/').$rs->id_Gen ?>" class="btn btn-warning btn-sm" style="font-size: 16px">แก้ไข</a>
@@ -52,7 +54,8 @@
 
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Model">รุ่น</th>
-                                <th data-column-id="Price">ราคา</th>
+                                <th data-column-id="Price">ราคารถยนต์</th>
+                                <th data-column-id="Price">ราคาเสนอ</th>
 
                                 <th data-column-id="Action"></th>
 							</tr>

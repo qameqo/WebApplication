@@ -19,7 +19,7 @@
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Brand">วันทำรายการจอง</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 
@@ -43,78 +43,70 @@
 								<td><?php echo $rs->Datebooking; ?></td>
 								<td><?php echo $rs->totalprice; ?></td>
 
-                                <?php if($rs->id_status == '1')
+                                <td>
+                                <?php 
+                        
+                                if($rs->id_status == '1')
                                 {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo'<span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_status == '2') 
                                 {
-                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
+                                    echo'<span class="badge badge-info" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_status == '3') 
                                 {
-                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo'<span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '4')
                                 {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if ($rs->id_status == '5') 
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '6')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '7')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '8')
                                 {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
+                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '9')
                                 {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '10')
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '11')
                                 {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
+                                    echo'<span class="badge badge-primary" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }
                                 else if($rs->id_status == '12')
                                 {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
+                                    echo'<span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                    echo '</span></td>';
                                 }  ?>
+                                </span></td>
 
                                 <td>
 								
@@ -147,7 +139,7 @@
                                 <th data-column-id="Brand">ชื่อสมาชิก</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำการ</th>
+                                <th data-column-id="Brand">วันทำรายการจอง</th>
                                 <th data-column-id="Generation">ราคารวม</th>
                                 <th data-column-id="License">สถานะ</th>
 

@@ -33,7 +33,7 @@
                             <?php
                             if ($rs->id_status == '1') 
                             {
-                                                                                       
+                                                  
                             ?> 
 
 							<tr>

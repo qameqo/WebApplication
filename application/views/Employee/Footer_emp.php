@@ -38,4 +38,14 @@
         $('img').EZView();
     });
 
+    // setTimeout(function(){
+    //     window.location.href = '<?php base_url() ?>Emp_car/refresh_car';
+    // },14400000);
+
+    // function autoRefreshPage()
+    // {
+    //     window.location = window.location.href = '<?php base_url() ?>Emp_car/refresh_car';
+    // }
+    // setInterval('autoRefreshPage()', 3000);
+
 </script>

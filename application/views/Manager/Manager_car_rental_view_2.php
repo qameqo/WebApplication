@@ -16,12 +16,15 @@
                         <thead>
                             <tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
-                                <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำการ</th>
-                                <th data-column-id="Generation">ราคารวม</th>
-                                <th data-column-id="License">สถานะ</th>
+
+                                <th data-column-id="Brand">ราคารถยนต์</th>
+                                <th data-column-id="Brand">ราคาประกัน</th>
+                                <th data-column-id="Brand">ภาษีมูลค่าเพิ่ม (7%)</th>
+                                <th data-column-id="Brand">เงินมัดจำการเช่ารถยนต์</th>
+                                <th data-column-id="Brand">เงินค่าปรับ</th>
+                                <th data-column-id="Brand">รายได้เจ้าของรถ</th>
+                                <th data-column-id="Brand">รายได้ทางร้าน</th>
+                                <th data-column-id="Generation">รายได้รวม</th>
 
                                 <th data-column-id="Action"></th>
                             </tr>
@@ -39,103 +42,17 @@
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
 
-								<td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-								<td><?php echo $rs->Name_Brand; ?></td>
-								<td><?php echo $rs->Name_Gen; ?></td>
-								<td><?php echo $rs->Datebooking; ?></td>
+								<td><?php echo $rs->PriceCar; ?></td>
+								<td><?php echo $rs->PriceIns; ?></td>
+								<td><?php echo $rs->PriceVat; ?></td>
+								<td><?php echo $rs->PriceFive; ?></td>
+								<td><?php echo $rs->Fines_price; ?></td>
+                                <td><?php echo $rs->Carownerincome; ?></td>
+								<td><?php echo $rs->Companyincome; ?></td>
 								<td><?php echo $rs->totalprice; ?></td>
-
-                                <?php if($rs->id_status == '1')
-                                {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if ($rs->id_status == '2') 
-                                {
-                                    echo'<td><span class="badge badge-info" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if ($rs->id_status == '3') 
-                                {
-                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '4')
-                                {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if ($rs->id_status == '5') 
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '6')
-                                {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '7')
-                                {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '8')
-                                {
-                                    echo'<td><span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '9')
-                                {
-                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '10')
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '11')
-                                {
-                                    echo'<td><span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }
-                                else if($rs->id_status == '12')
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                    echo '</span></td>';
-                                }  ?>
-
-                                <td>
 								
+                                <td>
                                 <a href="<?php echo site_url('Manager_car_regis/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
-
-                                <?php if($rs->id_status == ''){ ?>
-
-                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
-
-                                <?php }elseif ($rs->id_status == '6') { ?>
-
-                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
-
-                                <?php }elseif ($rs->id_status == '7') { ?>
-
-                                <a href="<?php echo site_url('Manager_car_regis/del_rental/').$rs->idRental ?>" class="btn btn-danger btn-sm" style="font-size: 16px">ลบ</a>
-
-                                <?php } ?>
-
                     
 								</td>
 							</tr>
@@ -146,12 +63,14 @@
 						<tfoot>
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
-                                <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำการ</th>
-                                <th data-column-id="Generation">ราคารวม</th>
-                                <th data-column-id="License">สถานะ</th>
+                                <th data-column-id="Brand">ราคารถยนต์</th>
+                                <th data-column-id="Brand">ราคาประกัน</th>
+                                <th data-column-id="Brand">ภาษีมูลค่าเพิ่ม (7%)</th>
+                                <th data-column-id="Brand">เงินมัดจำการเช่ารถยนต์</th>
+                                <th data-column-id="Brand">เงินค่าปรับ</th>
+                                <th data-column-id="Brand">รายได้เจ้าของรถ</th>
+                                <th data-column-id="Brand">รายได้ทางร้าน</th>
+                                <th data-column-id="Generation">รายได้รวม</th>
 
                                 <th data-column-id="Action"></th>
 							</tr>
