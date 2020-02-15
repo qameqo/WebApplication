@@ -88,12 +88,18 @@
                                 echo '</span></td></tr>';
                             }
                             
-                            if($rs->id_Status == '5' || $rs->id_Status == '6' || $rs->id_Status == '8') //วันสิ้นสุดสัญญา
+                            if($rs->id_Status == '5' || $rs->id_Status == '8') //วันสิ้นสุดสัญญา
                             {
                                 echo'<tr>
                                 <td width="30%"><label>วันสิ้นสุดสัญญา (90 วัน)</label></td><td width="70%">';
                                 echo $rs->EndDate; 
                                 echo '</span></td></tr>';
+                            }elseif($rs->id_Status == '6'){
+                                echo'<tr>
+                                <td width="30%"><label>วันยกเลิกการลงทะเบียน</label></td><td width="70%">';
+                                echo $rs->EndDate; 
+                                echo '</span></td></tr>';
+
                             }
                         
                             if($rs->id_Status == '3') //หมายเหตุ
@@ -240,6 +246,9 @@
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
+                        echo '">';
+                        echo '<input type="hidden" name="EndDate" id="EndDate" value="';
+                        echo date("Y-m-d");
                         echo '">';
                         echo '<input type="hidden" name="id_Status" id="id_Status" value="6" class="form-control" required>';
                         echo '<button type="submit" class="btn btn-danger mt-5" style="font-size:20px;">ยกเลิกการลงทะเบียน</button>';

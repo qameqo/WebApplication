@@ -80,6 +80,7 @@ class Manager_car_regis_model extends CI_Model
        
         $data = array( 
             'id_Status' => $this->input->post('id_Status'),
+            'EndDate' => $this->input->post('EndDate')
         );
 
         $query=$this->db->update('Carregis',$data);
