@@ -158,7 +158,8 @@
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">หมายเลขตัวถังรถ</label>
 							<input type="text" class="form-control" placeholder="Ex.JT732LNB109010828" name="carbody" id="carbody" 
-							pattern=".{17}" title="กรุณากรอกให้ครบ 17 หลัก" required>
+							pattern=".{17}" title="กรุณากรอกให้ครบ 17 หลัก" Maxlength= "17"  required>
+							
 							<label class="text-danger" hidden id="fail2"><span class="glyphicon glyphicon-remove"></span> หมายเลขตัวถังรถนี้ได้ถูกใช้ไปแล้ว</label>
 							<label class="text-success" hidden id="success2"><span class="glyphicon glyphicon-ok"></span> หมายเลขตัวถังรถนี้สามารถใช้ได้</label>		
 						</div>
@@ -188,11 +189,12 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
-							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" required>
+							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" pattern="[0-9].{,3}" title="กรุณากรอกตัวเลข" required>
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ทะเบียนรถ</label>
 							<input type="text" class="form-control" name="license" id="license" placeholder="Ex.5กช1648" disabled required>
+							<p style="color:red; font-size:10px;">*กรอกหมายเลขตัวถังให้ถูกต้องก่อนจะกรอกทะเบียนรถ</p>
 							<label class="text-danger" hidden id="fail"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>
 							<label class="text-success"hidden id="success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>
 						</div>

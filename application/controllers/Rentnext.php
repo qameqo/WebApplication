@@ -3,11 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rentnext extends CI_Controller {
 
-    public function one($idc,$startdat,$dateen)
+    public function one($idc)
     {
         $data['idc'] = $idc;
-        $data['startdat'] = $startdat;
-        $data['dateen'] = $dateen;
         $this->load->view('header');
         $this->load->view('Rentnext',$data);
         $this->load->view('footer');
@@ -66,6 +64,9 @@ class Rentnext extends CI_Controller {
         $this->db->insert('Rental', $object);
         $insert_id = $this->db->insert_id();    
         
+        $car = array('id_Status' => '10');
+        $this->db->where('idCarregis', $idc);
+        $this->db->update('Carregis', $car);
         echo "<script>";
         echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
@@ -95,9 +96,7 @@ class Rentnext extends CI_Controller {
     // }
     //     $this->db->insert('RentalDetail', $in);
         
-    //     $car = array('idStatus' => '10');
-    //     $this->db->where('idCarregis', $idc);
-    //     $this->db->update('Carregis', $car);
+        
         
       
         // redirect('Payment/sh/'.$insert_id);
