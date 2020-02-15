@@ -82,7 +82,10 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-                    <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly>
+               <input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;"
+                        name="start" required>
+                        <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p>
+                    <!-- <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly> -->
                 </div>
             </div>
             <div class="row">
@@ -91,10 +94,11 @@
                   
                 </div>
                 <div class="col-sm text-right">
-                    <input id="no" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
-                        name="no" readonly>
-                        <!-- id="datetimepickerend" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center;"
-                        name="end -->
+                    <!-- <input id="no" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                        name="no" readonly> -->
+                        <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
+                        name="end" required>
+                        <p style="color:red; font-size:10px;">* ระยะเวลาการเช่าไม่เกิน 5 วัน</p>
                 </div>
             </div>
                 <div class="row">
@@ -244,7 +248,7 @@
                 <div class="col-sm">
                     <p style="text-align:left;">ราคามัดจำรถ</p>
                     <input type="hidden" id="hapan" name="hapan" value="5000">
-                    <p style="text-align:Left; color:red;">รวมทั้งหมดรวมvat 7%</p>
+                    <p style="text-align:Left; color:red;">ราคารวมvat 7%</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">
@@ -319,7 +323,7 @@
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>เลขไมล์ (กิโลเมตร)</p>
+                            <p>เลขไมล์</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Mileage'];?>

@@ -34,7 +34,7 @@ jQuery(function(){
  var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
-  // maxDate:'+1970/01/03',
+  maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
    })
@@ -190,7 +190,7 @@ $("input[name='date1']").ready(function(){
 
 </script>
 
-<script>
+<!-- <script>
   var dateend = 0;
   var j = 0;
   
@@ -298,7 +298,7 @@ $("input[name='date1']").ready(function(){
           );  
   })
   
-  </script>
+  </script> -->
 
 <script>
   var ngo = 0;

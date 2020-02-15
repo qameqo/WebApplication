@@ -150,7 +150,7 @@
  					<?php 
 						
 						$this->db->where( 'idCarregis',$idc);
-						$query = $this->db->get('Images2', 3);
+						$query = $this->db->get('Images2');
 						$qi = $query->result_array();
 						?>
  					<div class="table-responsive">

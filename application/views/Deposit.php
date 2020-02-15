@@ -93,7 +93,7 @@
 				 </div>
 				 <div class="row">
 				 	<div class="col-sm-5 text-right">
-					 <span>ยอดที่ต้องชำระเมื่อมารับรถ</span>
+					 <span>ยอดที่ต้องชำระเพิ่ม</span>
 					 </div>
 					 <div class="col-sm-3 text-right">
 					 <?php foreach($qo as $data){?>
