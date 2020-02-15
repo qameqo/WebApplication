@@ -32,10 +32,12 @@
                                 <td width="30%"><label>วันที่ต้องคืน</label></td>
                                 <td width="70%"><?php echo $rs->endDate; ?></td>
                             </tr>
+                            <?php if($rs->ReturnDate != null){ ?>
                             <tr>
                                 <td width="30%"><label>วันที่คืนจริง</label></td>
                                 <td width="70%"><?php echo $rs->ReturnDate; ?></td>
                             </tr>
+                            <?php } ?>
                             <tr>
                                 <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
                                 <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?></td>

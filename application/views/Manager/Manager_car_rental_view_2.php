@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ข้อมูลการเช่ารถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
                     </div>
                 </div>
                 
