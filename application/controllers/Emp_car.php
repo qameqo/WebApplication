@@ -51,6 +51,52 @@ class Emp_car extends CI_Controller {
         $this->Manager_car_regis_model->add_status_2();
     }
 
+    public function refresh_car()
+    {
+        $query = $this->db->query("SELECT * FROM Carregis ");
+        
+        $qq = $query->result_array();
+
+        foreach ($qq as $data) {
+
+            $d=strtotime("-3 day");
+            $dd=strtotime("-1 day");
+
+            if( $data['Dayfirst'] == date('Y-m-d', $d)){
+                
+                // echo "<pre>";
+                // print_r ($data['idCarregis']);
+                // echo "</pre>";
+
+                $this->db->where('id_status' , 2);
+
+                $data = array( 
+                    'id_status' => '7',
+                    'EndDate' => date('Y-m-d')
+                );
+
+                $this->db->update('Carregis',$data);
+                
+            }elseif($data['StartDate'] == date('Y-m-d', $dd)){
+
+                $this->db->where('id_status' , 4);
+
+                $data = array( 
+                    'id_status' => '7',
+                    'EndDate' => date('Y-m-d')
+                );
+
+                $this->db->update('Carregis',$data);
+
+            }
+            
+        }
+
+        redirect('Emp');
+            
+        exit;
+        
+    }
    
 }
 

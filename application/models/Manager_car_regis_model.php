@@ -13,7 +13,6 @@ class Manager_car_regis_model extends CI_Model
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
         $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
-        
 
         $query = $this->db->get();
 
