@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ 
 <div class="col-md-13 text-center"><br>
 	<h1 class="h1" style="color:#000000">เช่ารถยนต์</h1>
 </div>
@@ -9,7 +11,11 @@
 			
 				
 			
-				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen, Seat.Number_Seat from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = Carregis.idBrand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN Seat on Seat.id_Seat = Carregis.id_Seat WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) and Carregis.id_Status="5"');
+				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen, Seat.Number_Seat 
+				from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = 
+				Carregis.idBrand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN Seat on Seat.id_Seat = 
+				Carregis.id_Seat WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) 
+				and Carregis.id_Status="5"');
 				$qq = $query->result_array();
 			?>
 
@@ -38,7 +44,7 @@
 			<div class="row justify-content-center">
 			<span>ค้นหายี่ห้อหรือรุ่น</span></div>
 			<div class="row justify-content-center">
-				<input type="text" class="form-control" id="exampleFormControlInput1" style="width:200px;"
+				<input type="text" class="form-control" id="search_text" style="width:200px;"
 					placeholder="ค้นหายี่ห้อหรือรุ่นรถ"></div>
 					
 			<!-- <div class="row">
@@ -63,13 +69,12 @@
 			<br>
 			<?php foreach($qq as $data){ ?>
 			<div class="row" id="booking">
-				
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 					<div class="row">
 						<div class="col-sm-8">
-							<?php echo $data['Name_Brand'] ?> <?php echo $data['Name_Gen'] ?>
-							<?php echo $data['Yearcar'] ?>
+							<?php echo $data['Name_Brand'] ?> <?php echo $data['Name_Gen'] ?><?php echo $data['Yearcar'] ?>
+							
 						</div>
 						<div class="col-sm-6">
 							<img src="./pic/car-gear.png"
@@ -127,6 +132,8 @@
 	</div>
 </div>
 </form>
+<div id="result"></div>
+  </div>
 <script>
 	var start = 0;
 	var end = 0;
@@ -142,4 +149,34 @@
 		});
 
 	});
+</script>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"<?php echo base_url(); ?>ajaxsearch/fetch",
+   method:"POST",
+   data:{query:query},
+   success:function(data){
+    $('#result').html(data);
+   }
+  })
+ }
+
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
 </script>

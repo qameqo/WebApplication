@@ -50,7 +50,55 @@ class Rental extends CI_Controller {
         
     }
 
-}
+  
+
+                    function fetch()
+                    {
+                    $output = '';
+                    $query = '';
+                    $this->load->model('ajaxsearch_model');
+                    if($this->input->post('query'))
+                    {
+                    $query = $this->input->post('query');
+                    }
+                    $data = $this->ajaxsearch_model->fetch_data($query);
+                    $output .= '
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                        <tr>
+                        <th>ยี่ห้อ</th>
+                        <th>รุ่น</th>
+                      
+                        </tr>
+                    ';
+                    if($data->num_rows() > 0)
+                    {
+                    foreach($data->result() as $row)
+                    {
+                        $output .= '
+                        <tr>
+                        <td>'.$row->Name_Brand.'</td>
+                        <td>'.$row->Name_Gen.'</td>
+                  
+                        </tr>
+                        ';
+                    }
+                    }
+                    else
+                    {
+                    $output .= '<tr>
+                        <td colspan="5">No Data Found</td>
+                        </tr>';
+                    }
+                    $output .= '</table>';
+                    echo $output;
+                    }
+                    
+     }
+
+
+
+
 
 /* End of file Controllername.php */
  ?>
