@@ -194,7 +194,6 @@ class Rentnext extends CI_Controller {
 
 
 
-
     //vattttt
     public function selectdate4($idc)
     {
