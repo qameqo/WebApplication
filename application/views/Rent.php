@@ -132,8 +132,8 @@
 	</div>
 </div>
 </form>
-<div id="result"></div>
-  </div>
+<!-- <div id="result"></div>
+  </div> -->
 <script>
 	var start = 0;
 	var end = 0;

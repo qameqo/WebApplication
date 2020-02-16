@@ -8,11 +8,11 @@ class Ajaxsearch_model extends CI_Model
 	$this->db->join('Brand', 'Brand.idBrand = Carregis.idBrand');
 	$this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
 	$this->db->join('Seat', 'Seat.id_Seat = Carregis.id_Seat');
+//$this->db->where('Carregis.id_Status', 5);
+	
+	
 	//$this->db->join('Images', 'Images.idCarregis = Carregis.idCarregis');
-	
 	//$this->db->where('Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1)');
-	$this->db->where('id_Status', 5);
-	
 	
 		if($query != '')
 		{
