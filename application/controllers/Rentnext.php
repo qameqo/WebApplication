@@ -212,7 +212,8 @@ class Rentnext extends CI_Controller {
         
         echo $total3; // vat
         
-    }public function selectdate8($idc)
+    }
+    public function selectdate8($idc)
     {
         $this->db->select('*');
         $this->db->from('Carregis');
@@ -230,19 +231,27 @@ class Rentnext extends CI_Controller {
         echo $total3; // vat
         
     }
-
-    public function checkdate()
+    public function selectstart($end)
     {
-    $this->load->model("check");
-    if ($this->check->checkdate($_POST["startdate"] && $_POST["enddate"])) {
-        // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> ทะเบียนรถนี้ได้ถูกใช้ไปแล้ว</label>';
-        echo "true";
-    } else {
-        // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> ทะเบียนรถนี้สามารถใช้ได้</label>';
-        echo "false";
+        $query = $this->db->query('SELECT * FROM Rental WHERE ('.$end.' BETWEEN Rental.startDate and Rental.endDate)');
+        //$query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
+        // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'
+        $en = $query->result_array();
+        //$st = $query1->result_array();
+        if($en == 0)
+        {
+            $dai = "จองได้";
+            echo $dai;
+        }
+        else
+        {
+            $maidai = "จองไม่ได้";
+            echo $maidai;
+        }
+         
+        
     }
     
-    }
 }
 
 /* End of file Controllername.php */

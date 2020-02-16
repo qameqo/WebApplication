@@ -399,7 +399,30 @@
 
        
 </form>
-
+<script>
+    // var st = 0;
+    // var en = 0;
+    // var start = 0;
+    // var end = 0;
+    // var sta = 0;
+    // var edn = 0;
+    // $('#datetimepickerend').change(function(){
+    //     st = document.getElementById("datetimepickerstart").value;
+    //     en = document.getElementById("datetimepickerend").value;
+    //     var startdat = moment(st, 'YYYY/MM/DD');
+    //     start = startdat.format('YYYY-MM-DD').toString();
+    //     var dateen = moment(en, 'YYYY/MM/DD');
+    //     end = dateen.format('YYYY-MM-DD').toString();
+        
+    //     $.get("<?=base_url('Rentnext/selectstart/')?>"+start"/"+end, 
+    //           function (data) {
+    //            console.log(data)
+    //             $("#totalcar").text(data + " บาท")
+    //             $("#totalcar2").val(game)
+    //              } 
+    //       );  
+    // });
+</script>
 <script>
     var start = 0;
     var end = 0;
