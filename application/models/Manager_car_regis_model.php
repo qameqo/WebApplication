@@ -109,14 +109,10 @@ class Manager_car_regis_model extends CI_Model
 
         $query=$this->db->update('Carregis',$data);
 
-        $this->db->order_by('idCarregis', 'desc');
-        $query_2 =  $this->db->get('Carregis', 1);
-        $qq = $query_2->row_array();
-
         if($qq['id_Status'] == '3')
         {
             
-            redirect('Manager_car_regis/not_passed/'.$qq['idCarregis']);
+            redirect('Manager_car_regis/not_passed/'. $this->input->post('idCarregis'));
             
         }
         else if($_SESSION['id_Employee'] != 2 )
@@ -208,6 +204,7 @@ class Manager_car_regis_model extends CI_Model
         $this->db->delete('Images2',array('idCarregis'=>$idCarregis));
         $this->db->delete('Not_passed',array('idCarregis'=>$idCarregis));
         $this->db->delete('Carregis',array('idCarregis'=>$idCarregis));
+        // $this->db->delete('Rental',array('idCarregis'=>$idCarregis));
 
         echo "<script>";
         echo "alert('ลบข้อมูลเรียบร้อย');";
@@ -221,10 +218,9 @@ class Manager_car_regis_model extends CI_Model
     public function del_rental($id_Rental)
     {
 
-        $this->db->delete('Images3',array('id_Rental'=>$id_Rental));
-        $this->db->delete('Not_passed_rent',array('id_Rental'=>$id_Rental));
-        $this->db->delete('RentalDetail',array('idRent'=>$id_Rental));
-        $this->db->delete('Rental',array('id_Rental'=>$id_Rental));
+        $this->db->delete('Images3',array('idRental'=>$id_Rental));
+        $this->db->delete('Not_passed_rent',array('idRental'=>$id_Rental));
+        $this->db->delete('Rental',array('idRental'=>$id_Rental));
 
         echo "<script>";
         echo "alert('ลบข้อมูลเรียบร้อย');";

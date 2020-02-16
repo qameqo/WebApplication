@@ -31,18 +31,11 @@
                         <?php foreach ($query as $rs) { ?>
 
                         <?php 
-                            if ($rs->id_status == '1') 
-                            { }elseif ($rs->id_status == '1') 
-                            { }elseif ($rs->id_status == '2') 
-                            { }elseif ($rs->id_status == '3') 
-                            { }elseif ($rs->id_status == '4') 
-                            { }elseif ($rs->id_status == '5') 
-                            { }elseif ($rs->id_status == '6') 
-                            { }elseif ($rs->id_status == '7') 
-                            { }elseif ($rs->id_status == '8') 
-                            { }elseif ($rs->id_status == '9') 
-                            { }elseif ($rs->id_status == '10')
+                            if ($rs->id_status == '1' || $rs->id_status == '2'|| $rs->id_status == '3' || $rs->id_status == '4' || $rs->id_status == '5' || 
+                                $rs->id_status == '6' || $rs->id_status == '7' || $rs->id_status == '8' || $rs->id_status == '9' || $rs->id_status == '10') 
                             { }else{
+
+                                if ($rs->endDate <= date('Y-m-d')) {
                             
                         ?>
 
@@ -135,7 +128,7 @@
 								</td>
 							</tr>
 
-                        <?php }} ?>
+                        <?php }}} ?>
 
 						</tbody>
 						<tfoot>
