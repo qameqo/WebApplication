@@ -49,7 +49,7 @@ class Emp_rental_model extends CI_Model
        return FALSE;
     }
 
-    public function add_status()
+    public function add_status() //ไม่อนุมัติสถานะ 3 ใส่หมายเหตุ
     {
         // print_r($_POST);
         
@@ -64,16 +64,12 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
-
-        redirect('Emp_rental/not_passed_rent/'.$qq['idRental']);
+        redirect('Emp_rental/not_passed_rent/'.$this->input->post('idRental'));
         
         // redirect('Manager_emp');
     }
 
-    public function add_status_2()
+    public function add_status_2() //อนุมัติสถานะ 10
     {
         // print_r($_POST);
         
@@ -88,19 +84,25 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
+        //--------------------------------------------------------------------
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Status' => $this->input->post('id_Status')
+        );
+
+        $query_2=$this->db->update('Carregis',$data);
 
         echo "<script>";
         echo "alert('แก้ไขสถานะเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+        echo "window.location.href = '". base_url(). "Emp_rental';";
         echo "</script>";
         
         // redirect('Manager_emp');
     }
     
-    public function add_status_22()
+    public function add_status_22() //ยืนยันการรับรถยนต์จากลูกค้า
     {
         // print_r($_POST);
         
@@ -115,122 +117,203 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
-
         echo "<script>";
-        echo "alert('แก้ไขสถานะเรียบร้อย');";
+        echo "alert('ยืนยันการรับรถยนต์จากลูกค้าเรียบร้อยเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
         echo "</script>";
         
         // redirect('Manager_emp');
     }
 
-    public function add_status_3()
+    // public function add_status_3() //ยกเลิกการเช่า
+    // {
+    //     // print_r($_POST);
+        
+    //     // exit;
+
+    //     $this->db->where('idRental', $this->input->post('idRental'));
+       
+    //     $data = array( 
+    //         'id_Employee' => $this->session->userdata('id_Employee'),
+    //         'id_status' => $this->input->post('id_status'),
+    //     );
+
+    //     $query_2=$this->db->update('Rental',$data);
+
+    //     $this->db->order_by('idRental', 'desc');
+    //     $query_2 =  $this->db->get('Rental', 1);
+    //     $qq = $query_2->row_array();
+
+    //     if($qq['id_status'] == '6'){
+
+    //         echo "<script>";
+    //         echo "alert('แก้ไขสถานะเรียบร้อย');";
+    //         echo "window.location.href = '". base_url(). "Emp_rental';";
+    //         echo "</script>";  
+
+    //     }else{
+
+    //         echo "<script>";
+    //         echo "alert('แก้ไขสถานะเรียบร้อย');";
+    //         echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+    //         echo "</script>";
+
+    //     }
+        
+    //     // redirect('Manager_emp');
+    // }
+
+    // public function add_status_33() //ยกเลิกการเช่า
+    // {
+    //     // print_r($_POST);
+        
+    //     // exit;
+
+    //     $this->db->where('idRental', $this->input->post('idRental'));
+       
+    //     $data = array( 
+    //         'id_Employee_2' => $this->session->userdata('id_Employee'),
+    //         'id_status' => $this->input->post('id_status')
+    //     );
+
+    //     $query_2=$this->db->update('Rental',$data);
+
+    //     if($qq['id_status'] == '6'){
+
+    //         echo "<script>";
+    //         echo "alert('แก้ไขสถานะเรียบร้อย');";
+    //         echo "window.location.href = '". base_url(). "Emp_rental';";
+    //         echo "</script>";  
+
+    //     }else{
+
+    //         echo "<script>";
+    //         echo "alert('แก้ไขสถานะเรียบร้อย');";
+    //         echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
+    //         echo "</script>";
+
+    //     }
+        
+    //     // redirect('Manager_emp');
+    // }
+
+    public function add_status_4() //คืนรถยนต์
     {
         // print_r($_POST);
         
         // exit;
 
-        $this->db->where('idRental', $this->input->post('idRental'));
-       
-        $data = array( 
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'id_status' => $this->input->post('id_status')
-        );
 
-        $query_2=$this->db->update('Rental',$data);
+        $query = $this->db->query("SELECT * FROM Rental ");
+            
+        $qq = $query->result_array();
 
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
+        if($this->input->post('PriceFive') == '0'){ //คืน 5000
 
-        if($qq['id_status'] == '6'){
+            if($this->input->post('Fines_price') != 0){  //total - 5000 + ค่าปรับ
 
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_rental';";
-            echo "</script>";  
+                foreach ($qq as $data2) {
 
-        }else{
+                    $new_total = ($data2['totalprice'] - 5000) + $this->input->post('Fines_price');
 
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
-            echo "</script>";
+                    // echo $new_total;
+                    // exit;
 
+                    $this->db->where('idRental', $this->input->post('idRental'));
+        
+                    $data = array( 
+                        'id_Employee_3' => $this->session->userdata('id_Employee'),
+                        'id_status' => $this->input->post('id_status'),
+                        'ReturnDate' => $this->input->post('ReturnDate'),
+                        'PriceFive' => $this->input->post('PriceFive'),
+                        'Fines_price' => $this->input->post('Fines_price'),
+                        'totalprice' => $new_total
+                    );
+
+                    $query_2=$this->db->update('Rental',$data);
+
+                    echo "<script>";
+                    echo "alert('ยืนยันการคืนเรียบร้อย');";
+                    echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+                    echo "</script>";
+                }
+            }else {
+
+                foreach ($qq as $data2) { //total - 5000
+
+                    $new_total = ($data2['totalprice'] - 5000);
+
+                    // echo $new_total;
+                    // exit;
+
+                    $this->db->where('idRental', $this->input->post('idRental'));
+        
+                    $data = array( 
+                        'id_Employee_3' => $this->session->userdata('id_Employee'),
+                        'id_status' => $this->input->post('id_status'),
+                        'ReturnDate' => $this->input->post('ReturnDate'),
+                        'PriceFive' => $this->input->post('PriceFive'),
+                        'Fines_price' => $this->input->post('Fines_price'),
+                        'totalprice' => $new_total
+                    );
+
+                    $query_2=$this->db->update('Rental',$data);
+
+                    echo "<script>";
+                    echo "alert('ยืนยันการคืนเรียบร้อย');";
+                    echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+                    echo "</script>";
+                }
+            }
+        }else{ //ไม่คืน 5000
+
+            if($this->input->post('Fines_price') != 0){  //total + ค่าปรับ
+
+                foreach ($qq as $data2) {
+
+                    $new_total = $data2['totalprice'] + $this->input->post('Fines_price');
+
+                    // echo $new_total;
+                    // exit;
+
+                    $this->db->where('idRental', $this->input->post('idRental'));
+        
+                    $data = array( 
+                        'id_Employee_3' => $this->session->userdata('id_Employee'),
+                        'id_status' => $this->input->post('id_status'),
+                        'ReturnDate' => $this->input->post('ReturnDate'),
+                        'PriceFive' => '5000',
+                        'Fines_price' => $this->input->post('Fines_price'),
+                        'totalprice' => $new_total
+                    );
+
+                    $query_2=$this->db->update('Rental',$data);
+
+                    echo "<script>";
+                    echo "alert('ยืนยันการคืนเรียบร้อย');";
+                    echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+                    echo "</script>";
+                }
+            }else{ //total เดิม
+
+                $this->db->where('idRental', $this->input->post('idRental'));
+
+                $data = array( 
+                    'id_Employee_3' => $this->session->userdata('id_Employee'),
+                    'id_status' => $this->input->post('id_status'),
+                    'ReturnDate' => $this->input->post('ReturnDate'),
+                    'PriceFive' => '5000',
+                    'Fines_price' => $this->input->post('Fines_price')
+                );
+
+                $query_2=$this->db->update('Rental',$data);
+
+                echo "<script>";
+                echo "alert('ยืนยันการคืนเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+                echo "</script>";
+            }
         }
-        
-        // redirect('Manager_emp');
-    }
-
-    public function add_status_33()
-    {
-        // print_r($_POST);
-        
-        // exit;
-
-        $this->db->where('idRental', $this->input->post('idRental'));
-       
-        $data = array( 
-            'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'id_status' => $this->input->post('id_status')
-        );
-
-        $query_2=$this->db->update('Rental',$data);
-
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
-
-        if($qq['id_status'] == '6'){
-
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_rental';";
-            echo "</script>";  
-
-        }else{
-
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_rental/index_2';";
-            echo "</script>";
-
-        }
-        
-        // redirect('Manager_emp');
-    }
-
-    public function add_status_4()
-    {
-        // print_r($_POST);
-        
-        // exit;
-
-        $this->db->where('idRental', $this->input->post('idRental'));
-       
-        $data = array( 
-            'id_Employee_3' => $this->session->userdata('id_Employee'),
-            'id_status' => $this->input->post('id_status'),
-            'ReturnDate' => $this->input->post('ReturnDate'),
-            'PriceFive' => $this->input->post('PriceFive'),
-            'PriceCar' => $this->input->post('Fines_price')
-        );
-
-        $query_2=$this->db->update('Rental',$data);
-
-        //-----------------------------------
-
-        $this->db->order_by('idRental', 'desc');
-        $query_2 =  $this->db->get('Rental', 1);
-        $qq = $query_2->row_array();
-
-        echo "<script>";
-        echo "alert('ยืนยันการคืนเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
-        echo "</script>";
         
         // redirect('Manager_emp');
     }

@@ -66,7 +66,7 @@ class Emp_car extends CI_Controller {
                 // echo "</pre>";
                 // exit;
 
-            if($data['Dayfirst'] == date('Y-m-d', $d)){ //ไม่ได้กำหนดวันส่ง
+            if($data['Dayfirst'] >= date('Y-m-d', $d)){ //ไม่ได้กำหนดวันส่ง
 
                 $this->db->where('id_Status', 4);
                 $this->db->where('Dayfirst', date('Y-m-d', $d));
@@ -104,7 +104,7 @@ class Emp_car extends CI_Controller {
                 // echo "</pre>";
                 // exit;
 
-            if($data['StartDate'] == date('Y-m-d', $dd)){ //ไม่ได้กำหนดวันส่ง
+            if($data['StartDate'] >= date('Y-m-d', $dd)){ //ไม่ได้กำหนดวันส่ง
 
                 $this->db->where('id_Status', 2);
                 $this->db->where('StartDate', date('Y-m-d', $dd));
@@ -121,9 +121,77 @@ class Emp_car extends CI_Controller {
             
         }
 
-        redirect('Emp');
+        redirect('Emp_car/refresh_rent');
             
         exit;
+        
+    }
+
+    public function refresh_rent()
+    {
+        $dd=strtotime("-1 day");
+        
+        $query = $this->db->query("SELECT * FROM Rental ");
+        
+        $qq = $query->result_array();
+
+        foreach ($qq as $data) {
+
+            // echo "<pre>";
+            // print_r ($data['Datebooking']);
+            // echo "</pre>";
+            // exit;
+        
+            if($data['Datebooking'] >= date('Y-m-d', $dd)){ //ไม่ได้ชำระเงินมัดจำ
+
+                $this->db->where('id_status', 9);
+                $this->db->where('Datebooking', date('Y-m-d', $dd));
+                
+                $data = array( 
+                    'id_status' => '6',
+                );
+
+                $this->db->update('Rental',$data);
+                             
+            }
+        
+        }
+
+        redirect('Emp_car/refresh_rent_2');
+        
+    }
+
+    public function refresh_rent_2()
+    {
+        $dd=strtotime("-1 day");
+        
+        $query = $this->db->query("SELECT * FROM Rental ");
+        
+        $qq = $query->result_array();
+
+        foreach ($qq as $data) {
+
+            // echo "<pre>";
+            // print_r ($data['Datebooking']);
+            // echo "</pre>";
+            // exit;
+        
+            if($data['startDate'] >= date('Y-m-d', $dd)){ //ไม่มารับรถเช่า
+
+                $this->db->where('id_status', 10);
+                $this->db->where('startDate', date('Y-m-d', $dd));
+                
+                $data = array( 
+                    'id_status' => '6',
+                );
+
+                $this->db->update('Rental',$data);
+                             
+            }
+        
+        }
+
+        redirect('Emp');
         
     }
 }

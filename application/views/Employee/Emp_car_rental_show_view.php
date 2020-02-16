@@ -96,61 +96,42 @@
                                 }
                             }
 
-                            // if($rs->id_Employee_2 != null)
-                            // {
-                            //     $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_2 = Employee.id_Employee_2 AND Rental.idRental = '.$rs->idRental);
-
-                            //     $qq = $query->result_array();
-
-                            //     foreach ($qq as $data) {
-
-                            //         echo '<tr>
-                            //         <td width="30%"><label>พนักงานที่ยืนยันการโอนเงิน</label></td>
-                            //         <td width="70%">';
-                            //         echo $data['F_Name'];
-                            //         echo '&nbsp;';
-                            //         echo $data['L_Name'];
-                            //         echo '</td></tr>';
-                            //     }
-                            // }
-
-                            // if($rs->id_Employee_3 != null)
-                            // {
-                            //     $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_3 = Employee.id_Employee_3 AND Rental.idRental = '.$rs->idRental);
-
-                            //     $qq = $query->result_array();
-
-                            //     foreach ($qq as $data) {
-
-                            //         echo '<tr>
-                            //         <td width="30%"><label>พนักงานที่ยืนยันการโอนเงิน</label></td>
-                            //         <td width="70%">';
-                            //         echo $data['F_Name'];
-                            //         echo '&nbsp;';
-                            //         echo $data['L_Name'];
-                            //         echo '</td></tr>';
-                            //     }
-                            // }
-                            
-                            if($rs->id_status == '3')
+                            if($rs->id_Employee_2 != null)
                             {
-                                $query = $this->db->query('SELECT * FROM Not_passed_rent, Rental WHERE Not_passed_rent.idRental = Rental.idRental AND Not_passed_rent.idRental = '.$rs->idRental);
+                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_2 = Employee.id_Employee AND Rental.idRental = '.$rs->idRental);
 
                                 $qq = $query->result_array();
 
                                 foreach ($qq as $data) {
 
                                     echo '<tr>
-                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="30%"><label>พนักงานที่ยืนยันการรับรถยนต์</label></td>
                                     <td width="70%">';
-                                    echo $data['Name_not_rent'];
+                                    echo $data['F_Name'];
+                                    echo '&nbsp;';
+                                    echo $data['L_Name'];
                                     echo '</td></tr>';
                                 }
                             }
-                            ?>
 
-                            <?php 
+                            if($rs->id_Employee_3 != null)
+                            {
+                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_3 = Employee.id_Employee AND Rental.idRental = '.$rs->idRental);
 
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>พนักงานที่ยืนยันการคืนรถยนต์</label></td>
+                                    <td width="70%">';
+                                    echo $data['F_Name'];
+                                    echo '&nbsp;';
+                                    echo $data['L_Name'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                                    
                             $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
 
                             foreach ($query->result_array() as $data ) { ?>
@@ -237,40 +218,58 @@
                                 }  ?>
                                 </span></td>
                             </tr> 
-                            
+
+                            <?php 
+                              
+                            if($rs->id_status == '3')
+                            {
+                                $query = $this->db->query('SELECT * FROM Not_passed_rent WHERE Not_passed_rent.idRental = '.$rs->idRental);
+
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not_rent'];
+                                    echo '</td></tr>';
+                                }
+                            }
+
+                            ?>
+                                                        
                         </table>
                     </div>
 
-
-                    
                     <?php 
 
-                    if($rs->id_status == '9'){
+                    // if($rs->id_status == '9'){
 
-                        $d=strtotime("-1 day");
+                    //     $d=strtotime("-1 day");
 
-                        if ($rs->Datebooking <= date("Y-m-d",$d)) {
+                    //     if ($rs->Datebooking <= date("Y-m-d",$d)) {
 
-                            echo '<form action="'; 
-                            echo site_url('Emp_rental/add_status_3/'); 
-                            echo '" method="POST" class="form-horizontal">';
-                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                            echo $rs->idRental; 
-                            echo '">';
-                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            echo $rs->idCarregis; 
-                            echo '">'; 
-                            echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
+                    //         echo '<form action="'; 
+                    //         echo site_url('Emp_rental/add_status_3/'); 
+                    //         echo '" method="POST" class="form-horizontal">';
+                    //         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                    //         echo $rs->idRental; 
+                    //         echo '">';
+                    //         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                    //         echo $rs->idCarregis; 
+                    //         echo '">'; 
+                    //         echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
 
-                            echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
-                            echo '</form>';
+                    //         echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
+                    //         echo '</form>';
                         
-                        }
+                    //     }
 
-                    }?>
+                    // }?>
 
                     <?php 
-                        if($rs->id_status == '1'){
+                        if($rs->id_status == '1'){ //รออนุมัติหลังจากโอนเงิน 30%
                         
                         echo '<form action="'; 
                         echo site_url('Emp_rental/add_status_2'); 
@@ -281,12 +280,13 @@
                         echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
                         echo $rs->idCarregis; 
                         echo '">';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="8" style="font-size:20px;" required>';
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="10" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
 
                         echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_3/'.$rs->idRental); 
+                        echo site_url('Emp_rental/add_status/'.$rs->idRental); 
                         echo '" method="POST" class="form-horizontal">';
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
@@ -298,7 +298,7 @@
                     }?>
 
                     <?php 
-                        if($rs->id_status == '10'){
+                        if($rs->id_status == '10'){ //สมาชิกมารับรถยนต์
                         
                         echo '<form action="'; 
                         echo site_url('Emp_rental/add_status_22'); 
@@ -313,23 +313,23 @@
                         echo '<button class="btn btn-success mt-5 mr-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
 
-                        echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_33/'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        echo $rs->idRental; 
-                        echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
-                        echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
-                        echo '</form>';
+                        // echo '<form action="'; 
+                        // echo site_url('Emp_rental/add_status_33/'); 
+                        // echo '" method="POST" class="form-horizontal">';
+                        // echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                        // echo $rs->idRental; 
+                        // echo '">';
+                        // echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                        // echo $rs->idCarregis; 
+                        // echo '">';
+                        // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
+                        // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
+                        // echo '</form>';
                                            
                     }?>
 
                     <?php 
-                    if($rs->id_status == '11'){
+                    if($rs->id_status == '11'){ //วันที่คืนรถยนต์
 
                         $d=strtotime("-1 day");
                         $dd=strtotime("-2 day");
@@ -343,16 +343,21 @@
 
                             ?>
                             
-                            <div class="row justify-content-center"> 
+                            <!-- <div class="row justify-content-center"> 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคามัดจำรถยนต์</label>
-                                    <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="<?php echo $rs->PriceFive;?>">
+                                    <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="<?php //echo $rs->PriceFive;?>">
                                     <label class="label mt-1" style="color: red;">*ถ้าคืนเงินมัดจำให้กรอกราคาเป็น 0*</label>
+                                </div>
+                            </div>   -->
+
+                            <div class="row justify-content-center mt-5">
+                                <div class="col-3"> 
+                                    <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000
                                 </div>
                             </div>  
 
                             <?php
-
                             
                             echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                             echo $rs->idRental; 
@@ -388,7 +393,7 @@
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 4; ?>">
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
@@ -400,7 +405,7 @@
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 6; ?>">
                                 </div>
 
                             <?php }else{ ?>
