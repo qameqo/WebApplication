@@ -48,13 +48,23 @@ class check extends CI_Model {
     }
     
     
-    function calculate($idc)
-    {
+    function checkdate($startdate,$enddate)
+    {     
          $this->db->select('*');
-         $this->db->from('Carregis');
-         $this->db->where('idCarregis',$idc);
+         $this->db->from('Rental');
+         $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
+         $this->db->where('Carregis.idCarregis = Rental.idCarregis');
+         $this->db->where('startDate', $startdate);
+         $this->db->where('endDate', $enddate);
          $query = $this->db->get();
-          return $query;
+         if($query->num_rows()>0)
+         {
+              return true;
+         }
+          else
+          {
+               return false; 
+          }
      
 
          
