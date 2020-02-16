@@ -41,11 +41,11 @@
 		<!-- </div> -->
 		<div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
 			style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
-			<div class="row justify-content-center">
+			<!-- <div class="row justify-content-center">
 			<span>ค้นหายี่ห้อหรือรุ่น</span></div>
 			<div class="row justify-content-center">
 				<input type="text" class="form-control" id="search_text" style="width:200px;"
-					placeholder="ค้นหายี่ห้อหรือรุ่นรถ"></div>
+					placeholder="ค้นหายี่ห้อหรือรุ่นรถ"></div> -->
 					
 			<!-- <div class="row">
 				<div class="col-sm text-center">
