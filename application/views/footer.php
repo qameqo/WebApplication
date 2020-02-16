@@ -305,7 +305,8 @@ $("input[name='date1']").ready(function(){
   var id = 0;
   var x = 0;
   var dateFirst = 0;
-  
+  var start = 0;
+  var end = 0;
   
 
   $("input[name='start']").change(function(){
@@ -327,15 +328,28 @@ $("input[name='date1']").ready(function(){
   $("input[name='end']").change(function(){
           x = document.getElementById("datetimepickerstart").value; 
          var y = document.getElementById("datetimepickerend").value;
+         var xx = moment(x, 'YYYY/MM/DD');
+         var xxx = xx.format('YYYY-MM-DD').toString();
+         var yy = moment(y, 'YYYY/MM/DD');
+         var yyy = yy.format('YYYY-MM-DD').toString();
           dateFirst = moment(x, 'YYYY/MM/DD');
          var dateSecond = moment(y, 'YYYY/MM/DD');
          ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
         console.log(ngo);
         console.log(x,y);
         console.log(<?php echo $idc ?>);
+        console.log(yyy);
         id = <?php echo $idc ?>;
-
-          
+        end = $end = yyy;
+        start = $start = xxx;
+        console.log(end);
+          $.get("<?=base_url('Rentnext/selectstart/')?>"+end, 
+              function (data) {
+                var chon = data;
+               console.log(chon);
+                $("#totalcar").text(chon)
+              } 
+          );  
 
             $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
               function (data) {
