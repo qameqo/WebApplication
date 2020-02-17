@@ -262,6 +262,7 @@
             <div class="row justify-content-center">
                 <button type="submit" class="btn btn-danger" id="book"
                     style="background-color: #F60200; color: white; width:370px;" onclick="return confirm('ยืนยันข้อมูลการจองรถ ?');" disabled>จอง</button>
+               
             </div>
         </div>
     </div>

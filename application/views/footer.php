@@ -307,13 +307,13 @@ $("input[name='date1']").ready(function(){
   var dateFirst = 0;
   var start = 0;
   var end = 0;
-  
+  var chonst = 0;
 
   $("input[name='start']").change(function(){
     x = document.getElementById("datetimepickerstart").value; 
     dateFirst = moment(x, 'YYYY/MM/DD');
     
-    console.log( dateFirst.format('YYYY/MM/DD').toString())
+    //console.log( dateFirst.format('YYYY/MM/DD').toString())
           jQuery('#datetimepickerend').datetimepicker({
             format:'Y/m/d',
             onShow:function( ct ){
@@ -337,20 +337,29 @@ $("input[name='date1']").ready(function(){
          ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
         console.log(ngo);
         console.log(x,y);
-        console.log(<?php echo $idc ?>);
-        console.log(yyy);
+       // console.log(<?php echo $idc ?>);
+       
         id = <?php echo $idc ?>;
         end = $end = yyy;
         start = $start = xxx;
+        console.log(start);
         console.log(end);
-          $.get("<?=base_url('Rentnext/selectstart/')?>"+end, 
+        console.log(id);
+        
+          $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
               function (data) {
-                var chon = data;
-               console.log(chon);
-                $("#totalcar").text(chon)
+                 chonst = data;
+               console.log(chonst);
+               
+              $("#totalcar").text(chonst)
+              
               } 
-          );  
+                
+          );
 
+         
+        
+       
             $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
               function (data) {
                 var total = data * ngo; 
@@ -360,13 +369,13 @@ $("input[name='date1']").ready(function(){
                 $("#totalcar2").val(game)
                  } // รถ
           );  
-            $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
-              function (data) {
-                var total1 = data; 
-                var game1 =  total1.toFixed(0);
-                $("#totalvat").val(game1)
-                 } // vat
-          );  
+          //   $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
+          //     function (data) {
+          //       var total1 = data; 
+          //       var game1 =  total1.toFixed(0);
+          //       $("#totalvat").val(game1)
+          //        } // vat
+          // );  
          
           
   });

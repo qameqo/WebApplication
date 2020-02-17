@@ -189,7 +189,7 @@
 						</div>
 						<div class="col-sm mb-1">
 							<label class="bmd-label-floating">เลขไมล์ (กิโลเมตร)</label>
-							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" pattern="[0-9].{,3}" title="กรุณากรอกตัวเลข" required>
+							<input type="text" class="form-control" placeholder="Ex.10000" name="mile" pattern="[0-9].{3,}" title="กรุณากรอกตัวเลข" required>
 						</div>
 						<div class="col-sm mb-1">
 							<label for="exampleFormControlSelect1">ทะเบียนรถ</label>

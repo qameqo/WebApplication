@@ -16,19 +16,19 @@
                         $qq = $query->result_array();
                         
 						?>
-                <div class="col-md-12 mb-5 text-center">
+                <div class="col-md-10 mb-5 text-center">
                     <br>
                     <table id="employee_data" class="table table-striped table-bordered text-center"
-                        style="width: 1080px;">
+                        style="width: 1200px;">
                         <thead>
                             <tr>
                                 <th data-column-id="Name_image" style="width: 150px;">ยี่ห้อ</th>
                                 <th data-column-id="Name_image" style="width: 160px;">รุ่น</th>
                                 <th data-column-id="Name_image" style="width: 140px;">ทะเบียน</th>
                                 <th data-column-id="Name_image" style="width: 100px;">สี</th>
-                                <th data-column-id="Name_image" style="width: 250px;">เลขตัวถัง</th>
+                                <th data-column-id="Name_image" style="width: 270px;">เลขตัวถัง</th>
                                 <th data-column-id="Name_image" style="width: 130px;">สถานะ</th>
-                                <th data-column-id="Name_image" style="width: 150px;"></th>
+                                <th data-column-id="Name_image" style="width: 130px;"></th>
                             </tr>
                         </thead>
                         <tbody>

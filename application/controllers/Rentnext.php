@@ -231,26 +231,54 @@ class Rentnext extends CI_Controller {
         echo $total3; // vat
         
     }
-    public function selectstart($end)
+    public function selectstart($start,$idc,$end)
     {
-        $query = $this->db->query('SELECT * FROM Rental WHERE ('.$end.' BETWEEN Rental.startDate and Rental.endDate)');
-        //$query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
+        $query = $this->db->query("SELECT * FROM Rental WHERE ($start BETWEEN Rental.startDate and Rental.endDate) 
+        AND ($end BETWEEN Rental.startDate and Rental.endDate)
+        AND Rental.idCarregis = $idc");
+        //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
+        // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
         // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'
-        $en = $query->result_array();
-        //$st = $query1->result_array();
-        if($en == 0)
+
+        //SELECT * FROM Rental WHERE ('2020-02-15' BETWEEN Rental.startDate and Rental.endDate) OR ('2020-02-15' 
+        //BETWEEN Rental.startDate and Rental.endDate) and Rental.idCarregis = '72'
+        //$st = $query->num_rows();
+        $st = $query->result_array();
+        if($st > 0)
         {
-            $dai = "จองได้";
-            echo $dai;
+            
+            $maidai = "จองไม่ได้";
+            echo $maidai;
+            
         }
         else
         {
-            $maidai = "จองไม่ได้";
-            echo $maidai;
+              $dai = "จองได้";
+             echo $dai;
         }
+            
+        
+       
+            // $this->db->select('*');
+            // $this->db->from('Carregis');
+            // $this->db->where('idCarregis',$idc);
+            // $query = $this->db->get();
+            // $qq = $query->result_array();
+            // $gh = $qq[0]['RentalPrice'];
+            // $car = $gh * 1; // ราคารถ
+            // $fg = 0.25;
+            // $total = $gh * $fg;
+            // $total2 = $total + $gh; // ราคาประกัน
+            // $vat = 0.07;
+            // $total3 = $total2 * $vat; //ราคา vat
+            // $totalprice = $total2 + $total3; //ราคารวม
+            
+            // echo $car; // ราคารถ
+        
          
         
     }
+    
     
 }
 
