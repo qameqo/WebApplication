@@ -341,6 +341,11 @@
                             echo site_url('Emp_rental/add_status_4/'); 
                             echo '" method="POST" class="form-horizontal">';
 
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
+                            echo '">';
+
+                            echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             ?>
                             
                             <!-- <div class="row justify-content-center"> 

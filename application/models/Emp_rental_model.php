@@ -203,6 +203,15 @@ class Emp_rental_model extends CI_Model
         
         // exit;
 
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Status' => $this->input->post('id_Status')
+        );
+
+        $query_2=$this->db->update('Carregis',$data); //เปลี่ยนสถานะรถยนต์เป็นพร้อม
+
+        //--------------------------------------------------------------------
 
         $query = $this->db->query("SELECT * FROM Rental ");
             
