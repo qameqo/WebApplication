@@ -400,6 +400,78 @@
 
        
 </form>
+<!-- <script>
+	var st = 0;
+	var en = 0;
+	$(document).ready(function(){  
+      $('#license').change(function(){  
+           license = $('#license').val();  
+           if(license  != '')  
+           {  
+                $.ajax({  
+                     url:"<?php echo base_url(); ?>Owner/checklicense",  
+                     method:"POST",  
+                     data:{license:license},
+                     success:function(data){  
+                        //   $('#license_result').html(data);
+					 console.log( data);
+					 if(data.trim() === "true"){
+						console.log("มีไอสัส");
+						$('#fail').removeAttr('hidden')
+						$('#success').attr('hidden',true)
+						$('#game').attr('disabled',true)
+						document.getElementById("game").style.background = "gray";
+
+					 }else
+					 {
+						console.log("ไม่มี");
+						$('#success').removeAttr('hidden')
+						$('#fail').attr('hidden',true)
+						$('#game').removeAttr('disabled')
+						document.getElementById("game").style.background = "#F60200";
+					 }
+                     }  
+                });  
+           }  
+	  });  
+	  $('#carbody').change(function(){  
+		   carbody = $('#carbody').val();  
+		   var licen = document.getElementById("license").value;
+		  
+           if(carbody != '')  
+           {  
+                $.ajax({  
+                     url:"<?php echo base_url(); ?>Owner/checkcarbody",  
+                     method:"POST",  
+                     data:{carbody:carbody},  
+                     success:function(data){  
+						//   $('#carbody_result').html(data);
+						console.log("แก้ไขแล้ว");
+					 if(data.trim() === "true"){
+						console.log("มีแล้ว");
+						$('#fail2').removeAttr('hidden')
+						$('#success2').attr('hidden',true)
+						$('#game').attr('disabled',true)
+						document.getElementById("license").disabled = true;
+						document.getElementById("game").style.background = "gray";
+					 }else
+					 {
+						console.log("ไม่มี");
+						$('#success2').removeAttr('hidden')
+						$('#fail2').attr('hidden',true)
+						$('#license').removeAttr('disabled')
+						// document.getElementById("carbody").readOnly = true;
+					 }
+                     }  
+                });  
+           }  
+      });  
+ });
+
+ </script> -->
+
+
+
 <script>
     // var st = 0;
     // var en = 0;

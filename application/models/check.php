@@ -48,27 +48,51 @@ class check extends CI_Model {
     }
     
     
-    function checkdate($startdate,$enddate)
-    {     
-         $this->db->select('*');
-         $this->db->from('Rental');
-         $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
-         $this->db->where('Carregis.idCarregis = Rental.idCarregis');
-         $this->db->where('startDate', $startdate);
-         $this->db->where('endDate', $enddate);
-         $query = $this->db->get();
-         if($query->num_rows()>0)
-         {
-              return true;
-         }
-          else
-          {
-               return false; 
-          }
-     
+//      function selectstart($start,$idc,$end)
+//     {
+//         $query = $this->db->query("SELECT * FROM Rental WHERE ($start BETWEEN Rental.startDate and Rental.endDate) 
+//         AND ($end BETWEEN Rental.startDate and Rental.endDate)
+//         AND Rental.idCarregis = $idc");
+//         //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
+//         // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
+//         // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'
 
+//         //SELECT * FROM Rental WHERE ('2020-02-15' BETWEEN Rental.startDate and Rental.endDate) OR ('2020-02-15' 
+//         //BETWEEN Rental.startDate and Rental.endDate) and Rental.idCarregis = '72'
+//         //$st = $query->num_rows();
+        
+//         if($query->num_rows() > 0)
+//         {
+            
+//           return true; 
+            
+//         }
+//         else
+//         {
+//           return false;  
+//         }
+            
+        
+       
+//             // $this->db->select('*');
+//             // $this->db->from('Carregis');
+//             // $this->db->where('idCarregis',$idc);
+//             // $query = $this->db->get();
+//             // $qq = $query->result_array();
+//             // $gh = $qq[0]['RentalPrice'];
+//             // $car = $gh * 1; // ราคารถ
+//             // $fg = 0.25;
+//             // $total = $gh * $fg;
+//             // $total2 = $total + $gh; // ราคาประกัน
+//             // $vat = 0.07;
+//             // $total3 = $total2 * $vat; //ราคา vat
+//             // $totalprice = $total2 + $total3; //ราคารวม
+            
+//             // echo $car; // ราคารถ
+        
          
-    }
+        
+//     }
 
 }
 

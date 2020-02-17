@@ -212,6 +212,18 @@
                                     echo '</td></tr>';
                                 }
                             }
+                            else if($data['Name_Status']== 'อนุมัติ')
+                            {
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>วันที่อนุมัติ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Dayfirst'];
+                                    echo '</td></tr>';
+                                    
+                                }
+                            }
                             ?>
                             </tr>
                             <?php } ?>

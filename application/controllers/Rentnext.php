@@ -243,18 +243,16 @@ class Rentnext extends CI_Controller {
         //SELECT * FROM Rental WHERE ('2020-02-15' BETWEEN Rental.startDate and Rental.endDate) OR ('2020-02-15' 
         //BETWEEN Rental.startDate and Rental.endDate) and Rental.idCarregis = '72'
         //$st = $query->num_rows();
-        $st = $query->result_array();
-        if($st > 0)
+        //$st = $query->num_rows();
+        if($query->result_array() > 0)
         {
             
-            $maidai = "จองไม่ได้";
-            echo $maidai;
+            echo true;
             
         }
         else
         {
-              $dai = "จองได้";
-             echo $dai;
+            echo false;
         }
             
         
@@ -278,6 +276,18 @@ class Rentnext extends CI_Controller {
          
         
     }
+    // public function checkdate()
+    // {
+    //     $this->load->model("check");
+    //     if ($this->check->selectstart($_POST["start"])($_POST["end"])($_POST["id"])) {
+    //         // echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> หมายเลขตัวถังรถนี้ได้ถูกใช้ไปแล้ว</label>';
+    //         echo "true";
+    //     } else {
+    //         // echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> หมายเลขตัวถังรถนี้สามารถใช้ได้</label>';
+    //         echo "false";
+    //     }
+        
+    // }
     
     
 }
