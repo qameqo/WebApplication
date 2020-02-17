@@ -64,6 +64,14 @@ class Emp_rental_model extends CI_Model
 
         $query_2=$this->db->update('Rental',$data);
 
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Status' => $this->input->post('id_Status')
+        );
+
+        $query_2=$this->db->update('Carregis',$data);
+
         redirect('Emp_rental/not_passed_rent/'.$this->input->post('idRental'));
         
         // redirect('Manager_emp');
