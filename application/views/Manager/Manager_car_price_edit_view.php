@@ -66,6 +66,21 @@
                                 placeholder="ราคา" value="<?php echo $rs_edit->Price; ?>">
                         </div>
 
+                        <div class="col-12 mt-3">
+                            <label for="exampleFormControlSelect1">ประเภทเชื่อเพลิง</label>
+                            <select class="form-control selectpicker" data-style="btn btn-link" name="id_Type_Fuel"
+                                id="id_Type_Fuel">
+                                <option value=""><?php echo $rs_edit->Name_Type_Fuel; ?></option>
+                                <?php if($rs_edit->id_TypeFuel == 1){
+                                    echo '<option value="2">Diesel & Gas</option>';
+                                }else{
+                                    echo '<option value="1">Benzine & Gas</option>';
+                                    
+                                } ?>
+                                                                
+                            </select>
+                        </div>
+
                     </div>
 
                     <button type="submit" name="adding_btn" id="adding_btn" class="btn btn-success mt-5"

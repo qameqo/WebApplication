@@ -109,25 +109,36 @@ class Manager_car_regis_model extends CI_Model
 
         $query=$this->db->update('Carregis',$data);
 
-        if($qq['id_Status'] == '3')
-        {
-            
-            redirect('Manager_car_regis/not_passed/'. $this->input->post('idCarregis'));
-            
-        }
-        else if($_SESSION['id_Employee'] != 2 )
-        {
-            echo "<script>";
-            echo "alert('ยืนยันการรับรถยนต์เรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Emp_car';";
-            echo "</script>";
-        }
-        else
-        {
-            echo "<script>";
-            echo "alert('แก้ไขสถานะเรียบร้อย');";
-            echo "window.location.href = '". base_url(). "Manager_car_regis';";
-            echo "</script>";
+        // exit;
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $query_2 = $this->db->get('Carregis');
+
+        $qq = $query_2->result_array();
+
+        foreach ($qq as $data) {
+
+            if($data['id_Status'] == '3')
+            {
+                
+                redirect('Manager_car_regis/not_passed/'.$this->input->post('idCarregis'));
+                
+            }
+            else if($_SESSION['id_Employee'] != 2 )
+            {
+                echo "<script>";
+                echo "alert('ยืนยันการรับรถยนต์เรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Emp_car';";
+                echo "</script>";
+            }
+            else
+            {
+                echo "<script>";
+                echo "alert('อนุมัติการลงทะเบียนเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Manager_car_regis';";
+                echo "</script>";
+            }
         }
         // redirect('Manager_emp');
     }
