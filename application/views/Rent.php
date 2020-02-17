@@ -73,7 +73,7 @@
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 					<div class="row">
 						<div class="col-sm-8">
-							<?php echo $data['Name_Brand'] ?> <?php echo $data['Name_Gen'] ?><?php echo $data['Yearcar'] ?>
+							<?php echo $data['Name_Brand'] ?> <?php echo $data['Name_Gen'] ?> <?php echo $data['Yearcar'] ?>
 							
 						</div>
 						<div class="col-sm-6">
