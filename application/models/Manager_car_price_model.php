@@ -90,10 +90,15 @@ class Manager_car_price_model extends CI_Model
 
         $this->db->where('id_Gen', $this->input->post('id_Gen'));
 
+        $Name_Gen = $this->input->post('Name_Gen');
+        $upper = strtoupper($Name_Gen);
+
         $data = array(
-            // 'Name_Brand' => $this->input->post('Name_Brand'),
-            'Name_Gen' => $this->input->post('Name_Gen'),
-            'Price' => $this->input->post('Price')
+            'Name_Gen' => $upper,
+            'Price' => $this->input->post('Price'),
+            'idBrand' => $this->input->post('idBrand'),
+            'id_Seat' => $this->input->post('id_Seat'),
+            'id_Type_Fuel' => $this->input->post('id_Type_Fuel')
         );
 
         
@@ -122,6 +127,7 @@ class Manager_car_price_model extends CI_Model
         $this->db->select('*');
         $this->db->from('Brand');
         $this->db->join('Generation', 'Generation.idBrand = Brand.idBrand');
+        $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Generation.id_Type_Fuel');
 
         $query = $this->db->get();
         

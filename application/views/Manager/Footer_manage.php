@@ -25,6 +25,64 @@
     $(function(){
         $('img').EZView();
     });
+
+    function Change_Brand()
+      {
+          var val = $("#Brand1").val()
+          
+          $.get("<?=base_url('Owner/select/')?>"+val, 
+              function (data) {
+                  
+                $("#gen1").html(data)
+
+              }
+          );
+      }
+      function Change_Gen()
+      {
+          var val = $("#gen1").val()
+          
+          $.get("<?=base_url('Owner/selectseat/')?>"+val, 
+              function (data) {
+                  
+                $("#seat1").html(data)
+
+              }
+          );
+
+          var val = $("#gen1").val()
+
+          $.get("<?=base_url('Owner/selectfuel/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel1").html(data)
+
+              }
+          );
+
+          var val = $("#gen1").val()
+
+          $.get("<?=base_url('Owner/selectfuel/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel3").html(data)
+
+              }
+          );
+
+      }
+      function Change_Fuel()
+      {
+          var val = $("#fuel1").val()
+          
+          $.get("<?=base_url('Owner/selectfuel2/')?>"+val, 
+              function (data) {
+                  
+                $("#fuel2").html(data)
+
+              }
+          );
+      }
 </script>
 
 

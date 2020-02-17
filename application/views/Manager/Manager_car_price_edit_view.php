@@ -17,7 +17,7 @@
                             <label for="exampleFormControlSelect1">ยี่ห้อรถ</label>
                             <select class="form-control selectpicker" data-style="btn btn-link" name="idBrand"
                                 id="idBrand" onChange="Change_Brand()">
-                                <option value=""><?php echo $rs_edit->Name_Brand; ?></option>
+                                <option value="<?php echo $rs_edit->idBrand; ?>"><?php echo $rs_edit->Name_Brand; ?></option>
                                 <?php 
   									$this->db->select('*');
 								  $sql = $this->db->get('Brand');
@@ -43,7 +43,7 @@
                             <label for="exampleFormControlSelect1">ที่นั่ง</label>
                             <select class="form-control selectpicker" data-style="btn btn-link" name="id_Seat"
                                 id="id_Seat" onChange="Change_Seat()">
-                                <option value=""><?php echo $rs_edit->id_Seat; ?></option>
+                                <option value="<?php echo $rs_edit->id_Seat; ?>"><?php echo $rs_edit->id_Seat; ?></option>
                                 <?php 
   									$this->db->select('*');
 								  $sql = $this->db->get('Seat');
@@ -69,14 +69,20 @@
                         <div class="col-12 mt-3">
                             <label for="exampleFormControlSelect1">ประเภทเชื่อเพลิง</label>
                             <select class="form-control selectpicker" data-style="btn btn-link" name="id_Type_Fuel"
-                                id="id_Type_Fuel">
-                                <option value=""><?php echo $rs_edit->Name_Type_Fuel; ?></option>
-                                <?php if($rs_edit->id_TypeFuel == 1){
-                                    echo '<option value="2">Diesel & Gas</option>';
-                                }else{
-                                    echo '<option value="1">Benzine & Gas</option>';
-                                    
-                                } ?>
+                                id="id_Type_Fuel" onChange="Change_Fuel()" >
+                                <option value="<?php echo $rs_edit->id_TypeFuel; ?>"><?php echo $rs_edit->Name_Type_Fuel; ?></option>
+                                <?php 
+  									$this->db->select('*');
+								  $sql = $this->db->get('Type_Fuel');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $he)
+								 {
+									?>
+                                <option value="<?php echo $he['id_TypeFuel'] ?>"><?php echo $he['Name_Type_Fuel'] ?></option>
+                                <?php }
+								  
+							    ?>
                                                                 
                             </select>
                         </div>
