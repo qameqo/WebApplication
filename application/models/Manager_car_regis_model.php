@@ -93,7 +93,7 @@ class Manager_car_regis_model extends CI_Model
         // redirect('Manager_emp');
     }
 
-    public function add_status()
+    public function add_status() //จขร. อนุมัติลงทะเบียน
     {
         // print_r($_POST);
         
@@ -143,7 +143,7 @@ class Manager_car_regis_model extends CI_Model
         // redirect('Manager_emp');
     }
 
-    public function add_status_2()
+    public function add_status_2() //พนง รับรถยนต์
     {
         // print_r($_POST);
         
@@ -160,15 +160,29 @@ class Manager_car_regis_model extends CI_Model
 
         $query=$this->db->update('Carregis',$data);
 
-        echo "<script>";
-        echo "alert('แก้ไขสถานะเรียบร้อย');";
-        echo "window.location.href = '". base_url(). "Emp_car';";
-        echo "</script>";
-        
-        // redirect('Manager_emp');
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+
+        $query_2 = $this->db->get('Carregis');
+
+        $qq = $query_2->result_array();
+
+        foreach ($qq as $data) {
+
+            if($data['id_Status'] == '5'){
+                echo "<script>";
+                echo "alert('บันทึกการรับรถยนต์เรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Emp_car';";
+                echo "</script>";
+            }else{
+                echo "<script>";
+                echo "alert('ยกเลิกการลงทะเบียนเรียบร้อย');";
+                echo "window.location.href = '". base_url(). "Emp_car';";
+                echo "</script>";
+            }
+        }
     }
 
-    public function add_status_3()
+    public function add_status_3() 
     {
         // print_r($_POST);
         
