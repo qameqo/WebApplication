@@ -191,6 +191,17 @@
                                 placeholder="ราคา" value="">
                         </div>
 
+                        <div class="col-12 mt-3">
+                            <label for="exampleFormControlSelect1">ประเภทเชื่อเพลิง</label>
+                            <select class="form-control selectpicker" data-style="btn btn-link" name="id_Type_Fuel"
+                                id="id_Type_Fuel" required>
+                                <option value="">เลือกประเภทเชื้อเพลิง</option>
+                                <option value="1">Benzine & Gas</option>
+                                <option value="2">Diesel & Gas</option>
+                                
+                            </select>
+                        </div>
+
                     </div>
                 </div>
 
