@@ -346,16 +346,24 @@ $("input[name='date1']").ready(function(){
         console.log(end);
         console.log(id);
         
-          $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
-              function (data) {
-                 chonst = data;
-               console.log(chonst);
-               
-              $("#totalcar").text(chonst)
-              
-              } 
+      //     $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
+      //         function (data) {
                 
-          );
+      //          console.log(data);
+      //         if(data.trim() === "1")
+      //         {
+			// 			  console.log("มีแล้ว");
+			// 		    }
+      //         else if(data.trim() < "1")
+			// 		    {
+			// 			  console.log("ไม่มี");
+					
+      //         }  
+             
+              
+      // });
+                
+          
 
          
         
