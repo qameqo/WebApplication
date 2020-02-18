@@ -53,42 +53,71 @@ class Emp_car extends CI_Controller {
 
     public function refresh_car()
     {
+        $d=strtotime("-3 day");
+
         $query = $this->db->query("SELECT * FROM Carregis ");
         
         $qq = $query->result_array();
 
         foreach ($qq as $data) {
 
-            $d=strtotime("-3 day");
-            $dd=strtotime("-1 day");
-
-            if( $data['Dayfirst'] == date('Y-m-d', $d)){
-                
                 // echo "<pre>";
-                // print_r ($data['idCarregis']);
+                // print_r ($data['id_Status']);
                 // echo "</pre>";
+                // exit;
 
-                $this->db->where('id_status' , 2);
+            if($data['Dayfirst'] == date('Y-m-d', $d)){ //ไม่ได้กำหนดวันส่ง
 
-                $data = array( 
-                    'id_status' => '7',
-                    'EndDate' => date('Y-m-d')
-                );
-
-                $this->db->update('Carregis',$data);
+                $this->db->where('id_Status', 4);
+                $this->db->where('Dayfirst', date('Y-m-d', $d));
                 
-            }elseif($data['StartDate'] == date('Y-m-d', $dd)){
-
-                $this->db->where('id_status' , 4);
-
                 $data = array( 
                     'id_status' => '7',
                     'EndDate' => date('Y-m-d')
                 );
 
                 $this->db->update('Carregis',$data);
-
+                              
             }
+
+            
+        }
+
+        redirect('Emp_car/refresh_car_2');
+            
+        // exit;
+        
+    }
+   
+    public function refresh_car_2()
+    {
+        $dd=strtotime("-1 day");
+
+        $query = $this->db->query("SELECT * FROM Carregis ");
+        
+        $qq = $query->result_array();
+
+        foreach ($qq as $data) {
+
+                // echo "<pre>";
+                // print_r ($data['id_Status']);
+                // echo "</pre>";
+                // exit;
+
+            if($data['StartDate'] == date('Y-m-d', $dd)){ //ไม่ได้กำหนดวันส่ง
+
+                $this->db->where('id_Status', 2);
+                $this->db->where('StartDate', date('Y-m-d', $dd));
+                
+                $data = array( 
+                    'id_status' => '7',
+                    'EndDate' => date('Y-m-d')
+                );
+
+                $this->db->update('Carregis',$data);
+                             
+            }
+
             
         }
 
@@ -97,7 +126,6 @@ class Emp_car extends CI_Controller {
         exit;
         
     }
-   
 }
 
 /* End of file Hello.php */

@@ -95,8 +95,44 @@
                                     echo '</td></tr>';
                                 }
                             }
-                            ?>
                             
+                            if($rs->id_status == '3')
+                            {
+                                $query = $this->db->query('SELECT * FROM Not_passed_rent, Rental WHERE Not_passed_rent.idRental = Rental.idRental AND Not_passed_rent.idRental = '.$rs->idRental);
+
+                                $qq = $query->result_array();
+
+                                foreach ($qq as $data) {
+
+                                    echo '<tr>
+                                    <td width="30%"><label>หมายเหตุ</label></td>
+                                    <td width="70%">';
+                                    echo $data['Name_not_rent'];
+                                    echo '</td></tr>';
+                                }
+                            }
+                            ?>
+
+                            <?php 
+
+                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
+
+                            foreach ($query->result_array() as $data ) { ?>
+
+                            <tr>
+                                <td width="30%"><label>รูปภาพหลักฐาน</label></td>
+                                <td width="70%">
+                              
+                                <img src="<?php echo base_url('./img3/'.$data['Name_image3']); ?>" style="height: 50px; weight:50px;">
+                                
+                                </td>
+                            </tr>
+
+                            <?php 
+                            
+                            }
+
+                            ?>
 
                             <tr>
                                 <td width="30%"><label>สถานะ</label></td>
@@ -165,46 +201,6 @@
                                 }  ?>
                                 </span></td>
                             </tr> 
-
-                            <?php 
-                            
-                            if($rs->id_status == '3')
-                            {
-                                $query = $this->db->query('SELECT * FROM Not_passed_rent, Rental WHERE Not_passed_rent.idRental = Rental.idRental AND Not_passed_rent.idRental = '.$rs->idRental);
-
-                                $qq = $query->result_array();
-
-                                foreach ($qq as $data) {
-
-                                    echo '<tr>
-                                    <td width="30%"><label>หมายเหตุ</label></td>
-                                    <td width="70%">';
-                                    echo $data['Name_not_rent'];
-                                    echo '</td></tr>';
-                                }
-                            }
-                            ?>
-
-                            <?php 
-
-                            $query = $this->db->query("SELECT Images3.Name_image3 FROM Rental, Images3 WHERE Rental.idRental = Images3.idRental AND Rental.idRental = $rs->idRental");
-
-                            foreach ($query->result_array() as $data ) { ?>
-
-                            <tr>
-                                <td width="30%"><label>รูปภาพหลักฐาน</label></td>
-                                <td width="70%">
-                              
-                                <img src="<?php echo base_url('./img3/'.$data['Name_image3']); ?>" style="height: 50px; weight:50px;">
-                                
-                                </td>
-                            </tr>
-
-                            <?php 
-                            
-                            }
-
-                            ?>
                             
                         </table>
                     </div>
