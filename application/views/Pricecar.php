@@ -90,11 +90,45 @@
 						</label>
 					</div>
 					<div class="col-sm">
-						<input type="textarea" class="form-control" name="income" id="income" value=""
-							style="width: 200px; height:25px;" required placeholder="ธ.กสิกรไทย 7442930761">
+					
+						<select class="form-control selectpicker" data-style="btn btn-link" name="bank" 
+							 id="bank" required>
+							
+							<option value="">เลือกธนาคาร</option>
+							<option value="กรุงเทพ">ธ.กรุงเทพ </option>
+							<option value="กรุงไทย">ธ.กรุงไทย</option>
+							<option value="กรุงศรีอยุธยา">ธ.กรุงศรีอยุธยา</option>
+							<option value="กสิกรไทย">ธ.กสิกรไทย</option>
+							<option value="เกียรตินาคิน">ธ.เกียรตินาคิน</option>
+							<option value="ซีไอเอ็มบีไทย">ธ.ซีไอเอ็มบีไทย</option>
+							<option value="ทหารไทย">ธ.ทหารไทย</option>
+							<option value="ทิสโก้">ธ.ทิสโก้</option>
+							<option value="ไทยพาณิชย์">ธ.ไทยพาณิชย์</option>
+							<option value="ธนชาต">ธ.ธนชาต</option>
+							<option value="ยูโอบี">ธ.ยูโอบี</option>
+							<option value="แลนด์แอนด์เฮ้าส์">ธ.แลนด์แอนด์เฮ้าส์</option>
+							<option value="สแตนดาร์ดชาร์เตอร์ด">ธ.สแตนดาร์ดชาร์เตอร์ด</option>
+							<option value="ไอซีบีซี">ธ.ไอซีบีซี</option>
+							<option value="ออมสิน">ธ.ออมสิน</option>
+						</select>
 					</div>
 					<div class="col-sm">
-						
+					
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm text-right">
+						<label class="bmd-label-floating">
+							<h5>เลขบัญชี :</h5>
+						</label>
+					</div>
+					<div class="col-sm">
+						<input type="textarea" class="form-control" name="income" id="income" value=""
+							style="width: 200px; height:25px;" required placeholder="Ex. 7442930761">
+					</div>
+					<div class="col-sm">
+					
 					</div>
 				</div>
 				<div class="row">

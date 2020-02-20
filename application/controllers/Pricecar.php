@@ -24,6 +24,7 @@ class Pricecar extends CI_Controller {
        
         $data = array( 
             'RentalPrice' => $this->input->post('Price'),
+            'Bankname' =>  $this->input->post('bank'),
             'Bankaccount' => $this->input->post('income')
         );
 

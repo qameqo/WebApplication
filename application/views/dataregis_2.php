@@ -74,7 +74,11 @@
                                 <td width="70%"><?php echo number_format($data['RentalPrice'],0)?>&nbsp;บาท/วัน</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>บัญชีธนาคาร</label></td>
+                                <td width="30%"><label>ธนาคาร</label></td>
+                                <td width="70%"><?php echo $data['Bankname'];?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>เลขบัญชี</label></td>
                                 <td width="70%"><?php echo $data['Bankaccount'];?></td>
                             </tr>
                             <tr>

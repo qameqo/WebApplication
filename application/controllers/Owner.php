@@ -121,7 +121,7 @@ class Owner extends CI_Controller {
 
     public function selectseat($gan)
     {?>
-        <option value="">เลือกจำนวนที่นั่ง</option>
+        <!-- <option value="">เลือกจำนวนที่นั่ง</option> -->
         <?php
         $this->db->select('*');
         $this->db->from('Generation');
@@ -134,6 +134,7 @@ class Owner extends CI_Controller {
         {
         ?>
         <option value="<?php echo $he['id_Seat'] ?>"><?php echo $he['Number_Seat'] ?></option>
+       
     <?php }
 								  
 						
