@@ -45,15 +45,17 @@
         </div>
       </div>
 
-      <!-- <div class="col-sm-7">
+      <div class="col-sm-7">
         <div class="card text-center">
+        <div class="card-header card-header-warning">   
+          <h4 class="card-title">จัดการข้อมูลแจ้งปัญหา</h4>
+        </div>
           <div class="card-body">
-            <h4 class="card-title">การจัดการข้อมูลปัญหา</h4>
-            <a href="<?php echo site_url('#');?>" class="btn btn-success btn-sm" style="font-size : 18px">จัดการข้อมูลซ่อมรถยนต์</a>
-            <a href="<?php echo site_url('#');?>" class="btn btn-success btn-sm" style="font-size : 18px">จัดการข้อมูลประกันรถยนต์</a>
+            <a href="<?php echo site_url('Emp_problem');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งซ่อมรถยนต์</a>
+            <a href="<?php echo site_url('Emp_problem/index_2');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งอุบัติเหตุ</a>
           </div>
         </div>
-      </div> -->
+      </div>
 
     </div> <!--row-->
 

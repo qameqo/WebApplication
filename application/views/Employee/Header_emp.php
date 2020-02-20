@@ -82,23 +82,18 @@
                         </div>
                     </li>
                 </ul>
-                <!-- <ul class="navbar-nav">
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
-                            จัดการข้อมูลปัญหา
+                            จัดการข้อมูลแจ้งปัญหา
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">จัดการข้อมูลซ่อมรถยนต์</a>
-                            <a class="dropdown-item" href="#">จัดการข้อมูลประกันรถยนต์ </a>
+                            <a class="dropdown-item" href="<?php echo site_url('Emp_problem');?>">จัดการข้อมูลแจ้งซ่อมรถยนต์</a>
+                            <a class="dropdown-item" href="<?php echo site_url('Emp_problem/index_2');?>">จัดการข้อมูลแจ้งอุบัติเหตุ</a>
                         </div>
                     </li>
-                </ul> -->
-                <!-- <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <button class="btn btn-warning btn-sm ml-2">refresh website<i class="material-icons">cached</i></button>
-                    </li>
-                </ul> -->
+                </ul>
             </div>
 
 
