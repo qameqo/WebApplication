@@ -68,7 +68,7 @@ class Emp_car extends CI_Controller {
 
             if($data['Dayfirst'] >= date('Y-m-d', $d)){ //ไม่ได้กำหนดวันส่ง
 
-                $this->db->where('id_Status', 4);
+                $this->db->where('id_Status', 2);
                 $this->db->where('Dayfirst', date('Y-m-d', $d));
                 
                 $data = array( 
@@ -106,7 +106,7 @@ class Emp_car extends CI_Controller {
 
             if($data['StartDate'] >= date('Y-m-d', $dd)){ //ไม่ได้กำหนดวันส่ง
 
-                $this->db->where('id_Status', 2);
+                $this->db->where('id_Status', 4);
                 $this->db->where('StartDate', date('Y-m-d', $dd));
                 
                 $data = array( 
