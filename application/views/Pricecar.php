@@ -33,6 +33,21 @@
 						<?php  } ?>
 					</div>
 				</div>
+				<?php  
+							foreach($qq as $data){
+								$ei = $data['Price'];
+								$eii = 0.25;
+								$eiii = 0.15;
+								$e = 10;
+								$ee = 1000;
+								$total = $ei * $eii * $e / $ee;
+								$total2 = $ei * $eiii * $e / $ee;
+						?>
+				<div class="row justify-content-center">
+				<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($total2,0);?> ถึง <?php echo number_format($total,0);?> บาท/วัน</span>
+				</div>
+							<?php } ?>
+				<br>
 				<div class="row">
 					<div class="col-sm text-right">
 						<label class="bmd-label-floating">
@@ -48,7 +63,7 @@
 								$ee = 1000;
 								$total = $ei * $eii * $e / $ee;
 						?>
-						<input type="text" class="form-control" name="Price2" id="Price" value="<?php echo number_format($total,0) ?>"
+						<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($total,0) ?>"
 							style="width: 200px; height:25px;" disabled>
 						<?php } ?>
 					</div>
@@ -69,6 +84,7 @@
 				$qq = $query->result_array();
 				
 				?>
+				
 				<div class="row">
 					<div class="col-sm text-right">
 						<label class="bmd-label-floating">
@@ -139,7 +155,7 @@
 
 				<div class="row">
 					<div class="col-sm text-center">
-						<button class="btn btn-danger" style="background-color: #F60200;" href="#"
+						<button class="btn btn-danger" style="background-color: #F60200;" href="#" id="ok"
 							type="submit">ยืนยันราคาปล่อยเช่า</button>
 					</div>
 				</div>
@@ -158,3 +174,49 @@
 	</div>
 </div>
 </form>
+
+<script type="text/javascript">
+// ฟังก์ชั่นรับการกดคีย์ เป็นตัวเลขเท่านั้น
+// ฟังก์ชั่นตรวจสอบค่าเกินกำหนด (100)
+
+$("#Price").change(function(){ 
+
+	var id = <?php echo $id ?>;
+    var de = $("#Price").val();
+   $.get("<?=base_url('Pricecar/raka/')?>"+id, 
+              function (data) {
+				if(de > data) 
+				{
+     			alert('ราคาเกินที่ทางร้านกำหนดไว้');
+				$('#ok').attr('disabled',true)
+  				}
+				else
+				{
+					$.get("<?=base_url('Pricecar/raka2/')?>"+id, 
+              			function (data) {
+							if(de < data) 
+							{
+							alert('ราคาต่ำกว่าที่ทางร้านกำหนดไว้');
+							$('#ok').attr('disabled',true)
+							}
+							else
+							{
+								alert('ราคานี้อยู่ในข้อเสนอร้าน');
+								$('#ok').removeAttr('disabled',true)
+							}
+						
+          				}); 
+				}
+                
+        });
+           
+	}); 
+//   if(de > 100 || de < 80) {
+//      alert('ไม่สามารถกรอกข้อมูลเกิน 100 ได้');
+//   }
+//   else
+//   {
+//     alert('ได้ครับ');
+//   }
+
+</script>

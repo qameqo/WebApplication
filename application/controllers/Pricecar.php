@@ -35,6 +35,27 @@ class Pricecar extends CI_Controller {
         echo "window.location.href = '". base_url(). "Dataregis ';";
         echo "</script>";
     }
+    public function raka($id)
+    {
+        $query = $this->db->query('SELECT * FROM Generation , Brand WHERE Brand.idBrand = Generation.idBrand and Generation.id_Gen = '. $id);
+        $qq = $query->result_array();
+        $qa = $qq[0]['Price'];
+        $qb = $qa * 0.0015;
+        $qc = $qa * 0.0025;
+        echo $qc;
+        
+
+    }
+    public function raka2($id)
+    {
+        $query = $this->db->query('SELECT * FROM Generation , Brand WHERE Brand.idBrand = Generation.idBrand and Generation.id_Gen = '. $id);
+        $qq = $query->result_array();
+        $qa = $qq[0]['Price'];
+        $qb = $qa * 0.0015;
+        $qc = $qa * 0.0025;
+        echo $qb;
+        
+    }
 
 }
 

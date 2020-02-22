@@ -368,31 +368,31 @@
 						</select>
 					</div>
 					<div class="col-sm">
-						<label for="exampleFormControlSelect1">ประเภทเชื้อเพลิง</label>
+						<label for="exampleFormControlSelect1">เชื้อเพลิง</label>
 						<select class="form-control selectpicker" data-style="btn btn-link" name="fuel1"
 							onChange="Change_Fuel()" id="fuel1" required>
-							<option value="">เลือกประเภทเชื้อเพลิง</option>
+							<option value="">เลือกเชื้อเพลิง</option>
 
 						</select>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm mb-1">
-						<label for="exampleFormControlSelect1">เชื้อเพลิง</label>
+						<!-- <label for="exampleFormControlSelect1">เชื้อเพลิง</label>
 						<select class="form-control selectpicker" data-style="btn btn-link" name="fuel2" id="fuel2"
 							required>
 							<option value="">เลือกเชื้อเพลิง</option>
 
-						</select>
+						</select> -->
 					</div>
 					<div class="col-md-4">
-							
-					</div>
-					<div class="col-sm mb-1">
-						<br>
+							<br>
 						<button class="btn btn-secendary btn-lg" style="background-color: gray; color:white;" 
 						onclick="return confirm('ยืนยันข้อมูล ?');" name="game" id="game"
 							type="submit" disabled>บันทึกและดำเนินการต่อ</button>
+					</div>
+					<div class="col-sm mb-1">
+						
 					</div>
 				</div>
 
