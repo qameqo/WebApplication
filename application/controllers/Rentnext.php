@@ -231,11 +231,11 @@ class Rentnext extends CI_Controller {
         echo $total3; // vat
         
     }
-    public function selectstart($start,$idc,$end)
+    public function selectstart($start,$end,$idc)
     {
-        $query = $this->db->query("SELECT * FROM Rental WHERE ($start BETWEEN Rental.startDate and Rental.endDate) 
-        AND ($end BETWEEN Rental.startDate and Rental.endDate)
-        AND Rental.idCarregis = $idc");
+        $query = $this->db->query("SELECT * FROM Rental WHERE ('$start' BETWEEN Rental.startDate and Rental.endDate) 
+        OR ('$end' BETWEEN Rental.startDate and Rental.endDate)
+        AND Rental.idCarregis = '$idc'");
         //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
         // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
         // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'
@@ -244,16 +244,14 @@ class Rentnext extends CI_Controller {
         //BETWEEN Rental.startDate and Rental.endDate) and Rental.idCarregis = '72'
         //$st = $query->num_rows();
         //$st = $query->num_rows();
-        if($query->result_array() > 0)
-        {
-            
-            echo true;
-            
+        if($query->num_rows() == 0) {
+            echo "55";
         }
         else
         {
-            echo false;
+            echo "77";
         }
+        
             
         
        

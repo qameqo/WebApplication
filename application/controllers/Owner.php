@@ -59,7 +59,7 @@ class Owner extends CI_Controller {
                     'id_Status' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
                     'id_Gen' => $this->input->post("Gen"),
-                    'idFuel' => $this->input->post("fuel2")
+                    'idFuel' => $this->input->post("fuel1")
                    
                 );
             
@@ -141,11 +141,12 @@ class Owner extends CI_Controller {
     }
     public function selectfuel($g)
     {?>
-        <option value="">เลือกประเภทเชื้อเพลิง</option>
+        <option value="">เลือกเชื้อเพลิง</option>
         <?php
         $this->db->select('*');
         $this->db->from('Generation');
         $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Generation.id_Type_Fuel');
+        $this->db->join('Fuel', 'Fuel.id_Type_Fuel = Type_Fuel.id_TypeFuel');
         $this->db->where('id_Gen',$g);
         $sq = $this->db->get();
         $ro = $sq->result_array();
@@ -153,7 +154,7 @@ class Owner extends CI_Controller {
         as $he)
         {
         ?>
-        <option value="<?php echo $he['id_TypeFuel'] ?>"><?php echo $he['Name_Type_Fuel'] ?></option>
+        <option value="<?php echo $he['idFuel'] ?>"><?php echo $he['Name_Fuel'] ?></option>
         
     <?php }
 								  
@@ -163,7 +164,12 @@ class Owner extends CI_Controller {
     {?>
         <option value="">เลือกเชื้อเพลิง</option>
         <?php
+        $this->db->select('*');
+        $this->db->from('Generation');
+        $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Generation.id_Type_Fuel');
+        $this->db->join('Fuel', 'Fuel.id_TypeFuel = table.column', 'left');
         
+        $this->db->where('id_Gen',$g);
         $this->db->select('*');
         $this->db->from('Fuel');
         $this->db->join('Type_Fuel', 'Type_Fuel.id_TypeFuel = Fuel.id_Type_Fuel');

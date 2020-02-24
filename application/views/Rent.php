@@ -119,9 +119,17 @@
 
 							<img src="<?php echo base_url('./img/'.$data['Name_image']);?>"
 								style="height: 80px; width:80px;">
-							<?php $idc = $data['idCarregis'] ?>
-							<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
+							<?php $idc = $data['idCarregis']; 
+								  $mem = $data['id_Member'];
+								  $me = $this->session->userdata('ID');?>
+							<?php if($mem == $me){ ?>
+								<button class="btn btn-outline" 
+								style="background-color: #F60200; color: white; height:45px;" disabled>จองรถ</button>
+							<?php }else
+							      { ?>
+								<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
 								href="<?php echo site_url('Rentnext/one/'.$idc);?>">จองรถ</a>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
