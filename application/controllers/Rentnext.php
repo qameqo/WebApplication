@@ -234,7 +234,7 @@ class Rentnext extends CI_Controller {
     public function selectstart($start,$end,$idc)
     {
         $query = $this->db->query("SELECT * FROM Rental WHERE ('$start' BETWEEN Rental.startDate and Rental.endDate) 
-        AND ('$end' BETWEEN Rental.startDate and Rental.endDate)
+        OR ('$end' BETWEEN Rental.startDate and Rental.endDate)
         AND Rental.idCarregis = '$idc'");
         //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
         // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
