@@ -34,7 +34,7 @@ jQuery(function(){
  var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
-  maxDate:'+1970/01/03',
+  //maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
    })
@@ -346,22 +346,22 @@ $("input[name='date1']").ready(function(){
         console.log(end);
         console.log(id);
         
-      //     $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
-      //         function (data) {
+          $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
+              function (data) {
                 
-      //          console.log(data);
-      //         if(data.trim() === "1")
-      //         {
-			// 			  console.log("มีแล้ว");
-			// 		    }
-      //         else if(data.trim() < "1")
-			// 		    {
-			// 			  console.log("ไม่มี");
+               console.log(data);
+              if(data.trim() == "55")
+              {
+						  console.log("จองได้");
+					    }
+              else
+					    {
+						  console.log("จองไม่ได้");
 					
-      //         }  
+              }  
              
               
-      // });
+      });
                 
           
 

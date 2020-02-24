@@ -32,7 +32,7 @@
                 <?php } ?>
                 <div class="row">
                     <div class="col-sm">
-                        <span style="color:red;">* กำหนดส่งรถภายใน 3 วันหลังจากการได้รับอนุมัติ</span>
+                        <span style="color:red;">* กรุณาส่งรถตามวันที่ลูกค้ากำหนด</span>
                     </div>
                 </div>
                 <br>

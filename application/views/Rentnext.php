@@ -84,7 +84,7 @@
                 <div class="col-sm text-right">
                <input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;"
                         name="start" required>
-                        <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p>
+                        <!-- <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p> -->
                     <!-- <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly> -->
                 </div>
             </div>
