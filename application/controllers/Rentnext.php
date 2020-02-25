@@ -64,9 +64,9 @@ class Rentnext extends CI_Controller {
         $this->db->insert('Rental', $object);
         $insert_id = $this->db->insert_id();    
         
-        $car = array('id_Status' => '10');
-        $this->db->where('idCarregis', $idc);
-        $this->db->update('Carregis', $car);
+        // $car = array('id_Status' => '10');
+        // $this->db->where('idCarregis', $idc);
+        // $this->db->update('Carregis', $car);
         echo "<script>";
         echo "alert('บันทึกข้อมูลการจองเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Payment/sh/$insert_id ';";
@@ -233,9 +233,9 @@ class Rentnext extends CI_Controller {
     }
     public function selectstart($start,$end,$idc)
     {
-        $query = $this->db->query("SELECT * FROM Rental WHERE ('$start' BETWEEN Rental.startDate and Rental.endDate) 
-        OR ('$end' BETWEEN Rental.startDate and Rental.endDate)
-        AND Rental.idCarregis = '$idc'");
+        $query = $this->db->query("SELECT * FROM Rental WHERE (('$start' BETWEEN Rental.startDate and Rental.endDate) 
+        OR ('$end' BETWEEN Rental.startDate and Rental.endDate))
+        AND Rental.idCarregis = '$idc' AND Rental.id_status <> '6'");
         //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
         // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
         // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'
@@ -286,6 +286,20 @@ class Rentnext extends CI_Controller {
     //     }
         
     // }
+    public function status($idc)
+    {
+        $query = $this->db->query("SELECT * FROM `Rental` WHERE Rental.idCarregis = '$idc'");
+        if($query->num_rows() > 0)
+        {
+            echo "จองได้";
+
+        }
+        else
+        {
+            echo "จองไม่ได้";
+        }
+    
+    }
     
     
 }

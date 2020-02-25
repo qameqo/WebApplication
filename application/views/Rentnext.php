@@ -126,7 +126,7 @@
                                 <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p>
                                 <?php } ?>
                             </label>
-                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px; color:red;" href="#"
                                 data-toggle="modal" data-target="#modal-de"> <u>ประกันภัยพื้นฐาน</u></a>
                             <div class="modal fade" id="modal-de" tabindex="-1" role="dialog"
                                 aria-labelledby="modal-default" aria-hidden="true">
@@ -178,7 +178,7 @@
                                 <p style="text-align:right;"><?php echo $insd ?>&nbsp;บาท/วัน</p>
                                 <?php } ?>
                             </label>
-                            <a type="button" class="btn btn-outline-secondary" style="height:40px;" href="#"
+                            <a type="button" class="btn btn-outline-secondary" style="height:40px; color:red;" href="#"
                                 data-toggle="modal" data-target="#modal-default"><u>ประกันภัยพรีเมี่ยม</u></a>
                             <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
                                 aria-labelledby="modal-default" aria-hidden="true">
@@ -496,7 +496,7 @@
     //       );  
     // });
 </script>
-<script>
+<!-- <script>
     var start = 0;
     var end = 0;
     $(document).ready(function () {
@@ -543,4 +543,4 @@
             }
         });
     });
-</script>
+</script> -->

@@ -34,15 +34,20 @@ jQuery(function(){
  var startDate = jQuery('#datetimepickerstart').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
+  
   //maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
+     
    })
   },
-  timepicker:false
+  timepicker:false,
+  //theme:'dark',
+  closeOnDateSelect:true
  });
 
 });
+
 </script>
 
 <script>
@@ -50,12 +55,14 @@ jQuery(function(){
  var startDate = jQuery('#startdateee').datetimepicker({
   format:'Y/m/d',
   minDate:'-1970/01/01',
+  
   // maxDate:'+1970/01/03',
   onShow:function( ct ){
    this.setOptions({
    })
   },
-  timepicker:false
+  timepicker:false,
+  closeOnDateSelect:true
  });
 
 });
@@ -184,7 +191,8 @@ $("input[name='date1']").ready(function(){
               maxDate: end,
             }) //.val(), 10)
             },
-            timepicker:false
+            timepicker:false,
+            closeOnDateSelect:true
           });
   })
 
@@ -322,7 +330,8 @@ $("input[name='date1']").ready(function(){
               maxDate: (dateFirst).add(4,'days').format('YYYY/MM/DD').toString(),
             }) //.val(), 10)
             },
-            timepicker:false
+            timepicker:false,
+            closeOnDateSelect:true
           });
   })
   $("input[name='end']").change(function(){
@@ -350,33 +359,48 @@ $("input[name='date1']").ready(function(){
               function (data) {
                 
                console.log(data);
-              if(data.trim() == "55")
-              {
-						  console.log("จองได้");
-					    }
-              else
-					    {
-						  console.log("จองไม่ได้");
-					
-              }  
-             
-              
-      });
-                
+                  if(data.trim() == "55")
+                        {
+                          $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
+                        function (data) {
+                          var total = data * ngo; 
+                          var game =  total.toFixed(0);
+                          var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                          $("#totalcar").text(tot + " บาท")
+                          $("#totalcar2").val(game)
+                          });  // รถ
+                          console.log("จองได้");
+					              }
+                        else
+					              {
+                        alert('วันที่ลูกค้าเลือกถูกจองแล้วค่ะ');
+                        $('#datetimepickerstart').val(null)
+                        $('#datetimepickerend').val(null)
+                        
+                        //$("#totalcar").attr('hidden',true)
+                        document.getElementById('datetimepickerstart').focus();
+                        //$('input[name="end"]').datetimepicker({ autoClose: true});
+                        //document.getElementById('datetimepickerend').blur();
+                        //$('.datetimepickerend').hide();
+                        //$('#datetimepickerend').Close();
+                        console.log("จองไม่ได้");
+                        }  
+              });
+           });      
           
 
          
         
        
-            $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
-              function (data) {
-                var total = data * ngo; 
-                var game =  total.toFixed(0);
-                var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                $("#totalcar").text(tot + " บาท")
-                $("#totalcar2").val(game)
-                 } // รถ
-          );  
+          //   $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
+          //     function (data) {
+          //       var total = data * ngo; 
+          //       var game =  total.toFixed(0);
+          //       var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          //       $("#totalcar").text(tot + " บาท")
+          //       $("#totalcar2").val(game)
+          //        } // รถ
+          // );  
           //   $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
           //     function (data) {
           //       var total1 = data; 
@@ -386,7 +410,7 @@ $("input[name='date1']").ready(function(){
           // );  
          
           
-  });
+ 
 
   $("input:radio[name='ins']").change(function(){
         
@@ -443,6 +467,54 @@ $("input[name='date1']").ready(function(){
                     } // รวม
               );  
         }
+    });
+</script>
+<script>
+    var start = 0;
+    var end = 0;
+    $(document).ready(function () {
+        $('#datetimepickerstart').change(function () {
+             start = $("#datetimepickerstart").val()
+            if (start != '') {
+                $('#datetimepickerend').val(null)
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+                $('#pre').prop('checked',false)
+                $('#stand').prop('checked',false)
+                $('#book').attr('disabled', true)
+                $("#totalcar").text(" บาท")
+                $("#totalcar2").val(null)
+                $("#totalvat").val(null)
+                $("#ins").text(" บาท")
+                $("#totalins").val(null)
+                $("#total").text(" บาท")
+                $("#total2").val(null)
+
+
+                
+            } else {
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+            }
+        });
+        $('#datetimepickerend').change(function () {
+             end = $("#datetimepickerend").val()
+            if (end != '') {
+                $('#stand').removeAttr('disabled')
+                $('#pre').removeAttr('disabled')
+                $('#pre').prop('checked',false)
+                $('#stand').prop('checked',false)
+                $("#totalvat").val(null)
+                $("#ins").text(" บาท")
+                $("#totalins").val(null)
+                $("#total").text(" บาท")
+                $("#total2").val(null)
+                $('#book').attr('disabled', true)
+            } else {
+                $('#stand').attr('disabled', true)
+                $('#pre').attr('disabled', true)
+            }
+        });
     });
 </script>
  
