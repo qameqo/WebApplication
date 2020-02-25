@@ -277,10 +277,6 @@
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="8" style="font-size:20px;" required>';
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="10" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">อนุมัติ</button>';
                         echo '</form>';
@@ -291,10 +287,6 @@
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                         echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="3" style="font-size:20px;" required>';
                         echo '<button class="btn btn-danger" type="submit" style="font-size:20px;">ไม่อนุมัติ</button>';
                         echo '</form>';
@@ -310,9 +302,7 @@
                         echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                         echo $rs->idRental; 
                         echo '">';
-                        echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                        echo $rs->idCarregis; 
-                        echo '">';
+                        
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
@@ -345,10 +335,6 @@
                             echo site_url('Emp_rental/add_status_4/'); 
                             echo '" method="POST" class="form-horizontal">';
 
-                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            echo $rs->idCarregis; 
-                            echo '">';
-
                             echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             ?>
                             
@@ -371,9 +357,7 @@
                             echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                             echo $rs->idRental; 
                             echo '">';
-                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            echo $rs->idCarregis; 
-                            echo '">';
+        
                             echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
                             echo date("Y-m-d");
                             echo '">';
