@@ -246,13 +246,13 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <p style="text-align:left;">ราคามัดจำรถ</p>
-                    <input type="hidden" id="hapan" name="hapan" value="5000">
+                    <!-- <p style="text-align:left;">ราคามัดจำรถ</p>
+                    <input type="hidden" id="hapan" name="hapan" value="5000"> -->
                     <p style="text-align:Left; color:red;">ราคารวมvat 7%</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">
-                    <p style="text-align:right;">5,000 บาท</p>
+                    <!-- <p style="text-align:right;">5,000 บาท</p> -->
                     
                     <p style="text-align:right; color:red; font-size:20px;" id="total">
                         &nbsp;บาท</p>
@@ -260,10 +260,29 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+            <div class="p-2 alert alert-warning clearfix" style="width:370px; height:50px; border-radius: 2px; background-color:#FEF7E4;">
+                            <div class="pull-left" style="color:black;">
+                                <i class="fa fa-shield fa-fw"></i> เงินมัดจำรถ
+                                <!--
+                                จำนวนเงินมัดจำ 
+                                <i tabindex="0" class="fa fa-info-circle secondary-color" style="display: inline-block;" aria-hidden="true" role="button" data-toggle="popover" data-trigger="focus" data-placement="top"  data-content='ระบบจะทำการคืนวงเงินมัดจำภายหลังจากการเช่าสิ้นสุดลง ภายใน 7-15 วัน ขึ้นอยู่กับธนาคารและผู้ให้บริการบัตรเครดิต '></i>
+                                -->
+                                <div class="small text-gray" style="color:black;">
+                                ชำระ ณ วันที่รับรถเช่า และได้รับคืนเมื่อสิ้นสุดการเช่า
+                                </div>
+                            </div>
+                            <div class="pull-right number-format text-bold">
+                                <span class="currency-after" style="color:black;">฿</span> 
+                                <span class="" style="color:black;">5,000</span>
+                            </div>
+                            </div>
+            </div>
+        
+            <div class="row justify-content-center">
                 <button type="submit" class="btn btn-danger" id="book"
                     style="background-color: #F60200; color: white; width:370px;" onclick="return confirm('ยืนยันข้อมูลการจองรถ ?');" disabled>จอง</button>
-               
             </div>
+            
         </div>
     </div>
     <div class="row justify-content-center">

@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>
-                                <td width="70%"><?php echo $rs->StartDate; ?></td>
+                                <td width="70%"><?php echo $rs->startDate; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่ต้องคืน</label></td>

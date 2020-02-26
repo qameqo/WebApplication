@@ -429,7 +429,7 @@ $("input[name='date1']").ready(function(){
                     var vat = data *ngo;
                     var vat2 = vat * 7 / 107;
                     var vat3 = vat2.toFixed(0);
-                    var total3 = data * ngo + 5000; 
+                    var total3 = data * ngo; 
                     var game3 =  total3.toFixed(0);
                     var tot3 = game3.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#total").text(tot3 + " บาท")
@@ -457,7 +457,7 @@ $("input[name='date1']").ready(function(){
                     var vat = data *ngo;
                     var vat2 = vat * 7 / 107;
                     var vat3 = vat2.toFixed(0);
-                    var total5 = data * ngo + 5000; 
+                    var total5 = data * ngo; 
                     var game5 =  total5.toFixed(0);
                     var tot5 = game5.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#total").text(tot5 + " บาท")

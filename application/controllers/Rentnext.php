@@ -55,7 +55,7 @@ class Rentnext extends CI_Controller {
                 'PriceDe' => $De,
                 'PriceOver' =>$Ov,
                 'PriceVat'=> $this->input->post("totalvat"),
-                'PriceFive' => $this->input->post("hapan"),
+                //'PriceFive' => $this->input->post("hapan"),
                 'idCarregis'=> $idc,
             );
         }
@@ -235,7 +235,7 @@ class Rentnext extends CI_Controller {
     {
         $query = $this->db->query("SELECT * FROM Rental WHERE (('$start' BETWEEN Rental.startDate and Rental.endDate) 
         OR ('$end' BETWEEN Rental.startDate and Rental.endDate))
-        AND Rental.idCarregis = '$idc' AND Rental.id_status <> '6'");
+        AND Rental.idCarregis = '$idc' AND Rental.id_status <> '6' AND Rental.id_status <> '3'");
         //OR ($end BETWEEN Rental.startDate and Rental.endDate) 
         // $query1 = $this->db->query('SELECT * FROM Rental WHERE ('.$start.' BETWEEN Rental.startDate and Rental.endDate)');
         // OR ('.$end.' BETWEEN Rental.startDate and Rental.endDate)'

@@ -52,7 +52,7 @@
 						<span>บาท</span>
 					 </div>
 				 </div>
-				 <div class="row">
+				 <!-- <div class="row">
 				 	<div class="col-sm-5 text-right">
 					 <span>ราคามัดจำรถ</span>
 					 </div>
@@ -64,7 +64,7 @@
 					 <div class="col-sm-2 text-center"> 
 						<span>บาท</span>
 					 </div>
-				 </div>
+				 </div> -->
 				 <div class="row">
 				 	<div class="col-sm-5 text-right">
 					 <span>ราคาทั้งหมดรวม vat</span>
