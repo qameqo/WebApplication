@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>
-                                <td width="70%"><?php echo $rs->StartDate; ?></td>
+                                <td width="70%"><?php echo $rs->startDate; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>วันที่ต้องคืน</label></td>
@@ -40,40 +40,45 @@
                             <?php } ?>
                             <tr>
                                 <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
-                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?></td>
+                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคารถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceCar; ?></td>
+                                <td width="70%"><?php echo $rs->PriceCar; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคามัดจำ (30%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceDe; ?></td>
+                                <td width="70%"><?php echo $rs->PriceDe; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceOver; ?></td>
+                                <td width="70%"><?php echo $rs->PriceOver; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceVat; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceFive; ?></td>
+                                <td width="70%"><?php echo $rs->PriceVat; ?>&nbsp;บาท</td>
                             </tr>
 
-                            <?php if ($rs->Fines_price != null) { ?>
+                            <?php if($rs->PriceFive == null){}else{?>
+
+                            <tr>
+                                <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
+                                <td width="70%"><?php echo $rs->PriceFive; ?>&nbsp;บาท</td>
+                            </tr>
+
+                            <?php }?>
+
+                            <?php if ($rs->Fines_price == 0 || $rs->Fines_price == null) {}else{ ?>
 
                             <tr>
                                 <td width="30%"><label>ราคาค่าปรับ</label></td>
-                                <td width="70%"><?php echo $rs->Fines_price; ?></td>
+                                <td width="70%"><?php echo $rs->Fines_price; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php } ?>
                             <tr>
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
-                                <td width="70%"><?php echo $rs->totalprice; ?></td>
+                                <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php 
@@ -98,7 +103,7 @@
 
                             if($rs->id_Employee_2 != null)
                             {
-                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_2 = Employee.id_Employee_2 AND Rental.idRental = '.$rs->idRental);
+                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_2 = Employee.id_Employee AND Rental.idRental = '.$rs->idRental);
 
                                 $qq = $query->result_array();
 
@@ -116,7 +121,7 @@
 
                             if($rs->id_Employee_3 != null)
                             {
-                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_3 = Employee.id_Employee_3 AND Rental.idRental = '.$rs->idRental);
+                                $query = $this->db->query('SELECT * FROM Rental, Employee WHERE Rental.id_Employee_3 = Employee.id_Employee AND Rental.idRental = '.$rs->idRental);
 
                                 $qq = $query->result_array();
 

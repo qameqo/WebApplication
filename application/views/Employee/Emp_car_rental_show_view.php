@@ -40,45 +40,45 @@
                             <?php } ?>
                             <tr>
                                 <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
-                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?></td>
+                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคารถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceCar; ?></td>
+                                <td width="70%"><?php echo $rs->PriceCar; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคามัดจำ (30%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceDe; ?></td>
+                                <td width="70%"><?php echo $rs->PriceDe; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceOver; ?></td>
+                                <td width="70%"><?php echo $rs->PriceOver; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceVat; ?></td>
+                                <td width="70%"><?php echo $rs->PriceVat; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php if($rs->PriceFive == null){}else{?>
 
                             <tr>
                                 <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceFive; ?></td>
+                                <td width="70%"><?php echo $rs->PriceFive; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php }?>
 
-                            <?php if ($rs->Fines_price != null) { ?>
+                            <?php if ($rs->Fines_price == 0 || $rs->Fines_price == null) {}else{ ?>
 
                             <tr>
                                 <td width="30%"><label>ราคาค่าปรับ</label></td>
-                                <td width="70%"><?php echo $rs->Fines_price; ?></td>
+                                <td width="70%"><?php echo $rs->Fines_price; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php } ?>
                             <tr>
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
-                                <td width="70%"><?php echo $rs->totalprice; ?></td>
+                                <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php 
@@ -309,6 +309,9 @@
                         echo '">';
                         
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
+                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
+                        echo $rs->totalprice + 5000;
+                        echo '" style="font-size:20px;" required>';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
 
@@ -324,8 +327,89 @@
                         // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
                         // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         // echo '</form>';
-                                           
+                        
+                               ?>
+                               
+                               <!-- Large modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="font-size:20px;">เปลี่ยนรถยนต์</button>
+
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">รายการเช่ารถใหม่</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <form action="<?php echo site_url('manager_emp/add_emp'); ?>" method="POST" id="insert_form">
+
+                                                <div class="modal-body">
+
+                                                    <input type="hidden" name="id_emp" id="id_emp" class="form-control">
+
+                                                    <div class="form-group">
+                                                        <label for="Username">Username</label>
+                                                        <input type="text" name="Username" id="Username" class="form-control" placeholder="Username"
+                                                            required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="Password">Password</label>
+                                                        <input type="password" class="form-control" name="Password" id="Password" placeholder="Password"
+                                                            required >
+
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label for="First name">First name</label>
+                                                                <input type="text" name="F_Name" id="F_Name" class="form-control"
+                                                                    placeholder="First name" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label for="Last name">Last name</label>
+                                                                <input type="text" name="L_Name" id="L_Name" class="form-control"
+                                                                    placeholder="Last name" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="Address">Address</label>
+                                                        <textarea class="form-control" name="Address" id="Address" rows="3" required></textarea>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="Tel">Tel.</label>
+                                                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required
+                                                            pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="Row">Row select</label>
+                                                        <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">
+                                                            <option value="1">พนักงาน</option>
+                                                            <option value="2">ช่างซ่อมบำรุง</option>
+                                                            <option value="3">เจ้าหน้าที่ประกัน</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input style="font-size:16px" type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="บันทึกข้อมูล" />
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
+                               <?php            
                     }?>
+
+
 
                     <?php 
                     if($rs->id_status == '11'){ //วันที่คืนรถยนต์
