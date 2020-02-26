@@ -104,7 +104,8 @@ class Emp_rental_model extends CI_Model
        
         $data = array( 
             'id_Employee_2' => $this->session->userdata('id_Employee'),
-            'id_status' => $this->input->post('id_status')
+            'id_status' => $this->input->post('id_status'),
+            'PriceFive' => 5000
         );
 
         $query_2=$this->db->update('Rental',$data);

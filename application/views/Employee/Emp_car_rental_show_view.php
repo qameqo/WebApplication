@@ -58,10 +58,15 @@
                                 <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
                                 <td width="70%"><?php echo $rs->PriceVat; ?></td>
                             </tr>
+
+                            <?php if($rs->PriceFive == null){}else{?>
+
                             <tr>
                                 <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
                                 <td width="70%"><?php echo $rs->PriceFive; ?></td>
                             </tr>
+
+                            <?php }?>
 
                             <?php if ($rs->Fines_price != null) { ?>
 
