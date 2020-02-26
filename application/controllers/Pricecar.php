@@ -44,6 +44,7 @@ class Pricecar extends CI_Controller {
         $qc = $qa * 0.0025;
         echo $qc;
         
+        
 
     }
     public function raka2($id)

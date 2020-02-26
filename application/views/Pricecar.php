@@ -45,6 +45,8 @@
 						?>
 				<div class="row justify-content-center">
 				<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($total2,0);?> ถึง <?php echo number_format($total,0);?> บาท/วัน</span>
+				<input type="hidden" id="up"name="up" value="<?php echo round($total,0);?>">
+				<input type="hidden" id="down"name="down" value="<?php echo round($total2,0);?>">
 				</div>
 							<?php } ?>
 				<br>
@@ -65,6 +67,7 @@
 						?>
 						<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($total,0) ?>"
 							style="width: 200px; height:25px;" disabled>
+							<input type="hidden" id="pow"name="pow" value="<?php echo round($total,0);?>">
 						<?php } ?>
 					</div>
 					<div class="col-sm">
@@ -175,7 +178,7 @@
 </div>
 </form>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 // ฟังก์ชั่นรับการกดคีย์ เป็นตัวเลขเท่านั้น
 // ฟังก์ชั่นตรวจสอบค่าเกินกำหนด (100)
 
@@ -219,4 +222,40 @@ $("#Price").change(function(){
 //     alert('ได้ครับ');
 //   }
 
+</script> -->
+<script>
+
+$("#Price").change(function(){ 
+
+var id = <?php echo $id ?>;
+var de = $("#Price").val();
+var up = $("#up").val();
+var down = $("#down").val();
+var pow = $("#pow").val();
+// var one = de.toFixed(0);
+// var two = up.toFixed(0);
+// var three = down.toFixed(0);
+console.log("de ="+de)
+console.log("up ="+up)
+console.log(down)
+console.log(pow)
+var kk = parseInt(de)
+//(de == pow && de > up) || (de == pow  && de < down)
+if((kk >= down) && (kk <= up))
+{
+
+	
+}
+else
+{
+	
+	alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
+	$("#Price").val(null);
+	$("#Price").focus();
+	
+}
+
+
+	   
+}); 
 </script>
