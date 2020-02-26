@@ -201,7 +201,8 @@ $("input[name='date1']").ready(function(){
 <script>
   var dateend = 0;
   var j = 0;
-  
+  var start = 0;
+  var end = 0;
   $("input[name='startdateee']").change(function(){
     j = document.getElementById("startdateee").value; 
     dateend = moment(j, 'YYYY/MM/DD');
@@ -222,21 +223,28 @@ $("input[name='date1']").ready(function(){
 
   $("input[name='enddateee']").change(function(){
           
-           
-          $.get("<?=base_url('Rental/selectcar/')?>",{
-            
-          }, 
-              function (data) {
-                var tot = data;
-                var bo = 0; 
                 var en = document.getElementById("enddateee").value;
                 var st = document.getElementById("startdateee").value;
                 var dateen = moment(en, 'YYYY/MM/DD');
                 var dateendd = dateen.format('YYYY-MM-DD').toString();
                 var startda = moment(st, 'YYYY/MM/DD');
                 var startdat = startda.format('YYYY-MM-DD').toString();
-                
-                $("#booking").html("")
+                end = $end = dateendd;
+                start = $start = startdat;
+          $.get("<?=base_url('Rental/selectcar/')?>"+start+"/"+end,{
+            
+          }, 
+              function (data) {
+                var tot = data;
+                var bo = 0; 
+                // var en = document.getElementById("enddateee").value;
+                // var st = document.getElementById("startdateee").value;
+                // var dateen = moment(en, 'YYYY/MM/DD');
+                // var dateendd = dateen.format('YYYY-MM-DD').toString();
+                // var startda = moment(st, 'YYYY/MM/DD');
+                // var startdat = startda.format('YYYY-MM-DD').toString();
+
+                $("#bookok").html("")
                 for(bo in data){
                   var book2 = data[bo];
                   var book = `<div class="row">
@@ -296,8 +304,9 @@ $("input[name='date1']").ready(function(){
 				</div>
 			</div>	
 		</div>
+    </div>
 	</div>`;
-              $("#booking").append(book)
+              $("#bookok").append(book)
                 }
                
                 console.log(tot);

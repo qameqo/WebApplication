@@ -86,8 +86,8 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-               <input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;"
-                        name="start" required>
+               <input id="datetimepickerstart" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                        name="start" required readonly>
                         <!-- <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p> -->
                     <!-- <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly> -->
                 </div>
@@ -98,10 +98,10 @@
                   
                 </div>
                 <div class="col-sm text-right">
-                    <!-- <input id="no" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                    <!-- <input id="no" type="text" value="<?php echo "$dateendd"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
                         name="no" readonly> -->
-                        <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
-                        name="end" required>
+                        <input id="datetimepickerend" type="text" value="<?php echo "$dateendd"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                        name="end" required readonly>
                         <p style="color:red; font-size:10px;">* ระยะเวลาการเช่าไม่เกิน 5 วัน</p>
                 </div>
             </div>

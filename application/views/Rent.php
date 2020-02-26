@@ -70,7 +70,7 @@
 			<div id="bookok">
 			</div>
 			<?php foreach($qq as $data){ ?>
-			<div class="row" id="booking">
+			<!-- <div class="row" id="booking">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 					<div class="row">
@@ -136,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-		
+		 -->
 	
 <?php  } ?>
 	</div>
