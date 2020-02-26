@@ -198,7 +198,7 @@ $("input[name='date1']").ready(function(){
 
 </script>
 
-<!-- <script>
+<script>
   var dateend = 0;
   var j = 0;
   
@@ -306,7 +306,7 @@ $("input[name='date1']").ready(function(){
           );  
   })
   
-  </script> -->
+  </script>
 
 <script>
   var ngo = 0;

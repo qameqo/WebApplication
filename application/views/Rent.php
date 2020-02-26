@@ -47,7 +47,7 @@
 				<input type="text" class="form-control" id="search_text" style="width:200px;"
 					placeholder="ค้นหายี่ห้อหรือรุ่นรถ"></div> -->
 					
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-sm text-center">
 					<H5>เลือกวันที่ต้องการเช่ารถ</H5>
 				</div>
@@ -65,8 +65,10 @@
 				<div class="col-sm text-center">
 					<H6 style="color:red;">ระยะเวลาการเช่าได้ไม่เกิน 5 วัน</H6>
 				</div>
-			</div> -->
+			</div>
 			<br>
+			<div id="bookok">
+			</div>
 			<?php foreach($qq as $data){ ?>
 			<div class="row" id="booking">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
