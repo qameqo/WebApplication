@@ -15,6 +15,10 @@
         opacity: 0;
         filter: alpha(opacity=0);
     }
+    #ok {
+  border-right-style: groove;
+  border-right-color: #F1F1F1;
+    }
 </style>
 
                                                     <?php $this->db->select('*');
@@ -248,7 +252,7 @@
                 <div class="col-sm">
                     <!-- <p style="text-align:left;">ราคามัดจำรถ</p>
                     <input type="hidden" id="hapan" name="hapan" value="5000"> -->
-                    <p style="text-align:Left; color:red;">ราคารวมvat 7%</p>
+                    <p style="text-align:Left; color:red;">ราคาทั้งหมดรวมvat 7%</p>
                     <input type="hidden" id="totalvat" name="totalvat">
                 </div>
                 <div class="col-sm">
@@ -307,20 +311,22 @@
             <?php foreach($qq as $data){?>
             <div class="row">
                 <div class="col-sm">
-                    <div class="row">
+                    <div class="row"  id="ok">
                         <div class="col-sm">
-                            <p>ยี่ห้อ</p>
+                            <p>ยี่ห้อ :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Name_Brand'];?>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm">
-                    <div class="row">
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="col-sm ">
+                    <div class="row" >
                         <div class="col-sm">
-                            <p>รุ่น</p>
+                            <p>รุ่น :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Name_Gen'];?>
@@ -330,20 +336,22 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <div class="row">
+                    <div class="row" id="ok">
                         <div class="col-sm">
-                            <p>ปี</p>
+                            <p>ปี :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Yearcar'];?>
                         </div>
                     </div>
                 </div>
-
+                &nbsp;
+                &nbsp;
+                &nbsp;
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>เลขไมล์</p>
+                            <p>เลขไมล์ :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Mileage'];?>
@@ -353,20 +361,22 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <div class="row">
+                    <div class="row" id="ok">
                         <div class="col-sm">
-                            <p>ระบบเกียร์</p>
+                            <p>ระบบเกียร์ :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Gear'];?>
                         </div>
                     </div>
                 </div>
-
+                &nbsp;
+                &nbsp;
+                &nbsp;
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>สี</p>
+                            <p>สี :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Color'];?>
@@ -376,20 +386,22 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <div class="row">
+                    <div class="row" id="ok">
                         <div class="col-sm">
-                            <p>จำนวนที่นั่ง</p>
+                            <p>จำนวนที่นั่ง :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Number_Seat'];?>
                         </div>
                     </div>
                 </div>
-
+                &nbsp;
+                &nbsp;
+                &nbsp;
                 <div class="col-sm">
                     <div class="row">
                         <div class="col-sm">
-                            <p>เชื้อเพลิง</p>
+                            <p>เชื้อเพลิง :</p>
                         </div>
                         <div class="col-sm">
                             <?php echo $data['Name_Fuel'];?>
