@@ -231,12 +231,22 @@ $("input[name='date1']").ready(function(){
                 var startdat = startda.format('YYYY-MM-DD').toString();
                 end = $end = dateendd;
                 start = $start = startdat;
+                
+
+                
           $.get("<?=base_url('Rental/selectcar/')?>"+start+"/"+end,{
             
           }, 
               function (data) {
                 var tot = data;
                 var bo = 0; 
+                var mem = <?php echo $this->session->userdata('ID'); ?>;
+                var oo = $mem = mem;
+                //var qq = data['id_Member'];
+               // var pp = $qq = qq;
+                console.log(data);
+                console.log(oo);
+                //console.log(qq);
                 // var en = document.getElementById("enddateee").value;
                 // var st = document.getElementById("startdateee").value;
                 // var dateen = moment(en, 'YYYY/MM/DD');
@@ -246,6 +256,7 @@ $("input[name='date1']").ready(function(){
 
                 $("#bookok").html("")
                 for(bo in data){
+                  
                   var book2 = data[bo];
                   var book = `<div class="row">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
@@ -296,19 +307,34 @@ $("input[name='date1']").ready(function(){
 						<div class="col-sm-6 text-right">
 							
 							<img src="./img/${book2.Name_image}" style="height: 80px; width:80px;">
-						
-              <a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
+              
+              
+              <button class="btn btn-outline" 
+								style="background-color: #F60200; color: white; height:45px;" id="re${book2.id_Member}" disabled>จองรถ</button>
+              <a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;" id="rent${book2.id_Member}" 
 								href="<?php echo site_url('Rentnext/one/');?>${book2.idCarregis}/${startdat}/${dateendd}">จองรถ</a>
-						</div>
+              
+ 						</div>
 					</div>
 				</div>
 			</div>	
 		</div>
     </div>
 	</div>`;
+               
               $("#bookok").append(book)
+              if(mem == book2.id_Member){
+                $(`#re${book2.id_Member}`).show();
+                $(`#rent${book2.id_Member}`).remove();
+              }else
+              {
+                $(`#rent${book2.id_Member}`).show();
+                $(`#re${book2.id_Member}`).remove();
+              }
                 }
                
+                console.log(mem);
+                console.log(book2.id_Member);
                 console.log(tot);
 
                  } // รถ

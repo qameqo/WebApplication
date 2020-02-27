@@ -126,7 +126,7 @@
 								  $me = $this->session->userdata('ID');?>
 							<?php if($mem == $me){ ?>
 								<button class="btn btn-outline" 
-								style="background-color: #F60200; color: white; height:45px;" disabled>จองรถ</button>
+								style="background-color: #F60200; color: white; height:45px;" id="re" disabled>จองรถ</button>
 							<?php }else
 							      { ?>
 								<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"

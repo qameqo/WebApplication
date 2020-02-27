@@ -78,6 +78,9 @@
             $query = $this->db->get();
             $q1 = $query->result_array();
              ?>
+             <?php 
+            $dat = date("Y/m/d", strtotime($startdat));
+            $dat2 = date("Y/m/d", strtotime($dateendd)); ?>
         </div>
         <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
             style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
@@ -86,7 +89,7 @@
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-               <input id="datetimepickerstart" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+               <input id="datetimepickerstart" type="text" value="<?php  echo $dat ?>" style="width:120px; text-align:center;"
                         name="start" required readonly>
                         <!-- <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p> -->
                     <!-- <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly> -->
@@ -100,7 +103,7 @@
                 <div class="col-sm text-right">
                     <!-- <input id="no" type="text" value="<?php echo "$dateendd"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
                         name="no" readonly> -->
-                        <input id="datetimepickerend" type="text" value="<?php echo "$dateendd"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                        <input id="datetimepickerend" type="text" value="<?php echo $dat2 ?>" style="width:120px; text-align:center;"
                         name="end" required readonly>
                         <p style="color:red; font-size:10px;">* ระยะเวลาการเช่าไม่เกิน 5 วัน</p>
                 </div>
@@ -118,7 +121,7 @@
                         <div class="radio">
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled required>
+                                     required>
                                     <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?>
                                                 <?php } ?></span>
@@ -170,7 +173,7 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
-                                disabled required >
+                                 required >
                                 <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?> 
                                                 <?php } ?></span>
