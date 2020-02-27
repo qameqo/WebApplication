@@ -209,7 +209,7 @@ class Emp_rental_model extends CI_Model
 
                 foreach ($qq as $data2) {
 
-                    $new_total = ($data2['totalprice'] - 5000) + $this->input->post('Fines_price');
+                    $new_total = ($data2['totalprice'] - 5014) + $this->input->post('Fines_price');
 
                     // echo $new_total;
                     // exit;
@@ -236,7 +236,7 @@ class Emp_rental_model extends CI_Model
 
                 foreach ($qq as $data2) { //total - 5000
 
-                    $new_total = ($data2['totalprice'] - 5000);
+                    $new_total = ($data2['totalprice'] - 5014);
 
                     // echo $new_total;
                     // exit;
