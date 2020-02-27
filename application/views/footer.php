@@ -326,11 +326,20 @@ $("input[name='date1']").ready(function(){
               if(mem == book2.id_Member){
                 $(`#re${book2.id_Member}`).show();
                 $(`#rent${book2.id_Member}`).remove();
+                $('#booking').remove();
+
               }else
               {
                 $(`#rent${book2.id_Member}`).show();
                 $(`#re${book2.id_Member}`).remove();
+                $('#booking').remove();
               }
+              
+                $(function(){
+
+                $('img').EZView();
+              });
+
                 }
                
                 console.log(mem);
@@ -369,6 +378,167 @@ $("input[name='date1']").ready(function(){
             closeOnDateSelect:true
           });
   })
+  $("input[name='end']").ready(function(){
+          x = document.getElementById("datetimepickerstart").value; 
+         var y = document.getElementById("datetimepickerend").value;
+         var xx = moment(x, 'YYYY/MM/DD');
+         var xxx = xx.format('YYYY-MM-DD').toString();
+         var yy = moment(y, 'YYYY/MM/DD');
+         var yyy = yy.format('YYYY-MM-DD').toString();
+          dateFirst = moment(x, 'YYYY/MM/DD');
+         var dateSecond = moment(y, 'YYYY/MM/DD');
+         ngo = moment.duration(dateSecond.diff(dateFirst)).add(1,'days').asDays();
+        console.log(ngo);
+        console.log(x,y);
+       // console.log(<?php echo $idc ?>);
+       
+        id = <?php echo $idc ?>;
+        end = $end = yyy;
+        start = $start = xxx;
+        console.log(start);
+        console.log(end);
+        console.log(id);
+        
+          $.get("<?=base_url('Rentnext/selectstart/')?>"+start+"/"+end+"/"+id, 
+              function (data) {
+                
+               console.log(data);
+                  if(data.trim() == "55")
+                        {
+                          $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
+                        function (data) {
+                          var total = data * ngo; 
+                          var game =  total.toFixed(0);
+                          var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                          $("#totalcar").text(tot + " บาท")
+                          $("#totalcar2").val(game)
+                          });  // รถ
+                          console.log("จองได้");
+					              }
+                        else
+					              {
+                        alert('วันที่ลูกค้าเลือกถูกจองแล้วค่ะ');
+                        $('#datetimepickerstart').val(null)
+                        $('#datetimepickerend').val(null)
+                        
+                        //$("#totalcar").attr('hidden',true)
+                        document.getElementById('datetimepickerstart').focus();
+                        //$('input[name="end"]').datetimepicker({ autoClose: true});
+                        //document.getElementById('datetimepickerend').blur();
+                        //$('.datetimepickerend').hide();
+                        //$('#datetimepickerend').Close();
+                        console.log("จองไม่ได้");
+                        }  
+              });
+           });      
+          
+
+         
+        
+       
+          //   $.get("<?=base_url('Rentnext/selectdate3/')?>"+id, 
+          //     function (data) {
+          //       var total = data * ngo; 
+          //       var game =  total.toFixed(0);
+          //       var tot = game.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          //       $("#totalcar").text(tot + " บาท")
+          //       $("#totalcar2").val(game)
+          //        } // รถ
+          // );  
+          //   $.get("<?=base_url('Rentnext/selectdate4/')?>"+id, 
+          //     function (data) {
+          //       var total1 = data; 
+          //       var game1 =  total1.toFixed(0);
+          //       $("#totalvat").val(game1)
+          //        } // vat
+          // );  
+         
+          
+ 
+
+  $("input:radio[name='ins']").change(function(){
+        
+        if(this.value =='1'){
+          $.get("<?=base_url('Rentnext/selectdate2/')?>"+id, 
+                    function (data) {
+                      var total2 = data * ngo; 
+                      var game2 =  total2.toFixed(0);
+                      var tot2 = game2.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#ins").text(tot2 + " บาท")
+                    $("#totalins").val(game2) // ประกันพื้นฐาน
+                  }
+              ); 
+          $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
+                  function (data) {
+                    var vat = data *ngo;
+                    var vat2 = vat * 7 / 107;
+                    var vat3 = vat2.toFixed(0);
+                    var total3 = data * ngo; 
+                    var game3 =  total3.toFixed(0);
+                    var tot3 = game3.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#total").text(tot3 + " บาท")
+                    $("#total2").val(game3)
+                    $("#totalvat").val(vat3)
+                    $("#book").removeAttr('disabled',true)
+                    console.log(vat2);
+                    } // รวม
+              );  
+        }
+        else
+        {
+          $.get("<?=base_url('Rentnext/selectdate5/')?>"+id, 
+                    function (data) {
+                      var total4 = data * ngo; 
+                      var game4 =  total4.toFixed(0);
+                      var tot4 = game4.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#ins").text(tot4 + " บาท")
+                    $("#totalins").val(game4) // ประกันพรีเมี่ยม
+                    
+                  }
+              ); 
+          $.get("<?=base_url('Rentnext/selectdate6/')?>"+id, 
+                  function (data) {
+                    var vat = data *ngo;
+                    var vat2 = vat * 7 / 107;
+                    var vat3 = vat2.toFixed(0);
+                    var total5 = data * ngo; 
+                    var game5 =  total5.toFixed(0);
+                    var tot5 = game5.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $("#total").text(tot5 + " บาท")
+                    $("#total2").val(game5)
+                    $("#totalvat").val(vat3)
+                    $("#book").removeAttr('disabled',true)
+                    } // รวม
+              );  
+        }
+    });
+</script>
+<script>
+  var ngo = 0;
+  var id = 0;
+  var x = 0;
+  var dateFirst = 0;
+  var start = 0;
+  var end = 0;
+  var chonst = 0;
+
+  // $("input[name='start']").change(function(){
+    x = document.getElementById("datetimepickerstart").value; 
+    dateFirst = moment(x, 'YYYY/MM/DD');
+    
+    //console.log( dateFirst.format('YYYY/MM/DD').toString())
+          jQuery('#datetimepickerend').datetimepicker({
+            format:'Y/m/d',
+            onShow:function( ct ){
+            this.setOptions({
+              minDate: dateFirst.format('YYYY/MM/DD').toString(),
+              maxDate: (dateFirst).add(4,'days').format('YYYY/MM/DD').toString(),
+            }) //.val(), 10)
+            },
+            timepicker:false,
+            closeOnDateSelect:true
+          });
+  // })
   $("input[name='end']").change(function(){
           x = document.getElementById("datetimepickerstart").value; 
          var y = document.getElementById("datetimepickerend").value;

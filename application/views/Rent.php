@@ -70,7 +70,7 @@
 			<div id="bookok">
 			</div>
 			<?php foreach($qq as $data){ ?>
-			<!-- <div class="row" id="booking">
+			<div class="row" id="booking">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
 					<div class="row">
@@ -123,20 +123,27 @@
 								style="height: 80px; width:80px;">
 							<?php $idc = $data['idCarregis']; 
 								  $mem = $data['id_Member'];
-								  $me = $this->session->userdata('ID');?>
+								  $me = $this->session->userdata('ID');
+								   $startdat = date('Y-m-d');
+								   $end = date('Y-m-d');
+								// $startdat = '';
+								// $dateendd = '';
+								  $dateendd = date('Y-m-d', strtotime($end. ' + 1 days'));
+							
+								  ?>
 							<?php if($mem == $me){ ?>
 								<button class="btn btn-outline" 
 								style="background-color: #F60200; color: white; height:45px;" id="re" disabled>จองรถ</button>
 							<?php }else
 							      { ?>
 								<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
-								href="<?php echo site_url('Rentnext/one/'.$idc);?>">จองรถ</a>
+								href="<?php echo site_url('Rentnext/one/'.$idc.'/'.$startdat.'/'.$dateendd);?>">จองรถ</a>
 							<?php } ?>
 						</div>
 					</div>
 				</div>
 			</div>
-		 -->
+		<!-- .'/'.$startdat.'/'.$dateendd -->
 	
 <?php  } ?>
 	</div>
@@ -190,5 +197,11 @@ $(document).ready(function(){
  });
 });
 </script>
+<!-- <script>
+  $(function(){
+
+  $('img').EZView();
+});
+</script> -->
 
 

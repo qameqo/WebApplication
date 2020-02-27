@@ -5,6 +5,7 @@ class Rentnext extends CI_Controller {
 
     public function one($idc,$startdat,$dateendd)
     {
+        // ,$startdat,$dateendd
         $data['idc'] = $idc;
         $data['startdat'] = $startdat;
         $data['dateendd'] = $dateendd;
