@@ -16,9 +16,10 @@
         filter: alpha(opacity=0);
     }
     #ok {
-  border-right-style: groove;
-  border-right-color: #F1F1F1;
+  /* border-style: groove; */
+  /* border-color: #F60200; */
     }
+    
 </style>
 
                                                     <?php $this->db->select('*');
@@ -52,11 +53,14 @@
         <?php echo $data['Name_Brand'];?>&nbsp;<?php echo $data['Name_Gen'];?>&nbsp;<?php echo $data['Yearcar'];?></h4>
     <?php } ?>
 </div>
+<br><br>
 <form class="form-signin" id="edit" name="edit" method="POST" action="<?php echo base_url('Rentnext/insup/'.$idc); ?>">
     <div class="row justify-content-center">
 
         <div class="col-sm-5 shadow p-3 mb-5 bg-white rounded"
-            style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+            style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 0em ; margin-right: 1em ;">
+           
+            
             <H4 style="text-align:center;">รูปภาพเกี่ยวกับรถ</H4>
             <br>
             <?php 
@@ -65,29 +69,153 @@
       $this->db->where('idCarregis',$idc);
       $query = $this->db->get();
       $q2 = $query->result_array();
-    ?>
+    ?>      
             <?php foreach($q2 as $data){ ?>
-            <img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height:80px; weight:80px;">
+            <img src="<?php echo base_url('./img/'.$data['Name_image']);?>" style="height:78px; weight:78px;">
             <?php } ?>
-
-
+           
+            <br>
+            <br><br>
+            <br>
+            <!-- <div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
+            style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;"> -->
             <?php 
+            $this->db->select('*');
+            $this->db->from('Carregis');
+            $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
+            $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+            $this->db->join('Seat', 'Carregis.id_Seat = Seat.id_Seat');
+            $this->db->join('Fuel', 'Carregis.idFuel = Fuel.idFuel');
+            $this->db->where('idCarregis',$idc);
+            $query = $this->db->get();
+            $qq = $query->result_array();
+             ?>
+            
+            <div class="row">
+                <div class="col-sm">
+                    <H4 style="text-align:center;">ข้อมูลเกี่ยวกับรถ</H4>
+                </div>
+            </div>
+            <?php foreach($qq as $data){?>
+            <div class="row" id="ok">
+                <div class="col-sm">
+                    <div class="row " style="margin-left: 6em ;" >
+                        <div class="col-sm" id="ok">
+                            <p>ยี่ห้อ :&nbsp;<?php echo $data['Name_Brand'];?></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="col-sm ">
+                    <div class="row justify-content-center" >
+                        <div class="col-sm">
+                            <p>รุ่น :&nbsp;<?php echo $data['Name_Gen'];?></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="row"id="okk">
+                <div class="col-sm">
+                    <div class="row" style="margin-left: 6em ;">
+                        <div class="col-sm">
+                            <p>ปี :&nbsp;<?php echo $data['Yearcar'];?></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm">
+                            <p>เลขไมล์ :&nbsp;<?php echo $data['Mileage'];?></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="okk">
+                <div class="col-sm">
+                    <div class="row" style="margin-left: 6em ;">
+                        <div class="col-sm">
+                            <p>สี :&nbsp;<?php echo $data['Color'];?></p>
+                        </div>
+                      
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm">
+                            <p>ระบบเกียร์ :&nbsp;<?php echo $data['Gear'];?></p>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="okk">
+                <div class="col-sm">
+                    <div class="row" style="margin-left: 6em ;">
+                        <div class="col-sm">
+                            <p>จำนวนที่นั่ง :&nbsp;<?php echo $data['Number_Seat'];?></p>
+                        </div>
+                      
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm">
+                            <p>เชื้อเพลิง :&nbsp;<?php echo $data['Name_Fuel'];?></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm">
+
+                </div>
+
+                <div class="col-sm">
+                    <div class="row">
+
+                    </div>
+                </div>
+            
+            <?php } ?>
+            </div>
+            
+        </div>
+        <?php 
             $this->db->select('*');
             $this->db->from('Carregis');
             $this->db->where('idCarregis', $idc);
             $query = $this->db->get();
             $q1 = $query->result_array();
              ?>
-        </div>
+             <?php 
+            $dat = date("Y/m/d", strtotime($startdat));
+            $dat2 = date("Y/m/d", strtotime($dateendd)); ?>
         <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded"
-            style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
+            style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 0em ; margin-right: 0em ;">
             <div class="row">
                 <div class="col-sm">
                     <p style="text-align:Left;">วันเริ่มเช่า</p>
                 </div>
                 <div class="col-sm text-right">
-               <input id="datetimepickerstart" type="text" value="" style="width:120px; text-align:center;"
-                        name="start" required>
+               <input id="datetimepickerstart" type="text" value="<?php  echo $dat ?>" style="width:120px; text-align:center;"
+                        name="start" required readonly>
                         <!-- <p style="color:red; font-size:10px;">* จองรถล่วงหน้าได้ไม่เกิน 3 วัน</p> -->
                     <!-- <input id="yes" type="text" value="<?php  echo "$startdat"?>" style="width:120px; text-align:center; background-color:Gainsboro;" name="yes" readonly> -->
                 </div>
@@ -98,10 +226,10 @@
                   
                 </div>
                 <div class="col-sm text-right">
-                    <!-- <input id="no" type="text" value="<?php echo "$dateen"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
+                    <!-- <input id="no" type="text" value="<?php echo "$dateendd"?>" style="width:120px; text-align:center; background-color:Gainsboro;"
                         name="no" readonly> -->
-                        <input id="datetimepickerend" type="text" value="" style="width:120px; text-align:center;"
-                        name="end" required>
+                        <input id="datetimepickerend" type="text" value="<?php echo $dat2 ?>" style="width:120px; text-align:center;"
+                        name="end" required readonly>
                         <p style="color:red; font-size:10px;">* ระยะเวลาการเช่าไม่เกิน 5 วัน</p>
                 </div>
             </div>
@@ -118,7 +246,7 @@
                         <div class="radio">
                             <label style="padding-right: 8px;">
                                 <input type="radio" name="ins" value="1" id="stand" data-parsley-multiple="transmission"
-                                    disabled required>
+                                     required>
                                     <span style="vertical-align: top;"> <?php foreach($qa as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?>
                                                 <?php } ?></span>
@@ -170,7 +298,7 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" name="ins" value="2" data-parsley-multiple="transmission" id="pre"
-                                disabled required >
+                                 required >
                                 <span style="vertical-align: top;"> <?php foreach($qb as $data){ ?>
                                             <?php echo $data['Name_Insurance'] ?> 
                                                 <?php } ?></span>
@@ -289,8 +417,8 @@
             
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-sm-5 shadow p-3 mb-5 bg-white rounded"
+    <!-- <div class="row justify-content-center">
+        <div class="col-sm-6 shadow p-3 mb-5 bg-white rounded"
             style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
             <?php 
             $this->db->select('*');
@@ -309,7 +437,7 @@
                 </div>
             </div>
             <?php foreach($qq as $data){?>
-            <div class="row">
+            <div class="row" id="okk">
                 <div class="col-sm">
                     <div class="row"  id="ok">
                         <div class="col-sm">
@@ -334,7 +462,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row"id="okk">
                 <div class="col-sm">
                     <div class="row" id="ok">
                         <div class="col-sm">
@@ -359,7 +487,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="okk">
                 <div class="col-sm">
                     <div class="row" id="ok">
                         <div class="col-sm">
@@ -384,7 +512,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="okk">
                 <div class="col-sm">
                     <div class="row" id="ok">
                         <div class="col-sm">
@@ -409,6 +537,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-sm">
 
@@ -422,11 +551,11 @@
             </div>
             <?php } ?>
         </div>
-        <div class="col-sm-3 mb-5 bg-white rounded"
+        <div class="col-sm-2 mb-5 bg-white rounded"
             style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
            
             </div>
-           
+            -->
 
 
        

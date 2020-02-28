@@ -123,20 +123,27 @@
 								style="height: 80px; width:80px;">
 							<?php $idc = $data['idCarregis']; 
 								  $mem = $data['id_Member'];
-								  $me = $this->session->userdata('ID');?>
+								  $me = $this->session->userdata('ID');
+								   $startdat = date('Y-m-d');
+								   $end = date('Y-m-d');
+								// $startdat = '';
+								// $dateendd = '';
+								  $dateendd = date('Y-m-d', strtotime($end. ' + 1 days'));
+							
+								  ?>
 							<?php if($mem == $me){ ?>
 								<button class="btn btn-outline" 
-								style="background-color: #F60200; color: white; height:45px;" disabled>จองรถ</button>
+								style="background-color: #F60200; color: white; height:45px;" id="re" disabled>จองรถ</button>
 							<?php }else
 							      { ?>
 								<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"
-								href="<?php echo site_url('Rentnext/one/'.$idc);?>">จองรถ</a>
+								href="<?php echo site_url('Rentnext/one/'.$idc.'/'.$startdat.'/'.$dateendd);?>">จองรถ</a>
 							<?php } ?>
 						</div>
 					</div>
 				</div>
 			</div>
-		
+		<!-- .'/'.$startdat.'/'.$dateendd -->
 	
 <?php  } ?>
 	</div>
@@ -190,5 +197,11 @@ $(document).ready(function(){
  });
 });
 </script>
+<!-- <script>
+  $(function(){
+
+  $('img').EZView();
+});
+</script> -->
 
 

@@ -3,9 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rentnext extends CI_Controller {
 
-    public function one($idc)
+    public function one($idc,$startdat,$dateendd)
     {
+        // ,$startdat,$dateendd
         $data['idc'] = $idc;
+        $data['startdat'] = $startdat;
+        $data['dateendd'] = $dateendd;
         $this->load->view('header');
         $this->load->view('Rentnext',$data);
         $this->load->view('footer');
