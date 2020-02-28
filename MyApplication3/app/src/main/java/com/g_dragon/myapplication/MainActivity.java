@@ -8,11 +8,24 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Editable;
+import android.text.method.KeyListener;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.TextView;
+import android.widget.Button;
+//import android.widget.
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView urlBox;
+    private Button goButt;
+    private WebView webBrowser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +40,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        init();
+
+        urlBox.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                    browse();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        goButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                browse();
             }
         });
     }
@@ -51,5 +84,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public  void init(){
+        goButt = (Button)findViewById(R.id.goButt);
+        urlBox = (TextView)findViewById(R.id.urlBox);
+        webBrowser = (WebView)findViewById(R.id.webBrowser1);
+        webBrowser.setWebViewClient(new WebViewClient());
+    }
+
+    public void browse(){
+        webBrowser.getSettings().setJavaScriptEnabled(true);
+        webBrowser.loadUrl(urlBox.getText().toString());
     }
 }
