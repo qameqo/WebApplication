@@ -24,7 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/G_DRAGON_AUTOTECH_CO_DE/';
-
+//http://gg.harmonicmix.xyz/
+//http://localhost/G_DRAGON_AUTOTECH_CO_DE/
 /*
 |--------------------------------------------------------------------------
 | Index File

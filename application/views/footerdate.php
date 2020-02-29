@@ -2,7 +2,7 @@
 
 </body>
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>game/css/jquery.datetimepicker.min.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>game/css/jquery.datetimepicker.min.css"/>
 <script type='text/javascript' src="<?php echo base_url(); ?>game/js/jquery.datetimepicker.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -35,4 +35,40 @@ jQuery(function(){
   timepicker:false
  });
 });
-</script>
+</script> -->
+<!-- <script>
+
+                                $("#RentalPrice").change(function(){ 
+
+                                
+                                var de = $("#RentalPrice").val();
+                                var up = $("#up").val();
+                                var down = $("#down").val();
+                                var pow = $("#pow").val();
+                                // var one = de.toFixed(0);
+                                // var two = up.toFixed(0);
+                                // var three = down.toFixed(0);
+                                console.log("de ="+de)
+                                console.log("up ="+up)
+                                console.log(down)
+                                //console.log(pow)
+                                var kk = parseInt(de)
+                                //(de == pow && de > up) || (de == pow  && de < down)
+                                // if((kk >= down) && (kk <= up))
+                                // {
+
+                                    
+                                // }
+                                // else
+                                // {
+                                    
+                                //     // alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
+                                //     $("#RentalPrice").val(null);
+                                //     $("#RentalPrice").focus();
+                                    
+                                // }
+
+
+                                    
+                                }); 
+                                </script> -->
