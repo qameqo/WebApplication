@@ -114,10 +114,11 @@
                                     echo '</span></td>';
                                 }
                                 else if($data['id_status']== '11')
-                                {
-                                    echo'<td><span class="badge badge-success" style="font-size:13px;">';
-                                    echo $data['Name_Status'];  
-                                    echo '</span></td>';
+                                { ?>
+                                    <?php $idr = $data['idRental']; ?>
+                                     <td><span class="badge badge-success" style="font-size:13px;"><?php echo $data['Name_Status']; ?></span><a type="button" class="btn btn-danger btn-sm" style="font-size:13px; color:white;"
+                                    href="<?php echo base_url('Problem/pro/'.$idr);?>">แจ้งปัญหา</a></td>
+                                    <?php
                                 }  
                                 else if($data['id_status']== '12')
                                 {

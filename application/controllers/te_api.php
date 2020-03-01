@@ -27,8 +27,19 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
 
         $this->db->where('Username', $Username);
         $this->db->where('Password', $password);
-        $query = $this->db->get('Member');
-        $this->response("Hi sad");
+        $query = $this->db->get('Member',1);
+        if($query->num_rows() ==1)
+        {
+            $this->response(array(
+                'status' => 'yes'
+            ));
+          
+        }else
+        {
+            $this->response(array(
+                'status' => 'no'
+            ));
+        }
     
       
         
