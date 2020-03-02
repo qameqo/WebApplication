@@ -176,8 +176,35 @@ class Rentnext extends CI_Controller {
         $qq = $query->result_array();
         $gh = $qq[0]['RentalPrice']; // ราคารถ
         $f5 = 0.35;
-        $inspre = $gh * $f5; // ราคาประกัน
-        echo $inspre; // ประกันพรีเมี่ยม
+        //$inspre = $gh * $f5; // ราคาประกัน
+        $a = 1000;
+        $aa = 2001;
+        $aaa = 3001;
+        $aaaa = 4001;
+        $aaaaa = 5000;
+        $stand1 = 400;
+        $stand2 = 500;
+        $stand3 = 600;
+        $stand4 = 700;
+        $stand5 = 800;
+        $stand6 = 900;
+        //$insstand = $gh * $fg; // ราคาประกัน
+        if($gh <= $a){
+              echo $stand1;
+        }else if(($gh >= $a) && ($gh <= $aa))
+        {     echo $stand2;
+        }else if(($gh >= $aa) && ($gh <= $aaa)){
+              echo $stand3;
+        }else if(($gh >= $aaa) && ($gh <= $aaaa)){
+              echo $stand4;
+        }
+        else if(($gh >= $aaaa) && ($gh <= $aaaaa)){
+            echo $stand5;
+        }
+        else if($gh > $aaaaa){
+            echo $stand6;
+        }
+        //echo $inspre; // ประกันพรีเมี่ยม
 
         
     }
@@ -190,8 +217,36 @@ class Rentnext extends CI_Controller {
         $qq = $query->result_array();
         $gh = $qq[0]['RentalPrice']; // ราคารถ
         $fg = 0.25;
-        $insstand = $gh * $fg; // ราคาประกัน
-        echo $insstand; //ประกันพื้นฐาน
+        $a = 1000;
+        $aa = 2001;
+        $aaa = 3001;
+        $aaaa = 4001;
+        $aaaaa = 5000;
+        $stand1 = 250;
+        $stand2 = 350;
+        $stand3 = 450;
+        $stand4 = 550;
+        $stand5 = 650;
+        $stand6 = 750;
+        //$insstand = $gh * $fg; // ราคาประกัน
+        if($gh <= $a){
+            echo $stand1;
+        }else if(($gh >= $a) && ($gh <= $aa))
+        {
+            echo $stand2;
+        }else if(($gh >= $aa) && ($gh <= $aaa)){
+            echo $stand3;
+        }else if(($gh >= $aaa) && ($gh <= $aaaa)){
+            echo $stand4;
+        }
+        else if(($gh >= $aaaa) && ($gh <= $aaaaa)){
+            echo $stand5;
+        }
+        else if($gh > $aaaaa){
+            echo $stand6;
+        }
+        
+        //echo $insstand; //ประกันพื้นฐาน
         
     }
 

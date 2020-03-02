@@ -19,91 +19,30 @@ require APPPATH . '/libraries/REST_Controller.php';
  */
 class Test_api extends \Restserver\Libraries\REST_Controller {
  
-    function __construct()
-    {
-        // Construct the parent class
-        parent::__construct();
- 
-        // Configure limits on our controller methods
-        // Ensure you have created the 'limits' table and enabled 'limits' within application/config/rest.php
-        $this->methods['users_get']['limit'] = 500; // 500 requests per hour per user/key
-        $this->methods['users_post']['limit'] = 100; // 100 requests per hour per user/key
-        $this->methods['users_delete']['limit'] = 50; // 50 requests per hour per user/key
-    }
- 
-    public function index_get()
-    {
-        // $query = $this->db->get('Employee');
-        // $data = $query->result();
-        // $this->response($data);
-            
-        //$data = $this->db->get('Member')->result();
-        // $Username = $this->input->get('username');
-        // $Password = $this->input->get('password');
-
-        // $this->db->where('Username', $Username);
-        // $this->db->where('Password', $Password);
-        // $query = $this->db->get('Member', 1);
-        $Username = $this->db->get('Member');
-        $Password = $this->db->get('Member');
-        if($Username > 0 ){
-            $query =  $this->db->get_where("Member",array('Username'=>$Username,'Password'=>$Password));
-        }else{
-            $query =  $this->db->get('Member');
-        }
-        $this->response($query->result());
-        
-         //$Username = $this->input->get('Username');
-         //$Password = $this->input->get('Password');
-        // if($data == 0){
-        //     $this->response("ไม่มี");
-        // }
-        // else 
-        // {
-           
-        // }
-        // $this->db->where('Username', $Username);
-        // $this->db->where('Password', $Password);
-        // $query = $this->db->get('Member',1);
-        // $data = $query->result_array();
-        
-        // if($data == 1)
-        // {
-        //     $this->response("Username : ".$Username." | Password : ".$Password); 
-        // }
-        // else
-        // {
-        //     $this->response("ไม่มี"); 
-        // }
-        
-    }
- 
     public function index_post()
     {
-        // $query = $this->db->get('upload');
-        // $data = $query->result();
-        // $this->response($data);
-
-        $Username = $this->post('Username');
-        $Password = $this->post('Password');
-
-        $this->response("Username : ".$Username." | Password : ".$Password);  
-    }
-    
-    public function update_put()
-    {
-        $ID = $this->put('ID');
-        $data = array(
-            'id_emp' => '354268',
-        );  
- 
-        $this->db->where('ID', $ID);
-       
-        $this->db->update('repository_member', $data);
- 
-                $this->response(array(
-                'message' => 'success',
-                'status' => 'true'));
+     
+      
+        $Username = $this->input->post('username');
+        
+        
+        $object = array(
+            'user'=>$this->input->post('username'),
+            'tel' =>$this->input->post('tel')
+        );
+        $ins = $this->db->insert('test', $object);
+        if($ins === true){
+            $this->response(array(
+                'status' => 'insert'
+            ));
+        }else
+        {
+            $this->response(array(
+                'status' => 'no'
+            ));
+        }
+        
+        
        
     }
     
