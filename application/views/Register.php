@@ -63,7 +63,7 @@
 					<div class="col-sm">
 						<label class="bmd-label-floating">Tel.</label>
 						<input name="tel" type="tel" id="tel" class="form-control" placeholder="" required 
-						pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
+						pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000" Maxlength="10">
 						<p style="color:red; font-size:10px;">* กรุณากรอกเบอร์โทรศัพท์ 10 หลัก</p>
 					</div>
 					</div>

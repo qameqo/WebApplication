@@ -36,11 +36,46 @@ class Test_api extends \Restserver\Libraries\REST_Controller {
         // $query = $this->db->get('Employee');
         // $data = $query->result();
         // $this->response($data);
+            
+        //$data = $this->db->get('Member')->result();
+        // $Username = $this->input->get('username');
+        // $Password = $this->input->get('password');
 
-        $Username = $this->get('Username');
-        $Password = $this->get('Password');
-
-        $this->response("Username : ".$Username." | Password : ".$Password); 
+        // $this->db->where('Username', $Username);
+        // $this->db->where('Password', $Password);
+        // $query = $this->db->get('Member', 1);
+        $Username = $this->db->get('Member');
+        $Password = $this->db->get('Member');
+        if($Username > 0 ){
+            $query =  $this->db->get_where("Member",array('Username'=>$Username,'Password'=>$Password));
+        }else{
+            $query =  $this->db->get('Member');
+        }
+        $this->response($query->result());
+        
+         //$Username = $this->input->get('Username');
+         //$Password = $this->input->get('Password');
+        // if($data == 0){
+        //     $this->response("ไม่มี");
+        // }
+        // else 
+        // {
+           
+        // }
+        // $this->db->where('Username', $Username);
+        // $this->db->where('Password', $Password);
+        // $query = $this->db->get('Member',1);
+        // $data = $query->result_array();
+        
+        // if($data == 1)
+        // {
+        //     $this->response("Username : ".$Username." | Password : ".$Password); 
+        // }
+        // else
+        // {
+        //     $this->response("ไม่มี"); 
+        // }
+        
     }
  
     public function index_post()
