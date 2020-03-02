@@ -182,6 +182,10 @@ class Rentnext extends CI_Controller {
         $aaa = 3001;
         $aaaa = 4001;
         $aaaaa = 5000;
+        $a1 = 1001;
+        $b = 2000;
+        $bb = 3000;
+        $bbb = 4000;
         $stand1 = 400;
         $stand2 = 500;
         $stand3 = 600;
@@ -191,11 +195,11 @@ class Rentnext extends CI_Controller {
         //$insstand = $gh * $fg; // ราคาประกัน
         if($gh <= $a){
               echo $stand1;
-        }else if(($gh >= $a) && ($gh <= $aa))
+        }else if(($gh >= $a1) && ($gh <= $b))
         {     echo $stand2;
-        }else if(($gh >= $aa) && ($gh <= $aaa)){
+        }else if(($gh >= $aa) && ($gh <= $bb)){
               echo $stand3;
-        }else if(($gh >= $aaa) && ($gh <= $aaaa)){
+        }else if(($gh >= $aaa) && ($gh <= $bbb)){
               echo $stand4;
         }
         else if(($gh >= $aaaa) && ($gh <= $aaaaa)){
@@ -222,6 +226,10 @@ class Rentnext extends CI_Controller {
         $aaa = 3001;
         $aaaa = 4001;
         $aaaaa = 5000;
+        $a1 = 1001;
+        $b = 2000;
+        $bb = 3000;
+        $bbb = 4000;
         $stand1 = 250;
         $stand2 = 350;
         $stand3 = 450;
@@ -231,12 +239,12 @@ class Rentnext extends CI_Controller {
         //$insstand = $gh * $fg; // ราคาประกัน
         if($gh <= $a){
             echo $stand1;
-        }else if(($gh >= $a) && ($gh <= $aa))
+        }else if(($gh >= $a1) && ($gh <= $b))
         {
             echo $stand2;
-        }else if(($gh >= $aa) && ($gh <= $aaa)){
+        }else if(($gh >= $aa) && ($gh <= $bb)){
             echo $stand3;
-        }else if(($gh >= $aaa) && ($gh <= $aaaa)){
+        }else if(($gh >= $aaa) && ($gh <= $bbb)){
             echo $stand4;
         }
         else if(($gh >= $aaaa) && ($gh <= $aaaaa)){

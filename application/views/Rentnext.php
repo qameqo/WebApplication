@@ -260,6 +260,10 @@
                                                         $aaa = 3001;
                                                         $aaaa = 4001;
                                                         $aaaaa = 5000;
+                                                        $a1 = 1001;
+                                                        $b = 2000;
+                                                        $bb = 3000;
+                                                        $bbb = 4000;
                                                         $stand1 = 250;
                                                         $stand2 = 350;
                                                         $stand3 = 450;
@@ -269,11 +273,11 @@
                                                         //$insstand = $gh * $fg; // ราคาประกัน
                                                         if($hj <= $a){?>
                                                             <p style="text-align:right;"><?php echo $stand1; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $a) && ($hj <= $aa)){ ?>
+                                                       <?php }else if(($hj >= $a1) && ($hj <= $b)){ ?>
                                                             <p style="text-align:right;"><?php echo $stand2; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $aa) && ($hj <= $aaa)){?>
+                                                       <?php }else if(($hj >= $aa) && ($hj <= $bb)){?>
                                                             <p style="text-align:right;"><?php echo $stand3; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $aaa) && ($hj <= $aaaa)){ ?>
+                                                       <?php }else if(($hj >= $aaa) && ($hj <= $bbb)){ ?>
                                                             <p style="text-align:right;"><?php echo $stand4; ?>&nbsp;บาท/วัน</p>
                                                        <?php }else if(($hj >= $aaaa) && ($hj <= $aaaaa)){ ?>
                                                             <p style="text-align:right;"><?php echo $stand5; ?>&nbsp;บาท/วัน</p>
@@ -339,6 +343,10 @@
                                                         $aaa = 3001;
                                                         $aaaa = 4001;
                                                         $aaaaa = 5000;
+                                                        $a1 = 1001;
+                                                        $b = 2000;
+                                                        $bb = 3000;
+                                                        $bbb = 4000;
                                                         $stand1 = 400;
                                                         $stand2 = 500;
                                                         $stand3 = 600;
@@ -349,12 +357,12 @@
                                                         if($hj <= $a){?>
                                                             
                                                             <p style="text-align:right;"><?php echo $stand1; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $a) && ($hj <= $aa))
+                                                       <?php }else if(($hj >= $a1) && ($hj <= $b))
                                                         { ?>
                                                            <p style="text-align:right;"><?php echo $stand2; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $aa) && ($hj <= $aaa)){?>
+                                                       <?php }else if(($hj >= $aa) && ($hj <= $bb)){?>
                                                             <p style="text-align:right;"><?php echo $stand3; ?>&nbsp;บาท/วัน</p>
-                                                       <?php }else if(($hj >= $aaa) && ($hj <= $aaaa)){ ?>
+                                                       <?php }else if(($hj >= $aaa) && ($hj <= $bbb)){ ?>
                                                             <p style="text-align:right;"><?php echo $stand4; ?>&nbsp;บาท/วัน</p>
                                                        <?php }
                                                         else if(($hj >= $aaaa) && ($hj <= $aaaaa)){ ?>
