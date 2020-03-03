@@ -1,0 +1,4 @@
+#Mon Mar 02 14:35:05 ICT 2020
+base.0=C\:\\xampp\\htdocs\\G_DRAGON_AUTOTECH_CO_DE\\android_sale-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+path.0=classes.dex
+renamed.0=classes.dex
