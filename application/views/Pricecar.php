@@ -36,8 +36,8 @@
 				<?php  
 							foreach($qq as $data){
 								$ei = $data['Price'];
-								$eii = 0.25;
-								$eiii = 0.15;
+								$eii = 0.23;
+								$eiii = 0.17;
 								$e = 10;
 								$ee = 1000;
 								$total = $ei * $eii * $e / $ee;

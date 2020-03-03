@@ -441,7 +441,7 @@ $(document).ready(function(){
                         //   $('#license_result').html(data);
 					 console.log( data);
 					 if(data.trim() === "true"){
-						console.log("มีไอสัส");
+						//console.log("มี");
 						$('#fail').removeAttr('hidden')
 						$('#success').attr('hidden',true)
 						$('#game').attr('disabled',true)

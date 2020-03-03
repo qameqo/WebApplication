@@ -255,7 +255,34 @@
                                                 $ins = $hj * 0.25;
                                                 $inss = number_format($ins,0);
                                                 ?>
-                                <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p>
+                                                <?php   $a = 1000;
+                                                        $aa = 2001;
+                                                        $aaa = 3001;
+                                                        $aaaa = 4001;
+                                                        $aaaaa = 5000;
+                                                        $stand1 = 250;
+                                                        $stand2 = 350;
+                                                        $stand3 = 450;
+                                                        $stand4 = 550;
+                                                        $stand5 = 650;
+                                                        $stand6 = 750;
+                                                        //$insstand = $gh * $fg; // ราคาประกัน
+                                                        if($hj <= $a){?>
+                                                            <p style="text-align:right;"><?php echo $stand1; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $a) && ($hj <= $aa)){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand2; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $aa) && ($hj <= $aaa)){?>
+                                                            <p style="text-align:right;"><?php echo $stand3; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $aaa) && ($hj <= $aaaa)){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand4; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $aaaa) && ($hj <= $aaaaa)){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand5; ?>&nbsp;บาท/วัน</p>
+                                                       <?php } else if($hj > $aaaaa){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand6; ?>&nbsp;บาท/วัน</p>
+                                                       
+
+                                                            <?php  } ?>
+                                <!-- <p style="text-align:right;"><?php echo $inss ?>&nbsp;บาท/วัน</p> -->
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px; color:red;" href="#"
@@ -307,7 +334,37 @@
                                                 $ins = $hj * 0.35;
                                                 $insd = number_format($ins,0);
                                                 ?>
-                                <p style="text-align:right;"><?php echo $insd ?>&nbsp;บาท/วัน</p>
+                                                <?php $a = 1000;
+                                                        $aa = 2001;
+                                                        $aaa = 3001;
+                                                        $aaaa = 4001;
+                                                        $aaaaa = 5000;
+                                                        $stand1 = 400;
+                                                        $stand2 = 500;
+                                                        $stand3 = 600;
+                                                        $stand4 = 700;
+                                                        $stand5 = 800;
+                                                        $stand6 = 900;
+                                                        //$insstand = $gh * $fg; // ราคาประกัน
+                                                        if($hj <= $a){?>
+                                                            
+                                                            <p style="text-align:right;"><?php echo $stand1; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $a) && ($hj <= $aa))
+                                                        { ?>
+                                                           <p style="text-align:right;"><?php echo $stand2; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $aa) && ($hj <= $aaa)){?>
+                                                            <p style="text-align:right;"><?php echo $stand3; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }else if(($hj >= $aaa) && ($hj <= $aaaa)){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand4; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }
+                                                        else if(($hj >= $aaaa) && ($hj <= $aaaaa)){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand5; ?>&nbsp;บาท/วัน</p>
+                                                       <?php }
+                                                        else if($hj > $aaaaa){ ?>
+                                                            <p style="text-align:right;"><?php echo $stand6; ?>&nbsp;บาท/วัน</p>
+
+                                                            <?php  } ?>
+                                <!-- <p style="text-align:right;">&nbsp;บาท/วัน</p> -->
                                 <?php } ?>
                             </label>
                             <a type="button" class="btn btn-outline-secondary" style="height:40px; color:red;" href="#"

@@ -622,11 +622,14 @@ $("input[name='date1']").ready(function(){
         if(this.value =='1'){
           $.get("<?=base_url('Rentnext/selectdate2/')?>"+id, 
                     function (data) {
+                      //console.log(data)
                       var total2 = data * ngo; 
                       var game2 =  total2.toFixed(0);
                       var tot2 = game2.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#ins").text(tot2 + " บาท")
                     $("#totalins").val(game2) // ประกันพื้นฐาน
+                    //console.log(total2)
+                    //console.log(data)
                   }
               ); 
           $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
@@ -641,7 +644,7 @@ $("input[name='date1']").ready(function(){
                     $("#total2").val(game3)
                     $("#totalvat").val(vat3)
                     $("#book").removeAttr('disabled',true)
-                    console.log(vat2);
+                    //console.log(vat2);
                     } // รวม
               );  
         }
@@ -649,6 +652,7 @@ $("input[name='date1']").ready(function(){
         {
           $.get("<?=base_url('Rentnext/selectdate5/')?>"+id, 
                     function (data) {
+                      console.log(data)
                       var total4 = data * ngo; 
                       var game4 =  total4.toFixed(0);
                       var tot4 = game4.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
