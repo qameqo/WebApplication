@@ -36,7 +36,6 @@ class Emp_car extends CI_Controller {
         // echo '<pre>';
         // print_r($data);
         // echo '</pre>';
-
         // exit;
 
         $this->load->view('Employee/Header_emp');
@@ -44,6 +43,8 @@ class Emp_car extends CI_Controller {
         $this->load->view('Employee/Footer_emp');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');
+        
+        
     }
     
     public function add_status_2()

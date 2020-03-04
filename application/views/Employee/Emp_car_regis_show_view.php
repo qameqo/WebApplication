@@ -251,11 +251,11 @@
                             if ($rs->StartDate == date('Y-m-d')) 
                             {  
                                 ?>
-                        
+                            <br>
                                 <div class="row justify-content-center">
-
-                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format(($rs->Price * 0.15)/100,0);?> ถึง <?php echo number_format(($rs->Price * 0.25)/100,0);?> บาท/วัน</span><br>
-                                
+                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format(($rs->Price * 0.17)/100,0);?> ถึง <?php echo number_format(($rs->Price * 0.23)/100,0);?> บาท/วัน</span>
+                                </div>
+                                <div class="row justify-content-center">
                                     <div class="col-3">
                                         <label class="label mt-5">ราคาทางร้าน</label>
                                         <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
@@ -263,8 +263,8 @@
                                     <div class="col-3">
                                         <label class="label mt-5">แก้ไขราคาใหม่</label>
                                         <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                                        <input type="hidden" id="up"name="up" value="<?php echo ($rs->Price * 0.25)/100;?>">
-				                        <input type="hidden" id="down"name="down" value="<?php echo ($rs->Price * 0.15)/100;?>">
+                                        <input type="hidden" id="up"name="up" value="<?php echo ($rs->Price * 0.23)/100;?>">
+				                        <input type="hidden" id="down"name="down" value="<?php echo ($rs->Price * 0.17)/100;?>">
                                     </div>
                                 </div>   
                             
@@ -300,7 +300,7 @@
 
                             }
                         }
-
+                        
                         
 
                         // $d=strtotime("-2 day");
@@ -347,20 +347,21 @@
 
                     }?>
 
-
+                                       
 
             </div>
         </div>
     </div>
 </div>
 
-                        <!-- <script>
+                                <!-- <script>
 
                                 var de = 0;
                                 var up = 0;
                                 var down = 0;
                                 var kk = 0;
-                                $("#RentalPrice").change(function(){ 
+                                $(document).ready(function(){  
+                                $("#RentalPrice").change(function(){
 
                                 
                                  de = $("#RentalPrice").val();
@@ -384,7 +385,7 @@
                                 else
                                 {
                                     
-                                    // alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
+                                     //alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
                                     $("#RentalPrice").val(null);
                                     $("#RentalPrice").focus();
                                     
@@ -393,4 +394,5 @@
 
                                     
                                 }); 
+                                });
                                 </script> -->

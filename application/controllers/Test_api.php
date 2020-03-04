@@ -24,21 +24,23 @@ class Test_api extends \Restserver\Libraries\REST_Controller {
      
       
         $Username = $this->input->post('username');
+        $tel = $this->input->post('tel');
         
         
         $object = array(
-            'user'=>$this->input->post('username'),
-            'tel' =>$this->input->post('tel')
+            'user'=>$Username,
+            'tel' =>$tel
         );
-        $ins = $this->db->insert('test', $object);
-        if($ins === true){
+        //$ins = $this->db->insert('test', $object);
+        if($Username == null || $tel == null){
             $this->response(array(
-                'status' => 'insert'
+                'status' => 'no'
             ));
         }else
         {
+            $ins = $this->db->insert('test', $object);
             $this->response(array(
-                'status' => 'no'
+                'status' => 'insert'
             ));
         }
         
