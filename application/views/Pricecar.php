@@ -144,7 +144,7 @@
 					</div>
 					<div class="col-sm">
 						<input type="textarea" class="form-control" name="income" id="income" value=""
-							style="width: 200px; height:25px;" required placeholder="Ex. 7442930761">
+							style="width: 200px; height:25px;" required pattern="[0-9]{3,}" title="กรอกเป็นตัวเลข" placeholder="Ex. 7442930761">
 					</div>
 					<div class="col-sm">
 					

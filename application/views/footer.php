@@ -466,11 +466,13 @@ $("input[name='date1']").ready(function(){
                       var tot2 = game2.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $("#ins").text(tot2 + " บาท")
                     $("#totalins").val(game2) // ประกันพื้นฐาน
+                    //console.log(total2);
                   }
               ); 
           $.get("<?=base_url('Rentnext/selectdate/')?>"+id, 
                   function (data) {
-                    var vat = data *ngo;
+                    
+                    var vat = data * ngo;
                     var vat2 = vat * 7 / 107;
                     var vat3 = vat2.toFixed(0);
                     var total3 = data * ngo; 
@@ -480,7 +482,10 @@ $("input[name='date1']").ready(function(){
                     $("#total2").val(game3)
                     $("#totalvat").val(vat3)
                     $("#book").removeAttr('disabled',true)
-                    console.log(vat2);
+                    
+                    console.log(data);
+                    // console.log(ngo);
+                    
                     } // รวม
               );  
         }

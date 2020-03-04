@@ -19,6 +19,7 @@
     <script src="<?php echo base_url(); ?>assets/js/material-kit.js?v=2.0.6" type="text/javascript"></script>
     <!--Datepicker -->
     <script src="<?php echo base_url('/assets argon/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'); ?>"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets argon/vendor/jquery/jquery.min.js"></script> -->
 </body>
 
 <script>

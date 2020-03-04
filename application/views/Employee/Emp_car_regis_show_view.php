@@ -355,12 +355,17 @@
 </div>
 
                                 <!-- <script>
-
+                                            // $(function(){
+                                            //     $('img').EZView();
+                                            // });
                                 var de = 0;
                                 var up = 0;
                                 var down = 0;
                                 var kk = 0;
-                                $(document).ready(function(){  
+                                var aa = 0;
+                                $("#RentalPrice").ready(function(){
+                                     aa = $('#RentalPrice').val();
+                                });
                                 $("#RentalPrice").change(function(){
 
                                 
@@ -385,8 +390,8 @@
                                 else
                                 {
                                     
-                                     //alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
-                                    $("#RentalPrice").val(null);
+                                    alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
+                                    $("#RentalPrice").val(aa);
                                     $("#RentalPrice").focus();
                                     
                                 }
@@ -394,5 +399,5 @@
 
                                     
                                 }); 
-                                });
+                               
                                 </script> -->

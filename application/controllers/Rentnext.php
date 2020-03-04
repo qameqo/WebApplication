@@ -125,7 +125,68 @@ class Rentnext extends CI_Controller {
         $total3 = $total2 * $vat; //ราคา vat
         $totalprice = $total2 + $total3; //ราคารวมประกันพื้นฐาน
         $totalplus = $totalprice;
-        echo $totalplus;
+        //echo $totalplus;
+        $a = 1000;
+        $aa = 2001;
+        $aaa = 3001;
+        $aaaa = 4001;
+        $aaaaa = 5000;
+        $a1 = 1001;
+        $b = 2000;
+        $bb = 3000;
+        $bbb = 4000;
+        $stand1 = 250;
+        $stand2 = 350;
+        $stand3 = 450;
+        $stand4 = 550;
+        $stand5 = 650;
+        $stand6 = 750;
+        // ราคาต่ำกว่า 1000
+        $nn =  $stand1 + $gh;
+        $nnn = $nn * $vat;
+        $n = $nnn + $nn;
+        
+        //ราคา 1001-2000
+        $oo =  $stand2 + $gh;
+        $ooo = $oo * $vat;
+        $o = $ooo + $oo;
+
+        //ราคา 2001-3000
+        $mm =  $stand3 + $gh;
+        $mmm = $mm * $vat;
+        $m = $mmm + $mm;
+
+        //ราคา 3001-4000
+        $pp =  $stand4 + $gh;
+        $ppp = $pp * $vat;
+        $p = $ppp + $pp;
+
+        //ราคา 4001-5000
+        $ll =  $stand5 + $gh;
+        $lll = $ll * $vat;
+        $l = $lll + $ll;
+
+        //ราคามากกว่า 5000
+        $kk =  $stand6 + $gh;
+        $kkk = $kk * $vat;
+        $k = $kkk + $kk;
+        //$insstand = $gh * $fg; // ราคาประกัน
+        if($gh <= $a){
+              
+              echo $n;
+        }else if(($gh >= $a1) && ($gh <= $b))
+        {     echo $o;
+        }else if(($gh >= $aa) && ($gh <= $bb)){
+              echo $m;
+        }else if(($gh >= $aaa) && ($gh <= $bbb)){
+              echo $p;
+        }
+        else if(($gh >= $aaaa) && ($gh <= $aaaaa)){
+            echo $l;
+        }
+        else if($gh > $aaaaa){
+            echo $k;
+        }
         
     }
     
@@ -163,7 +224,68 @@ class Rentnext extends CI_Controller {
         $total3 = $total2 * $vat; //ราคา vat
         $totalpric = $total2 + $total3; //ราคารวมประกันพรีเมี่ยม
         $totalpluss = $totalpric;
-        echo $totalpluss;
+        //echo $totalpluss;
+        $a = 1000;
+        $aa = 2001;
+        $aaa = 3001;
+        $aaaa = 4001;
+        $aaaaa = 5000;
+        $a1 = 1001;
+        $b = 2000;
+        $bb = 3000;
+        $bbb = 4000;
+        $stand1 = 400;
+        $stand2 = 500;
+        $stand3 = 600;
+        $stand4 = 700;
+        $stand5 = 800;
+        $stand6 = 900;
+        // ราคาต่ำกว่า 1000
+        $nn =  $stand1 + $gh;
+        $nnn = $nn * $vat;
+        $n = $nnn + $nn;
+        
+        //ราคา 1001-2000
+        $oo =  $stand2 + $gh;
+        $ooo = $oo * $vat;
+        $o = $ooo + $oo;
+
+        //ราคา 2001-3000
+        $mm =  $stand3 + $gh;
+        $mmm = $mm * $vat;
+        $m = $mmm + $mm;
+
+        //ราคา 3001-4000
+        $pp =  $stand4 + $gh;
+        $ppp = $pp * $vat;
+        $p = $ppp + $pp;
+
+        //ราคา 4001-5000
+        $ll =  $stand5 + $gh;
+        $lll = $ll * $vat;
+        $l = $lll + $ll;
+
+        //ราคามากกว่า 5000
+        $kk =  $stand6 + $gh;
+        $kkk = $kk * $vat;
+        $k = $kkk + $kk;
+        //$insstand = $gh * $fg; // ราคาประกัน
+        if($gh <= $a){
+              
+              echo $n;
+        }else if(($gh >= $a1) && ($gh <= $b))
+        {     echo $o;
+        }else if(($gh >= $aa) && ($gh <= $bb)){
+              echo $m;
+        }else if(($gh >= $aaa) && ($gh <= $bbb)){
+              echo $p;
+        }
+        else if(($gh >= $aaaa) && ($gh <= $aaaaa)){
+            echo $l;
+        }
+        else if($gh > $aaaaa){
+            echo $k;
+        }
         
     }
     

@@ -32,7 +32,7 @@
                 <?php } ?>
                 <div class="row">
                     <div class="col-sm">
-                        <span style="color:red;">* กรุณาส่งรถตามวันที่ลูกค้ากำหนด</span>
+                        <span style="color:red;">* กรุณาส่งรถตามวันที่ลูกค้ากำหนดพร้อมกับเตรียมเอกสารเพื่อมายืนยัน</span>
                     </div>
                 </div>
                 <br>
