@@ -105,7 +105,7 @@ class Emp_rental_model extends CI_Model
         $data = array( 
             'id_Employee_2' => $this->session->userdata('id_Employee'),
             'id_status' => $this->input->post('id_status'),
-            'PriceFive' => 5000,
+            'PriceFive' => $this->input->post('PriceFive'),
             'totalprice' => $this->input->post('totalprice')
         );
 
@@ -230,7 +230,18 @@ class Emp_rental_model extends CI_Model
                         'totalprice' => $new_total
                     );
 
-                    $query_2=$this->db->update('Rental',$data);
+                    $query_2=$this->db->update('Rental',$data);     
+
+                    if($this->input->post('id_Status') == 13){
+
+                        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                    
+                        $data = array( 
+                            'id_Status' => $this->input->post('id_Status'),
+                        );
+
+                        $query_2=$this->db->update('Carregis',$data);
+                    }
 
                     echo "<script>";
                     echo "alert('ยืนยันการคืนเรียบร้อย');";
@@ -258,6 +269,17 @@ class Emp_rental_model extends CI_Model
                     );
 
                     $query_2=$this->db->update('Rental',$data);
+
+                    if($this->input->post('id_Status') == 13){
+
+                        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                    
+                        $data = array( 
+                            'id_Status' => $this->input->post('id_Status'),
+                        );
+
+                        $query_2=$this->db->update('Carregis',$data);
+                    }
 
                     // print_r($data);
 
@@ -293,6 +315,17 @@ class Emp_rental_model extends CI_Model
 
                     $query_2=$this->db->update('Rental',$data);
 
+                    if($this->input->post('id_Status') == 13){
+
+                        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                    
+                        $data = array( 
+                            'id_Status' => $this->input->post('id_Status'),
+                        );
+
+                        $query_2=$this->db->update('Carregis',$data);
+                    }
+
                     echo "<script>";
                     echo "alert('ยืนยันการคืนเรียบร้อย');";
                     echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
@@ -310,7 +343,18 @@ class Emp_rental_model extends CI_Model
                     'Fines_price' => $this->input->post('Fines_price')
                 );
 
-                $query_2=$this->db->update('Rental',$data);
+                $query_2=$this->db->update('Rental',$data);     
+
+                if($this->input->post('id_Status') == 13){
+
+                    $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                
+                    $data = array( 
+                        'id_Status' => $this->input->post('id_Status'),
+                    );
+
+                    $query_2=$this->db->update('Carregis',$data);
+                }
 
                 echo "<script>";
                 echo "alert('ยืนยันการคืนเรียบร้อย');";

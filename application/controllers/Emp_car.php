@@ -27,6 +27,15 @@ class Emp_car extends CI_Controller {
         $this->load->view('Employee/Footer_emp');
     } 
 
+    public function index_3()
+    {   
+        $data['query']=$this->Manager_car_regis_model->show_car_regis();
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_car_regis_view_3', $data);
+        $this->load->view('Employee/Footer_emp');
+    } 
+
     public function show($idCarregis)
     {
         //$this->db->get('Table', limit, offset);

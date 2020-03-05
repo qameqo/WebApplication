@@ -226,6 +226,11 @@
                                     echo'<span class="badge badge-danger" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                 }
+                                else if($rs->id_Status == '13')
+                                    {
+                                        echo'<span class="badge badge-default" style="font-size:13px;">';
+                                        echo $rs->Name_Status; 
+                                    }
                                 ?>
                                 </span></td>
                             </tr> 
@@ -347,7 +352,17 @@
 
                     }?>
 
-                                       
+
+                    <?php if ($rs->id_Status == '13') { //เปลี่ยนซ่อมเป็นพร้อมใช้ 13 เป็น 5?>  
+                        <form action="<?php echo site_url('Manager_car_regis/add_status_13'); ?>" method="POST" class="form-horizontal">
+
+                            <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">  
+                            <input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>
+                            <button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ซ่อมเสร็จเรียบร้อย</button>
+
+                        </form>
+
+                    <?php }?>              
 
             </div>
         </div>

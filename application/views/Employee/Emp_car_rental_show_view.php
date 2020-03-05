@@ -316,6 +316,12 @@
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
                         echo $rs->totalprice + 5000;
                         echo '" style="font-size:20px;" required>';
+                        echo '
+                            <div class="row justify-content-center">    
+                            <div class="col-3">
+                                <label class="label mt-5">ราคามัดจำ 5000 บาท</label>
+                                <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="5000">
+                            </div></div>';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';
 
@@ -364,12 +370,19 @@
                                 <div class="col-3"> 
                                     <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000
                                 </div>
+                                <div class="col-3"> 
+                                    <input class="form-check-input" type="checkbox" name="id_Status" value="13"> รถยนต์เสียหาย
+                                </div>
                             </div>  
 
                             <?php
                             //  $idRental = $rs->idRental;
                             echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                             echo $rs->idRental; 
+                            echo '">';
+
+                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            echo $rs->idCarregis; 
                             echo '">';
         
                             echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
