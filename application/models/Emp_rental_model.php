@@ -199,17 +199,22 @@ class Emp_rental_model extends CI_Model
 
         //--------------------------------------------------------------------
 
-        $query = $this->db->query("SELECT * FROM Rental ");
-            
-        $qq = $query->result_array();
+        $this->db->select('*');
+        $this->db->from('Rental');
+        
+        $this->db->where('idRental', $this->input->post('idRental'));
 
+        $query = $this->db->get();
+
+        $qq = $query->result_array();
+        
         if($this->input->post('PriceFive') == '0'){ //คืน 5000
 
             if($this->input->post('Fines_price') != 0){  //total - 5000 + ค่าปรับ
 
                 foreach ($qq as $data2) {
 
-                    $new_total = ($data2['totalprice'] - 5014) + $this->input->post('Fines_price');
+                    $new_total = ($data2['totalprice'] - 5000) + $this->input->post('Fines_price');
 
                     // echo $new_total;
                     // exit;
@@ -236,7 +241,7 @@ class Emp_rental_model extends CI_Model
 
                 foreach ($qq as $data2) { //total - 5000
 
-                    $new_total = ($data2['totalprice'] - 5014);
+                    $new_total = ($data2['totalprice'] - 5000);
 
                     // echo $new_total;
                     // exit;
@@ -253,6 +258,10 @@ class Emp_rental_model extends CI_Model
                     );
 
                     $query_2=$this->db->update('Rental',$data);
+
+                    // print_r($data);
+
+                    // exit;
 
                     echo "<script>";
                     echo "alert('ยืนยันการคืนเรียบร้อย');";

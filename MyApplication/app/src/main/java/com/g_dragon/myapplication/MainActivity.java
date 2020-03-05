@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        WebView webView = new WebView(this);
+        setContentView(webView);
+        webView.loadUrl("https://www.keeate.com/");
     }
 
     @Override

@@ -310,7 +310,7 @@ $("input[name='date1']").ready(function(){
               
               
               <button class="btn btn-outline" 
-								style="background-color: #F60200; color: white; height:45px;" id="re${book2.id_Member}" disabled>จองรถ</button>
+								style="background-color: #D3D3D3; color: white; height:45px;" id="re${book2.id_Member}" disabled>จองรถ</button>
               <a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;" id="rent${book2.id_Member}" 
 								href="<?php echo site_url('Rentnext/one/');?>${book2.idCarregis}/${startdat}/${dateendd}">จองรถ</a>
               

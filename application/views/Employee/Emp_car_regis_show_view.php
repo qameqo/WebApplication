@@ -253,13 +253,18 @@
                                 ?>
                         
                                 <div class="row justify-content-center">
+
+                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format(($rs->Price * 0.15)/100,0);?> ถึง <?php echo number_format(($rs->Price * 0.25)/100,0);?> บาท/วัน</span><br>
+                                
                                     <div class="col-3">
                                         <label class="label mt-5">ราคาทางร้าน</label>
-                                        <input type="text" disabled name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
                                     </div>
                                     <div class="col-3">
                                         <label class="label mt-5">แก้ไขราคาใหม่</label>
                                         <input type="text" name="RentalPrice" id="RentalPrice" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                                        <input type="hidden" id="up"name="up" value="<?php echo ($rs->Price * 0.25)/100;?>">
+				                        <input type="hidden" id="down"name="down" value="<?php echo ($rs->Price * 0.15)/100;?>">
                                     </div>
                                 </div>   
                             
@@ -348,3 +353,40 @@
         </div>
     </div>
 </div>
+
+<!-- <script>
+
+                                $("#RentalPrice").change(function(){ 
+
+                                
+                                var de = $("#RentalPrice").val();
+                                var up = $("#up").val();
+                                var down = $("#down").val();
+                                var pow = $("#pow").val();
+                                // var one = de.toFixed(0);
+                                // var two = up.toFixed(0);
+                                // var three = down.toFixed(0);
+                                console.log("de ="+de)
+                                console.log("up ="+up)
+                                console.log(down)
+                                console.log(pow)
+                                var kk = parseInt(de)
+                                //(de == pow && de > up) || (de == pow  && de < down)
+                                if((kk >= down) && (kk <= up))
+                                {
+
+                                    
+                                }
+                                else
+                                {
+                                    
+                                    alert('ราคานี้ไม่อยู่ในข้อเสนอของทางบริษัท');
+                                    $("#RentalPrice").val(null);
+                                    $("#RentalPrice").focus();
+                                    
+                                }
+
+
+                                    
+                                }); 
+                                </script> -->

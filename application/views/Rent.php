@@ -133,7 +133,7 @@
 								  ?>
 							<?php if($mem == $me){ ?>
 								<button class="btn btn-outline" 
-								style="background-color: #F60200; color: white; height:45px;" id="re" disabled>จองรถ</button>
+								style="background-color: #D3D3D3; color: white; height:45px;" id="re" disabled>จองรถ</button>
 							<?php }else
 							      { ?>
 								<a class="btn btn-outline" style="background-color: #F60200; color: white; height:45px;"

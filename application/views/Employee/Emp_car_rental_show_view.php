@@ -25,6 +25,10 @@
                                 <td width="70%"><?php echo $rs->Name_Gen; ?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>วันที่ทำรายการเช่า</label></td>
+                                <td width="70%"><?php echo $rs->Datebooking; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>
                                 <td width="70%"><?php echo $rs->startDate; ?></td>
                             </tr>
@@ -327,86 +331,7 @@
                         // echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="6" style="font-size:20px;" required>';
                         // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         // echo '</form>';
-                        
-                               ?>
-                               
-                               <!-- Large modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="font-size:20px;">เปลี่ยนรถยนต์</button>
-
-                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">รายการเช่ารถใหม่</h4>
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-
-                                            <form action="<?php echo site_url('manager_emp/add_emp'); ?>" method="POST" id="insert_form">
-
-                                                <div class="modal-body">
-
-                                                    <input type="hidden" name="id_emp" id="id_emp" class="form-control">
-
-                                                    <div class="form-group">
-                                                        <label for="Username">Username</label>
-                                                        <input type="text" name="Username" id="Username" class="form-control" placeholder="Username"
-                                                            required>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="Password">Password</label>
-                                                        <input type="password" class="form-control" name="Password" id="Password" placeholder="Password"
-                                                            required >
-
-                                                    </div>
-
-                                                    <div class="form-row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label for="First name">First name</label>
-                                                                <input type="text" name="F_Name" id="F_Name" class="form-control"
-                                                                    placeholder="First name" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label for="Last name">Last name</label>
-                                                                <input type="text" name="L_Name" id="L_Name" class="form-control"
-                                                                    placeholder="Last name" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="Address">Address</label>
-                                                        <textarea class="form-control" name="Address" id="Address" rows="3" required></textarea>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="Tel">Tel.</label>
-                                                        <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" required
-                                                            pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="กรุณากรอกให้ครบ 10 หลัก 0800000000">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="Row">Row select</label>
-                                                        <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">
-                                                            <option value="1">พนักงาน</option>
-                                                            <option value="2">ช่างซ่อมบำรุง</option>
-                                                            <option value="3">เจ้าหน้าที่ประกัน</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <input style="font-size:16px" type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="บันทึกข้อมูล" />
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-
-                               <?php            
+                                  
                     }?>
 
 
@@ -421,7 +346,7 @@
                         if (date("Y-m-d") >=  $rs->endDate) {
 
                             echo '<form action="'; 
-                            echo site_url('Emp_rental/add_status_4/'); 
+                            echo site_url('Emp_rental/add_status_4/'.$rs->idRental); 
                             echo '" method="POST" class="form-horizontal">';
 
                             echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
@@ -442,7 +367,7 @@
                             </div>  
 
                             <?php
-                            
+                            //  $idRental = $rs->idRental;
                             echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
                             echo $rs->idRental; 
                             echo '">';
@@ -458,36 +383,36 @@
                                 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 2; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 2; ?>">
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 4; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 4; ?>">
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->PriceCar; ?>">
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
                                 </div>
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->PriceCar * 6; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 6; ?>">
                                 </div>
 
                             <?php }else{ ?>
