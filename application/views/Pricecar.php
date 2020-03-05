@@ -11,7 +11,9 @@
 
 				<?php 
 				
-				$query = $this->db->query('SELECT * FROM Generation , Brand WHERE Brand.idBrand = Generation.idBrand and Generation.id_Gen = '. $id);
+				$query = $this->db->query("SELECT * FROM Carregis INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN 
+				Brand on Brand.idBrand = Carregis.idBrand
+				WHERE Generation.id_Gen = '$id'");
 				// $this->db->select('*');
 				// $this->db->from('Brand' , 'Generation');
 				// $this->db->where('Genaretion.idBrand');
@@ -28,9 +30,9 @@
 						</label>
 						<?php foreach($qq as $data){
 								
-                                ?>
+                                ?><?php  } ?>
 						<h5><?php echo $data['Name_Brand']; ?> <?php echo $data['Name_Gen']; ?></h5>
-						<?php  } ?>
+						
 					</div>
 				</div>
 				<?php  
@@ -42,13 +44,32 @@
 								$ee = 1000;
 								$total = $ei * $eii * $e / $ee;
 								$total2 = $ei * $eiii * $e / $ee;
+								/////////////////////////////
+								$ei = $data['Price'];
+								$year = date('Y');
+								$yearcar = $data['Yearlicense'];
+								$yl = $year - $yearcar; //จำนวนปี
+								$yl = $yl / 10000;
+								$raka = 0.0018 - $yl;
+								$raka3 = 0.0022 - $yl;
+								$raka2 = $ei * $raka;	//ราคารถต่ำ
+								$raka1 = $ei * $raka3; //ราคารถสูง
 						?>
+				<?php $query = $this->db->query("select * from Carregis where idCarregis='$idc'");
+					  $nm = $query->result_array();
+
+				 ?>
+				 <?php foreach($nm as $data){ ?>
+					 
+					 <input type="hidden" id="year" value="<?php echo $data['Yearlicense']; ?>">
+					 <input type="hidden" id="now" value="<?php echo date('Y') ?>">
+			<?php	 } ?><?php } ?>
 				<div class="row justify-content-center">
-				<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($total2,0);?> ถึง <?php echo number_format($total,0);?> บาท/วัน</span>
-				<input type="hidden" id="up"name="up" value="<?php echo round($total,0);?>">
-				<input type="hidden" id="down"name="down" value="<?php echo round($total2,0);?>">
+				<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($raka2,0);?> ถึง <?php echo number_format($raka1,0);?> บาท/วัน</span>
+				<input type="hidden" id="up"name="up" value="<?php echo round($raka1,0);?>">
+				<input type="hidden" id="down"name="down" value="<?php echo round($raka2,0);?>">
 				</div>
-							<?php } ?>
+							
 				<br>
 				<div class="row">
 					<div class="col-sm text-right">
@@ -60,15 +81,19 @@
 						<?php  
 							foreach($qq as $data){
 								$ei = $data['Price'];
-								$eii = 0.2;
-								$e = 10;
-								$ee = 1000;
-								$total = $ei * $eii * $e / $ee;
+								$year = date('Y');
+								$yearcar = $data['Yearlicense'];
+								$yl = $year - $yearcar; //จำนวนปี
+								$yl = $yl / 10000;
+								$raka = 0.002 - $yl;
+								$raka2 = $ei * $raka; //ราคารถแนะนำ
+								
 						?>
-						<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($total,0) ?>"
+						<?php } ?>
+						<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($raka2,0) ?>"
 							style="width: 200px; height:25px;" disabled>
 							<input type="hidden" id="pow"name="pow" value="<?php echo round($total,0);?>">
-						<?php } ?>
+						
 					</div>
 					<div class="col-sm">
 						<h5>บาท/วัน</h5>
@@ -258,4 +283,59 @@ else
 
 	   
 }); 
+</script>
+<script>
+var idc = 0;
+var id = 0;
+$('#check').change(function(){
+	 idc = <?php echo $idc ?>;
+	 id = <?php echo $id ?>;
+	var da = $('#year').val();
+	var now = $('#now').val();
+	var ok = now - da;
+	
+	
+	// if(ok == 2){
+		//ปัจจุบัน
+		$.get("<?=base_url('Pricecar/Price1/')?>"+id+"/"+idc, 
+                  function (data) {
+					  console.log(data)
+					console.log(ok);
+                     var vat = data * 0.002; //ปัจจุบัน
+					 var vat2 = data * 0.0019;	//2019
+					 var vat3 = data * 0.0018;  //2018
+					 var vat3 = data * 0.0017;  //2017
+					 var vat3 = data * 0.0016;  //2016
+					 var vat3 = data * 0.0015;  //2015
+					 var vat3 = data * 0.0014;  //2014
+					
+                    // var vat2 = vat * 7 / 107;
+                    // var vat3 = vat2.toFixed(0);
+                    // var total5 = data * ngo; 
+                    // var game5 =  total5.toFixed(0);
+                    // var tot5 = game5.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    // $("#total").text(tot5 + " บาท")
+                    // $("#total2").val(game5)
+                    // $("#totalvat").val(vat3)
+                    // $("#book").removeAttr('disabled',true)
+				  });
+
+               
+        
+	// }else if(){
+	// 	//2019
+	// }else if(){
+	// 	//2018
+	// }else if(){
+	// 	//2017
+	// }else if(){
+	// 	//2016
+	// }else if(){
+	// 	//2015
+	// }else if(){
+	// 	//2014
+	// }
+	
+});
+	
 </script>

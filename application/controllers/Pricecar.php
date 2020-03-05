@@ -57,6 +57,59 @@ class Pricecar extends CI_Controller {
         echo $qb;
         
     }
+    public function Price1($id,$idc){
+        $query = $this->db->query("SELECT * FROM Carregis INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen
+         WHERE Generation.id_Gen = $id and Carregis.idCarregis = '$idc'");
+         $qq = $query->result_array();
+         $aa = $qq[0]['Price'];
+         $year = $qq[0]['Yearlicense'];
+         $y = date('Y');
+         $year1 = $y - $year;
+         $raka1 = 0.002;
+         $raka2 = 0.0019;
+         $raka3 = 0.0018;
+         $raka4 = 0.0017;
+         $raka5 = 0.0016;
+         $raka6 = 0.0015;
+         $raka7 = 0.0014;
+        $total1 = $aa * $raka1;
+        $total2 = $aa * $raka2;
+        $total3 = $aa * $raka3;
+        $total4 = $aa * $raka4;
+        $total5 = $aa * $raka5;
+        $total6 = $aa * $raka6;
+        $total7 = $aa * $raka7;
+         if($year1 == 0){
+               echo $total1;
+         }elseif($year1 == 1){
+            echo $total1;
+         }elseif($year1 == 2){
+            echo $total2;
+        }elseif($year1 == 3){
+            echo $total3;
+        }elseif($year1 == 4){
+            echo $total4;
+        }elseif($year1 == 5){
+            echo $total5;
+        }elseif($year1 == 6){
+            echo $total6;
+        }elseif($year1 == 7){
+            echo $total7;
+        }elseif($year1 > 7){
+            echo "อายุการใช้งานเกินไม่สามารถลงทะเบียนได้";
+        }
+        
+    }
+    public function hee()
+    {
+        $hee = 2020 - 2019;
+        $hee = $hee /10000;
+        $raka = 0.002 - $hee;
+        
+       
+        $raka1 = 549000 * $raka;
+        echo $raka1;
+    }
 
 }
 
