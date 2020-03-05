@@ -255,5 +255,29 @@ class Manager_car_regis_model extends CI_Model
         // redirect('Manager_emp');
              
     }
+
+    public function add_status_13() //จขร. อนุมัติลงทะเบียน
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Status' => $this->input->post('id_Status'),
+        );
+
+        $query=$this->db->update('Carregis',$data);
+
+        // exit;
+ 
+        echo "<script>";
+        echo "alert('เปลี่ยนสถานะเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_car/index_3';";
+        echo "</script>";
+
+        // redirect('Manager_emp');
+    }
 }
 ?>

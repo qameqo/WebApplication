@@ -30,7 +30,7 @@
 						<tbody>
 
                             <?php foreach ($query as $rs) { 
-                            if ($rs->id_Status == '5' || $rs->id_Status == '7') { 
+                            if ($rs->id_Status == '13') { 
                             
                             ?>
 

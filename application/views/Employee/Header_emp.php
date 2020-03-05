@@ -66,9 +66,11 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item"
                                 href="<?php echo site_url(); ?>Emp_car">จัดการข้อมูลการรับรถยนต์</a>
+                            <a class="dropdown-item"
+                                href="<?php echo site_url(); ?>Emp_car/index_3">จัดการข้อมูลซ่อมรถยนต์</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
-                                href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลการรับรถยนต์</a>
+                                href="<?php echo site_url(); ?>Emp_car/index_2">ตรวจสอบข้อมูลรถยนต์ลงทะเบียน</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
                                 href="<?php echo site_url(); ?>Emp_rental">จัดการข้อมูลการโอนเงินเช่ารถยนต์</a>

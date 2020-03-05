@@ -170,6 +170,11 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->del_rental($idRental);
     }
 
+    public function add_status_13()
+    {
+        $this->Manager_car_regis_model->add_status_13();
+    }
+
 
 }
 

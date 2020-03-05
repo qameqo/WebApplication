@@ -24,7 +24,7 @@
                                 <th data-column-id="Brand">เงินค่าปรับ</th>
                                 <th data-column-id="Brand">รายได้เจ้าของรถ</th>
                                 <th data-column-id="Brand">รายได้ทางร้าน</th>
-                                <th data-column-id="Generation">รายได้รวม</th>
+                                <th data-column-id="Generation">รายได้รวมทั้งหมด</th>
 
                                 <th data-column-id="Action"></th>
                             </tr>
@@ -48,7 +48,7 @@
 								<td><?php echo $rs->PriceFive; ?></td>
 								<td><?php echo $rs->Fines_price; ?></td>
                                 <td><?php echo $rs->Carownerincome; ?></td>
-								<td><?php echo $rs->Companyincome; ?></td>
+								<td><?php echo $rs->Companyincome + $rs->PriceFive + $rs->Fines_price; ?></td>
 								<td><?php echo $rs->totalprice; ?></td>
 								
                                 <td>
@@ -70,7 +70,7 @@
                                 <th data-column-id="Brand">เงินค่าปรับ</th>
                                 <th data-column-id="Brand">รายได้เจ้าของรถ</th>
                                 <th data-column-id="Brand">รายได้ทางร้าน</th>
-                                <th data-column-id="Generation">รายได้รวม</th>
+                                <th data-column-id="Generation">รายได้รวมทั้งหมด</th>
 
                                 <th data-column-id="Action"></th>
 							</tr>
