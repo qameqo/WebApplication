@@ -15,16 +15,14 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th data-column-id="Brand">ไอดี</th>
-
-                                <th data-column-id="Brand">ราคารถยนต์</th>
-                                <th data-column-id="Brand">ราคาประกัน</th>
-                                <th data-column-id="Brand">ภาษีมูลค่าเพิ่ม (7%)</th>
-                                <th data-column-id="Brand">เงินมัดจำการเช่ารถยนต์</th>
-                                <th data-column-id="Brand">เงินค่าปรับ</th>
-                                <th data-column-id="Brand">รายได้เจ้าของรถ</th>
-                                <th data-column-id="Brand">รายได้ทางร้าน</th>
-                                <th data-column-id="Generation">รายได้รวมทั้งหมด</th>
+                                <th data-column-id="Brand">รหัสการเช่า</th>
+                                
+                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Brand">รุ่น</th>
+                                <th data-column-id="Brand">วันเริ่มเช่า</th>
+                                <th data-column-id="Brand">วันคืนรถ</th>
+                                <th data-column-id="Brand">วันคืนจริง</th>
+                                <th data-column-id="Generation">รายได้รวม</th>
 
                                 <th data-column-id="Action"></th>
                             </tr>
@@ -42,14 +40,13 @@
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
 
-								<td><?php echo $rs->PriceCar; ?></td>
-								<td><?php echo $rs->PriceIns; ?></td>
-								<td><?php echo $rs->PriceVat; ?></td>
-								<td><?php echo $rs->PriceFive; ?></td>
-								<td><?php echo $rs->Fines_price; ?></td>
-                                <td><?php echo $rs->Carownerincome; ?></td>
-								<td><?php echo $rs->Companyincome + $rs->PriceFive + $rs->Fines_price; ?></td>
-								<td><?php echo $rs->totalprice; ?></td>
+								<td><?php echo $rs->Name_Brand; ?></td>
+								<td><?php echo $rs->Name_Gen; ?></td>
+								<td><?php echo $rs->startDate; ?></td>
+								<td><?php echo $rs->endDate; ?></td>
+								<td><?php echo $rs->ReturnDate; ?></td>
+								<td><?php echo $rs->Companyincome + $rs->PriceFive + $rs->Fines_price + $rs->PriceVat;?></td>
+								
 								
                                 <td>
                                 <a href="<?php echo site_url('Manager_car_regis/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
@@ -60,7 +57,7 @@
                         <?php }} ?>
 
 						</tbody>
-						<tfoot>
+						<!-- <tfoot>
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
                                 <th data-column-id="Brand">ราคารถยนต์</th>
@@ -74,7 +71,7 @@
 
                                 <th data-column-id="Action"></th>
 							</tr>
-						</tfoot>
+						</tfoot> -->
                     </table>
                 </div>
             </div>

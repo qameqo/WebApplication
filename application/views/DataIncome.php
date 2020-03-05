@@ -21,6 +21,14 @@
                         $qq = $query->result_array();
                         
 						?>
+                        
+                        <?php 
+                        $id = $this->session->userdata('ID');
+                        $query = $this->db->query("SELECT SUM(Carownerincome) AS raka FROM Rental
+                         INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '$id'");
+                            $nn = $query->result_array();
+                         ?>
+                          <h5>รายได้รวมทั้งหมด <?php echo number_format($nn[0]["raka"],0) ?> บาท</h5>
                 <div class="col-md-12 mb-5 text-center">
                     <br>
                     <table id="employee_data" class="table table-striped table-bordered text-center"
@@ -31,10 +39,10 @@
                                 <th data-column-id="Name_image" style="width: 150px;">ยี่ห้อ</th>
                                 <th data-column-id="Name_image" style="width: 200px;">รุ่น</th>
                                 <th data-column-id="Name_image" style="width: 200px;">ทะเบียน</th>
-                                <th data-column-id="Name_image" style="width: 100px;">รายได้</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันเริ่มเช่า</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันส่งคืน</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันส่งคืนจริง</th>
+                                 <th data-column-id="Name_image" style="width: 100px;">รายได้</th>
                             
                             </tr>
                         </thead>
@@ -47,10 +55,10 @@
                                 <td><?php echo $data['Name_Brand'];?></td>
                                 <td><?php echo $data['Name_Gen'];?></td>
                                 <td><?php echo $data['License'];?></td>
-                                <td><?php echo number_format($data['Carownerincome'],0)?>&nbsp;บาท</td>
                                 <td><?php echo $data['startDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
                                 <td><?php echo $data['ReturnDate'];?></td>
+                                <td><b><?php echo number_format($data['Carownerincome'],0)?></b>&nbsp;บาท</td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
                                 <!-- <?php if($data['Name_Status'] == 'รออนุมัติ')
