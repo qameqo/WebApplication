@@ -6,9 +6,10 @@
                 <div class="row">
                     <div class="col-md-10">
                         <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
+                        
                     </div>
                 </div>
-                
+
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -28,9 +29,10 @@
                             </tr>
                         </thead>
 						<tbody>
-
+                        
                         <?php foreach ($query as $rs) {       
-                            
+                              
+                     
                             if($rs->id_status == '12'){
                             
                         ?>
@@ -39,14 +41,13 @@
 							<tr>
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
-
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
 								<td><?php echo $rs->startDate; ?></td>
 								<td><?php echo $rs->endDate; ?></td>
 								<td><?php echo $rs->ReturnDate; ?></td>
 								<td><b><?php echo number_format($rs->Companyincome + $rs->PriceFive + $rs->Fines_price + $rs->PriceVat,0);?></b>&nbsp;บาท</td>
-								
+                               
 								
                                 <td>
                                 <a href="<?php echo site_url('Manager_car_regis/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
