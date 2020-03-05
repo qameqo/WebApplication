@@ -271,7 +271,7 @@
 						<form action="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>">
  						<div class="col-sm">
  								<div class="box__input">
-									<?php if($countimg1[0]["img"] > 0 && $countimg2[0]["img2"] == 3) { ?>
+									<?php if($countimg1[0]["img"] > 3 && $countimg2[0]["img2"] == 3) { ?>
  									<button class="btn" style="background-color: #F60200; color:white;" 
 									 onclick="return confirm('ยืนยันข้อมูล ?');">ดำเนินการต่อ</button>
 									 <?php } 

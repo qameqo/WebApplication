@@ -257,8 +257,33 @@
                             {  
                                 ?>
                             <br>
+                                <?php $query = $this->db->query("SELECT * FROM Carregis INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN 
+                                Brand on Brand.idBrand = Carregis.idBrand
+                                WHERE Generation.id_Gen = '$rs->id_Gen'");
+                                $qqa = $query->result_array(); 
+                                ?>
+                           <?php foreach($qqa as $data){
+								$ei = $data['Price'];
+								$eii = 0.23;
+								$eiii = 0.17;
+								$e = 10;
+								$ee = 1000;
+								$total = $ei * $eii * $e / $ee;
+								$total2 = $ei * $eiii * $e / $ee;
+								/////////////////////////////
+								$ei = $data['Price'];
+								$year = date('Y');
+								$yearcar = $data['Yearlicense'];
+								$yl = $year - $yearcar; //จำนวนปี
+								$yl = $yl / 10000;
+								$raka = 0.0018 - $yl;
+								$raka3 = 0.0022 - $yl;
+								$raka2 = $ei * $raka;	//ราคารถต่ำ
+								$raka1 = $ei * $raka3; //ราคารถสูง
+						?>
+                        <?php } ?>
                                 <div class="row justify-content-center">
-                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format(($rs->Price * 0.17)/100,0);?> ถึง <?php echo number_format(($rs->Price * 0.23)/100,0);?> บาท/วัน</span>
+                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($raka2,0);?> ถึง <?php echo number_format($raka1,0);?> บาท/วัน</span>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-3">
