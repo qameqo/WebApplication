@@ -336,9 +336,15 @@ class Manager_car_regis_model extends CI_Model
         foreach ($qq as $data) {
 
             $rs = $data['totalprice']-$this->input->post('Total');
+            $rs2 = $data['PriceFive']-$this->input->post('Price_Five');
+            $rs3 = $data['PriceIns']-$this->input->post('Price_Ins');
+            $rs4 = $data['Companyincome']-$this->input->post('Price_manager');
             
             $data_4 = array( 
                 'totalprice' =>  $rs,
+                'PriceFive' => $rs2,
+                'PriceIns' => $rs3,
+                'Companyincome' => $rs4,
             );
 
             $query_4=$this->db->update('Rental',$data_4);

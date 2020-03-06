@@ -436,7 +436,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="form-group prc">
-                                    <label for="exampleInputPassword1">รายจ่ายทางร้าน</label>
+                                    <label for="exampleInputPassword1">รายจ่ายเงินทางร้าน <?php echo $data['Companyincome']; ?></label>
                                     <input type="number" id="Price_manager" name="Price_manager" class="form-control prc" value="0" required >
                                 </div>
                             </div>
