@@ -259,36 +259,67 @@
                             <br>
                                 <?php $query = $this->db->query("SELECT * FROM Carregis INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN 
                                 Brand on Brand.idBrand = Carregis.idBrand
-                                WHERE Generation.id_Gen = '$rs->id_Gen'");
+                                WHERE Generation.id_Gen = '$rs->id_Gen' and Carregis.idCarregis = '$rs->idCarregis'");
                                 $qqa = $query->result_array(); 
                                 ?>
                            <?php foreach($qqa as $data){
-								$ei = $data['Price'];
-								$eii = 0.23;
-								$eiii = 0.17;
-								$e = 10;
-								$ee = 1000;
-								$total = $ei * $eii * $e / $ee;
-								$total2 = $ei * $eiii * $e / $ee;
+								
 								/////////////////////////////
 								$ei = $data['Price'];
 								$year = date('Y');
-								$yearcar = $data['Yearlicense'];
+                                $yearcar = $data['Yearlicense'];
+                                //$yearc = $data['Yearcar'];
 								$yl = $year - $yearcar; //จำนวนปี
-								$yl = $yl / 10000;
-								$raka = 0.0018 - $yl;
-								$raka3 = 0.0022 - $yl;
-								$raka2 = $ei * $raka;	//ราคารถต่ำ
-								$raka1 = $ei * $raka3; //ราคารถสูง
+                                $ei1 = $ei * 1.1;
+                                $ei2 = $ei * 0.9;
+                                $ei3 = $ei * 0.7;
+                                $ei4 = $ei * 0.5;
+                                $price1 = $ei1 * 0.0018;    $price11 = $ei1 * 0.0022;
+                                $price2 = $ei2 * 0.0018;    $price22 = $ei2 * 0.0022;
+                                $price3 = $ei3 * 0.0018;	$price33 = $ei3 * 0.0022;
+                                $price4 = $ei4 * 0.0018;	$price44 = $ei4 * 0.0022;
+								$price111 = $ei1 * 0.002;
+								$price222 = $ei2 * 0.002;
+								$price333 = $ei3 * 0.002;
+								$price444 = $ei4 * 0.002;
 						?>
                         <?php } ?>
+                                
+                              
                                 <div class="row justify-content-center">
-                                <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($raka2,0);?> ถึง <?php echo number_format($raka1,0);?> บาท/วัน</span>
+                                <?php   if($yl == 0){?>
+                                    <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price1,0);?> ถึง <?php echo number_format($price11,0);?> บาท/วัน</span>
+                                <?php  }else if($yl == 1 || $yl == 2){ ?>
+                                    <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price2,0);?> ถึง <?php echo number_format($price22,0);?> บาท/วัน</span>
+                                <?php   }else if($yl == 3 || $yl == 4){ ?>
+                                    <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price3,0);?> ถึง <?php echo number_format($price33,0);?> บาท/วัน</span>
+                                <?php   }else if($yl <= 5){ ?>
+                                    <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price4,0);?> ถึง <?php echo number_format($price44,0);?> บาท/วัน</span>
+                                <?php   } ?>
+
+
+
+
+
+                                <!-- <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price1,0);?> ถึง <?php echo number_format($price11,0);?> บาท/วัน</span> -->
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-3">
-                                        <label class="label mt-5">ราคาทางร้าน</label>
-                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo ($rs->Price * 0.2)/100; ?>">
+                            <?php	if($yl == 0){?>
+                                <label class="label mt-5">ราคาทางร้าน</label>
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo number_format($price111,0); ?>">
+							<?php  }else if($yl == 1 || $yl == 2){?>
+                                <label class="label mt-5">ราคาทางร้าน</label>
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo number_format($price222,0); ?>">
+							<?php	}else if($yl == 3 || $yl == 4){ ?>
+                                <label class="label mt-5">ราคาทางร้าน</label>
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo number_format($price333,0); ?>">
+							<?php	}else if($yl <= 5){ ?>
+                                <label class="label mt-5">ราคาทางร้าน</label>
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo number_format($price444,0); ?>">
+							<?php } ?>
+                                        <!-- <label class="label mt-5">ราคาทางร้าน</label>
+                                        <input type="text" disabled name="Price" id="Price" class="form-control mt-1" value="<?php echo number_format($price111,0); ?>"> -->
                                     </div>
                                     <div class="col-3">
                                         <label class="label mt-5">แก้ไขราคาใหม่</label>
