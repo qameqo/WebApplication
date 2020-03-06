@@ -13,7 +13,7 @@
 				
 				$query = $this->db->query("SELECT * FROM Carregis INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN 
 				Brand on Brand.idBrand = Carregis.idBrand
-				WHERE Generation.id_Gen = '$id'");
+				WHERE Generation.id_Gen = '$id' and Carregis.idCarregis = '$idc'");
 				// $this->db->select('*');
 				// $this->db->from('Brand' , 'Generation');
 				// $this->db->where('Genaretion.idBrand');
@@ -35,39 +35,50 @@
 						
 					</div>
 				</div>
-				<?php  
-							foreach($qq as $data){
-								$ei = $data['Price'];
-								$eii = 0.23;
-								$eiii = 0.17;
-								$e = 10;
-								$ee = 1000;
-								$total = $ei * $eii * $e / $ee;
-								$total2 = $ei * $eiii * $e / $ee;
-								/////////////////////////////
-								$ei = $data['Price'];
-								$year = date('Y');
-								$yearcar = $data['Yearlicense'];
-								$yl = $year - $yearcar; //จำนวนปี
-								$yl = $yl / 10000;
-								$raka = 0.0018 - $yl;
-								$raka3 = 0.0022 - $yl;
-								$raka2 = $ei * $raka;	//ราคารถต่ำ
-								$raka1 = $ei * $raka3; //ราคารถสูง
-						?>
-				<?php $query = $this->db->query("select * from Carregis where idCarregis='$idc'");
-					  $nm = $query->result_array();
-
-				 ?>
-				 <?php foreach($nm as $data){ ?>
-					 
-					 <input type="hidden" id="year" value="<?php echo $data['Yearlicense']; ?>">
-					 <input type="hidden" id="now" value="<?php echo date('Y') ?>">
-			<?php	 } ?><?php } ?>
 				<div class="row justify-content-center">
-				<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($raka2,0);?> ถึง <?php echo number_format($raka1,0);?> บาท/วัน</span>
+				<?php  
+						foreach($qq as $data){
+							$ei = $data['Price'];
+							$year = date('Y');
+							$yearcar = $data['Yearlicense'];
+							$year = $year - $yearcar; //อายุรถ
+							//ราคารถใหม่
+							$ei1 = $ei * 1.1;
+							$ei2 = $ei * 0.9;
+							$ei3 = $ei * 0.7;
+							$ei4 = $ei * 0.5;
+							//เรทราคา
+							$price1 = $ei1 * 0.0018; $price11 = $ei1 * 0.0022;
+							$price2 = $ei2 * 0.0018; $price22 = $ei2 * 0.0022;
+							$price3 = $ei3 * 0.0018;	$price33 = $ei3 * 0.0022;
+							$price4 = $ei4 * 0.0018;	$price44 = $ei4 * 0.0022;
+							 } ?>
+							
+							<!-- //กลุ่มอายุรถ -->
+							<?php if($year == 0){?>
+							<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price1,0);?> ถึง <?php echo number_format($price11,0);?> บาท/วัน</span>
+							<input type="hidden" id="up"name="up" value="<?php echo round($price11,0);?>">
+							<input type="hidden" id="down"name="down" value="<?php echo round($price1,0);?>">
+						<?php  }else if($year == 1 || $year == 2){?>
+							<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price2,0);?> ถึง <?php echo number_format($price22,0);?> บาท/วัน</span>
+							<input type="hidden" id="up"name="up" value="<?php echo round($price22,0);?>">
+							<input type="hidden" id="down"name="down" value="<?php echo round($price2,0);?>">
+						<?php	}else if($year == 3 || $year == 4){ ?>
+							<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price3,0);?> ถึง <?php echo number_format($price33,0);?> บาท/วัน</span>
+							<input type="hidden" id="up"name="up" value="<?php echo round($price33,0);?>">
+							<input type="hidden" id="down"name="down" value="<?php echo round($price3,0);?>">
+						<?php	}else if($year <= 5){ ?>
+							<span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($price4,0);?> ถึง <?php echo number_format($price44,0);?> บาท/วัน</span>
+							<input type="hidden" id="up"name="up" value="<?php echo round($price44,0);?>">
+							<input type="hidden" id="down"name="down" value="<?php echo round($price4,0);?>">
+						<?php } ?>
+					
+						
+				
+				
+				<!-- <span style=""> เรทราคาปล่อยเช่าอยู่ที่ <?php echo number_format($raka2,0);?> ถึง <?php echo number_format($raka1,0);?> บาท/วัน</span>
 				<input type="hidden" id="up"name="up" value="<?php echo round($raka1,0);?>">
-				<input type="hidden" id="down"name="down" value="<?php echo round($raka2,0);?>">
+				<input type="hidden" id="down"name="down" value="<?php echo round($raka2,0);?>"> -->
 				</div>
 							
 				<br>
@@ -83,16 +94,48 @@
 								$ei = $data['Price'];
 								$year = date('Y');
 								$yearcar = $data['Yearlicense'];
-								$yl = $year - $yearcar; //จำนวนปี
-								$yl = $yl / 10000;
-								$raka = 0.002 - $yl;
-								$raka2 = $ei * $raka; //ราคารถแนะนำ
+								$year = $year - $yearcar; //อายุรถ
+								//ราคารถใหม่
+								$ei1 = $ei * 1.1;
+								$ei2 = $ei * 0.9;
+								$ei3 = $ei * 0.7;
+								$ei4 = $ei * 0.5;
+								//ราคาปล่อยเช่า
+								$price1 = $ei1 * 0.002;
+								$price2 = $ei2 * 0.002;
+								$price3 = $ei3 * 0.002;
+								$price4 = $ei4 * 0.002;
 								
-						?>
-						<?php } ?>
-						<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($raka2,0) ?>"
+						 } ?>
+								<!-- //กลุ่มอายุรถ -->
+							<?php	if($year == 0){?>
+									<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($price1,0) ?>"
+									style="width: 200px; height:25px;" disabled>
+							<?php  }else if($year == 1 || $year == 2){?>
+									<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($price2,0) ?>"
+									style="width: 200px; height:25px;" disabled>
+							<?php	}else if($year == 3 || $year == 4){ ?>
+									<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($price3,0) ?>"
+									style="width: 200px; height:25px;" disabled>
+							<?php	}else if($year <= 5){ ?>
+									<input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($price4,0) ?>"
+									style="width: 200px; height:25px;" disabled>
+							<?php } ?>
+						
+								<!-- // $yl = $yl / 10000;
+								// $raka = 0.0018 - $yl;
+								// $raka3 = 0.0022 - $yl;
+								
+								// $ra = 0.002 - $yl;
+								// $car = $ei * 0.9;
+								// $kk = $car * $ra;
+								// $raka2 = $car * $raka;	//ราคารถต่ำ
+								// $raka1 = $car * $raka3; //ราคารถสูง -->
+								
+						
+						<!-- <input type="text" class="form-control" name="Price2" id="Price2" value="<?php echo number_format($price1,0) ?>"
 							style="width: 200px; height:25px;" disabled>
-							<input type="hidden" id="pow"name="pow" value="<?php echo round($total,0);?>">
+							<input type="hidden" id="pow"name="pow" value="<?php echo round($total,0);?>"> -->
 						
 					</div>
 					<div class="col-sm">
