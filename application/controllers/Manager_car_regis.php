@@ -142,6 +142,43 @@ class Manager_car_regis extends CI_Controller {
         $this->load->view('Modal_view');
 
     }
+    public function index_5()
+    {
+        $data['query']=$this->Manager_car_regis_model->show_repair();
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_car_price_repair', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+
+    }
+
+    public function detail_repair($id_Repair)
+    {
+        // $this->Manager_car_regis_model->detail_repair();
+
+        $data['rs']=$this->Manager_car_regis_model->detail_repair($id_Repair);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Manager/Manager_car_price_repair_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+
+    }
 
     public function show_rental($idRental)
     {

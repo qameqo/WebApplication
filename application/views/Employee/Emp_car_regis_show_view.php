@@ -410,13 +410,64 @@
 
 
                     <?php if ($rs->id_Status == '13') { //เปลี่ยนซ่อมเป็นพร้อมใช้ 13 เป็น 5?>  
-                        <form action="<?php echo site_url('Manager_car_regis/add_status_13'); ?>" method="POST" class="form-horizontal">
+                       <br> <form action="<?php echo site_url('Manager_car_regis/add_status_13'); ?>" method="POST" class="form-horizontal">
+
+                       <?php $query = $this->db->query("SELECT * FROM Rental INNER JOIN Carregis on Rental.idCarregis = Carregis.idCarregis 
+                                WHERE Rental.idCarregis = '$rs->idCarregis'");
+                                $qqa = $query->result_array(); 
+                                foreach($qqa as $data){?>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">รายละเอียดการซ่อม</label>
+                            <textarea class="form-control" id="Detail_repair" name="Detail_repair" rows="3" required ></textarea>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <div class="form-group prc">
+                                    <label for="exampleInputPassword1">รายจ่ายเงิน 5000</label>
+                                    <input type="number" id="Price_Five" name="Price_Five" class="form-control prc" value="0" required >
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group prc">
+                                    <label for="exampleInputPassword1">รายจ่ายเงินประกัน <?php echo $data['PriceIns']; ?></label>
+                                    <input type="number" id="Price_Ins" name="Price_Ins" class="form-control prc" value="0" required >
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group prc">
+                                    <label for="exampleInputPassword1">รายจ่ายทางร้าน</label>
+                                    <input type="number" id="Price_manager" name="Price_manager" class="form-control prc" value="0" required >
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group prc">
+                                    <label for="exampleInputPassword1">รวม</label>
+                                    <input type="number" id="Total" name="Total" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                          <?php }?>
 
                             <input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="<?php echo $rs->idCarregis; ?>">  
                             <input type="hidden" class="btn btn-success mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>
                             <button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ซ่อมเสร็จเรียบร้อย</button>
 
                         </form>
+
+                        <script>
+                        $('.form-group').on('input', '.prc',function () {
+                            var totalSum = 0;
+                            $('.form-group .prc').each(function () {  
+                                var inputVal = $(this).val();
+                                if($.isNumeric(inputVal)){
+                                    totalSum += parseInt(inputVal);
+                                }
+                            });
+                            $('#Total').val(totalSum);
+                        });
+                        </script>
 
                     <?php }?>              
 

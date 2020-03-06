@@ -81,8 +81,20 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                             <a class="dropdown-item" href="<?php echo site_url(); ?>Manager_car_regis/index_2">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
                             <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_3');?>">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
-                            <div class="dropdown-divider"></div>
+
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
+                            ตรวจสอบข้อมูลรายรับรายจ่าย
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                        
                             <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_4');?>">ตรวจสอบข้อมูลรายได้ทั้งหมด</a>
+                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_5');?>">ตรวจสอบข้อมูลรายจ่ายทั้งหมด</a>
 
                         </div>
                     </li>
