@@ -26,6 +26,7 @@
                                 <th data-column-id="Model">รุ่น</th>
                                 <th data-column-id="Price">ราคารถยนต์</th>
                                 <th data-column-id="Price">ราคาเสนอ</th>
+                                <th data-column-id="Price">ที่นั่ง</th>
                                 <th data-column-id="">ประเภทเชื้อเพลิง</th>
                                 <th data-column-id="Action"></th>
                             </tr>
@@ -39,6 +40,7 @@
 								<td><?php echo $rs->Name_Gen; ?></td>
                                 <td><?php echo $rs->Price; ?></td>
                                 <td><?php echo ($rs->Price * 0.2)/100; ?></td>
+                                <td><?php echo $rs->id_Seat; ?></td>
                                 <td><?php echo $rs->Name_Type_Fuel; ?></td>
 								<td>
 								
@@ -58,6 +60,7 @@
                                 <th data-column-id="Model">รุ่น</th>
                                 <th data-column-id="Price">ราคารถยนต์</th>
                                 <th data-column-id="Price">ราคาเสนอ</th>
+                                <th data-column-id="Price">ที่นั่ง</th>
                                 <th data-column-id="">ประเภทเชื้อเพลิง</th>
 
                                 <th data-column-id="Action"></th>
