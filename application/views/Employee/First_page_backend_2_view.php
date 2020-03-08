@@ -25,13 +25,16 @@
         <div class="card text-center">
           <div class="card-header card-header-primary">   
            <h4 class="card-title">การตรวจสอบข้อมูลรถยนต์และการเช่า</h4>
-          </div><br><br><br>
+          </div><br>
           <div class="card-body">
             <a href="<?php echo site_url('Emp_car/index_2');?>" class="btn btn-primary btn-sm" style="font-size : 18px">ตรวจสอบข้อมูลรถยนต์ลงทะเบียนทั้งหมด</a>
           </div>
           <div class="card-body">
+            <a href="<?php echo site_url('Emp_car/index_4');?>" class="btn btn-primary btn-sm" style="font-size : 18px">ตรวจสอบข้อมูลรายการซ่อม</a>
+          </div>
+          <div class="card-body">
             <a href="<?php echo site_url('Emp_rental/index_4');?>" class="btn btn-primary btn-sm" style="font-size : 18px">ตรวจสอบข้อมูลการเช่าทั้งหมด</a>
-          </div><br><br><br>
+          </div><br><br>
         </div>
       </div>
 

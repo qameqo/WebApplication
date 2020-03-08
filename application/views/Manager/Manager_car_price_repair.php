@@ -40,7 +40,15 @@
                                 <td><b><?php echo $rs->Total; ?></b>&nbsp;บาท</td>
                                 <td>
 
+                                <?php if ($this->session->userdata('id_Employee')=='2') { ?>
                                     <a href="<?php echo site_url('Manager_car_regis/detail_repair/').$rs->id_Repair?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+                                    
+                                <?php }else{ ?>
+
+                                    <a href="<?php echo site_url('Emp_car/edit_repair/').$rs->id_Repair?>" class="btn btn-warning btn-sm" style="font-size:16px;">แก้ไขข้อมูล</a>
+
+                                <?php } ?>
+
                                 
                                 </td>
 								

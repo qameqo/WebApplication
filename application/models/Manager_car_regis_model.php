@@ -26,8 +26,8 @@ class Manager_car_regis_model extends CI_Model
         
         $this->db->select('*');
         $this->db->from('Repair');
-        // $this->db->from('Carregis');
-        $this->db->join('Carregis', 'Carregis.idCarregis = Repair.idCarregis');
+        $this->db->from('Carregis');
+        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
         $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
@@ -45,12 +45,12 @@ class Manager_car_regis_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Repair');
-        $this->db->join('Carregis', 'Carregis.idCarregis = Repair.idCarregis');
+        $this->db->from('Carregis');
         $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
         $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
         $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
         $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
-        $this->db->join('Rental', 'Rental.idCarregis = Carregis.idCarregis');
+        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
 
         $this->db->where('id_Repair', $id_Repair );
         $query = $this->db->get();
@@ -299,7 +299,7 @@ class Manager_car_regis_model extends CI_Model
              
     }
 
-    public function add_status_13() //จขร. อนุมัติลงทะเบียน
+    public function add_status_13()
     {
         // print_r($_POST);
         
@@ -314,18 +314,26 @@ class Manager_car_regis_model extends CI_Model
         $query=$this->db->update('Carregis',$data);
         
         //////////////////////////////////////////////////////////////////
-       
-        $data_2 = array( 
-            'Detail_repair' =>$this->input->post('Detail_repair'),
-            'Price_Five' => $this->input->post('Price_Five'),
-            'Price_Ins' => $this->input->post('Price_Ins'),
-            'Price_manager' => $this->input->post('Price_manager'),
-            'Total' => $this->input->post('Total'),
-            'id_Employee' => $this->session->userdata('id_Employee'),
-            'idCarregis' => $this->input->post('idCarregis'),
-        );
 
-        $query_2=$this->db->insert('Repair',$data_2);
+        $query_3 = $this->db->query('SELECT * FROM Rental WHERE idCarregis = '.$this->input->post('idCarregis').'');
+
+        $qq = $query_3->result_array();
+
+        foreach ($qq as $data) {
+        
+            $data_2 = array( 
+                'Detail_repair' =>$this->input->post('Detail_repair'),
+                'Price_Five' => $this->input->post('Price_Five'),
+                'Price_Ins' => $this->input->post('Price_Ins'),
+                'Price_manager' => $this->input->post('Price_manager'),
+                'Total' => $this->input->post('Total'),
+                'id_Employee' => $this->session->userdata('id_Employee'),
+                'idRental' => $data['idRental'],
+            );
+
+            $query_2=$this->db->insert('Repair',$data_2);
+
+        }
 
         //////////////////////////////////////////////////////////////////
 
@@ -358,6 +366,34 @@ class Manager_car_regis_model extends CI_Model
         echo "window.location.href = '". base_url(). "Emp_car/index_3';";
         echo "</script>";
 
+    }
+
+    public function edit_data_repair()
+    {
+        $query_3 = $this->db->query('SELECT * FROM Rental WHERE idCarregis = '.$this->input->post('idCarregis').'');
+
+        $qq = $query_3->result_array();
+
+        foreach ($qq as $data) {
+        
+            $data_2 = array( 
+                'Detail_repair' =>$this->input->post('Detail_repair'),
+                'Price_Five' => $this->input->post('Price_Five'),
+                'Price_Ins' => $this->input->post('Price_Ins'),
+                'Price_manager' => $this->input->post('Price_manager'),
+                'Total' => $this->input->post('Total'),
+                'id_Employee' => $this->session->userdata('id_Employee'),
+                'idRental' => $data['idRental'],
+            );
+
+            $query_2=$this->db->update('Repair',$data_2);
+
+        }
+
+        echo "<script>";
+        echo "alert('บันทึกรายการซ่อมเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_car/index_4';";
+        echo "</script>";
     }
 }
 ?>

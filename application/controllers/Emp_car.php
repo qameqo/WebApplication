@@ -36,6 +36,36 @@ class Emp_car extends CI_Controller {
         $this->load->view('Employee/Footer_emp');
     } 
 
+    public function index_4()
+    {   
+        $data['query']=$this->Manager_car_regis_model->show_repair();
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Manager/Manager_car_price_repair', $data);
+        $this->load->view('Employee/Footer_emp');
+    } 
+
+    public function edit_repair($id_Repair)
+    {
+        $data['rs']=$this->Manager_car_regis_model->detail_repair($id_Repair);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+
+        // exit;
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_edit_repair', $data);
+        $this->load->view('Employee/Footer_emp');
+
+    }
+
+    public function edit_data_repair()
+    {
+        $this->Manager_car_regis_model->edit_data_repair();
+    }
+
     public function show($idCarregis)
     {
         //$this->db->get('Table', limit, offset);
