@@ -48,8 +48,8 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
     // }
     public function index_post()
     {
-        $Name = "รถสตาร์ทไม่ติด";
-        $Detail = "ขับมาด้วยความเร็วปกติและก็ค่อยๆดับไป";
+       
+        $detail = $this->input->post('detail');
         $lat = $this->input->post('lat');
         $lon = $this->input->post('lon');
         $dat = date("Y-m-d H:i:s");
@@ -57,8 +57,8 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
         // echo $Username;
         // echo $Password;
         $object = array(
-            'Name_problem'=>$Name,
-            'Detail'=>$Detail,
+           
+            'Detail'=>$detail,
             'Lat'=>$lat,
             'Lng' =>$lon,
             'Date' => $dat,
