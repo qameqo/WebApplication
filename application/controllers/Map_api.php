@@ -52,6 +52,7 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
         $detail = $this->input->post('detail');
         $lat = $this->input->post('lat');
         $lon = $this->input->post('lon');
+        $TypeProblem = $this->input->post('Pro');
         $dat = date("Y-m-d H:i:s");
         //$query = $this->db->get_where("Member",1 ,array("Username"=>$Username,"Password"=>$Password));
         // echo $Username;
@@ -62,6 +63,8 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
             'Lat'=>$lat,
             'Lng' =>$lon,
             'Date' => $dat,
+            'id_Type_Problem'=>$TypeProblem
+            
             
         );
         if($object == null){

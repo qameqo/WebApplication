@@ -28,7 +28,7 @@ class Test_api extends \Restserver\Libraries\REST_Controller {
         $dat = date("Y-m-d");
         
         $object = array(
-            'Name_problem'=>$title,
+            
             'Detail' =>$detail,
             'Date' => $dat,
             
