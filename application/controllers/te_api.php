@@ -58,8 +58,16 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
         $this->db->where('Password',$Password);
         $query = $this->db->get('Member' ,1);
         $data = $query->num_rows(); 
+
+        $this->db->select('id_Member');
+        $this->db->from('Member');
+        $this->db->where('Username', $Username);
+        $qq = $this->db->get();
+        $qq = $qq->result_array();
         if($data == 1)
         {
+
+            //$this->response($qq);
             $this->response(array(
                 'status' => 'Mem'
             ));
@@ -69,6 +77,12 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
             $this->db->where('Username', $Username);
             $this->db->where('Password', $Password);
             $query = $this->db->get('Employee', 1);
+            $this->db->select('id_Employee');
+            $this->db->from('Employee');
+            $this->db->where('Username', $Username);
+            $emp = $this->db->get();
+            $emp = $emp->result_array();
+            
             if($query->num_rows() ==1)
             {
                 $data = $query->row_array();
@@ -85,12 +99,12 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
                     )); //พนักงาน
                 }elseif($this->session->userdata('id_position') =="2"){
 
-                    $this->response(array(
+                    $this->response(array($emp,
                         'status' => 'tech'
                     )); //ช่าง
                 }elseif($this->session->userdata('id_position') =="3"){
 
-                    $this->response(array(
+                    $this->response(array($emp,
                         'status' => 'io'
                     )); //ประกัน
                 }

@@ -1,4 +1,5 @@
-<?php 
+<?php
+ 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
@@ -16,32 +17,10 @@ require APPPATH . '/libraries/REST_Controller.php';
  * @license         MIT
  * @link            https://github.com/chriskacerguis/codeigniter-restserver
  */
-class Select_api extends \Restserver\Libraries\REST_Controller {
+class Show_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index_post()
-    {
-
-            $this->db->select('*');
-            $this->db->from('Rental');
-            $data = $this->db->get();
-            $data = $data->result_array();
-            
-            
-        if($data >0){
-            $this->response(array(
-                'status' => 'true',
-                'posts' => $data
-            ));
-        }else
-        {
-            $this->response(array(
-                'status' => 'false'
-            ));
-        }
-       
+    public function index_get(){
         
-    
-    
     }
 }
 ?>
