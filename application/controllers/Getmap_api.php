@@ -21,8 +21,15 @@ class Getmap_api extends \Restserver\Libraries\REST_Controller {
     public function index_post()
     {
 
-        $query = $this->db->query("SELECT * FROM Problem");
-        $data = $query->result_array();
+        $this->db->select('Lat');
+        $this->db->select('Lng');
+        $this->db->select('idRental');
+        $this->db->from('Problem');
+
+        $this->db->where('idRental', 160);
+        
+        $data = $this->db->get();
+        $data = $data->result_array();
             
             
         if($data >0){
