@@ -93,6 +93,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="<?php echo site_url('Emp_problem');?>">จัดการข้อมูลแจ้งซ่อมรถยนต์</a>
                             <a class="dropdown-item" href="<?php echo site_url('Emp_problem/index_2');?>">จัดการข้อมูลแจ้งอุบัติเหตุ</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo site_url('Emp_problem/index_3');?>">ตรวจสอบข้อมูลปัญหา</a>
                         </div>
                     </li>
                 </ul>

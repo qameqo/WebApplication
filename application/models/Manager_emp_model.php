@@ -29,7 +29,8 @@ class Manager_emp_model extends CI_Model
                 'L_Name' => $this->input->post('L_Name'),
                 'Address' => $this->input->post('Address'),
                 'Tel' => $this->input->post('Tel'),
-                'id_position' => $this->input->post('Row')
+                'id_position' => $this->input->post('Row'),
+                'Status' => 1
     
             );
     
@@ -62,7 +63,7 @@ class Manager_emp_model extends CI_Model
             'L_Name' => $this->input->post('L_Name'),
             'Address' => $this->input->post('Address'),
             'Tel' => $this->input->post('Tel'),
-            'id_position' => $this->input->post('Row')
+            'id_position' => $this->input->post('Row'),
         );
 
         
@@ -89,7 +90,10 @@ class Manager_emp_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('Employee');
+        $this->db->from('Repair');      
         $this->db->join('Employee_position', 'Employee.id_position = Employee_position.id_position');
+
+        
         
         $query = $this->db->get();
         return $query->result();

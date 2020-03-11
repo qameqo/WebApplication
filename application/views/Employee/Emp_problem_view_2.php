@@ -16,13 +16,10 @@
                         <thead>
                             <tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
-                                <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำรายการจอง</th>
-                                <th data-column-id="Generation">ราคารวม</th>
-                                <th data-column-id="License">สถานะ</th>
-
+                                <th data-column-id="Brand">รายละเอียด</th>
+                                <th data-column-id="Brand">วันที่</th></th>
+                                <th data-column-id="Brand">ตำแหน่ง</th>
+                                
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
@@ -31,89 +28,23 @@
                         <?php foreach ($query as $rs) { ?>
 
                             <?php
-                            if ($rs->id_status == '1' || $rs->id_status == '9') 
+                            if ($rs->id_Type_Problem == '2' && $rs->id_employee == null) 
                             {
                                                   
                             ?> 
 
 							<tr>
 
-                                <td width="5%"><?php echo $rs->idRental; ?></td>
+                                <td width="5%"><?php echo $rs->id_Problem; ?></td>
 
-                                <td><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-								<td><?php echo $rs->Name_Brand; ?></td>
-								<td><?php echo $rs->Name_Gen; ?></td>
-								<td><?php echo $rs->Datebooking; ?></td>
-								<td><?php echo $rs->totalprice; ?></td>
-
-                                <td>
-                                <?php 
-                        
-                                if($rs->id_status == '1')
-                                {
-                                    echo'<span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if ($rs->id_status == '2') 
-                                {
-                                    echo'<span class="badge badge-info" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if ($rs->id_status == '3') 
-                                {
-                                    echo'<span class="badge badge-default" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '4')
-                                {
-                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if ($rs->id_status == '5') 
-                                {
-                                    echo'<span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '6')
-                                {
-                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '7')
-                                {
-                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '8')
-                                {
-                                    echo'<span class="badge badge-danger" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '9')
-                                {
-                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '10')
-                                {
-                                    echo'<span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '11')
-                                {
-                                    echo'<span class="badge badge-primary" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }
-                                else if($rs->id_status == '12')
-                                {
-                                    echo'<span class="badge badge-success" style="font-size:13px;">';
-                                    echo $rs->Name_Status; 
-                                }  ?>
-                                </span></td>
-
+								<td><?php echo $rs->Detail; ?></td>
+								<td><?php echo $rs->Date; ?></td>
+								<td><?php echo $rs->Lat; ?>, <?php echo $rs->Lng; ?></td>
                                 <td>
 								
-                                <a href="<?php echo site_url('Emp_rental/show_rental/').$rs->idRental?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+                                <a href="<?php echo site_url('Emp_problem/show/').$rs->id_Problem?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
+
+                                <a href="<?php echo site_url('Emp_problem/Hand_over_2/').$rs->id_Problem?>" class="btn btn-warning btn-sm" style="font-size:16px;">กำหนดงาน</a>
                     
 								</td>
 							</tr>
@@ -124,12 +55,9 @@
 						<tfoot>
 							<tr>
                                 <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ชื่อสมาชิก</th>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
-                                <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันทำรายการจอง</th>
-                                <th data-column-id="Generation">ราคารวม</th>
-                                <th data-column-id="License">สถานะ</th>
+                                <th data-column-id="Brand">รายละเอียด</th>
+                                <th data-column-id="Brand">วันที่</th>
+                                <th data-column-id="Brand">ตำแหน่ง</th>
 
                                 <th data-column-id="Action"></th>
 							</tr>

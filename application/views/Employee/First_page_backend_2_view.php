@@ -57,6 +57,7 @@
           <div class="card-body">
             <a href="<?php echo site_url('Emp_problem');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งซ่อมรถยนต์</a>
             <a href="<?php echo site_url('Emp_problem/index_2');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งอุบัติเหตุ</a>
+            <a href="<?php echo site_url('Emp_problem/index_3');?>" class="btn btn-warning btn-sm" style="font-size : 18px">ตรวจสอบข้อมูลปัญหา</a>
           </div>
         </div>
       </div>

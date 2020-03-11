@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">จัดการข้อมูลแจ้งซ่อมรถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลปัญหา</h3>
                     </div>
                 </div>
                 
@@ -28,7 +28,7 @@
                         <?php foreach ($query as $rs) { ?>
 
                             <?php
-                            if ($rs->id_Type_Problem == '1' && $rs->id_employee == null) 
+                            if ($rs->id_employee != null) 
                             {
                                                   
                             ?> 
@@ -44,7 +44,6 @@
 								
                                 <a href="<?php echo site_url('Emp_problem/show/').$rs->id_Problem?>" class="btn btn-info btn-sm" style="font-size:16px;">รายละเอียด</a>
 
-                                <a href="<?php echo site_url('Emp_problem/Hand_over/').$rs->id_Problem?>" class="btn btn-warning btn-sm" style="font-size:16px;">กำหนดงาน</a>
                     
 								</td>
 							</tr>
