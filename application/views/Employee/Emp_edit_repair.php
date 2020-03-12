@@ -15,10 +15,10 @@
                 <form action="<?php echo site_url('Emp_car/edit_data_repair'); ?>" method="POST"
                     class="form-horizontal">
 
-                    <?php $query = $this->db->query("SELECT * FROM Rental INNER JOIN Carregis on Rental.idCarregis = Carregis.idCarregis 
+                    <?php /* $query = $this->db->query("SELECT * FROM Rental INNER JOIN Carregis on Rental.idCarregis = Carregis.idCarregis 
          WHERE Rental.idCarregis = '$rs->idCarregis'");
          $qqa = $query->result_array(); 
-         foreach($qqa as $data){?>
+         foreach($qqa as $data){ */?>
 
 
                     <input type="hidden" id="Detail_repair" name="Detail_repair" value="<?php echo $rs->id_Repair; ?>">
@@ -36,18 +36,18 @@
                                     value="<?php echo $rs->Price_Five; ?>" required>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <!-- <div class="col-3">
                             <div class="form-group prc">
                                 <label for="exampleInputPassword1">รายจ่ายเงินประกัน
-                                    <?php echo $data['PriceIns']; ?></label>
+                                    <?php //echo $data['PriceIns']; ?></label>
                                 <input type="number" id="Price_Ins" name="Price_Ins" class="form-control prc" value="<?php echo $rs->Price_Ins; ?>"
                                     required>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-3">
                             <div class="form-group prc">
                                 <label for="exampleInputPassword1">รายจ่ายเงินทางร้าน
-                                    <?php echo $data['Companyincome']; ?></label>
+                                    <?php //echo $data['Companyincome']; ?></label>
                                 <input type="number" id="Price_manager" name="Price_manager" class="form-control prc"
                                     value="<?php echo $rs->Price_manager; ?>" required>
                             </div>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <?php }?>
+                    <?php/*  } */?>
 
                     <input type="hidden" name="idCarregis" id="idCarregis" class="form-control"
                         value="<?php echo $rs->idCarregis; ?>">

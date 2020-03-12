@@ -16,11 +16,11 @@
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Brand" width="5%">รหัส</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Model">รุ่น</th>
                                 <th data-column-id="Price">รายจ่าย 5000</th>
-                                <th data-column-id="Price">รายจ่ายประกัน</th>
+                                <!-- <th data-column-id="Price">รายจ่ายประกัน</th> -->
                                 <th data-column-id="Price">รายจ่ายร้าน</th>
                                 <th data-column-id="">รวมทั้งหมด</th>
                                 <th data-column-id=""></th>
@@ -35,7 +35,7 @@
 								<td><?php echo $rs->Name_Brand ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
                                 <td><?php echo $rs->Price_Five; ?>&nbsp;บาท</td>
-                                <td><?php echo $rs->Price_Ins; ?>&nbsp;บาท</td>
+                                <!-- <td><?php echo $rs->Price_Ins; ?>&nbsp;บาท</td> -->
                                 <td><?php echo $rs->Price_manager; ?>&nbsp;บาท</td>
                                 <td><b><?php echo $rs->Total; ?></b>&nbsp;บาท</td>
                                 <td>
@@ -59,11 +59,11 @@
 						</tbody>
 						<tfoot>
 							<tr>
-                                <th data-column-id="Brand">ยี่ห้อ</th>
+                                <th data-column-id="Brand" width="5%">รหัส</th>
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Model">รุ่น</th>
                                 <th data-column-id="Price">รายจ่าย 5000</th>
-                                <th data-column-id="Price">รายจ่ายประกัน</th>
+                                <!-- <th data-column-id="Price">รายจ่ายประกัน</th> -->
                                 <th data-column-id="Price">รายจ่ายร้าน</th>
                                 <th data-column-id="">รวมทั้งหมด</th>
                                 <th data-column-id=""></th>

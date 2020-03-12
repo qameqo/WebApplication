@@ -20,49 +20,6 @@ class Manager_car_regis_model extends CI_Model
         
     }
 
-    public function show_repair()
-    {
-        // $query = $this->db->get('Carregis');
-        
-        $this->db->select('*');
-        $this->db->from('Repair');
-        $this->db->from('Carregis');
-        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
-        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
-        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
-        // $this->db->join('Rental', 'Carregis.column = Rental.column', 'left');
-        
-
-        $query = $this->db->get();
-
-        return $query->result();
-        
-    }
-
-    public function detail_repair($id_Repair)
-    {
-        $this->db->select('*');
-        $this->db->from('Repair');
-        $this->db->from('Carregis');
-        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
-        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
-        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
-        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
-        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
-
-        $this->db->where('id_Repair', $id_Repair );
-        $query = $this->db->get();
-
-        if ($query->num_rows() > 0) 
-        {
-            $data = $query->row();
-            return $data;
-        }
-        return FALSE;
-    }
-
     public function read($idCarregis)
     {
         $this->db->select('*');
@@ -299,6 +256,50 @@ class Manager_car_regis_model extends CI_Model
              
     }
 
+    public function show_repair()
+    {
+        // $query = $this->db->get('Carregis');
+        
+        $this->db->select('*');
+        $this->db->from('Repair');
+        // $this->db->from('Carregis');
+        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
+        $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
+        
+
+        $query = $this->db->get();
+
+        return $query->result();
+        
+    }
+
+    public function detail_repair($id_Repair)
+    {
+        $this->db->select('*');
+        $this->db->from('Repair');
+        // $this->db->from('Carregis');
+        $this->db->join('Rental', 'Rental.idRental = Repair.idRental');
+        $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+        $this->db->join('Member', 'Carregis.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
+
+        $this->db->where('id_Repair', $id_Repair );
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) 
+        {
+            $data = $query->row();
+            return $data;
+        }
+        return FALSE;
+    }
+
     public function add_status_13()
     {
         // print_r($_POST);
@@ -324,7 +325,7 @@ class Manager_car_regis_model extends CI_Model
             $data_2 = array( 
                 'Detail_repair' =>$this->input->post('Detail_repair'),
                 'Price_Five' => $this->input->post('Price_Five'),
-                'Price_Ins' => $this->input->post('Price_Ins'),
+                // 'Price_Ins' => $this->input->post('Price_Ins'),
                 'Price_manager' => $this->input->post('Price_manager'),
                 'Total' => $this->input->post('Total'),
                 'id_Employee' => $this->session->userdata('id_Employee'),
@@ -337,7 +338,15 @@ class Manager_car_regis_model extends CI_Model
 
         //////////////////////////////////////////////////////////////////
 
-        $query_3 = $this->db->query('SELECT * FROM Rental WHERE idCarregis = '.$this->input->post('idCarregis').'');
+        // SELECT * FROM `Rental` WHERE idCarregis = 128 ORDER BY idRental DESC LIMIT 1
+
+        $this->db->select('*');
+        $this->db->from('Rental');
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+        $this->db->order_by('idRental', 'desc');
+        $this->db->limit(1);
+
+        $query_3 = $this->db->query('SELECT * FROM `Rental` WHERE idCarregis = '.$this->input->post('idCarregis').' ORDER BY idRental DESC LIMIT 1');
 
         $qq = $query_3->result_array();
 
@@ -345,13 +354,13 @@ class Manager_car_regis_model extends CI_Model
 
             $rs = $data['totalprice']-$this->input->post('Total');
             $rs2 = $data['PriceFive']-$this->input->post('Price_Five');
-            $rs3 = $data['PriceIns']-$this->input->post('Price_Ins');
+            // $rs3 = $data['PriceIns']-$this->input->post('Price_Ins');
             $rs4 = $data['Companyincome']-$this->input->post('Price_manager');
             
             $data_4 = array( 
                 'totalprice' =>  $rs,
                 'PriceFive' => $rs2,
-                'PriceIns' => $rs3,
+                // 'PriceIns' => $rs3,
                 'Companyincome' => $rs4,
             );
 

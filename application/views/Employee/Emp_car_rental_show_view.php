@@ -224,7 +224,12 @@
                                 {
                                     echo'<span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                }  ?>
+                                } 
+                                else if($rs->id_status == '13')
+                                {
+                                    echo'<span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                } ?>
                                 </span></td>
                             </tr> 
 
@@ -320,7 +325,7 @@
                             <div class="row justify-content-center">    
                             <div class="col-3">
                                 <label class="label mt-5">ราคามัดจำ 5000 บาท</label>
-                                <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="5000">
+                                <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="5000" readonly>
                             </div></div>';
                         echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
                         echo '</form>';

@@ -428,12 +428,12 @@
                                     <input type="number" id="Price_Five" name="Price_Five" class="form-control prc" value="0" required >
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <!-- <div class="col-3">
                                 <div class="form-group prc">
                                     <label for="exampleInputPassword1">รายจ่ายเงินประกัน <?php echo $data['PriceIns']; ?></label>
                                     <input type="number" id="Price_Ins" name="Price_Ins" class="form-control prc" value="0" required >
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-3">
                                 <div class="form-group prc">
                                     <label for="exampleInputPassword1">รายจ่ายเงินทางร้าน <?php echo $data['Companyincome']; ?></label>

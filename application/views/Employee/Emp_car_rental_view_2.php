@@ -117,6 +117,18 @@
                                     echo'<td><span class="badge badge-success" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                     echo '</span></td>';
+                                } 
+                                else if($rs->id_status == '13')
+                                {
+                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
+                                }
+                                else if($rs->id_status == '14')
+                                {
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                    echo '</span></td>';
                                 } ?>
 
                                 <td>

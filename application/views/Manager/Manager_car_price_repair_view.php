@@ -21,16 +21,16 @@
                             </tr>
                             <tr>
                                 <td width="30%"><label>รายละเอียดการซ่อม</label></td>
-                                <td width="70%"><?php echo $rs->Detail_repair; ?>&nbsp;บาท</td>
+                                <td width="70%"><?php echo $rs->Detail_repair; ?></td>
                             </tr>
                             <tr>
                                 <td width="30%"><label>รายจ่าย 5000</label></td>
                                 <td width="70%"><?php echo $rs->Price_Five; ?>&nbsp;บาท</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td width="30%"><label>รายจ่ายประกัน <?php echo $rs->PriceIns; ?></label></td>
                                 <td width="70%"><?php echo $rs->Price_Ins; ?>&nbsp;บาท</td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td width="30%"><label>รายจ่ายทางร้าน</label></td>
                                 <td width="70%"><?php echo $rs->Price_manager; ?>&nbsp;บาท</td>
@@ -48,7 +48,7 @@
                                 foreach ($qq as $data) {
 
                                     echo '<tr>
-                                    <td width="30%"><label>พนักงานยืนยันการซ่อม</label></td>
+                                    <td width="30%"><label>พนักงานบันทึกการซ่อม</label></td>
                                     <td width="70%">';
                                     echo $data['F_Name'];
                                     echo '&nbsp;';

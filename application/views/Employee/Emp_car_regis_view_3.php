@@ -87,10 +87,10 @@
                                     echo $rs->Name_Status; 
                                 }
                                 else if($rs->id_Status == '13')
-                                    {
-                                        echo'<span class="badge badge-default" style="font-size:13px;">';
-                                        echo $rs->Name_Status; 
-                                    }
+                                {
+                                    echo'<span class="badge badge-default" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                }
                                 ?>
                                 </span></td>
 
