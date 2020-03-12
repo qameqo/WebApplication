@@ -18,15 +18,12 @@ require APPPATH . '/libraries/REST_Controller.php';
  */
 class Getmap_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index_post()
+    public function index_post($id)
     {
-
-        $this->db->select('Lat');
-        $this->db->select('Lng');
-        $this->db->select('idRental');
+        $this->db->select('*');
         $this->db->from('Problem');
 
-        $this->db->where('idRental', 160);
+        $this->db->where('id_Employee', $id);
         
         $data = $this->db->get();
         $data = $data->result_array();
@@ -43,10 +40,7 @@ class Getmap_api extends \Restserver\Libraries\REST_Controller {
                 'status' => 'false'
             ));
         }
-       
-        
-    
-    
+
     }
 }
 ?>
