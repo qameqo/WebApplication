@@ -56,7 +56,7 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
         $idr = $this->input->post('idrent');
         $dat = date("Y-m-d H:i:s");
         $obj = array(
-            'id_status'=>'9'
+            'id_status'=>'14'
         );
         
         //$query = $this->db->get_where("Member",1 ,array("Username"=>$Username,"Password"=>$Password));
