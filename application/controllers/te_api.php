@@ -101,12 +101,14 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
                 }elseif($this->session->userdata('id_position') =="2"){
 
                     $this->response(array($emp,
-                        'status' => 'tech'
+                        'status' => 'tech',
+                        'id_Employee'=> $emp[0]['id_Employee']
                     )); //ช่าง
                 }elseif($this->session->userdata('id_position') =="3"){
 
                     $this->response(array($emp,
-                        'status' => 'io'
+                        'status' => 'io',
+                        'id_Employee'=> $emp[0]['id_Employee']
                     )); //ประกัน
                 }
             }else
