@@ -69,7 +69,8 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
 
             //$this->response($qq);
             $this->response(array(
-                'status' => 'Mem'
+                'status' => 'Mem',
+                'id_Member'=> $qq[0]['id_Member']
             ));
           
         }else

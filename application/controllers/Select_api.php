@@ -18,26 +18,41 @@ require APPPATH . '/libraries/REST_Controller.php';
  */
 class Select_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index_post()
+    public function index_post($id)
     {
 
             $this->db->select('*');
             $this->db->from('Rental');
+            $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
+            $this->db->join('Brand', 'Brand.idBrand = Carregis.idBrand');
+            $this->db->join('Generation', 'Generation.id_Gen = Carregis.id_Gen');
+            $this->db->join('Member', 'Member.id_Member = Rental.id_Member');
+            $this->db->where('Rental.id_status', 11);
+            $this->db->where('Rental.id_Member', $id);
             $data = $this->db->get();
             $data = $data->result_array();
             
-            
-        if($data >0){
-            $this->response(array(
-                'status' => 'true',
-                'posts' => $data
-            ));
-        }else
-        {
-            $this->response(array(
-                'status' => 'false'
-            ));
-        }
+            if(!empty($data)){
+                $this->response(array(
+                    'message' => 'success', 
+                    'status' => 'true', 
+                    'data' => $data));
+            }else{
+                $this->response(array(
+                    'message' => 'unsuccess', 
+                    'status' => 'false'));
+            }
+        // if($data >0){
+        //     $this->response(array(
+        //         'status' => 'true',
+        //         'posts' => $data
+        //     ));
+        // }else
+        // {
+        //     $this->response(array(
+        //         'status' => 'false'
+        //     ));
+        // }
        
         
     

@@ -53,7 +53,12 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
         $lat = $this->input->post('lat');
         $lon = $this->input->post('lon');
         $TypeProblem = $this->input->post('Pro');
+        $idr = $this->input->post('idrent');
         $dat = date("Y-m-d H:i:s");
+        $obj = array(
+            'id_status'=>'9'
+        );
+        
         //$query = $this->db->get_where("Member",1 ,array("Username"=>$Username,"Password"=>$Password));
         // echo $Username;
         // echo $Password;
@@ -63,7 +68,8 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
             'Lat'=>$lat,
             'Lng' =>$lon,
             'Date' => $dat,
-            'id_Type_Problem'=>$TypeProblem
+            'id_Type_Problem'=>$TypeProblem,
+            'idRental'=>$idr
             
             
         );
@@ -75,6 +81,9 @@ class Map_api extends \Restserver\Libraries\REST_Controller {
         }else
         {
             $ins = $this->db->insert('Problem', $object);
+            $this->db->where('idRental', $idr);
+            $this->db->update('Rental', $obj);
+            
             $this->response(array(
                 'status' => 'insert'
             ));
