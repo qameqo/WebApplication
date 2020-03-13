@@ -185,7 +185,7 @@
  					</div>
  					<div class="row">
  						<div class="col-sm">
-						 	<H5 style="color: red;">* กรุณาอัปโหลดเอกสารให้ครบ 3 รูป</H5>
+						 	<H5 style="color: red;">* กรุณาอัปโหลดเอกสารให้ครบ 4 รูป</H5>
  							<a class="badge badge-secondary" style="height:40px;" type="button" href="#"
  								data-toggle="modal" data-target="#modal-default">
  								<p style="color:red;"><u>ตัวอย่างเอกสารหลักฐานยืนยันรถยนต์</u></p>
@@ -213,6 +213,9 @@
  											<img src="<?php echo base_url('./pic_tee/พรบ.jpg');?>" alt="ภาพตัวอย่าง"
  												height="70" width="85" />
  											<p>3.เล่มทะเบียนรถยนต์</p>
+ 											<img src="<?php echo base_url('./pic_tee/เล่มทะเบียนรถ.jpg');?>"
+ 												alt="ภาพตัวอย่าง" height="70" width="85" />
+											<p>4.หลักฐานประกันรถยนต์</p>
  											<img src="<?php echo base_url('./pic_tee/เล่มทะเบียนรถ.jpg');?>"
  												alt="ภาพตัวอย่าง" height="70" width="85" />
 												 <br>
@@ -271,7 +274,7 @@
 						<form action="<?php echo base_url('Pricecar/pri/'.$id.'/'.$idc); ?>">
  						<div class="col-sm">
  								<div class="box__input">
-									<?php if($countimg1[0]["img"] > 3 && $countimg2[0]["img2"] == 3) { ?>
+									<?php if($countimg1[0]["img"] > 3 && $countimg2[0]["img2"] == 4) { ?>
  									<button class="btn" style="background-color: #F60200; color:white;" 
 									 onclick="return confirm('ยืนยันข้อมูล ?');">ดำเนินการต่อ</button>
 									 <?php } 

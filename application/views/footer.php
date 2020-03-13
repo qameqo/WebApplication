@@ -116,6 +116,15 @@ jQuery(function(){
 
               }
           );
+          var val = $("#gen1").val()
+          
+          $.get("<?=base_url('Owner/selectcc/')?>"+val, 
+              function (data) {
+                  
+                $("#cc").html(data)
+
+              }
+          );
 
       }
       function Change_Fuel()
@@ -130,6 +139,18 @@ jQuery(function(){
               }
           );
       }
+      // function Change_CC()
+      // {
+      //     var val = $("#gen1").val()
+          
+      //     $.get("<?=base_url('Owner/selectcc/')?>"+val, 
+      //         function (data) {
+                  
+      //           $("#cc").html(data)
+
+      //         }
+      //     );
+      // }
      
 
       // Year Picker 

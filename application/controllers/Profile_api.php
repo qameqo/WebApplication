@@ -16,31 +16,30 @@ require APPPATH . '/libraries/REST_Controller.php';
  * @license         MIT
  * @link            https://github.com/chriskacerguis/codeigniter-restserver
  */
-class Getmap_api extends \Restserver\Libraries\REST_Controller {
+class Profile_api extends \Restserver\Libraries\REST_Controller {
 
     public function index_post($id)
     {
-        $this->db->select('*');
-        $this->db->from('Problem');
-        $this->db->where('id_employee', $id);
-        $this->db->where('Detail_2 IS NULL', null);
-        $this->db->where('Date_2 IS NULL', null);
-        $data = $this->db->get();
-        $data = $data->result_array();
-            
-            
-        if(!empty($data)){
-            $this->response(array(
-                'status' => 'true',
-                'posts' => $data
-            ));
-        }else
-        {
-            $this->response(array(
-                'status' => 'false'
-            ));
-        }
 
+            $this->db->select('*');
+            $this->db->from('Member');
+            $this->db->where('id_Member', $id);
+            $data = $this->db->get();
+            $data = $data->result_array();
+            
+            if(!empty($data)){
+                $this->response(array(
+                    'message' => 'success', 
+                    'status' => 'true', 
+                    'data' => $data));
+            }else{
+                $this->response(array(
+                    'message' => 'unsuccess', 
+                    'status' => 'false'));
+            }
+       
+    
+    
     }
 }
 ?>

@@ -252,12 +252,12 @@
 				</div>
 				<div class="row">
 					<div class="col-sm mb-1">
-						<!-- <label for="exampleFormControlSelect1">เชื้อเพลิง</label>
-						<select class="form-control selectpicker" data-style="btn btn-link" name="fuel2" id="fuel2"
+						<label for="exampleFormControlSelect1">CC รถ</label>
+						<select class="form-control selectpicker" data-style="btn btn-link" name="cc" id="cc"
 							required>
-							<option value="">เลือกเชื้อเพลิง</option>
+							<option value="">เลือก cc</option>
 
-						</select> -->
+						</select>
 					</div>
 					<div class="col-md-4">
 							<br>

@@ -59,7 +59,8 @@ class Owner extends CI_Controller {
                     'id_Status' => $ids,
                     'id_Member' => $this->session->userdata('id_Member'),
                     'id_Gen' => $this->input->post("Gen"),
-                    'idFuel' => $this->input->post("fuel1")
+                    'idFuel' => $this->input->post("fuel1"),
+                    'CC' => $this->input->post("cc")
                    
                 );
             
@@ -202,6 +203,26 @@ class Owner extends CI_Controller {
         {
         ?>
         <option value="<?php echo $he['idFuel2'] ?>"><?php echo $he['Name_Fuel2'] ?></option>
+        
+    <?php }
+								  
+						
+    }
+    public function selectcc($ss)
+    {?>
+        <!-- <option value="">เลือก cc</option> -->
+        <?php
+        
+        $sq = $this->db->query("SELECT CC FROM `Generation` WHERE id_Gen = '$ss'");
+        // $this->db->from('Generation');
+        // $this->db->where('id_Gen',$gq);
+        //  = $this->db->get();
+        $ro = $sq->result_array();
+        foreach($sq->result_array()
+        as $he)
+        {
+        ?>
+        <option value="<?php echo $he['CC'] ?>"><?php echo $he['CC'] ?></option>
         
     <?php }
 								  
