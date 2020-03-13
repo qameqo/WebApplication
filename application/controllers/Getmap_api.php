@@ -22,7 +22,10 @@ class Getmap_api extends \Restserver\Libraries\REST_Controller {
     {
         $this->db->select('*');
         $this->db->from('Problem');
-        $this->db->where('id_employee', $id);
+        $this->db->join('Employee', 'Employee.id_Employee = Problem.id_employee');
+        
+        // $this->db->join('Employee','Employee.id_Employee = Problem.id_employee');
+        $this->db->where('Problem.id_employee', $id);
         $this->db->where('Detail_2 IS NULL', null);
         $this->db->where('Date_2 IS NULL', null);
         $data = $this->db->get();
