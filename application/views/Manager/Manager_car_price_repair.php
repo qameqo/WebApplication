@@ -47,14 +47,14 @@
 
                                     <!-- <a href="<?php echo site_url('Emp_car/edit_repair/').$rs->id_Repair?>" class="btn btn-warning btn-sm" style="font-size:16px;">แก้ไขข้อมูล</a> -->
 
-                                <?php/*  } */ ?>
+                                <?php  }  ?>
 
                                 
                                 </td>
 								
 							</tr>
 
-                            <?php } ?>
+                            <?php /* } */ ?>
 
 						</tbody>
 						<tfoot>

@@ -186,7 +186,19 @@
                                     echo'<td width="70%"><span class="badge badge-success" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
+                                }
+                                else if($data['Name_Status']== 'ซ่อม')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
                                 }  
+                                else if($data['Name_Status']== 'แจ้งปัญหา')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }    
                                 ?>
                                 
                             </tr>
