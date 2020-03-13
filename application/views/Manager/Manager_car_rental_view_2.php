@@ -8,31 +8,7 @@
                         <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
                         
                     </div>
-                    <!-- <div class="col-md-3">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="font-size: 16px;">
-                        รายได้รวมทั้งหมดของทางร้าน
-                        </button>
-
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    
                 </div>
 
             </div>
@@ -71,7 +47,8 @@
 								<td><?php echo $rs->startDate; ?></td>
 								<td><?php echo $rs->endDate; ?></td>
 								<td><?php echo $rs->ReturnDate; ?></td>
-								<td><b><?php echo number_format($rs->Companyincome + $rs->PriceFive + $rs->Fines_price + $rs->PriceVat,0);?></b>&nbsp;บาท</td>
+                                <td><b><?php    $sum = number_format($rs->Companyincome + $rs->PriceFive + $rs->Fines_price + $rs->PriceVat,0);
+                                                echo $sum;?></b>&nbsp;บาท</td>
                                
 								
                                 <td>
@@ -83,24 +60,26 @@
                         <?php }} ?>
 
 						</tbody>
-						<!-- <tfoot>
-							<tr>
-                                <th data-column-id="Brand">ไอดี</th>
-                                <th data-column-id="Brand">ราคารถยนต์</th>
-                                <th data-column-id="Brand">ราคาประกัน</th>
-                                <th data-column-id="Brand">ภาษีมูลค่าเพิ่ม (7%)</th>
-                                <th data-column-id="Brand">เงินมัดจำการเช่ารถยนต์</th>
-                                <th data-column-id="Brand">เงินค่าปรับ</th>
-                                <th data-column-id="Brand">รายได้เจ้าของรถ</th>
-                                <th data-column-id="Brand">รายได้ทางร้าน</th>
-                                <th data-column-id="Generation">รายได้รวมทั้งหมด</th>
-
-                                <th data-column-id="Action"></th>
-							</tr>
-						</tfoot> -->
+						
                     </table>
+
                 </div>
             </div>
+
+            <?php
+            // $query = $this->db->query('SELECT SUM(Companyincome), SUM(PriceFive), SUM(Fines_price), SUM(PriceVat) FROM Rental');
+            $this->db->select('SUM(Companyincome) + SUM(PriceFive) + SUM(Fines_price) + SUM(PriceVat) as total', FALSE);
+            $this->db->from('Rental');
+            $query = $this->db->get();
+
+            $result = $query->result_array();
+            foreach($result as $data){
+            ?>
+
+            <h3>รายได้รวมทั้งหมด <?php echo $data['total']; ?> บาท</h3>
+
+            <?php } ?>
+
 		</div>
 		<br>
 	</div>

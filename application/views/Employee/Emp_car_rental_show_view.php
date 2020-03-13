@@ -406,6 +406,18 @@
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                                </div>
+
+                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
+                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                                </div>
+
+                                <div class="col-3">
+                                    <label class="label mt-5">ราคาค่าปรับ</label>
                                     <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 2; ?>">
                                 </div>
 
@@ -418,19 +430,7 @@
 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 4; ?>">
-                                </div>
-
-                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
-
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                                </div>
-
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 6; ?>">
+                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 3; ?>">
                                 </div>
 
                             <?php }else{ ?>
