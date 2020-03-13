@@ -28,7 +28,7 @@
                          INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '$id'");
                             $nn = $query->result_array();
                          ?>
-                          <h5>รายได้รวมทั้งหมด <?php echo number_format($nn[0]["raka"],0) ?> บาท</h5>
+                         
                 <div class="col-md-12 mb-5 text-center">
                     <br>
                     <table id="employee_data" class="table table-striped table-bordered text-center"
@@ -143,6 +143,7 @@
 							} ?>
                         </tbody>
                     </table>
+                    <h5>รายได้รวมทั้งหมด <?php echo number_format($nn[0]["raka"],0) ?> บาท</h5>
                 </div>
             </div>
         </div>
