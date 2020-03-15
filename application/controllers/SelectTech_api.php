@@ -23,6 +23,7 @@ class SelectTech_api extends \Restserver\Libraries\REST_Controller {
         $this->db->select('*');
         $this->db->from('Problem');
         $this->db->join('Rental', 'Rental.idRental = Problem.idRental');
+        $this->db->join('Status_car', 'Status_car.id_Status = Rental.id_status');
         $this->db->join('Type_Problem', 'Type_Problem.id_Type_Problem = Problem.id_Type_Problem');
         $this->db->where('Rental.id_Member', $id);
         $data = $this->db->get();

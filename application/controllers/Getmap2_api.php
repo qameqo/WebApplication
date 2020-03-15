@@ -18,23 +18,30 @@ require APPPATH . '/libraries/REST_Controller.php';
  */
 class Getmap2_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index_post(){
-        $this->db->select('lat');
-        $this->db->select('lng');
+    public function index_post($id)
+    {
+        $this->db->select('*');
         $this->db->from('Problem');
-        // $this->db->where('Rental.id_Member');
+        $this->db->join('Employee', 'Employee.id_Employee = Problem.id_employee');
+        
+        // $this->db->join('Employee','Employee.id_Employee = Problem.id_employee');
+        $this->db->where('Problem.id_employee', $id);
+        $this->db->where('Detail_2 IS NOT NULL');
+        $this->db->where('Date_2 IS NOT NULL');
         $data = $this->db->get();
         $data = $data->result_array();
-
+            
+            
         if(!empty($data)){
             $this->response(array(
-                'message' => 'success', 
-                'status' => 'true', 
-                'data' => $data));
-        }else{
+                'status' => 'true',
+                'posts' => $data
+            ));
+        }else
+        {
             $this->response(array(
-                'message' => 'unsuccess', 
-                'status' => 'false'));
+                'status' => 'false'
+            ));
         }
     }
 }
