@@ -7,6 +7,7 @@ class Emp_problem extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Emp_problem_model');
+        $this->load->model('Emp_rental_model');
     }
 
     public function index()
@@ -33,6 +34,15 @@ class Emp_problem extends CI_Controller {
 
         $this->load->view('Employee/Header_emp');
         $this->load->view('Employee/Emp_problem_view_3', $data);
+        $this->load->view('Employee/Footer_emp');
+    } 
+
+    public function index_4()
+    {   
+        $data['query']=$this->Emp_rental_model->show_rental();
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_problem_view_4', $data);
         $this->load->view('Employee/Footer_emp');
     } 
 

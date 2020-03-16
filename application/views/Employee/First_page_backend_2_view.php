@@ -4,6 +4,17 @@
   <H1 class="font-weight-bolder">G Dragon Autotech</H1><br>
 
     <div class="row justify-content-center">
+
+      <div class="col-sm-10">
+        <div class="card text-center">
+        <div class="card-header card-header-rose">   
+          <h4 class="card-title">การจัดการข้อมูลบุคคล</h4>
+        </div>
+          <div class="card-body">
+            <a href="<?php echo site_url('emp/emp_edit');?>" class="btn btn-rose btn-sm" style="font-size : 18px">แก้ไขข้อมูลส่วนตัว</a><br>
+          </div>
+        </div>
+      </div>
       
       <div class="col-sm-5">
         <div class="card text-center">
@@ -38,18 +49,7 @@
         </div>
       </div>
 
-      <div class="col-sm-3">
-        <div class="card text-center">
-        <div class="card-header card-header-rose">   
-          <h4 class="card-title">การจัดการข้อมูลบุคคล</h4>
-        </div>
-          <div class="card-body">
-            <a href="<?php echo site_url('emp/emp_edit');?>" class="btn btn-rose btn-sm" style="font-size : 18px">แก้ไขข้อมูลส่วนตัว</a><br>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-7">
+      <div class="col-sm-10">
         <div class="card text-center">
         <div class="card-header card-header-warning">   
           <h4 class="card-title">จัดการข้อมูลแจ้งปัญหา</h4>
@@ -57,6 +57,7 @@
           <div class="card-body">
             <a href="<?php echo site_url('Emp_problem');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งซ่อมรถยนต์</a>
             <a href="<?php echo site_url('Emp_problem/index_2');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการข้อมูลแจ้งอุบัติเหตุ</a>
+            <a href="<?php echo site_url('Emp_problem/index_4');?>" class="btn btn-warning btn-sm" style="font-size : 18px">จัดการการแจ้งขอเปลี่ยนรถยนต์</a>
             <a href="<?php echo site_url('Emp_problem/index_3');?>" class="btn btn-warning btn-sm" style="font-size : 18px">ตรวจสอบข้อมูลปัญหา</a>
           </div>
         </div>
