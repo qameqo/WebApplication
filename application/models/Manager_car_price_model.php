@@ -63,6 +63,7 @@ class Manager_car_price_model extends CI_Model
 
             $data = array(
                 'Name_Gen' => $upper,
+                'CC' => $this->input->post('CC'),
                 'Price' => $this->input->post('Price'),
                 'idBrand' => $this->input->post('idBrand'),
                 'id_Seat' => $this->input->post('id_Seat'),
@@ -95,6 +96,7 @@ class Manager_car_price_model extends CI_Model
 
         $data = array(
             'Name_Gen' => $upper,
+            'CC' => $this->input->post('CC'),
             'Price' => $this->input->post('Price'),
             'idBrand' => $this->input->post('idBrand'),
             'id_Seat' => $this->input->post('id_Seat'),

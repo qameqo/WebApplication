@@ -8,8 +8,16 @@
                         <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
                         
                     </div>
-                    
-                </div>
+                    <div class="row">
+                        <div class="col-sm text-right">
+                            <input type="text" id="startdateee" name="startdateee" style="width:120px; text-align:center;"
+                                value="">
+                        </div>
+                        <div class="col-sm text-left">
+                            <input type="text" id="enddateee" name="enddateee" style="width:120px; text-align:center;" value="">
+                        </div>
+                    </div>
+                
 
             </div>
             <div class="panel-body">
@@ -70,6 +78,8 @@
             // $query = $this->db->query('SELECT SUM(Companyincome), SUM(PriceFive), SUM(Fines_price), SUM(PriceVat) FROM Rental');
             $this->db->select('SUM(Companyincome) + SUM(PriceFive) + SUM(Fines_price) + SUM(PriceVat) as total', FALSE);
             $this->db->from('Rental');
+            $this->db->where('id_status', 12);
+            
             $query = $this->db->get();
 
             $result = $query->result_array();

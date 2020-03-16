@@ -71,6 +71,18 @@ class Emp_problem_model extends CI_Model
 
         $query_2=$this->db->update('Employee',$data_2);
 
+        //--------------------------------------------------------------------
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+       
+        $data_3 = array( 
+            'id_status' => 4,
+        );
+
+        $query_3=$this->db->update('Rental',$data_3);
+
+        //---------------------------------------------------------------------
+
         $query_3 = $this->db->query('SELECT * FROM Employee WHERE id_Employee = '.$this->input->post('id_Employee'));
 
         $qq = $query_3->result_array();

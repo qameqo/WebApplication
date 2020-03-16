@@ -63,6 +63,8 @@
 
                                     <input type="hidden" value="<?php echo $rs->id_Problem; ?>" name="id_Problem" id="id_Problem" />
 
+                                    <input type="hidden" value="<?php echo $rs->idRental; ?>" name="idRental" id="idRental">
+
                                 <button type="submit" class="btn btn-warning btn-sm" style="font-size:16px;">กำหนดงาน</button>
                                 </form>  
                     

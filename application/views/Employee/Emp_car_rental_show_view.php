@@ -372,13 +372,11 @@
                             </div>   -->
 
                             <div class="row justify-content-center mt-5">
-                                <div class="col-3"> 
-                                    <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000
-                                </div>
-                                <div class="col-3"> 
-                                    <input class="form-check-input" type="checkbox" name="id_Status" value="13"> รถยนต์เสียหาย
-                                </div>
-                            </div>  
+                                
+                                <div class="form-group prc">
+                                    <label class="label">เงินคืนลูกค้า</label>
+                                    <input type="number" id="Price_refund" name="Price_refund" class="form-control prc" value="5000" required >
+                                </div>                          
 
                             <?php
                             //  $idRental = $rs->idRental;
@@ -395,49 +393,45 @@
                             echo '">';
                             ?>
                             
-                            <div class="row justify-content-center"> 
-
                             <?php if($rs->endDate ==  date('Y-m-d',$d)){ ?>
-                                
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                                </div>
 
                                 <div class="col-3">
-                                    <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
+                                    <div class="form-group prc">
+                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo ($rs->Price * 0.2)/100; ?>" >
+                                    </div>
+                                </div>
+
+                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+                                <div class="col-3">
+                                    <div class="form-group prc">
+                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo (($rs->Price * 0.2)/100) * 2; ?>" >
+                                    </div>
                                 </div>
 
                             <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
 
                                 <div class="col-3">
-                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                                </div>
-
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 2; ?>">
-                                </div>
-
-                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
-
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาเช่าต่อวัน</label>
-                                    <input type="number" disabled class="form-control mt-1" value="<?php echo $rs->RentalPrice; ?>">
-                                </div>
-
-                                <div class="col-3">
-                                    <label class="label mt-5">ราคาค่าปรับ</label>
-                                    <input type="number" name="Fines_price" id="Fines_price" class="form-control mt-1" value="<?php echo $rs->RentalPrice * 3; ?>">
+                                    <div class="form-group prc">
+                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo (($rs->Price * 0.2)/100) * 3; ?>" >
+                                    </div>
                                 </div>
 
                             <?php }else{ ?>
 
-                                <input type="hidden" name="Fines_price" id="Fines_price" class="form-control mt-1" value="0">
+                                    <input type="hidden" name="Fines_price" id="Fines_price" class="form-control prc" value="0">
 
                             <?php }?>
+
+                                    <div class="col-3"> 
+                                        <!-- <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000 -->
+                                        <div class="form-group prc">
+                                            <label class="label">ราคามัดจำ 5000 บาท</label>
+                                            <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="0" readonly>
+                                        </div>
+                                    </div>
                             
                             </div>  
 
@@ -450,6 +444,19 @@
                         }
 
                     }?>
+
+                    <script>
+                        $('.form-group').on('input', '.prc',function () {
+                            var totalSum = 5000;
+                            $('.form-group .prc').each(function () {  
+                                var inputVal = $(this).val();
+                                if($.isNumeric(inputVal)){
+                                    totalSum -= parseInt(inputVal);
+                                }
+                            });
+                            $('#PriceFive').val(totalSum);
+                        });
+                        </script>
 
             </div>
         </div>

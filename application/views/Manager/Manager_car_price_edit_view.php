@@ -61,6 +61,12 @@
                         </div>
 
                         <div class="col-12 mt-3">
+                            <label for="Brand">CC. รถยนต์</label>
+                            <input type="text" name="CC" pattern="^(0|[1-9][0-9]*)$" id="CC" class="form-control"
+                                placeholder="CC" value="<?php echo $rs_edit->CC; ?>">
+                        </div>
+
+                        <div class="col-12 mt-3">
                             <label for="Brand">ราคา</label>
                             <input type="text" name="Price" pattern="^(0|[1-9][0-9]*)$" id="Price" class="form-control"
                                 placeholder="ราคา" value="<?php echo $rs_edit->Price; ?>">
