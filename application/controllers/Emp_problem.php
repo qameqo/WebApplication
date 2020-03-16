@@ -94,6 +94,27 @@ class Emp_problem extends CI_Controller {
     {
         $this->Emp_problem_model->work();
     }
+
+    public function reserve_car($idRental)
+    {
+        $data['query']=$this->Emp_problem_model->reserve_car($idRental);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // echo $idRental;
+        // exit;
+
+        $this->load->view('Employee/Header_emp');
+        $this->load->view('Employee/Emp_car_rental_view_4_1', $data);
+        $this->load->view('Employee/Footer_emp');
+    }
+
+    public function change_car()
+    {
+        $this->Emp_problem_model->change_car();
+    }
+    
 }
 
 /* End of file Hello.php */

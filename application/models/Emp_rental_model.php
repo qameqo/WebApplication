@@ -229,25 +229,24 @@ class Emp_rental_model extends CI_Model
                     'totalprice' => $new_total
                 );
 
-                $query_2=$this->db->update('Rental',$data);     
-
-                if($this->input->post('id_Status') == 13){
-
-                    $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                $query_2=$this->db->update('Rental',$data);   
                 
-                    $data = array( 
-                        'id_Status' => $this->input->post('id_Status'),
-                    );
+                //---------------------------------------------------------------------------------
 
-                    $query_2=$this->db->update('Carregis',$data);
-                }
+                $this->db->where('idCarregis', $this->input->post('idCarregis2'));
+            
+                $data = array( 
+                    'id_Status' => $this->input->post('id_Status'),
+                );
+
+                $query_2=$this->db->update('Carregis',$data);
 
                 echo "<script>";
                 echo "alert('ยืนยันการคืนเรียบร้อย');";
                 echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
                 echo "</script>";
 
-            }else{
+            }else{//-------------------------------------------------------------------------------
 
                 $new_total = $data2['totalprice'] + $this->input->post('Fines_price') + $this->input->post('PriceFive');
                 
@@ -266,18 +265,17 @@ class Emp_rental_model extends CI_Model
                     'totalprice' => $new_total
                 );
 
-                $query_2=$this->db->update('Rental',$data);     
-
-                if($this->input->post('id_Status') == 13){
-
-                    $this->db->where('idCarregis', $this->input->post('idCarregis'));
+                $query_2=$this->db->update('Rental',$data);    
                 
-                    $data = array( 
-                        'id_Status' => $this->input->post('id_Status'),
-                    );
+                //--------------------------------------------------------------------------------
 
-                    $query_2=$this->db->update('Carregis',$data);
-                }
+                $this->db->where('idCarregis', $this->input->post('idCarregis2'));
+            
+                $data = array( 
+                    'id_Status' => $this->input->post('id_Status'),
+                );
+
+                $query_2=$this->db->update('Carregis',$data);
 
                 echo "<script>";
                 echo "alert('ยืนยันการคืนเรียบร้อย');";
