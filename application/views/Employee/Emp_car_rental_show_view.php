@@ -442,7 +442,7 @@
                                 <div class="col-3">
                                     <div class="form-group prc">
                                         <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo ($rs->Price * 0.2)/100; ?>" >
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice; ?>" >
                                     </div>
                                 </div>
 
@@ -450,7 +450,7 @@
                                 <div class="col-3">
                                     <div class="form-group prc">
                                         <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo (($rs->Price * 0.2)/100) * 2; ?>" >
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice * 2; ?>" >
                                     </div>
                                 </div>
 
@@ -459,7 +459,7 @@
                                 <div class="col-3">
                                     <div class="form-group prc">
                                         <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo (($rs->Price * 0.2)/100) * 3; ?>" >
+                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice * 3; ?>" >
                                     </div>
                                 </div>
 
