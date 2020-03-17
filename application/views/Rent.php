@@ -11,11 +11,11 @@
 			
 				
 			
-				$query = $this->db->query('select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen, Seat.Number_Seat 
+				$query = $this->db->query("select Carregis.*, Images.Name_image, Brand.Name_Brand, Generation.Name_Gen, Seat.Number_Seat 
 				from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = 
 				Carregis.idBrand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN Seat on Seat.id_Seat = 
 				Carregis.id_Seat WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) 
-				and Carregis.id_Status="5" AND id_Member NOT IN (61)');
+			    AND Carregis.id_Member <> '61'");
 				$qq = $query->result_array();
 			?>
 
@@ -69,10 +69,8 @@
 			<br>
 			<div id="bookok">
 			</div>
-			<?php foreach($qq as $data){ 
-					if ($data['id_Member'] == '61') {
-						# code...
-					}else{ ?>
+			 <?php foreach($qq as $data){ ?>
+					
 			<div class="row" id="booking">
 				<div class="col-sm shadow p-3 mb-2 bg-white rounded"
 					style="background-color: #FFFFFF; border-radius: 10px ; margin-left: 1em ; margin-right: 1em ;">
@@ -146,9 +144,9 @@
 					</div>
 				</div>
 			</div>
-		<!-- .'/'.$startdat.'/'.$dateendd -->
+		<!-- .'}/'.$startdat.'/'.$dateendd -->
 	
-<?php  }} ?>
+<?php  } ?>
 	</div>
 </div>
 </form>
