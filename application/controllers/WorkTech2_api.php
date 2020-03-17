@@ -19,7 +19,7 @@ require APPPATH . '/libraries/REST_Controller.php';
  */
 class WorkTech2_api extends \Restserver\Libraries\REST_Controller {
 
-    public function index_post($idp,$idr,$ide){
+    public function index_post($idp,$idr,$ide,$idc){
         $detail2 = $this->input->post('detail2');
         $date2 = date("Y-m-d H:i:s");
 
@@ -33,6 +33,9 @@ class WorkTech2_api extends \Restserver\Libraries\REST_Controller {
         $oo = array(
             'Status' => '1'
         );
+        $car = array(
+            'id_Status' => '13'
+        );
 
         if(!empty($object)){
             
@@ -42,6 +45,10 @@ class WorkTech2_api extends \Restserver\Libraries\REST_Controller {
             $this->db->update('Rental', $kk);
             $this->db->where('id_Employee', $ide);
             $this->db->update('Employee', $oo);
+            $this->db->where('idCarregis', $idc);
+            $this->db->update('Carregis', $car);
+            
+            
             
             
             

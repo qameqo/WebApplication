@@ -307,7 +307,7 @@
 
                                         <div class="modal-body text-left">
                                         <?php foreach($qa as $data){ ?>
-                                                <?php echo $data['Detail'] ?>
+                                                <?php echo $data['DetailIns'] ?>
                                             <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
                                             <?php } ?>
                                             <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>
@@ -395,7 +395,7 @@
 
                                         <div class="modal-body text-left">
                                             <?php foreach($qb as $data){ ?>
-                                                <?php echo $data['Detail'] ?>
+                                                <?php echo $data['DetailIns'] ?>
                                             <!-- <p>ประกันที่จะทำให้คุณขับรถได้อย่างมั่นใจไร้กังวลด้วยตัวเลือกที่ทำให้คุณไม่ต้องเสียค่าใช้จ่ายใด ๆ หากคุณต้องรับผิดชอบต่ออุบัติเหตุนั้นๆ</p> -->
                                             <?php } ?>&nbsp;&nbsp;
                                             <a href="<?php echo base_url('Insurance'); ?>" target="_blank" style="color:red;"><u>รายละเอียดเพิ่มเติม</u></a>

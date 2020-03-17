@@ -23,6 +23,9 @@ class Getmap_api extends \Restserver\Libraries\REST_Controller {
         $this->db->select('*');
         $this->db->from('Problem');
         $this->db->join('Employee', 'Employee.id_Employee = Problem.id_employee');
+        $this->db->join('Rental', 'Rental.idRental = Problem.idRental');
+        $this->db->join('Carregis', 'Carregis.idCarregis = Rental.idCarregis');
+        $this->db->join('Type_Insurance', 'Type_Insurance.id_Insurance = Rental.id_Insurance');
         
         // $this->db->join('Employee','Employee.id_Employee = Problem.id_employee');
         $this->db->where('Problem.id_employee', $id);
