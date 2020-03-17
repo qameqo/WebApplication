@@ -105,5 +105,55 @@ class Emp_problem_model extends CI_Model
             }
         }
     }
+
+    public function reserve_car($idRental)
+    {
+        $this->db->select('*');
+        $this->db->from('Rental');
+        $this->db->from('Carregis');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+        $this->db->join('Status_car', 'Carregis.id_Status = Status_car.id_Status');
+
+        // $this->db->join('Rental', 'Rental.idCarregis = Carregis.idCarregis');
+        
+        $this->db->where('Rental.idRental', $idRental);
+        
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function change_car()
+    {
+        // print_r($_POST);
+        
+        // exit;
+
+        $this->db->where('idCarregis', $this->input->post('idCarregis'));
+       
+        $data = array( 
+            'id_Status' => $this->input->post('id_Status'),
+        );
+
+        $query=$this->db->update('Carregis',$data);
+
+        //----------------------------------------------------------------
+
+        $this->db->where('idRental', $this->input->post('idRental'));
+
+        $data2 = array( 
+            'id_status' => $this->input->post('id_status'),
+            'idCarregis2' => $this->input->post('idCarregis')
+        );
+
+        $query2=$this->db->update('Rental',$data2);
+
+        echo "<script>
+                alert('ส่งเปลี่ยนรถยนต์เรียบร้อย');
+                window.location.href='". base_url()."Emp_problem/index_4';
+                </script>"; 
+
+    }
 }
 ?>

@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ข้อมูลการโอนเงินเช่ารถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลการขอเปลี่ยนรถยนต์</h3>
                     </div>
                 </div>
                 
@@ -31,7 +31,7 @@
                         <?php foreach ($query as $rs) { ?>
 
                             <?php
-                            if ($rs->id_status == '1' || $rs->id_status == '9') 
+                            if ($rs->id_status == '15') 
                             {
                                                   
                             ?> 

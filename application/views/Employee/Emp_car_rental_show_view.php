@@ -84,6 +84,15 @@
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
                                 <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
                             </tr>
+                        
+                            <?php if ($rs->idCarregis2 != null) {?>
+
+                            <tr>
+                                <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
+                                <td width="70%"><?php echo $rs->idCarregis2; ?></td>
+                            </tr>
+
+                            <?php } ?>
 
                             <?php 
                             
@@ -229,7 +238,17 @@
                                 {
                                     echo'<span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
-                                } ?>
+                                }
+                                else if($rs->id_status == '14')
+                                {
+                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                } 
+                                else if($rs->id_status == '15')
+                                {
+                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                }   ?>
                                 </span></td>
                             </tr> 
 
@@ -345,6 +364,23 @@
                                   
                     }?>
 
+                    <?php // เปลี่ยนรถยนต์
+
+                    if ($rs->id_status == '15') {
+
+                        echo '<form action="'; 
+                        echo site_url('Emp_problem/reserve_car/'.$rs->idRental); 
+                        echo '" method="POST" class="form-horizontal">';
+                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                        echo $rs->idRental; 
+                        echo '">';
+                        echo '<button class="btn btn-warning mt-5" type="submit" style="font-size:20px;">เปลี่ยนรถยนต์</button>';
+                        echo '</form>';
+
+                    ?>
+
+
+                    <?php } ?>
 
 
                     <?php 
@@ -384,9 +420,17 @@
                             echo $rs->idRental; 
                             echo '">';
 
-                            echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            echo $rs->idCarregis; 
-                            echo '">';
+                            // if ($rs->idCarregis2 != null) {
+                                echo '<input type="hidden" name="idCarregis2" id="idCarregis2" class="form-control" value="';
+                                echo $rs->idCarregis2; 
+                                echo '">';
+                            // }else {
+                            //     echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                            //     echo $rs->idCarregis; 
+                            //     echo '">';
+                            // }
+
+                            
         
                             echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
                             echo date("Y-m-d");
@@ -437,7 +481,7 @@
 
                             <?php
                             echo '<input type="hidden" class="btn btn-danger mt-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
-
+                            echo '<input type="hidden" class="btn btn-danger mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             echo '<button class="btn btn-info mt-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
                             echo '</form>';
                         

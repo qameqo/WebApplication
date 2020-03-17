@@ -32,7 +32,9 @@
                             <?php foreach ($query as $rs) { 
 
                                 if($rs->id_Status == '2'){ //โชสถานะ 2 กับ 4
-
+                                    if ($rs->id_Status) {
+                                        # code...
+                                    }
 
                             ?>
 
