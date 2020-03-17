@@ -25,6 +25,10 @@
                                 <td width="70%"><?php echo $rs->Name_Gen; ?></td>
                             </tr>
                             <tr>
+                                <td width="30%"><label>วันที่ทำรายการเช่า</label></td>
+                                <td width="70%"><?php echo $rs->Datebooking; ?></td>
+                            </tr>
+                            <tr>
                                 <td width="30%"><label>วันที่เริ่มเช่า</label></td>
                                 <td width="70%"><?php echo $rs->startDate; ?></td>
                             </tr>
@@ -39,47 +43,56 @@
                             </tr>
                             <?php } ?>
                             <tr>
-                                <td width="30%"><label>รายได้จากราคารถ</label></td>
-                                <td width="70%"><b><?php echo number_format($rs->Companyincome,0); ?></b>&nbsp;บาท</td>
+                                <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
+                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รายได้จากมัดจำ</label></td>
-                                <td width="70%"><b><?php echo number_format($rs->PriceFive,0); ?></b>&nbsp;บาท</td>
+                                <td width="30%"><label>ราคารถยนต์</label></td>
+                                <td width="70%"><?php echo $rs->PriceCar; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รายได้จากค่าปรับ</label></td>
-                                <td width="70%"><b><?php echo number_format($rs->Fines_price,0); ?></b>&nbsp;บาท</td>
+                                <td width="30%"><label>ราคามัดจำ (30%)</label></td>
+                                <td width="70%"><?php echo $rs->PriceDe; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รายได้ vat 7%</label></td>
-                                <td width="70%"><b><?php echo number_format($rs->PriceVat,0); ?></b>&nbsp;บาท</td>
+                                <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
+                                <td width="70%"><?php echo $rs->PriceOver; ?>&nbsp;บาท</td>
                             </tr>
                             <tr>
-                                <td width="30%"><label>รายได้รวม</label></td>
-                                <td width="70%"><b><?php echo number_format($rs->PriceVat + $rs->Fines_price + $rs->PriceFive + $rs->Companyincome,0); ?></b>&nbsp;บาท</td>
+                                <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
+                                <td width="70%"><?php echo $rs->PriceVat; ?>&nbsp;บาท</td>
                             </tr>
 
                             <?php if($rs->PriceFive == null){}else{?>
 
-                            <!-- <tr>
+                            <tr>
                                 <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
                                 <td width="70%"><?php echo $rs->PriceFive; ?>&nbsp;บาท</td>
-                            </tr> -->
+                            </tr>
 
                             <?php }?>
 
                             <?php if ($rs->Fines_price == 0 || $rs->Fines_price == null) {}else{ ?>
 
-                            <!-- <tr>
+                            <tr>
                                 <td width="30%"><label>ราคาค่าปรับ</label></td>
                                 <td width="70%"><?php echo $rs->Fines_price; ?>&nbsp;บาท</td>
-                            </tr> -->
+                            </tr>
 
                             <?php } ?>
-                            <!-- <tr>
+                            <tr>
                                 <td width="30%"><label>ราคาทั้งหมด</label></td>
                                 <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
-                            </tr> -->
+                            </tr>
+                        
+                            <?php if ($rs->idCarregis2 != null) {?>
+
+                            <tr>
+                                <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
+                                <td width="70%"><?php echo $rs->idCarregis2; ?></td>
+                            </tr>
+
+                            <?php } ?>
 
                             <?php 
                             
@@ -219,6 +232,11 @@
                                 else if($rs->id_status == '12')
                                 {
                                     echo'<span class="badge badge-success" style="font-size:13px;">';
+                                    echo $rs->Name_Status; 
+                                } 
+                                else if($rs->id_status == '13')
+                                {
+                                    echo'<span class="badge badge-default" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
                                 }
                                 else if($rs->id_status == '14')
