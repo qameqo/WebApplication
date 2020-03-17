@@ -130,6 +130,24 @@ class Emp_problem_model extends CI_Model
         
         // exit;
 
+        $query = $this->db->query('SELECT idCarregis FROM Rental WHERE idRental = '.$this->input->post('idRental'));
+
+        $qq = $query->result_array();
+
+        foreach ($qq as $data) {
+
+            $this->db->where('idCarregis', $data['idCarregis']);
+
+            $data = array( 
+                'id_Status' => 13,
+            );
+    
+            $query=$this->db->update('Carregis',$data);
+            
+        }
+
+        //----------------------------------------------------------------
+
         $this->db->where('idCarregis', $this->input->post('idCarregis'));
        
         $data = array( 
