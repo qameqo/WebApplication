@@ -25,7 +25,7 @@ class Rental extends CI_Controller {
         Carregis.idCarregis NOT IN (SELECT Rental.idCarregis FROM Rental WHERE (('$start' BETWEEN Rental.startDate and Rental.endDate) OR 
         ('$end' BETWEEN Rental.startDate and Rental.endDate)) AND Rental.id_status <> '6' AND Rental.id_status <> '3')
          AND Carregis.id_Status = '5' AND Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis 
-         LIMIT 1)");
+         LIMIT 1) AND Carregis.id_Member <> '61'");
         $qq = $query->result_array();
         //echo $this->db->last_query();
         
@@ -41,47 +41,47 @@ class Rental extends CI_Controller {
 
   
 
-                    function fetch()
-                    {
-                    $output = '';
-                    $query = '';
-                    $this->load->model('ajaxsearch_model');
-                    if($this->input->post('query'))
-                    {
-                    $query = $this->input->post('query');
-                    }
-                    $data = $this->ajaxsearch_model->fetch_data($query);
-                    $output .= '
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                        <tr>
-                        <th>ยี่ห้อ</th>
-                        <th>รุ่น</th>
+                    // function fetch()
+                    // {
+                    // $output = '';
+                    // $query = '';
+                    // $this->load->model('ajaxsearch_model');
+                    // if($this->input->post('query'))
+                    // {
+                    // $query = $this->input->post('query');
+                    // }
+                    // $data = $this->ajaxsearch_model->fetch_data($query);
+                    // $output .= '
+                    // <div class="table-responsive">
+                    //     <table class="table table-bordered table-striped">
+                    //     <tr>
+                    //     <th>ยี่ห้อ</th>
+                    //     <th>รุ่น</th>
                       
-                        </tr>
-                    ';
-                    if($data->num_rows() > 0)
-                    {
-                    foreach($data->result() as $row)
-                    {
-                        $output .= '
-                        <tr>
-                        <td>'.$row->Name_Brand.'</td>
-                        <td>'.$row->Name_Gen.'</td>
+                    //     </tr>
+                    // ';
+                    // if($data->num_rows() > 0)
+                    // {
+                    // foreach($data->result() as $row)
+                    // {
+                    //     $output .= '
+                    //     <tr>
+                    //     <td>'.$row->Name_Brand.'</td>
+                    //     <td>'.$row->Name_Gen.'</td>
                   
-                        </tr>
-                        ';
-                    }
-                    }
-                    else
-                    {
-                    $output .= '<tr>
-                        <td colspan="5">No Data Found</td>
-                        </tr>';
-                    }
-                    $output .= '</table>';
-                    echo $output;
-                    }
+                    //     </tr>
+                    //     ';
+                    // }
+                    // }
+                    // else
+                    // {
+                    // $output .= '<tr>
+                    //     <td colspan="5">No Data Found</td>
+                    //     </tr>';
+                    // }
+                    // $output .= '</table>';
+                    // echo $output;
+                    // }
                     
      }
 
