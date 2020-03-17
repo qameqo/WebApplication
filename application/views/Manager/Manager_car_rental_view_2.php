@@ -10,8 +10,8 @@
                     </div>
                     <div class="row">
                         <div class="col-sm text-right">
-                            <input type="text" id="startdateee" name="startdateee" style="width:120px; text-align:center;"
-                                value="">
+                            <label for="startDate">Date :</label>
+                            <input name="startDate" id="startDate" class="date-picker" />
                         </div>
                         <div class="col-sm text-left">
                             <input type="text" id="enddateee" name="enddateee" style="width:120px; text-align:center;" value="">
