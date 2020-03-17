@@ -108,7 +108,7 @@ class Te_api extends \Restserver\Libraries\REST_Controller {
 
                     $this->response(array(
                         'status' => 'io',
-                        'id_Employee'=> $emp[0]['id_Employee']
+                        'id_Employeeio'=> $emp[0]['id_Employee']
                     )); //ประกัน
                 }
             }else
