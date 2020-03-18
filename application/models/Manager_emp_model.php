@@ -86,14 +86,23 @@ class Manager_emp_model extends CI_Model
         // redirect('Manager_emp');
     }
 
+    public function show_employee()
+    {
+        $this->db->select('*');
+        $this->db->from('Employee');
+        $this->db->join('Employee_position', 'Employee.id_position = Employee_position.id_position');
+        
+        $query = $this->db->get();
+        return $query->result();
+        
+    }
+
     public function show_emp()
     {
         $this->db->select('*');
         $this->db->from('Employee');
         $this->db->from('Repair');      
         $this->db->join('Employee_position', 'Employee.id_position = Employee_position.id_position');
-
-        
         
         $query = $this->db->get();
         return $query->result();

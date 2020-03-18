@@ -11,7 +11,7 @@ class Manager_emp extends CI_Controller {
 
     public function index()
     {
-        $data['query']=$this->Manager_emp_model->show_emp();
+        $data['query']=$this->Manager_emp_model->show_employee();
 
         // echo '<pre>';
         // print_r($data);
