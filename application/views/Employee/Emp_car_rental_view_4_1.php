@@ -35,8 +35,6 @@
 
                                 if($rs->id_Member == 61 && $rs->id_Status == 5){ //โชรถสำรอง
 
-                                    
-
                             ?>
 
 							<tr>

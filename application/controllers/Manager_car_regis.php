@@ -153,7 +153,7 @@ class Manager_car_regis extends CI_Controller {
         // exit;
 
         $this->load->view('Manager/Header_manage');
-        $this->load->view('Manager/Manager_car_price_repair', $data);
+        $this->load->view('Manager/Manager_car_repair_view', $data);
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');

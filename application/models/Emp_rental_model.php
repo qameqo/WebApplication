@@ -195,7 +195,9 @@ class Emp_rental_model extends CI_Model
     {
         // print_r($_POST);
         
-        // exit; //เปลี่ยนสถานะรถยนต์เป็นพร้อม
+        // exit; 
+        
+        //เปลี่ยนสถานะรถยนต์เป็นพร้อม
 
         //--------------------------------------------------------------------
 
@@ -209,82 +211,53 @@ class Emp_rental_model extends CI_Model
         $qq = $query->result_array();
 
         foreach ($qq as $data2) {
-
-            if ($this->input->post('PriceFive') == 0) {
                 
-                $new_total = ($data2['totalprice'] + $this->input->post('Fines_price')) - 5000;
-                
-                // echo $new_total;
-                // exit;
-
-                $this->db->where('idRental', $this->input->post('idRental'));
-
-                $data = array( 
-                    'id_Employee_3' => $this->session->userdata('id_Employee'),
-                    'id_status' => $this->input->post('id_status'),
-                    'ReturnDate' => $this->input->post('ReturnDate'),
-                    'PriceFive' => $this->input->post('PriceFive'),
-                    'Fines_price' => $this->input->post('Fines_price'),
-                    'Price_refund' => $this->input->post('Price_refund'),
-                    'totalprice' => $new_total
-                );
-
-                $query_2=$this->db->update('Rental',$data);   
-                
-                //---------------------------------------------------------------------------------
-
-                $this->db->where('idCarregis', $this->input->post('idCarregis2'));
+            $new_total = ($data2['totalprice'] + $this->input->post('Fines_price')) - 5000;
             
-                $data = array( 
-                    'id_Status' => $this->input->post('id_Status'),
-                );
+            // echo $new_total;
+            // exit;
 
-                $query_2=$this->db->update('Carregis',$data);
+            $this->db->where('idRental', $this->input->post('idRental'));
 
-                echo "<script>";
-                echo "alert('ยืนยันการคืนเรียบร้อย');";
-                echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
-                echo "</script>";
+            $data = array( 
+                'id_Employee_3' => $this->session->userdata('id_Employee'),
+                'id_status' => $this->input->post('id_status'),
+                'ReturnDate' => $this->input->post('ReturnDate'),
+                'PriceFive' => $this->input->post('PriceFive'),
+                'Fines_price' => $this->input->post('Fines_price'),
+                'totalprice' => $new_total
+            );
 
-            }else{//-------------------------------------------------------------------------------
-
-                $new_total = $data2['totalprice'] + $this->input->post('Fines_price') + $this->input->post('PriceFive');
-                
-                // echo $new_total;
-                // exit;
-
-                $this->db->where('idRental', $this->input->post('idRental'));
-
-                $data = array( 
-                    'id_Employee_3' => $this->session->userdata('id_Employee'),
-                    'id_status' => $this->input->post('id_status'),
-                    'ReturnDate' => $this->input->post('ReturnDate'),
-                    'PriceFive' => $this->input->post('PriceFive'),
-                    'Fines_price' => $this->input->post('Fines_price'),
-                    'Price_refund' => $this->input->post('Price_refund'),
-                    'totalprice' => $new_total
-                );
-
-                $query_2=$this->db->update('Rental',$data);    
-                
-                //--------------------------------------------------------------------------------
-
-                $this->db->where('idCarregis', $this->input->post('idCarregis2'));
+            $query_2=$this->db->update('Rental',$data);   
             
-                $data = array( 
-                    'id_Status' => $this->input->post('id_Status'),
-                );
+            //---------------------------------------------------------------------------------
 
-                $query_2=$this->db->update('Carregis',$data);
+            $this->db->where('idCarregis', $this->input->post('idCarregis2'));
+        
+            $data = array( 
+                'id_Status' => $this->input->post('id_Status'),
+            );
 
-                echo "<script>";
-                echo "alert('ยืนยันการคืนเรียบร้อย');";
-                echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
-                echo "</script>";
-
-            }
+            $query_2=$this->db->update('Carregis',$data);
  
         }
+
+        $data = array( 
+            'Scratches' => $this->input->post('Scratches'),
+            'Light' => $this->input->post('Light'),
+            'Break' => $this->input->post('Break'),
+            'Car_tire' => $this->input->post('Car_tire'),
+            'Fuel' => $this->input->post('Fuel'),
+            'Total_fines' => $this->input->post('Total_fines'),
+            'idRental' => $this->input->post('idRental'),
+        );
+
+        $query_2=$this->db->insert('Repair',$data); 
+
+        echo "<script>";
+        echo "alert('ยืนยันการคืนเรียบร้อย');";
+        echo "window.location.href = '". base_url(). "Emp_rental/index_3';";
+        echo "</script>";
     
     }
 

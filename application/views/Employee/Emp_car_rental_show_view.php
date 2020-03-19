@@ -5,96 +5,105 @@
                 <h4 class="title">รายละเอียดการเช่ารถยนต์</h4>
 
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
 
-                            <tr>
-                                <td width="30%"><label>รหัส</label></td>
-                                <td width="70%"><?php echo $rs->idRental; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ชื่อสมาชิก</label></td>
-                                <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ยี่ห้อ</label></td>
-                                <td width="70%"><?php echo $rs->Name_Brand; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>รุ่น</label></td>
-                                <td width="70%"><?php echo $rs->Name_Gen; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>วันที่ทำรายการเช่า</label></td>
-                                <td width="70%"><?php echo $rs->Datebooking; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>วันที่เริ่มเช่า</label></td>
-                                <td width="70%"><?php echo $rs->startDate; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>วันที่ต้องคืน</label></td>
-                                <td width="70%"><?php echo $rs->endDate; ?></td>
-                            </tr>
-                            <?php if($rs->ReturnDate != null){ ?>
-                            <tr>
-                                <td width="30%"><label>วันที่คืนจริง</label></td>
-                                <td width="70%"><?php echo $rs->ReturnDate; ?></td>
-                            </tr>
-                            <?php } ?>
-                            <tr>
-                                <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
-                                <td width="70%"><?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?>&nbsp;บาท</td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ราคารถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceCar; ?>&nbsp;บาท</td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ราคามัดจำ (30%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceDe; ?>&nbsp;บาท</td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceOver; ?>&nbsp;บาท</td>
-                            </tr>
-                            <tr>
-                                <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
-                                <td width="70%"><?php echo $rs->PriceVat; ?>&nbsp;บาท</td>
-                            </tr>
+                        <tr>
+                            <td width="30%"><label>รหัส</label></td>
+                            <td width="70%"><?php echo $rs->idRental; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ชื่อสมาชิก</label></td>
+                            <td width="70%"><?php echo $rs->FName; ?>&nbsp;<?php echo $rs->LName; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ยี่ห้อ</label></td>
+                            <td width="70%"><?php echo $rs->Name_Brand; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>รุ่น</label></td>
+                            <td width="70%"><?php echo $rs->Name_Gen; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ราคาปล่อยเช่าต่อวัน</label></td>
+                            <td width="70%"><?php echo $rs->RentalPrice; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>จำนวนที่นั่ง</label></td>
+                            <td width="70%"><?php echo $rs->id_Seat; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>วันที่ทำรายการเช่า</label></td>
+                            <td width="70%"><?php echo $rs->Datebooking; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>วันที่เริ่มเช่า</label></td>
+                            <td width="70%"><?php echo $rs->startDate; ?></td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>วันที่ต้องคืน</label></td>
+                            <td width="70%"><?php echo $rs->endDate; ?></td>
+                        </tr>
+                        <?php if($rs->ReturnDate != null){ ?>
+                        <tr>
+                            <td width="30%"><label>วันที่คืนจริง</label></td>
+                            <td width="70%"><?php echo $rs->ReturnDate; ?></td>
+                        </tr>
+                        <?php } ?>
+                        <tr>
+                            <td width="30%"><label>ประเภทประกันอุบัติเหตุและราคา</label></td>
+                            <td width="70%">
+                                <?php echo $rs->Name_Insurance; ?>&nbsp;<?php echo $rs->PriceIns; ?>&nbsp;บาท</td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ราคารถยนต์</label></td>
+                            <td width="70%"><?php echo $rs->PriceCar; ?>&nbsp;บาท</td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ราคามัดจำ (30%)</label></td>
+                            <td width="70%"><?php echo $rs->PriceDe; ?>&nbsp;บาท</td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ราคาส่วนที่เหลือ (70%)</label></td>
+                            <td width="70%"><?php echo $rs->PriceOver; ?>&nbsp;บาท</td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><label>ภาษีมูลค่าเพิ่ม (7%)</label></td>
+                            <td width="70%"><?php echo $rs->PriceVat; ?>&nbsp;บาท</td>
+                        </tr>
 
-                            <?php if($rs->PriceFive == null){}else{?>
+                        <?php if($rs->PriceFive == null){}else{?>
 
-                            <tr>
-                                <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
-                                <td width="70%"><?php echo $rs->PriceFive; ?>&nbsp;บาท</td>
-                            </tr>
+                        <tr>
+                            <td width="30%"><label>ราคามัดจำรถยนต์</label></td>
+                            <td width="70%"><?php echo $rs->PriceFive; ?>&nbsp;บาท</td>
+                        </tr>
 
-                            <?php }?>
+                        <?php }?>
 
-                            <?php if ($rs->Fines_price == 0 || $rs->Fines_price == null) {}else{ ?>
+                        <?php if ($rs->Fines_price == 0 || $rs->Fines_price == null) {}else{ ?>
 
-                            <tr>
-                                <td width="30%"><label>ราคาค่าปรับ</label></td>
-                                <td width="70%"><?php echo $rs->Fines_price; ?>&nbsp;บาท</td>
-                            </tr>
+                        <tr>
+                            <td width="30%"><label>ราคาค่าปรับ</label></td>
+                            <td width="70%"><?php echo $rs->Fines_price; ?>&nbsp;บาท</td>
+                        </tr>
 
-                            <?php } ?>
-                            <tr>
-                                <td width="30%"><label>ราคาทั้งหมด</label></td>
-                                <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
-                            </tr>
-                        
-                            <?php if ($rs->idCarregis2 != null) {?>
+                        <?php } ?>
+                        <tr>
+                            <td width="30%"><label>ราคาทั้งหมด</label></td>
+                            <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
+                        </tr>
 
-                            <tr>
-                                <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
-                                <td width="70%"><?php echo $rs->idCarregis2; ?></td>
-                            </tr>
+                        <?php if ($rs->idCarregis2 != null) {?>
 
-                            <?php } ?>
+                        <tr>
+                            <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
+                            <td width="70%"><?php echo $rs->idCarregis2; ?></td>
+                        </tr>
 
-                            <?php 
+                        <?php } ?>
+
+                        <?php 
                             
                             if($rs->id_Employee != null)
                             {
@@ -154,24 +163,25 @@
 
                             foreach ($query->result_array() as $data ) { ?>
 
-                            <tr>
-                                <td width="30%"><label>รูปภาพหลักฐาน</label></td>
-                                <td width="70%">
-                              
-                                <img src="<?php echo base_url('./img3/'.$data['Name_image3']); ?>" style="height: 50px; weight:50px;">
-                                
-                                </td>
-                            </tr>
+                        <tr>
+                            <td width="30%"><label>รูปภาพหลักฐาน</label></td>
+                            <td width="70%">
 
-                            <?php 
+                                <img src="<?php echo base_url('./img3/'.$data['Name_image3']); ?>"
+                                    style="height: 50px; weight:50px;">
+
+                            </td>
+                        </tr>
+
+                        <?php 
                             
                             }
 
                             ?>
 
-                            <tr>
-                                <td width="30%"><label>สถานะ</label></td>
-                                <td width="70%">
+                        <tr>
+                            <td width="30%"><label>สถานะ</label></td>
+                            <td width="70%">
                                 <?php 
                         
                                 if($rs->id_status == '1')
@@ -250,9 +260,9 @@
                                     echo $rs->Name_Status; 
                                 }   ?>
                                 </span></td>
-                            </tr> 
+                        </tr>
 
-                            <?php 
+                        <?php 
                               
                             if($rs->id_status == '3')
                             {
@@ -271,11 +281,11 @@
                             }
 
                             ?>
-                                                        
-                        </table>
-                    </div>
 
-                    <?php 
+                    </table>
+                </div>
+
+                <?php 
 
                     // if($rs->id_status == '9'){
 
@@ -301,7 +311,7 @@
 
                     // }?>
 
-                    <?php 
+                <?php 
                         if($rs->id_status == '1'){ //รออนุมัติหลังจากโอนเงิน 30%
                         
                         echo '<form action="'; 
@@ -326,7 +336,7 @@
                                            
                     }?>
 
-                    <?php 
+                <?php 
                         if($rs->id_status == '10'){ //สมาชิกมารับรถยนต์
                         
                         echo '<form action="'; 
@@ -364,7 +374,7 @@
                                   
                     }?>
 
-                    <?php // เปลี่ยนรถยนต์
+                <?php // เปลี่ยนรถยนต์
 
                     if ($rs->id_status == '15') {
 
@@ -380,10 +390,10 @@
                     ?>
 
 
-                    <?php } ?>
+                <?php } ?>
 
 
-                    <?php 
+                <?php 
                     if($rs->id_status == '11'){ //วันที่คืนรถยนต์
 
                         $d=strtotime("-1 day");
@@ -396,10 +406,15 @@
                             echo site_url('Emp_rental/add_status_4/'.$rs->idRental); 
                             echo '" method="POST" class="form-horizontal">';
 
+                            ?>
+
+
+                <?php 
+
                             echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             ?>
-                            
-                            <!-- <div class="row justify-content-center"> 
+
+                <!-- <div class="row justify-content-center"> 
                                 <div class="col-3">
                                     <label class="label mt-5">ราคามัดจำรถยนต์</label>
                                     <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="<?php //echo $rs->PriceFive;?>">
@@ -407,79 +422,127 @@
                                 </div>
                             </div>   -->
 
-                            <div class="row justify-content-center mt-5">
-                                
-                                <div class="form-group prc">
-                                    <label class="label">เงินคืนลูกค้า</label>
-                                    <input type="number" id="Price_refund" name="Price_refund" class="form-control prc" value="5000" required >
-                                </div>                          
+                            <br><h4>รายการตรวจสอบรถยนต์</h4>
 
-                            <?php
-                            //  $idRental = $rs->idRental;
-                            echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                            echo $rs->idRental; 
-                            echo '">';
+                <div class="row justify-content-center mt-5">
 
-                            // if ($rs->idCarregis2 != null) {
-                                echo '<input type="hidden" name="idCarregis2" id="idCarregis2" class="form-control" value="';
-                                echo $rs->idCarregis2; 
-                                echo '">';
-                            // }else {
-                            //     echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
-                            //     echo $rs->idCarregis; 
-                            //     echo '">';
-                            // }
+                    <div class="col-4">
+                        <div class="form-group prc2">
+                            <label class="label">รอยรถยนต์</label>
+                            <input type="number" id="Scratches" name="Scratches" class="form-control prc2"
+                                value="0" required>
+                        </div>
+                    </div>
 
-                            
-        
-                            echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
-                            echo date("Y-m-d");
-                            echo '">';
-                            ?>
-                            
-                            <?php if($rs->endDate ==  date('Y-m-d',$d)){ ?>
+                    <div class="col-4">
+                        <div class="form-group prc2">
+                            <label class="label">ไฟรถยนต์</label>
+                            <input type="number" id="Light" name="Light" class="form-control prc2"
+                                value="0" required>
+                        </div>
+                    </div>
 
-                                <div class="col-3">
-                                    <div class="form-group prc">
-                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice; ?>" >
-                                    </div>
-                                </div>
+                    <div class="col-4">
+                        <div class="form-group prc2">
+                            <label class="label">เบรก</label>
+                            <input type="number" id="Break" name="Break" class="form-control prc2"
+                                value="0" required>
+                        </div>
+                    </div>
 
-                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
-                                <div class="col-3">
-                                    <div class="form-group prc">
-                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice * 2; ?>" >
-                                    </div>
-                                </div>
+                    <div class="col-4">
+                        <div class="form-group prc2">
+                            <label class="label">ยางรถยนต์</label>
+                            <input type="number" id="Car_tire" name="Car_tire" class="form-control prc2"
+                                value="0" required>
+                        </div>
+                    </div>
 
-                            <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+                    <div class="col-4">
+                        <div class="form-group prc2">
+                            <label class="label">น้ำมัน</label>
+                            <input type="number" id="Fuel" name="Fuel" class="form-control prc2"
+                                value="0" required>
+                        </div>
+                    </div>
 
-                                <div class="col-3">
-                                    <div class="form-group prc">
-                                        <label class="label ">ราคาค่าปรับคืนช้า</label>
-                                        <input type="number" name="Fines_price" id="Fines_price" class="form-control prc" value="<?php echo $rs->RentalPrice * 3; ?>" >
-                                    </div>
-                                </div>
+                    <div class="col-4">
+                        <div class="form-group prc">
+                            <label class="label">รวมเงินค่าปรับรถยนต์</label>
+                            <input type="number" id="Total_fines" name="Total_fines" class="form-control"
+                                value="0" readonly>
+                        </div>
+                    </div>
 
-                            <?php }else{ ?>
+                    <?php
+                    //  $idRental = $rs->idRental;
+                    echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                    echo $rs->idRental; 
+                    echo '">';
 
-                                    <input type="hidden" name="Fines_price" id="Fines_price" class="form-control prc" value="0">
+                    // if ($rs->idCarregis2 != null) {
+                        echo '<input type="hidden" name="idCarregis2" id="idCarregis2" class="form-control" value="';
+                        echo $rs->idCarregis2; 
+                        echo '">';
+                    // }else {
+                    //     echo '<input type="hidden" name="idCarregis" id="idCarregis" class="form-control" value="';
+                    //     echo $rs->idCarregis; 
+                    //     echo '">';
+                    // }
 
-                            <?php }?>
+                    
 
-                                    <div class="col-3"> 
-                                        <!-- <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000 -->
-                                        <div class="form-group prc">
-                                            <label class="label">ราคามัดจำ 5000 บาท</label>
-                                            <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="0" readonly>
-                                        </div>
-                                    </div>
-                            
-                            </div>  
+                    echo '<input type="hidden" name="ReturnDate" id="ReturnDate" value="';
+                    echo date("Y-m-d");
+                    echo '">';
+                    ?>
 
-                            <?php
+                    <?php if($rs->endDate ==  date('Y-m-d',$d)){ ?>
+
+                    <div class="col-4">
+                        <div class="form-group prc">
+                            <label class="label ">ราคาค่าปรับคืนช้า</label>
+                            <input type="number" name="Fines_price" id="Fines_price" class="form-control prc"
+                                value="<?php echo $rs->RentalPrice; ?>">
+                        </div>
+                    </div>
+
+                    <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+                    <div class="col-4">
+                        <div class="form-group prc">
+                            <label class="label ">ราคาค่าปรับคืนช้า</label>
+                            <input type="number" name="Fines_price" id="Fines_price" class="form-control prc"
+                                value="<?php echo $rs->RentalPrice * 2; ?>">
+                        </div>
+                    </div>
+
+                    <?php }elseif($rs->endDate ==  date('Y-m-d',$dd)){ ?>
+
+                    <div class="col-4">
+                        <div class="form-group prc">
+                            <label class="label ">ราคาค่าปรับคืนช้า</label>
+                            <input type="number" name="Fines_price" id="Fines_price" class="form-control prc"
+                                value="<?php echo $rs->RentalPrice * 3; ?>">
+                        </div>
+                    </div>
+
+                    <?php }else{ ?>
+
+                    <input type="hidden" name="Fines_price" id="Fines_price" class="form-control prc" value="0">
+
+                    <?php }?>
+
+                    <div class="col-4">
+                        <!-- <input class="form-check-input" type="checkbox" name="PriceFive" value="0"> คืนเงินมัดจำ 5000 -->
+                        <div class="form-group prc">
+                            <label class="label">เงินคืนลูกค้า</label>
+                            <input type="number" name="PriceFive" id="PriceFive" class="form-control" value="5000" readonly>
+                        </div>
+                    </div>
+
+                </div>
+
+                <?php
                             echo '<input type="hidden" class="btn btn-danger mt-5" name="id_status" id="id_status" value="12" style="font-size:20px;" required>';
                             echo '<input type="hidden" class="btn btn-danger mt-5" name="id_Status" id="id_Status" value="5" style="font-size:20px;" required>';
                             echo '<button class="btn btn-info mt-5" type="submit" style="font-size:20px;">ยืนยันการคืนรถยนต์</button>';
@@ -489,18 +552,29 @@
 
                     }?>
 
-                    <script>
-                        $('.form-group').on('input', '.prc',function () {
-                            var totalSum = 5000;
-                            $('.form-group .prc').each(function () {  
-                                var inputVal = $(this).val();
-                                if($.isNumeric(inputVal)){
-                                    totalSum -= parseInt(inputVal);
-                                }
-                            });
-                            $('#PriceFive').val(totalSum);
+                <script>
+                    $('.form-group').on('input', '.prc2', function () {
+                        var totalSum = 5000;
+                        $('.form-group .prc2').each(function () {
+                            var inputVal = $(this).val();
+                            if ($.isNumeric(inputVal)) {
+                                totalSum -= parseInt(inputVal);
+                            }
                         });
-                        </script>
+                        $('#PriceFive').val(totalSum);
+                    });
+
+                    $('.form-group').on('input', '.prc2', function () {
+                        var totalSum = 0;
+                        $('.form-group .prc2').each(function () {
+                            var inputVal = $(this).val();
+                            if ($.isNumeric(inputVal)) {
+                                totalSum += parseInt(inputVal);
+                            }
+                        });
+                        $('#Total_fines').val(totalSum);
+                    });
+                </script>
 
             </div>
         </div>
