@@ -140,7 +140,12 @@
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
                                 }  
-                                
+                                else if($data['id_status']== '15')
+                                {
+                                    echo'<td><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                } 
                                 ?>
                             
                                 <td>

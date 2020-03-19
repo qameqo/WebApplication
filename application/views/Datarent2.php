@@ -198,7 +198,13 @@
                                     echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
                                     echo $data['Name_Status'];  
                                     echo '</span></td>';
-                                }    
+                                }
+                                else if($data['Name_Status']== 'ขอเปลี่ยนรถยนต์')
+                                {
+                                    echo'<td width="70%"><span class="badge badge-default" style="font-size:13px;">';
+                                    echo $data['Name_Status'];  
+                                    echo '</span></td>';
+                                }        
                                 ?>
                                 
                             </tr>
