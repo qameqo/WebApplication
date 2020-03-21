@@ -8,6 +8,7 @@ class Manager_car_regis extends CI_Controller {
         parent::__construct();
         $this->load->model('Manager_car_regis_model');
         $this->load->model('Emp_rental_model');
+        $this->load->model('Emp_problem_model');
 
     }
 
@@ -154,6 +155,19 @@ class Manager_car_regis extends CI_Controller {
 
         $this->load->view('Manager/Header_manage');
         $this->load->view('Manager/Manager_car_repair_view', $data);
+        $this->load->view('Manager/Footer_manage');
+        $this->load->view('Script_manager_emp');
+        $this->load->view('Modal_view');
+
+    }
+
+    public function index_6()
+    {
+
+        $data['query']=$this->Emp_problem_model->show_problem();
+
+        $this->load->view('Manager/Header_manage');
+        $this->load->view('Employee/Emp_problem_view_3', $data);
         $this->load->view('Manager/Footer_manage');
         $this->load->view('Script_manager_emp');
         $this->load->view('Modal_view');

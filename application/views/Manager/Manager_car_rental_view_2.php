@@ -5,18 +5,10 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-9">
-                        <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
+                        <h3 class="panel-title">ข้อมูลรายจ่ายทั้งหมด</h3>
                         
                     </div>
-                    <div class="row">
-                        <div class="col-sm text-right">
-                            <label for="startDate">Date :</label>
-                            <input name="startDate" id="startDate" class="date-picker" />
-                        </div>
-                        <div class="col-sm text-left">
-                            <input type="text" id="enddateee" name="enddateee" style="width:120px; text-align:center;" value="">
-                        </div>
-                    </div>
+                    
                 
 
             </div>

@@ -37,6 +37,7 @@
           <div class="card-body">
             <a href="<?php echo site_url('Manager_car_regis/index_2');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการลงทะเบียนรถยนต์</a>
             <a href="<?php echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการเช่ารถยนต์</a>
+            <a href="<?php echo site_url('Manager_car_regis/index_6');?>" class="btn btn-primary btn-sm" style="font-size : 20px">ตรวจสอบข้อมูลการแจ้งปัญหา</a>
             <!-- <a href="<?php //echo site_url('Manager_car_regis/index_3');?>" class="btn btn-primary btn-sm mt-5" style="font-size : 20px">จัดการการเช่ารถยนต์</a><br> -->
           </div>
         </div>
@@ -45,7 +46,7 @@
       <div class="col-sm-6">
         <div class="card text-center">
           <div class="card-header card-header-warning">   
-            <h4 class="card-title">ตรวจสอบข้อมูลรายได้</h4>
+            <h4 class="card-title">ตรวจสอบข้อมูลรายรับรายจ่าย</h4>
           </div>
           <div class="card-body">
 
