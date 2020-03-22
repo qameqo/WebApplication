@@ -44,6 +44,23 @@
                                 <td width="30%"><label>ประเภท</label></td>
                                 <td width="70%"><?php echo $rs[0]->Name_Type_problem; ?></td>
                             </tr>
+                            <tr>
+                                <?php 
+                        
+                                $this->db->where('id_Problem', $rs[0]->id_Problem);
+                                $query = $this->db->get('Images4');
+                                $qi = $query->result_array();
+                                if(!empty($qi))
+                                {
+                                    
+                                }
+                                foreach($qi as $data){
+								?>
+                                    <td width="30%"><label>รูปภาพประกัน</label></td>
+                                    <td width="70%"><img src="<?php echo base_url('./img4/'.$data['Name_image4']);?>"
+ 											style="width: 50px; height: 50px;" /></td>
+                                <?php } ?>
+                            </tr>
                                                         
                         </table>
                     </div>    
