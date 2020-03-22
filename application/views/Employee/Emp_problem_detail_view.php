@@ -44,23 +44,27 @@
                                 <td width="30%"><label>ประเภท</label></td>
                                 <td width="70%"><?php echo $rs[0]->Name_Type_problem; ?></td>
                             </tr>
+                            
+                            <?php
+                            $query = $this->db->query("SELECT Images4.Name_image4 FROM Problem, Images4 WHERE Problem.id_Problem = Images4.id_Problem AND Problem.id_Problem = ".$rs[0]->id_Problem);
+
+                            foreach ($query->result_array() as $data ) { ?>
+
                             <tr>
-                                <?php 
-                        
-                                $this->db->where('id_Problem', $rs[0]->id_Problem);
-                                $query = $this->db->get('Images4');
-                                $qi = $query->result_array();
-                                if(!empty($qi))
-                                {
-                                    
-                                }
-                                foreach($qi as $data){
-								?>
-                                    <td width="30%"><label>รูปภาพประกัน</label></td>
-                                    <td width="70%"><img src="<?php echo base_url('./img4/'.$data['Name_image4']);?>"
- 											style="width: 50px; height: 50px;" /></td>
-                                <?php } ?>
+                                <td width="30%"><label>รูปภาพหลักฐาน</label></td>
+                                <td width="70%">
+
+                                    <img src="<?php echo base_url('./img4/'.$data['Name_image4']); ?>"
+                                        style="height: 50px; weight:50px;">
+
+                                </td>
                             </tr>
+
+                            <?php 
+                            
+                            }
+
+                            ?>
                                                         
                         </table>
                     </div>    
