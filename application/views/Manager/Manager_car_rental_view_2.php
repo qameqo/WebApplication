@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-9">
-                        <h3 class="panel-title">ข้อมูลรายจ่ายทั้งหมด</h3>
+                        <h3 class="panel-title">ข้อมูลรายได้ทั้งหมด</h3>
                         
                     </div>
                     
