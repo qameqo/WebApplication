@@ -15,7 +15,7 @@
 				from Carregis INNER JOIN Images on Images.idCarregis = Carregis.idCarregis INNER JOIN Brand on Brand.idBrand = 
 				Carregis.idBrand INNER JOIN Generation on Generation.id_Gen = Carregis.id_Gen INNER JOIN Seat on Seat.id_Seat = 
 				Carregis.id_Seat WHERE Images.id_image = (SELECT Images.id_image FROM Images WHERE Images.idCarregis = Carregis.idCarregis LIMIT 1) 
-			    AND Carregis.id_Member <> '61'");
+			    AND Carregis.id_Member <> '61' AND Carregis.id_Status = '5'");
 				$qq = $query->result_array();
 			?>
 
