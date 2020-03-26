@@ -106,7 +106,7 @@ class Emp_rental_model extends CI_Model
             'id_Employee_2' => $this->session->userdata('id_Employee'),
             'id_status' => $this->input->post('id_status'),
             'PriceFive' => $this->input->post('PriceFive'),
-            'totalprice' => $this->input->post('totalprice')
+            // 'totalprice' => $this->input->post('totalprice')
         );
 
         $query_2=$this->db->update('Rental',$data);

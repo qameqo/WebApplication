@@ -347,9 +347,9 @@
                         echo '">';
                         
                         echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
-                        echo $rs->totalprice + 5000;
-                        echo '" style="font-size:20px;" required>';
+                        // echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
+                        // echo $rs->totalprice + 5000;
+                        // echo '" style="font-size:20px;" required>';
                         echo '
                             <div class="row justify-content-center">    
                             <div class="col-3">
