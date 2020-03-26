@@ -32,8 +32,8 @@
                             <?php foreach ($query as $rs) { ?>
 
 							<tr>
-                                <td><?php echo $rs->id_Repair ?></td>
-								<td><?php echo $rs->Scratches ?></td>
+                                <td><?php echo $rs->id_Repair; ?></td>
+								<td><?php echo $rs->Scratches; ?></td>
 								<td><?php echo $rs->Light; ?></td>
                                 <td><?php echo $rs->Break; ?></td>
                                 <td><?php echo $rs->Car_tire; ?></td>
