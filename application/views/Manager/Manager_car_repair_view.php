@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-9">
-                        <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
+                        <h3 class="panel-title">ตารางข้อมูลรายจ่าย</h3>
                     </div>
                     
                 </div>
