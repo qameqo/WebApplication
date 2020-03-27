@@ -106,7 +106,7 @@ class Emp_rental_model extends CI_Model
             'id_Employee_2' => $this->session->userdata('id_Employee'),
             'id_status' => $this->input->post('id_status'),
             'PriceFive' => $this->input->post('PriceFive'),
-            // 'totalprice' => $this->input->post('totalprice')
+            'totalprice' => $this->input->post('totalprice')
         );
 
         $query_2=$this->db->update('Rental',$data);
@@ -242,17 +242,28 @@ class Emp_rental_model extends CI_Model
  
         }
 
-        $data = array( 
-            'Scratches' => $this->input->post('Scratches'),
-            'Light' => $this->input->post('Light'),
-            'Break' => $this->input->post('Break'),
-            'Car_tire' => $this->input->post('Car_tire'),
-            'Fuel' => $this->input->post('Fuel'),
-            'Total_fines' => $this->input->post('Total_fines'),
-            'idRental' => $this->input->post('idRental'),
-        );
+        if(
+            $this->input->post('Scratches') == 0 &&
+            $this->input->post('Light') == 0 &&
+            $this->input->post('Break') == 0 &&
+            $this->input->post('Car_tire') == 0 &&
+            $this->input->post('Fuel') == 0 &&
+            $this->input->post('Total_fines') == 0 &&
+            $this->input->post('Break') == 0
+        ){}else {
 
-        $query_2=$this->db->insert('Repair',$data); 
+            $data = array( 
+                'Scratches' => $this->input->post('Scratches'),
+                'Light' => $this->input->post('Light'),
+                'Break' => $this->input->post('Break'),
+                'Car_tire' => $this->input->post('Car_tire'),
+                'Fuel' => $this->input->post('Fuel'),
+                'Total_fines' => $this->input->post('Total_fines'),
+                'idRental' => $this->input->post('idRental'),
+            );
+    
+            $query_2=$this->db->insert('Repair',$data); 
+        }
 
         echo "<script>";
         echo "alert('ยืนยันการคืนเรียบร้อย');";

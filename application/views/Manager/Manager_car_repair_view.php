@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-9">
-                        <h3 class="panel-title">ตารางข้อมูลราคารถยนต์</h3>
+                        <h3 class="panel-title">ตารางข้อมูลรายจ่าย</h3>
                     </div>
                     
                 </div>
@@ -32,8 +32,8 @@
                             <?php foreach ($query as $rs) { ?>
 
 							<tr>
-                                <td><?php echo $rs->id_Repair ?></td>
-								<td><?php echo $rs->Scratches ?></td>
+                                <td><?php echo $rs->id_Repair; ?></td>
+								<td><?php echo $rs->Scratches; ?></td>
 								<td><?php echo $rs->Light; ?></td>
                                 <td><?php echo $rs->Break; ?></td>
                                 <td><?php echo $rs->Car_tire; ?></td>

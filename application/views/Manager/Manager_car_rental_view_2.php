@@ -47,7 +47,7 @@
 								<td><?php echo $rs->startDate; ?></td>
 								<td><?php echo $rs->endDate; ?></td>
 								<td><?php echo $rs->ReturnDate; ?></td>
-                                <td><b><?php    $sum = number_format($rs->Companyincome + $rs->PriceFive + $rs->Fines_price + $rs->PriceVat,0);
+                                <td><b><?php    $sum = number_format($rs->Companyincome + $rs->Fines_price + $rs->PriceVat);
                                                 echo $sum;?></b>&nbsp;บาท</td>
                                
 								
