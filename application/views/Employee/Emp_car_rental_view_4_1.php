@@ -35,6 +35,29 @@
 
                                 if($rs->id_Member == 61 && $rs->id_Status == 5){ //โชรถสำรอง
 
+                                $query = $this->db->query('SELECT * FROM Rental 
+                                                            INNER JOIN Carregis ON Carregis.idCarregis = Rental.idCarregis
+                                                            INNER JOIN Brand ON Brand.idBrand = Carregis.idBrand
+                                                            INNER JOIN Generation ON Generation.id_Gen = Carregis.id_Gen 
+                                                            WHERE Rental.idRental = '.$rs->idRental);
+
+                                // $query = $this->db->get();
+
+                                $qq = $query->result();
+
+                                foreach ($qq as $data) {
+
+                                    
+                                    // echo "<pre>";
+                                    // print_r ($data->id_Seat);
+                                    // echo "</pre>";
+                                    
+                                    if ($data->id_Seat >= $rs->id_Seat && $data->Price >= $rs->RentalPrice) {
+                                        # code...
+                                    }else{
+                                   
+                                
+
                             ?>
 
 							<tr>
@@ -142,7 +165,7 @@
                             
                             <?php
                                     
-                                }
+                                }}}
 
                         } ?>
 

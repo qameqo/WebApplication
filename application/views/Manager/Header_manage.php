@@ -90,12 +90,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" style="font-size: 16px">
-                            ตรวจสอบข้อมูลรายรับรายจ่าย
+                            ตรวจสอบข้อมูลการเงิน
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
                         
-                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_4');?>">ตรวจสอบข้อมูลรายได้</a>
-                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_5');?>">ตรวจสอบข้อมูลรายจ่าย</a>
+                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_4');?>">ตรวจสอบข้อมูลรายได้จากการเช่า</a>
+                            <a class="dropdown-item" href="<?php echo site_url('Manager_car_regis/index_5');?>">ตรวจสอบข้อมูลจากการคืนรถยนต์</a>
 
                         </div>
                     </li>

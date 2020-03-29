@@ -20,6 +20,19 @@
         $('img').EZView();
     });  
 
+    function Change_Employee_position()
+      {
+          var val = $("#Brand1").val()
+          
+          $.get("<?=base_url('Owner/select/')?>"+val, 
+              function (data) {
+                  
+                $("#gen1").html(data)
+
+              }
+          );
+      }
+
 </script>
 
 <!-- <script>

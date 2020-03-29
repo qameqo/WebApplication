@@ -113,10 +113,11 @@
                                     echo '</span></td>';
                                 }  else if($rs->id_status == '15')
                                 {
-                                    echo'<span class="badge badge-warning" style="font-size:13px;">';
+                                    echo'<td><span class="badge badge-warning" style="font-size:13px;">';
                                     echo $rs->Name_Status; 
+                                    echo '</span></td>';
                                     
-                                } ?>
+                                }?>
                                 </span></td>
 
                                 <td>

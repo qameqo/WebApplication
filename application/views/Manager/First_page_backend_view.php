@@ -46,7 +46,7 @@
       <div class="col-sm-6">
         <div class="card text-center">
           <div class="card-header card-header-warning">   
-            <h4 class="card-title">ตรวจสอบข้อมูลรายรับรายจ่าย</h4>
+            <h4 class="card-title">ตรวจสอบข้อมูลการเงิน</h4>
           </div>
           <div class="card-body">
 

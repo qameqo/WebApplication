@@ -10,6 +10,10 @@
                     <div class="col-md-2" align ="right">
                         <button type="button" id="add_button" data-toggle="modal" data-target="#employeeModal" class="btn btn-info btn-sm" style="font-size: 16px">เพิ่มข้อมูลบุคคล</button>
                     </div>
+
+                    <!-- <div class="col-md-2" align ="right">
+                        <button type="button" id="add_button" data-toggle="modal" data-target="#employeetypeModal" class="btn btn-info btn-sm" style="font-size: 16px">เพิ่มตำแหน่งงาน</button>
+                    </div> -->
                 </div>
                 
             </div>
@@ -51,7 +55,7 @@
                                 }
                                 elseif ($rs->id_position == '3') 
                                 {
-                                    echo'<td>เจ้าหน้าที่ประกัน</td>';
+                                    echo'<td>เจ้าหน้าที่ประกัน บริษัทวิริยะประกันภัย </td>';
                                 }                                
 
                                 ?>
