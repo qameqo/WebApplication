@@ -241,6 +241,33 @@
                                 </span></td>
                             </tr> 
 
+                            <?php 
+                                $query = $this->db->query('SELECT * FROM Carregis 
+                                                            INNER JOIN Rental ON Carregis.idCarregis = Rental.idCarregis
+                                                            INNER JOIN Problem ON Problem.idRental = Rental.idRental
+                                                            INNER JOIN Type_Problem ON Type_Problem.id_Type_Problem = Problem.id_Type_Problem
+                                                            WHERE Carregis.idCarregis = '.$rs->idCarregis); 
+                                $qq = $query->result();
+
+                                foreach ($qq as $data) {
+                            
+                            ?>
+
+                            <tr>
+                                <td width="30%"><label>รายละเอียดปัญหา</label></td>
+                                <td width="70%"><?php echo $data->Detail; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รายละเอียดจากช่าง</label></td>
+                                <td width="70%"><?php echo $data->Detail_2; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รายละเอียดปัญหา</label></td>
+                                <td width="70%"><?php echo $data->Name_Type_problem; ?></td>
+                            </tr>
+
+                            <?php } ?>
+
                         </table>
                     </div>
 

@@ -243,9 +243,6 @@ class Emp_rental_model extends CI_Model
         }
 
         if(
-            $this->input->post('Scratches') == 0 &&
-            $this->input->post('Light') == 0 &&
-            $this->input->post('Break') == 0 &&
             $this->input->post('Car_tire') == 0 &&
             $this->input->post('Fuel') == 0 &&
             $this->input->post('Total_fines') == 0 &&
@@ -253,9 +250,6 @@ class Emp_rental_model extends CI_Model
         ){}else {
 
             $data = array( 
-                'Scratches' => $this->input->post('Scratches'),
-                'Light' => $this->input->post('Light'),
-                'Break' => $this->input->post('Break'),
                 'Car_tire' => $this->input->post('Car_tire'),
                 'Fuel' => $this->input->post('Fuel'),
                 'Total_fines' => $this->input->post('Total_fines'),

@@ -313,65 +313,9 @@ class Manager_car_regis_model extends CI_Model
         );
 
         $query=$this->db->update('Carregis',$data);
-        
-        //////////////////////////////////////////////////////////////////
-
-        $query_3 = $this->db->query('SELECT * FROM Rental WHERE idCarregis = '.$this->input->post('idCarregis').'');
-
-        $qq = $query_3->result_array();
-
-        foreach ($qq as $data) {
-        
-            $data_2 = array( 
-                'Detail_repair' =>$this->input->post('Detail_repair'),
-                'Price_Five' => $this->input->post('Price_Five'),
-                // 'Price_Ins' => $this->input->post('Price_Ins'),
-                'Price_manager' => $this->input->post('Price_manager'),
-                'Total' => $this->input->post('Total'),
-                'id_Employee' => $this->session->userdata('id_Employee'),
-                'idRental' => $data['idRental'],
-            );
-
-            $query_2=$this->db->insert('Repair',$data_2);
-
-        }
-
-        //////////////////////////////////////////////////////////////////
-
-        // SELECT * FROM `Rental` WHERE idCarregis = 128 ORDER BY idRental DESC LIMIT 1
-
-        $this->db->select('*');
-        $this->db->from('Rental');
-        $this->db->where('idCarregis', $this->input->post('idCarregis'));
-        $this->db->order_by('idRental', 'desc');
-        $this->db->limit(1);
-
-        $query_3 = $this->db->query('SELECT * FROM `Rental` WHERE idCarregis = '.$this->input->post('idCarregis').' ORDER BY idRental DESC LIMIT 1');
-
-        $qq = $query_3->result_array();
-
-        foreach ($qq as $data) {
-
-            $rs = $data['totalprice']-$this->input->post('Total');
-            $rs2 = $data['PriceFive']-$this->input->post('Price_Five');
-            // $rs3 = $data['PriceIns']-$this->input->post('Price_Ins');
-            $rs4 = $data['Companyincome']-$this->input->post('Price_manager');
-            
-            $data_4 = array( 
-                'totalprice' =>  $rs,
-                'PriceFive' => $rs2,
-                // 'PriceIns' => $rs3,
-                'Companyincome' => $rs4,
-            );
-
-            $query_4=$this->db->update('Rental',$data_4);
-
-            // echo $rs;
-
-        }
  
         echo "<script>";
-        echo "alert('บันทึกรายการซ่อมเรียบร้อย');";
+        echo "alert('ซ่อมรถยนต์เรียบร้อย');";
         echo "window.location.href = '". base_url(). "Emp_car/index_3';";
         echo "</script>";
 
