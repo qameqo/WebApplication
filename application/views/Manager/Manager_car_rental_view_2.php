@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-9">
-                        <h3 class="panel-title">ข้อมูลรายได้ำทยทั้งหมด</h3>
+                        <h3 class="panel-title">ข้อมูลรายได้จากการเช่า</h3>
                         
                     </div>
                     
@@ -68,7 +68,7 @@
 
             <?php
             // $query = $this->db->query('SELECT SUM(Companyincome), SUM(PriceFive), SUM(Fines_price), SUM(PriceVat) FROM Rental');
-            $this->db->select('SUM(Companyincome) + SUM(PriceFive) + SUM(Fines_price) + SUM(PriceVat) as total', FALSE);
+            $this->db->select('SUM(Companyincome) + SUM(Fines_price) + SUM(PriceVat) as total', FALSE);
             $this->db->from('Rental');
             $this->db->where('id_status', 12);
             

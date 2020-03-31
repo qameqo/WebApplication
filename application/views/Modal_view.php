@@ -3,7 +3,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Add Employee</h4>
+                <h4 class="modal-title">เพิ่มพนักงาน</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -56,12 +56,58 @@
 
                     <div class="form-group">
                         <label for="Row">Row select</label>
-                        <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">
+                        <!-- <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">
                             <option value="1">พนักงาน</option>
                             <option value="2">ช่างซ่อมบำรุง</option>
                             <option value="3">เจ้าหน้าที่ประกัน บริษัทวิริยะประกันภัย</option>
-                        </select>
+                        </select> -->
+
+                        <select class="form-control selectpicker" data-style="btn btn-link" name="Row"
+                                id="Row" onChange="Change_Employee_position()" required>
+                                <option value="">ตำแหน่งงาน</option>
+                                <?php 
+								  $sql = $this->db->query('SELECT * FROM Employee_position WHERE NOT id_position = 4');
+								  $r = $sql->result_array();
+								  foreach($sql->result_array()
+								  as $he)
+								 {
+									?>
+                                <option value="<?php echo $he['id_position'] ?>"><?php echo $he['Name_position'] ?></option>
+                                <?php }
+								  
+							    ?>
+                            </select>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <input style="font-size:16px" type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="บันทึกข้อมูล" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="employeetypeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">เพิ่มตำแหน่งพนักงาน</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <form action="<?php echo site_url('manager_emp/add_emp_type'); ?>" method="POST" id="insert_form">
+
+                <div class="modal-body">
+
+                    <input type="hidden" name="id_emp" id="id_emp" class="form-control">
+
+                    <div class="form-group">
+                        <label for="Username">ตำแหน่ง</label>
+                        <input type="text" name="Name_position" id="Name_position" class="form-control" placeholder="ชื่อตำแหน่ง"
+                            required>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <input style="font-size:16px" type="submit" name="adding_btn" id="adding_btn" class="btn btn-success" value="บันทึกข้อมูล" />

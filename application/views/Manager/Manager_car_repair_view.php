@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-9">
-                        <h3 class="panel-title">ตารางข้อมูลรายจ่าย</h3>
+                        <h3 class="panel-title">ข้อมูลจากการคืนรถยนต์</h3>
                     </div>
                     
                 </div>
@@ -18,9 +18,7 @@
                             <tr>
 
                                 <th data-column-id="Brand">รหัส</th>
-                                <th data-column-id="Model">รอยรถยนต์</th>
-                                <th data-column-id="Price">ไฟรถยนต์</th>
-                                <th data-column-id="Price">เบรก</th>
+                                
                                 <th data-column-id="Price">ยางรถยนต์</th>
                                 <th data-column-id="">น้ำมัน</th>
                                 <th data-column-id="Action">รวม</th>
@@ -33,9 +31,7 @@
 
 							<tr>
                                 <td><?php echo $rs->id_Repair; ?></td>
-								<td><?php echo $rs->Scratches; ?></td>
-								<td><?php echo $rs->Light; ?></td>
-                                <td><?php echo $rs->Break; ?></td>
+								
                                 <td><?php echo $rs->Car_tire; ?></td>
                                 <td><?php echo $rs->Fuel; ?></td>
                                 <td><?php echo $rs->Total_fines; ?></td>
@@ -49,9 +45,7 @@
 							<tr>
 
                                 <th data-column-id="Brand">รหัส</th>
-                                <th data-column-id="Model">รอยรถยนต์</th>
-                                <th data-column-id="Price">ไฟรถยนต์</th>
-                                <th data-column-id="Price">เบรก</th>
+                                
                                 <th data-column-id="Price">ยางรถยนต์</th>
                                 <th data-column-id="">น้ำมัน</th>
 

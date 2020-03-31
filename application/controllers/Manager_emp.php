@@ -78,6 +78,11 @@ class Manager_emp extends CI_Controller {
         $this->Manager_emp_model->del_emp($id_Employee);
     }
 
+    public function add_emp_type()
+    {
+        $this->Manager_emp_model->add_emp_type();
+    }
+
 }
 
 /* End of file Hello.php */

@@ -94,15 +94,6 @@
                             <td width="70%"><?php echo $rs->totalprice; ?>&nbsp;บาท</td>
                         </tr>
 
-                        <?php if ($rs->idCarregis2 != null) {?>
-
-                        <tr>
-                            <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
-                            <td width="70%"><?php echo $rs->idCarregis2; ?></td>
-                        </tr>
-
-                        <?php } ?>
-
                         <?php 
                             
                             if($rs->id_Employee != null)
@@ -282,7 +273,69 @@
 
                             ?>
 
-                    </table>
+                            <?php 
+                                $query = $this->db->query('SELECT * FROM Rental 
+                                                            INNER JOIN Problem ON Problem.idRental = Rental.idRental
+                                                            INNER JOIN Type_Problem ON Type_Problem.id_Type_Problem = Problem.id_Type_Problem
+                                                            WHERE Rental.idRental = '.$rs->idRental); 
+                                $qq = $query->result();
+
+                                foreach ($qq as $data) {
+                            
+                            ?>
+
+                            <tr>
+                                <td width="30%"><label>รายละเอียดปัญหา</label></td>
+                                <td width="70%"><?php echo $data->Detail; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รายละเอียดจากช่าง</label></td>
+                                <td width="70%"><?php echo $data->Detail_2; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รายละเอียดปัญหา</label></td>
+                                <td width="70%"><?php echo $data->Name_Type_problem; ?></td>
+                            </tr>
+
+                            <?php } ?>
+
+                            <?php if ($rs->idCarregis2 != null) {
+                                
+                                $query = $this->db->query('SELECT * FROM Carregis 
+                                                            INNER JOIN Brand ON Brand.idBrand = Carregis.idBrand
+                                                            INNER JOIN Generation ON Generation.id_Gen = Carregis.id_Gen 
+                                                            WHERE Carregis.idCarregis = '.$rs->idCarregis2);
+
+                                $qq = $query->result();
+
+                                foreach ($qq as $data) {
+                                
+                                ?>
+
+                            <tr>
+                                <td width="30%"><label>รหัสรถยนต์สำรอง</label></td>
+                                <td width="70%"><?php echo $data->idCarregis; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ยี่ห้อ</label></td>
+                                <td width="70%"><?php echo $data->Name_Brand; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>รุ่น</label></td>
+                                <td width="70%"><?php echo $data->Name_Gen; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ที่นั่ง</label></td>
+                                <td width="70%"><?php echo $data->id_Seat; ?></td>
+                            </tr>
+                            <tr>
+                                <td width="30%"><label>ราคาปล่อยเช่า</label></td>
+                                <td width="70%"><?php echo $data->RentalPrice; ?></td>
+                            </tr>
+
+                            <?php }} ?>
+                            
+                    </table>    
                 </div>
 
                 <?php 
@@ -425,30 +478,6 @@
                             <br><h4>รายการตรวจสอบรถยนต์</h4>
 
                 <div class="row justify-content-center mt-5">
-
-                    <div class="col-4">
-                        <div class="form-group prc2">
-                            <label class="label">รอยรถยนต์</label>
-                            <input type="number" id="Scratches" name="Scratches" class="form-control prc2"
-                                value="0" required>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <div class="form-group prc2">
-                            <label class="label">ไฟรถยนต์</label>
-                            <input type="number" id="Light" name="Light" class="form-control prc2"
-                                value="0" required>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <div class="form-group prc2">
-                            <label class="label">เบรก</label>
-                            <input type="number" id="Break" name="Break" class="form-control prc2"
-                                value="0" required>
-                        </div>
-                    </div>
 
                     <div class="col-4">
                         <div class="form-group prc2">

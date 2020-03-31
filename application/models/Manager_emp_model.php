@@ -139,5 +139,36 @@ class Manager_emp_model extends CI_Model
         
         
     }
+
+    public function add_emp_type()
+    {
+
+        $Name_position = $this->input->post('Name_position');
+        $this->db->where('Name_position', $Name_position);
+        $query = $this->db->get('Employee_position', 1);
+        if($query->num_rows() == 1)
+        {
+            echo "<script>";
+            echo "alert('ตำแหน่งซ้ำ');";
+            echo "window.location.href = '". base_url(). "Manager_emp ';";
+            echo "</script>";
+            
+            
+        }else
+        {
+            $data = array(
+                'Name_position' => $this->input->post('Name_position'),   
+            );
+    
+            $query=$this->db->insert('Employee_position',$data);
+    
+            echo "<script>";
+            echo "alert('บันทึกข้อมูลเรียบร้อย');";
+            echo "window.location.href = '". base_url(). "Manager_emp ';";
+            echo "</script>";
+    
+       
+        }
+    }
 }
 ?>
