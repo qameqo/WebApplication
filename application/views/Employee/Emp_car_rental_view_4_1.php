@@ -51,12 +51,13 @@
                                     // echo "<pre>";
                                     // print_r ($data->id_Seat);
                                     // echo "</pre>";
+
+                                    // $data->id_Seat < $rs->id_Seat && $data->Price < $rs->RentalPrice
                                     
-                                    if ($data->id_Seat >= $rs->id_Seat && $data->Price >= $rs->RentalPrice) {
+                                    if ( $data->id_Seat > $rs->id_Seat) {
                                         # code...
+                                    }elseif($data->Price < $rs->RentalPrice){
                                     }else{
-                                   
-                                
 
                             ?>
 
@@ -152,6 +153,8 @@
                                     echo '">';
                                     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
                                     echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status" id="id_Status" value="8" style="font-size:20px;" required>';
+
+                                    echo '<input type="hidden" class="btn btn-danger mt-5 mr-5" name="id_Status3" id="id_Status3" value="13" style="font-size:20px;" required>';
                                     echo '<button class="btn btn-sm btn-warning" type="submit" style="font-size:16px;">ส่งเปลี่ยนรถยนต์</button>';
                                     echo '</form>';
 
@@ -165,7 +168,8 @@
                             
                             <?php
                                     
-                                }}}
+                                }
+                            }}
 
                         } ?>
 

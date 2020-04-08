@@ -65,7 +65,7 @@
                         <select class="form-control selectpicker" data-style="btn btn-link" name="Row"
                                 id="Row" onChange="Change_Employee_position()" required>
                                 <option value="">ตำแหน่งงาน</option>
-                                <?php 
+                                <!-- <?php 
 								  $sql = $this->db->query('SELECT * FROM Employee_position WHERE NOT id_position = 4');
 								  $r = $sql->result_array();
 								  foreach($sql->result_array()
@@ -75,7 +75,25 @@
                                 <option value="<?php echo $he['id_position'] ?>"><?php echo $he['Name_position'] ?></option>
                                 <?php }
 								  
-							    ?>
+							    ?> -->
+                                <option value="1">พนักงาน</option>
+                                <option value="2">ช่างซ่อมบำรุง</option>
+                                <option value="3">เจ้าหน้าที่ประกัน</option>
+                            </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Row">Company select</label>
+                        <!-- <select class="form-control selectpicker" data-style="btn btn-link" name="Row" id="Row">
+                            <option value="1">พนักงาน</option>
+                            <option value="2">ช่างซ่อมบำรุง</option>
+                            <option value="3">เจ้าหน้าที่ประกัน บริษัทวิริยะประกันภัย</option>
+                        </select> -->
+
+                        <select class="form-control selectpicker" data-style="btn btn-link" name=""
+                                id="" onChange="Change_Employee_position()" required>
+                                <option value="">บริษัท</option>
+                                <option value="">บริษัทวิริยะประกันภัย</option>
                             </select>
                     </div>
                 </div>

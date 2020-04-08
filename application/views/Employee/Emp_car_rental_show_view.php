@@ -390,27 +390,52 @@
                     }?>
 
                 <?php 
-                        if($rs->id_status == '10'){ //สมาชิกมารับรถยนต์
-                        
-                        echo '<form action="'; 
-                        echo site_url('Emp_rental/add_status_22'); 
-                        echo '" method="POST" class="form-horizontal">';
-                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
-                        echo $rs->idRental; 
-                        echo '">';
-                        
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
-                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
-                        echo $rs->totalprice + 5000;
-                        echo '" style="font-size:20px;" required>';
-                        echo '
-                            <div class="row justify-content-center">    
-                            <div class="col-3">
-                                <label class="label mt-5">ราคามัดจำ 5000 บาท</label>
-                                <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="5000" readonly>
-                            </div></div>';
-                        echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
-                        echo '</form>';
+                        if($rs->id_status == '10' ){ //สมาชิกมารับรถยนต์
+
+                            $query = $this->db->query('SELECT * FROM Carregis WHERE idCarregis = '.$rs->idCarregis);
+
+                                // $query = $this->db->get();
+
+                                $qq = $query->result();
+
+                                foreach ($qq as $data) {
+
+                                    // echo $data->id_Status;
+
+                                    if ($data->id_Status == 13) {
+
+                                        echo '<form action="'; 
+                                        echo site_url('Emp_problem/reserve_car/'.$rs->idRental); 
+                                        echo '" method="POST" class="form-horizontal">';
+                                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                                        echo $rs->idRental; 
+                                        echo '">';
+                                        echo '<button class="btn btn-warning mt-5" type="submit" style="font-size:20px;">เปลี่ยนรถยนต์</button>';
+                                        echo '</form>';
+                                        
+                                    }else{
+                                        echo '<form action="'; 
+                                        echo site_url('Emp_rental/add_status_22'); 
+                                        echo '" method="POST" class="form-horizontal">';
+                                        echo '<input type="hidden" name="idRental" id="idRental" class="form-control" value="';
+                                        echo $rs->idRental; 
+                                        echo '">';
+                                        
+                                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="id_status" id="id_status" value="11" style="font-size:20px;" required>';
+                                        echo '<input type="hidden" class="btn btn-success mt-5 mr-5" name="totalprice" id="totalprice" value="';
+                                        echo $rs->totalprice + 5000;
+                                        echo '" style="font-size:20px;" required>';
+                                        echo '
+                                            <div class="row justify-content-center">    
+                                            <div class="col-3">
+                                                <label class="label mt-5">ราคามัดจำ 5000 บาท</label>
+                                                <input type="number" name="PriceFive" id="PriceFive" class="form-control mt-1" value="5000" readonly>
+                                            </div></div>';
+                                        echo '<button class="btn btn-success mt-5" type="submit" style="font-size:20px;">ยืนยันการรับรถยนต์เช่า</button>';
+                                        echo '</form>';
+                                    }
+
+                                }
 
                         // echo '<form action="'; 
                         // echo site_url('Emp_rental/add_status_33/'); 
@@ -425,7 +450,11 @@
                         // echo '<button class="btn btn-danger mt-5 mr-5" type="submit" style="font-size:20px;">ยกเลิกการเช่ารถยนต์</button>';
                         // echo '</form>';
                                   
-                    }?>
+                    }else {
+                        
+                    }
+                    
+                    ?>
 
                 <?php // เปลี่ยนรถยนต์
 
