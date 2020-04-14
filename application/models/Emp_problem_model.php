@@ -158,19 +158,38 @@ class Emp_problem_model extends CI_Model
 
         //----------------------------------------------------------------
 
-        $this->db->where('idRental', $this->input->post('idRental'));
+        if ($this->input->post('id_Status3') == 13) {
 
-        $data2 = array( 
-            'id_status' => $this->input->post('id_status'),
-            'idCarregis2' => $this->input->post('idCarregis')
-        );
+            $this->db->where('idRental', $this->input->post('idRental'));
 
-        $query2=$this->db->update('Rental',$data2);
+            $data2 = array( 
+                'id_status' => $this->input->post('id_status'),
+                'idCarregis3' => $this->input->post('idCarregis')
+            );
 
-        echo "<script>
-                alert('ส่งเปลี่ยนรถยนต์เรียบร้อย');
-                window.location.href='". base_url()."Emp_problem/index_4';
-                </script>"; 
+            $query2=$this->db->update('Rental',$data2);
+
+            echo "<script>
+            alert('ส่งเปลี่ยนรถยนต์เรียบร้อย');
+            window.location.href='". base_url()."Emp_rental/index_2';
+            </script>"; 
+
+        }else {
+            $this->db->where('idRental', $this->input->post('idRental'));
+
+            $data2 = array( 
+                'id_status' => $this->input->post('id_status'),
+                'idCarregis2' => $this->input->post('idCarregis')
+            );
+
+            $query2=$this->db->update('Rental',$data2);
+
+            echo "<script>
+            alert('ส่งเปลี่ยนรถยนต์เรียบร้อย');
+            window.location.href='". base_url()."Emp_problem/index_4';
+            </script>"; 
+        }
+        
 
     }
 }
