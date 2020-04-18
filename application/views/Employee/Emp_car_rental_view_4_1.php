@@ -54,11 +54,8 @@
 
                                     // $data->id_Seat < $rs->id_Seat && $data->Price < $rs->RentalPrice
                                     
-                                    if ( $data->id_Seat > $rs->id_Seat) {
+                                    if ($data->id_Seat <= $rs->id_Seat && $data->RentalPrice <= $rs->RentalPrice) {
                                         # code...
-                                    }elseif($data->Price < $rs->RentalPrice){
-                                    }else{
-
                             ?>
 
 							<tr>
