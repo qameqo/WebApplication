@@ -47,7 +47,6 @@
 
                                 foreach ($qq as $data) {
 
-                                    
                                     // echo "<pre>";
                                     // print_r ($data->id_Seat);
                                     // echo "</pre>";
