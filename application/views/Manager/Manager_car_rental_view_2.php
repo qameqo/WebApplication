@@ -12,7 +12,9 @@
                 
 
             </div>
-            <div class="panel-body">
+            <div id="bookok">
+			</div>
+            <div class="panel-body" id="booking">
                 <div class="table-responsive">
                     <table id="car_price_data" class="table table-striped table-bordered">
                         <thead>
