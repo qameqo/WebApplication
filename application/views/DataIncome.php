@@ -25,7 +25,7 @@
                         <?php 
                         $id = $this->session->userdata('ID');
                         $query = $this->db->query("SELECT SUM(Carownerincome) AS raka FROM Rental
-                         INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '$id'");
+                        INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '84' and Rental.id_status = '12'");
                             $nn = $query->result_array();
                          ?>
                          
