@@ -22,12 +22,7 @@
                         
 						?>
                         
-                        <?php 
-                        $id = $this->session->userdata('ID');
-                        $query = $this->db->query("SELECT SUM(Carownerincome) AS raka FROM Rental
-                        INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '84' and Rental.id_status = '12'");
-                            $nn = $query->result_array();
-                         ?>
+                      
                          
                 <div class="col-md-12 mb-5 text-center">
                     <br>
@@ -42,7 +37,8 @@
                                 <th data-column-id="Name_image" style="width: 250px;">วันเริ่มเช่า</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันส่งคืน</th>
                                 <th data-column-id="Name_image" style="width: 250px;">วันส่งคืนจริง</th>
-                                 <th data-column-id="Name_image" style="width: 100px;">รายได้</th>
+                                <th data-column-id="Name_image" style="width: 250px;">ราคาเช่ารถยนต์</th>
+                                 <th data-column-id="Name_image" style="width: 100px;">รายได้ 70 %</th>
                             
                             </tr>
                         </thead>
@@ -58,6 +54,7 @@
                                 <td><?php echo $data['startDate'];?></td>
                                 <td><?php echo $data['endDate'];?></td>
                                 <td><?php echo $data['ReturnDate'];?></td>
+                                <td><b><?php echo number_format($data['PriceCar'],0)?></b>&nbsp;บาท</td>
                                 <td><b><?php echo number_format($data['Carownerincome'],0)?></b>&nbsp;บาท</td>
                                 <!-- <td><span class="badge badge-warning"><?php //echo $data['Status'];?></span></td> -->
 
@@ -143,7 +140,16 @@
 							} ?>
                         </tbody>
                     </table>
-                    <h5>รายได้รวมทั้งหมด <?php echo number_format($nn[0]["raka"],0) ?> บาท</h5>
+                    <?php 
+                        $id = $this->session->userdata('ID');
+                        $query = $this->db->query("SELECT SUM(Carownerincome) AS raka FROM Rental
+                        INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Carregis.id_Member = '$id' and Rental.id_status = '12'");
+                            $nn = $query->result_array();
+                         ?>
+                    
+                            <h5>รายได้รวมทั้งหมด <?php echo number_format($nn[0]['raka'],0) ?> บาท</h5>
+                   
+                    
                 </div>
             </div>
         </div>
