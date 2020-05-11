@@ -4,12 +4,19 @@
 		<div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         <h3 class="panel-title">ข้อมูลรายได้จากการเช่า</h3>
                         
                     </div>
+
+                    <form action="" method="post">
                     
-                
+                        <input type="date" name="txtStartDate">
+                        <input type="date" name="txtEndDate">
+
+                        <input type="submit" name="search" value="ค้นหา">
+
+                    </form>
 
             </div>
             <div class="panel-body">
@@ -35,8 +42,22 @@
                         <?php foreach ($query as $rs) {       
                               
                      
-                            if($rs->id_status == '12'){
+                            if($rs->id_status == '15'){
                             
+                                $txtStartDate = $_POST['txtStartDate'];
+                                $txtEndDate = $_POST['txtEndDate'];
+
+                                    $query = $this->db->query('SELECT * FROM Rental 
+                                    INNER JOIN Carregis ON Rental.idCarregis = Carregis.idCarregis
+                                    INNER JOIN Brand ON Carregis.idBrand = Brand.idBrand
+                                    INNER JOIN Generation ON Carregis.id_Gen = Generation.id_Gen
+                                    INNER JOIN Member ON Rental.id_Member = Member.id_Member
+                                    INNER JOIN Status_car ON Rental.id_status = Status_car.id_Status
+                                    INNER JOIN Type_Insurance ON Rental.id_Insurance = Type_Insurance.id_Insurance
+                                    WHERE ReturnDate BETWEEN '.$txtStartDate.' AND '.$txtEndDate.'');
+    
+                                    $qq = $query->result_array();
+
                         ?>
                             
 
