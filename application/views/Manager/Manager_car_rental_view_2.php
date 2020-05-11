@@ -21,11 +21,12 @@
                                 
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Brand">วันเริ่มเช่า</th>
-                                <th data-column-id="Brand">วันคืนรถ</th>
-                                <th data-column-id="Brand">วันคืนจริง</th>
+                                <th data-column-id="Generation">รายได้เจ้าของรถยนต์</th>
+                                <th data-column-id="Generation">รายได้ทางร้าน</th>
+                                <th data-column-id="Generation">VAT 7 %</th>
+                                <th data-column-id="Generation">รายได้รวม VAT 7 % ทางร้าน</th>
                                 <th data-column-id="Generation">รายได้รวม</th>
-
+                                <th data-column-id="Generation">รายได้รวม VAT 7 %</th>
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
@@ -44,11 +45,18 @@
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
-								<td><?php echo $rs->startDate; ?></td>
-								<td><?php echo $rs->endDate; ?></td>
-								<td><?php echo $rs->ReturnDate; ?></td>
+                                <td><b><?php echo number_format($rs->Carownerincome,0)?></b>&nbsp;บาท</td>
+                                <td><b><?php    $sum = number_format($rs->Companyincome + $rs->Fines_price);
+                                                echo $sum;?></b>&nbsp;บาท</td>
+                                <td><b><?php    $sum = number_format($rs->PriceVat);
+                                                echo $sum;?></b>&nbsp;บาท</td>
                                 <td><b><?php    $sum = number_format($rs->Companyincome + $rs->Fines_price + $rs->PriceVat);
                                                 echo $sum;?></b>&nbsp;บาท</td>
+                                <td><b><?php    $sum = number_format($rs->Carownerincome + $rs->Companyincome + $rs->Fines_price);
+                                                echo $sum;?></b>&nbsp;บาท</td>
+                                <td><b><?php    $sum = number_format($rs->Carownerincome + $rs->Companyincome + $rs->Fines_price + $rs->PriceVat);
+                                                echo $sum;?></b>&nbsp;บาท</td>
+                                
                                
 								
                                 <td>
@@ -78,7 +86,7 @@
             foreach($result as $data){
             ?>
 
-            <h3>รายได้รวมทั้งหมด <?php echo $data['total']; ?> บาท</h3>
+            <h3>รายได้รวมทางร้านทั้งหมด <?php echo $data['total']; ?> บาท</h3>
 
             <?php } ?>
 
