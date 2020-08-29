@@ -7,7 +7,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3 class="panel-title">ผลลัพธ์ข้อมูลการส่งรถยนต์</h3>
+                        <h3 class="panel-title">ข้อมูลรถยนต์ลงทะเบียนทั้งหมด</h3>
                     </div>
                 </div>
                 

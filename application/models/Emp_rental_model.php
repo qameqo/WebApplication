@@ -16,6 +16,8 @@ class Emp_rental_model extends CI_Model
         $this->db->join('Status_car', 'Rental.id_status = Status_car.id_Status');
         $this->db->join('Type_Insurance', 'Rental.id_Insurance = Type_Insurance.id_Insurance');
 
+        // $this->db->where('idRental', 211);
+
         $query = $this->db->get();
 
         return $query->result();
@@ -279,6 +281,24 @@ class Emp_rental_model extends CI_Model
         echo "alert('บันทึกหมายเหตุเรียบร้อย');";
         echo "window.location.href = '". base_url(). "Emp_rental';";
         echo "</script>";
+    }
+
+    public function showdate() //โชว์วันที่
+    {
+        $this->db->select('*');
+        $this->db->from('Rental');
+        $this->db->join('Carregis', 'Rental.idCarregis = Carregis.idCarregis');
+        $this->db->join('Brand', 'Carregis.idBrand = Brand.idBrand');
+        $this->db->join('Generation', 'Carregis.id_Gen = Generation.id_Gen');
+        $this->db->join('Member', 'Rental.id_Member = Member.id_Member');
+        $this->db->join('Status_car', 'Rental.id_status = Status_car.id_Status');
+        $this->db->join('Type_Insurance', 'Rental.id_Insurance = Type_Insurance.id_Insurance');
+        $this->db->where('ReturnDate >=', $this->input->post('txtStartDate'));
+        $this->db->where('ReturnDate <=', $this->input->post('txtEndDate'));
+
+        $query = $this->db->get();
+
+        return $query->result();
     }
 }
 ?>
