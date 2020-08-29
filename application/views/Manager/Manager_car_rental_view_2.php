@@ -9,14 +9,14 @@
                         
                     </div>
 
-                    <form action="" method="post">
+                    <!-- <form action="<?php site_url('Manager_car_regis/showdate'); ?>" method="post">
                     
                         <input type="date" name="txtStartDate">
                         <input type="date" name="txtEndDate">
 
                         <input type="submit" name="search" value="ค้นหา">
 
-                    </form>
+                    </form> -->
 
             </div>
             <div class="panel-body">
@@ -28,12 +28,13 @@
                                 
                                 <th data-column-id="Brand">ยี่ห้อ</th>
                                 <th data-column-id="Brand">รุ่น</th>
-                                <th data-column-id="Generation">รายได้เจ้าของรถยนต์</th>
-                                <th data-column-id="Generation">รายได้ทางร้าน</th>
+                                <th data-column-id="Brand">วันที่</th>
+                                <th data-column-id="Generation">เจ้าของรถยนต์</th>
+                                <th data-column-id="Generation">ทางร้าน</th>
                                 <th data-column-id="Generation">VAT 7 %</th>
-                                <th data-column-id="Generation">รายได้รวม VAT 7 % ทางร้าน</th>
-                                <th data-column-id="Generation">รายได้รวม</th>
-                                <th data-column-id="Generation">รายได้รวม VAT 7 %</th>
+                                <th data-column-id="Generation">ทางร้านรวม VAT 7 %</th>
+                                <th data-column-id="Generation">รวมทั้งหมด</th>
+                                <th data-column-id="Generation">ทั้งหมดรวม VAT 7 %</th>
                                 <th data-column-id="Action"></th>
                             </tr>
                         </thead>
@@ -41,31 +42,16 @@
                         
                         <?php foreach ($query as $rs) {       
                               
-                     
-                            if($rs->id_status == '15'){
-                            
-                                $txtStartDate = $_POST['txtStartDate'];
-                                $txtEndDate = $_POST['txtEndDate'];
-
-                                    $query = $this->db->query('SELECT * FROM Rental 
-                                    INNER JOIN Carregis ON Rental.idCarregis = Carregis.idCarregis
-                                    INNER JOIN Brand ON Carregis.idBrand = Brand.idBrand
-                                    INNER JOIN Generation ON Carregis.id_Gen = Generation.id_Gen
-                                    INNER JOIN Member ON Rental.id_Member = Member.id_Member
-                                    INNER JOIN Status_car ON Rental.id_status = Status_car.id_Status
-                                    INNER JOIN Type_Insurance ON Rental.id_Insurance = Type_Insurance.id_Insurance
-                                    WHERE ReturnDate BETWEEN '.$txtStartDate.' AND '.$txtEndDate.'');
-    
-                                    $qq = $query->result_array();
+                            if($rs->id_status == '12'){
 
                         ?>
                             
-
 							<tr>
 
                                 <td width="5%"><?php echo $rs->idRental; ?></td>
 								<td><?php echo $rs->Name_Brand; ?></td>
 								<td><?php echo $rs->Name_Gen; ?></td>
+                                <td><?php echo $rs->ReturnDate; ?></td>
                                 <td><b><?php echo number_format($rs->Carownerincome,0)?></b>&nbsp;บาท</td>
                                 <td><b><?php    $sum = number_format($rs->Companyincome + $rs->Fines_price);
                                                 echo $sum;?></b>&nbsp;บาท</td>
@@ -100,6 +86,7 @@
             $this->db->select('SUM(Companyincome) + SUM(Fines_price) + SUM(PriceVat) as total', FALSE);
             $this->db->from('Rental');
             $this->db->where('id_status', 12);
+            // $this->db->where('idRental', 211);
             
             $query = $this->db->get();
 
@@ -107,9 +94,35 @@
             foreach($result as $data){
             ?>
 
-            <h3>รายได้รวมทางร้านทั้งหมด <?php echo $data['total']; ?> บาท</h3>
+            <h3>รายได้ร้านทั้งหมด <?php echo $data['total']; ?> บาท</h3>
 
-            <?php } ?>
+            <?php 
+                        // $id = $this->session->userdata('ID');
+                        $query = $this->db->query("SELECT SUM(Carownerincome) AS raka FROM Rental
+                        INNER JOIN Carregis on Carregis.idCarregis = Rental.idCarregis WHERE Rental.id_status = '12' and Carownerincome != 0");
+                            $nn = $query->result_array();
+                        
+                        $this->db->select('*');
+                        $this->db->from('Member');
+                        $this->db->join('Carregis', 'Carregis.id_Member = Member.id_Member');
+                        $this->db->join('Rental', 'Rental.idCarregis = Carregis.idCarregis');
+                        
+                        $this->db->where('Carownerincome !=', 0);
+                        
+                        $this->db->limit(1);
+                        
+                        $q = $this->db->get();
+
+                        $r = $q->result_array();
+                        foreach($r as $d){
+                        
+                         ?>
+                    
+                            <h3>รายได้ <?php echo $d['FName']; ?> ทั้งหมด <?php echo number_format($nn[0]['raka'],0) ?> บาท</h3>
+
+                            <h3>รายได้รวมทั้งหมด 6008 บาท</h3> 
+                            
+                        <?php  }} ?>                   
 
 		</div>
 		<br>

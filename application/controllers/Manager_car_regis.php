@@ -226,6 +226,11 @@ class Manager_car_regis extends CI_Controller {
         $this->Manager_car_regis_model->add_status_13();
     }
 
+    public function showdate()
+    {
+        $this->Emp_rental_model->showdate();
+    }
+
 
 }
 

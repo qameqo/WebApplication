@@ -72,7 +72,7 @@
                         <input type="text" class="form-control" name="Tel" id="Tel" placeholder="0881234567" value="<?php echo $data['Tel'];?>">
                     </div>
 
-                    <button type="submit" class="btn btn-success">บันทึก</button>
+                    <button type="submit" class="btn btn-success" style="font-size:20px;">บันทึก</button>
                 </form>
             </div>
         </div>
